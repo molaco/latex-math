@@ -1,0 +1,54 @@
+\documentclass[oneside]{book}
+\usepackage[spanish]{babel}
+%\usepackage[a4paper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsfonts} 
+\usepackage{mathrsfs}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{setspace}
+\usepackage{mdframed}
+\usepackage{enumitem}
+%\usepackage[T1]{fontenc}
+%\setmainfont{Times New Roman}
+\renewcommand\familydefault{\sfdefault}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newtheoremstyle{komaplain}
+  {3pt}   % ABOVESPACE
+  {3pt}   % BELOWSPACE
+  {\itshape}  % BODYFONT
+  {2pt}       % INDENT (empty value is the same as 0pt)
+  {\bfseries\sffamily} % HEADFONT
+  {.}         % HEADPUNCT
+  {5pt plus 1pt minus 1pt} % HEADSPACE
+  {}          % CUSTOM-HEAD-SPEC
+  
+\theoremstyle{komaplain}
+\newmdtheoremenv{theo}{Teorema}[chapter]
+\newmdtheoremenv{cor}{Corolario}[theo]
+\newmdtheoremenv{lem}{Lema}[theo]
+\newmdtheoremenv{defn}{Definición}[chapter]
+\newmdtheoremenv{prop}{Proposición}[chapter]
+\surroundwithmdframed[
+  topline=false,
+  rightline=false,
+  bottomline=false,
+  leftmargin=1,
+  skipabove=\medskipamount,
+  skipbelow=\medskipamount
+]{dem}
+\surroundwithmdframed[
+  topline=false,
+  rightline=true,
+  bottomline=false,
+]{nota}
+
+\newtheorem*{obs}{Observación}
+\newtheorem*{dem}{Demostración}
+\newtheorem*{ejm}{Ejemplo}
+\newtheorem*{nota}{Notación}
+\newtheorem*{cons}{Consecuencia}
+
+\author{Hugo Del Castillo Mola}

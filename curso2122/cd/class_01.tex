@@ -1,0 +1,76 @@
+\chapter{El espacio $\mathbb{R}^n$}
+
+\begin{nota}
+\begin{enumerate}[label=(\roman*)]
+    \item Se denota $\mathbb{R}$ el cuerpo de los números reales. 
+    \item Fijado $n \in \mathbb{N}$, denotamos $\mathbb{R}^n$ al producto cartesiano de $\mathbb{R}$ por si mismo $n$ veces. 
+    \item El espacio $\mathbb{R}^n$ satisface los axiomas de espacio vectorial. 
+\end{enumerate}
+\end{nota}
+
+Sean $ x = (x_1,...,x_n), y = (y_1,...,y_n)$ vectores en $\mathbb{R}^n$
+
+\begin{defn}[Producto Escalar Euclideo]
+
+\[\langle x{,}y\rangle =  x \cdot y = x_1 y_1 + ... + x_n y_n = \sum^{n}_{i=1} x_i y_i\]
+
+\end{defn}
+
+\begin{prop}{}
+
+El producto escalar satisface:
+
+\begin{enumerate}[label=(\roman*)]
+    \item $\langle x{,}x\rangle \geq 0$
+    \item $\langle x{,}x\rangle = 0 \ \Leftrightarrow x=0$
+    \item $\langle x{,}y\rangle = \langle y{,}x\rangle$
+    \item $\langle x + y{,}z\rangle = \langle x{,}z\rangle +\langle y{,}z\rangle$
+    \item $\langle \lambda x{,}y\rangle = \lambda\langle x{,}y\rangle$
+\end{enumerate}
+
+\end{prop}
+
+\begin{defn}[Norma Euclidea]{}
+
+\[ ||x|| = \sqrt{\langle x{,}x\rangle} = \sqrt{x_1^2 + ... + x_n^2} \]
+
+\end{defn}
+
+\begin{prop}{}
+La norma verifica:
+
+\begin{enumerate}[label=(\roman*)]
+    \item $||x||=0 \Leftrightarrow x = 0$
+    \item $||\lambda x|| = |\lambda| ||x||$
+    \item $|| x + y|| \leq ||x|| + ||y||$
+\end{enumerate}
+\end{prop}
+
+\begin{obs}
+$|||x|| - ||y||| \leq ||x|| + ||y||$
+\end{obs}
+
+\begin{defn}[Distancia Euclidea]{}
+\[ d(x,y) = ||x - y|| = \sqrt{(x_1 - y_1)^2 + ... + (x_n - y_n)^2}\]
+\end{defn}
+
+\begin{prop}{}
+La distancia verifica:
+\begin{enumerate}[label=(\roman*)]
+    \item $d(x,x)=0 \Leftrightarrow x=y$
+    \item $d(x,y) = d(y,x)$
+    \item $d(x,y) \leq d(x,z) + d(z,y)$
+\end{enumerate}
+\end{prop}
+
+\begin{defn}[Ángulo entre dos vectores]{}
+\[ \cos\theta(x,y) = \frac{\langle x{,}y\rangle}{||x|| \cdot ||y||}  \]
+\end{defn}
+
+\begin{theo}[Desigualdad de Cauchy]{}
+\[ |\langle x{,}y\rangle| \leq ||x|| \cdot ||y|| \]
+\end{theo}
+
+\begin{prop}{}
+\[ |\langle x{,}y\rangle| \leq ||x|| \cdot ||y|| \Leftrightarrow \exists t \in \mathbb{R}: y = tx \]
+\end{prop}

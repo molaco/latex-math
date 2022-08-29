@@ -1,0 +1,754 @@
+\chapter{Geometría de funciones de varias variables}
+
+\begin{nota}
+\[ f:A\subset \mathbb{R}^n \rightarrow \mathbb{R} \]  \[ G_f = \{(x,f(x)): x \in A \} \subset \mathbb{R}^{n+1} \]
+\end{nota}
+
+\begin{defn}[Conjuntos de nivel]
+Sea $f:A\subset \mathbb{R}^n \rightarrow \mathbb{R}, c \in \mathbb{R}$.
+Llamamos conjunto de nivel al conjunto \[ N_c = \{ x \in A: f(x) = c \} \]
+\end{defn}
+
+\section{Límites y continuidad}
+\begin{defn}[Límite de una función en $\mathbb{R}^n$]
+Sea $f:A\subset \mathbb{R}^n \rightarrow \mathbb{R}^m, a \in \overline{A}, b \in \mathbb{R}^m$.
+\[ \lim_{x\rightarrow a} f(x) = b \Leftrightarrow \forall \epsilon > 0, \exists \delta > 0: \ x \in A, \ 0 < ||x-a|| < \delta \Rightarrow ||f(x)-b|| < \epsilon\]
+\end{defn}
+
+\begin{defn}[Continuidad de una función en $\mathbb{R}^n$]
+Sea $f:A\subset \mathbb{R}^n \rightarrow \mathbb{R}^m, \ a \in A$.
+\[ f \ continua \ en \ a\in A \equiv \ \lim_{x\rightarrow a} f(x) = f(a). \]
+$f$ es continua en $A$ si $f$ es continua en $a, \ \forall a \in A$.
+\end{defn}
+
+\begin{obs}
+En la definición de límite $f$ no necesita estar definida en $a$.
+\end{obs}
+
+\begin{obs}
+El límite si existe es único.
+\end{obs}
+
+\begin{prop}(Límite y continuidad, caracterización por sucesiones)
+Sea $f:A\subset \mathbb{R}^n \rightarrow \mathbb{R}^m, \ b \in \mathbb{R}^m$:
+
+\begin{enumerate}[label=(\roman*)]
+    \item $\lim_{x\rightarrow a} f(x) = b \ (a \in \overline{A}) \Leftrightarrow \forall \{x_k\} \subset A\setminus\{a\}: \{x_k\} \rightarrow a \Rightarrow \{f(x_k)\} \rightarrow b$.
+    \item $f$ es continua en $a \Leftrightarrow \forall \{x_k\} \subset A: \{x_k\} \rightarrow a \Rightarrow \{f(x_k)\} \rightarrow f(a)$
+\end{enumerate}
+\end{prop}
+\begin{dem}(i)
+    $(\Rightarrow)$ Suponemos que $\lim_{x\rightarrow a} f(x) = b$. Sea $\{ x_k \} \subset A\setminus \{a\}$ , queremos ver que $\lim_{k\rightarrow \infty} f(x_k) = b$. Sabemos que $\lim_{x\rightarrow a} f(x) = b \Rightarrow \forall \epsilon > 0, \exists \delta > 0:$ si $x\in A, ||x-a||<\delta \Rightarrow ||f(x) - b||< \epsilon$. Como $\{x_k\} \rightarrow a$ entonces, $ \exists N\in\mathbb{N}: \ ||x_k-a||<\delta, \forall k \geq N \Rightarrow ||f(x_k) - b||< \epsilon$. Por tanto, tenemos que $\lim_{k\rightarrow \infty} f(x_k) = b$.\\
+
+    $(\Leftarrow)$  Suponemos que $\nexists\lim_{x\rightarrow a} f(x) $ y $ \forall \{x_k\} \subset A\setminus\{a\}: \ \{x_k\} \rightarrow a \Rightarrow \{f(x_k)\} \rightarrow b$. Sabemos que $\nexists\lim_{x\rightarrow a} f(x) \Rightarrow \exists \{x_k\}: 0<||x_k - a||<\frac{1}{k} \Rightarrow ||f(x_k) - b || \geq \epsilon$. Lo que contradice que $ \forall \{x_k\} \subset A\setminus\{a\}: \ \{x_k\} \rightarrow a \Rightarrow \{f(x_k)\} \rightarrow b$.
+\end{dem}
+\begin{dem}(ii)
+    $(\Rightarrow)$ Suponemos que $f$ es continua en $a$. Sabemos que $f$ continua en $a \Rightarrow \lim_{x\rightarrow a} f(x) = f(a)$. Por la proposición anterior, tenemos que $\lim_{x\rightarrow a} f(x) = f(a) \Rightarrow \forall \{x_k\} \subset A: \{x_k\} \rightarrow a $ entonces $ \{f(x_k)\} \rightarrow f(a)$.\\
+
+    $(\Leftarrow)$  Suponemos que $\lim_{x\rightarrow a} f(x) = f(a) \Rightarrow \forall \{x_k\} \subset A: \{x_k\} \rightarrow a \Rightarrow \{f(x_k)\} \rightarrow f(a)$. Por la proposición anterior, tenemos que $\lim_{x\rightarrow a} f(x) = f(a)$. Por tanto, $f$ es continua en $a$.
+\end{dem}
+
+
+\begin{prop}(Propiedades de funciones, límites y continuidad)\\
+Sea $f:A\subset \mathbb{R}^n \rightarrow \mathbb{R}^m, \ b \in \mathbb{R}^m$. $f = (f_1,...,f_m), \ b = (b_1,...,b_m)$:
+\begin{enumerate}[label=(\roman*)]
+    \item $ \lim_{x\rightarrow a} f(x) = b \Leftrightarrow \ \lim_{x\rightarrow a} f_i(x) = b_i $ 
+    \item $f$ continua en $a \in A \Leftrightarrow \ f_i$ continua en $a, \forall i \in \{1,...,m\}$  
+\end{enumerate}
+\end{prop}
+
+\begin{prop}(Propiedades algebraicas límites de funciones)\\
+Sean $f:A\subset \mathbb{R}^n \rightarrow \mathbb{R}^m, \ g:A\subset \mathbb{R}^n \rightarrow \mathbb{R}^m \ a \in \overline{A},\ b,b' \in \mathbb{R}^m$ tal que \\ $\lim_{x\rightarrow a} f(x) = b, \lim_{x\rightarrow a} g(x) = b'$:
+
+\begin{enumerate}[label=(\roman*)]
+    \item $\lim_{x\rightarrow a} f(x) + g(x) = b + b'$
+    \item $\lim_{x\rightarrow a} \lambda f(x) = \lambda b$
+    \item $m = 1; \lim_{x\rightarrow a} f(x)g(x) = bb'$
+    \item $m = 1;\ b \neq 0, \ \lim_{x\rightarrow a} f(x)/g(x) = b/b'$
+\end{enumerate}
+\end{prop}
+
+\begin{prop}(Propiedades algebraicas continuidad de funciones)\\
+Sean $f,g:A\subset \mathbb{R}^n \rightarrow \mathbb{R}^m \ f,g$ continuas en $a$
+
+\begin{enumerate}[label=(\roman*)]
+    \item $f+g, \ \lambda f$ continuas en $a, (\lambda \in \mathbb{R}$
+    \item $m = 1; \ fg$ continuas en $a$
+    \item $m = 1; \ \forall x \in A, \ g(x) \neq 0 \Rightarrow \ f(x)/g(x) $ continua en $a$.
+\end{enumerate}
+\end{prop}
+
+\begin{prop}(Continuidad composición de funciones)\\
+Sean $f:A\subset \mathbb{R}^n \rightarrow \mathbb{R}^m, \ g:B\subset\mathbb{R}^m \rightarrow \mathbb{R}^k$ continuas en $a$. \\ Si $a \in A$, $f$ continua en $a$ y $g$ continua en $f(a) \ \Rightarrow \ g\circ f$ continua en $a$.
+\end{prop}
+
+\begin{cor}
+Sean $f:A\subset \mathbb{R}^n \rightarrow \mathbb{R}^m, \ g:B\subset\mathbb{R}^m \rightarrow \mathbb{R}^k$ continuas. Entonces, $g\circ f:A\subset \mathbb{R}^n \rightarrow \mathbb{R}^k$ es continua.
+\end{cor}
+
+\begin{prop}[Criterios de no existencia de límite]
+Sea $f: \mathbb{R}^2 \rightarrow \mathbb{R}$.
+\begin{enumerate}[label=(\roman*)]
+    \item Si $\exists \{x_k,y_k\} \rightarrow (0,0)$ tal que  $\nexists \lim_{k\rightarrow \infty} \{f(x_k,y_k)\} \Rightarrow \nexists \lim_{(x,y)\rightarrow(0,0)} f(x,y)$. 
+    \item Si $\exists \{x_k,y_k\} \rightarrow (0,0)$ y $\exists \{x'_k,y'_k\} \rightarrow (0,0)$ tal que $\{f(x_k,y_k)\} \rightarrow \alpha$ y $\{f(x'_k,y'_k)\} \rightarrow \alpha'$. Entonces $\alpha \neq \alpha' \Rightarrow \nexists \lim_{(x,y)\rightarrow(0,0)} f(x,y)$.
+\end{enumerate}
+\end{prop}
+
+\begin{prop}[Criterios de no existencia de límite]
+Sea $f: \mathbb{R}^2 \rightarrow \mathbb{R}$.
+\begin{enumerate}[label=(\roman*)]
+    \item Si $\exists \gamma \rightarrow (0,0)$ tal que $f$ no tiene límite a lo largo de $\gamma$, entonces $\nexists \lim_{(x,y)\rightarrow(0,0)} f(x,y)$. 
+    \item Si $\exists \gamma,\gamma' \rightarrow (0,0)$ tal que $f$ tiene límite distinto a lo largo de $\gamma, \gamma'$, entonces $\nexists \lim_{(x,y)\rightarrow(0,0)} f(x,y)$.
+\end{enumerate}
+\end{prop}
+
+\begin{theo}[Teorema del Sandwich]
+Sea $f:A\subset \mathbb{R}^n \rightarrow \mathbb{R}^m, \ g:A\subset \mathbb{R}^n \rightarrow \mathbb{R}$. Supongamos que $||f(x)|| \leq g(x), \forall x\in A$ y $ \lim_{x\rightarrow a} g(x) = 0$.  Entonces, $\lim_{x\rightarrow a} f(x) = 0 $.
+\end{theo}
+
+\begin{defn}[Condiciones de Lipschits y Hölder]
+Sea $f:A\subset \mathbb{R}^n \rightarrow \mathbb{R}^m$.
+\begin{enumerate}[label=(\roman*)]
+    \item $f$ es Lipschitz si $\exists c>0: ||f(x)-f(y)|| \leq c||x-y||, \forall x,y \in A$. 
+    \item $f$ es Hölder si $\exists c>0: ||f(x)-f(y)|| \leq c||x-y||^{\alpha}, 0<\alpha<1,  \forall x,y \in A$.
+\end{enumerate}
+\end{defn}
+
+\begin{obs}
+$f$ Lipschitz/Hölder en $A \ \Rightarrow \ f$ continua en $A$.
+\end{obs}
+
+\section{Continuidad, compacidad y conexión}
+
+\begin{prop}[Imagen de conjuntos compactos y conexos]
+Sea $f:A\subset \mathbb{R}^n \rightarrow \mathbb{R}^m$ continua.
+\begin{enumerate}[label=(\roman*)]
+    \item $A$ compacto  $\Rightarrow \ f(A)$ compacto. 
+    \item $A$ conexo/c.p.c  $\Rightarrow \ f(A)$ conexo/c.p.c.
+\end{enumerate}
+\end{prop}
+
+\begin{dem}(i)
+    \item Suponemos que $A$ es compacto y $f$ es continua en $A$. Queremos ver que $f(A)$ es compacto. Sea $\{x_k\}\subset A : \{f(x_k)\}\subset f(A)$. Sabemos que $A$ compacto $\Rightarrow \exists \{x_{k_j}\} :\{x_{k_j}\}\rightarrow a\in A$. Entonces, por ser $f$ continua en $A$, tenemos que $\{f(x_k)\}\rightarrow f(a) \in f(A)$. Por tanto, $f(A)$ es compacto.
+\end{dem}
+\begin{dem}(ii)
+    Suponemos que $A$ es c.p.c y $f$ es continua en $A$. Queremos ver que $f(A)$ es c.p.c. Sea $x,y\in A: f(x),f(y)\in f(A)$. Sabemos que $A$ c.p.c $\Rightarrow \exists \gamma: [0,1]\rightarrow A$ continua tal que $\gamma(0) = x, \gamma(1) = y$. Entonces, $(f\circ \gamma): [0,1] \rightarrow f(A)$ continua tal que $(f\circ \gamma)(0) = f(x)$ y $(f\circ \gamma)(1) = f(y)$. Por tanto, $f(A)$ es c.p.c.
+\end{dem}
+
+\begin{theo}[de Weierstrass]
+Sea $f:A\subset \mathbb{R}^n \rightarrow \mathbb{R}$ continua, $A$ compacto $\Rightarrow \exists a,b \in A: f(a)\leq f(x)\leq f(b), \forall x \in A$. Donde $a$ es mínimo global/absoluto de $f$ en $A$ y $b$ es máximo global/absoluto de $f$ en $A$.\\
+\end{theo}
+
+\begin{dem}
+Suponemos que $f$ es continua en $A$ y $A$ es compacto. Queremos ver que $\exists a,b \in A$ tal que $f(a)\leq f(x)\leq f(b), \forall x \in A$. Sabemos que $f$ es continua en $A$ y $A$ compacto $\Rightarrow f(A)$ compacto $\Rightarrow f(A)$ cerrado y acotado. Por ser $f(A)$ acotado tenemos que $\exists \sup f(A), \inf f(A)$ Y por ser $A$ cerrado, tenemos que $ \sup f(A), \inf f(A)\in f(A)$. Por tanto, $\exists a,b \in A$ tal que $f(a)\leq f(x)\leq f(b), \forall x \in A$.
+\end{dem}
+
+\begin{theo}[de Bolzano]
+Sea $f:A\subset \mathbb{R}^n \rightarrow \mathbb{R}$ continua y $A$ conexo. Si $\exists a,b \in A: f(a)f(b)<0 \Rightarrow \exists c \in A: f(c) = 0$.\\
+\end{theo}
+
+\begin{dem}
+Suponemos que $f$ es continua en $A$ y $A$ es conexo. Sea $a,b \in A: f(a)f(b)<0 $, queremos ver que $\exists c \in A: f(c) = 0$. Sabemos que $f$  continua en $A$ y $A$  conexo $\Rightarrow f(A)$ es conexo, $f(A)$ es un intervalo. Entonce, si $f(a) < 0 < f(b)$ tenemos que $I=(f(a), f(b))\subset f(A)$ y $ 0 \in f(A) \Rightarrow \exists c \in A: f(c) = 0$.
+\end{dem}
+
+\begin{theo}[de Borsuk]
+Sea $f:A\subset \mathbb{S}^2 \rightarrow \mathbb{R}$ continua. Entonces, $\exists a\in \mathbb{S}^2: f(a) = f(-a)$.
+\end{theo}
+
+\section{Continuidad uniforme}
+
+\begin{defn}[Continuidad uniforme de una función en $\mathbb{R}^n$]
+$f:A\subset \mathbb{R}^n \rightarrow \mathbb{R}^m, f$ es u.c. en $A$ si $\forall \epsilon > 0, \exists \delta > 0: x,y\in A, ||x-y||<\delta \Rightarrow ||f(x) - f(y)|| < \epsilon$
+\end{defn}
+
+\begin{obs}
+Que las componenetes de $f$ sean u.c en $A$ es condición necesaria y suficiente para que $f$ sea u.c.
+\end{obs}
+
+\begin{obs}
+$f:A\subset \mathbb{R}^n \rightarrow \mathbb{R}^m, f$ u.c. $\Rightarrow f$ continua.
+\end{obs}
+
+\begin{obs}
+Si  $f:A\subset \mathbb{R}^n \rightarrow \mathbb{R}^m$ es Lipschitz en $A$ entonces $f$ es u.c. en $A$.
+\end{obs}
+
+\begin{prop}(Continuidad uniforme, caracterización por sucesiones)\\
+Sea $f:A\subset \mathbb{R}^n \rightarrow \mathbb{R}^m$ u.c. en $A \ \Leftrightarrow \ \forall \{x_k\},\{y_k\}\subset A: ||x_k - y_k|| \rightarrow 0 \Rightarrow ||f(x_k)-f(y_k)|| \rightarrow 0$.
+\end{prop}
+
+\begin{dem}
+$(\Rightarrow)$ Suponemos que $f$ es u.c. en $A$. Sea $\{x_k\},\{y_k\}\subset A, ||x_k - y_k|| \rightarrow 0$, queremos ver que $||f(x_k)-f(y_k)|| \rightarrow 0$. Sea $\epsilon >0, \exists \delta>0,\exists N \in \mathbb{N}: ||x_k - y_k||<\delta, \forall k \geq N \Rightarrow ||f(x_k)-f(y_k)|| \rightarrow 0$.\\
+
+$(\Leftarrow)$ Suponemos que $f$ no es u.c. en $A$. Entonces, $\exists \epsilon >0, \forall \delta > 0: x,y\in A, ||x-y||<\delta \Rightarrow ||f(x)-f(y)|| \geq \epsilon$. Sea $\delta = \frac{1}{k}, \exists\{x_k\},\{y_k\}\subset A: ||x_k - y_k|| < \delta $ y $ ||f(x_k) - f(y_k)|| \geq \epsilon $. Llegamos a una contradicción, por tanto, $f$ es u.c. en $A$.
+\end{dem}
+
+\begin{prop}(Criterio de no continuidad uniforme)\\
+Sea $f:A\subset \mathbb{R}^n \rightarrow \mathbb{R}^m$, son equivalentes:
+\begin{enumerate}[label=(\roman*)]
+    \item $f$ no es u.c. en $A$.
+    \item $\exists \{x_k\},\{y_k\}\subset A: ||x_k-y_k|| \rightarrow 0$ pero $||f(x_k)-f(y_k)|| \nrightarrow 0$.
+    \item $\exists \epsilon > 0, \exists \{x_k\},\{y_k\}\subset A: ||x_k-y_k|| \rightarrow 0$ pero $||f(x_k)-f(y_k)|| \geq \epsilon, \forall k \in \{1,...,n\}$.
+\end{enumerate}
+\end{prop}
+
+\begin{theo}[de Heine]
+Toda función continua en un conjunto compacto es uniformemente continua.
+\end{theo}
+
+\begin{obs}
+Sea $f:A\subset \mathbb{R}^n \rightarrow \mathbb{R}^m, \ \lim_{x\rightarrow\infty} f(x) = \infty \equiv \forall M>0, \exists R>0: ||x||>R \Rightarrow ||f(x)||>M$. 
+\end{obs}
+
+\begin{obs}
+Para justificar la existencia de máximo y mínimo en un conjunto que no es compacto basta ver que $f:A\subset \mathbb{R}^n \rightarrow \mathbb{R}$ continua y $lim_{x\rightarrow\infty} f(x) = +\infty \ \Rightarrow \exists a\in A: f(a)\leq f(x), \forall x\in A$.
+\end{obs}
+
+\chapter{Diferenciabilidad}
+
+\section{Derivadas Parciales}
+
+\begin{defn}[Derivada parcial]
+Sea $f:G\subset \mathbb{R}^n \rightarrow \mathbb{R}; a\in G, \ a = (a_1,...,a_n)$. Llamamos derivadas parciales de $f$ en $a$ \[ \frac{\partial f}{\partial x_i}(a) = \lim_{h\rightarrow 0} \frac{f(a_1,...,a_{i-1},a_{i} + h,a_{i+1},...,a_{n}) - f(a)}{h} \] \[  \frac{\partial f}{\partial x_i}(a) = \lim_{x_i\rightarrow a_i} \frac{f(a_1,...,a_{i-1},x_{i},a_{i+1},...,a_{n}) - f(a)}{x_i - a_i} \]
+\end{defn}
+
+\begin{defn}[Aplicaciones diferenciables, representación matrcial]
+Se dice que $f:A\subset \mathbb{R}^n \rightarrow \mathbb{R}$ es diferenciable en $a \in A$ si $\exists T_a: \mathbb{R}^n \rightarrow \mathbb{R}$ tal que \[ \lim_{h\rightarrow 0} \frac{f(a+h) - f(a) - T_a(h)}{||h||} = 0 \] \[ \lim_{x\rightarrow a} \frac{f(x) - f(a) - T_a(x - a)}{||x - a||} = 0\]
+\end{defn}
+
+\begin{prop}[Existencia de derivada parciales]
+Sea $f:G\subset \mathbb{R}^n \rightarrow \mathbb{R}; \ a\in G$. Si $f$ es diferenciable en $a$, entonces existen las derivadas parciales $\frac{\partial f}{\partial x_i}(a),\ \forall i\in\{1,...,n\}$ y $T_a(h) = \sum_{i=1}^n \frac{\partial f}{\partial x_i}(a)(h_i), \ h = (h_1,...,h_n)$.
+\end{prop}
+
+\begin{obs}
+$f$ diferenciable $\Rightarrow \ Df(a) = T_a$ está determinada de forma única.
+\end{obs}
+
+\begin{defn}[Vector gradiente]
+Sea $f:G\subset \mathbb{R}^n \rightarrow \mathbb{R}; \ a\in G$ con $f$ diferenciable en $a$. Llamamos vector gradiente de $f$ en $a$ al vector \[ \nabla f(a) = \bigg(\frac{\partial f}{\partial x_1}(a),\cdots,\frac{\partial f}{\partial x_n}(a)\bigg) \]
+\end{defn}
+
+\begin{cor}
+Sea $f:G\subset \mathbb{R}^2 \rightarrow \mathbb{R}; \ a\in G$ con $a = (x_0,y_0)$. Si $\exists \frac{\partial f}{\partial x}(a),\frac{\partial f}{\partial y}(a)$, entonces $f$ es diferenciable en $a \ \Leftrightarrow$ \[ \lim_{h\rightarrow 0} \frac{f(x_o + h_1, y_0 + h_2) - f(a) - \frac{\partial f}{\partial x}(a)h_1 - \frac{\partial f}{\partial y}(a)h_2}{\sqrt{h_1^2 + h_2^2}} = 0 \]
+\end{cor}
+
+\begin{defn}[Diferenciabilidad en un conjunto]
+Sea $f:G\subset \mathbb{R}^n \rightarrow \mathbb{R}, f$ es diferenciable en $G$ si $f$ es diferenciable en $a, \ \forall a \in G$.
+\end{defn}
+
+\begin{defn}
+Sea $f:G\subset \mathbb{R}^2 \rightarrow \mathbb{R}, \ a = (x_0.y_0)$. Si $f$ es diferenciable en $a$, entonces llamamos plano tangente a la superficie $z = f(x_0,y_0)$ que pasa por $(x_o,y_0,z_0)$ \[ z-z_0 = \frac{\partial f}{\partial x}(a)(x - x_0) +  \frac{\partial f}{\partial y}(a)(y - y_0)  \]
+\end{defn}
+
+\begin{defn}
+Sea $f:G\subset \mathbb{R}^n \rightarrow \mathbb{R}^m; \ a\in G$. $f$ diferenciable en $a \ \Rightarrow \ \exists T:\mathbb{R}^n \rightarrow \mathbb{R}^m $ lineal, tal que \[ \lim_{h\rightarrow 0} \frac{f(a+h) - f(a) - T(h)}{||h||} = 0 \] 
+\end{defn}
+
+\begin{prop}
+Sea $f:G\subset \mathbb{R}^n \rightarrow \mathbb{R}^m; \ a\in G, f = (f_1,...,f_m) \ t.q. \ f_i:G\subset\mathbb{R}^n \rightarrow \mathbb{R},\ i \in\{1,...,m\}$. \\ $f$ es diferenciable en $a \ \Leftrightarrow \ f_1,...,f_m$ son diferenciables en $a$. En este caso $T$ es unicamente determinada y $T=(T_1,...,T_m); \ T_i = Df_i$. Generalmente, denotamos $ t_a = Df(a)$ y la llamamos aplicación lineal diferenciable de $f$ en $a$, donde $Df(a): \mathbb{R}^n \rightarrow \mathbb{R}^m, Df(a) = (Df_1(a),...,Df_m(a))$.
+\end{prop}
+
+\begin{nota}
+Diferencial :=
+\[Df(a)(h)=
+\begin{pmatrix}
+    Df_1(a)(h)\\
+    \vdots\\
+    Df_m(a)(h)
+\end{pmatrix}=
+\begin{pmatrix}
+    \sum_{i=1}^n\frac{\partial f_1}{\partial x_i}(a)(h_i)\\
+    \vdots\\
+    \sum_{i=1}^n\frac{\partial f_m}{\partial x_i}(a)(h_i)
+\end{pmatrix}=
+\]
+\[ =
+\begin{pmatrix}
+    \frac{\partial f_1}{\partial x_1} + ... + \frac{\partial f_1}{\partial x_n} \\
+    \vdots\\
+    \frac{\partial f_m}{\partial x_1} + ... + \frac{\partial f_m}{\partial x_n}
+\end{pmatrix}_{(a)}
+\begin{pmatrix}
+    h_1 \\
+    \vdots\\
+    h_n
+\end{pmatrix}
+\]
+Matriz Jacobiana :=\[
+J_f(a)=
+\begin{pmatrix}
+    \frac{\partial f_1}{\partial x_1}&...&\frac{\partial f_1}{\partial x_n}\\
+    \vdots&&\vdots\\
+    \frac{\partial f_m}{\partial x_1}&...&\frac{\partial f_m}{\partial x_n}\\
+\end{pmatrix}
+\]
+Donde las filas son el vector gradiente $\nabla f_i(a)$ y las columnas son los vectores $Df(a)(ei)$.
+\end{nota}
+
+\begin{theo}
+Sea $f:G\subset \mathbb{R}^n \rightarrow \mathbb{R}^m; \ a\in G$. Si $f$ es diferenciable en $a \Rightarrow \exists r>0,c>0: ||f(x)-f(a)|| \leq C||x-a||, \forall x\in B(a,r) \Rightarrow \ f$ es continua en $a$.
+\end{theo}
+
+\begin{cor}[Condición necesaria]
+$f$ diferenciable en $a \ \Rightarrow \ f$ continua en $a$, existen $D_vf(a), \forall v\in\mathbb{R}^n$ y se cumple $Df(a)v=Dvf(a)$.
+\end{cor}
+
+\begin{prop}(Propiedades aritméticas de diferenciabilidad)\\
+Sea $f,g:G\subset \mathbb{R}^n \rightarrow \mathbb{R}^m; \ f,g \ $diferenciable en $a\in G$
+\begin{enumerate}[label=(\roman*)]
+    \item $f+g, \ \lambda f$ son diferenciables en $a$, \[D(f+g)(a) = Df(a) + Dg(a)\] \[D(\lambda f)(a) = \lambda Df(a)\] En particular, \[J_{f+g}(a) = J_f(a) + J_g(a)\]  \[ J_{\lambda f}(a) = \lambda J_f(a)\]
+    \item Si $m=1, \ fg$ es diferenciable en $a$ y \[D(fg)(a) = g(a)Df(a) + f(a)Dg(a)\] En particular, \[\nabla (fg)(a) = g(a)\nabla f(a) + f(a)\nabla g(a)\]
+    \item $m = 1, \ g(x) \neq 0, \ \forall x\in G; \ f/g$ es diferenciable en $a$ y \[D(f/g)(a) = (g(a)Df(a) + f(a)Dg(a))(g^2(a))\] En particular, \[\nabla(f/g)(a) = (g(a)\nabla f(a) + f(a)\nabla g(a))/(g^2(a))\]
+\end{enumerate}
+\end{prop}
+
+\begin{theo}[Condiciones suficientes de diferenciabilidad]
+Sea $f:G\subset \mathbb{R}^n \rightarrow \mathbb{R}^m, \ a \in G, \ f = (f_1,...,f_m)$. Si $\exists  \frac{\partial f_i}{\partial x_j}, \forall i\in\{1,...,m\}, \ \forall j\in\{1,...,m\}$ en $B(a,r)$ y tal que son continuas en $a$. Entonces, $f$ es diferenciable en $a$.
+\end{theo}
+
+\begin{cor}
+Sea $f:G\subset \mathbb{R}^n \rightarrow \mathbb{R}^m, \ f = (f_1,...,f_m)$. si todas las derivadas parciales de $f$ son continuas en $G$, entonces $f$ es diferenciable en $G$. 
+\end{cor}
+
+\begin{defn}
+Sea $f:G\subset \mathbb{R}^n \rightarrow \mathbb{R}^m$. S e dice que $f$ es de clase 1 en $G$ escrito $f\in \mathbb{C}^1(G)$ \\ si $\exists  \frac{\partial f_i}{\partial x_j}, \forall i\in\{1,...,m\}, \ \forall j\in\{1,...,m\}$ en $G$ y son continuas.
+\end{defn}
+
+\begin{theo}[Regla de la cadena]
+Sea $f:G\subset \mathbb{R}^n \rightarrow \mathbb{R}^m$ y $g:H\subset \mathbb{R}^m \rightarrow \mathbb{R}^k$ y $a\in G$. Si $f$ es diferenciable en $a$ y $g$ es diferenciable en $f(a)$ entonces, $ g \circ f$ es difereniable en $f(a)$ y $D(g\circ f)(a) = D(g(f(a))Df(a)$ ó $J_{(g\circ f)}(a) = J_g(f(a))J_f(a)$.
+\end{theo}
+
+\begin{ejm}
+\begin{enumerate}[label=(\roman*)]
+    \item Sean $f:G\subset\mathbb{R}^n \rightarrow \mathbb{R}^m$, $g:\mathbb{R}^m \rightarrow \mathbb{R}$, \[ D(g\circ f)(a) = 
+    \begin{pmatrix}
+        \frac{\partial(g\circ f)}{\partial x_1}(a)&\cdots&\frac{\partial(g\circ f)}{\partial x_n}(a)
+    \end{pmatrix} =\]
+    \[=
+    \begin{pmatrix}
+        \frac{\partial g}{\partial y_1}(f(a))&\cdots&\frac{\partial g}{\partial y_m}(f(a))
+    \end{pmatrix} 
+    \begin{pmatrix}
+        \frac{\partial f_1}{\partial x_1}(a)&...&\frac{\partial f_1}{\partial x_n}(a)\\
+        \vdots&&\vdots\\
+        \frac{\partial f_m}{\partial x_1}(a)&...&\frac{\partial f_m}{\partial x_n}(a)\\
+    \end{pmatrix}\]
+    donde \[ \frac{\partial(g\circ f)}{\partial x_j}(a) = \sum_{i=1}^m \frac{\partial g}{\partial y_i}(f(a))\frac{\partial f_i}{\partial x_j}(a)\]
+    
+    \item Sean $f:G\subset\mathbb{R} \rightarrow \mathbb{R}^n$, $g:\mathbb{R}^n \rightarrow \mathbb{R}$, $g\circ f :\mathbb{R} \rightarrow \mathbb{R}$ se tiene que \[ (g \circ f)'(a) = 
+    \begin{pmatrix}
+        \frac{\partial g}{\partial x_1}(f(a))&\cdots&\frac{\partial g}{\partial x_n}(f(a))
+    \end{pmatrix}
+    \begin{pmatrix}
+        f_1'(a) \\
+        \vdots\\
+        f_n'(a)
+    \end{pmatrix}\]
+    es decir,
+    \[ (g \circ f)'(a) = \langle \nabla g(f(a)), f'(a)\rangle \]
+\end{enumerate}
+\end{ejm}
+
+\section{Derivadas direccionales}
+
+\begin{defn}[Vector unitario]
+Se llama dirección a un vector $\frac{w}{||w||}$ unitario tal que $w\in\mathbb{R^n}$.
+\end{defn}
+
+\begin{defn}[Derivada direccional]
+Sea $f:G\subset \mathbb{R}^n \rightarrow \mathbb{R}, a\in G$ y $v\in\mathbb{R^n}$ dirección. Si existe \[ \lim_{t\rightarrow0} \frac{f(a + tv) - f(a)}{t}\] se llama derivada direccional de $f$ respecto de $v$.
+\end{defn}
+
+\begin{obs}
+Si $v = (0,..,0,1,0,...,0) = e_j$, la derivada direccional de $f$ respecto a $e_j$ en $a$ es \[D_vf(a) = \frac{f(a + te_j) - f(a)}{t} = \frac{f(a_1,...,a_{j-1},a_j + t, a_{j+1},...,a_n) - f(a)}{t} = \frac{\partial f}{\partial x_j}(a) \] 
+\end{obs}
+
+\begin{prop}
+Sea $f:G\subset \mathbb{R}^n \rightarrow \mathbb{R}, a\in G$ con $f$ diferenciable en $a$ entonces, $\forall v\in\mathbb{R}^n, \ \exists D_vf(a): D_vf(a)= \langle \nabla{f(a)} {,}v\rangle$
+\end{prop}
+
+\begin{dem}
+Sea $a\in G$ abierto entonces, $\exists r>0: B(a,r)\subset G$ y $a + tv \in G, \forall t \in(-r,r).$ Sean $g(t) = f(a + tv), \varphi(t) = a + tv$ donde $a + tv = (a_1 + t v_1, \cdots , a_n + t v_n)$. Entoces, $\varphi'(t)=(v_1,...,v_n)=v$. Dado que $\varphi$ es diferenciable en $0$ y $f$ es diferenciable en $\varphi(0)$ se tiene que $g_v$ es diferenciable en $0$ tal que $ g'_v(0) = \langle \nabla f(a), \varphi'(0)\rangle = \langle \nabla f(a), v\rangle = D_vf(a).$
+\end{dem}
+
+\begin{obs}
+$-D_vf(a)=D_{-v}f(a).$
+\end{obs}
+
+\begin{prop}[Máximo y mínimo derivada direccional]
+Sea $f:G\subset \mathbb{R}^n \rightarrow \mathbb{R}, a\in G$ con $f$ diferenciable en $a$ entonces,
+
+\[ \max_{||v||=1} \ D_vf(a) = ||\nabla{f(a)}||\]
+\[ \min_{||v||=1} \ D_vf(a) = -||\nabla{f(a)}||\]
+
+si $ \nabla{f(a)} \neq 0, \ \max_{||v||=1} \ D_vf(a)$ se alcanza cuando $ v = \frac{\nabla{f(a)}}{||\nabla{f(a)}||}$ y $\min_{||v||=1} \ D_vf(a)$ se alcanza cuando $ v = -\frac{\nabla{f(a)}}{||\nabla{f(a)}||}$.
+\end{prop}
+
+\begin{prop}
+Sea $f:G\subset \mathbb{R}^n \rightarrow \mathbb{R}$ diferenciable en $G$, si $\exists \gamma :I\subset\mathbb{R}\rightarrow\mathbb{R}^n$ diferenciable tal que $f(\gamma(t))= c\in\mathbb{R}$ 
+entonces, $\langle \nabla{f(\gamma(t))} {,}\gamma'(t)\rangle$.
+\end{prop}
+
+\begin{cor}
+Si $f:G\subset \mathbb{R}^2 \rightarrow \mathbb{R}$ entonces, $\nabla{f}$ es ortogonal a las curvas de nivel. Si $f:G\subset \mathbb{R}^3 \rightarrow \mathbb{R}$ entonces, $\nabla{f}$ es ortogonal a las superficies de nivel.
+\end{cor}
+
+\begin{obs}
+En $\mathbb{R}^2$ la ecuación de la recta $r$ perpendicular a $n = (a,b)$ en el punto $(x_0,y_0)$ es \[ a(x - x_0) + b(y - y_0) = 0. \]
+
+En $\mathbb{R}^3$ la ecuación de la recta $\pi$ perpendicular al plano en el punto $(x_0,y_0,z_0)$ es \[ a(x - x_0) + b(y - y_0) + c(z - z_0) = 0. \] 
+\end{obs}
+
+\begin{defn}[Recta y plano tangente]
+La ecuación de la recta tangente a la curva $f(x,y) = c$ en $(x_0,y_0)$ es \[ \frac{\partial f}{\partial x}(x_0,y_0)(x - x_0) + \frac{\partial f}{\partial y}(x_0,y_0)(y - y_0) \]
+
+La ecuación del plano tangente a la curva $f(x,y,z) = c$ en $(x_0,y_0,z_0)$ es \[ \frac{\partial f}{\partial x}(x_0,y_0,z_0)(x - x_0) + \frac{\partial f}{\partial y}(x_0,y_0,z_0)(y - y_0) + \frac{\partial f}{\partial z}(x_0,y_0,z_0)(z - z_0)\]
+\end{defn}
+
+\begin{obs}
+$z = g(x,y) \Leftrightarrow g(x,y) - z = 0 ; f(x,y,z) = g(x,y) - z$
+\end{obs}
+
+\begin{theo}[del valor medio]
+Sea $f:G\subset \mathbb{R}^n\rightarrow \mathbb{R}$ diferenciable, $G$ abierto y convexo entonces,
+\[ \forall a,b\in G, \ \exists \xi \in(a,b): f(b) - f(a) = \langle \nabla{f(\xi)} {,}\ b - a\rangle \]
+\end{theo}
+
+\begin{dem}
+Sea $\varphi:[0,1]\rightarrow \mathbb{R}^n$ tal que $\varphi(t) = (1-t)a + tb$ y sea $\gamma(t) = f(\varphi(t))$. Entonces, \[ \gamma'(t) = D_1f(\varphi(t))D_1\varphi(t) + D_2f(\varphi(t))D_2\varphi(t) \]  \[= \langle \nabla f(\varphi(t)), b - a \rangle \] Donde por el teorema del valor medio se tiene que, \[ \gamma'(t)|1-0| = \gamma(1) - \gamma(0) = f(b) - f(a)\] Por tanto, \[ f(b) - f(a) = \langle \nabla{f(\xi)} {,}\ b - a\rangle \]
+\end{dem}
+
+\begin{obs}
+Sea $ v = \frac{b - a}{||b-a||}$ con $ a\neq b$, tenemos que $f(b) - f(a) = \langle \nabla{f(\xi)} {,}\ \frac{b - a}{||b - a||} \rangle || b - a ||$, entonces \[f(b) - f(a) = D_vf(\xi)||b - a||\]
+\end{obs}
+
+\begin{obs}
+Para $ n = 1$, si $f(b) = f(a)$ con $a<b$ por el Teorema de Rolle tenemos que, $\exists \xi\in(a,b): f'(\xi) = 0$, entonces $\langle \nabla{f(\xi)} {,}\ b - a \rangle = 0$ para $\xi \in(a,b)$ pero no se tiene $\nabla{f(\xi)} = 0 $ necesariamente. 
+\end{obs}
+
+\begin{cor}
+Sea $f:G\subset \mathbb{R}^n\rightarrow \mathbb{R}$ diferenciable , $G$ abierto y convexo. Si $\nabla{f(x)}= 0 , \forall x\in G$, entonces f es constante en G. 
+\end{cor}
+
+\begin{dem}
+Sean $ a,b\in G,$ por el teorema del valor medio $f(b)-f(a)= \langle \nabla f(\xi), b - a \rangle$, como $ \nabla f(x) = 0, \forall x \in G$ entonces, $\langle \nabla f(\xi), b-a \rangle = 0 $ y por tanto, $f$ es constante.
+\end{dem}
+
+\begin{obs}
+El corolario también es cierto si $G$ es conexo en lugar de convexo.
+\end{obs}
+
+\begin{theo}
+Sea $f: I\subset\mathbb{R}\rightarrow\mathbb{R}$, con $f$ derivable y $|f'(x)| \leq M, \forall x \in I$ entonces \[ |f(b) - f(a)| = |f'(\xi)||b-a| \leq M|b-a| \]
+\end{theo}
+
+\begin{prop}
+Sea $f:G\subset \mathbb{R}^n\rightarrow \mathbb{R}^m, f = f_1,...,f_m$ diferenciable y $G$ abierto y convexo. Si \[  |\frac{\partial f_i}{\partial x_j}(x)| \leq M,\ 1\leq i \leq m ,\ 1\leq j\leq n, \ \forall x\in G \Rightarrow\] \[\Rightarrow ||f(b) - f(a)|| \leq M \sqrt{nm}||b-a|| \] En particular, $f$ es Lipschitz en $G$.
+\end{prop}
+
+\begin{dem}
+Sea $f:G\subset \mathbb{R}^n\rightarrow \mathbb{R}^m, f = f_1,...,f_m$ diferenciable y $G$ abierto y convexo. Por el teorema del valor medio se tiene que $f_i:G\subset \mathbb{R}^n\rightarrow \mathbb{R}, f_i(b) - f_i(a) = \langle \nabla f_i(\xi_i), b - a \rangle$ para $\xi_i \in(a,b)$. Si $|\frac{\partial f_i}{\partial x_j}(x)| \leq M$ entonces, $|f_i(b) - f_i(a)| = |\langle \nabla f_i(\xi_i), b - a \rangle | \leq ||\nabla f_i(\xi_i)|| ||b-a||$ y  como $\nabla f_i(\xi_i) = (\frac{\partial f_i}{\partial x_1}, \cdots, \frac{\partial f_i}{\partial x_n})$ se tiene que $ ||\nabla f_i(\xi_i)||^2 = \sum_{j=1}^n \frac{\partial f_i}{\partial x_i} \leq n M^2$ entonces,  $|f_i(b) - f_i(a)| = ||\nabla f_i(\xi_i)|| ||b-a|| \leq \sqrt{n}M||b-a||$. Luego, $||f(b)- f(a)||^2= \sum_{i=1}^m(f_i(b)-f_i(a))^2 \leq mnM^2||b-a||^2$, por tanto $||f(b) - f(a)|| \leq M \sqrt{nm}||b-a||.$
+\end{dem}
+
+\section{Derivadas de orden superior}
+
+\begin{defn}[Derivada parcial de orden k]
+Sea $f:G\subset\mathbb{R}^n\rightarrow\mathbb{R}$. Llamamos derivada parcial de orden $k$ a \[ \frac{\partial^k f}{\partial x_{i_k} \cdots \partial x_{i_1}} = \frac{\partial}{\partial x_{i_k}} \cdots  \frac{\partial f}{\partial x_{i_1}} \]
+\end{defn}
+
+\begin{defn}[Clase $C^k$]
+Sea $f:G\subset\mathbb{R}^n\rightarrow\mathbb{R}^m, \ G$ abierto, $f = (f_1, ... , f_m)$. Se dice que $f$ es de clase k en G, denotado $ f \in C^k(G) := $ todas las derivadas de orden $k$ de $f_i$ existen y son continuas en $G$. 
+\end{defn}
+
+\begin{obs}
+\begin{enumerate}[label=(\roman*)]
+    \item $f \in C^k(G) \Leftrightarrow f_i \in C^k(G), \forall i \in\{1,2,...\} $. 
+    \item $f\in C^k(G), m\leq k \Rightarrow f\in C^m(G), \forall m \leq k$.
+    \item $f\in C^k(G), m\leq k \Rightarrow $ todas las derivadas parciales son $C^{k-m}(G)$.
+\end{enumerate}
+\end{obs}
+
+\begin{theo}[de Clairaut-Schwarz]
+Sea $f:G\subset\mathbb{R}^n\rightarrow\mathbb{R}^m$. Si $f\in C^2(G)$ entonces \[ \frac{\partial^2 f}{\partial x_j \partial x_i} = \frac{\partial^2 f}{\partial x_i \partial x_j}, \ \forall i,j \in\{1,2,...\} \]
+\end{theo}
+
+\chapter{Fórmula de Taylor. Extremos relativos}
+
+\section{Fórmula de Taylor}
+
+\begin{defn}[Polinómio de Taylor]
+Llamamos polinomio de Taylor de $f$ de orden $k$ en $a$  \[P_{a,k,f}(x) = f(a) + \sum_{i=1} \frac{\partial f}{\partial x_i}(a)(x_i - a_i) + \frac{1}{2!}\sum^2_{i,j=1} \frac{\partial^2 f}{\partial x_j\partial x_i}(a)(x_i - a_i)(x_j - a_j) + \cdots \]  \[ \cdots + \frac{1}{k!}\sum^k_{i_1,..,i_k=1} \frac{\partial^k f}{\partial x_{i_k}, ... \partial x_{i_1}}(a)(x_{i_1} - a_{i_1})\cdots(x_{i_k} - a_{i_k})\] 
+\end{defn}
+
+\begin{theo}[de Taylor]
+Sea $f:G\subset\mathbb{R}^n\rightarrow\mathbb{R}; f\in C^{k+1}(G); a,x\in G$ con $G$ abierto y conexo. Entonces $\exists\xi\in(a,x): f(x) = P_{a,k,f}(x) + E(x)$ donde \[ E_k(x) = \frac{1}{(k+1)!}\sum^{k+1}_{i_1,..,i_{k+1}=1} \frac{\partial^{k+1} f}{\partial x_{i_k}, ... \partial x_{i_1}}(\xi)(x_{i_1} - a_{i_1})\cdots(x_{i_k} - a_{i_k}) \]
+\end{theo}
+
+\begin{dem}
+
+\end{dem}
+
+\begin{cons}
+\[ \frac{\partial^{k+1} f}{\partial x_{i_k}, ... \partial x_{i_1}} \leq M_k \in G \Rightarrow |E_k(x)| \leq \frac{M_{k+1}}{(k+1)!} \sum^{k+1}_{i_1,..,i_{k+1}=1} |x_{i_1} - a_{i_1}|\cdots|x_{i_k} - a_{i_k}|\] \[ E_k(x)| \leq \frac{M_{k+1}}{(k+1)!} ||x-a||_1^{k+1} \rightarrow 0, k\rightarrow \infty \Rightarrow f(x) = \lim_{k\rightarrow\infty} P_k(x) \]
+\end{cons}
+
+\section{Extremos relativos}
+
+\begin{defn}[Extremos locales o relativos]
+Sea $f:G\subset\mathbb{R}^n\rightarrow\mathbb{R}$
+\begin{enumerate}[label=(\roman*)]
+    \item $a$ es máximo local de $f$ si $\exists r>0: B(a,r) \subset G$ y $f(x) \leq f(a), \forall x\in B(a,r)$.
+    \item $a$ es mínimo local de $f$ si $\exists r>0: B(a,r) \subset G$ y $f(x) \geq f(a), \forall x\in B(a,r)$.
+    \item $a$ es extremo local si es máximo o mínimo.
+    \item $a$ a es punto crítico de $f$ si $\nabla{f(a)}=0$.
+    \item $a$ es un punto desilla de $f$ si es un punto crítico y no es un extremo local.
+\end{enumerate}
+\end{defn}
+
+\begin{prop}
+Sea $f:G\subset\mathbb{R}^n\rightarrow\mathbb{R}, a\in G, f$ diferenciable en $a$ y
+$a$ es extremo local de $f$ $\Rightarrow$ a es un punto crítico de $f$.
+\end{prop}
+
+\begin{dem}
+
+\end{dem}
+
+\begin{obs}
+Los candidatos a extremos locales se encuentran entre los puntos críticos.
+\end{obs}
+
+\begin{defn}[Matriz hessiana]
+Sea $f:G\subset\mathbb{R}^n\rightarrow\mathbb{R}, a\in \mathring{G}$ se denomina matriz hessiana de $f$ en $a$, a la matriz de las derivadas parciales de segundo orden 
+\[ H_f(a) =
+    \begin{pmatrix}
+        f_{x_1,x_1}(a) + ... + f_{x_1,x_n}(a) \\
+        \vdots\\
+        f_{x_n,x_1}(a) + ... + f_{x_n,x_n}(a)
+    \end{pmatrix}
+\]
+
+y se denomina hessiano de $f$ en $a$ al determinante de esta matriz.\end{defn}
+
+\begin{obs}
+*Nota: Si la función $f$ es de clase $C^2$ la matriz hessiana es simétrica.
+\end{obs}
+
+\begin{defn}
+Sea $f:G\subset\mathbb{R}^n\rightarrow\mathbb{R}, a\in G, h\in\mathbb{R}^n$ Se considera la forma cuadrática asociada a la matriz hessiana, \[ Q_af(h) = h^t H_f(a)h = (h_1,...,h_n) \ H_f(a) \ \begin{pmatrix} h_1 \\\vdots\\h_n\end{pmatrix}\] Su expresión desarrollada se suele escribir \[ Q_af(a) = \sum^n_{i,j=1} \frac{\partial^2 f}{\partial x_j\partial x_i}(a)(h_i)(h_j) \]
+\end{defn}
+
+\begin{lem}
+Sea $Q$ una forma cuadrática en $\mathbb{R}^n$.
+\begin{enumerate}[label=(\roman*)]
+    \item $Q$ es definida positiva $\Leftrightarrow \exists m > 0: Q(h) \geq m||h||^2, \forall h \in \mathbb{R}^n$ 
+    \item $Q$ es definida negativa $\Leftrightarrow \exists m > 0: Q(h) \leq -m||h||^2, \forall h \in \mathbb{R}^n$
+\end{enumerate}
+\end{lem}
+
+\begin{obs}
+Se dice $Q$ indefinida si $\exists h,h'\in\mathbb{R}^n$ tal que $Q(h) > 0, Q(h') < 0.$
+\end{obs}
+
+\begin{obs}
+Toda forma cuadrática en $\mathbb{R}^n$ es continua en $\mathbb{R}^n$ (es un polinomio de grado 2).
+\end{obs}
+
+\begin{prop}[Criterios formas cuadráticas]
+Dada una matriz $A=(a_{ij})$ real, simétrica, se sabe que $\exists \{v_1,...,v_n\}\subset\mathbb{R}^n$ respecto de la cual la forma cuadrática $Q_A(h)$ se puede diagonalizar. Sean $\{\lambda_1,...,\lambda_n\}$ se diferencian los siguientes casos:
+
+\begin{enumerate}[label=(\roman*)]
+    \item Todo autovalor cumple $\lambda_i > 0$ (resp. $< 0$ ). Entonces $Q_A$ es definida positiva (resp. negativa), es decir, $Q_A(x) > 0$ (resp. $< 0$) $\forall x\in\mathbb{R}^n$.
+    \item Si algunos $\lambda_i$ son positivos y otros negativos. Entonces $Q_A$ es indefinida, es decir, $\exists x,y\in\mathbb{R}^n: Q_A(x) < 0 < Q_A(y)$.
+    \item Todo autovalor cumple $\lambda_i \geq 0$ (resp. $\leq 0$ ). Entonces $Q_A$ es semidefinida positiva (resp. negativa), es decir, $Q_A(x) \geq 0$ (resp. $\leq 0$) $\forall x\in\mathbb{R}^n$.
+\end{enumerate}
+
+En álgebra lineal se demuestra el siguiente criterio sobre el signo de los determinantes:
+
+\[ A_k = det(a_{ij})_{1\leq i,j\leq k} , (k=1,2,...,n) \]
+
+\begin{enumerate}[label=(\roman*)]
+    \item Si $A_k > 0$ para $k = 1,...,n$ , entonces $Q_A$ es definida positiva.
+    \item Si $(-1)^k A_k > 0$ para $k = 1,...,n$, entonces $Q_A$ es definida negativa.
+\end{enumerate}
+\end{prop}
+
+\begin{ejm}[Caso práctico de uso criterios]
+La matriz de la forma cuadrática $Q_a(h)$ es la matriz simétrica (matriz hessiana) 
+\[ H_f(a) =
+    \begin{pmatrix}
+        f_{x_1,x_1}(a) + ... + f_{x_1,x_n}(a) \\
+        \cdots \ \ \ \cdots \ \ \ \cdots\\
+        f_{x_n,x_1}(a) + ... + f_{x_n,x_n}(a)
+    \end{pmatrix}
+\]
+a la que se le pueden aplicar los criterios anteriores. En el caso $n=2$, si $\alpha = f_{x_1,x_1}(a), \beta = f_{x_1,x_2}(a) = f_{x_2,x_1}(a), \gamma = f_{x_2,x_2}(a)$ con $ \lambda_1,\lambda_2$ autovalores.
+\[
+    \begin{pmatrix}
+        \alpha \ \beta \\
+        \beta \ \gamma 
+    \end{pmatrix} ,\
+    \begin{pmatrix}
+        \lambda_1 \ 0 \\
+        0 \ \lambda_2 
+    \end{pmatrix}
+\]
+Dado que la traza y el determinante son invariantes, 
+
+\[\alpha\gamma - \beta^2 = \lambda_1\lambda_2\] 
+\[\alpha + \gamma = \lambda_1 + \lambda_2\]
+
+\begin{enumerate}[label=(\roman*)]
+    \item  Si $\alpha\gamma - \beta^2 > 0$ entonces por el criterio de Sylvester:
+    \begin{enumerate}
+        \item Si $\alpha > 0$, tenemos que $Q_a(h)$ es definida positiva.
+        \item Si $\alpha < 0$ tenemos que $Q_a(h)$ es definida neagativa.
+    \end{enumerate}
+    \item Si $\alpha\gamma - \beta^2 < 0$ entonces $Q_a(h)$ es indefinida.
+    \item Si $\alpha\gamma - \beta^2 = 0$ $(\Leftrightarrow \alpha\gamma = \beta^2)$ tenemos que $\lambda_1 = 0$ ó $\lambda_2 = 0$. Supongamos que $\lambda_2 = 0$ entonces $\alpha + \gamma = \lambda_1$.
+    \begin{enumerate}
+        \item Si $\alpha,\gamma \geq 0$, tenemos que $\lambda_1 \geq 0, \lambda_2 = 0$. Por tanto $Q_a(h)$ es semi definida positiva.
+        \item Si $\alpha,\gamma \geq 0$, tenemos que $\lambda_1 \leq 0, \lambda_2 = 0$. Por tanto $Q_a(h)$ es semi definida negativa.
+    \end{enumerate}
+\end{enumerate}
+\end{ejm}
+
+\begin{ejm}[Aplicación a extremos locales]
+Sea $f:G\subset\mathbb{R}^n\rightarrow\mathbb{R}, f\in C^2(G), a$ punto crítico de $f \ (\nabla{f}(a)=0)$. Por el teorema de Taylor tenemos que \[ f(x) = f(a) + \sum_{i=1}^n \frac{\partial f}{\partial x_i}(a)(X_i - a_i) + \frac{1}{2!}\sum_{i,j=1}^n \frac{\partial^2 f}{\partial x_j \partial x_i}(\xi)(x_i - a_i)(x_j - a_j)\] Sea $x = a + h$, \[ f(a+h) - f(a) = \frac{1}{2!}\sum_{i,j=1}^n \frac{\partial^2 f}{\partial x_j \partial x_i}(\xi)h_i h_j \] Por tanto, para $||h||$ suficientemente pequeño, \[f(a+h) - f(a) = \frac{1}{2!} Q_{\xi}(h) \]
+\end{ejm}
+
+\begin{prop}
+Sea $f:G\subset\mathbb{R}^n\rightarrow\mathbb{R}, f\in C^2(G), a\in G$. Si $\forall \epsilon > 0, \exists \delta >0: || x - a|| < \delta$ entonces, \[ |Q_x(h) - Q_a(h)| \leq \epsilon||h||^2 \]
+\end{prop}
+
+\begin{theo}
+Sea $f:G\subset\mathbb{R}^n\rightarrow\mathbb{R}, f\in C^2(G).$ Si $a\in G$ es un punto crítico, es decir, $\frac{\partial f}{\partial x_i}(a) = 0, \forall i \in \{1,...,n\}$ se tiene:
+
+\begin{enumerate}[label=(\roman*)]
+    \item $Q_a$ definida positiva $\Rightarrow a$ es mínimo local de $f$ (Condición suficiente de mínimo local).
+    \item $Q_a$ definida negativa $\Rightarrow a$ es máximo local de $f$ (Condición suficiente de máximo local). 
+    \item $a$ mínimo local $\Rightarrow$ $Q_a$ semidefinida postiva. (Condición necesaria de mínimo local).
+    \item $a$ máximo local  $\Rightarrow$ $Q_a$ semidefinida negativa. (Condición necesaria de máximo local).
+    \item $Q_a$ indefinida $\Rightarrow a$ punto de silla de $f$.
+\end{enumerate}
+\end{theo}
+
+\chapter{Extremos condicionados. Multiplicadores de Lagrange.}
+
+\section{Extremos condicionados}
+
+\begin{defn}[Extremo condicionado]
+Sea $f:G\subset\mathbb{R}^n\rightarrow\mathbb{R}, G $ abierto, $M\subset G, x=(x_1,...,x_n) \in M$. Entonces, $a\in M$ es un máximo (resp. mínimo) local condicionado si $\exists r>0:B(a,r)\subset G$ tal que $f(x) \leq f(a)$ (resp. $f(x) \geq f(a)$), $\forall x\in B(a,r)$.
+\end{defn}
+
+\begin{obs}
+Un extemo condicionado es un extremo de una función sobre un subconjunto de su dominio, este subconjunto se denomina variedad diferenciable. En la práctica se busca un máximo o mínimo que pertenezca a cierto conjunto.
+\end{obs}
+
+\begin{defn}[Extremos absolutos]
+Sea $f:G\subset\mathbb{R}^n\rightarrow\mathbb{R}, a\in A$.
+\begin{enumerate}[label=(\roman*)]
+    \item $a$ es un mínimo absoluto de $f$ si $f(a)\leq f(x), \forall x \in A$.
+    \item $a$ es un máximo absoluto de $f$ si $f(a)\geq f(x), \forall x \in A$. 
+    \item $a$ es un extremo absoluto si $a$ es un mínimo o un máximo absoluto.
+\end{enumerate}
+\end{defn}
+
+\begin{obs}
+Sea $M\subset\mathbb{R}^n$, los extremos absolutos de $\left.f\right|_M$ (que existen si $f$ rs continua y $M$ es compacto) pueden calcularse considerando por separado la reesticción de $f$ al interior de $M$ y a $\partial M$.
+\end{obs}
+
+\begin{obs}
+Sea $f:G\subset\mathbb{R}^n\rightarrow\mathbb{R}$ donde con $ M \subset G$. Supongamos que $f$ es continua, si $M$ es compacto $\Rightarrow$ $\exists$ máximo y mínimo absoluto en $M$. Entonces tenemos que $a\in\mathring{M}$ o $a\in\partial M$. Si $a\in\mathring{M}$ y $a$ es extremo absoluto (máximo o mínimo) entonces, $a$ es extremo local y por tanto, $a$ es un punto crítico de $f$. Si $a\in\partial M$ usamos el método de los multiplicadores de Lagrange.
+\end{obs}
+
+\section{Multiplicadores de Lagrange}
+
+\begin{prop}[Idea Multiplicador de Lagrange]
+Sea $f:G\subset\mathbb{R}^n\rightarrow\mathbb{R}, f\in C^1, A=\{g=0\}$ (conjunto de nivel en $0$). Si $a\in A$ es un extremo local condicionado de $\left.f\right|_A$ y $\nabla{g}(a)\neq 0$. Entonces, \[ \exists \lambda \in \mathbb{R}: \ \nabla{f(a)} = \lambda \nabla{g}(a)\]
+\end{prop}
+
+\begin{theo}[Multiplicador de Lagrange]
+Sean $g_1,...,g_m:\mathbb{R}^n\rightarrow\mathbb{R}$ con $g_1,...,g_n \in C^1$ y $A = \{ g_1 = 0, ..., g_m = 0\}$. Sea $f:\mathbb{R}^n\rightarrow\mathbb{R}$ la función a maximizar/minimizar, si $a\in A$ es un extremo local de $\left.f\right|_A$ y $\{\nabla{g_1}(a),...,\nabla{g_m}(a)\}$ linealmente independientes. Entonces, \[ \exists \lambda_1,...,\lambda_m \in \mathbb{R}: \nabla{f}(a) = \lambda_1\nabla{g_1} + ... + \lambda_m\nabla{g_m}\]
+\end{theo}
+
+\begin{dem}
+
+\end{dem}
+
+\chapter{Función inversa y Función implícita}
+
+\section{Función inversa}
+
+\begin{theo}[Función inversa]
+Sea $F:G\subset\mathbb{R}^n\rightarrow\mathbb{R}^n, G$ abierto, $a\in G$. Si
+
+\begin{enumerate}[label=(\roman*)]
+    \item $F$ es diferenciable y continua en $A$. 
+    \item $\det(F'(a)) \neq 0 \ \ (\det(J_F(a))\neq 0)$ 
+\end{enumerate}
+
+Entonces $\exists U,V: \ \ a\in V\subset G, F(a)\in U\subset\mathbb{R}^n$ tal que $\left.F\right|_U: U \rightarrow V$ es biyectiva con inversa $ F^{-1}: V \rightarrow U$ que verifica \[ DF^{-1}(F(x)) = (DF(x))^{-1} \] Si F es de clase $ C^k(G)$, entonces $F^{-1}$ es de clase $C^k(V)$.
+\end{theo}
+
+\begin{dem}
+
+\end{dem}
+
+\begin{obs}
+Solo podemos garantizar la existencia de la función inversa en un entorno de $a.$
+\end{obs}
+
+\begin{obs}
+El teorema es falso si se asume diferenciabilidad de $F$ en lugar de $F\in C^k$ (es necesaria la continuidad. 
+\end{obs}
+
+\begin{obs}
+Puede ocurrir que $F$ tenga inversa local en $a$ y no ser diferenciable.
+\end{obs}
+
+\section{Función implícita}
+
+\begin{theo}[Función implícita]
+Sea $F:G\subset\mathbb{R}^n\times\mathbb{R}^m\rightarrow\mathbb{R}^m, G$ abierto y $(a,b)\in G$ donde se verifica 
+
+\begin{enumerate}[label=(\roman*)]
+    \item $F(a,b) = 0$
+    \item $F\in C^k(G)$, diferencible y continua, en un entorno de $(a,b)$ 
+    \item $\det(D_{n+i}F_j(a,b))^m_{i,j=1}$, es decir, $\det(\frac{\partial{F}}{\partial{y}}(a,b)) \neq 0 $
+\end{enumerate}
+
+Entonces, $\exists U \subset\mathbb{R}^n, V \subset\mathbb{R}^m, a\in U, b\in V$ tal que $U\times V\subset G$ y $\forall x \in U ,\exists !y=\gamma(x) \in V$ que verifica $F(x,\gamma(x)) = 0$ donde $\gamma: U \rightarrow V$ es de clase $C^k(U)$ (función implícita) y $\gamma(a) = b$.
+\end{theo}
+
+\begin{dem}
+
+\end{dem}
+
+\begin{obs}
+La importancia de este teorema radica en la posibilidad de calcular la diferencial en un punto $a$ de una función sin conocerla explícitamente.
+\end{obs}
+
+\begin{obs}(Cálculo de derivadas y diferenciables en funciones implícitas)\\
+\begin{enumerate}[label=(\roman*)]
+    \item (Cálculo de derivadas parciales)
+    Supuestas las condiciones del teorema 7.2, para $F:G\subset\mathbb{R}^n\times\mathbb{R}^m\rightarrow\mathbb{R}^m$ de la forma \[ F_i(x,y) = F_i(x_1,x_2,...,x_n,y_!,y_2,...,y_m), i=1,2,...,m \] se tiene que, \[ F_i(x,y(x)) = \] \[ = F_i(x_1,x_2,...,x_n,y_1(x_1,x_2,...,x_n),y_2(x_1,x_2,...,x_n),...,y_m(x_1,x_2,...,x_n)) \]
+    \[ i=1,2,...,m\]
+    Derivando dichas relaciones respecto de $x_j$ para $j = 1,2,...,n$ se obtiene \[ \frac{\partial F_i}{\partial x_j} + \frac{\partial F_i}{\partial y_1}\frac{\partial y_1}{\partial x_j} + ... + \frac{\partial F_i}{\partial y_m}\frac{\partial y_m}{\partial x_j} = 0, i = 1,2,...m\] Sustituyendo en el punto (a,b) se convierte en un sitema de m ecuaciones lineales en las incógnitas $\frac{\partial y_1}{\partial x_j},...,\frac{\partial y_m}{\partial x_j}.$ La matriz de coeficientes es $(\frac{\partial (F_!,...,F_m)}{\partial (y_1,...,y_m)}(a,b))$ que tiene determinante distinto de $0$. Resolviendo el sitema se obtienen las derivadas parciales respecto de la variable $x_j$.
+    
+    \item (Cálculo de diferenciales) La matriz de la aplicación  lineal diferencial también se puede obtener calculando formalmente la diferencial de $F$ y despejando \[ \frac{\partial F_i}{\partial x_1}d x_1 + ... + \frac{\partial F_i}{\partial x_n}d x_n + \frac{\partial F_i}{\partial y_1}d y_1 ... + \frac{\partial F_i}{\partial y_m}d y_m = 0, i = 1,2,...m\] donde particularizando en el punto $(a,b)$ obtenemos un sistema de ecuaciones lineales en las variables $d y_1, ..., d y_m$. Resolviendo obtendríamos \[ d y_i = A_{i1}d x_1 + ... + A_{in}d x_n, i=1,...,m \] donde $A_{ij} = \frac{\partial y_i}{\partial x_j}.$
+\end{enumerate}
+\end{obs}
+
+\begin{obs}(Casos particulares)\\
+\begin{enumerate}[label=(\roman*)]
+    \item ($n = m = 1$) Sea $F:G\subset\mathbb{R}\times\mathbb{R}\rightarrow\mathbb{R}$ una función diferenciable con continuidad en el punto $(a,b)\in\mathbb{R}^2$ verificando que $F(a,b) = 0$, y $\frac{\partial F}{\partial y}(a,b) \neq 0$. Entonces $\exists I\subset\mathbb{R}, a\in I: \forall x \in I, \exists y = y(x): F(x,y(x)) = 0$ siendo $y(x)$ derivable. Además, \[ y'(a) = -\frac{\frac{\partial F}{\partial x}(a,b)}{\frac{\partial F}{\partial y}(a,b)} .\]
+    
+    \item ($n,m=1$) Sea $F:G\subset\mathbb{R}\times\mathbb{R}\rightarrow\mathbb{R}$ donde $F(x_1,...,x_n,y) = F(x,y)$ es una función que verifica $F(a,b) = 0$, es diferenciable con continuidad en un entorno del punto $(a,b)$ y $\frac{\partial F}{\partial y}(a,b) \neq 0$. Entonces $\exists y = y(x_1,...,x_n) = y(x)$ definida en un entorno de $a$, diferenciable en $a$ con $F(x,y(x)) = 0$. Además, \[ \frac{\partial y}{\partial x_i}(a) = -\frac{\frac{\partial F}{\partial x_i}(a,b)}{\frac{\partial F}{\partial y}(a,b)} .\]
+    
+    *El caso más importante corresponde a expresiones del tipo $F(x,y,z)$ que representan superficies definidas de forma implícita.
+    
+    \item ($n = 2 , m = 1$)
+    \item ($n = 1 , m = 2$)
+\end{enumerate}
+\end{obs}

@@ -1,0 +1,373 @@
+\chapter{Topología en $\mathbb{R}^n$}
+\section{Conjuntos en $\mathbb{R}^n$}
+\begin{defn}[Bola abierta]
+Sean $a \in \mathbb{R}^n, \ r>0$ denotamos bola abierta de centro $a$ y radio $r$ al conjunto \[B(a,r) = \{ x \in \mathbb{R}^n : ||x-a|| < r \} \]
+\end{defn}
+
+
+\begin{defn}[Bola cerrada]
+Sean $a \in \mathbb{R}^n, \ r>0$ denotamos bola cerrada de centro $a$ y radio $r$ al conjunto \[\overline{B}(a,r) = \{ x \in \mathbb{R}^n : ||x-a|| \leq r \} \]
+\end{defn}
+
+\begin{defn}[Interior de un conjunto]
+Sea $A \subset \mathbb{R}^n$, denotamos el interior de $A$ como el conjunto \[ \mathring{A} = \{a \in A, \ r > 0: B(a,r) \subset A  \} \]
+\end{defn}
+
+\begin{obs}
+$\mathring{A}\subset A, \ A\subset B \Rightarrow \mathring{A}\subset \mathring{B} \subset B.$
+\end{obs}
+
+\begin{ejm}
+\begin{enumerate}[label=(\roman*)]
+    \item $A = [0, \infty) \subset \mathbb{R}$, $0$  no es un punto interior de $A$, $\mathring{A} = (0,\infty)$.
+    \item $A = [0,1)\cup \{2\}, \mathring{A}=(0,1)$
+    \item $A = \mathbb{Z}, \mathring{A}=\emptyset$
+    \item $A = \mathbb{Q}, \mathring{A}=\emptyset$, cualquier intervalo contiene números irracionales.
+    \item $A = \{ (x,y): x>0, y \geq 0 \}$, $\mathring{A} = \{ (x,y): x>0, y > 0 \}$.
+    \item $A = \{ (x,y): y > 0 \}, \ \mathring{A} = A$.
+\end{enumerate}
+\end{ejm}
+
+
+\begin{defn}[Conjunto abierto]
+$A \subset \mathbb{R}^n $ es un conjunto abierto si $\mathring{A} = A  \ \Leftrightarrow \ \forall a \in A, \ \exists r>0 : \ B(a,r) \subset A$.
+\end{defn}
+
+\begin{prop}
+Toda bola abierta $B(a,r)$ es un conjunto abierto.
+\end{prop}
+
+\begin{prop}
+Propiedades de conjuntos abiertos
+\begin{enumerate}[label=(\roman*)]
+    \item $A \subset \mathbb{R}^n \Rightarrow \mathring{A}$ es abierto.
+    \item La unión arbitraria de abiertos es abierto.
+    \item La intersección finita de abiertos es abierto.
+\end{enumerate}
+\end{prop}
+
+\begin{obs}
+La interseccióm infinita de abiertos no es abierto.
+\end{obs}
+
+\begin{ejm}
+Sean $A_k = (0,1 + \frac{1}{k})$ con $ k = 1,2,3,...$ tenemos que, $A_1 = (0,2), A_2 = (0,1 + \frac{1}{2}), ...$ (Aquí va un dibujo), $ \cap_{k=1}^{\infty} A_k = (0,1] \Rightarrow$ no es abierto.
+\end{ejm}
+
+\begin{ejm}
+Sea $A = \mathbb{R} \setminus\{ 0, 1, \frac{1}{2}, ... \}$, se tiene que $ A = (-\infty,0)\cup(1,\infty) \cup \bigcup_{i=1}^\infty (\frac{1}{k + 1},\frac{1}{k})$. Por tanto, la unión de abiertos es abierto.
+\end{ejm}
+
+\begin{dem}(i)
+     Suponemos que $A\subset\mathbb{R}^n$. \\ Queremos ver que $\forall x\in \mathring{A}, \exists r>0: B(x,r)\subset \mathring{A}$. Sea $x\in \mathring{A}$, por la definición de interior de un conjunto tenemos que $\exists r > 0: B(x,r) \subset A$. Toda bola abierta es un conjunto abierto $\Rightarrow B(x,r) = \mathring{B(x,r)} \subset \mathring{A}$. Por tanto, $\mathring{A}$ es un conjunto abierto.
+\end{dem}
+\begin{dem}(ii)
+    Suponemos que $A_{i}$ es abierto $\forall i \in \{0,1,2,...\}$. \\ Queremos ver que $\bigcup_{i=0}^{\infty} A_{i}$ es abierto. Sea $x \in \bigcup_{i=0}^{\infty} A_{i}$ tenemos que $\exists i_{0}: x \in A_{i_{0}}$. Luego, $A_{i_{0}}$ abierto $ \Rightarrow \ \exists r > 0: B(x,r) \subset A_{i_{0}}$. Como $ A_{i_{0}} \subset \bigcup_{i=0}^{\infty} A_{i}$, tenemos que $\forall x\in \bigcup_{i=0}^{\infty} A_{i}, \exists r>0: B(x,r)\subset \bigcup_{i=0}^{\infty} A_{i}$. Por tanto, la unión arbitraria de abiertos es abierto.
+\end{dem}
+\begin{dem}(iii)
+    Suponemos que $A_{i}$ es abierto  $\forall i \in \{0,1,...,n \}$. Queremos ver que $\bigcap_{i=0}^{n} A_{i}$ es abierto. Sea $x \in \bigcap_{i=0}^{n} A_{i} \Rightarrow x \in A_i ,\\ \forall i \in \{0,1,...,n\}$. Como todo conjunto $A_i$ es abierto tenemos que, \\$\forall i \in \{0,1,...,n\}, \exists r>0: B(x,r)\subset A_i$. Sea $r = \min \{r_0,r_1,...,r_n\}$, entonces $B(x,r)\subset \bigcap_{i=0}^{n} A_{i}$. Por tanto, la intersección finita de abiertos es abierto.
+\end{dem}
+
+\begin{obs}
+La intersección infinita de abiertos no es necesariamente abierto.
+\end{obs}
+
+\begin{defn}[Adherencia]
+Sea $A \subset \mathbb{R}^n, $ denotamos la adherencia de $A$ como el conjunto $ \overline{A} := \{ x \in \mathbb{R}^n \ : \ \forall r > 0, B(x,r)\cap A \neq \emptyset \} $.
+\end{defn}
+
+\begin{ejm}
+\begin{enumerate}[label=(\roman*)]
+    \item $A = \{ \frac{1}{n}, n = 1,2,...\} \subset \mathbb{R}$ entonces, $\overline{A} = A \cup \{0\}$.
+    \item $ A = \mathbb{Z}$ (insertar dibujo) entonces, $ A = \overline{A}$.
+    \item $A = \mathbb{Q} \subset \mathbb{R}$ entonces, $\overline{A} = \mathbb{R}$.
+    \item $A = \mathbb{I}\subset\mathbb{R}$ entonces, $\overline{A} = \mathbb{R}$
+\end{enumerate}
+\end{ejm}
+
+\begin{defn}[Frontera]
+Sea $A \subset \mathbb{R}^n$, denotamos la frontera de $A$ como el conjunto $\partial{A} := \overline{A}\setminus\mathring{A} $. 
+\end{defn}
+
+\begin{prop}
+Sea $A \subset \mathbb{R}^n, \ x \in \partial{A} \Leftrightarrow \forall r > 0, \ B(x,r) \cap A \neq \emptyset$ y $B(x,r)\cap(\mathbb{R}^n\setminus A) = \emptyset$.
+\end{prop}
+
+\begin{ejm}
+\begin{enumerate}[label=(\roman*)]
+    \item $A = \{ (x,y); y> 0\}, \mathring{A} = A, \overline{A}= \{(x,y); y\geq 0\}, \partial A \{ (x,y): x\in\mathbb{R}$.
+    \item $A = \{(x,y,z): x^2 + y^2 +z^2 < 1, z\geq 0 \}, \mathring{A} = \{(x,y,z): x^2 + y^2 +z^2 < 1, z> 0 \}, \overline{A} = \{(x,y,z): x^2 + y^2 +z^2 \leq 1, z\geq 0 \}, \partial A = \{(x,y,z): x^2 + y^2 +z^2 = 1, z = 0 \}$
+    \item $ A = \bigcup_{k=1}^\infty [0,1]\times[\frac{1}{2k-1},\frac{1}{2k}], \mathring{A} =\bigcup_{k=1}^\infty (0,1)\times(\frac{1}{2k-1},\frac{1}{2k}), \overline{A} = A \cup \{ (x,0): 0\leq x \leq 1\}, \partial A = \bigcup_{k=1}^\infty \partial A_k \cup \{ (x,0): 0\leq x \leq 1\}$
+\end{enumerate}
+\end{ejm}
+
+\begin{prop}[Conjunto cerrado]
+Sea $A \subset \mathbb{R}^n, \ A$ es cerrado $ \Leftrightarrow \overline{A} = A$.
+\end{prop}
+
+\begin{obs}
+Hay conjuntos que no son ni abiertos ni cerrados.
+\end{obs}
+
+\begin{dem}
+$(\Rightarrow)$ Suponemos que $A$ es cerrado. Queremos ver que $ A = \overline{A}$. Sabemos que $A$ cerrado $\Rightarrow \forall\{x_k\}\subset A: \{x_k\} \rightarrow a \Rightarrow a \in A$. Por la caract. de adherencia tenemos que $ \{x_k\}\subset A: \{x_k\} \rightarrow a \Rightarrow a\in \overline{A}$ Por tanto, $\overline{A} \subset A$ y por la def. de adherencia $A\subset \overline{A} \Rightarrow A = \overline{A}$\\
+
+$(\Leftarrow)$ Suponemos que $ A = \overline{A}$. Queremos ver que $A$ es cerrado. Sea $a\in\overline{A}$, por la caracterización de adherencia, $\exists\{x_k\}\subset A: \{x_k\} \rightarrow a$. Como $ A = \overline{A}$ tenemos que $a\in A$. Entonces, por la caracterización de cerrado, $\forall \{x_k\} \subset A, \ \{x_k\} \rightarrow a \in \mathbb{R}^n \Rightarrow a \in A \Rightarrow A$ es cerrado.
+\end{dem}
+
+
+\begin{prop}
+Propiedades conjuntos cerrados
+\begin{enumerate}[label=(\roman*)]
+    \item $A$ es cerrado $\Leftrightarrow \mathbb{R}^n\setminus A $ es abierto.
+    \item $A$ es cerrado $\Leftrightarrow \partial{A} \subset A$.
+    \item La unión finita de cerrados es cerrado.
+    \item La intersección arbitraria de cerrados es cerrado.
+\end{enumerate}
+\end{prop}
+
+\begin{ejm}
+Aquí hay un ejemplo.
+\end{ejm}
+
+\begin{dem}(i)
+    $(\Rightarrow)$ Suponemos que $A$ es cerrado. Queremos ver que $\forall x\in (\mathbb{R}^n\setminus A), \exists r>0: B(x,r)\subset A$. Dado que $A$ es cerrado $\Rightarrow A = \overline{A}$ y por la definición de adeherencia si $x\in A, \ (A = \overline{A})$ entonces $\forall r>0: B(x,r)\cap A \neq \emptyset$. Sea $x \in (\mathbb{R}^n\setminus A)$ por tanto, $\exists r>0: B(x,r)\cap A = \emptyset$. Como $B(x,r)\cap A \ \Rightarrow B(x,r)\subset (\mathbb{R}^n\setminus A)$, tenemos que $\forall x \in (\mathbb{R}^n\setminus A), \exists r > 0$ tal que $B(x,r)\subset (\mathbb{R}^n\setminus A)$ y $(\mathbb{R}^n\setminus A) = \mathring{(\mathbb{R}^n\setminus A)} $ por lo que concluimos que $(\mathbb{R}^n\setminus A)$ es abierto.\\
+    
+    $(\Leftarrow)$ Suponemos que $(\mathbb{R}^n\setminus A)$ es abierto. Queremos llegar a \\$\forall x\in A, \forall r > 0: B(x,r)\cap A \neq \emptyset$. $(\mathbb{R}^n\setminus A)$ abierto $\Rightarrow (\mathbb{R}^n\setminus A) = \mathring{(\mathbb{R}^n\setminus A)}$. Si $x\in (\mathbb{R}^n\setminus A)$, entonces $\exists r>0: B(x,r)\subset (\mathbb{R}^n\setminus A)$. Sea $x \in A$, entonces $\forall r>0: B(x,r)\subset A$ , es decir, $\forall r>0: B(x,r)\cap A \neq \emptyset$. \\ Por lo que $A = \overline{A}$  y concluimos que $A$ es cerrado.
+\end{dem}
+
+\begin{dem}(ii)
+    $(\Rightarrow)$ Suponemos que $A$ es cerrado. Queremos ver que $\partial{A} \subset A$. $A$ cerrado $\Rightarrow A = \overline{A}$ entonces, por la definición de frontera, $\partial{A} = \overline{A}\setminus\mathring{A} = A\setminus\mathring{A}$.  Por tanto, $\partial{A}\subset A$.\\
+    
+    $(\Leftarrow)$ Suponemos que $\partial{A}\subset A$. Queremos ver que $A$ es cerrado. Sabemos que $A \subset \overline{A}$. Por la definición de frontera tenemos que \\$\partial{A} =  \overline{A}\setminus\mathring{A} \Rightarrow \partial{A} \cup \mathring{A} = \overline{A}$. Sea $x\in\overline{A}$ entonces, $x\in\partial{A}$ ó $x\in\mathring{A}$. Si $x\in \partial{A}$, como $\partial{A}\subset A$ entonces, $x\in A$. Si $x\in\mathring{A}$ como $\mathring{A}\subset A$ entonces, $x\in A$. Por tanto, $A \subset \overline{A}$ y $\overline{A} \subset A \Rightarrow A = \overline{A}$ por lo que $A$ es cerrado.
+\end{dem}
+ 
+\begin{dem}(iii)
+    Suponemos que $A_i$ es cerrado $\forall i \in \{1,...,k\}$. Queremos ver que $\cup_{i=0}^k A_i$ es cerrado. Como $(\mathbb{R}^n \setminus A_i)$ es abierto $\forall i\in\{1,..,k\}$, si $x\in (\mathbb{R}^n \setminus \cup_{i=1}^k A_i) = \cap_{i=1}^k ( \mathbb{R}^n \setminus A_i) $, dado que la intersección finita de abiertos es abierto, tenemos que la unión finita de cerrados es cerrado.  
+\end{dem}
+
+\begin{dem}(iv)
+    Suponemos que $A_i$ es cerrado $\forall i\in\{1,2,...\}$. Queremos ver que  $\cap_{i=0}^{\infty} A_i$ es cerrado. Como $(\mathbb{R}^n \setminus A_i)$ es abierto $\forall i\in\{1,2,...\}$, si $x\in (\mathbb{R}^n \setminus \cap_{i=1}^{\infty} A_i) = \cup_{i=1}^{\infty} ( \mathbb{R}^n \setminus A_i)$, dado que la unión arbitraria de abiertos es abierto, tenemos que la intersección arbitraria de cerrados es cerrado.
+\end{dem}
+
+
+\begin{defn}[Puntos de acumulación]
+Sea $A \subset \mathbb{R}^n$, llamamos conjuto de puntos de acumulación al conjunto \[ A' = \{ x\in \mathbb{R}^n : \forall r > 0, B(x,r)\cap A \setminus \{x\} \neq \emptyset. \} \]
+\end{defn}
+
+\begin{obs}
+$A' \subset \overline{A}$.
+\end{obs}
+
+\begin{prop}
+Sea $A \subset \mathbb{R}^n, \ x \in A' \Leftrightarrow \ \forall r > 0, \ B(x,r)\cap A$ es un conjunto infinito.
+\end{prop}
+
+\begin{defn}[Punto aislado]
+Sea $A \subset \mathbb{R}^n, \ a \in A$ es aislado $\Leftrightarrow, \ \exists r > 0 : B(a,r)\cap A = \{a\}.$
+\end{defn}
+
+\begin{ejm}
+Aquí hay un ejemplo
+\end{ejm}
+
+\begin{prop}
+Sea $A \subset \mathbb{R}^n,  \ \overline{A} = A' \cup \{puntos \ aislados\} $.
+\end{prop}
+
+\begin{ejm}
+Aquí hay un ejemplo.
+\end{ejm}
+
+
+\section{Sucesiones en $\mathbb{R}^n$}
+\begin{defn}[Sucesión convergente]
+Sea $\{ x_k \} \subset \mathbb{R}^n$ una sucesión:
+
+\begin{enumerate}[label=(\roman*)]
+    \item $\{ x_k \}$ es Cauchy si $ \forall \epsilon > 0, \ \exists N \in \mathbb{N}: \ || x_k - x_m || < \epsilon, \ \forall k,m \geq N$.
+    \item  $\{ x_k \} \rightarrow a$ si $\forall \epsilon > 0, \ \exists N \in \mathbb{N}: \ || x_k - a || < \epsilon, \ \forall k \geq N$.
+\end{enumerate}
+\end{defn}
+
+\begin{obs}
+$ x,y \in \mathbb{R}^n, || x - y ||_\infty \leq || x - y || \leq \sqrt{n}|| x -y ||_\infty $
+\end{obs}
+
+\begin{prop}
+Sean $\{ x_k \} \subset \mathbb{R}^n, \ a \in \mathbb{R}^n $
+
+\begin{enumerate}[label=(\roman*)]
+    \item $\{ x_k \}$ es Cauchy $\Leftrightarrow \ \{ x^i_k \}$ es Cauchy para $1 \leq i \leq n$.
+    \item $\{ x_k \} \rightarrow a \ \Leftrightarrow \ \{ x^i_k \} \rightarrow a^i$ para $1 \leq i \leq n$.
+\end{enumerate}
+\end{prop}
+
+\begin{dem}(i)
+    $(\Rightarrow)$ Suponemos que $\{x_k\}\subset\mathbb{R}^n$ es Cauchy. Queremos ver que  $\{x_k^i\}$ es Cauchy $\forall i\in\{1,2,...,n\}$. Sabemos que $\{x_k\}$ Cauchy $\Rightarrow \forall \epsilon > 0, \exists N\in\mathbb{N}: ||x_k - x_m||<\epsilon, \forall k,m\geq N$. Como $||x_k - x_m|| \geq ||x_k - x_m||_{\infty}$ y $||x_k - x_m||_{\infty} = \sup\{ \{x_k^i - x_m^i\}_{i=0}^n \} $, tenemos que  $\epsilon > ||x_k - x_m|| \geq ||x_k - x_m||_{\infty} \geq |x_k^i - x_m^i|, \forall i \in \{1,2,...,n\}$. Por tanto,  $\{x_k^i\}$ es Cauchy $\forall i\in\{1,2,...,n\}$.\\
+    
+    $(\Leftarrow)$ Suponemos $\{x_k^i\}$ es Cauchy $\forall i\in\{1,2,...,n\}$. Queremos ver que $\{x_k\}\subset\mathbb{R}^n$ es Cauchy. Sabemos que $\{x_k^i\}$ Cauchy $\Rightarrow \forall \epsilon > 0, \exists N_i\in\mathbb{N}: |x_k^i - x_m^i|<\epsilon, \forall k,m\geq N_i$. Sea $N = \max\{N_1,...,N_n\}$ tenemos que $k,m\geq N \Rightarrow |x_k^i - x_m^i|<\epsilon, \forall i\in\{1,2,...,n\}$. Como $||x_k - x_m|| \leq \sqrt{n}||x_k - x_m||_{\infty}$ y $||x_k - x_m||_{\infty} = \sup\{ \{x_k^i - x_m^i\}_{i=0}^n \}$ entonces $ ||x_k - x_m|| \leq \sqrt{n}||x_k - x_m||_{\infty} \leq \sqrt{n}|x_k^i - x_m^i| < \epsilon\sqrt{n}, \forall i \in \{1,2,...,n\}$, por lo que concluimos que $\{x_k\}\subset\mathbb{R}^n$ es Cauchy.
+\end{dem}
+\begin{dem}(ii)
+    $(\Rightarrow)$ Suponemos que $\{x_k\}\rightarrow a$. Queremos ver que  $\{x_k^i\} \rightarrow a^i,\forall i\in\{1,2,...,n\}$. Sabemos que $\{x_k\}\rightarrow a \Rightarrow \forall \epsilon > 0, \exists N\in\mathbb{N}: ||x_k - a||<\epsilon, \forall k\geq N$. Como $||x_k - a|| \geq ||x_k - a||_{\infty}$ y $||x_k - a||_{\infty} = \sup\{ \{x_k^i - a^i\}_{i=0}^n \} $, tenemos que $\epsilon > ||x_k - a|| \geq ||x_k - a||_{\infty} \geq |x_k^i - a^i|, \forall i \in \{1,2,...,n\}$. Por tanto, $\{x_k^i\}\rightarrow a^i,  \forall i\in\{1,2,...,n\}$.\\
+    
+    $(\Leftarrow)$ Suponemos $\{x_k^i\} \rightarrow a^i,\forall i\in\{1,2,...,n\}$. Queremos ver que $\{x_k\}\rightarrow a$. Sabemos que $\{x_k^i\} \rightarrow a^i \Rightarrow \forall \epsilon > 0, \exists N_i\in\mathbb{N}: |x_k^i - a^i|<\epsilon, \forall k\geq N_i$. Sea $N = \max\{N_1,...,N_n\}$ tenemos que $k\geq N \Rightarrow |x_k^i - a^i|<\epsilon, \forall i\in\{1,2,...,n\}$. Como $||x_k - a|| \leq \sqrt{n}||x_k - a||_{\infty}$ y $||x_k - a||_{\infty} = \sup\{ \{x_k^i - a^i\}_{i=0}^n \}$ entonces $ ||x_k - a|| \leq \sqrt{n}||x_k - a||_{\infty} \leq \sqrt{n}|x_k^i - a^i| < \epsilon\sqrt{n}, \forall i \in \{1,2,...,n\}$, por lo que concluimos que $\{x_k\}\rightarrow a$.
+\end{dem}
+
+\begin{obs}
+$\{ x_k \} \rightarrow a \ \Rightarrow \ \{ x_k \}$ es Cauchy.
+\end{obs}
+
+\begin{defn}[Espacio Completo]
+Sea $(X,d)$ un espacio métrico. $(X,d)$ es completo si toda sucesión de Cauchy converge a punto en el espacio.
+\end{defn}
+
+\begin{theo}
+Sea $\{x_k\} \subset \mathbb{R}^n, \{x_k\}$ es Cauchy $ \Leftrightarrow \exists a \in \mathbb{R}^n: \ \{x_k\} \rightarrow a$.
+\end{theo}
+
+\begin{prop}
+Caracrterización por sucesiones:
+\begin{enumerate}[label=(\roman*)]
+    \item (Adherencia) $a \in \overline{A} \ \Leftrightarrow \ \exists \{x_k\} \subset A: \{x_k\} \rightarrow a$.
+    \item (Acumulación) $a \in A' \ \Leftrightarrow \ \exists \{x_k\} \subset A\setminus\{a\}: \{x_k\} \rightarrow a$.
+\end{enumerate}
+\end{prop}
+
+\begin{dem}(i)
+    $(\Rightarrow)$ Suponemos que $a\in\overline{A}$. Queremos ver que $\exists \{x_k\}\subset A: \{x_k\} \rightarrow a \in\mathbb{R}^n$. Sabemos que $a\in\overline{A} \Rightarrow \forall r>0, B(a,r)\cap A \neq \emptyset$. Sea $ r = \frac{1}{k}$, tenemos que $\exists \{x_k\} \subset B(a,\frac{1}{k})\cap A$. Entonces, $\exists \{x_k\} \subset A: ||x_k - a||<\frac{1}{k} \Rightarrow \exists \{x_k\}\subset A: \{x_k\} \rightarrow a \in\mathbb{R}^n$\\
+    
+    $(\Leftarrow)$ Suponemos que  $\exists \{x_k\}\subset A: \{x_k\} \rightarrow a \in\mathbb{R}^n$. Queremos ver que $a\in\overline{A}$. Sabemos que $\{x_k\} \rightarrow a \Rightarrow \forall \epsilon, \exists N\in\mathbb{N}: ||x_k-a||<\epsilon, \forall k\geq N$. Sea $\epsilon = r$ tenemos que, $\forall r > 0, \exists N\in\mathbb{N}: ||x_k -a|| < r, \forall k\geq N$. Entonces,  $\forall r>0, \exists N\in\mathbb{N}: x_k \subset B(a,r), \forall k\geq N$. Como $x_k \subset B(a,r), \forall k\geq N$ y $B(a,r)\subset A$, tenemos que $\forall r>0, B(a,r)\cap A \neq \emptyset$. Por tanto, $a\in\overline{A}$.
+\end{dem}
+\begin{dem}(ii)
+    Análogo a 1. 
+\end{dem}
+
+\begin{prop}
+(Conjunto cerrado, caracterización por sucesiones)\\
+$ A \subset \mathbb{R}^n$ es cerrado $\Leftrightarrow \forall \{x_k\} \subset A, \ \{x_k\} \rightarrow a \in \mathbb{R}^n \Rightarrow a \in A$.
+\end{prop}
+
+\begin{dem}
+ $(\Rightarrow)$ Suponemos que $A$ es cerrado. Queremos ver que $\forall \{x_k\} \subset A, \{x_k\} \rightarrow a \in \mathbb{R}^n \Rightarrow a \in A$. Sabemos que $A$ cerrado $\Rightarrow A = \overline{A}$. Sea $\{x_k\}\subset A:\{x_k\}\ \rightarrow a\in\mathbb{R}^n $, por la caracterización de adherencia tenemos que $a \in \overline{A}$ y por la definición de cerrado tenemos que $ A = \overline{A} \Rightarrow a\in A$.  Por tanto, $\forall \{x_k\} \subset A, \ \{x_k\} \rightarrow a \in \mathbb{R}^n \Rightarrow a \in A$.\\
+ 
+\noindent $(\Leftarrow)$ Suponemos que $\forall \{x_k\} \subset A, \{x_k\} \rightarrow a \in \mathbb{R}^n \Rightarrow a \in A$. Queremos ver que $A$ es cerrado. Sabemos, por la definicón de adherencia, que $ A \subset \overline{A}$. Veamos que $\overline{A} \subset A$. Sea $a \in \overline{A}$ entonces, $\exists \{x_k\}\subset A: \{x_k\} \rightarrow a$ y por la hipótesis inicial tenemos que $a\in A$. Por tanto, $A \subset \overline{A}$ y $\overline{A} \subset A \Rightarrow A = \overline{A} \Rightarrow A$ es cerrado.
+\end{dem}
+
+\newpage
+\section{Subsucesiones en $\mathbb{R}^n$}
+\begin{defn}[Subsucesión]
+Sea $\{x_k\} \subset \mathbb{R}^n$ con $ k_j < k_{j+1}, \ 1 \leq j \leq n, \ \{x_{k_j}\}$ es una subsucesión.
+\end{defn}
+
+\begin{obs}
+ $\{x_k\} \rightarrow a  \ \Rightarrow \ \{x_{k_j}\} \rightarrow \ a $
+\end{obs}
+
+\begin{defn}[Conjunto acotado]
+$ A \subset \mathbb{R}^n$ es acotado si $\exists r > 0: \ A \subset B(0,r)$.
+\end{defn}
+
+\begin{defn}[Teorema de Bolzano]
+$ A \subset \mathbb{R}^n$ infinito y acotado $\Rightarrow \ A' \neq \emptyset$
+\end{defn}
+
+\section{Compacidad}
+
+\begin{defn}[Conjunto compacto]
+$ A \subset \mathbb{R}^n$ es compacto si $\forall \{x_k\} \subset A, \ \exists a \in A: \{x_{k_j}\} \rightarrow a$.
+\end{defn}
+
+\begin{theo}[Teorema de Heine-Borel]
+$A \subset \mathbb{R}^n$ compacto $ \Leftrightarrow A$ cerrado y acotado.
+\end{theo}
+
+\begin{dem}
+$(\Rightarrow)$ Primero, suponemos que $A$ es compacto y $A$ no es acotado. Queremos ver que $A$ no es compacto. $A$ compacto $ \Rightarrow \forall \{x_k\} \subset A,  \exists a \in A: \{x_{k_j}\} \rightarrow a$. Pero $A$ no acotado $\Rightarrow \exists\{x_k\}\subset A: \{x_k\} \rightarrow \infty \Rightarrow \{x_{k_j}\} \rightarrow \infty$. Lo que contradice que $A$ sea compacto. Por tanto, $A$ es acotado.\\
+
+Segundo, suponemos que $A$ es compacto. Queremos ver que $A$ es cerrado. $A$ compacto $ \Rightarrow \forall \{x_k\} \subset A, \exists a \in A: \{x_{k_j}\} \rightarrow a$. Entonces, sea $\{x_k\}\subset A : \{x_k\} \rightarrow x$ por ser $A$ compacto, tenemos que $\exists\{x_{k_j}\} \rightarrow a\in A$ y por la unicidad del límite $a = x$. Entonces, por la caracterización de cerrado, $\forall \{x_k\}\subset A, \{x_k\} \rightarrow a \Rightarrow a\in A$, tenemos que $A$ es cerrado. \\
+
+
+$(\Leftarrow)$ Suponemos que $A$ es cerrado y acotado. Queremos ver que $A$ es compacto. Sea $\{x_k\} \subset A, B = \{x_1,x_2,...\}\subset A$, $A$ acotado $\Rightarrow B$ acotado. $B$ es finito o infinito. Si $B$ es finito, $\exists k_1<...<k_n : x_{k_1} = ... = x_{k_n} = a \in A \Rightarrow \{x_{k_j}\} \rightarrow a \in A \Rightarrow A$ es compacto. Si $B$ es infinito, por el teorema de Bolzano, $\exists x \in B'$. Sea $r_1 = 1$ tenemos que $B(x,1)\cap B$ infinito $\Rightarrow \exists k_1: x_{k_1} \in B(x,1) $. Sea $r_2 = \frac{1}{2}$ tenemos que $B(x,\frac{1}{2})\cap B$ infinito $\Rightarrow \exists k_2: x_{k_2} \in B(x,\frac{1}{2}) $ (...) Por tanto, $\forall r_j = \frac{1}{j}, \exists x_{k_j} \in B(x,\frac{1}{j}): ||x_{k_j} - x|| < r_j \Rightarrow \{x_{k_j}\} \rightarrow x$ entonces, por ser $A$ cerrado, tenemos que $x\in A$. Concluimos que $A$ es compacto.
+\end{dem}
+
+\begin{defn}[Sucesión acotada en $\mathbb{R}^n$]
+La sucesión $\{x_k\} \subset \mathbb{R}^n$ es acotada si $\exists r > 0: \ ||x_k|| \leq r, \ \forall k \in \{1,...,n\}$.
+\end{defn}
+
+\begin{theo}[Teorema de Bolzano, caracterización por sucesiones]
+Toda sucesión acotada en $\mathbb{R}^n$ tiene una subsucesión convergente.\\
+\end{theo}
+
+\begin{dem}
+Suponemos que $\{x_k\} \subset \mathbb{R}^n : \{x_k\}$ es acotada. Queremos ver que $\exists\{x_{k_j}\} \rightarrow x$. Sabemos que $\{x_k\}$ acotada $\Rightarrow \exists R > 0 : ||x_k|| < R, \forall k$. Entonces $ x_k \in \overline{B}(0,R),\forall k$. Como $\overline{B}(0,R)$ es cerrado y acotado, tenemos que $\overline{B}(0,R)$ es compacto. Por tanto, $\exists \{x_{k_j}\} \rightarrow x$.
+\end{dem}
+
+\begin{theo}[de los conuntos encajados]
+Sea $A_k \subset \mathbb{R}^n, \ A_k \neq \emptyset:$
+
+\begin{enumerate}[label=(\roman*)]
+    \item $A_k$ es compacto $\forall k \in \{1,...,n\}$.
+    \item $A_{k+1} \subset A_k, \forall k \in \{1,...,n\}$
+\end{enumerate}
+
+\[\Rightarrow \bigcap_{k=1}^n A_k \neq \emptyset\]
+\end{theo}
+
+\begin{dem}
+Suponemos que $A_k$ compacto, $A_{k+1} \subset A_k \forall k \in \{1,...,n\}$. Queremos ver que $\bigcap_{k=1}^n A_k \neq \emptyset$. Sea $x_k \in A_k$ como $A_{k+1} \subset A_k \forall k \in \{1,...,n\}$ tenemos que $\{x_k\} \subset A_1$. Entonces, $A_k$ compacto $\Rightarrow \exists \{x_{k_j}\} \subset A_1 : \{x_{k_j}\} \rightarrow x \in A_1$. Sea $j_0$ tal que $k_{j_0} \geq m$ tenemos que $\forall j \geq j_0, k_j \geq K_{j_0} \geq m \Rightarrow A_{k_j} \subset A_m$. Entonces, $\{ x_{k_{j_{0 + i}}}\}\subset A_m: \{ x_{k_{j_{0 + i}}}\} \rightarrow x $ y por ser $A$ cerrado , $x\in A_m \Rightarrow \bigcap_{m=1}^{\infty} A_m \neq \emptyset$.
+\end{dem}
+
+\section{Conexión}
+
+\begin{defn}[Conjuntos no conexos]
+$A \subset \mathbb{R}^n$ no conexo si $\exists U,V$ abiertos con $U,V \neq \emptyset$ tal que
+\begin{enumerate}[label=(\roman*)]
+    \item $A \cap U \neq \emptyset $
+    \item $A \cap V \neq \emptyset $
+    \item $A \subset U\cup V$
+    \item $U\cap V = \emptyset $
+\end{enumerate}
+\end{defn}
+
+\begin{prop}
+$A \subset \mathbb{R} \Leftrightarrow A$ es un intervalo.
+\end{prop}
+
+\begin{defn}
+$\gamma:[0,1] \rightarrow \mathbb{R}^n, \ \gamma(t)=(\gamma_1(t),...,\gamma_n(t))$.
+$\gamma$ continua $:= \gamma_1,...,\gamma_n$ continuas.
+\end{defn}
+
+\begin{defn}[Camino]
+Sea $A \subset \mathbb{R}^n, x,y \in A$. Un camino en $A$ que conecta $x$ con $y$ es una aplicación $\gamma:[0,1] \rightarrow \mathbb{R}^n$ continua tal que $\gamma[0,1] \subset A$ y $\gamma(0) = x$, $\gamma(1) = y$. 
+\end{defn}
+
+\begin{defn}[Conexión por caminos]
+Sea $A \subset \mathbb{R}^n, A$ es conexo por caminos (c.p.c) si $\forall x,y \in A$, existe un camino en a que conecta $x$ con $y$.
+\end{defn}
+
+\begin{ejm}
+Sean $x,y\in\mathbb{R}^n, \varphi(t) = (1-t)x + ty$ donde $ \varphi(0) = x, \varphi(1) = y.$
+\end{ejm}
+
+\begin{defn}[Convexo]
+Sea $A \subset \mathbb{R}^n, A$ es convexo si $ \forall x,y \in A,$ *segmento $[xy] \subset A$.
+*segemento: $\forall t \in [0,1], \ ((1-t)x + ty) \in A$.
+\end{defn}
+
+\begin{prop}(Propiedades conexo y c.p.c)
+$A$ convexo $\Rightarrow A$ conexo por caminos.
+\end{prop}
+
+\begin{theo}
+$A \subset \mathbb{R}^n$ c.p.c $\Rightarrow A$ conexo.
+\end{theo}
+
+\begin{theo}
+$A \subset \mathbb{R}^n$ abierto, $A$ conexo $ \Leftrightarrow A$ c.p.c
+\end{theo}
+
+\begin{prop}
+Sean $A \subset \mathbb{R}^n$, $x,y,z \in A$. Si se puede conectar $x$ con $y$ en $A$ por un camino y se puede conectar $y$ con $z$ en $A$ por un camino entonces se puede conectar $x$ con $z$ en A por un camino.
+\end{prop}
