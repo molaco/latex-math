@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.8.13)  29 AUG 2022 18:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.8.13)  30 AUG 2022 23:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -351,25 +351,214 @@ LaTeX Info: Redefining \% on input line 1.
 \tf@toc=\write3
 \openout3 = `master.toc'.
 
- (./clase_01.tex) [1
+ (./clase_01.tex
+./clase_01.tex:33: Missing $ inserted.
+<inserted text> 
+                $
+l.33 
+     
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
 
-] (./master.aux
+./clase_01.tex:33: Display math should end with $$.
+<to be read again> 
+                   \tex_par:D 
+l.33 
+     
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+
+./clase_01.tex:34: LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.34 \]
+       
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./clase_01.tex:34: Missing $ inserted.
+<inserted text> 
+                $
+l.34 \]
+       
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./clase_01.tex:34: Display math should end with $$.
+<to be read again> 
+                   \endgroup 
+l.34 \]
+       
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+[1
+
+]
+./clase_01.tex:54: Missing $ inserted.
+<inserted text> 
+                $
+l.54 function (_
+                , argg:arggg)
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./clase_01.tex:55: Missing $ inserted.
+<inserted text> 
+                $
+l.55 
+     
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./clase_01.tex:56: Missing $ inserted.
+<inserted text> 
+                $
+l.56 a^
+       {nn}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./clase_01.tex:62: Missing $ inserted.
+<inserted text> 
+                $
+l.62 
+     
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./clase_01.tex:63: Missing $ inserted.
+<inserted text> 
+                $
+l.63 a^
+       {}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./clase_01.tex:64: Missing $ inserted.
+<inserted text> 
+                $
+l.64 
+     
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./clase_01.tex:65: Missing $ inserted.
+<inserted text> 
+                $
+l.65 ^
+      {}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./clase_01.tex:67: Missing $ inserted.
+<inserted text> 
+                $
+l.67 
+     
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./clase_01.tex:85: Double subscript.
+<argument> \partial {_y_
+                        }
+l.85 \[ \frac{\partial{}}{\partial{_y_}}
+                                        _f(x)_ \]
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+./clase_01.tex:85: Missing { inserted.
+<to be read again> 
+                   }
+l.85 \[ \frac{\partial{}}{\partial{_y_}}
+                                        _f(x)_ \]
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+./clase_01.tex:85: Missing { inserted.
+<to be read again> 
+                   $
+l.85 \[ \frac{\partial{}}{\partial{_y_}}_f(x)_ \]
+                                                 
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+./clase_01.tex:85: Missing } inserted.
+<inserted text> 
+                }
+l.85 \[ \frac{\partial{}}{\partial{_y_}}_f(x)_ \]
+                                                 
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./clase_01.tex:85: Missing } inserted.
+<inserted text> 
+                }
+l.85 \[ \frac{\partial{}}{\partial{_y_}}_f(x)_ \]
+                                                 
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+[2] [3] [4
+
+]
+Cap\'{\i }tulo 1.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 116.
+LaTeX Font Info:    Font shape `OT1/cmss/m/it' in size <12> not available
+(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 116.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 120.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 124.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 132.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 136.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 140.
+[5
+
+]) [6] (./master.aux
 LaTeX Info: Redefining \. on input line 9.
 LaTeX Info: Redefining \% on input line 9.
 ) ) 
 Here is how much of TeX's memory you used:
- 6089 strings out of 478238
- 101102 string characters out of 5850456
- 413195 words of memory out of 5000000
- 24238 multiletter control sequences out of 15000+600000
- 474172 words of font info for 48 fonts, out of 8000000 for 9000
+ 6135 strings out of 478238
+ 101636 string characters out of 5850456
+ 418195 words of memory out of 5000000
+ 24275 multiletter control sequences out of 15000+600000
+ 480560 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 87i,6n,93p,493b,363s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb>
-Output written on master.pdf (2 pages, 33804 bytes).
+ 87i,9n,93p,493b,371s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on master.pdf (7 pages, 148542 bytes).
 PDF statistics:
- 26 PDF objects out of 1000 (max. 8388607)
- 15 compressed objects within 1 object stream
+ 98 PDF objects out of 1000 (max. 8388607)
+ 60 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
