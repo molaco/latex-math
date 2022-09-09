@@ -1,0 +1,73 @@
+\begin{dem}
+  Sea $ \mathcal{T} = \{ G \subset X :\forall x \in G, G \in \mathcal{V}(x) \}$. Vemos que $\mathcal{T}$es una topología:
+  \begin{enumerate}[label=(\roman*)]
+    \item Prop1.6.(i) $X \in \mathcal{V}(x) \Rightarrow X \in \mathcal{T}$
+    \item $\forall G_{1},G_{2} \in \mathcal{T}, x \in G_{1} \cap G_{2} \Rightarrow G_{1},G_{2} \in \mathcal{V}(x), \text{ Prop.1.6.(b) } \Rightarrow G_{1} \cap G_{2} \in \mathcal{V}(x)$.
+    \item $\forall \{ G_{j} \}_{j \in J} \subset \mathcal{T}, x \in \bigcup_{j \in J} G_{j} \Rightarrow \exists j_{0} \in J : G_{j_{0}} \in \mathcal{V}(x), \text{ Prop.1.6.(iv) } \Rightarrow \bigcup_{j \in J} G_{j} \in \mathcal{V}(x) \Rightarrow \bigcup_{j \in J} G_{j} \in T$
+  \end{enumerate}
+$\Rightarrow \mathcal{T} $ es topolgía.
+
+Vemos ahora que $S$ es entorno de $x$ $\Leftrightarrow$ $ S \in \mathcal{V}(x)$.
+
+\begin{itemize}
+  \item $(\Rightarrow)$ $S$ entorno de $x$ en $\big( X, \mathcal{T} \big) \Rightarrow \exists G \in \mathcal{T}: x \in G \subset S \Rightarrow G \in \mathcal{V}(x) \text{ Prop.1.6.(iv) } \Rightarrow S \in \mathcal{V}(x)$. 
+  \item $(\Leftarrow)$ $S \in \mathcal{V}(x)$. Sea $ U \subset S$ ACABAR
+\end{itemize}
+Falta ver que $\mathcal{T}$ es única.
+\end{dem}
+
+\begin{defn}[Base de Entorno]
+  Sea $ x \in X, \mathcal{B}(x) \subset \mathcal{V}(x)$. Se dice que $\mathcal{B}(x)$ es una base de un entorno de $x$ en $\big( X, \mathcal{T} \big)$ si $\forall U \in \mathcal{V}(x), \exists B \in \mathcal{B}(x): B \subset U$.
+\end{defn}
+
+\begin{obs}
+  De la definición de base queda determinado un entorno como $ \mathcal{V}(x) = \{ U \subset X: \exists B \in \mathcal{B}(x): B \subset U \}$
+\end{obs}
+
+\begin{ejm}
+  $\forall \big( X, \mathcal{T} \big)$ e.t. $\mathcal{V}(x)$ es una base de entornos de $x$.
+\end{ejm}
+
+\begin{ejm}
+  Sea $\big( X, \mathcal{T_{D}} \big), \mathcal{T}_{D} = \mathcal{P}(x), \forall x \in X$ entonces $\mathcal{B}(x) =  \{ \{ x \} \}$ es base de entornos de $x$.
+\end{ejm}
+
+\begin{ejm}
+  Sea $\big( X, \mathcal{T} \big)$ metrizable. $ \mathcal{T} = \mathcal{T}_{d}$, $d$ métrica tal que $\forall x \in X, \mathcal{B}(x) = \{ B_{\epsilon}(x) : \epsilon > 0 \}$ entonces $\mathcal{B}(x)$ es base de entornos de $x$.
+\end{ejm}
+
+\begin{ejm}
+  $\forall \big( X, \mathcal{T} \big)$ e.t., $ \mathcal{B}(x) = \{  \mathring{U} : U \in \mathcal{V}(x) \}$ es base de entornos de $x$.
+\end{ejm}
+
+\begin{ejm}
+  Sea $\big( \mathbb{R}, \mathcal{T_{u}} \big) : \forall x \in \mathbb{R}, \mathcal{B}(x) =  \{ \big[ x-\epsilon, x + \epsilon \big] : \epsilon > 0  \}$ entonces $\mathcal{B}(x)$ es base de entornos de $x$.
+\end{ejm}
+
+\begin{prop}[Propiedades de Bases]
+  Sea $\big( X, \mathcal{T} \big)$ e.t. y $\mathcal{B}(x)$ una base de entornos de $x$ en $\big( X, \mathcal{T} \big)$, $\forall x \in \mathcal{T}$. Entonces:
+  \begin{enumerate}[label=(\roman*)]
+    \item $B \in \mathcal{B}(x) \Rightarrow x \in B$.
+    \item $B_{1},B_{2} \in \mathcal{B}(x) \Rightarrow \exists B_{3} \in \mathcal{B}(x): B_{3} \subset B_{1} \cap B_{2}$.
+    \item $B_{1} \in \mathcal{B}(x) \Rightarrow \exists B_{2} \in \mathcal{B}(x): \forall y \in B_{2}, \exists B \in \mathcal{B}(y)$ tal que $ B \subset B_{1}$.
+  \end{enumerate}
+\end{prop}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item $\mathcal{B}(x) \subset \mathcal{V}(x), B \in \mathcal{B}(x) \Rightarrow x \in B$.
+    \item $B_{1}, B_{2} \in \mathcal{B}(x) \Rightarrow B_{1} \cap B_{2} \in \mathcal{B}(x) \subset \mathcal{V}(x) \Rightarrow \exists B_{3} \in \mathcal{B}(x): B_{3} \subset B_{1} \cap B_{2}$.
+    \item $B_{1} \in \mathcal{B}(x) \subset \mathcal{V}(x) \text{ Prop.1.6.(iii) } \Rightarrow \exists U \in \mathcal{V}(x)$ tal que $\forall y \in U, B_{1} \in \mathcal{B}(y) \Rightarrow \exists B_{2} \in \mathcal{B}(x) : B_{2} \subset U$ tal que $\forall y \in B_{2}, B_{1} \in \mathcal{V}(y) \Rightarrow \exists B \in \mathcal{B}(y): B \subset B_{1}$.
+  \end{enumerate}
+\end{dem}
+
+\begin{prop}
+  Sea $ X \neq \emptyset, \mathcal{B}: X \mapsto \mathcal{P}(\mathcal{P}(x))$ cumpliendo (i, ii, iii) anteriores, entonces $\mathcal{B}(x)$ define una topología en $X$.
+\end{prop}
+
+\begin{dem}
+  Sea $\forall x \in X, \mathcal{V}(x) = \{ U \subset X : B \subset U  \text{ para algún } B \in \mathcal{B}(x) \}$ tal que $\mathcal{B}(x) \subset \mathcal{V}(x)$
+  \begin{enumerate}[label=(\roman*)]
+    \item $\forall U \in \mathcal{V}(x)$
+  \end{enumerate}
+\end{dem}

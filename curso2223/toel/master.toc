@@ -1,0 +1,4 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {part}{I\hspace {1em}Topología General}{2}{}%
+\contentsline {chapter}{\numberline {1}Espacios Topológicos y Funciones Continuas}{3}{}%
+\contentsline {section}{\numberline {1.1}Espacios Topológicos}{3}{}%

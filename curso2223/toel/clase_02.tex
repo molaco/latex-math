@@ -1,0 +1,71 @@
+\begin{defn}[Comparación de Topologías]
+  Sean $\mathcal{T}$ y $\mathcal{T'}$ dos topologías sobre un conjunto $X \neq \emptyset$. Si $\mathcal{T} \subset \mathcal{T'}$ se dice que $\mathcal{T'}$ es \textit{ más fina } (más fuerte) que $\mathcal{T}$. También podemos decir que $\mathcal{T}$ es \textit{menos fina} que $\mathcal{T'}$.
+\end{defn}
+
+\begin{nota}
+  Sea $\big( X, \mathcal{T} \big)$ e.t., $\mathcal{C}_{\mathcal{T}} = \{ C \subset X : C \text{ es cerrado en } \big( X, \mathcal{T} \big) \}$.
+\end{nota}
+
+\begin{prop}[Dualidad conjuntos abiertos y cerrados]
+  Sea $\big( X, \mathcal{F} \big)$
+  \begin{enumerate}[label=(\roman*)]
+    \item $\emptyset, X$ son cerrados.
+    \item $\forall C_{1},C_{2}$ cerrados $ \Rightarrow C_{1} \cup C_{2}$ es cerrado.
+    \item $\forall \{ C_{j} \}_{j \in J}$ cerrados $\Rightarrow \bigcap_{j \in J}^{} C_{j}$ es cerrado.
+  \end{enumerate}
+  
+  Recíprocamente, si $X \neq \emptyset$, $\mathcal{F} \subset \mathcal{P}(X)$ y $\mathcal{F}$ cumple (i, ii, iii) entonces la colección de los miembros complementarios a $\mathcal{F}$ es una topología sobre $X$ en donde la familia de cerrados es $\mathcal{F}$.
+\end{prop}
+
+\begin{obs}
+  Este resultado muestra la relación entre las nociones de conjuntos abiertos y cerrados. Cualquier resultado sobre conjuntos abiertos en un espacio topológico se convierte en uno sobre cerrados al remplazar \textbf{abierto} por \textbf{cerrado} y $\cup$ por $\cap$.
+\end{obs}
+
+\begin{defn}[Adherencia]
+  Sea $\big( X, \mathcal{T} \big)$ e.t. y $S \subset X$ se llama adherencia de $S$ en $\big( X, \mathcal{T} \big)$ al conjunto \[ \overline{S} = \bigcap_{}^{} \{ C \subset X : C \text{ es cerrado y } S \subset C \} \] 
+\end{defn}
+
+\begin{obs}
+  $\overline{S}$ es cerrado, $S \subset \overline{S}$ y $\overline{S}$ es el menor cerrado que contiene a $S$.
+\end{obs}
+
+\begin{lem}
+  Si $A \subset B$, entonces $ \overline{A} \subset \overline{B}$.
+\end{lem}
+
+\begin{dem}
+  Como $B \subset \overline{B}$, $A \subset B \Rightarrow A \subset \overline{B}$ y por ser $\overline{B}$ cerrado, se tiene que $\overline{A} \subset \overline{B}$.
+\end{dem}
+
+\begin{prop}[Propiedades Adherencia]
+  Sea $\big( X, \mathcal{T} \big)$ e.t. entonces
+  \begin{enumerate}[label=(\roman*)]
+    \item $\overline{\emptyset} =  \emptyset$,
+    \item $\forall S \subset X, S \subset \overline{S}$,
+    \item $\forall S \subset X, \overline{\overline{S}} = S$,
+    \item $\forall A,B \subset X, \overline{A \cup B} = \overline{A} \cup \overline{B}$,
+    \item $\forall C \subset X$, $C \text{ es cerrado} \Leftrightarrow C = \overline{C}$.
+  \end{enumerate}
+\end{prop}
+
+\begin{dem}(iv)
+  Sea $\big( X, \mathcal{T} \big)$ espacio topológico. Dado que $A \cup B \subset \overline{A} \cup \overline{B}$ se tiene que $ \overline{A \cup B} \subset \overline{A} \cup \overline{B}$. Por otro lado, $A \subset A \cup B$ y $B \subset A \cup B$ entonces $\overline{A} \subset \overline{A \cup B}$ y $\overline{B} \subset \overline{A \cup B}$ $\Rightarrow \overline{A} \cup \overline{B} \subset \overline{A \cup B}$.
+\end{dem}
+
+\begin{theo}
+  Sea $ X \neq \emptyset$ y $ \varphi: \mathcal{P}(X) \to \mathcal{P}(X) : S \mapsto \varphi (S) \equiv \overline{S}$ tal que $\varphi$ cumple las 4 propiedades anteriores. Entonces, existe una única topología $\mathcal{F}$ sobre $X$ tal que $\forall S \subset X, \carphi(S)$ es la adherencia de $S$ en $\big( X, \mathcal{F} \big)$.
+\end{theo}
+
+\begin{dem}
+  Sea $ \mathcal{F} = \{ F \subset X : \overline{F} = F \} \subset \mathcal{P}(X)$. Queremos ver que se cumplen las propiedades de Prop.1.1.(i, ii, iii). 
+  \begin{enumerate}[label=(\roman*)]
+    \item Por Prop.1.2(i, ii).
+    \item Por Prop.1.2(iv), sean $F_{1}, F_{2} \in \mathcal{F}$. Entonces, $\overline{F_{1} \cup F_{2}} = \overline{F_{1}} \cup \overline{F_{2}} = F_{1} \cup F_{2} \Rightarrow F_{1} \cup F_{2} \in \mathcal{F}$.
+    \item Si $F \subset G$ por Prop.1.2(iv) $\overline{G} = \overline{F} \cup (\overline{G \setminus F)} \Rightarrow \overline{F} \subset \overline{G}$ Ahora, sean $F_{j} \in \mathcal{F}, \forall j \in J$ Entonces, $\bigcap_{j \in J} F_{j} \subset F_{j}, \forall j \in J \Rightarrow \overline{\bigcap_{j \in J}^{} F_{j}} \subset \overline{F_{j}}, \forall j \in J$ y por tanto, $\overline{\bigcap_{j \in J}^{} F_{j}} \subset \bigcap_{j \in J}^{} \overline{F_{j}} = \bigcap_{j \in J}^{} F_{j}$ y por Prop.1.2(ii) se tiene que $ \overline{\bigcap_{j \in J}^{} F_{j}} = \bigcap_{j \in J}^{} F_{j}$, esto es, $ \bigcap_{j \in J}^{} F_{j} \in \mathcal{F}$.
+  \end{enumerate}
+Por tanto, $\mathcal{F}$ es la familia de cerrados de algún e.t. $\big( X, \mathcal{T} \big)$. Falta por ver que la adherencia es la operación $ \varphi$. Dado que $ \overline{\overline{S}} = \overline{S}$ se tiene que $\overline{S} \in \mathcal{F}$ y por Prop.1.2(ii) $S \subset \overline{S}$. Si $C \in \mathcal{F}$ tal que $S \subset C$ entonces $\overline{S} \subset \overline{C} = C \Rightarrow \overline{S}$ es el elemento de $\mathcal{F}$ más pequeño que contiene a $S$.
+\end{dem}
+
+\begin{obs}
+  A la operación anterior se le llama operación de clausura de Kuratowski.
+\end{obs}

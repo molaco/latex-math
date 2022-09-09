@@ -1,160 +1,67 @@
-\[
-x \cdot y
-\] 
-\[
-\langle x{ , }y \rangle
-\] 
+\part{Análisis Complejo}
+\chapter{Preliminares}
+\section{El Plano Complejo}
 
-$||x||$
-
-\[
-\begin{pmatrix}
-   a_{1} & \cdots & a_{2} \\
-   \vdots & \ddots & \vdots \\
-   a_{3} & \cdots & a_{4}
-\end{pmatrix}
-\] 
-
-$\forall x=1, \ldots,n.$
-
-\[
-\begin{pmatrix}
-   a_{11} & a_{12} \\
-   a_{21} & a_{22}
-\end{pmatrix}
-\] 
-
-\[
-\begin{pmatrix}
-   a_{11} & a_{12} & a_{13}\\
-   a_{21} & a_{22} & a_{23}\\
-   a_{31} & a_{32} & a_{33}
-\end{pmatrix}
-
-\] 
-
-\[
-f: \mathbb{R} \to \mathbb{R}
-\] 
-
-\[
-  f: G \subset \mathbb{R}^{n} \to \mathbb{R}
-\] 
-
-\[
-f: A \subset \mathbb{R}^{n} \to \mathbb{R}^{n}
-\]
-\[ f: A \subset \mathbb{R}^{n} \to \mathbb{R}^{m}: x \mapsto \frac{n^{2}}{n!} \] 
-
-\[ \int^{2} \] 
-
-
-(word)
-(word1 word2 word3)
-function (_, argg:arggg)
-
-a^{nn}
-a_{2222}
-a_{33}
-a_{nxm}
-a_{2}
-a^{n}
-
-a^{}
-
-^{}
-a^{asdfasdf}
-
-$a_{\mathbb{R}}$
-
-\[ \int^{x^{2}}_{\frac{n^{n}}{5!}} \] 
-\[ \int^{x^{2}}_{A \subset\mathbb{R}} \] 
-
-\[  \int^{\infty}_{-\infty} \frac{\cos(x)}{\sin(x)}dx = \Big[ \frac{\tg(x)}{\cos(x^{2})} ]^{\infty}_{\infty} \] 
-
-\[ \int^{\infty}_{\infty} \frac{\tan}{\cos}dx = \tan(x) \Big|_{\infty}^{\infty} \]
-
-\[ \mathbb{Q} \] 
-\[ \mathbb{C} \] 
-
-\[ \mathcal{A} \] 
-\[ \mathcal{F} \] 
-
-\[ \frac{\partial t}{\partial y}f(t) \] 
-\[ \frac{\partial}{\partial{t}}v(t) \] 
-\[ \frac{\partial{}}{\partial{_y_}}_f(x)_ \] 
-\[ \frac{\partial{}}{\partial{}}\] 
-\[ \frac{\partial{f(x)}}{\partial{}} \] 
-\[ \frac{\partial{}}{\partial{y}} \] 
-\[ \frac{d{f(x)}}{d{y}} \] 
-\[ \frac{\partial{^{2}f(x)}}{\partial{y^{2}}} \] 
-\[ f'(x) \] 
-\[ f^{(n)}(x) \] 
-\[ f^{(n)}(x) \] 
-\[ f^{(n)}(y) \] 
-\[ h^{(iv)}(x) \] 
-\[ h(x) \] 
-\[ s^{(n)}(t) \] 
-\[ f'(x) \] 
-\[ \mathbb{C} \] 
-\[ \mathbb{Z} \] 
-\[ \iiint^{\infty}_{\infty}f(x)dx \] 
-\[ \int^{\pi}_{\frac{\pi}{2}}\int^{x^{2}}_{-x^{2}}f(x)dxd\theta \] 
-
-\[ \partial{x} \] 
-\[ \lim_{n \to \infty} \] 
-\[ \sum_{n \to \infty} \] 
-\[ \sum_{n}^{\infty} \] 
-\[ \sum_{n = 1}^{\infty} \] 
-\[ \sum_{n=1}^{\infty} \] 
-
-\part{Parte 1}
-\chapter{Capítulo 1}
-\section{Sección 1}
-\subsection{Subsección 1}
-
-\begin{theo}[Riemann]
-  El teorema de Riemann dice así \[ \iiint_{\mathbb{C}} f(x)dx \] 
-\end{theo}
-
-\begin{cor}[Awesome]
-  Contewnido
-\end{cor}
-
-\begin{lem}[Título]
-  Lema
-\end{lem}
+\begin{defn}[Plano Complejo]
+  Definimos los números complejos como el conjunto $\mathbb{C} = \{ (a, b) : a, b \in \mathbb{R} \}$ junto con las operaciones suma y producto \[ (a, b) + (c, d) = (a + c, b + d) \] \[ (a, b) \cdot (c, d) = (ac - bd, bc + ad) \] 
+\end{defn}
 
 \begin{obs}
-  content
+  $(\mathbb{C}, +, \cdot)$ es un cuerpo conmutativo. 
+  \begin{enumerate}[label=(\roman*)]
+    \item La identidad de la suma es $(0, 0)$ y la identidad del producto es $ (1,0)$.
+    \item Se satisfacen la prorpiedad asociativa, la distributiba y la conmutativa.
+    \item Todo elemento distinto de cero tiene inverso en $\mathbb{C}$.
+  \end{enumerate}
+\end{obs}
+
+\begin{obs}
+  Consideramos los números reales $\mathbb{R}$ como el subconjunto de los números complejos $\mathbb{C}$ de la forma $(a, 0)$.
+  Dado $(a, b) \in \mathbb{C}$ podemos escribir $(a, b) = a(1, 0) + b (0, 1)$. Sea $i = (0, 1)$ entonces $(a, b) = a + ib$. Notese que $i² = (0, 1) \cdot (0, 1) = (-1, 0) \rightarrow 1 \in \mathbb{R}$.
+\end{obs}
+
+\begin{obs}
+  La parte real de $z = a + ib \in \mathbb{C}$ es $ a$ y se denota $\Re(z) = a$. La parte imaginaria de $ z$ es $b$ y se denota $ \Im (z) = b$.
+\end{obs}
+
+\begin{defn}[Módulo]
+  Sea $z = a+ib \in \mathbb{C}$, el módulo de $z$ es \[ |z| = \sqrt{a^{2} + b^{2}} \]
+\end{defn}
+
+\begin{obs}
+  El módulo de un número complejo es la distancia desde el punto del plano hasta el origen.
+\end{obs}
+
+\begin{defn}[Conjugado]
+  Sea $ z=a +ib \in \mathbb{C} $, el conjugado de $z$ es \[ \overline{z}=a-ib \] 
+\end{defn}
+
+\begin{obs}
+  El conjugado de un número complejo es su simétrico respecto al eje de coordenadas.
 \end{obs}
 
 \begin{prop}
-  content
+  Se verifican las siguientes propiedades:
+  \begin{enumerate}[label=(\roman*)]
+    \item $\overline{\overline{z}}=z$ y $\overline{z} = z \Leftrightarrow z \in \mathbb{R}$.
+    \item $ z + \overline{z} = 2\Re(z)$ y $z - \overline{z} = 2 \Im(z)$.
+    \item $ \overline{z+w}= \overline{z} + \overline{w}$ y $ \overline{-z} = -\overline{z}$
+    \item $\overline{zw} = \overline{z} \cdot \overline{w}$ y si $z \neq 0$ entonces $\overline{z^{-1}} = \overline{z}^{-1}$
+    \item $|z|^{2} = z \overline{z}$ y $z^{-1} = \frac{\overline{z}}{|z|^{2}},\ \forall z \neq 0.$
+    \item $|zw| = |z||w|$, $|\frac{z}{w}|= \frac{|z|}{|w|} \text{ si $(w \neq 0)$}$ y $|z| = |\overline{z}|$
+    \item $|z + w| \leq |z| + |w|$. Además, si $\exists t \geq 0 : z=tw$ se tiene $|z+w| = |z| + |w|$.
+  \end{enumerate}
 \end{prop}
 
-\begin{nota}
-  content
-\end{nota}
+\begin{obs}
+  El módulo permite definir una distancia en el plano complejo $ d(z,w) = |z - w|$. De esta forma $\mathbb{C}$ y $\mathbb{R}$ son topológicamente iguales.
+\end{obs}
 
-\begin{dem}
-  content
-\end{dem}
+\begin{defn}[Representación polar de un número complejo]
+Sea $z = a + ib \in \mathbb{C}$, $z$ representa el punto $(a, b)$ en el plano, cuya expresión en coordenadas polares es $(r\cos\theta, r\sin \theta)$. Y escribimos \[z = r(\cos \theta + i \sin \theta) := re^{i \theta}\] donde $r=|z|$ y $\theta = \arg(z) = \arctg(\frac{b}{a})$.
+\end{defn}
 
-\begin{ejm}
-  content
-\end{ejm}
-
-\[ \neq \leq \geq \mathbb{Z} \in \not\in \not \nabla \nabla f(x) \] 
-\[ \limsup_{n \to \infty} \limsup_{n \to \infty} \forall \Longleftrightarrow \Leftrightarrow \Leftrightarrow\] 
-\[ \Rightarrow e^{x} \ln(e) \] 
-\[ \emptyset \] 
-\[ \mathcal{A} \overline{A} \mathcal{\overline{A}}\] 
-\[ \Omega \omega \lambda \Lambda \Theta \theta\]
-\[ \sqrt{x^{2}} = x \] 
-
-fun
-
-\[ f: \mathbb{R} \to \mathbb{R} \] 
-
+\begin{obs}
+  Si $-\pi < \theta < \pi$ lo llamamos argumento principal y se denota $\Arg(z)$. El conjunto de todos los posibles argumentos de $z$ es $\{ Arg(z) + 2k\pi : k \in  \mathbb{Z}\}$.
+\end{obs}
 

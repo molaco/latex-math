@@ -1,0 +1,52 @@
+\part{Topología General}
+\chapter{Espacios Topológicos y Funciones Continuas}
+\section{Espacios Topológicos}
+
+\begin{defn}[Topología]
+  Se llama topología sobre un conjunto $X$ a $\forall \tau \subset \mathcal{P}(X)$ que verifique:
+  \begin{enumerate}[label=(\roman*)]
+    \item $\emptyset,X \in \tau$.
+    \item $\forall A_{1}, A_{2} \in \tau \Rightarrow A_{1}\cap A_{2} \in \tau$
+    \item $\forall \{ A_{j} \}_{j \in J} \subset \tau \Rightarrow \bigcup_{j \in J} A_{j} \in \tau$
+  \end{enumerate}
+\end{defn}
+
+\begin{obs}
+  Al par $\big( X, \tau \big)$ se denomina \textit{espacio topológico} y los elementos de $X$ son puntos del espacio topológico.
+\end{obs}
+
+\begin{ejm}
+  \begin{enumerate}[label=(\roman*)]
+    \item   Sea $X$ un conjunto, entonces $\mathcal{P}(X) = \tau_{D}$ es una topología y se llama topología discreta.
+    \item  La colección $\tau = \{ X, \emptyset \}$ es también una topología y la llamamos topología trivial.
+    \item Sea $(X, d)$ un espacio métrico y sea $\tau_{d} = \{ U \subset X : \forall x \in U, \exits \epsilon > 0 : B_{\epsilon} \subset U \}$ es una topología y la llamamos topología inducida por la métrica $d$.
+  \end{enumerate}
+\end{ejm}
+
+\begin{obs}
+  Toda métrica induce un espacio topológico pero no todo espacio topológico es inducido por una métrica.
+\end{obs}
+
+\begin{defn}[Espacio Metrizable]
+  Sea $\big( X, \tau \big)$ e.t., decimos que es un \textit{espacio matizable} si $\exits d$ métrica sobre $X$ tal que $\ta = \tau_{d}$.
+\end{defn}
+
+\begin{defn}[Conjunto Abierto]
+  Sea $\big( x, \tau \big)$ espacio topológico, decimos que $U \subset X$ es un \textit{conjunto abierto} si $U \in \tau$.
+\end{defn}
+
+\begin{obs}
+  Si $U$ es un conjunto abierto, entonces $X \setminus U$ es un conjunto cerrado.
+\end{obs}
+
+\begin{obs}
+  Existen conjuntos que son abiertos y cerrados simultáneamente. Y existen conjuntos que no son ni abiertos ni cerrados.
+\end{obs}
+
+\begin{ejm}
+  Sea el espacio topológico $\big( \mathbb{R}, \tau_{u} \big)$ entonces $S = (0,1])$ no es ni abierto ni cerrado.
+\end{ejm}
+
+\begin{ejm}
+  Sea el espacio topológico $\big( X, \tau_{d} \big)$ donde $\tau_{d}=\mathcal{P}(X)$ entonces $\forall S \subset X$, $S$ es abierto y cerrado simultáneamente.
+\end{ejm}

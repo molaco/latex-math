@@ -1,0 +1,54 @@
+\begin{prop}[Propiedades Exponencial]
+  Se verfican las siguientes propiedades:
+  \begin{enumerate}[label=(\roman*)]
+    \item Si $z \in \mathbb{R}$ entonces $e^z$ coincide con la exponencial real.
+    \item $ |e^{z}| = e^{x}$ y $\arg(e^{z}) = y$.
+    \item $e^{\overline{z}} = \overline{e^{\overline{z}}}$.
+    \item  $e^{z} \neq 0$ y $ (e^{z})^{-1} = e^{-z}$.
+    \item $e^{z+w} =  e^{z}e^{w}, \forall z,w \in \mathbb{C}$.
+    \item $e^{2k\pi i} = 1, \forall k \in \mathbb{Z}$.
+    \item es periódica, $e^{z} = e^{z + 2\pi i}$
+    \item es continua, Sea $(z_{n})_{n \in \mathbb{N}}$ una sucesión de números complejos, si $z_{n} \xrightarrow[n \rightarrow \infty]{} z_{0} \Rightarrow e^{z_{n}} \xrightarrow[n \rightarrow \infty]{} e^{z_{0}}$.
+    \item  No es inyectiva, exiten infinitos $z \in \mathbb{C}$ tal que $ e^{x} = 1$.
+  \end{enumerate}
+\end{prop}
+
+\begin{obs}
+  En el plano la exponencial compleja transforma las rectas horizontales de la forma $z = x + ib$ en semirectas de radio $e^{x}$ y ángulo $b$. Y rectas verticales de la forma $z = a + iy$ a circunferenciasde radio $e^{a}$ y ángulo $y$.
+\end{obs}
+
+\begin{defn}[Funciones Trigonométricas]
+  Se definene las funciones $\sen $ y $\cos$ como \[ \cos(z) = \frac{e^{iz} + e^{-iz}}{2}, \ \sen(z) = \frac{e^{iz} -  e^{-iz}}{2i} \] 
+\end{defn}
+
+\begin{prop}[Propiedades cos y sen]
+  \begin{enumerate}[label=(\roman*)]
+    \item Son funciones continuas.
+    \item Sobre los números reales coinciden con las correspondientes funciones reales.
+    \item $\cos(z) = \cos(-z)$ y $\sen(z) = -\sen(-z), \forall z \in \mathbb{C}$.
+    \item  $\cos(z) = 0 \Leftrightarrow z = \frac{\pi}{2} + k \pi$ y $\sen(z) = 0 \Leftrightarrow z = k \pi$ para $k \in \mathbb{Z}$.
+    \item $\forall z,w \in \mathbb{C}$, se tien $ \cos(z+w)= \cos(z)\cos(w) -\sen(z)\sen(w)$ y $ \sen(z+w)=\sen(z)\cos(w) + \sen(w)\cos(z)$.
+    \item El coseno y el seno son funciones periódicas de periodo $2\pi$.
+    \item $\cos(z)^{2} + \sen(z)^{2} = 1, \forall z \in \mathbb{C}$.
+  \end{enumerate}
+\end{prop}
+
+\begin{dem}[ii]
+  Veamos que si $z \in \mathbb{R}$ entonces la exponencial compleja coincide con la real \[\cos(x) = \frac{e^{ix} + e^{-ix}}{2} =\] \[= \frac{1}{2}\big( \cos(x) + \sen(x) + \cos(-x) + i \sen(-x) \big) = \cos(x) \]
+\end{dem}
+
+\begin{dem}(iv)
+  $ \cos(z) = 0 \Leftrightarrow e^{iz} + e^{-iz} = 0 \Leftrightarrow e^{iz}(e^{iz} + e^{-iz}) = e^{2iz} +1 = 0 \Leftrightarrow e^{2iz} = -1 \Rightarrow z \in \mathbb{R}$. Si $ y \neq 0$ entonces $e^{2iz} = e^{2ix - 2y} \Rightarrow |e^{2iz}| \neq -1$.
+\end{dem}
+
+\begin{defn}[Función Tangente]
+  A partir de las funciones seno y coseno se define la tangente, \[ \tan(z) = \frac{\sen(z)}{\cos(z)} = -i \frac{e^{iz} - e^{-iz}}{e^{iz} + e^{-iz}} \] 
+\end{defn}
+
+\begin{obs}
+  Todas las funciones trigonométricas son funciones de $e^{iz}$.
+\end{obs}
+
+\begin{obs}
+  También podemos definir las funciones \[ \senh(z) = \frac{e^{z}-e^{-z}}{2} \text{ y } \cosh(z) = \frac{e^{z} + e^{-z}}{2} \] 
+\end{obs}

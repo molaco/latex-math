@@ -1,1 +1,41 @@
+\begin{prop}
+  \begin{enumerate}[label=(\roman*)]
+    \item $e^{i \theta} = e^{i(\theta + 2k\pi)} \forall k \in \mathbb{Z}$.
+    \item $|e^{i \theta}| = 1, |\overline{e^{i \theta}}| = e^{-i\theta} = \big( e^{i \theta} \big)^{-1}$. 
+    \item $e^{i( \theta + \sigma)} = e^{i \theta} e^{i \sigma}$.
+    \item $\arg(zw) = \arg(z) + \arg(w)$ y $\arg(\overline{z}) = \arg(z^{-1}) = - \arg(z)$
+  \end{enumerate}
+\end{prop}
 
+\begin{prop}
+  Si $ z = r e^{i \theta}$ entonces $ z^{n} = r^{n}e^{i n \theta} = |z|^{n} e^{i n \arg(z)}$.
+\end{prop}
+
+\begin{obs}
+  Una raíz $n$-esima de un número complejo $w$ es número $z$ que cumple $z^{n} = w$. Si $w = 0$ la única raíz es $0$, si $w \neq 0$ entonces por el Teorema Fundamental del Álgebra tenemos que hay $n$ raíces distintas.
+
+  Sean $w= |w|e^{i \theta}$ y $z=|z|e^{i \alpha}$, tenemos que \[ |w|e^{i \theta} = |z|^{n}e^{i n \alpha} \] y por tanto $ |z| = |w|^{\frac{1}{n}} $ y $ e^{i \theta} = e^{i n \alpha}$, lo cual implica que $n\alpha = \theta + 2k\pi$ para $k \in \mathbb{Z}$. Los valores de $\alpha$ son \[ \frac{\theta}{n}, \frac{ \theta + 2\pi}{n}, \cdots, \frac{\theta + 2\pi(n-1)}{n} \] 
+\end{obs}
+
+\begin{prop}
+  Sea $w \in \mathbb{C}$ entonces $w$ tiene $n$ raíces $n$-simas distintas.
+\end{prop}
+
+\begin{obs}
+  Estas $n$ raíces son los vértices de un polígono regular de $n$ lados inscritos en la circunferencia de centro $0$ y radio $|w|^{\frac{1}{n}}$.
+\end{obs}
+
+\section{Función Exponencial}
+
+\begin{defn}[Función polinómica]
+  Sea $P: \mathbb{C} \to \mathbb{C}: z \mapsto a_{0} + a_{1}z + \cdots + a_{n}z^{n}$ donde $a_{0}, \cdots, a_{n} \in \mathbb{C}$. 
+\end{defn}
+
+\begin{obs}
+  Como $f(z) = z^{k}$ es continua (de $\mathbb{R}^{2} \rightarrow \mathbb{R}^{2}$) se tiene que $f$ es continua de $\mathbb{C} \rightarrow \mathbb{C}$.
+\end{obs}
+
+\begin{defn}[Función Exponencial]
+Definimos la \textit{función exponencial} como la solución de la ecuación diferencial \[ f'(z) = f(z) \] con el valor inicial $ f(0) = 1$. Haciendo \[ f(z) = a_{0} + a_{1}z + \cdots + a_{n}z^{n} + \cdots \] \[ f'(z) = a_{1} + 2a_{2}z + \cdots + na_{n}z^{n-1} + \cdots  \] se tiene que $a_{n-1} = n a_{n}$ y $ a_{0} = 1$ y por inducción $a_{n}=\frac{1}{n!}$.
+\\ La solución se denota \[ e^{z} = 1 + \frac{z}{1!} + \frac{z^{2}}{2!} + \cdots + \frac{z^{n}}{n!} + \cdots \] que es una serie convergente.
+\end{defn}

@@ -1,5 +1,5 @@
 \babel@toc {spanish}{}\relax 
-\contentsline {part}{I\hspace {1em}Parte 1}{4}{}%
-\contentsline {chapter}{\numberline {1}Capítulo 1}{5}{}%
-\contentsline {section}{\numberline {1.1}Sección 1}{5}{}%
-\contentsline {subsection}{\numberline {1.1.1}Subsección 1}{5}{}%
+\contentsline {part}{I\hspace {1em}Análisis Complejo}{2}{}%
+\contentsline {chapter}{\numberline {1}Preliminares}{3}{}%
+\contentsline {section}{\numberline {1.1}El Plano Complejo}{3}{}%
+\contentsline {section}{\numberline {1.2}Función Exponencial}{5}{}%

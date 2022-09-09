@@ -1,0 +1,3 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {part}{I\hspace {1em}Curvas}{2}{}%
+\contentsline {chapter}{\numberline {1}Estudio Local}{3}{}%

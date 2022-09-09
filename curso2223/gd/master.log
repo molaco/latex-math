@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.8.13)  8 SEP 2022 08:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.8.13)  8 SEP 2022 00:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -359,237 +359,28 @@ LaTeX Info: Redefining \% on input line 1.
 Cap\'{\i }tulo 1.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 5.
+(mdframed)              on input line 4.
 LaTeX Font Info:    Font shape `OT1/cmss/m/it' in size <12> not available
-(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 5.
+(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 4.
+) [3
 
-LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
-(Font)              using `OT1/cmss/m/sc' instead on input line 12.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <12> not available
-(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 12.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
-(Font)              using `OT1/cmss/m/sc' instead on input line 13.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
-(Font)              using `OT1/cmss/m/sc' instead on input line 14.
-
-
-LaTeX Warning: Command \texttwosuperior invalid in math mode on input line 20.
-
-LaTeX Font Info:    Trying to load font information for TS1+cmss on input line 20.
-(/usr/share/texmf-dist/tex/latex/base/ts1cmss.fd
-File: ts1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-)
-
-LaTeX Warning: Command \texttwosuperior invalid in math mode on input line 20.
-
-Missing character: There is no ² in font cmr12!
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 27.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 35.
-[3
-
-]
-Package mdframed Info: Not enough space on this page on input line 37.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 43.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
-(Font)              using `OT1/cmss/m/sc' instead on input line 46.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
-(Font)              using `OT1/cmss/m/sc' instead on input line 47.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
-(Font)              using `OT1/cmss/m/sc' instead on input line 48.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
-(Font)              using `OT1/cmss/m/sc' instead on input line 49.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
-(Font)              using `OT1/cmss/m/sc' instead on input line 50.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
-(Font)              using `OT1/cmss/m/sc' instead on input line 51.
-
-LaTeX Font Info:    Font shape `OT1/cmss/m/it' in size <8> not available
-(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 51.
-LaTeX Font Info:    Font shape `OT1/cmss/m/it' in size <6> not available
-(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 51.
-
-LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
-(Font)              using `OT1/cmss/m/sc' instead on input line 52.
-
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 60.
-./clase_01.tex:65: Undefined control sequence.
-<recently read> \Arg 
-                     
-l.65 ...amos argumento principal y se denota $\Arg
-                                                  (z)$. El conjunto de todos...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-) (./clase_02.tex
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 1.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
-(Font)              using `OT1/cmss/m/sc' instead on input line 3.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
-(Font)              using `OT1/cmss/m/sc' instead on input line 4.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
-(Font)              using `OT1/cmss/m/sc' instead on input line 5.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
-(Font)              using `OT1/cmss/m/sc' instead on input line 6.
-
-[4]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 10.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 20.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 30.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 38.
- [5]) (./clase_03.tex
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 1.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
-(Font)              using `OT1/cmss/m/sc' instead on input line 4.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
-(Font)              using `OT1/cmss/m/sc' instead on input line 5.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
-(Font)              using `OT1/cmss/m/sc' instead on input line 6.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
-(Font)              using `OT1/cmss/m/sc' instead on input line 7.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
-(Font)              using `OT1/cmss/m/sc' instead on input line 8.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
-(Font)              using `OT1/cmss/m/sc' instead on input line 9.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
-(Font)              using `OT1/cmss/m/sc' instead on input line 10.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
-(Font)              using `OT1/cmss/m/sc' instead on input line 11.
-
-
-Overfull \hbox (7.46117pt too wide) in paragraph at lines 11--12
-[]\OT1/cmss/m/sl/12 es con-ti-nua, Sea $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 z[]\OT1/cmr/m/n/12 )[]$ \OT1/cmss/m/sl/12 una su-ce-si^^Son de n^^Sume-ros com-ple-jos, si $\OML/cmm/m/it/12 z[] []
- []
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
-(Font)              using `OT1/cmss/m/sc' instead on input line 12.
-
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 20.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 24.
-
-LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
-(Font)              using `OT1/cmss/m/sc' instead on input line 26.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
-(Font)              using `OT1/cmss/m/sc' instead on input line 27.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
-(Font)              using `OT1/cmss/m/sc' instead on input line 28.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
-(Font)              using `OT1/cmss/m/sc' instead on input line 29.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
-(Font)              using `OT1/cmss/m/sc' instead on input line 30.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
-(Font)              using `OT1/cmss/m/sc' instead on input line 31.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
-(Font)              using `OT1/cmss/m/sc' instead on input line 32.
-
-[6]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 36.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 40.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 44.
-) [7] (./master.aux
+] (./master.aux
 LaTeX Info: Redefining \. on input line 9.
 LaTeX Info: Redefining \% on input line 9.
 ) ) 
 Here is how much of TeX's memory you used:
- 6193 strings out of 478238
- 102728 string characters out of 5850456
- 427195 words of memory out of 5000000
- 24319 multiletter control sequences out of 15000+600000
- 482753 words of font info for 81 fonts, out of 8000000 for 9000
+ 6126 strings out of 478238
+ 101505 string characters out of 5850456
+ 411199 words of memory out of 5000000
+ 24266 multiletter control sequences out of 15000+600000
+ 479960 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 87i,13n,93p,493b,427s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on master.pdf (8 pages, 168682 bytes).
+ 87i,6n,93p,493b,371s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on master.pdf (4 pages, 85451 bytes).
 PDF statistics:
- 106 PDF objects out of 1000 (max. 8388607)
- 65 compressed objects within 1 object stream
+ 62 PDF objects out of 1000 (max. 8388607)
+ 37 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

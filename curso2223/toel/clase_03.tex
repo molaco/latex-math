@@ -1,0 +1,109 @@
+\begin{defn}[Interior]
+  Sea $\big( X, \mathcal{T} \big)$ e.t., $S \subset X$ se llama interior de $ S$ en $\big( X, \mathcal{T} \big)$ al conjunto \[  \mathring{S} = \bigcap \{ G \subset X \text{ abierto y } G \subset E \} \] 
+\end{defn}
+
+\begin{obs}
+  $\mathring{S}$ es abierto de $\mathcal{T}$, $\mathring{S} \subset S$ y es el mayor abierto contenido en $S$.
+\end{obs}
+
+\begin{prop}[Propideades interior]
+  content
+\end{prop}
+
+\begin{prop}
+  Sea $\big( X, \mathcal{T} \big)$ e.t., $ S \subset X$. Enotnces:
+  \begin{enumerate}[label=(\roman*)]
+    \item $X \setminus \overline{S} = \mathring{(X \setminus S)}$.
+    \item $X \setminus \mathring{S} = \overline{X \setminus S}$.
+  \end{enumerate}
+\end{prop}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item $X \setminus \bigcap_{C \in \mathcal{F}: S \subset C} C = \bigcup_{C \in \mathcal{F}: S \subset S} X \setminus C = \bigcup_{G \in \mathcal{T}: G \subset X \setminus S} G = \mathring{(X \setminus S)}$
+    \item $X \setminus \mathring{S} = X \setminus \bigcup_{G \in \mathcal{T}: G \subset S} G = \bigcap_{G \in \mathcal{T}: G \subset S} (X \setminus G) = \bigcap_{C \in \mathcal{F}: X \setminus S \subset C} C = \overline{X \setminus S}$
+  \end{enumerate}
+\end{dem}
+
+\begin{defn}[Frontera]
+  Sea $\big( X, \mathcal{T} \big)$ e.t., $ S \subset X$. Se llama frontera de $ S$ en $ \big( X, \mathcal{T} \big)$ a \[ Fr(S) = \overline{S} \cap \overline{(X \setminus S)}\]
+\end{defn}
+
+\begin{obs}
+  $Fr(S)$ es cerrado
+\end{obs}
+
+\begin{obs}
+  $ Fr(S) = Fr(X \setminus S)$
+\end{obs}
+
+\begin{obs}
+  $Fr(S)  \not\subset S$
+\end{obs}
+
+\begin{prop}
+  Sea $ \big( X, \mathcal{T} \big)$ e.t., $ S \subset X$. Entonces:
+  \begin{enumerate}[label=(\roman*)]
+    \item $ \overline{S} = S \cup Fr(S)$
+    \item $\mathring{S} = S \setminus Fr(S) = S \setminus \big(  Fr(S) \cap S \big)$
+    \item $ X = \mathring{S} \cup \mathring{(X \setminus S)} \cup Fr(S)$
+    \item $ Fr(S) = \overline{S} \setminus \mathring{S}$
+  \end{enumerate}
+\end{prop}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item \[ S \cup Fr(S) =  S \cup \big( \overline{S} \cap \overline{X \setminus S} \big) = \] \[ = (S \cup \overline{S}) \cap (S \cup \overline{X \setminus S}) = \overline{S} \]
+    \item \[ S \setminus Fr(S) = S \setminus (\overline{S} \cap \overline{X \setminus S}) = \]
+      \[ = (S \setminus \overline{S}) \cup (S \setminus \overline{X \setminus S}) = \emptyset \cup (S \cap (X \setminus \overline{X \setminus S})) = \] 
+      \[ = (S \cap (X \setminus (X \setminus \mathring{S}))) = (S \cap \mathring{S})= \mathring{S} \]
+    \item \[ X = \mathring{S} \cup (X \setminus \mathring{S}) = \mathring{S} \cup \overline{X \setminus S} = \] 
+      \[ = \mathring{S} \cup \big[ (X \setminus S) \cup Fr(X \setminus S) \big] =\] 
+      \[ = \mathring{S} \cup \big[ \mathring{(X \setminus S)} \cup \big( Fr(X \setminus S) \cap (X \setminus S) \big) \cup Fr(X \setminus S) \big] = \]
+      \[ = \mathring{S} \cup \mathring{(X \setminus S)} \cup Fr(X \setminus S) = \mathring{S} \cup \mathring{(X \setminus S)} \cup Fr(S)  \] 
+    \item \[ Fr(S) = \overline{S} \cap \overline{(X \setminus S)} = \overline{S} \cap (X \setminus \mathring{S})\] 
+  \end{enumerate}
+\end{dem}
+
+\begin{defn}
+  Sea $\big( X, \mathcal{T} \big)$ e.t., $S \subset X$ se dice que es denso en $\big( X, \mathcal{T} \big)$ si $\overline{S} = X$
+\end{defn}
+
+\begin{defn}
+  Sea $\big( X, \mathcal{T} \big)$ e.t., $x \in X$, $V \subset X$. Se dice que $V$ es un entorno de $x$ en $\big( X, \mathcal{T} \big)$ si $\exists A \in \mathcal{T}: x \in A \subset V$.
+\end{defn}
+
+\begin{defn}
+  Sea $\big( X, \mathcal{T} \big)$ e.t., $x \in X$, $\mathcal{V}(x)$ es la colección de todos los entornos de $x$ y se llama sistema de entornos de $x$ en $\big( X, \mathcal{T} \big)$.
+\end{defn}
+
+\begin{obs}
+  Si $\big( X, \mathcal{T} \big)$ e.t., $x \in X$, $V \subset X$ entonces $V$ es entorno de $x \Leftrightarrow x \in \mathring{V}$.
+\end{obs}
+
+\begin{nota}
+  $U^{x}, V^{x}$ entornos de $x$.
+\end{nota}
+
+\begin{prop}
+  Sea $\big( X, \mathcal{T} \big)$ e.t., $\mathcal{V}(x)$ tiene las siguiente propiedades:
+  \begin{enumerate}[label=(\roman*)]
+    \item $\forall U \in \mathcal{V}(x) \Rightarrow x \in U$.
+    \item $\forall U,V \in \mathcal{V}(x) \Rightarrow U \cap V \in \mathcal{V}(x)$.
+    \item $\forall U \in \mathcal{V}(x), \exists V \in \mathcal{V}(x)$ tal que $\forall y \in V, U \in \mathcal{V}(y)$.
+    \item $\forall U \in \mathcal{V}(x)$, $ \exists V \subset X: U \subset V \Rightarrow V \in \mathcal{V}(x)$.
+  \end{enumerate}
+\end{prop}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item Trivial, a partir de la definición.
+    \item $x \in \mathring{U}, x \in \mathring{V} \Rightarrow x \in \mathring{U} \cap \mathring{V} \subset \mathring{U \cap V} \Rightarrow U \cap V \in \mathcal{V}(x)$.
+    \item Sean $ U \in \mathcal{V}(x), V = \mathring{U}$ como $x \in \mathring{U} = V \Rightarrow \forall y \in V \in \mathcal{T}$ y $V \subset U \Rightarrow U \in \mathcal{V}(y)$.
+    \item $U \in \mathcal{V}(x), U \subset V \Rightarrow x \in \mathring{U} \subset \mathring{V} \Rightarrow V \in \mathcal{V}(x)$.
+  \end{enumerate}
+\end{dem}
+
+\begin{prop}
+  Sea $X \neq \emptyset$, $ \forall x \in X: \mathcal{V}(x)  \subset \mathcal{P}(x)$ que cumple (i, ii, iii, iv) anteriores, entonces $\exists! \mathcal{T}$ sobre $ X: \forall x \in X, \mathcal{V}(x)$ es el sistema de entornos de $x$ en $\big( X, \mathcal{T} \big)$.
+\end{prop}
