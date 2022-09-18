@@ -1,0 +1,109 @@
+\begin{defn}[Espacio Homeomorfo]
+  Sean $( X, \mathcal{T} ), ( X', \mathcal{T}' )$ e.t. $f: X \to X'$ aplicación. Se dice que $f: ( X, \mathcal{T} ) \to ( X', \mathcal{T}' )$ es homeomorfismo si $f$ es biyectiva y $ f^{-1}$ es continua. En este caso, se dice que $( X, \mathcal{T} )$ es homeomorfo a $( X', \mathcal{T}' )$.
+\end{defn}
+
+\begin{defn}[Invariante Topológico]
+  Sea $(P)$ una propiedad de e.t.. Se dice que $(P)$ es un invariante topológico si para todo e.t. que cumpla $(P)$ todos los e.t. homeomorfos cumplen $(P)$.
+\end{defn}
+
+\begin{defn}
+  Sean $( X, \mathcal{T} ), ( X', \mathcal{T}' )$ e.t., $f: ( X, \mathcal{T} ) \to ( X', \mathcal{T}' )$ aplicaciones abiertas. Si $\forall A \in \mathcal{T}$, $f(A) \in \mathcal{T}'$
+\end{defn}
+
+\begin{obs}
+  Una aplicación es cerrada si $\forall C$ cerrado de $( X, \mathcal{T} )$, $f(C)$ cerrado de $( X', \mathcal{T}' )$.
+\end{obs}
+
+\begin{obs}
+  No hay ninguna implicación entre aplicación continua, aplicación abiera y aplicación cerrada.
+\end{obs}
+
+\begin{prop}
+  Sean $( X, \mathcal{T} ), ( X', \mathcal{T}' ), f: X \to X'$ aplicaciones biyectivas. Entonces, son equivalentes:
+  \begin{enumerate}[label=(\roman*)]
+    \item $f: ( X, \mathcal{T} ) \to ( X', \mathcal{T}' )$ es homeomorfismo.
+    \item $f: ( X, \mathcal{T} ) \to ( X', \mathcal{T}' )$ aplicación continua y abierta.
+    \item $f: ( X, \mathcal{T} ) \to ( X', \mathcal{T}' )$ aplicación continua y cerrada.
+  \end{enumerate}
+\end{prop}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item []
+    \item [(i $\Rightarrow$ ii)] $f$ homeomorfismo $\Rightarrow \exists f^{-1}$ aplicación continua $\Rightarrow \forall A' \in \mathcal{T}, (f^{-1}(A))^{-1} \in \mathcal{T}'$ donde $(f^{-1}(A))^{-1} = f(A) \Rightarrow f$ aplicación abierta.
+    \item [(ii $\Rightarrow$ i)] $f$ abierta y continua $\Rightarrow \forall A \in \mathcal{T}, f(A) \in \mathcal{T}'$ donde $ f(A) = (f^{-1}(A))^{-1} \Rightarrow f^{-1}$ aplicación continua.
+    \item [(i $ \Leftrightarrow$ iii)] es análoga.
+  \end{enumerate}
+
+\end{dem}
+
+\section{Espacio Producto}
+
+\begin{defn}[Producto Cartesiano]
+  Sea $\{ X_{j} \}_{j \in J} \neq \emptyset$ familia de conjuntos no vacios. Se llama producto castesiano de $\{ X_{j} \}_{j \in J}$ a 
+  \[ 
+   \prod_{j \in J} X_{j} = \{ x : J \to \bigcup_{j \in J} X_{j} \text{ aplicación } : x_{j} \in X_{j}, \forall j \in J \}
+  \] 
+\end{defn} 
+
+\begin{obs}
+  $\forall j \in J, p_{j_{0}}: \prod_{j \in J} X_{j} \to X_{j_{0}} : x \mapsto x_{j_{0}}$ se llama proyección.
+\end{obs}
+
+\begin{obs}
+  Si $X_{j} = X, \forall j \in J$ entonces $\prod_{j \in J} X_{j} = X^{J} = \{ x: J \to X, \ x \text{ aplicación } \}$.
+\end{obs}
+
+\begin{defn}[Axioma Elección]
+  $\forall \{ B_{\lambda} \}_{\lambda \in \Lambda} \neq \emptyset$ familia de conjuntos no vacios disjuntos dos a dos. Entonces, $ \exists A \subset \bigcup_{\lambda \in \Lambda} B_{\lambda}: A \cap B_{\lambda}$ tiene un solo elemento.
+\end{defn}
+
+\begin{defn}[Topología Producto]
+  Sea $\{ ( X_{j}, \mathcal{T}_{j \in J} ) \}_{j \in J}$ familia de e.t.. Se llama topología producto a la topología sobre $\prod_{j \in J} X_{j}$ generada por subbase
+  \[ 
+    \mathcal{S} = \{ p_{j}^{-1}(U_{j}) : U_{j} \in \mathcal{T}_{j}, \forall j \in J \} 
+  \] 
+  Esta topología se denota $\prod_{j \in J} \mathcal{T}_{j}$
+\end{defn}
+
+\begin{obs}
+  El producto de abiertos no es neceseariamente abierto.
+\end{obs}
+
+\begin{obs}
+La base engendrada por $\mathcal{S}$ es 
+\[ 
+  \mathcal{B} = \big\{ \bigcap_{j \in J} p_{j}^{-1}(U_{j}) : U_{j} \in \mathcal{T}_{j}, F \in \mathcal{P}(J) \big\}
+\]
+\[ 
+  = \big\{  \prod_{j \in J} A_{j} : A_{j} \in \mathcal{T}_{j}, \forall j \in J, A_{j} = X_{j} : \forall j \in J \setminus F \text{ no es finito } \big\}.
+\] 
+\end{obs}
+
+\begin{obs}
+  Si $J$ es finito, entonces $ \mathcal{B} = \big\{ \prod_{j \in J} A_{j}: A_{j} \in \mathcal{T}_{j}, \forall j \in J \big\}$.
+\end{obs}
+
+\begin{obs}
+  El producto espacios discretos no es neceseariamente discreto.
+\end{obs}
+
+\begin{prop}
+  Sea $\{( X_{j}, \mathcal{T}_{j} )\}_{j \in J}$ familia finita de e.t.. Entonces, $\forall j_{0} \in J$, 
+  \[ 
+    p_{j_{0}}: ( \prod_{j \in J} X_{j}, \prod_{j \in J} \mathcal{T}_{j} ) \to ( X_{j_{0}}, \mathcal{T}_{j_{0}} )
+  \] 
+  es aplicación abierta y continua.
+\end{prop}
+
+\begin{dem}
+  $\forall A \in \prod_{j \in J} A_{j}, A = \bigcup_{\lambda \in \Lambda} : B_{\lambda} \in \mathcal{B}$ donde $\mathcal{B}$ es subbase de $\prod_{j \in J} \mathcal{T}_{j}$, $B_{\lambda} = \{ \prod_{j \in J} U_{\lambda j}: U_{\lambda j} \in \mathcal{T}_{j}, U_{\lambda j} = X_{j}, \forall j \in J \setminus F: F \text{ finito }\}$. Entonces, $p_{j_{0}}(A) = p_{j_{0}}(\bigcup_{\lambda \in \Lambda} B_{\lambda}) = \bigcup_{\lambda \in \Lambda} p_{j_{0}}(B_{\lambda}) = \bigcup_{\lambda \in \Lambda} U_{\lambda j} \in \mathcal{T}_{j} \Rightarrow $ abierto.
+\end{dem}
+
+\begin{prop}
+  Sea $\{ ( X_{j}, \mathcal{T}_{j} ) \}_{j \in J}$ familia no vacia de e.t.. Entonces, la topología producto es la más débil sobre $\prod_{j \in J} X_{j}$ que hace continuas a todas las proyecciones.
+\end{prop}
+
+\begin{dem}
+  Sea $\mathcal{T}$ topología sobre $ \prod_{j \in J} X_{j}$ tal que $p_{j_{0}}: ( \prod_{j \in J} X_{j}, \mathcal{T} ) \to ( X_{j_{0}}, \mathcal{T}_{j_{0}} )$ es una proyección continua. Entonces, $\forall j_{0} \in J: U_{j_{0}} \in \mathcal{T}_{j_{0}}$ se tiene $p_{0}^{-1}(U_{j_{0}}) \in \mathcal{T} \Leftrightarrow \mathcal{S} \subset \mathcal{T}$ es subbase de $\prod_{j \in J} \mathcal{T}_{j} \Rightarrow \prod_{j \in J} \mathcal{T}_{j} \subset \mathcal{T}$.
+\end{dem}

@@ -7,11 +7,11 @@
 \end{nota}
 
 \begin{prop}[Dualidad conjuntos abiertos y cerrados]
-  Sea $\big( X, \mathcal{F} \big)$
+  Sea $\mathcal{F}$ es la familia de conjuntos cerrados de un espacio topológico $( X, \mathcal{F} )$.
   \begin{enumerate}[label=(\roman*)]
-    \item $\emptyset, X$ son cerrados.
-    \item $\forall C_{1},C_{2}$ cerrados $ \Rightarrow C_{1} \cup C_{2}$ es cerrado.
-    \item $\forall \{ C_{j} \}_{j \in J}$ cerrados $\Rightarrow \bigcap_{j \in J}^{} C_{j}$ es cerrado.
+    \item [(F1)] $\emptyset, X$ son cerrados.
+    \item [(F2)] $\forall C_{1},C_{2}$ cerrados $ \Rightarrow C_{1} \cup C_{2}$ es cerrado.
+    \item [(F3)] $\forall \{ C_{j} \}_{j \in J}$ cerrados $\Rightarrow \bigcap_{j \in J}^{} C_{j}$ es cerrado.
   \end{enumerate}
   
   Recíprocamente, si $X \neq \emptyset$, $\mathcal{F} \subset \mathcal{P}(X)$ y $\mathcal{F}$ cumple (i, ii, iii) entonces la colección de los miembros complementarios a $\mathcal{F}$ es una topología sobre $X$ en donde la familia de cerrados es $\mathcal{F}$.
@@ -40,11 +40,11 @@
 \begin{prop}[Propiedades Adherencia]
   Sea $\big( X, \mathcal{T} \big)$ e.t. entonces
   \begin{enumerate}[label=(\roman*)]
-    \item $\overline{\emptyset} =  \emptyset$,
-    \item $\forall S \subset X, S \subset \overline{S}$,
-    \item $\forall S \subset X, \overline{\overline{S}} = S$,
-    \item $\forall A,B \subset X, \overline{A \cup B} = \overline{A} \cup \overline{B}$,
-    \item $\forall C \subset X$, $C \text{ es cerrado} \Leftrightarrow C = \overline{C}$.
+    \item [(K1)] $\overline{\emptyset} =  \emptyset$,
+    \item [(K2)] $\forall S \subset X, S \subset \overline{S}$,
+    \item [(K3)] $\forall S \subset X, \overline{\overline{S}} = S$,
+    \item [(K4)] $\forall A,B \subset X, \overline{A \cup B} = \overline{A} \cup \overline{B}$,
+    \item [(K5)] $\forall C \subset X$, $C \text{ es cerrado} \Leftrightarrow C = \overline{C}$.
   \end{enumerate}
 \end{prop}
 

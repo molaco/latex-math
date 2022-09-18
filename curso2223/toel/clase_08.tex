@@ -1,0 +1,70 @@
+\section{Funciones continuas}
+
+\begin{defn}[Función continua]
+  Sean $( X, \mathcal{T} )$, $( X', \mathcal{T}' )$ dos e.t. y $f: X \to X'$ una aplicación. Se dice que $f: ( X, \mathcal{T} ) \to ( X', \mathcal{T}' )$ es una aplicación continua en $a \in X$ si $\forall \mathcal{V}^{f(a)}$ entorno de $f(a)$ en $( X', \mathcal{T}' )$, $\exists \mathcal{U}^{a}$ entorno de $a$ en $( X, \mathcal{T} ): f(\mathcal{U}^{a}) \subset \mathcal{V}^{f(a)}$.
+\end{defn}
+
+\begin{obs}
+  Se dice que $f$ es continua si lo es $\forall a \in X$.
+\end{obs}
+
+\begin{theo}
+  Sean $( X, \mathcal{T} )$, $( X', \mathcal{T}' )$ dos e.t. y $f: X \to X'$ una aplicación. Entonces, son equivalentes:
+  \begin{enumerate}[label=(\roman*)]
+    \item $\forall A' \in \mathcal{T}', f^{-1}(A') \in \mathcal{T}$
+    \item $f: ( X, \mathcal{T} ) \to ( X', \mathcal{T}' )$ es aplicación continua.
+    \item $\forall C \subset X, f(\overline{C}^{X}) \subset (\overline{f(C)})^{X'}$.
+    \item $\forall C' \subset X, \overline{f^{-1}(C')}^{X} \subset f^{-1}(\overline{C'}^{X'})$.
+    \item $\forall F'$ cerrado de $( X', \mathcal{T}' )$, $f^{-1}(F')$ es cerrado de $( X, \mathcal{T} )$.
+  \end{enumerate}
+\end{theo}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item [] ($i \Rightarrow ii$) Sea $a \in X$, $\mathcal{V}^{f(a)}$ entorno de $f(a)$ en $( X', \mathcal{T}' ) \Rightarrow \mathring{\mathcal{V}^{f(a)}}$, $ f(a) \in \mathring{\mathcal{V}^{f(a)}}$. Ahora, por (i), tenemos $a \in f^{-1}(\mathring{\mathcal{V}^{f(a)}}) \in \mathcal{T}$. Sea $f^{-1}(\mathcal{V}^{f(a)}) = \mathcal{U}^{a}$. Entonces, $f(\mathcal{U}^{a}) = f(f^{-1}(\mathcal{V}^{f(a)})) \subset \mathcal{\mathring{V}}^{f(a)} \subset \mathcal{V}^{f(a)} \Rightarrow f$ es continua.
+    \item [] ($ii \Rightarrow iii$) Sea $C \subset X, a \in \overline{C}^{X}, \mathcal{V}^{f(a)}$ entorno de $f(a)$ en $( X', \mathcal{T}' )$. Entonces, por (ii), $\exists \mathcal{U}^{a}$ entorno de $a$ en $( X, \mathcal{T} )$ tal que $f(\mathcal{U}^{a}) \subset \mathcal{V}^{f(a)} \Rightarrow \mathcal{U}^{a} \cap C \neq \emptyset \Rightarrow a \in \mathcal{U}^{a} \cap C \Rightarrow f(a) \in f(\mathcal{U}^{a}) \cap f(C) \subset \mathcal{V}^{f(a)} \cap f(C) \Rightarrow f(a) \in \overline{f(C)}^{X'}$.
+    \item [](iii $\Rightarrow$ iv) $\forall C' \subset X' \Rightarrow f'(C') \subset X'$ y por (iii) $f(\overline{f^{-1}(C')})^{X} \subset \overline{f(f^{-1}(C'))}^{X'} \subset \overline{C'}^{X'} \Rightarrow \overline{f^{-1}(C')}^{X} \subset f^{-1}(\overline{C'}^{X'})$.
+    \item [](iv $\Rightarrow$ v) $F'$ cerrado de $( X', \mathcal{T}' ) \Rightarrow \overline{f^{-1}(C')}^{X} \subset f^{-1}(\overline{F'}^{X'}) = f^{-1}(F') \Rightarrow f^{-1}(F')$ es cerrado en $( X, \mathcal{T} )$.
+    \item [] (v $\Rightarrow$ i) $A' \in \mathcal{T}' \Rightarrow $ $X' \setminus A'$ cerrado de $ ( X', \mathcal{T}' ) \Rightarrow f^{-1}(X' \setminus A)$ cerrado de $( X, \mathcal{T} ) \Leftrightarrow X \setminus f^{-1}(X' \setminus A') \in \mathcal{T}$. Y $x \not \in f^{-1}(X' \setminus A') \Leftrightarrow f(x) \not \in X' \setminus A' \Leftrightarrow f(x) \in A' \Leftrightarrow x \in f^{-1}(A') \Rightarrow X \setminus f^{-1}(X' \setminus A')$.
+  \end{enumerate}
+\end{dem}
+
+\begin{obs}
+  $\forall ( X, \mathcal{T} )$ e.t. la aplicación $1_{X}: ( X, \mathcal{T} ) \to ( X, \mathcal{T} )$ es continua.
+\end{obs}
+
+\begin{obs}
+  $\forall ( X, \mathcal{T} ), ( X', \mathcal{T}' )$ e.t. $\forall x_{0}' \in X'$ la aplicación constante con $c_{x_{0}'}: ( X, \mathcal{T} ) \to ( X', \mathcal{T}' )$ es constante.
+\end{obs}
+
+\begin{prop}
+  Sea $( X, \mathcal{T} ), ( X', \mathcal{T}' ), ( X'', \mathcal{T}'' )$ e.t., $f: ( X, \mathcal{T} ) \to ( X', \mathcal{T}' )$ aplicación continua, $f': ( X', \mathcal{T}' ) \to ( X'', \mathcal{T}'' )$ aplicación continua. Entonces, $(f' \circ f): ( X, \mathcal{T} ) \to ( X'', \mathcal{T}'' )$ es continua.
+\end{prop}
+
+\begin{dem}
+  $\forall A'' \in \mathcal{T''} \Rightarrow f^{-1}(A'') \in \mathcal{T}' \Rightarrow f^{-1}(f^{-1}(A'')) \in \mathcal{T}$ y $(f' \circ f)^{-1}(A'') = f^{-1}(f^{-1}(A''))$.
+\end{dem}
+
+\begin{prop}
+  Sea $( X, \mathcal{T} ), ( X', \mathcal{T}' )$ e.t., $f: ( X, \mathcal{T} ) \to ( X', \mathcal{T}' )$. Entoces, $f|_{S}: ( S, \mathcal{T}|_{S} ) \to ( X', \mathcal{T}' )$ es aplicación continua.
+\end{prop}
+
+\begin{dem}
+  $\forall A' \in \mathcal{T}', (f|_{S})^{-1}(A') = f^{-1}(A')\cap S \in \mathcal{T}|_{S}$.
+\end{dem}
+
+\begin{prop}
+  Sea $( X, \mathcal{T} ), ( X', \mathcal{T}' )$ e.t., $f: ( X, \mathcal{T} ) \to ( X', \mathcal{T}' ), S \subset X$. Entonces, $f: ( X, \mathcal{T} ) \to ( f(x), \mathcal{T'}|_{f(x)})$ es aplicación continua.
+\end{prop}
+
+\begin{dem}
+  $\forall G' \in \mathcal{T'}|_{S} \Rightarrow \exists A' \in \mathcal{T}': G' = A' \cap f(x) \Rightarrow f^{-1}(G') = f^{-1}(A' \cap f(x)) = f^{-1}(A') \in \mathcal{T}$.
+\end{dem}
+
+\begin{prop}
+  Sean $( X, \mathcal{T} ), ( X', \mathcal{T}' )$ e.t., $f: X \to X'$ aplicación. Si $F_{1}, F_{2}$ son cerrados de $( X, \mathcal{T} )$ tal que $X = F_{1} \cap F_{2}$ y $f|_{F_{i}}: ( F_{i}, \mathcal{T}_{F_{i}}) \to ( X', \mathcal{T'} )$ es continua. Entonces, $f: ( X, \mathcal{T} ) \to ( X', \mathcal{T}' )$ es aplicación continua.
+\end{prop}
+
+\begin{dem}
+  $\forall F'$ cerrado de $ ( X', \mathcal{T}' )$, $f^{-1}(F') =f^{-1}(F')\cap X = f^{-1}(F') \cap (F_{1} \cup F_{2}) = (f^{-1}(F')\cap F_{1}) \cup (f^{-1}(F')\cap F_{2})$ donde $(f^{-1}(F')\cap F_{1}) = f^{-1}|_{F_{1}}(F') $ cerrado en $F_{1}$ y $(f^{-1}(F')\cap F_{2}) = f^{-1}|_{F_{2}}(F')$ cerrado en $F_{2} \Rightarrow f^{-1}(F')$ cerrado en $( X, \mathcal{T} )$.
+\end{dem}

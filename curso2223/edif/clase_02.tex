@@ -1,0 +1,197 @@
+\chapter{Teoremas de Existencia y Continuidad}
+
+\section{Preliminares}
+
+\begin{lem}[Lema de Gronwall]
+  Sea $J \subset \mathbb{R}$, $t_{0} \in J$ y $a,\beta,u \in C(J,\mathbb{R}_{+})$. Si 
+  \[ 
+    u(t) \leq a(t) + \Big | \int_{t_{0}}^{t} \beta(s) u(s) ds \Big |, \forall t \in J, 
+  \] 
+  Entonces,
+  \[ 
+     u(t) \leq a(t) + \Big | \int_{t_{0}}^{t} a(s) \beta(s) e^{| \int_{s}^{t} \beta(\sigma) d\sigma |} ds \Big |, \forall t \in J.
+  \] 
+\end{lem}
+
+\begin{dem}
+  Sea $v(t) = \int_{t_{0}}^{t} \beta(s) u(s) ds$. Entonces,
+  \[ 
+    \dot{v}(t) = \beta(t) u(t) 
+  \] 
+  \[ 
+    \leq \beta(t) a(t) + \beta(t) \Big | \int_{t_{0}}^{t} B(s) u(s)  ds \Big |, \forall t \in J.
+  \] 
+  \[ 
+    \leq a(t) \beta(t) + \sgn(t - t_{0}) \beta(t) v(t), \forall t \in J.
+  \] 
+  Ahora, sea $\gamma = \exp \big\{ - \Big | \int_{t_{0}}^{t} \beta(s) ds \Big | \big\} = \exp \big\{ - \int_{t_{0}}^{t} \sgn (t - t_{0}) \beta(s) ds \big\} $,
+  $\gamma \dot{v} \leq a \beta \gamma - \dot{\gamma} v \Rightarrow \dot{\gamma v} - a \beta \gamma \leq 0$ donde integrando tenemos que
+  \[ 
+    \sgn(t-t_{0}) v(t) \leq \sgn(t -t_{0}) \int_{t_{0}}^{t} \frac{a \beta \gamma }{\gamma(t)} ds , \forall t \in J.
+  \] 
+  \[ 
+    = \Big | \int_{t_{0}}^{t} \frac{a(s) \beta(s) \gamma(s)}{\gamma(t)} ds \Big |, \forall t \in J. 
+  \] 
+  Sustituyendo en la hipótesis inicial, nos queda
+  \[ 
+     u(t) \leq a(t) + \sgn(t -t_{0})v(t)
+  \] 
+  \[ 
+    \leq a(t) \Big | \int_{t_{0}}^{t} a(s) \beta(s) \exp \Big\{ \Big | \int_{s}^{t} \beta(\sigma) dgks \Big | \Big\} ds \Big |, \forall t \in J.
+  \] 
+\end{dem}
+
+\begin{cor}
+  Sea $a(t) = a_{0}(| t -  t_{0} |)$ donde $a_{0} \in C(\mathbb{R}_{+}, \mathbb{R}_{+})$ es una función monótona crecient tal que
+  \[ 
+    u(t) \leq a(t) + \Big | \int_{t_{0}}^{t} \beta(s) u(s) ds \Big |, \forall t \in J. 
+  \]
+  Entonces, 
+  \[ 
+    u(t) \leq a(t) e^{| \int_{t_{0}}^{t} \beta(\sigma) ds |}, \forall t \in J. 
+  \] 
+\end{cor}
+
+\begin{dem}
+  content
+\end{dem}
+
+\begin{defn}[Función uniformemente Lipschitz continua]
+  Sean $X, Y$ espacios métricos y $T$ un espacio topológico. Una función $f: T \times X \to Y$ se llama uniformemente Lipschitz continua respecto a $x \in X$, si $\exists \lambda \in \mathbb{R}_{+}$ tal que 
+  \[ 
+    d(f(t,x),f(t,x')) \leq \lambda d(x,x'), \forall x,x' \in X, \forall t \in T. 
+  \] 
+\end{defn}
+
+\begin{defn}[Función localmente Lipschitz continua]
+  Sean $X, Y$ espacios métricos y $T$ un espacio topológico. Una función $f: T \times X \to Y$ se llama localmente Lipschitz continua con respecto a $x \in X$, si $\forall (t_{0}, x_{0}) \in T \times X$ tiene un vecino $ U \times V \subset T \times X$ tal que $f|_{U \times V}$ es uniformemente Lipschitz continua con respecto a $x \in X$.
+\end{defn}
+
+\begin{nota}
+  Conjunto de funciones localmente Lipschitz continuas
+  \[ 
+    C^{0,1-}(T \times X, Y) = \{ f: T \times X \to Y | f \in C(T \times X, Y),
+  \] 
+  \[ 
+     f \text{ Lipschitz continua respecto a } x \in X \}  
+  \] 
+  Si $f: X \to Y$, entonces
+  \[ 
+    C^{1-}(X,Y) = \{ f: X \to Y | f \text{ es Lipschitz continua } \} .
+  \]
+  Conjunto de funciones continuas con dereivas parciales respecto a $x \in X$
+  \[ 
+    C^{0,1}(T \times X, Y) = \{ f \in C^{}(T \times X, Y) : D_{2}f \in C^{}(T \times X, \mathcal{L}(E,F)) \}.
+  \] 
+\end{nota}
+
+\begin{obs}
+  $C^{-1}(X,Y) = C(X,Y)$ y $C^{0,1-}(T \times X, Y) \subset C(T \times X, Y)$.
+\end{obs}
+
+\begin{prop}
+  Sean $E, F$ espacios de Banach con $D \subset E$ abierto y $T$ e.t. arbitrario. Entonces
+  \[ 
+    C^{0,1}(T \times D, F) \subset C^{0,1-}(T \times D, F). 
+  \]
+  En particular,
+  \[ 
+    C^{1}(D, F) \subset C^{1-}(T, F),
+  \]
+  es decir, toda función diferenciable es Lipschitz continua.
+\end{prop}
+
+\begin{note}
+  La siguente proposición establece que toda función Lipschitz continua definida en un subconjunto compacto es uniformemente Lipschitz continua.
+\end{note}
+
+\begin{prop}
+  Sea $X,Y$ espacios métricos, $T$ un e.t. compacto. Supongamos que $K \subset X$ es compacto y $f \in C^{0,1-}(T \times X, Y)$. Entonces, existe un vecindario abierto $W$ de $K$ en $X$ tal que $f|_{T \times W}$ es uniformemente Lipschitz continua respecto a $x \in W$.
+\end{prop}
+
+\begin{nota}
+  \begin{enumerate}[label=(\roman*)]
+    \item $J \subset \mathbb{R}$ es un intervalo abierto.
+    \item $E$ es un espacio de Banach sobre $\mathbb{K}$.
+    \item $D \subset E$ es un abierto.
+    \item $ f \in C(J \times D, E)$.
+  \end{enumerate}
+\end{nota}
+
+\begin{defn}[Solución ecuación diferencial]
+  Sea $u: J_{u} \to D$. Entonces, decimos que $u$ es solución de la ecuación diferencial \[ 
+    \dot{x} = f(t,x) 
+  \] 
+  Si se verifica
+  \begin{enumerate}[label=(\roman*)]
+    \item $J_{u} \subset J : \mathring{(J_{u})} \neq \emptyset$ .
+    \item $u \in C^{1}(J_{u}, D)$,
+    \item $\dot{u}(t) = f(t, u(t)), \forall t \in J_{u}$.
+  \end{enumerate}
+\end{defn}
+
+\begin{defn}[Solución Aproximada de ecuación diferencial]
+  Sea $\epsilon > 0$, $u: J_{u} \to D$. Entonces, decimos que $u$ es solución $\epsilon$-aproximada de la ecuación diferencial \[ 
+    \dot{x} = f(t,x) 
+  \] 
+  Si se verifica
+  \begin{enumerate}[label=(\roman*)]
+    \item $J_{u} \subset J : \mathring{(J_{u})} \neq \emptyset$ .
+    \item $u \in C(J_{u}, D)$ y $u$ es continuamente diferenciable a trozos.
+    \item $\forall I \subset J_{u}: u$ es continuamente diferenciable se tiene que
+      \[ 
+        ||\dot{u}(t) - f(t, u(t))|| \leq \epsilon, \forall t \in I. 
+      \] 
+  \end{enumerate}
+\end{defn}
+
+\begin{prop}
+  \begin{enumerate}[label=(\roman*)]
+    \item Sea $J_{u}$ un subintervalo perfecto de $J$, $u: J_{u} \to D$. Entonces $u$ es una solución de la ecuación diferencial $\dot{x} = f(t,x) \Leftrightarrow u \in C^{}(J_{u}, D)$ y
+      \[ 
+        u(t) = u(t_{0}) + \int_{t_{0}}^{t} f(s, u(s)) ds, \forall t \in J_{u} 
+      \] 
+      donde $t_{0} \in J_{u}$.
+    \item Sea $u: J_{u} \to D$ una solución $\epsilon$-aproximada de $\dot{x} = f(t,x)$. Entonces,
+      \[ 
+        ||u(t) - u(t_{0}) - \int_{t_{0}}^{t} f(s, u(s)) ds|| \leq \epsilon | t - t_{0} |, \forall t \in J_{u} 
+      \] 
+      donde $t_{0} \in J_{u}$.
+  \end{enumerate}
+\end{prop}
+
+\begin{lem}[6.6]
+  content
+\end{lem}
+
+\begin{theo}[6.7]
+  content
+\end{theo}
+
+\begin{defn}[Equicontinuidad]
+  Sea $K$ un espacio métrico compacto, $F$ un espacio de Banach, $\mathcal{M} \subset C^{}(K, F)$. Entonces, decimos que $\mathcal{M}$ es equicontinuo si $\forall y \in K, \forall \epsilon > 0, \exists V$ entorno de $y$ en $K$ tal que
+  \[ 
+    ||f(x) - f(y)|| < \epsilon, \qquad \forall x \in V, \forall f \in \mathcal{M} .
+  \] 
+\end{defn}
+
+\begin{prop}[Compacto Relativo]
+  Sea $K$ un espacio métrico compacto, $F$ un espacio de Banach, $\mathcal{M} \subset C^{}(K, F)$. Entonces, $\mathcal{M}$ es relativamente compacto $\Leftrightarrow \overline{\mathcal{M}}$ es compacto.
+\end{prop}
+\begin{theo}[Arzéla-Ascoli]
+  Sea $K$ un espacio métrico compacto, $F$ un espacio de Banach y $\mathcal{M} \subset(K,F)$. Entonces, $ \mathcal{M}$ es relativamente compacto si y solo si se cumple que
+  \begin{enumerate}[label=(\roman*)]
+    \item $\mathcal{M}$ es equicontinua.
+    \item $\mathcal{M}(y) = \{ f(y) : f \in \mathcal{M} \}$ es relativamente compacto en $F, \forall y \in K$.
+  \end{enumerate}
+\end{theo}
+
+\begin{dem}
+  Ver desmostración Lang pg 73
+\end{dem}
+
+\begin{cor}[Precompacidad]
+  Sea $K$ un espacio métrico compacto, $F$ un espacio de Banach y $\mathcal{M}\subset C^{}(K, F)$. Si $F$ es de dimensión finita, entonces $\mathcal{M}$ es precompacto $\Leftrightarrow$ $\mathcal{M}$ es equicontinuo y acotado.
+\end{cor}
+
+

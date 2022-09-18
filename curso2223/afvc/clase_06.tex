@@ -1,0 +1,44 @@
+\begin{defn}[Transformación de Möbius]
+  Sean $a, b, c, d \in \mathbb{C}$ tal que $ ad - b c \neq 0$. Entonces, a la función de la forma 
+  \[ 
+    S(z) = \frac{az +b}{cz + d}
+  \]
+
+  se llama transfomación de Möbius.
+\end{defn}
+
+\begin{obs}
+  $S$ es continua en $\mathbb{C} \setminus \{ -\frac{d}{c} \}$.
+\end{obs}
+
+\begin{prop}
+  La composición de transformaciones de Möbius es transfomación de Möbius.
+\end{prop}
+
+\begin{prop}
+  $S:\mathbb{C} \setminus \{ -\frac{d}{c} \} \to \mathbb{C} \setminus \frac{a}{c}$ es un homeomorfismo ( biyectiva, $S$ continua y $S^{-1}$ continua ) cuya inversa es
+  \[ 
+    S^{-1}: z \mapsto \frac{dw - b}{a - cw} 
+  \] 
+  
+\end{prop}
+
+\begin{obs}
+  $S \circ S^{-1}(z) = S^{-1} \circ S (z) = z$
+\end{obs}
+
+\begin{obs}
+  Las transformaciones de Möbuis forman un grupo bajo la operación de composición de aplicaciones.
+\end{obs}
+
+\begin{defn}[Möbius Ampliada]
+  Sea $S$ la transfomación de Möbius tal que $S(-\frac{d}{c}) = \infty$ y $S(\infty) = \frac{a}{c}$ si $c=0$ y $S(\infty) = \infty$ si $c=0$. Entoces, podemos definir $S: \mathbb{C}^{*} \to \mathbb{C}^*$.
+\end{defn}
+
+\begin{obs}
+  La transfomación de Möbius ampliada también es homeomorfismo.
+\end{obs}
+
+\begin{theo}
+  Toda transfomación de Möbius es composición de homotrcias, translaciones, inversiones y giros.
+\end{theo}

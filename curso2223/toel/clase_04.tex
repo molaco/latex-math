@@ -47,27 +47,36 @@ Falta ver que $\mathcal{T}$ es única.
 \begin{prop}[Propiedades de Bases]
   Sea $\big( X, \mathcal{T} \big)$ e.t. y $\mathcal{B}(x)$ una base de entornos de $x$ en $\big( X, \mathcal{T} \big)$, $\forall x \in \mathcal{T}$. Entonces:
   \begin{enumerate}[label=(\roman*)]
-    \item $B \in \mathcal{B}(x) \Rightarrow x \in B$.
-    \item $B_{1},B_{2} \in \mathcal{B}(x) \Rightarrow \exists B_{3} \in \mathcal{B}(x): B_{3} \subset B_{1} \cap B_{2}$.
-    \item $B_{1} \in \mathcal{B}(x) \Rightarrow \exists B_{2} \in \mathcal{B}(x): \forall y \in B_{2}, \exists B \in \mathcal{B}(y)$ tal que $ B \subset B_{1}$.
+    \item [(V1)] $B \in \mathcal{B}(x) \Rightarrow x \in B$.
+    \item [(V2)] $B_{1},B_{2} \in \mathcal{B}(x) \Rightarrow \exists B_{3} \in \mathcal{B}(x): B_{3} \subset B_{1} \cap B_{2}$.
+    \item [(V3)] $B_{1} \in \mathcal{B}(x) \Rightarrow \exists B_{2} \in \mathcal{B}(x): \forall y \in B_{2}, \exists B \in \mathcal{B}(y)$ tal que $ B \subset B_{1}$.
   \end{enumerate}
 \end{prop}
 
 \begin{dem}
   \begin{enumerate}[label=(\roman*)]
-    \item $\mathcal{B}(x) \subset \mathcal{V}(x), B \in \mathcal{B}(x) \Rightarrow x \in B$.
-    \item $B_{1}, B_{2} \in \mathcal{B}(x) \Rightarrow B_{1} \cap B_{2} \in \mathcal{B}(x) \subset \mathcal{V}(x) \Rightarrow \exists B_{3} \in \mathcal{B}(x): B_{3} \subset B_{1} \cap B_{2}$.
-    \item $B_{1} \in \mathcal{B}(x) \subset \mathcal{V}(x) \text{ Prop.1.6.(iii) } \Rightarrow \exists U \in \mathcal{V}(x)$ tal que $\forall y \in U, B_{1} \in \mathcal{B}(y) \Rightarrow \exists B_{2} \in \mathcal{B}(x) : B_{2} \subset U$ tal que $\forall y \in B_{2}, B_{1} \in \mathcal{V}(y) \Rightarrow \exists B \in \mathcal{B}(y): B \subset B_{1}$.
+    \item [(V1)] $\mathcal{B}(x) \subset \mathcal{V}(x), B \in \mathcal{B}(x) \Rightarrow x \in B$.
+    \item [(V2)] $B_{1}, B_{2} \in \mathcal{B}(x) \Rightarrow B_{1} \cap B_{2} \in \mathcal{B}(x) \subset \mathcal{V}(x) \Rightarrow \exists B_{3} \in \mathcal{B}(x): B_{3} \subset B_{1} \cap B_{2}$.
+    \item [(V3)] $B_{1} \in \mathcal{B}(x) \subset \mathcal{V}(x) \text{ Prop.1.6.(iii) } \Rightarrow \exists U \in \mathcal{V}(x)$ tal que $\forall y \in U, B_{1} \in \mathcal{B}(y) \Rightarrow \exists B_{2} \in \mathcal{B}(x) : B_{2} \subset U$ tal que $\forall y \in B_{2}, B_{1} \in \mathcal{V}(y) \Rightarrow \exists B \in \mathcal{B}(y): B \subset B_{1}$.
   \end{enumerate}
 \end{dem}
 
 \begin{prop}
-  Sea $ X \neq \emptyset, \mathcal{B}: X \mapsto \mathcal{P}(\mathcal{P}(x))$ cumpliendo (i, ii, iii) anteriores, entonces $\mathcal{B}(x)$ define una topología en $X$.
+  Sea $ X \neq \emptyset, \mathcal{B}: X \mapsto \mathcal{P}(\mathcal{P}(x))$ cumpliendo (i, ii, iii) anteriores, entonces se define una topología en $X$ en la que $ \mathcal{B}(x)$ es una base de entornos de $x, \forall x \in X$.
 \end{prop}
 
 \begin{dem}
-  Sea $\forall x \in X, \mathcal{V}(x) = \{ U \subset X : B \subset U  \text{ para algún } B \in \mathcal{B}(x) \}$ tal que $\mathcal{B}(x) \subset \mathcal{V}(x)$
+  Sea $\forall x \in X,$
+  \[
+    \mathcal{V}(x) = \{ U \subset X : B \subset U  \text{ para algún } B \in \mathcal{B}(x) \}
+  \]
+  tal que $\mathcal{B}(x) \subset \mathcal{V}(x)$ tiene las propiedades V1, V2, V3. Veamos que $\mathcal{V}(x)$ tiene las propiedades N1, N2, N3, N4.
   \begin{enumerate}[label=(\roman*)]
-    \item $\forall U \in \mathcal{V}(x)$
+    \item [(N1)] $\forall U \in \mathcal{V}(x), \exists B \subset U : B \in \mathcal{B}(x) \Rightarrow x \in B \subset U \Rightarrow x \in U$.
+    \item [(N2)] $U_{1}, U_{2} \in \mathcal{V}(x) \Rightarrow \exists B_{1}, B_{2} \in \mathcal{B}(x): B_{1} \subset U_{1}, B_{2} \subset U_{2}$ y (V2) $\Rightarrow \exists B_{3} \in \mathcal{B}(x): B_{3} \subset B_{1} \cap B_{2} \subset U_{1} \cap U_{2}$. Entonces, $U_{1} \cap U_{2} \in \mathcal{V}(x)$.
+    \item [(N3)] $U \in \mathcal{V}(x) \Rightarrow \exists B \subset U: B \in \mathcal{B}(x)$, (V3) $ \Rightarrow \exists B_{0} \in \mathcal{B}(x) : \forall y \in B_{0}, \exists B_{y} \in \mathcal{B}(y): B_{y} \subset B$. Entonces $B \in \mathcal{V}(y), \forall y \in B_{0} \Rightarrow U \in \mathcal{V}(y), \forall y \in B_{0}$.
+    \item [(N4)] $U \in \mathcal{V}(x), V \subset X: U \subset V \Rightarrow \exists B \in \mathcal{B}(x) : B \subset U \subset V \Rightarrow V \in \mathcal{V}(x)$.
   \end{enumerate}
+  
+  Entonces, $\mathcal{V}(x)$ es un sitema de entornos de $x, \forall x \in X$ y $\forall x \in X, \ \mathcal{B}(x)$ es una base de entornos de $x$ en la topología resultante en $X$.
 \end{dem}

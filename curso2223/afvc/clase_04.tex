@@ -1,0 +1,72 @@
+\section{Función Logaritmo}
+
+\begin{defn}[Logaritmo]
+  La función logaritmo se define como la inverasa de la función exponencial, 
+  \[
+    \log: \mathbb{C} \setminus \{ 0 \} \to \mathbb{C}
+  \]
+  \[
+    z \mapsto \log(z) = w
+  \]
+  donde $\log(z) = w$ es la raíz de la ecuación $e^{w} = z$.
+\end{defn}
+
+\begin{obs}
+  $e^{z} \neq 0, \forall z \in \mathbb{C} \Rightarrow$ el $0$ no tiene logaritmo.
+\end{obs}
+
+\begin{obs}
+  Si $w = x + iy \neq 0$, $z = e^{w} = e^{x + iy}$ tiene soluciones 
+  \[ 
+  e^{x} = |z|, \ e^{iy} = \frac{w}{|w|} 
+  \]
+  donde la primera ecución tiene solución única $x = \log(|z|)$ y la segunda ecuación tiene inifinitas soluciones módulo $2\pi$.  
+\end{obs}
+
+\begin{obs}
+  Distinguiendo la parte real y la parte imaginaria de $w$ podemos escribir 
+  \[ 
+  z = \log(z) = \log |z| + i\arg(z)
+  \]
+  dado que $e^{\log(z)} = e^{\log |z|} e^{i \arg(z)} = |z|e^{i \arg(z)} = z$.
+\end{obs}
+
+\begin{obs}
+  Para distinguir las soluciones, se llama \textbf{rama} del logaritmo a la función que reside en $\{ x + iy: y_{0} \leq y \leq y:0 + 2\pi \}$. Solo definimos la función $\log(z)$ cuando se especifica un intervalo de longitud $2\pi$ donde $\arg(z)$ toma valores y se dice elegir una rama específica.
+\end{obs}
+
+\begin{obs}
+  La determinación principal del argumento induce una rama del logaritmo.
+\end{obs}
+
+\begin{defn}[Potencias]
+  Sea $a,\alpha \in \mathbb{C}, a, \alpha \neq 0$
+  \[ 
+    a^{\alpha} = e^{\alpha \log(a)} 
+  \] 
+  
+\end{defn}
+
+\begin{obs}
+  Si $\alpha = 0 \Rightarrow a^{0} = 1$.
+\end{obs}
+
+\begin{obs}
+  En general, $a^{\alpha}$ tiene infinitos valores. Una excepción es $\alpha = n \Rightarrow a^{n} = e^{n \log(a)} = e^{\log(a)} \cdot \cdots \cdot e^{\log(a)} = a \cdot \cdots \cdot a$.
+\end{obs}
+
+\begin{prop}[Propiedades Potencias]
+  El logaritmo verifica las siguientes propiedades:
+  \begin{enumerate}[label=(\roman*)]
+    \item $a^{-n} = \frac{1}{a^{n}}$
+    \item $a^{\alpha + \beta} = a^{\alpha}a^{\beta}$ solo si fijamos el valor de $ \log(a)$
+    \item $1^{\aplha} = e^{-2k\pi y}(\cos(2k\pi x) + i \sen(2k\pi x))$ donde $\alpha = x +iy$
+  \end{enumerate}
+\end{prop}
+
+\begin{prop}
+  \begin{enumerate}[label=(\roman*)]
+    \item $f(z) = a^{z}$ es continua en $\mathbb{C}$ 
+    \item Sea $\alpha \in \mathbb{C}, f(z) = z^{\alpha}$ es continua en el dominio de la rama del logaritmo.
+  \end{enumerate}
+\end{prop}

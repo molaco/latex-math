@@ -1,10 +1,207 @@
-\part{Curvas}
-\chapter{Estudio Local}
+\chapter{Preliminares}
+
+\section{Cálculo Diferencial}
+
+\begin{defn}[Función diferencial]
+  Sea $f: \mathbb{R}^{n} \to \mathbb{R}^{m}$. Decimos que $f$ es diferenciable si todas sus derivadas parciales existen y son continuas.
+\end{defn}
+
+\begin{defn}[Diferenciabilidad]
+  Sea $f: \mathbb{R}^{n} \to \mathbb{R}^{m}$. Decimos que $f$ es diferenciable en $p \in \mathbb{R}^{n}$ si $\exists L: \mathbb{R}^{n} \to \mathbb{R}^{m}$ tal que 
+  \[
+    \lim_{h \to 0} \frac{||f(p) - f(p + h) - L(h)||}{||h||}
+  \] 
+\end{defn}
+
+\begin{obs}
+  Si $\exists L$ entonces es única  y se denota $ d_{p}f: \mathbb{R}^{n} \to \mathbb{R}^{m}$
+\end{obs}
+
+\section{Álgebra Lineal}
+
+\begin{defn}[Espacio Vectorial Euclideo]
+  Sea $V$ un cuerpo y $\langle { , } \rangle$ una forma bilineal simétrica definida positiva. Entonces, decimos que $(V, \langle { , } \rangle)$ es un espacio vectorial.
+\end{defn}
+
+\begin{obs}
+  La forma bilineal simétrica definida positiva de un espacio vectorial induce una norma $||\vec{v}|| = \langle \vec{v}{ , }\vec{v} \rangle$.
+\end{obs}
+
+\begin{defn}[Producto Escalar Usual]
+  En $\mathbb{R}^{n}$ se define el producto escalar usual respecto a la base canónica como
+  \[ 
+    \langle \begin{pmatrix}
+      x_{1}, & \cdots, & x_{n}
+    \end{pmatrix}{ , }\begin{pmatrix}
+      y_{1}, & \cdots, & y_{n}
+    \end{pmatrix} \rangle = \sum_{i = 1}^{n} x_{i} y_{i}
+  \] 
+\end{defn}
+
+\begin{prop}
+  Sea $K \subset \mathbb{R}^{3}, \Pi$ el plano. Entonces, $K$ está contenido en $\Pi \Leftrightarrow \exists p \in \mathbb{R}^{3}, v \in \mathbb{R}^{3}: \forall x \in \mathbb{R}^{3},\langle x-p{ , }\vec{v} \rangle = 0$ .
+\end{prop}
+
+\begin{defn}[Base Ortonormal]
+  Sea $(V, \langle { , } \rangle)$ un espacio vectorial. Entonces la base $\{ x_{1}, \cdots, x_{n} \}$ tal que $\langle v_{i}{ , }v_{j} \rangle = 0, \forall i \neq j$ y $||v_{i}|| = 1, \forall i$ es una base ortonormal.
+\end{defn}
+
+\begin{obs}
+  Siempre existe base ortonormal en el espacio euclideo.
+\end{obs}
+
+\begin{obs}
+  Sea $w \in \mathbb{R}^{n}, \mathcal{B} = \{ v_{1}, \cdots, v_{n} \}$ base ortonormal. Entonces, $\langle w{ , }v_{j} \rangle = \langle \sum_{i=1}^{n} x_{i} v_{i}{ , }v_{j} \rangle = \sum_{i=1}^{n}x_{i}  \langle v_{i}{ , }v_{j} \rangle = x_{j}$.
+\end{obs}
+
+\begin{obs}
+  Sean $h_{1}, h_{2}: \mathbb{R} \to \mathbb{R}^{n}$ diferenciables. Entonces,
+  \[
+    g(t) = \langle h_{1}(t){ , }h_{2}(t) \rangle = \sum_{i=1}^{n} (h_{1}(t))_{i} (h_{2}(t))_{i}
+  \]
+  es diferenciable y su derivada es
+  \[ 
+    g'(t) = \langle h_{1}'(t){ , }h_{2}(t) \rangle + \langle h_{1}(t){ , }h_{2}'(t) \rangle.
+  \] 
+\end{obs}
+
+\begin{defn}[Orientación]
+  Sea $\mathcal{B} = \{ e_{1}, \cdots, e_{2} \}$ base canónica. Decimos que $\mathcal{B}$ está orientada positivamente. Dada cualquier otra base $ \mathcal{B}' = \{ v_{1}, \cdots,  \}$ decimos que $\mathcal{B}'$ está orientada positivamente si la matriz de cambio de base $C_{\mathcal{b} \mathcal{B}}$ tiene $ \det(C_{\mathcal{B} \mathcal{B}}) > 0$ y está orientada negativamente si $\det(C_{\mathcal{B} \mathcal{B}}) < 0$.
+\end{defn}
+ 
+\chapter{Curvas}
+\section{Curvas Parametrizadas}
 
 \begin{defn}[Curva Parametrizada Diferenciable]
   Una curva parametrizada diferenciable es un aplicación diferenciable $\varphi: I \subset \mathbb{R} \to \mathbb{R}^{3} : t \mapsto  \varphi(t) = (x(t), y(t), z(t))$.
 \end{defn}
 
 \begin{obs}
-
+  Decimos que $\alpha: I \to \mathbb{R}^{3}$ es una curva plana si existe un plano $P \subset \mathbb{R}^{3}$ tal que $\alpha(I) \subset P$.
 \end{obs}
+
+\begin{defn}[Isometría]
+  Sea $F:\mathbb{R}^{3} \to \mathbb{R}^{3}$ tal que $ d(F(x),F(y)) = d(x,y)$. Entonces, $F$ es una isometría.
+\end{defn}
+
+\begin{defn}[Traslación]
+  Una traslación es una aplicación $T: \mathbb{R}^{3} \to \mathbb{R}^{3} : t \mapsto t + k \ k \in \mathbb{R}^{3}$
+\end{defn}
+
+\begin{defn}[Transformación ortogonal]
+  Una transformación ortogonal es una isometría $F: \mathbb{R}^{3} \to \mathbb{R}^{3}$ tal que $F(0) = 0$.
+\end{defn}
+
+\begin{theo}
+  Toda isometría se puede expresar como una transformación ortogonal seguida de una isometría. 
+\end{theo}
+
+\begin{prop}
+  Las isometrías preservan el producto escalar.
+\end{prop}
+
+\begin{defn}[Movimiento Rigido]
+  Sea $\varphi: \mathbb{R}^{n} \to \mathbb{R}^{n}$. Un movimiento rígido es una ismetría que es una aplicación afín cuyo aplicación lineal asociada es ortogonal 
+  \[ 
+    \varphi (x) = Ax + b, \forall x \in \mathbb{R}^{n} 
+  \] 
+  donde $A \in \mathcal{M}_{n} : A A^{t} = I_{n}, b \in \mathbb{R}^{n}$.
+\end{defn}
+
+\begin{obs}
+  Si $\det{A} = 1$ se dice que $\varphi$ es directa y si $\det{A} = -1$ se dice que $\varphi$ es inversa.
+\end{obs}
+
+\begin{obs}
+  Como solo consideramos curvas invariantes ante movimientos rígidos y siempre podemos encontrar un movimiento rígido de $\mathbb{R}^{3}$ tomando el plano $P$ como el plano $z = 0$ de manera que podemos restringirnos a las aplicaciones diferenciables $\alpha: I \to \mathbb{R}^{3}$ donde $ \alpha(t) = (x(t), y(t), 0)$.
+\end{obs}
+
+\begin{defn}[Traza]
+  Sea $\alpha: I \to \mathbb{R}^{3}$. La imagen $\alpha(I) \subset \mathbb{R}^{3}$ se llama traza de $\alpha$.
+\end{defn}
+
+\begin{defn}[Vector Tangente]
+  Sea $\alpha : I \to \mathbb{R}^{3}$ el vector tangente de $\alpha$ en $t \in I$ es el vector
+  \[ 
+    \alpha '(t) = (x'(t), y'(t), z'(t))
+    = \lim_{h \to 0} \frac{\alpha(t + h) - \alpha(t)}{h} \in \mathbb{R}^{3}
+  \] 
+\end{defn}
+
+\begin{defn}[Recta tangente]
+  Sea $\alpha: I \to \mathbb{R}^{3}$. La recta que pasa por $\alpha(t)$ en dirección $\alpha'(t)$, es decir, 
+  \[ 
+    r = \{ \alpha(t) + \lambda \alpha'(t) : \lambda \in \mathbb{R} \} 
+  \] 
+  es la recta tangente a $\alpha$ en $t \in I$.
+\end{defn}
+
+\begin{obs}
+  Para que el conjunto anterior sea una recta, debe se $\alpha'(t) \neq 0$.
+\end{obs}
+
+\begin{defn}[Autointersección]
+  Sea $\alpha: I \to \mathbb{R}^{3}$. Si $\exists t_{1},t_{2}  \in I: \alpha(t_{1}) = \alpha(t_{2})$. Entonces, decimos que $\alpha$ tiene un punto de autointersección en $t_{1}, t_{2}$.
+\end{defn}
+
+\section{Curvas Regulares. Longitud de Arco}
+
+\begin{defn}[Curva parametrizada diferenciable regular]
+  Sea $\alpha: I \to \mathbb{R}^{3}$ una curva parametriza y diferenciable. Decimos que $\alpha$ es regular si $\alpha'(t) \neq 0, \forall t \in I$.
+\end{defn}
+
+\begin{obs}
+  Decimos que $\alpha$ es regular en $I$ si $\alpha$ es regular $\forall t \in I$ y no tiene auto-intersecciones.
+\end{obs}
+
+\begin{obs}
+  Una curva es regular si su vector tangente no se anula nunca.
+\end{obs}
+
+\begin{lem}
+  Sea $\alpha  : I \subset \mathbb{R} \to \mathbb{R}^{3}$ tal que $\alpha \in C^{1}$ y $\alpha$ regular en $t_{0} \in I$. Entonces, $\exists \epsilon > 0$ tal que $\alpha(t)$ es injectiva $\forall t \in (t_{0} - \epsilon, t_{0} + \epsilon)$.
+\end{lem}
+
+\begin{defn}[Curva parametrizada diferenciable singular]
+  Sea $\alpha: I \to \mathbb{R}^{3}$ una curva parametriza y diferenciable. Decimos que $\alpha$ es singular si $\alpha'(t) = 0, \forall t \in I$.
+\end{defn}
+
+\begin{obs}
+  Los puntos singulares son puntos de auto-intersección.
+\end{obs}
+
+\begin{defn}[Longitud de Arco]
+  Sea $\alpha : I \to \mathbb{R}^{3}, t_{0} \in I$. Definimos la función longitud de arco desde $t_{0}$ denotado $S: I \to \mathbb{R}$ como
+  \[ 
+    S(t) = L_{t_{0}}^{t}(\alpha) = \int_{t_{0}}^{t}  ||\alpha ' (u)|| du. 
+  \] 
+\end{defn}
+
+\begin{lem}
+  Sea $\alpha  : I \subset \mathbb{R} \to \mathbb{R}^{3}$. Entonces, $||\alpha'(t)|| = \frac{\partial{S}}{\partial{t}}(t)$.
+\end{lem}
+
+\begin{defn}[Reparametrización]
+  Sea $\alpha: I \to \mathbb{R}$ una parametrización diferenciable y $h: I \to J \subset \mathbb{R}$ difeomorfismo tal que $h, h^{-1}$ son diferenciables. Entonces, $B = \alpha \circ h$ es una reparametrización de $\alpha$ y $h$ es un cambio de parámetro.
+\end{defn}
+
+\begin{obs}
+  $\aplha$  y $\beta$ tienen la misma traza, los mismos puntos sigulares, la misma tangente ...
+\end{obs}
+
+\begin{obs}
+  Si $\beta = \alpha \circ h$, entonces $\beta' = h' \cdot \alpha'(h(t))$. Por tanto, si $h'(t) > 0$ $\alpha$ y $\beta$ tienen el mismo sentido y si $h'(t)<0$ tiene sentido contrario.
+\end{obs}
+
+\begin{lem}
+  Sea $\alpha : I \subset \mathbb{R} \to \mathbb{R}^{2}$ una curva diferenciable y regular. Entonces $S(t)$es cambio de parámetro. Además, $S'(t)>0, \forall t \in I$.
+\end{lem}
+
+\begin{defn}[Curva ppa]
+  Sea $\alpha: I \to \mathbb{R}^{3}$ una curva parametriza diferenciable tal que $ |\alpha ' (t)| = 1, \forall t \in I$. Entoces, $\alpha$ es una curva parametrizada por longitud de arco.
+\end{defn}
+
+\begin{prop}
+  Cualquier curva regular admite una reparametrización por longitud de arco.
+\end{prop}
+

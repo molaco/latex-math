@@ -1,0 +1,143 @@
+\chapter{Introdución}
+
+\begin{defn}[Problema autónomo]
+  Un problema es autónomo si $f$ no depende de $t$, $\dot{u}(t)=f(u(t))$ 
+\end{defn}
+
+\begin{defn}[Punto de equilibrio]
+  Los valores $f(u_{\infty}) = 0$ se denominan \textbf{puntos de equilibrio}.
+\end{defn}
+
+\begin{nota}
+  \begin{enumerate}[label=(\roman*)]
+    \item $K \subset \mathbb{R}^{d}$ compacto.
+    \item $U,V \subset \mathbb{R}^{d}$ abiertos.
+    \item $X,Y$ espacios normados.
+    \item $u \in \mathbb{R}^{d}, |u| = \big ( \sum_{i=1}^{d} |u_{i}| \big )^{\frac{1}{2}}$.
+    \item $\mathcal{C}( U; Y )$ conjunto de funciones localmente continuas $f: U \to V$.
+    \item $\mathcal{C}_{u}( U, Y)$ conjunto de funciones uniformemente continuas $f: U \to V$.
+    \item 
+    \item 
+  \end{enumerate}
+\end{nota}
+
+\chapter{Existencia, unicidad y dependencia continua}
+
+\section{Formulación integral de EDO's}
+
+\begin{theo}
+  Sea $f \in \mathcal{C}([0,T]\times \overline{U};\mathbb{R}^d)$ donde $U$ es un abierto tal que $u_{0} \in U$. Entonces, es equivalente
+  \begin{enumerate}[label=(\roman*)]
+    \item $u \in \mathcal{C}([0,T];\mathbb{R}^d)$ es PVI.
+    \item $u \in \mathcal{C}([0,T];\mathbb{R}^d)$ 
+      \[ 
+        u(t) = u_{0} + \int^{t}_{0} f(s, u(s)) ds, \ \forall t \in \big[ 0, T \big]
+      \] 
+      
+  \end{enumerate}
+\end{theo}
+
+\begin{obs}
+  La formulación integral facilita la pueba de resultados teóricos.
+\end{obs}
+
+\section{Espacio de funciones continuas}
+
+\begin{defn}[Norma del supremo]
+  La norma del supremo asigna a funciones acotadas $f$ con valores reales o complejos, definida en un conjunto $S$, el número no-negativo 
+  \[ 
+    \| f \|_{\infty} = \| f \|_{\infty, S} = \sup \{ |f(s)|: s \in S \} 
+  \] 
+  
+\end{defn}
+
+\begin{defn}[Convergencia uniforme]
+  Sea una sucesión de funciones $( f_{n} )_{n \in \mathbb{N}}$ donde $f: S \to \mathbb{R}^{d}$. Se dice que la sucesión converge uniformemente si $\forall \epsilon > 0, \exists k \in \mathbb{N}: |f_{n}(z) - f(z)| < \epsilon, \forall n > k, \forall z \in S $
+\end{defn}
+
+\begin{defn}[Espacio Normado]
+  Un espacio normado $( V, \| \cdot \| )$ es un espacio vectorial $V$ junto con una norma $ \| \cdot \|$.
+\end{defn}
+
+\subsection{Espacio de Banach}
+
+\begin{defn}[Sucesión de Cauchy]
+  Sea un espacio normado $(X, \| \cdot \|)$ y sea $(f_{n})_{n \in \mathbb{N}}$ una sucesión de funciones $f: S \to \mathbb{R}^{d}$. Decimos que la sucesión es de Cauchy si 
+  \[ 
+    \forall \epsilon > 0, \exists k \in \mathbb{N}: \| f_{n}(z)-f(z) \| < \epsilon, \forall m,n > k, \forall z \in S.
+  \] 
+  
+\end{defn}
+
+\begin{defn}[Espacio completo]
+  Un espacio normado $(X, \| \cdot \|)$ se dice completo si toda sucesión de Cauchy es convergente.
+\end{defn}
+
+\begin{defn}[Espacio de Banach]
+  Sea $(X, d)$ un espacio normado. Se dice espacio de Banach si el espacio normado es completo.
+\end{defn}
+
+\begin{theo}
+  Sea $A \subset \mathbb{R}_{d}: A \neq \emptyset$. El espacio de funciones continuas $\mathcal{C}([0,T];\mathbb{R}^d)$ es un espacio de Banach.
+\end{theo}
+
+\begin{theo}[Punto fijo de Banach]
+  Sea $(X, \| \cdot \|)$ un espacio de Banach, $k: A \subset X \to A$ una función contractiva
+  \[ 
+    \| k(x) - k(y) \|_{X} = L \| x -  y \|_{X}, L < 1, \forall x,y \in A
+  \] 
+  Entonces, $\exists ! x_{\infty} \in A = k(x_{\infty})$.
+\end{theo}
+
+\subsection{Compacidad: teorema de Ascoli-Arzelà}
+
+\begin{prop}
+  Sea $\mathcal{C}(A,\mathbb{R}^{d})$ un espacio de Banach. Entonces, $\mathcal{F} \subset A$ es pre-compacto $\Leftrightarrow \overline{\mathcal{F}}$ es compacto.
+\end{prop}
+
+\begin{theo}[Heine-Borel]
+  Sea $\mathcal{C}(A;\mathbb{R}^{d})$ un espacio de Banach $\mathcal{F} \subset A$. Entonces $\mathcal{F}$ es compacto $\Leftrightarrow \mathcal{F}$ es cerrado y acotado.
+\end{theo}
+
+\begin{defn}[función continua]
+  Sea $f: A \subset [0,1] \to \mathbb{R}$ decimos que $f$ es continua en $x_{0} \in [0,1]$si $\forall \epsilon > 0, \exists \delta_{\epsilon, x_{0}}: |x - x_{0}|< \delta_{\epsilon, x_{0}} \Rightarrow |f(x) - f(x_{0} )|<\epsilon$.
+\end{defn}
+
+\begin{defn}[función acotada]
+  Sea $f: A \subset [0,1] \to \mathbb{R}^{d}$. Decimos que $f$ es acotada si $\exists M: |f(x)|<M, \forall x \in A$.
+\end{defn}
+
+\begin{defn}[función uniformemente continua]
+    Sea $f: A \subset [0,1] \to \mathbb{R}$ decimos que $f$ es continua en $x_{0} \in [0,1]$ si $\forall \epsilon > 0, \exists \delta_{\epsilon}: \forall x,y \in A \Rightarrow |f(x) - f(y)|<\epsilon$.
+\end{defn}
+
+\begin{defn}[Módulo de Continuidad]
+  Sea $f: A \subset [0,1] \to \mathbb{R}$. Definimos el módulo de continuidad $\omega: [0,+ \infty] \to [0, + \infty]$ como 
+  \[ 
+    \omega(\delta) = \sup \{ |f(x)-f(y)| : x,y \in A, |x-y|<\delta\}.
+  \] 
+\end{defn}
+
+\begin{obs}
+  $\omega$ es no decreciente y $\omega(0^{+})=0$.
+\end{obs}
+
+\begin{defn}[faimilia de funciones equicontinuas]
+  Sea una familia $\mathcal{F} \subset \mathcal{C}(A;\mathbb{R}^d)$. Decimos que $\mathcal{F}$ es uniformemente continua si $\exists \omega$ módulo de continuidad tal que $| f(x) - f(y) |\leq w(|x-y|), \forall x,y \in \mathbb{R}^{d}, \forall f \in \mathcal{F}$.
+\end{defn}
+
+\begin{defn}[pre-compacto]
+  Un conjunto $\mathcal{F} \subset X$ es pre-compacto si toda sucesión tiene una subsucesión convergente.
+\end{defn}
+
+\begin{theo}[Asoli-Arzelà]
+  Sea $K \subset \mathbb{R}^{p}$ compacto y $\mathcal{F} \subset \mathcal{C}(K;\mathbb{R}^d)$ una sucesión de funciones continuas uniformemente acotadas. Entonces, son equivalentes:
+  \begin{enumerate}[label=(\roman*)]
+    \item $\mathcal{F}$ son equicontinuas.
+    \item $\mathcal{F}$ es pre-compacta.
+  \end{enumerate}
+\end{theo}
+
+\begin{dem}
+  Acabar más tarde. Mirar en internet.
+\end{dem}

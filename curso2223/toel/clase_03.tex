@@ -1,5 +1,5 @@
 \begin{defn}[Interior]
-  Sea $\big( X, \mathcal{T} \big)$ e.t., $S \subset X$ se llama interior de $ S$ en $\big( X, \mathcal{T} \big)$ al conjunto \[  \mathring{S} = \bigcap \{ G \subset X \text{ abierto y } G \subset E \} \] 
+  Sea $\big( X, \mathcal{T} \big)$ e.t., $S \subset X$ se llama interior de $ S$ en $\big( X, \mathcal{T} \big)$ al conjunto \[  \mathring{S} = \bigcup \{ G \subset X \text{ abierto y } G \subset E \} \] 
 \end{defn}
 
 \begin{obs}
@@ -69,6 +69,8 @@
   Sea $\big( X, \mathcal{T} \big)$ e.t., $S \subset X$ se dice que es denso en $\big( X, \mathcal{T} \big)$ si $\overline{S} = X$
 \end{defn}
 
+\section{Entornos}
+
 \begin{defn}
   Sea $\big( X, \mathcal{T} \big)$ e.t., $x \in X$, $V \subset X$. Se dice que $V$ es un entorno de $x$ en $\big( X, \mathcal{T} \big)$ si $\exists A \in \mathcal{T}: x \in A \subset V$.
 \end{defn}
@@ -88,10 +90,10 @@
 \begin{prop}
   Sea $\big( X, \mathcal{T} \big)$ e.t., $\mathcal{V}(x)$ tiene las siguiente propiedades:
   \begin{enumerate}[label=(\roman*)]
-    \item $\forall U \in \mathcal{V}(x) \Rightarrow x \in U$.
-    \item $\forall U,V \in \mathcal{V}(x) \Rightarrow U \cap V \in \mathcal{V}(x)$.
-    \item $\forall U \in \mathcal{V}(x), \exists V \in \mathcal{V}(x)$ tal que $\forall y \in V, U \in \mathcal{V}(y)$.
-    \item $\forall U \in \mathcal{V}(x)$, $ \exists V \subset X: U \subset V \Rightarrow V \in \mathcal{V}(x)$.
+    \item [(N1)] $\forall U \in \mathcal{V}(x) \Rightarrow x \in U$.
+    \item [(N2)] $\forall U,V \in \mathcal{V}(x) \Rightarrow U \cap V \in \mathcal{V}(x)$.
+    \item [(N3)]$\forall U \in \mathcal{V}(x), \exists V \in \mathcal{V}(x)$ tal que $\forall y \in V, U \in \mathcal{V}(y)$.
+    \item [(N4)]$\forall U \in \mathcal{V}(x)$, $ \exists V \subset X: U \subset V \Rightarrow V \in \mathcal{V}(x)$.
   \end{enumerate}
 \end{prop}
 

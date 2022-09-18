@@ -1,0 +1,91 @@
+\chapter{Funciones Holomorfas}
+\section{Derivación Compleja}
+
+\begin{defn}[Derivada]
+  Sea $\Omega \subset \mathbb{C}$ abierto, $ f: \mathbb{C} \to \mathbb{C}$, $z_{0} \in \mathbb{C}$. Decimos que $f$ es derivable si existe 
+  \[ 
+     f'(z_{0}) = \lim_{z \to z_{0}} \frac{f(z) - f(z_{0})}{z - z_{0}}. 
+  \] 
+\end{defn}
+
+\begin{ejm}
+  \begin{enumerate}[label=(\roman*)]
+    \item $f$ constante $\Rightarrow f'(z_{0}) = 0$.
+    \item $f(z) = z \Rightarrow f'(z_{0}) = 1$.
+    \item $f(z) = \overline{z} \Rightarrow \frac{\overline{z} - \overline{z_{0}}}{z - z_{0}} = \frac{\overline{z - z_{0}}}{z - z_{0}} =
+    \begin{cases}
+      1, \text{ si } z - z_{0} \in \mathbb{R} \\
+      -1, \text{ si } z - z_{0} \in i \mathbb{R}
+    \end{cases}
+    \Rightarrow \not \exists \lim_{z \to z_{0}}$.
+  \end{enumerate}
+\end{ejm}
+
+\begin{obs}
+  La continuidad de una función compleja es equivalente a la continuidad de la parte real y la parte imaginaria. No pasa lo mismo con derivabilidad.
+\end{obs}
+
+\begin{prop}
+  Sea $f: \Omega \subset \mathbb{C} \to \mathbb{C}$ derivable en $z_{0} \in \Omega$. Entonces, $f$ es continua en $z_{0} \in \Omega$.
+\end{prop}
+
+\begin{dem}
+  content
+\end{dem}
+
+\begin{prop}
+  Sean $f,g: \Omega \subset \mathbb{C} \to \mathbb{C}$ derivables en $z_{0} \in \Omega$. Entonces, 
+  \begin{enumerate}[label=(\roman*)]
+    \item Si $\alpha, \beta \in \mathbb{C}$, $(\alpha f \beta g)'(z_{0}) = \alpha f'(z_{0}) + \beta g'(z_{0})$
+    \item $(fg)'(z_{0}) = f(z_{0})g'(z_{0}) + f'(z_{0})g(z_{0})$.
+    \item Si $ g(z_{0}) \neq 0$ entonces $(\frac{f}{g})'(z_{0}) = \frac{f'(z_{0})g(z_{0}) + f(z_{0})g'(z_{0})}{g(z_{0})^{2}}$.
+  \end{enumerate}
+\end{prop}
+
+\begin{dem}
+  content
+\end{dem}
+
+\begin{ejm}
+  \begin{enumerate}[label=(\roman*)]
+    \item $f(z) = z^{n} \Rightarrow f'(z) = n z^{n-1}, \forall z \in \mathbb{C}$.
+    \item Todo polinomio es derivable en $\mathbb{C}$.
+    \item $f(z) = \frac{1}{z}$ es derivable $\forall z \neq 0$.
+  \end{enumerate}
+\end{ejm}
+
+\begin{theo}[Regla de la Cadena]
+  Sean $\Omega_{1}, \Omega_{2} \subset \mathbb{C}$ abiertos, $ f: \Omega_{1} \to \mathbb{C}$, $g: \Omega_{2} \to \mathbb{C}$ tal que $f$ es derivable en $f(z_{0}) \in \Omega_{2}$ y $g$ es derivable en $z_{0} \in \Omega_{1}$. Entonces, $(f \circ g)$ es derivable en $z_{0} \in \Omega_{1}$ y $(g \circ f)'(z_{0}) = g'(f(z_{0}))f'(z_{0})$.
+\end{theo}
+
+\begin{dem}
+  Sea $G: \Omega_{2} \to \mathbb{C} : G(w) =
+  \begin{cases}
+    \frac{g(w) - g(f(z_{0}))}{w - f(z_{0})}, w \neq f(z_{0}) \\
+    g'(f(z_{0})), w=f(z_{0})
+  \end{cases}$
+  entonces, $G$ está bien definida y $ \lim_{w \to f(z_{0})} \frac{g(w) - g(f(z_{0}))}{w - f(z_{0})} = g'(z_{0}) \Rightarrow G$ es continua en $f(z_{0})$.
+
+  Si $z \neq 0$, entonces
+  \[
+    \frac{(g \circ f)(z) - (g \circ f)(z_{0})}{z - z_{0}} = 
+  \] 
+  \[ = \frac{g(f(z)) - g(f(z_{0}))}{f(z) - f(z_{0})} \cdot \frac{f(z)-f(z_{0})}{z - z_{0}} =
+  \] 
+  \[
+    = G(f(z)) \frac{f(z) - f(z_{0})}{z-z_{0}}
+  \]
+  \[ 
+    \lim_{z \to z_{0}} G(f(z)) \frac{f(z) - f(z_{0})}{z-z_{0}} =
+  \] 
+  \[ 
+    = \lim_{z \to z_{0}} G(f(z)) \cdot \lim_{z \to z_{0}} \frac{f(z) - f(z_{0})}{z -z_{0}} = 
+  \]
+  \[
+    =G'(f(z_{0}))f'(z_{0}) .
+  \] 
+\end{dem}
+
+\begin{obs}
+  $f: \Omega \to \mathbb{C}$ es derivable $\forall z \in \Omega$. Entonces, $f$ es holomorfa en $\Omega$.
+\end{obs}

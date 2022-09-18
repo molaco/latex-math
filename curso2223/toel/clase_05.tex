@@ -1,0 +1,115 @@
+\begin{defn}[Bases Equivalentes]
+  Sea $X \neq \emptyset$. Si una topología sobre $X$ está definida por dos bases de entornos, se dice las bases son equivalentes.
+\end{defn}
+
+\begin{prop}
+  Sea $X \neq \emptyset$. Dos bases de entornos de $x$, $\mathcal{B}_{1}(x), \mathcal{B}_{2}(x)$ de $X$ son equivalentes si y solo si $\forall x \in X, \forall i \in \{ 1,2 \}, \forall B \in \mathcal{B}_{i}(x), \exists B_{j} \in \mathcal{B}_{i}(x): B_{j} \subset B_{i}, \forall j \in \{ 1,2 \}, j \neq i$.
+\end{prop}
+
+\begin{prop}[Caracterización bases equivalentes]
+Sean $\mathcal{B}_{1}(x), \mathcal{B}_{2}(x)$ dos bases de entornos de $x$ en $\big( X, \mathcal{T} \big)$, estas son equivalentes $\Leftrightarrow \forall x \in X, \forall i \in \{ 1, 2 \}, \forall B_{i} \in \mathcal{B}_{i}(x), \exists B_{j} \in \mathcal{B}_{j}(x), j \in \{ 1, 2 \}, j \neq i : B_{j} \subset B_{i}$.
+\end{prop}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item [($\Rightarrow$)] $\forall i \in \{ 1,2 \}, \forall B_{i} \in \mathcal{B}(x) \subset \mathcal{V}(x) \Rightarrow \exists B_{j} \in \mathcal{B}(x), \forall j \in \{  1,2 \}, j \neq i$.
+    \item [($\Leftarrow$)]
+  \end{enumerate} ACABAR
+\end{dem}
+
+\begin{defn}
+  Sea $\big( X, \mathcal{T} \big)$ e.t. $S \subset X, x \in X$.
+  \begin{enumerate}[label=(\roman*)]
+    \item Se dice que $x$ es un puto interior de $S$ en $\big( X, \mathcal{T} \big)$ si $\exists \mathcal{U}^{x}: \mathcal{U}^{x} \subset S$.
+    \item Se dice que $x$ es un punto adherente de $S$ en $\big( X, \mathcal{T} \big)$ si $\forall \mathcal{U}^{x}, \mathcal{U}^{x} \cap S \neq \emptyset$.
+    \item Se dice que $x$ es un punto de acumulación si $\forall \mathcal{U}^{x}$, $ \mathcal{U}^{x} \setminus \{ x \} \cap S \neq \emptyset$.
+    \item Se dice que $x$ es un punto de frontera si $ \forall \mathcal{U}^{x}$, $ \mathcal{U}^{x}\cap S \neq  \emptyset$.
+    \item Se dice que $x$ es punto aislado si $ \exists \mathcal{U}^{x}$ tal que $\mathcal{U}^{x} \cap S = \{ x \}$.
+  \end{enumerate}
+\end{defn}
+
+\begin{defn}
+  El conjunto de puntos de acumulación se llama conjunto derivado y se denota $S'$.
+\end{defn}
+
+\begin{prop}
+  Sea $\big( X, \mathcal{T} \big)$ e.t. Entonces,
+  \begin{enumerate}[label=(\roman*)]
+    \item $A \subset X$ es abierto de $\big( X, \mathcal{T} \big)$ $ \Leftrightarrow \forall x \in A, \exists \mathcal{U}^{x}: \mathcal{U}^{x} \subset A$.
+    \item $C \subset X$ es cerrado $\Leftrightarrow \forall x  \not \in C, \exists \mathcal{U}^{x}: \mathcal{U}^{x} \cap C = \emptyset$.
+    \item $S  \subset X, \ \mathring{S} = \{ x \in X : \exists \mathcal{U}^{x}, \mathcal{U}^{x} \subset S \}$.
+    \item $S \subset X, \overline{S} = \{ x \in X : \forall \mathcal{U}^{x}, \mathcal{U}^{x} \cap S \neq \emptyset \}$.
+    \item $S \subset X, Fr(S) = \{ x \in X : \forall \mathcal{U}^{x}, \mathcal{U}^{x} \cap S \neq \emptyset, \mathcal{U}^{x} \cap (X \setminus S) \neq \emptyset\}$. 
+  \end{enumerate}
+\end{prop}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item Es la propiedad V1.
+    \item $C$ es cerrado $\Leftrightarrow X \setminus C \in \mathcal{T} \Leftrightarrow \forall x \in X \setminus C, \exists \mathcal{U}^{x}: \mathcal{U}^{x} \subset X \setminus C \Rightarrow X \setminus C$ es abierto.
+    \item Sigue de (iv) aplicando las leyes de De Morgan.
+    \item $X \setminus \overline{S} = \mathring{(X \setminus S)} = \{ x \in X : \exists \mathcal{U}^{x}, \mathcal{U}^{x} \subset X \setminus S\}$ cuyo complementario es $\overline{S} = \{ x \in X : \forall \mathcal{U}^{x}, \mathcal{U}^{x} \cap S \neq \emptyset \}$.
+    \item $Fr(S) = \overline{S} \cap \overline{X \setminus S}$
+  \end{enumerate}
+\end{dem}
+
+\begin{obs}
+  En la proposición anterior se pueden usar bases en lugar de sistemas de entornos.
+\end{obs}
+
+\begin{cor}
+  Sea $\big( X, \mathcal{T} \big)$ e.t., $S \subset X$ entonces
+  \begin{enumerate}[label=(\roman*)]
+    \item $\overline{S} = \{ x \in X : x \text{ es punto adherente de } S \}$.
+    \item $\mathring{S} = \{ x \in X : x \text{ es punto interior de } S \}$.
+    \item $Fr(S) = \{ x \in X : x \text{ es punto frontera de } S \}$.
+  \end{enumerate}
+\end{cor}
+
+\begin{prop}
+  Sea $\big( X, \mathcal{T} \big)$ e.t. $E \subset X$. Entonces $ E$ es denso en $\big( X, \mathcal{T} \big) \Leftrightarrow \forall U \in \mathcal{T} \setminus \{ \emptyset \}, U \cap E \neq \emptyset$.
+\end{prop}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item [($\Rightarrow$)] Suponemos que $E$ es denso, es decir, $\overline{E} = X$. Entonces, $\forall U \in \mathcal{T} \setminus \{ \emptyset \}$, $U$ es abierto $\Rightarrow \forall x \in \mathring{U} = U \Rightarrow U$ es entorno de $x$ en $\big( X, \mathcal{T} \big) $. Y como $x$ es punto adherente de $E \Rightarrow U \cap F \neq \emptyset$.
+    \item [($\Leftarrow$)] $\forall x \in X, \forall \mathcal{U}^{x}$ entorno de $x \Rightarrow \mathring{\mathcal{U}^{x}} \subset \mathcal{U}^{x} \subset X \Rightarrow \mathring{\mathcal{U}^{x}} \in \mathcal{T} \setminus \{  \emptyset \}$ y por la hipótesis $\mathring{\mathcal{U}^{x}} \cap E \subset \mathcal{U}^{x} \cap E \neq \emptyset \Rightarrow x$ punto adherente de $E$, $x \in \overline{E} \Rightarrow X \subset \overline{E}$.
+  \end{enumerate}
+\end{dem}
+
+\section{Bases}
+
+\begin{defn}[Base]
+  Sea $ ( X, \mathcal{T} )$ e.t., $\mathcal{B} \subset \mathcal{T}$. Se dice que $\mathcal{B}$ es base de $\mathcal{T}$ si $\forall A \in \mathcal{T}, \exists \mathcal{B}_{A} \subset \mathcal{B} : A = \bigcup_{B \in \mathcal{B}_{A}} B$. Y se dice que $\mathcal{T}$ está engendrada por $\mathcal{B}$.
+\end{defn}
+
+\begin{obs}
+  $\mathcal{B} \subset \mathcal{T}$ tal que $\mathcal{T} = \{ \bigcup_{B \in \mathcal{B}_{A}} B: \mathcal{B}_{A} \subset \mathcal{B} \}$.
+\end{obs}
+
+\begin{obs}
+  $\mathcal{B} \subset \mathcal{T}$ es una base de $X \Leftrightarrow \forall A \in \mathcal{T}, \forall x \in A \Rightarrow \exists B  \in \mathcal{B} : x \in B \subset A$.
+\end{obs}
+
+\begin{ejm}
+  \begin{enumerate}[label=(\roman*)]
+    \item $( \mathbb{R} , \mathcal{T}_{u} ), \mathcal{B} = \{ ( a, b ) : a < b \}$ es base de $\mathcal{T}_{u}$.
+    \item $( X, \mathcal{T}_{u} ), \mathcal{B} = \{ \{ x \} : x \in X \}$ es base de $\mathcal{T}_{u}$.
+    \item $( X, \mathcal{T} )$ metrizble, $\mathcal{T}_{d}$ topología inducida por $d$. Entonces $\mathcal{B} = \{ B_{\epsion} : x \in X, \epsilon > 0 \}$ es base de $\mathcal{T}_{d}$.
+  \end{enumerate}
+\end{ejm}
+
+\begin{prop}
+  Sea $( X, \mathcal{T} )$ e.t., $\mathcal{B} \subset \mathcal{T}$ entonces, $\mathcal{B}$ es base de $\mathcal{T} \Leftrightarrow \forall x \in X, \mathcal{B}_{x} = \{ B \in \mathcal{B}: x \in B \}$ es base de entornos de $x$ en $( X, \mathcal{T} )$.
+\end{prop}
+
+\begin{obs}
+  La única diferencia entre bases y bases de entornos es que las bases no tinen por que consister de conjuntos abiertos.
+\end{obs}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item [($\Rightarrow$)] Suponemos que $\mathcal{B}$ es base de $X$, $x \in X$ y $\mathcal{B}_{x} = \{ B \in \mathcal{B} : x \in B \}$. Sea $U \in \mathcal{B}_{x}$ entonces $ U \in \mathcal{B} \subset \mathcal{T}: x \in U = \mathring{U} \Rightarrow U$ es un entorno de $x$. Sea $U \in \mathcal{V}(x)$, entonces $x \in \mathring{U}\in \mathcal{T}$ donde $\mathcal{T} = \{ \bigcup_{B \in \mathcal{B}_{U}} B : \mathcal{B}_{U} \subset \mathcal{B} \}$, es decir, $\mathring{U}$ es la unión de elementos de $\mathcal{B}$ entonces $\exists B \in \mathcal{B}: x \in B \subset \mathring{U}$. Por tanto, $\forall U \in \mathcal{V}(x), \exists B \in \mathcal{B}_{x} : B \subset U \Rightarrow \mathcal{B}_{x}$ es base de entronos de $x$.
+    \item [($\Leftarrow$)] Suponesmos que $\mathcal{B}_{x}$ es una base de entornos de $x$, $\forall x \in X$ y $\mathcal{B} = \bigcup_{x \in X} \mathcal{B}_{x}$. Entonces, $\forall A \in \mathcal{T}, \forall x \in A , \exists B_{x} \in \mathcal{B} : x \in B_{x} \subset A \Rightarrow A = \bigcup \{ B_{x} : x \in A \} \Rightarrow \mathcal{B} \subset A$, de manera que $\mathcal{B}$ es base para $X$.
+  \end{enumerate}
+\end{dem}

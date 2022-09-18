@@ -1,0 +1,65 @@
+\section{Teoría Local de Curvas Planas}
+
+\begin{defn}[Vector tangente unitario]
+  Sea $\alpha  : I \subset \mathbb{R} \to \mathbb{R}^{2}$ curva regular $\mathcal{C}^{\infty}$. Denotamos vector tangente unitario en a $\aplha$ en $t$ como
+  \[ 
+    T_{\aplha} = \frac{\alpha'(t)}{||\alpha'(t)||}. 
+  \] 
+\end{defn}
+
+\begin{defn}[Vector normal]
+  Sea $\alpha  : I \subset \mathbb{R} \to \mathbb{R}^{2}$ curva regular $\mathcal{C}^{\infty}$. Denotamos el vector normal a $\aplha$ en $t$ como $N_{\alpha}(t)$.
+\end{defn}
+
+\begin{obs}
+  El vector normal en $t$ es ortogonal a $T_{\alpha}(t)$.
+\end{obs}
+
+\begin{defn}[Base orientada]
+  Sea $\alpha  : I \subset \mathbb{R} \to \mathbb{R}^{2}$ una curva regular, $\mathcal{C}^{\infty}$. Decimos que $\{ T_{\alpha}(t), N_{\alpha}(t) \}$ es una base orientada positivamente.
+\end{defn}
+
+\begin{obs}
+  $\{ T_{\alpha}(t), N_{\alpha}(t) \}$ también se conoce como referencia móvil de frenete de $\aplha$.
+\end{obs}
+
+\begin{prop}
+  Sea $\alpha  : I \subset \mathbb{R} \to \mathbb{R}^{2}$ regular y $\mathcal{C}^{2}$,y $T_{\alpha}: I \to \mathbb{R}^{2}$. Entonces, $T_{\alpha}$ es diferenciaciable.
+\end{prop}
+
+\begin{dem}
+  $T_{\alpha}(t) = \frac{\alpha'(t)}{||\alpha'(t)||} = \big ( \frac{\alpha_{1}'(t)}{||\alpha(t)||},\frac{\alpha_{2}'(t)}{||\alpha'(t)||}   \big ).$
+\end{dem}
+
+\begin{lem}
+  Sea $\alpha  : I \subset \mathbb{R} \to \mathbb{R}^{2}$ p.p.a. Entonces, $\alpha''(s) \perp \alpha'(s), \forall s \in I$.
+\end{lem}
+
+\begin{dem}
+  Hacer demo
+\end{dem}
+
+\begin{defn}[Curvatura]
+  Sea $\alpha  : I \subset \mathbb{R} \to \mathbb{R}^{2}$ p.p.a, $K_{\alpha}: I \to \mathbb{R}$ tal que $\alpha''(s) = K_{\alpha}(s) N_{\alpha}(s)$. Decimos que $K_{\alpha}(s)$ es la curvatura de $\alpha$ en $s$.
+\end{defn}
+
+\begin{defn}[Curvatura regular]
+  Sea $\alpha  : I \subset \mathbb{R} \to \mathbb{R}^{2}$ una curva regular $\mathcal{C}^{2}$ y $\beta(s)= \alpha(h(t))$ su reparametrización por arco. Entonces, $K_{\alpha}(t) = K_{\beta}(h'(t))$ es la curvatura de $\alpha$ en $t$.
+\end{defn}
+
+\begin{defn}
+  Sea $\alpha  : I \subset \mathbb{R} \to \mathbb{R}^{2}$ una curva no p.p.a y $\beta(s) = \alpha(h(t))$. Entonces,
+  \[
+    K_{\alpha}(t) = K_{\beta}(h^{-1}(t))
+  \] 
+  es la curvatura de $ \alpha$ en $t$.
+\end{defn}
+
+\begin{theo}
+  Sea $\alpha: I \to \mathbb{R}^{2}$ curva regular p.p.a tal que $\alpha(s_{0}) \neq 0$. Entonces, 
+  \begin{enumerate}[label=(\roman*)]
+    \item Para $s_{1},s_{2},s_{3}$ suficientemente pequeñas, $\alpha(s_{1}), \alpha(s_{2}),\alpha(s_{3})$ no están alineadaos.
+    \item Para $C_{\alpha(s_{1}), \alpha(s_{2}), \alpha(s_{3})}$ centro de la circunferencia por $\alpha(s_{i}), i \in \{ 1, 2, 3 \}$, el 
+  \end{enumerate}
+\end{theo}
+

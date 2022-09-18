@@ -1,0 +1,334 @@
+\chapter{Curvas}
+\section{Curvas Parametrizadas}
+
+\begin{defn}[Curva]
+  Una curva en $\mathbb{R}^{3}$ es una función diferenciarle $\alpha: I \subset \mathbb{R} \to \mathbb{R}^{3}$.
+\end{defn}
+
+\begin{defn}[Vector tangente]
+  Sea $\alpha: I \to \mathbb{R}^{3}$ una curva en $\mathbb{R}^{3}$ con $\alpha = (\alpha_{1}, \alpha^{2}, \alpha^{3})$. Entonces, $\forall t \in I$
+  \[ 
+    \alpha'(t) = \big ( \frac{d{\alpha_{1}}}{d{t}}(t),\frac{d{\alpha_{2}}}{d{t}}(t),\frac{d{\alpha_{3}}}{d{t}}(t) \big ).
+  \] 
+\end{defn}
+
+\begin{obs}
+  $\alpha'(t) = 1, \forall t \in I$.
+\end{obs}
+
+\begin{obs}
+  El vector tangente también se llama vector velocidad
+\end{obs}
+
+\begin{obs}[Interpretación geométrica]
+  A partir de la definición de derivada tenemos que
+  \[ 
+    \alpha'(t) = \lim_{h \to 0} \frac{\alpha(t+ h) - \alpha(t)}{h}
+  \] 
+  Esto es el vector de $\alpha(t)$ a $\alpha(t + h)$. A medida que $h \rightarrow 0$, $\alpha(t+h) \rightarrow \alpha(t)$ obtenemos un vector tangente al punto $\alpha(t)$
+\end{obs}
+
+\begin{ejm}
+  Sea $\alpha$ una linea recta $\alpha(t) = p+ tq$. Entonces todos su vector tangen o vector velocidad es constante. 
+\end{ejm}
+
+\begin{ejm}
+  Para una hélice $\alpha(t) = ( a \cos(t), a \sen(t), bt )$, la velocidad es $\alpha'(t) = ( -a \sen(t), a \cos(t), b)$ aumenta de manera constante en la dirección $\vec{k}$ y es perpendicular en el plano $\vec{i}, \vec{j}$.
+\end{ejm}
+
+\begin{ejm}
+  La curva $\alpha: \mathbb{R} \mapsto \mathbb{R}^{2}$ dada por $\alpha(t) = ( t, |t| ), t \in \mathbb{R}$ no es diferenciable.
+\end{ejm}
+
+\begin{defn}[Reparametrización]
+  Sea $\alpha: I \to \mathbb{R}^{3}$ una curva, $h: J \to I$ una función diferenciable. Entonces, la función $\beta: J \to \mathbb{R}^{3}$
+  \[ 
+    \beta(t) = \alpha(h(t)) 
+  \] 
+  es una reparametrización de $\alpha$ por $h$.
+\end{defn}
+
+\begin{ejm}
+  Sea $\alpha(t) = \big ( t , t \sqrt{t}, 1-t \big )$ en $I = (0,4)$, $h(s) = s^{2}$ en $J = ( 0,2 )$. Entonces, la curva reparametrizada es $\beta(s) = \alpha(h(s)) = \alpha(s^{2}) = ( s, s^{3}, 1 -s^{2} )$.
+\end{ejm}
+
+\begin{lem}
+  Si $\beta$ es una reparametrización de $\alpha$ por $h$, entonces
+  \[ 
+    \beta'(t) = h'(t)\cdot \alpha'(h(t)) 
+  \] 
+\end{lem}
+
+\section{Curvas Regulares}
+
+\begin{defn}[Curva Regular]
+  Sea $\alpha: I \to \mathbb{R}^{3}$ una curva parametrizada regular. Entonces, si $\alpha'(t) \neq 0. \forall t \in I$ decimos que es regular.
+\end{defn}
+
+
+\begin{defn}[Longitud de Arco]
+  Sea $\alpha : I \to \mathbb{R}^{3}, t_{0} \in I$. Definimos la función longitud de arco desde $t_{0}$ como $S: I \to \mathbb{R}$ donde
+  \[ 
+    S(t) = \int_{t_{0}}^{t}  ||\alpha ' (u)|| du. 
+  \] 
+\end{defn}
+
+\begin{theo}
+  Sea $\alpha: I \to \mathbb{R}^{3}$ una curva regular. Entonces, $\exists \beta: J \to \mathbb{R}^{3}$ tal que $||\beta(s)||=1, \forall s \in J$, es decir, $\beta$ tiene velocidad unitaria.
+\end{theo}
+
+\begin{defn}
+  Sea $\alpha: I \to \mathbb{R}^{3}$ una curva diferenciable. Entonces, si $||\alpha(t)|| = 1, \forall t \in I$ decimos que la curva está parametrizada por longitud de arco.
+\end{defn}
+
+\begin{obs}
+  Una reparametrización $\alpha(h)$ preserva la orientación si $h' \geq 0$ y la invierte si $h' \leq 0$.
+\end{obs}
+
+\begin{obs}
+  Por definicón, una curva regular parametrizada por arco siempre conserva la orientación.
+\end{obs}
+
+\begin{ejm}
+  Sea $\alpha(t) = ( a \cos(t), a \sen(t), bt)$.
+  \[ 
+    \alpha'(t) = ( -a \sen(t), a \cos(t), b) 
+  \]
+  Se tiene que la velocidad de $\alpha$ es constante dado que 
+  \[
+    ||\alpha'(t)||^{2} = ((\alpha'(t)\cdot \alpha'(t))^{\frac{1}{2}})^{2} = \alpha'(t) \cdot \alpha'(t) =
+  \]
+  \[ 
+    = ( -a \sen(t), a \cos(t), b) \cdot ( -a \sen(t), a \cos(t), b) =
+  \] 
+  \[ 
+     = a^{2} \sen(t)^{2} + a^{2} \cos(t)^{2} + b^{2} = a^{2} + b^{2}.
+  \]
+  que es constante. Sea $c = ||\alpha'|| = (a^{2} + b^{2})^{\frac{1}{2}}$. Entonces, la longitud de arco de $\alpha$ es
+  \[ 
+    s(t) = \int^{t}_{0} c du = ct. 
+  \] 
+  Cuya inversa es $t(s) = \frac{s}{c}$. Ahora, si componemos $\alpha$ con $t$ obtenemos un reparametrización de $\alpha$, con longitud de arco unitaria
+  \[ 
+    \beta(s) = \alpha(\frac{s}{c}) = \Big ( a \cos(\frac{s}{c}), a \sen(\frac{s}{c}), \frac{bs}{c} \Big ) .
+  \] 
+\end{ejm}
+
+\section{Producto Vectorial}
+
+\begin{defn}[Producto Vectorial]
+  Sean $u, v \in \mathbb{R}^{3}$. El producto vectorial de $u, v$ es
+  \[ 
+    u \wedge v = 
+    \begin{pmatrix}
+       \vec{i} & \vec{j} & \vec{k}\\
+       u_{1} & u_{2} & u_{3}\\
+       v_{1} & v_{2} & v_{3}
+    \end{pmatrix}
+  \] 
+\end{defn}
+
+\begin{prop}[Propiedades Producto vectorial]
+  Sean $u, v \in \mathbb{R}^{3}$. Entonces,
+  \begin{enumerate}[label=(\roman*)]
+    \item $u \wedge v = -v \wedge u$.
+    \item $u \wedge v$ es lineal respecto de $u$ y $v$, es decir, para $w \in \mathbb{R}^{3}$ y $a, b \in \mathbb{R}, (au + bw) \wedge v = au \wedge v + bw \wedge v$.
+    \item $u \wedge v = 0 \Leftrightarrow u, v$ son linealmente dependientes.
+    \item $(u \wedge v) \cdot u = 0, (u \wedge v) \cdot v = 0$.
+  \end{enumerate}
+\end{prop}
+
+\section{Fórmulas de Frenet}
+
+\begin{defn}[Curvatura]
+  Sea $\alpha : I \subset \mathbb{R} \to \mathbb{R}^{3}$ una curva regular p.p.a., $s \in I$. Entonces, $||\alpha''(s)|| = k(s)$ se llama curvatura de $\alpha$ en $s$.
+\end{defn}
+ 
+\begin{obs}
+  $k(s)$ describe el cambio en la dirección de la curva en un instante.
+\end{obs}
+
+\begin{ejm}
+  Sea $u, v \in \mathbb{R}(3)$, $\alpha(s) = us + v$. Entonces, $k(s) = 0, \forall s \in I$. Reciprocamente, $k = ||\alpha''(s)|| = 0$. Entonces, $ \int ( \int k ds) ds \Rightarrow \alpha(s) = us + v$.
+\end{ejm}
+
+\begin{prop}
+  Sea $\alpha  : I \subset \mathbb{R} \to \mathbb{R}^{3}$ una curva regular p.p.a.. Entonces, $\alpha''(s) \perp \alpha'(s), \forall s \in I$.
+\end{prop}
+
+\begin{dem}
+  $||\alpha'(s)|| = 1, \forall s \in I \Rightarrow \langle \alpha'(s){ , }\alpha'(s) \rangle = 1 \Rightarrow 2 \langle \alpha''(s){ , }\alpha'(s) \rangle = 0 \Rightarrow \alpha''(s) \perp \alpha'(s), \forall s \in I$.
+\end{dem}
+
+\begin{prop}
+  La curvatura se mantiene invariante ante un cambio de orientación. 
+\end{prop}
+
+\begin{dem}
+  $\beta(-s) = \alpha(s) \Rightarrow \beta'(s) = -\alpha'(s) \Rightarrow \beta''(-s) = \alpha''(s) = k(s)$. 
+\end{dem}
+
+\begin{defn}[Vector Tangente Unitario]
+  Sea $\alpha  : I \subset \mathbb{R} \to \mathbb{R}^{3}$ una curva regular p.p.a.. Entonces,
+  \[
+    T(s) = \alpha'(s) \]
+  se llama vector tangente unitario a $\alpha$ en $s$.
+\end{defn}
+
+\begin{obs}
+  $k(s) = ||T'(s)||$.
+\end{obs}
+
+\begin{note}
+  Observamos que $\forall s \in I: k(s) > 0, \ k(s) = ||\alpha''(s)|| \Rightarrow \alpha''(s) = k(s) N(s)$ donde $N(s)$ es un vector unitario en la dirección de $\alpha''(s)$. Además, $\alpha''(s) \perp \alpha'(s) \Rightarrow N(s)$ es normal a $\alpha(s)$.
+\end{note}
+
+\begin{defn}[Vector Normal]
+  Sea $\alpha  : I \subset \mathbb{R} \to \mathbb{R}^{3}$ curva regular p.p.a.. Entonces, 
+  \[ 
+    N(s) = \frac{T'(s)}{k(s)} 
+  \] 
+  se llama vector normal a $\alpha$ en $s$.
+\end{defn}
+
+\begin{obs}
+  El vector normal $N$ es perpendicular al vector tangente unitario $T$ y normal a la curva $\alpha$ en $s$. Esto es, $\alpha'(s) \wedge \alpha''(s) = T(s) \wedge k(s)N(s) = 0$
+\end{obs}
+
+\begin{defn}[Plano Oscilador]
+  Sea $\alpha  : I \subset \mathbb{R} \to \mathbb{R}^{3}$. Entonces, $T(s),N(s)$ determinan un plano en $\mathbb{R}^{3}$ y lo llamamos plano oscilador.
+\end{defn}
+
+\begin{obs}
+  También se llama Referencia móvil de Frenet para curvas planas.
+\end{obs}
+
+\begin{defn}[Vector Binormal]
+  Sea $\alpha  : I \subset \mathbb{R} \to \mathbb{R}^{3}$ una curva regular p.p.a.. Entonces, $B(s) = T(s) \wedge N(s)$ es el vector normal al plano oscilador en $s$ y se dice vector binormal en $s$.
+\end{defn}
+
+\begin{obs}
+  $||B'(s)||$ mide la tasa de cambio del plano oscilador, es deicr, la rapidez con la que la curva se aleja del plano oscilador en $s$.
+\end{obs}
+
+\begin{note}
+  $B'(s) = T'(s) \wedge N'(s) + T(s) \wedge N'(s) = T(s) \wedge n'(s) \Rightarrow B'(s)$ es normal a $T(s)$y $B'(s)$ es paralelo a $N(s)$. Entonces, escribimos $B'(s) = \tau(s) N(s)$ para alguna función $\tau$.
+\end{note}
+
+\begin{defn}[Torsión]
+  Sea $\alpha  : I \subset \mathbb{R} \to \mathbb{R}^{3}$ una curva p.p.a. tal que $\alpha''(s) \neq 0, s \in I$. Entonces, decimos que
+  \[
+    \tau(s) = \frac{B'(s)}{N(s)}
+  \]
+  es la torsión de $\alpha$ en $s$.
+\end{defn}
+
+\begin{obs}
+  Si cambia la orientación entonces el signo del vector binormal cambia dado que $B = T \wedge N$. Por tanto, $B'(s)$ y la torsión se mantienen invariantes. 
+\end{obs}
+
+\begin{defn}[Tiedro de Frenet]
+  Sea $\alpha  : I \subset \mathbb{R} \to \mathbb{R}^{3}$ una curva regular p.p.a. tal que $k>0$. Entonces, para cada valor $s \in I$, $\exists T(s), N(s), B(s)$ vectores unitarios mutuamente ortogonales y los llamamos el tiedro de Frenet en $\alpha$. Estos vectores vienen dados de la siguiente forma
+  \[ 
+    T(s) = \alpha'(s) \ \text{ vector tangente } ,
+  \] 
+  \[ 
+    k(s) = ||T'(s)||  \text{ curvatura } ,
+  \] 
+  \[ 
+    N(s) = \frac{1}{k(s)}T'(s)  \text{ vector normal } ,
+  \]
+  \[ 
+    B = T \wedge N  \text{ vector binormal } ,
+  \] 
+  \[ 
+    \tau(s) = \frac{B'(s)}{N(s)}  \text{ torsión } 
+  \] 
+  donde $\langle N{ , }N \rangle = \langle T{ , }T \rangle = \langle B{ , }B \rangle = 1$ y cualquier otro producto escalar es $0$.
+\end{defn}
+
+DIBUJO
+
+\begin{defn}[Fórmulad de Frenet]
+  Sea $\alpha  : I \subset \mathbb{R} \to \mathbb{R}^{3}$ curva regualar p.p.a con $k>0$ y torsión $\tau$. Entonces, 
+  \[ 
+    T' = kN, 
+  \] 
+  \[ 
+    N' = -kT + \tau B,
+  \] 
+  \[ 
+    B' = -\tau N,
+  \] 
+\end{defn}
+
+\begin{prop}
+  $\tau = 0$ si y solo si $\alpha$ es una curva en el plano. (Pasar a colorario Barret y DEMOSTRAR)
+\end{prop}
+
+\begin{prop}
+  Sea $\alpha  : I \subset \mathbb{R} \to \mathbb{R}^{3}$ una curva regular p.p.a. con curvatura constante $k>0$ y $\tau = 0$. Entonces $\alpha$ es parte de un circulo de radio $\frac{1}{k}$.
+\end{prop}
+
+\section{Curvas Arbitrarias}
+
+\begin{prop}
+  Sea $\alpha  : I \subset \mathbb{R} \to \mathbb{R}^{3}$ una curva regular con $k>0$ y $\beta: J \to \mathbb{R}^{3}$ su reparametrización por arco tal que $\beta(t) = \alpha(s(t))$ donde $s(t)$ es la longitud de arco. Entonces, 
+  \[ 
+    T' = kvN 
+  \] 
+  \[ 
+    N' = -kvT + \tau v B 
+  \]
+  \[ 
+    B' = -\tau v N 
+  \]
+\end{prop}
+
+\begin{dem}
+  $\frac{d{T(s(t))}}{d{t}} = T'(s(t)) \cdot s'(t) = k(s(t)) N(s(t)) v(t) = k(s) N(s) v$.
+\end{dem}
+
+\begin{prop}
+  Sea $\alpha  : I \subset \mathbb{R} \to \mathbb{R}^{3}$ una curva regular con $k>0$ y $\beta: J \to \mathbb{R}^{3}$ su reparametrización por arco tal que $\beta(t) = \alpha(s(t))$ donde $s(t)$ es la longitud de arco. Entonces, 
+  \[ 
+    \frac{d{\alpha}}{d{t}} = \alpha'(s) \frac{d{s}}{d{t}} = v T(s),
+  \] 
+  \[ 
+    \frac{d{\alpha'}}{d{t}} = \frac{d{v}}{d{t}}T + vT' = v'T(s) + kv^{2}N 
+  \] 
+  son la velocidad y aceleración de $\alpha$ en $s(t)$.
+\end{prop}
+
+DIBUJO
+
+\begin{theo}
+  Sea $\alpha  : I \subset \mathbb{R} \to \mathbb{R}^{3}$ una curva regular. Entonces,
+  \[ 
+    T = \frac{\alpha'}{||\alpha'||}, \ k = \frac{||\alpha' \wedge \alpha''||}{||\alpha'||^{3}},
+  \] 
+  \[ 
+    N = B \wedge T , \ B = \frac{\alpha' \wedge \alpha''}{||\alpha' \wedge \alpha''||},
+  \] 
+  \[ 
+    \tau = (\alpha' \wedge \alpha'') \cdot \frac{\alpha'''}{||\alpha' \wedge \alpha'''||^{2}} .
+  \] 
+\end{theo}
+
+\begin{defn}[Hélice Cilíndrica]
+  content
+\end{defn}
+
+\begin{theo}
+  Criterio hélice Cilíndrica
+\end{theo}
+
+\begin{theo}[Fundamental de la Teoría Local de Curvas]
+  Sean $k,\tau: I \subset \mathbb{R} \to \mathbb{R}$ funciones diferenciables con $k(s) > 0, \tau(s)$. Entonces, $\exists \alpha  : I \subset \mathbb{R} \to \mathbb{R}^{3}$ curva tal que $s$ es la longitud de arco, $k(s)$ es la curvatura, y $\tau(s)$ es la torsión de $\alpha$.
+
+  Además, cualquier otra curva $\overline{\alpha}$ difiere de $\alpha$ por un movimiento rígido, es decir, $\exists \gamma: I \to \mathbb{R}³$ aplicación lineal ortogonal con $\det \gamma > 0 $ y $c \in \mathbb{R}^{3}: \overline{\alpha} = (\overline{\alpha} \circ \gamma) + c$.
+\end{theo}
+
+\begin{dem}
+  content
+\end{dem}

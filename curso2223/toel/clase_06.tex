@@ -1,0 +1,84 @@
+\begin{theo}
+  Sea $X \neq \emptyset$, $\mathcal{B} \subset \mathcal{P}(X)$. Entonces, $\mathcal{B}$ es base de una topología $\mathcal{T}$ en $X$ $ \Leftrightarrow$
+  \begin{enumerate}[label=(\roman*)]
+    \item $X = \bigcup_{B \in \mathcal{B}} B$.
+    \item $\forall B_{1}, B_{2} \in \mathcal{B}, \ p \in B_{1} \cap B_{2} \Rightarrow \exists B_{3} \in \mathcal{B}: p \in B_{3} \subset B_{1} \cap B_{2}$.
+  \end{enumerate}
+\end{theo}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item 
+      \begin{enumerate}[label=(\roman*)]
+        \item [($\Rightarrow$)] $\mathcal{T} = \big\{ \bigcup_{B \in \mathcal{B}'} B : \mathcal{B}' \in \mathcal{B} \big\}, X \in \mathcal{T} \Rightarrow \exists \mathcal{B}_{0} \in \mathcal{B}: X = \bigcup_{B \in \mathcal{B}_{0}} B$.
+      \end{enumerate}
+    \item
+      \begin{enumerate}[label=(\roman*)]
+        \item [($\Rightarrow$)] A partir de la definición de base. ($B_{1} \cap B_{2} \in \mathcal{B} \subset \mathcal{T} \Rightarrow \exists B_{3} \in \mathcal{B}: B_{3} \subset B_{1} \cap B_{2} $).
+      \end{enumerate}
+    \item [($\Leftarrow$)] Suponemos que $ X = \bigcup_{B \in \mathcal{B}}B$  donde $\mathcal{B} = \{ K \subset X : K \text{ cumple las propiedades (i), (ii) }\}$. Sea $ \mathcal{T} = \{ \bigcup_{B \in \mathcal{B'}} B : \mathcal{B'} \subset \mathcal{B} \}$. Entonces,
+    \begin{enumerate}[label=(\roman*)]
+      \item [(G1)] $\emptyset = \bigcup_{B \in \emptyset} B \in \mathcal{T}$ y $X \in \mathcal{T}$.
+      \item [(G2)] $\big ( \bigcup_{B \in \mathcal{B}_{1}} B \big ) \cap \big ( \bigcup_{B' \in \mathcal{B}_{2}} B' \big ) = \bigcup_{B \in \mathcal{B}_{1}, B' \in \mathcal{B}_{2}} B \cap B'$, por (ii) $ \Rightarrow $ la intersección de dos elementos de $\mathcal{B}$ es una unión de elementos de $\mathcal{B}$.
+      \item [(G3)] $ \{ A_{j} \}_{j \in J} = \{ \bigcup_{B \in \mathcal{B}_{j}} B : j \in J \} \subset \mathcal{T} \Rightarrow \bigcup_{j \in J} A_{j} \in \mathcal{T}$.
+    \end{enumerate}
+  \end{enumerate} 
+\end{dem}
+
+\begin{defn}[Subbase]
+  Sea $( X, \mathcal{T} )$ e.t. $\mathcal{S} \subset \mathcal{T}$. Se dice que $\mathcal{S}$ es una subbase de $\mathcal{T}$ si la familia de todas las intersecciónes de $\mathcal{S}$ es una base de $\mathcal{T}$.
+\end{defn}
+
+\begin{prop}
+  Sea $X \neq \emptyset, \mathcal{S} \subset \mathcal{P}(X)$. Entonces, $\mathcal{S}$ es una subbase de alguna topolpgía sobre $X$ $\Leftrightarrow \bigcup_{S \subset \mathcal{S}} S = X$.
+\end{prop}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item [($\Rightarrow$)] Sea $\mathcal{S} \subset \mathcal{T}$ una subbase de $\mathcal{T} \Rightarrow \{ \bigcap_{S \in \mathcal{S}' } S : \mathcal{S}' \subset \mathcal{S}  \} = \mathcal{B}$ es base de $\mathcal{T} \Rightarrow \forall B \in \mathcal{B}, \exists S_{B} \in \mathcal{S}: B \subset S_{B} \Rightarrow \bigcup_{B \in \mathcal{B}}B = X \subset \bigcup_{B \in \mathcal{B}} S_{B} \subset \bigcup_{S \in \mathcal{S}} S \subset X \Rightarrow \bigcup_{S \in \mathcal{S}}= X$.
+    \item [($\Leftarrow$)] Sea $\mathcal{B} = \{ \bigcap_{S \in \mathcal{S}'} \mathcal{S}' \subset \mathcal{S}' \subset \mathcal{S} \}$.
+      \begin{enumerate}[label=(\roman*)]
+        \item [(i)] $ \bigcap_{S \in \mathcal{S}} S = X \Rightarrow \bigcup_{B \in \mathcal{B}} = X$.
+        \item [(ii)] $\big (  \bigcap_{S \in \mathcal{S}_{1}} S \big ) \cap \big (  \bigcap_{S' \in \mathcal{S}_{2}} S'  \big )  \bigcap_{S \in \mathcal{S}_{1}, S' \in \mathcal{S}_{2}} (S'\cap S) \subset \mathcal{B}$.
+      \end{enumerate}
+  \end{enumerate}
+\end{dem}
+
+\section{Subespacios}
+
+\begin{defn}[Subespacio]
+  Sea $( X, \mathcal{T} )$ e.t., $S \subset X$. Se llama topología relativa a $S$ a 
+  \[ 
+    \mathcal{T}|_{S} = \{ A \cap S : A \in \mathcal{T} \}  
+  \] 
+  y el par $( S, \mathcal{T}|_{S} )$ se llama subespacio topológico.
+\end{defn}
+
+\begin{prop}[Propiedades Subespacio]
+  Sea $( X, \mathcal{T} )$ e.t., $S \subset X$. Entonces,
+  \begin{enumerate}[label=(\roman*)]
+    \item $C \subset S, C \in \mathcal{T}|_{S} \Leftrightarrow \exists A \in \mathcal{T} : A \cap S = C$.
+    \item $C \subset S$, $C$ cerrado en $S, \mathcal{T}|_{S} \Leftrightarrow \exists F$ cerrado en $( X, \mathcal{T} ): C = F \cap S$.
+    \item $\forall C \subset S$, $\overline{C}^{S} = S \cap \overline{C}^{X}$.
+    \item $\forall x \in S, \mathcal{V}^{x} \subset S$ es un entorno de $x$ en $( S, \mathcal{T}|_{S} ) \Leftrightarrow \exists \mathcal{U}^{x}$ entorno de $x$ en $( X, \mathcal{T} )$ tal que $\mathcal{U}^{x} \cap S = \mathcal{V}^{x}$.
+    \item $\mathcal{B}$ base de $T$ $\Rightarrow \mathcal{B}_{S} = \{  B \cap S : B \in \mathcal{B} \}$ es base de $( S, \mathcal{T}|_{S} )$.
+  \end{enumerate}
+\end{prop}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item Definición de subespacio.
+    \item Sigue de (i).
+    \item Sigue de (ii) y la definición de clausura de $C$ como la intersección de todos los conjunto cerrados que contienen $E$.
+    \item Sigue de (i) y la definición de entorno de $x$ como un conjunto que contiene un subconjunto abierto que contiene a $x$.
+    \item ACABAR
+  \end{enumerate}
+\end{dem}
+
+\begin{obs}
+  Sea $S \subset X, C \subset S$ entonces no necesariamente $int(C)_{S} \neq int(C)_{X} \cap S$. Por ejemplo, $ ( \mathbb{R}^{2}, \mathcal{T}_{u}), S = C = \{ 0 \} \times \mathbb{R}$.
+\end{obs}
+
+\begin{defn}
+  Sea $(\mathcal{P})$ una propiedad de e.t. Se dice que $\mathcal{P}$ es propiedad hereditaria si dado e.t. que cumple $\mathcal{P}$ todos sus subespacios cumplen $\mathcal{P}$.
+\end{defn}
