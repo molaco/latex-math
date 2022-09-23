@@ -1,0 +1,102 @@
+\begin{prop}[Propiedad Universal Topología Porducto]
+  Sea $\{ ( X_{j}, \mathcal{T}_{j} ) \}_{j \in J}$ familia $\neq \emptyset$ e.t., $f: X \to \prod_{j \in J} X_{j}$ aplicación. Entonces, $f: ( X, \mathcal{T} ) \to ( \prod_{j \in J} X_{j}, \prod_{j \in J} \mathcal{T}_{j} )$ continua $\Leftrightarrow$ $(p_{j} \circ f): ( X, \mathcal{T} ) \to ( X_{j}, \mathcal{T}_{j} )$ continua.
+\end{prop}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item [($\Rightarrow$)] La composición de aplicaciones continuas es continua.
+    \item [($\Leftarrow$)] $\forall j \in J$, $(p_{j} \circ f)^{-1}(U_{j}) \in \mathcal{T}, \forall U_{j} \in \mathcal{T}_{j} \Rightarrow (p_{j} \circ f)^{-1}(U_{j}) = f^{-1}(p_{j}^{-1}(U_{j})) = f^{-1}(S) \in \mathcal{T}, \forall S \in \mathcal{S} = \{ p_{j}^{-1}(U_{j}) : U_{j} \in \mathcal{T}_{j}, \forall j \in J \}$. Entonces, $(p_{j} \circ f)^{-1}$ y $p_{j}$ continuas $\Rightarrow f$ continua.
+  \end{enumerate}
+\end{dem}
+
+\begin{prop}
+  Sea $\{ ( X_{j}, \mathcal{T}_{j} ) \}_{j \in J}$ familia e.t., $\sigma: J \to J$aplicación biyectiva. Entonces, $( X_{j}, \mathcal{T}_{j} )$ y $( X_{\sigma(j)}, \mathcal{T}_{\sigma(j)} )$ son homeomorfos.
+\end{prop}
+
+\begin{dem}
+  Sea $\alpha ( \prod_{j \in J} X_{j}, \prod_{j \in J} \mathcal{T}_{j} ) \to ( \prod_{j \in J} X_{\sigma(j)}, \prod_{j \in J} \mathcal{T}_{\sigma(j)} ): ( x_{j} )_{j \in J} \mapsto \alpha(( x_{j} )_{j \in J}) = ( x_{\sigma(j)} )_{j \in J}$, $\alpha$ es biyectiva.
+  \begin{enumerate}[label=(\roman*)]
+    \item $(p_{j} \circ \alpha) = p_{\sigma(j)}$ es composición de funciones continuas (Propiedad Unversal).
+    \item $(p_{j} \circ \alpha)^{-1} = p_{\sigma(j)}^{-1}$ continua $\alpha^{-1}$ continua.
+  \end{enumerate}
+  $\Rightarrow$ holomorfa.
+\end{dem}
+
+\begin{defn}
+  Sea $(P)$ una propiedad de e.t.. Se dice que $(P)$ es multiplicativa si para toda familia e.t. cada una cumpliendo $(P)$, su producto topológico cumple $(P)$.
+\end{defn}
+
+\begin{prop}
+  Sea $\{ ( X_{j}, \mathcal{T}_{j} ) \}_{j \in J}$ familia $\neq$ de e.t., $( X, \mathcal{T} )$ e.t., $\forall j \in J, f_{j}: X \to X_{j}$ aplicación. Entonces, $( f_{j} )_{j \in J}: ( X, \mathcal{T} ) \to ( \prod_{j \in J} X_{j}, \prod_{j \in J} \mathcal{T}_{j} ) : x \mapsto ( f_{j} )_{j \in J}(x) = ( f_{j}(x) )_{j \in J}$ es continua $\Leftrightarrow$ $f_{j}: ( X, \mathcal{T} ) \to ( X_{j}, \mathcal{T}_{j} )$  es continua $\forall j \in J$.
+\end{prop}
+
+\begin{dem}
+  $\forall j_{0} \in J, (p_{j_{0}} \circ ( f_{j} )_{j \in J}) = f_{j_{0}}$
+  \begin{enumerate}[label=(\roman*)]
+    \item [($\Rightarrow$)]  composición de aplicaciones continuas es continua.
+    \item [($\Leftarrow$)] por la propiedad universal de la topología producto.
+  \end{enumerate}
+\end{dem}
+
+\begin{prop}
+  Sean $\{ ( X_{j}, \mathcal{T}_{j} ) \}_{j \in J}$, $\{ ( X'_{j}, \mathcal{T'}_{j} ) \}_{j \in J}$, $\forall j \in J$, $f_{j}: X_{j} \to X_{j}'$ aplicación continua. Entonces, $\prod_{j \in J} f_{j}: ( \prod_{j \in J} X_{j}, \prod_{j \in J} \mathcal{T}_{j} ) \to ( \prod_{j \in J} X'_{j}, \prod_{j \in J} \mathcal{T'}_{j} ): ( x_{j} )_{j \in J} \mapsto (\prod_{j \in J} f_{j})(( x_{j} )_{j \in J}) = (f_{j}(x_{j}))$ aplicación continua.
+\end{prop}
+
+VER DIBUJO(Revisar abierta o continua)
+
+\begin{dem}
+  $\forall j_{0} \in J, (p_{j_{0}}' \circ (\prod_{j \in J} f_{j})) = (f_{j_{0}} \circ p_{j_{0}})$.
+  \begin{enumerate}[label=(\roman*)]
+    \item [($\Rightarrow$)] Propiedad Universal de Topología Porducto.
+    \item [($\Leftarrow$)] $\forall G_{j_{0}}' \in \mathcal{T}_{j_{0}}'$ como $\prod_{j \in J} f_{j}$ continua, entonces $(p_{j_{0}} \circ (\prod f_{j}))^{-1}(G_{j_{0}}) \in \prod_{j \in J} \mathcal{T}_{j}$ es abierto y donde $(p_{j_{0}} \circ (\prod f_{j}))^{-1}(G_{j_{0}}) = (f_{j_{0}} \circ p_{j_{0}})^{-1}(G_{j_{0}}') = p_{j_{0}}^{-1}(f_{j_{0}}^{-1}(G_{j_{0}}))$. Por ser $p_{j_{0}}$ aplicación abierta y suprayectiva $p_{j_{0}}(p_{j_{0}}^{-1}(f_{j_{0}}^{-1}(G_{j_{0}}))) = f_{j_{0}}^{-1}((G_{j_{0}}')) \in \mathcal{T}_{j_{0}}$ .
+  \end{enumerate}
+\end{dem}
+
+\section{Espacio Cociente}
+
+\begin{defn}[Topología Cociente]
+  Sea $( X, \mathcal{T} )$ e.t., $Y \neq \emptyset, f: X \to Y$. Se llama topología cociente inducida por $f $ a $\mathcal{T}_{f} = \{ G \subset Y : f^{-1}(G) \in \mathcal{T} \}$. El par $( X , \mathcal{T}_{f})$ se llama espacio topológico cociente inducido por $f$.
+\end{defn}
+
+\begin{defn}[Identificación]
+  Sea $( X, \mathcal{T} )$, $( X', \mathcal{T}' )$ e.t., $f: X \to X'$ suprayectiva. Se dice que $f: ( X, \mathcal{T} ) \to ( X', \mathcal{T}' )$ es identificación si $\mathcal{T}'$ es topología cociente inducida por $f$.
+\end{defn}
+
+\begin{obs}
+  $f$ es continua.
+\end{obs}
+
+\begin{prop}
+  Sea $( X, \mathcal{T} )$ e.t., $Y \neq \emptyset$, $f: X \to Y$. La topología cociente inducida por $f$ es la más fina de las topologías sobre $Y$ que hacen continuas a $f$.
+\end{prop}
+
+\begin{dem}
+  Sea $\mathcal{S}$ topología sobre $Y$ tal que $f: ( X, \mathcal{T} ) \to ( Y, \mathcal{S} )$ es continua. Entonces, $\forall A \in \mathcal{S}, f^{-1}(A) \in \mathcal{T} \Rightarrow \forall A \in \mathcal{S}, A \in \mathcal{T}_{f} \Leftrightarrow S \subset \mathcal{T}_{f}$.
+\end{dem}
+
+\begin{prop}[Propiedad Universal Topología Cociente]
+  Sea $( X, \mathcal{T} )$ e.t., $( Z, \mathcal{S} )$ e.t., $f: X \to Y$, $g: Y \to Z$ aplicaciones. Entonces, $g: (Y, \mathcal{T}_{f}) \to (Z,\mathcal{S})$ es continua $\Leftrightarrow f: (X, \mathcal{T}) \to (Z, \mathcal{S})$ es continua.
+\end{prop}
+ 
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item [($\Rightarrow$)] Trivial.
+    \item [($\Leftarrow$)] $\forall A \in \mathcal{S}, (g \circ f)^{-1}(A) \in \mathcal{T} \Rightarrow f^{-1}(g^{-1}(A)) \in \mathcal{T} \Rightarrow \forall A \in \mathcal{S}, g^{-1}(A) \in \mathcal{T}_{f} \Rightarrow g$ continua.
+  \end{enumerate} 
+\end{dem}
+
+\begin{prop}
+  Sea $ ( X, \mathcal{T} ), ( X', \mathcal{T}' )$, e.t., $f: X \to X'$ aplicación. Si $f: ( X, \mathcal{T} ) \to ( X', \mathcal{T}' )$ suprayectiva, continua y abierta (resp. cerrada). Entonces, $f: ( X, \mathcal{T} ) \to ( X', \mathcal{T}' )$ es identificación.
+\end{prop}
+
+\begin{dem}
+  $\mathcal{T}_{f}$ es la topología más fina que hace continua a $f \Rightarrow \mathcal{T}' \subset \mathcal{T}_{f}$. Sea $\forall A \in \mathcal{T}_{f} \Leftrightarrow f^{-1}(A) \in \mathcal{T}$ con $ f$ abierta $\Rightarrow f(f^{-1}(A)) = A \in \mathcal{T}'$ abierto $\Rightarrow \forall A \in \mathcal{T}_{f}, A \in \mathcal{T}' \Rightarrow \mathcal{T}_{f} \subset \mathcal{T}'$. Entonces, $\mathcal{T}_{f} = \mathcal{T}'$.
+\end{dem}
+
+\begin{obs}
+  Las identificaciones no son necesariamente abierta o cerradas.
+\end{obs}
+
+\begin{defn}
+  Sea $ ( X, \mathcal{T} )$ e.t., $\mathcal{R}$ relación de equivalencia en $X$, $p: X \to X \setminus \mathcal{R}$ proyección canónica. Se llama e.t. cociente de $ ( X, \mathcal{T} )$ respecto a $ \mathcal{R}$ a $( X \setminus \mathcal{R}, \mathcal{T} \setminus \mathcal{R} )$ donde $\mathcal{T} \setminus \mathcal{R}$ es topología cociente inducida por $p$.
+\end{defn}

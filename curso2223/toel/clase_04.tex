@@ -1,9 +1,9 @@
 \begin{dem}
   Sea $ \mathcal{T} = \{ G \subset X :\forall x \in G, G \in \mathcal{V}(x) \}$. Vemos que $\mathcal{T}$es una topología:
   \begin{enumerate}[label=(\roman*)]
-    \item Prop1.6.(i) $X \in \mathcal{V}(x) \Rightarrow X \in \mathcal{T}$
-    \item $\forall G_{1},G_{2} \in \mathcal{T}, x \in G_{1} \cap G_{2} \Rightarrow G_{1},G_{2} \in \mathcal{V}(x), \text{ Prop.1.6.(b) } \Rightarrow G_{1} \cap G_{2} \in \mathcal{V}(x)$.
-    \item $\forall \{ G_{j} \}_{j \in J} \subset \mathcal{T}, x \in \bigcup_{j \in J} G_{j} \Rightarrow \exists j_{0} \in J : G_{j_{0}} \in \mathcal{V}(x), \text{ Prop.1.6.(iv) } \Rightarrow \bigcup_{j \in J} G_{j} \in \mathcal{V}(x) \Rightarrow \bigcup_{j \in J} G_{j} \in T$
+    \item Prop1.6.(N1) $X \in \mathcal{V}(x) \Rightarrow X \in \mathcal{T}$
+    \item $\forall G_{1},G_{2} \in \mathcal{T}, x \in G_{1} \cap G_{2} \Rightarrow G_{1},G_{2} \in \mathcal{V}(x), \text{ Prop.1.6.(N2) } \Rightarrow G_{1} \cap G_{2} \in \mathcal{V}(x)$.
+    \item $\forall \{ G_{j} \}_{j \in J} \subset \mathcal{T}, x \in \bigcup_{j \in J} G_{j} \Rightarrow \exists j_{0} \in J : G_{j_{0}} \in \mathcal{V}(x), \text{ Prop.1.6.(N4) } \Rightarrow \bigcup_{j \in J} G_{j} \in \mathcal{V}(x) \Rightarrow \bigcup_{j \in J} G_{j} \in T$
   \end{enumerate}
 $\Rightarrow \mathcal{T} $ es topolgía.
 
@@ -41,10 +41,10 @@ Falta ver que $\mathcal{T}$ es única.
 \end{ejm}
 
 \begin{ejm}
-  Sea $\big( \mathbb{R}, \mathcal{T_{u}} \big) : \forall x \in \mathbb{R}, \mathcal{B}(x) =  \{ \big[ x-\epsilon, x + \epsilon \big] : \epsilon > 0  \}$ entonces $\mathcal{B}(x)$ es base de entornos de $x$.
+  Sea $\big( \mathbb{R}, \mathcal{T}_{u} \big) : \forall x \in \mathbb{R}, \mathcal{B}(x) =  \{ \big[ x-\epsilon, x + \epsilon \big] : \epsilon > 0  \}$ entonces $\mathcal{B}(x)$ es base de entornos de $x$.
 \end{ejm}
 
-\begin{prop}[Propiedades de Bases]
+\begin{prop}[Propiedades de Bases de Entornos]
   Sea $\big( X, \mathcal{T} \big)$ e.t. y $\mathcal{B}(x)$ una base de entornos de $x$ en $\big( X, \mathcal{T} \big)$, $\forall x \in \mathcal{T}$. Entonces:
   \begin{enumerate}[label=(\roman*)]
     \item [(V1)] $B \in \mathcal{B}(x) \Rightarrow x \in B$.
@@ -68,7 +68,7 @@ Falta ver que $\mathcal{T}$ es única.
 \begin{dem}
   Sea $\forall x \in X,$
   \[
-    \mathcal{V}(x) = \{ U \subset X : B \subset U  \text{ para algún } B \in \mathcal{B}(x) \}
+    \mathcal{V}(x) = \{ U \subset X :\exists B \subset U  \text{ para algún } B \in \mathcal{B}(x) \}
   \]
   tal que $\mathcal{B}(x) \subset \mathcal{V}(x)$ tiene las propiedades V1, V2, V3. Veamos que $\mathcal{V}(x)$ tiene las propiedades N1, N2, N3, N4.
   \begin{enumerate}[label=(\roman*)]

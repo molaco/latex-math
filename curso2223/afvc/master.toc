@@ -6,3 +6,7 @@
 \contentsline {section}{\numberline {1.3}Función Logaritmo}{7}{}%
 \contentsline {chapter}{\numberline {2}Funciones Holomorfas}{11}{}%
 \contentsline {section}{\numberline {2.1}Derivación Compleja}{11}{}%
+\contentsline {section}{\numberline {2.2}Ecuaciones de Cauchy-Riemann}{13}{}%
+\contentsline {section}{\numberline {2.3}Función Inversa}{15}{}%
+\contentsline {section}{\numberline {2.4}Funciones Harmónicas}{16}{}%
+\contentsline {section}{\numberline {2.5}Aplicaciones Conformes}{17}{}%

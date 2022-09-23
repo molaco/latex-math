@@ -26,8 +26,12 @@
 \end{dem}
 
 \begin{defn}[Subbase]
-  Sea $( X, \mathcal{T} )$ e.t. $\mathcal{S} \subset \mathcal{T}$. Se dice que $\mathcal{S}$ es una subbase de $\mathcal{T}$ si la familia de todas las intersecciónes de $\mathcal{S}$ es una base de $\mathcal{T}$.
+  Sea $( X, \mathcal{T} )$ e.t. $\mathcal{S} \subset \mathcal{T}$. Se dice que $\mathcal{S}$ es una subbase de $\mathcal{T}$ si la familia de todas las intersecciónes finitas de $\mathcal{S}$ es una base de $\mathcal{T}$.
 \end{defn}
+
+\begin{obs}
+  $\mathcal{S} \subset \mathcal{T}, \mathcal{B} = \{ \bigcap_{S \in \mathcal{S}'} S : \mathcal{S}' \subset \mathcal{S} \text{ es finito} \}$ es base de $\mathcal{T}$.
+\end{obs}
 
 \begin{prop}
   Sea $X \neq \emptyset, \mathcal{S} \subset \mathcal{P}(X)$. Entonces, $\mathcal{S}$ es una subbase de alguna topolpgía sobre $X$ $\Leftrightarrow \bigcup_{S \subset \mathcal{S}} S = X$.

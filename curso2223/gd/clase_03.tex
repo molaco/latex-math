@@ -249,7 +249,7 @@
 
 DIBUJO
 
-\begin{defn}[Fórmulad de Frenet]
+\begin{defn}[Fórmulas de Frenet]
   Sea $\alpha  : I \subset \mathbb{R} \to \mathbb{R}^{3}$ curva regualar p.p.a con $k>0$ y torsión $\tau$. Entonces, 
   \[ 
     T' = kN, 
@@ -263,12 +263,46 @@ DIBUJO
 \end{defn}
 
 \begin{prop}
-  $\tau = 0$ si y solo si $\alpha$ es una curva en el plano. (Pasar a colorario Barret y DEMOSTRAR)
+  $\tau = 0$ si y solo si $\alpha$ es una curva en el plano.
 \end{prop}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item [($\Rightarrow$)] Sea $\alpha  : I \subset \mathbb{R} \to \mathbb{R}^{3}$ una curva plana p.p.a.. Entonces, $\exists p \in \mathbb{R}, q \in \mathbb{R}^{3}$ tal que $(\alpha(s) - p) \cdot q = 0, \forall s \in I$. Derivando,
+  \[ 
+    \alpha'(s) \cdot q = \alpha''(s) \cdot q = 0, \; \forall s \in I.
+  \] 
+  Por tanto, $q$ es ortogonal a $T$ y $N \Rightarrow B = \frac{q}{||q||} \Rightarrow B' = 0 \Rightarrow \tau = 0$.
+    \item [($\Leftarrow$)] Sea $\tau = 0 \Rightarrow B' = 0 \Rightarrow B' \ || \ B$. Queremos ver que $\alpha$ es ortogonal a $B$ en $0$. Sea 
+      \[ 
+        f(s) = (\alpha(s) - \alpha(0)) \cdot B, \forall s \in I .
+      \] 
+      Entonces,
+      \[
+        \frac{\partial{f}}{\partial{s}} = \alpha' \cdot B = T \cdot B = 0
+      \]
+      donde $f(0) = 0 \Rightarrow (\alpha(s) - \alpha(0)) \cdot B = 0, \; s \in I$. Por tanto, $\alpha$ permanece en el plano ortogonal a $B$.
+  \end{enumerate}
+\end{dem}
 
 \begin{prop}
   Sea $\alpha  : I \subset \mathbb{R} \to \mathbb{R}^{3}$ una curva regular p.p.a. con curvatura constante $k>0$ y $\tau = 0$. Entonces $\alpha$ es parte de un circulo de radio $\frac{1}{k}$.
 \end{prop}
+
+\begin{dem}
+  $\tau = 0 \Rightarrow \alpha$ es una curva en plano. Sea $\gamma = \alpha + \frac{1}{k}N$ entonces,
+  \[ 
+    \gamma' = \alpha' + \frac{1}{k_{\alpha}}N'_{\alpha} = T_{\alpha} - \frac{1}{k_{\alpha}}k_{\alpha}T_{\alpha} = 0.
+  \] 
+  Como $T_{\gamma} = 0 \Rightarrow k_{\gamma} =0 \Rightarrow \gamma$ es una recta horizontal. Sea $\gamma = c \in \mathbb{R}$
+  \[ 
+    \gamma(s) = \alpha(s) + \frac{1}{k_{\alpha}(s)}N(s) = c, \; \forall s  \in I
+  \] 
+  \[ 
+    \Rightarrow d(c, \alpha(s)) = ||c - \alpha(s)|| = ||\frac{1}{k}N(s)|| = \frac{1}{k}.
+  \] 
+  Luego, $\alpha$ es una curva que en todo punto se mantiene a distancia $\frac{1}{k}$ de un punto fijo $c$, el centro de la circunferencia.
+\end{dem}
 
 \section{Curvas Arbitrarias}
 
@@ -316,19 +350,45 @@ DIBUJO
 \end{theo}
 
 \begin{defn}[Hélice Cilíndrica]
-  content
+  Sea $\alpha  : I \subset \mathbb{R} \to \mathbb{R}^{3}$ una curva regular tal que $\langle T(t){ , }u \rangle = \cos(\varphi), \forall t \in I$. Entonces, $\alpha$ es una hélice cilíndrica.
 \end{defn}
 
 \begin{theo}
-  Criterio hélice Cilíndrica
+  Sea $\alpha  : I \subset \mathbb{R} \to \mathbb{R}^{3}$ curva regula con $k>0$. Entonces, $\alpha$ es una hélice cilíndrica si y solo si $\frac{\tau}{k}$ es constante.
 \end{theo}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item []
+    \item [($\Rightarrow$)] Sea $\alpha  : I \subset \mathbb{R} \to \mathbb{R}^{3}$ curva regular p.p.a con $k>0$. Entonces, si $\alpha$ es una hélice cilíndrica $T(t) \cdot u = \cos(\varphi), \; \forall t \in I \Rightarrow$
+      \[ 
+        0 = (T \cdot u)' = T' \cdot u = kN \cdot u
+      \] 
+      donde $k>0 \Rightarrow N \cdot u = 0$. Por tanto, $\forall t \in I,$ $u$ está en el plano determinado por $T(t)$ y $B(t)$. Es decir,
+      \[ 
+        u = \cos(\varphi)T + \sen(\varphi)B .
+      \] 
+      Usando las fórmulas de Frenet
+      \[ 
+        0 = (k \cos(\varphi) + \tau \sen(\varphi))N 
+      \] 
+      \[ 
+        \Rightarrow \frac{\tau}{k} = \frac{\cos(\varphi)}{sin(\varphi)}.
+      \] 
+    \item [($\Leftarrow$)] Si $\frac{\tau(t)}{k(t)} = \cos(\varphi), \forall t \in I$. Entonces, eligiendo $\cot(\varphi) = \frac{\tau}{k}$, si
+      \[ 
+        U = \cos(\varphi)T + \sen(\varphi)B 
+      \] 
+      tenemos que
+      \[ 
+        U' = (k \cos(\varphi) - \tau \sen(\varphi))N = 0 
+      \] 
+      determina un vector unitario $u$ tal que $T \cdot u = \cos(\varphi) \Rightarrow \alpha$ es una hélice cilíndrica.
+  \end{enumerate}
+\end{dem}
 
 \begin{theo}[Fundamental de la Teoría Local de Curvas]
   Sean $k,\tau: I \subset \mathbb{R} \to \mathbb{R}$ funciones diferenciables con $k(s) > 0, \tau(s)$. Entonces, $\exists \alpha  : I \subset \mathbb{R} \to \mathbb{R}^{3}$ curva tal que $s$ es la longitud de arco, $k(s)$ es la curvatura, y $\tau(s)$ es la torsión de $\alpha$.
 
   Además, cualquier otra curva $\overline{\alpha}$ difiere de $\alpha$ por un movimiento rígido, es decir, $\exists \gamma: I \to \mathbb{R}³$ aplicación lineal ortogonal con $\det \gamma > 0 $ y $c \in \mathbb{R}^{3}: \overline{\alpha} = (\overline{\alpha} \circ \gamma) + c$.
 \end{theo}
-
-\begin{dem}
-  content
-\end{dem}

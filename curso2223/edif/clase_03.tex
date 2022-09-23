@@ -1,0 +1,244 @@
+\chapter{Teoremas de Existencia y Continuidad}
+
+\section{Preliminares}
+
+\begin{note}
+  El objetivo principal de este capítulo es demostrar los siguientes resultados sobre las soluciones de un PVI
+  \begin{enumerate}[label=(\roman*)]
+    \item Unicidad: Si $f(t, x)$ es Lipschitz continua respecto a $x$ en D. Entonces, el PVI tiene solución única.
+    \item Existencia: Si $f(t,x)$ es continua en $D$ entonces existe una solución $x(t)$ del PVI en un intervalo $[t_{0} , t_{0} + a]$.
+    \item Estabilidad: Si $f(t,x)$ es continua respecto a $t$ y es Lipschitz continua respecto a $x$, entonces la solución del PVI varia continuamente respecto a $x_{0}$.
+  \end{enumerate}
+\end{note}
+
+\begin{lem}[Lema de Gronwall]
+  Sea $J \subset \mathbb{R}$, $t_{0} \in J$ y $a,\beta,u \in C(J,\mathbb{R}_{+})$. Si 
+  \[ 
+    u(t) \leq a(t) + \Big | \int_{t_{0}}^{t} \beta(s) u(s) ds \Big |, \forall t \in J, 
+  \] 
+  Entonces,
+  \[ 
+     u(t) \leq a(t) + \Big | \int_{t_{0}}^{t} a(s) \beta(s) e^{| \int_{s}^{t} \beta(\sigma) d\sigma |} ds \Big |, \forall t \in J.
+  \] 
+\end{lem}
+
+\begin{dem}
+  Sea $v(t) = \int_{t_{0}}^{t} \beta(s) u(s) ds$. Entonces,
+  \[ 
+    \dot{v}(t) = \beta(t) u(t) 
+  \] 
+  \[ 
+    \leq \beta(t) a(t) + \beta(t) \Big | \int_{t_{0}}^{t} B(s) u(s)  ds \Big |, \forall t \in J.
+  \] 
+  \[ 
+    \leq a(t) \beta(t) + \sgn(t - t_{0}) \beta(t) v(t), \forall t \in J.
+  \] 
+  Ahora, sea $\gamma = \exp \big\{ - \big | \int_{t_{0}}^{t} \beta(s) ds \big | \big\} = \exp \big\{ - \int_{t_{0}}^{t} \sgn (t - t_{0}) \beta(s) ds \big\} $,
+  $\gamma \dot{v} \leq a \beta \gamma - \dot{\gamma} v \Rightarrow \dot{\gamma v} - a \beta \gamma \leq 0$ donde integrando tenemos que
+  \[ 
+    \sgn(t-t_{0}) v(t) \leq \sgn(t -t_{0}) \int_{t_{0}}^{t} \frac{a \beta \gamma }{\gamma(t)} ds , \forall t \in J.
+  \] 
+  \[ 
+    = \Big | \int_{t_{0}}^{t} \frac{a(s) \beta(s) \gamma(s)}{\gamma(t)} ds \Big |, \forall t \in J. 
+  \] 
+  Sustituyendo en la hipótesis inicial, nos queda
+  \[ 
+     u(t) \leq a(t) + \sgn(t -t_{0})v(t)
+  \] 
+  \[ 
+    \leq a(t) \Big | \int_{t_{0}}^{t} a(s) \beta(s) \exp \Big\{ \Big | \int_{s}^{t} \beta(\sigma) dgks \Big | \Big\} ds \Big |, \forall t \in J.
+  \] 
+\end{dem}
+
+\begin{cor}
+  Sea $a(t) = a_{0}(| t -  t_{0} |)$ donde $a_{0} \in C(\mathbb{R}_{+}, \mathbb{R}_{+})$ es una función monótona crecient tal que
+  \[ 
+    u(t) \leq a(t) + \Big | \int_{t_{0}}^{t} \beta(s) u(s) ds \Big |, \forall t \in J. 
+  \]
+  Entonces, 
+  \[ 
+    u(t) \leq a(t) e^{| \int_{t_{0}}^{t} \beta(\sigma) ds |}, \forall t \in J. 
+  \] 
+\end{cor}
+
+\begin{defn}[Función uniformemente Lipschitz continua]
+  Sean $X, Y$ espacios métricos y $T$ un espacio topológico. Una función $f: T \times X \to Y$ se llama uniformemente Lipschitz continua respecto a $x \in X$, si $\exists \lambda \in \mathbb{R}_{+}$ tal que 
+  \[ 
+    | f(t,x) - f(t,x') | \leq \lambda | x - x' |, \forall x,x' \in X, \forall t \in T. 
+  \] 
+\end{defn}
+
+\begin{nota}
+  Conjunto de funciones localmente Lipschitz continuas
+  \[ 
+    C^{0,1-}(T \times X, Y) = \{ f: T \times X \to Y | f \in C(T \times X, Y),
+  \] 
+  \[ 
+     f \text{ Lipschitz continua respecto a } x \in X \}  
+  \] 
+  Si $f: X \to Y$, entonces
+  \[ 
+    C^{1-}(X,Y) = \{ f: X \to Y | f \text{ es Lipschitz continua } \} .
+  \]
+  Conjunto de funciones continuas con dereivas parciales respecto a $x \in X$
+  \[ 
+    C^{0,1}(T \times X, Y) = \{ f \in C^{}(T \times X, Y) : D_{2}f \in C^{}(T \times X, \mathcal{L}(E,F)) \}.
+  \] 
+\end{nota}
+
+\begin{obs}
+  $C^{-1}(X,Y) = C(X,Y)$ y $C^{0,1-}(T \times X, Y) \subset C(T \times X, Y)$.
+\end{obs}
+
+\begin{prop}
+  Sea $X,Y$ espacios métricos, $T$ un e.t. compacto. Supongamos que $K \subset X$ es compacto y $f \in C^{0,1-}(T \times X, Y)$. Entonces, existe un entorno abierto $W$ de $K$ en $X$ tal que $f|_{T \times W}$ es uniformemente Lipschitz continua respecto a $x \in W$.
+\end{prop}
+
+\begin{nota}
+  \begin{enumerate}[label=(\roman*)]
+    \item $J \subset \mathbb{R}$ es un intervalo abierto.
+    \item $E$ es un espacio de Banach sobre $\mathbb{K}$.
+    \item $D \subset E$ es un abierto.
+    \item $ f \in C(J \times D, E)$.
+  \end{enumerate}
+\end{nota}
+
+\begin{defn}[Solución ecuación diferencial]
+  Sea $u: J_{u} \to D$. Entonces, decimos que $u$ es solución de la ecuación diferencial $\dot{x} = f(t,x)$ Si se verifica
+  \begin{enumerate}[label=(\roman*)]
+    \item $J_{u} \subset J : \mathring{(J_{u})} \neq \emptyset$ .
+    \item $u \in C^{1}(J_{u}, D)$,
+    \item $\dot{u}(t) = f(t, u(t)), \forall t \in J_{u}$.
+  \end{enumerate}
+\end{defn}
+
+\begin{lem}[Forma Integral Solución PVI]
+  Sea $J_{u}$ un subintervalo perfecto de $J$, $u: J_{u} \to D$. Entonces $u$ es una solución de la ecuación diferencial $\dot{x} = f(t,x) \Leftrightarrow u \in C^{}(J_{u}, D)$ y
+      \[ 
+        u(t) = u(t_{0}) + \int_{t_{0}}^{t} f(s, u(s)) ds, \forall t \in J_{u} 
+      \] 
+      donde $t_{0} \in J_{u}$.
+\end{lem}
+
+AÑADIR ESPACIO BANACH, 
+EQUICONTINUA, ETC?
+
+\section{Unicidad}
+
+\begin{theo}[de Unicidad]
+  Sea $J \subset \mathbb{R}; D \subset E$ abierto donde $E$ es un espacio de Banach; $f \in C^{0,1-}(J \times D, E)$; $(t_{0}, x_{0}) \in J \times D$; $ a, b, \lambda \in \mathbb{R}$ y $R = [t_{0} - a, t_{0} + a] \times \overline{\mathbb{B}}(x_{0}, b) \subset J \times D$. Entonces, el PVI
+  \[ 
+    \dot{x} = f(t, x), \; x(t_{0}) = x_{0},
+  \] 
+  tiene solución única.
+\end{theo}
+
+Revisar notación $x_{0}$
+
+\begin{dem}
+  Sean $u(t), u'(t)$ dos soluciones del PVI en $[t_{0}, t_{1}]$. Entonces,
+  \[ 
+    u(t) = u(t_{0}) + \int_{t_{0}}^{t} f(s, u(s)) ds, \forall t \in [t_{0}, t_{1}],
+  \] 
+  \[ 
+    u'(t) = u(t_{0}) + \int_{t_{0}}^{t} f(s, u'(s)) ds, \forall t \in [t_{0}, t_{1}]
+  \] 
+  \[ 
+    \Rightarrow u(t) - u'(t) = \int_{t_{0}}^{t} f(s, u(s)) - f(s, u'(s)) ds, \forall t \in [t_{0}, t_{1}]
+  \] 
+  \[ 
+    \Rightarrow | u(t) - u'(t) | = | \int_{t_{0}}^{t} f(s, u(s)) - f(s, u'(s)) ds |, \forall t \in [t_{0}, t_{1}]
+ 
+  \] 
+  \[ 
+    \leq \int_{t_{0}}^{t} | f(s, u(s)) - f(s, u'(s)) | ds, \forall t \in [t_{0}, t_{1}]
+  \] 
+  \[ 
+    \leq  \lambda \int_{t_{0}}^{t} | u(t) - u'(t) | ds, \forall t \in [t_{0}, t_{1}]
+  \] 
+  $\Rightarrow $ (Teo. Gronwall $a = 0$) $ | u(t) - u'(t) | = 0, \; \forall t \in [t_{0}, t_{1}] \Rightarrow u(t) = u'(t), \; \forall t \in [t_{0}, t_{1}]$.
+\end{dem}
+
+\section{Existencia}
+
+\begin{theo}[Picard]
+  Sean $J \subset \mathbb{R}$ abierto, $E$ espacio de Banach, $D \subset E$. Sea $f \in C^{0,1-}( J \times D, E)$, $(t_{0}, x_{0}) \in J \times D$ y $a, b, \lambda, M \in \mathbb{R}$ tal que $R = [t_{0} - a, t_{0} + a] \times \overline{\mathbb{B}}(x_{0}, b) \subset J \times D$ y $| f(t,x) |\leq M, \forall (t,x) \in R$, $\alpha = \min\big ( a, \frac{b}{M} \big )$ y $I = [t_{0} - \alpha, t_{0} +\alpha]$. Entonces el PVI
+  \[ 
+    \dot{x} = f(t, x), x(t_{0}) = x_{0}, 
+  \] 
+  tiene solución única $u: I \to \mathbb{B}(x_{0}, b)$
+\end{theo}
+
+\begin{note}[Esquema Demostración]
+  Usando la iteración de picard
+  \[ 
+    u_{n}(t) = x_{0} + \int_{t_{0}}^{t} f(s, u_{n-1}(s)) ds, \; forall n \in \mathbb{N}, \; t \in I.
+  \] 
+  \begin{enumerate}[label=(\roman*)]
+    \item $\{ u_{n} \}_{j \in J}$ está bien definida, $u_{n}$ tiene derivadas continuas $\forall n \in N$, $| u_{n} - x_{0} | \leq b$ y $f(t, u_{n}(t))$ está bien definida.
+    \item $\{ u_{n} \}_{j \in J}$ satisface $| u_{n}(t) - u_{n-1}(t) | \leq \frac{M}{\lambda}\frac{(h \lambda)^{n}}{n!}, t \in I$.
+    \item $\{ u_{n} \}_{j \in J}$ converge uniformemente en $I$.
+    \item $u$ satisface PVI en $I$.
+  \end{enumerate}
+\end{note}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item Pocedemos por inducción. \\ 
+
+      Si $m=1$ es trivial comprobar que existe
+      \[
+        u_{1}(x) = x_{0} + \int_{t_{0}}^{t} f(s, x_{0}) ds, \; t \in I,
+      \]
+      y tiene derivada continua en $I$ tal que $| u_{1}(t) - x_{0} | < b, \; t \in I \Rightarrow (t, x_{0}) \in R_{1} = I \times \overline{\mathbb{B}}(x_{0}, b)$; y $f(t, x_{0})$ está definida y es continua en $I$. Además, $| f(t, x_{0}) | \leq M, \; t \in I$. \\
+      
+      Suponemos que se cumple para $m=n-1$, es decir, existe $u_{n-1}(x)$ de manera que 
+      \[
+        u_{n-1}(x) = x_{0} + \int_{t_{0}}^{t} f(s, u_{n-2}(s)) ds, \; t \in I,
+      \]
+      y tiene derivada continua en $I$ tal que $| u_{n-1}(t) - x_{0} | < b, \; t \in I \Rightarrow (t, x_{0}) \in R_{1} = I \times \overline{\mathbb{B}}(x_{0}, b)$; y $f(t, u_{n-1})$ está definida y es continua en $I$. Además, $| f(t, u_{n-1}) | \leq M, \; t \in I$. \\
+
+      Ahora, vemos que se cumple para $m=n$. Sea
+      \[ 
+        u_{n}(x) = x_{0} + \int_{t_{0}}^{t} f(s, u_{n-1}(s)) ds, \; t \in I,
+      \] 
+      Entonces, $u_{n}$ existe y tiene derivada continua en $I$. Luego,
+      \[ 
+        | u_{n}(t) - x_{0} | = \Big | \int_{t_{0}}^{t} f(s, u_{n-1}(s)) ds \Big |, \forall t \in I,
+      \] 
+      \[ 
+        \leq \int_{t_{0}}^{t} | f(s, u_{n-1}(s)) | ds
+      \] 
+      \[ 
+        \leq \int_{t_{0}}^{t} M ds \leq M(t - t_{0}) \leq Mh \leq b 
+      \] 
+      $\Rightarrow (t, u_{n}(x)) \in R_{1}$ y $f(t, u_{n}(x))$ está bien definida y es continua.
+    \item Procedemos por inducción. \\
+
+      Es trivial comprobar que se cumple para $m=1$. Suponemos que se cumple para $m=n-1$
+      \[ 
+        | u_{n-1}(x) - u_{n-2}(x) | \leq \frac{M \lambda^{n-1}}{(n-1)!}(t - t_{0})^{n-1}, \; t \in I,
+      \] 
+      Entonces, 
+      \[ 
+        | u_{n}(x) - u_{n-1}(x) | =  \Big | \int_{t_{0}}^{t} f(s, u_{n-1}(s)) - f(s, u_{n-2}(s)) ds \Big |, \; t \in I,
+      \] 
+      \[ 
+        \leq \lambda \int_{t_{0}}^{t} | u_{n-1}(s) - u_{n-2} | ds
+      \] 
+      \[ 
+        \leq \lambda \int_{t_{0}}^{t} \frac{M \lambda^{n-2}}{(n-1)!}(s - t_{0})^{n-2} ds 
+      \] 
+      \[ 
+        \leq  \frac{M \lambda^{n-1}}{(n-1)!} \frac{(s-t_{0})^{n}}{n} \Bigg |_{t_{0}}^{t}
+      \] 
+      \[ 
+        = \frac{M \lambda^{n-1}}{(n)!} (t - t_{0})^n 
+      \] 
+      \[ 
+        = \frac{M}{\lambda} \frac{\lambda^n}{n!} \alpha^n \leq \frac{M}{\alpha} \frac{(\lambda \alpha)^n}{n!}
+      \] 
+    \item 
+    \item 
+  \end{enumerate}
+\end{dem}

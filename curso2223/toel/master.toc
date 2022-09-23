@@ -4,6 +4,7 @@
 \contentsline {section}{\numberline {1.1}Espacios Topológicos}{3}{}%
 \contentsline {section}{\numberline {1.2}Entornos}{8}{}%
 \contentsline {section}{\numberline {1.3}Bases}{13}{}%
-\contentsline {section}{\numberline {1.4}Subespacios}{14}{}%
-\contentsline {section}{\numberline {1.5}Funciones continuas}{15}{}%
-\contentsline {section}{\numberline {1.6}Espacio Producto}{18}{}%
+\contentsline {section}{\numberline {1.4}Subespacios}{15}{}%
+\contentsline {section}{\numberline {1.5}Funciones continuas}{16}{}%
+\contentsline {section}{\numberline {1.6}Espacio Producto}{19}{}%
+\contentsline {section}{\numberline {1.7}Espacio Cociente}{22}{}%

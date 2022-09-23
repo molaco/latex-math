@@ -1,0 +1,101 @@
+\section{Ecuaciones de Cauchy-Riemann}
+
+\begin{nota}
+  Sea $f: \Omega \subset \mathbb{C} \to \mathbb{C}$ 
+  \[ 
+    f(x,y) = (u(x, y), v(x, y)) = u(x, y) + i v(x, y) ,
+  \] 
+  donde $u, v: \mathbb{R}^{2} \to \mathbb{R}^{2}$. Entonces, la matriz jacobiana de $f$ es 
+  \[ J_{f}(x,y) =
+    \begin{pmatrix}
+       u_{x} & u_{y} \\
+       v_{x} & v_{y}
+    \end{pmatrix} 
+  \] 
+\end{nota} 
+
+\begin{note}
+  Queremos ver que significa qeu $ u, v$ sean diferenciables. Si derivamos $f$ en $z_{0} \in \Omega$ respecto de $x$ y $y$, parte real y parte imaginaria respectivamente, obtenemos dos expresiones de $f'(z_{0})$ que dan lugar a las ecuaciones de Cauchy-Riemann.
+\end{note}
+
+\begin{theo}[Ecuaciones Cauchy-Riemann]
+  Sea $f: \Omega \subset \mathbb{C} \to \mathbb{C}$. Entonces $f'(z_{0})$ existe $\Leftrightarrow$ $f$ es diferenciable en $z_{0} = (x_{0}, y_{0}) \in \mathbb{R}^{2}$ con
+  \[ 
+    u_{x} = v_{y}, \; u_{y} = -v_{x} \text{ (Ecuaciones de C-R)} ,
+  \] 
+  es decir, si $\exists u_{x}, u_{y}, v_{x}, v_{y}$, son continuas en $\Omega$ y satisfacen las ecuaciones, entonces $f$ es analítica en $\Omega$.
+\end{theo}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item [($\Rightarrow$)] En el límite
+      \[ 
+        f'(z_{0}) = \lim_{z \to z_{0}} \frac{f(z) - f(z_{0})}{z - z_{0}}
+      \] 
+      sustituimos $z = x + iy_{0}$
+      \[ 
+        \frac{f(z) - f(z_{0})}{z - z_{0}} = \frac{u(x, y_{0}) + i v(x, y_{0}) - u(x_{0},y_{0}) - i v(x_{0}, y_{0})}{x - x_{0}}
+      \]
+      \[ 
+      = \frac{u(x, y_{0}) +  u(x_{0}, y_{0})}{x - x_{0}} + i \frac{v(x,y_{0}) - i v(x_{0}, y_{0})}{x - x_{0}}
+      \] 
+      donde $\frac{f(z) - f(z_{0})}{z - z_{0}} \xrightarrow[]{x \rightarrow x_{0}} f'(z_{0})$ implica
+      \[ 
+        \lim_{x \to x_{0}} \frac{u(x, y_{0}) +  u(x_{0}, y_{0})}{x - x_{0}} + i \frac{v(x,y_{0}) - i v(x_{0}, y_{0})}{x - x_{0}} 
+      \]
+      \[ 
+        = \frac{\partial{u}}{\partial{x}}(x_{0}, y_{0}) + i \frac{\partial{v}}{\partial{x}}(x_{0}, y_{0}).
+      \] 
+      De manera análoga, si $z = x_{0} + i y$ entonces
+      \[ 
+      \lim_{y \to y_{0}} \frac{u(x_{0}, y) +  u(x_{0}, y_{0})}{i(y - y_{0})} +  \frac{v(x_{0},y) -  v(x_{0}, y_{0})}{(y - y_{0})} 
+      \]
+      \[ = \frac{1}{i}\frac{\partial{u}}{\partial{y}}(x_{0}, y_{0}) + \frac{\partial{v}}{\partial{y}}(x_{0}, y_{0})
+      \]
+      \[ 
+         = \frac{\partial{u}}{\partial{y}}(x_{0}, y_{0}) - i\frac{\partial{v}}{\partial{y}}(x_{0}, y_{0}).
+      \] 
+      Por tanto, $\exists f'(z_{0})$ y tiene el mismo valor independientemente de como $z$ se acerque a $z_{0}$
+      \[ 
+        f'(z_{0}) = \frac{\partial{u}}{\partial{x}} + i\frac{\partial{v}}{\partial{x}} =  \frac{\partial{u}}{\partial{y}} - i\frac{\partial{v}}{\partial{y}}
+      \] 
+    \item [($\Rightarrow$)] A partir del teoremade Taylor
+      \[ 
+        u(x + s, y + t) = u(x, y) + \frac{\partial{u}}{\partial{x}}(x, y)s + \frac{\partial{u}}{\partial{y}}(x, y)t + R(s, t) 
+      \] 
+      donde $\frac{R(s,t)}{| h |} \xrightarrow[]{ z \rightarrow z_{0}} 0 $. También
+      \[ 
+        v(x + s, y + t) = v(x, y) + \frac{\partial{v}}{\partial{x}}(x, y)s + \frac{\partial{v}}{\partial{y}}(x, y)t + G(s, t) 
+      \] 
+      donde $\frac{G(s,t)}{| h |} \xrightarrow[]{ z \rightarrow z_{0}} 0 $. Entonces,
+      \[ 
+         f(z + h) = f(z) + \frac{\partial{u}}{\partial{x}}(x, y)s + \frac{\partial{u}}{\partial{y}}(x, y)t + R(h) 
+      \] 
+      \[ 
+        + i\frac{\partial{v}}{\partial{x}}(x, y)s + i\frac{\partial{v}}{\partial{y}}(x, y)t + iG(h) 
+      \] 
+      \[
+        = f(z) + \Big ( \frac{\partial{u}}{\partial{x}}(x, y) + i\frac{\partial{v}}{\partial{x}}(x, y) \Big )h + R(h) + iG(h)
+      \] 
+      Entonces,
+      \[ 
+        \frac{f(z + h) - f(z)}{h} = \Big ( \frac{\partial{u}}{\partial{x}}(x, y) + i\frac{\partial{v}}{\partial{x}}(x, y) \Big ) + \frac{R(h) + iG(h)}{h}
+      \] 
+      Por tanto,
+      \[ 
+        f'(z_{0}) = \frac{\partial{u}}{\partial{x}}(x, y) + i \frac{\partial{v}}{\partial{x}}(x, y) 
+      \] 
+      $\exists f'(z_{0})$ y es continua $\Rightarrow f(z)$ es anlítica.
+  \end{enumerate}
+\end{dem}
+
+\begin{cor}
+  Sea $f: \Omega \subset \mathbb{C} \to \mathbb{C}$ holomorfa, $\Omega$ abierto. Entonces, $f'(z) = 0, \forall z \in \Omega \Rightarrow f$ es constante.
+\end{cor}
+
+\begin{theo}
+  Si $f(z)$ es diferenciable, entonces la matriz Jacobian $J_{f}: \mathbb{R}^{2} \to \mathbb{R}^{2}$ tiene determinante
+  \[ 
+    \det J_{f}(z) = | f'(z) |^{2} .
+  \] 
+\end{theo}

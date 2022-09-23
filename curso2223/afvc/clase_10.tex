@@ -1,0 +1,123 @@
+\section{Función Inversa}
+
+\begin{theo}[Función Inversa]
+  Sea $f: \Omega \subset \mathbb{C} \to \mathbb{C}$ holomorfa, $z_{0} \in \Omega$ y $f'(z_{0}) \neq 0$. Entonces, existe un entorno $U \subset D: z_{0} \in U$ y un entorno de $V \subset \mathbb{C}: f(z_{0}) \in V$ tal que $f: U \to V$ es biyectiva y $f^{-1}$ es holomorfa con
+  \[ 
+    (f^{-1})'(f(z)) = \frac{1}{f'(z)} , z \in U.
+  \] 
+\end{theo}
+
+\begin{dem}
+\end{dem}
+
+  Sea $J_{f}(x_{0}, y_{0})$ la matriz Jacobiana de $f$ en $z_{0} = (x_{0}, y_{0})$, por el Teorema 2.3 $\det(J_{f}(z_{0})) = | f'(z_{0}) |^{2} \neq 0$. Entonces, podemos aplicar el Teorema de la Función Inversa Real ya que $J: \mathbb{R}^{2}\to \mathbb{R}^{2}$. Solo falta ver que $\[ J_{f}(z) \]^{-1}$ cumple las ecuaciones de Cauchy-Riemann.
+  \[ 
+    J_{f}(x, y) = 
+    \begin{pmatrix}
+       u_{x} & u_{y} \\
+       v_{x} & v_{y}
+    \end{pmatrix}
+  \]
+  Entonces la matriz Jacobiana invera es
+  \[ (J_{f}(x, y))^{-1} = \frac{1}{\det(J_{f})}
+    \begin{pmatrix}
+       v_{y} & -u_{y} \\
+       -v_{x} & u_{x}
+    \end{pmatrix}
+  \] 
+  y la matriz Jacobiana de la función inversa
+  \[ 
+    J_{f^{-1}}(x,y) =
+    \begin{pmatrix}
+       t_{x} & t_{y} \\
+       s_{x} & s_{y}
+    \end{pmatrix}
+  \] 
+  Entonce,
+  \[ 
+    t_{x} = \frac{1}{\det(J_{f})}v_{y} = \frac{1}{\det(J_{f})}u_{x},
+  \] 
+  \[ 
+    s_{x} = -\frac{1}{\det(J_{f})} v_{x} = \frac{1}{\det(J_{f})} u_{y},
+  \] 
+  \[ 
+    t_{y} =  \frac{1}{\det(J_{f})} v_{x},
+  \] 
+  \[ 
+    s_{y} = \frac{1}{\det(J_{f})} v_{y}
+  \] 
+  las ecuaciones de Cauchy-Riemann se cumplen.
+
+\begin{ejm}
+  Sea $w = \log z$ la rama principal del logaritmo. Entonces, $w$ es continua y es la inversa de $z = e^{w}, -\pi < w < \pi$. Como $e^{w}$ es holomorfa con $(e^{w})'\neq 0$, podemos aplicar el Teorema de la Función Inversa. Por tanto, $\log z$ es holomorfa.
+  \[ 
+    z = e^{\log z} \Rightarrow 
+  \] 
+  \[ 
+    1 = e^{\log z} \frac{d{}}{d{z}}(\log z) = z \frac{d{}}{d{z}}(\log z) \Rightarrow
+  \] 
+  \[ 
+    \frac{d{}}{d{z}}(\log z) = \frac{1}{z}.
+  \] 
+\end{ejm}
+
+\section{Funciones Harmónicas}
+
+\begin{defn}[Ecuación de Laplace]
+  La ecuación
+  \[ 
+    \frac{\partial{^{2}u}}{\partial{x_{1}^{2}}} + \cdots +  \frac{\partial{^{2}u}}{\partial{x_{m}^{2}}} = 0
+  \] 
+  se llama ecuación de Laplace.
+\end{defn}
+
+\begin{defn}[Laplaciano]
+  El operador
+  \[ 
+    \Delta = \frac{\partial{^{2}}}{\partial{x_{1}^{2}}} + \cdots +  \frac{\partial{^{2}}}{\partial{x_{m}^{2}}}
+  \] 
+  se llama Laplaciano.
+\end{defn}
+
+\begin{obs}
+  La ecuación de Laplace se escribe $\Delta u = 0$.
+\end{obs}
+
+\begin{defn}[Función Armónica]
+  Las funciones que satisfacen la ecuación de Laplace se llaman funciones armónicas. Sea $u: A \to \mathbb{R}$, $u \in C^{2}$ tal que 
+  \[ 
+    \Delta u = \frac{\partial{^{2}u}}{\partial{x^{2}}} + \frac{\partial^2{u}}{\partial{y}^2} = 0 
+  \] 
+\end{defn}
+
+\begin{theo}
+  Si $f = u + i v$ es holomorfa y $u, v \in C^{2}$. Entonces, $u$ y $v$ son armónicas.
+\end{theo}
+
+\begin{obs}
+  $u = \Re(f), v = \Im(f)$.
+\end{obs}
+
+\begin{dem}
+  content
+\end{dem}
+
+\begin{defn}[Conjugado Armónico]
+  Sea $u: D \subset \mathbb{R} \to \mathbb{R}$ armónica y $v$ armónica tal que $f = u + i v$ es holomorfa. Entonces, decimos que $v$ es el conjugado armónico.
+\end{defn}
+
+\begin{ejm}
+  $f(z) = z^{2}$, $u = x^{2} + y^{2}$, $v = 2xy$.
+\end{ejm}
+
+\begin{theo}
+  Sea $D$ un disco abierto o $D = \mathbb{R}^{2}$, $u: D \to \mathbb{R}$ armónica. Entonces, existe $v$ armónica conjugada.
+\end{theo}
+
+ \begin{dem}
+   content
+ \end{dem}
+
+ \begin{cor}
+   Toda función armónica es localmente la parte real de una función holomorfa.
+ \end{cor}

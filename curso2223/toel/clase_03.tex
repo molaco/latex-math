@@ -1,5 +1,8 @@
 \begin{defn}[Interior]
-  Sea $\big( X, \mathcal{T} \big)$ e.t., $S \subset X$ se llama interior de $ S$ en $\big( X, \mathcal{T} \big)$ al conjunto \[  \mathring{S} = \bigcup \{ G \subset X \text{ abierto y } G \subset E \} \] 
+  Sea $\big( X, \mathcal{T} \big)$ e.t., $S \subset X$ se llama interior de $ S$ en $\big( X, \mathcal{T} \big)$ al conjunto 
+  \[  
+  \mathring{S} = \bigcup \{ A \subset X \text{ abierto y } A \subset S \}. 
+  \] 
 \end{defn}
 
 \begin{obs}
@@ -18,9 +21,13 @@
   \end{enumerate}
 \end{prop}
 
+\begin{obs}
+  $\overline{S^{c}} = \mathring{S}^{c}$.
+\end{obs}
+
 \begin{dem}
   \begin{enumerate}[label=(\roman*)]
-    \item $X \setminus \bigcap_{C \in \mathcal{F}: S \subset C} C = \bigcup_{C \in \mathcal{F}: S \subset S} X \setminus C = \bigcup_{G \in \mathcal{T}: G \subset X \setminus S} G = \mathring{(X \setminus S)}$
+    \item $X \setminus \bigcap_{C \in \mathcal{F}: S \subset C} C = \bigcup_{C \in \mathcal{F}: S \subset C} X \setminus C = \bigcup_{G \in \mathcal{T}: G \subset X \setminus S} G = \mathring{(X \setminus S)}$
     \item $X \setminus \mathring{S} = X \setminus \bigcup_{G \in \mathcal{T}: G \subset S} G = \bigcap_{G \in \mathcal{T}: G \subset S} (X \setminus G) = \bigcap_{C \in \mathcal{F}: X \setminus S \subset C} C = \overline{X \setminus S}$
   \end{enumerate}
 \end{dem}
@@ -107,5 +114,5 @@
 \end{dem}
 
 \begin{prop}
-  Sea $X \neq \emptyset$, $ \forall x \in X: \mathcal{V}(x)  \subset \mathcal{P}(x)$ que cumple (i, ii, iii, iv) anteriores, entonces $\exists! \mathcal{T}$ sobre $ X: \forall x \in X, \mathcal{V}(x)$ es el sistema de entornos de $x$ en $\big( X, \mathcal{T} \big)$.
+  Sea $X \neq \emptyset$, $ \forall x \in X: \mathcal{V}(x)  \subset \mathcal{P}(x)$ que cumple (N1, N2, N3, N4) anteriores, entonces $\exists! \mathcal{T}$ sobre $ X: \forall x \in X, \mathcal{V}(x)$ es el sistema de entornos de $x$ en $\big( X, \mathcal{T} \big)$.
 \end{prop}

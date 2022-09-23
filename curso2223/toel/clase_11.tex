@@ -1,0 +1,54 @@
+\begin{prop}
+  Sean $( X, \mathcal{T} ), ( X', \mathcal{T}' ), ( X'', \mathcal{T}'' )$ e.t., $f: ( X, \mathcal{T} ) \to ( X', \mathcal{T}' )$ identificación, $f': ( X', \mathcal{T}' ) \to ( X'', \mathcal{T}'' )$ identificación. Entonces, $(f' \circ f)$ es identificación.
+\end{prop}
+
+REVISAR DEM
+
+\begin{dem}
+  Sea $(f' \circ f): X \to X''$ suprayectiva. Entonces, $A'' \in \mathcal{T}'', (f'$ identficación $\Rightarrow \mathcal{T}'' = \mathcal{T}_{f}) \Leftrightarrow f'^{-1}(A'') \in \mathcal{T}' \Leftrightarrow (\mathcal{T}' = \mathcal{T}_{f}) f^{-1}(f'^{-1}(A'')) = (f' \circ f)^{-1}(A'') \in \mathcal{T} \Rightarrow \mathcal{T}'' = \mathcal{T}_{(f' \circ f)}$
+\end{dem}
+
+\begin{prop}
+  Sean $( X, \mathcal{T} ), ( X', \mathcal{T}' )$ e.t., $f: ( X, \mathcal{T} ) \to ( X', \mathcal{T}' )$ identificación. Entonces, 
+  \begin{enumerate}[label=(\roman*)]
+    \item $f: ( X, \mathcal{T} ) \to ( X', \mathcal{T}' )$ es abierta $\Leftrightarrow \forall A \in \mathcal{T}, f^{-1}(f(A)) \in \mathcal{T}$.
+    \item $f: ( X, \mathcal{T} ) \to ( X', \mathcal{T}' )$ cerrada $\Leftrightarrow \forall C $ cerrado $( X, \mathcal{T} )$, $ f^{-1}(f(C))$ cerrado de $( X, \mathcal{T} )$.
+  \end{enumerate}
+\end{prop}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item []
+    \item [(1)]
+      \begin{enumerate}[label=(\roman*)]
+        \item [($\Rightarrow$)] $\forall A \in \mathcal{T} \Rightarrow f(A) \in \mathcal{T}' \Rightarrow f^{-1}(f(A)) \in \mathcal{T}$.
+      \item [($\Leftarrow$)] $\forall \in \mathcal{T}, f^{-1}(f(A)) \in \mathcal{T}, f \text{ identificación } \Rightarrow  f(f^{-1}(f(A))) = f(A) \in \mathcal{T}_{f} = \mathcal{T}' \Rightarrow f$ aplicación abierta.
+      \end{enumerate}
+  \end{enumerate}
+\end{dem}
+
+\begin{prop}
+  Sea $( X, \mathcal{T} ), ( X', \mathcal{T}' ), ( X'', \mathcal{T}'' ), ( X''', \mathcal{T}''' )$, $f: ( X, \mathcal{T} ) \to ( X', \mathcal{T}' )$ identificación, $f': ( X'', \mathcal{T}'' ) \to ( X''', \mathcal{T}''' )$ identificación, $g: X \to X''$ aplicación tal que $\forall x_{1}, x_{2} \in X, f(x_{1}) = f(x_{2}) \Rightarrow (f' \circ g)(x_{1}) = (f' \circ g)(x_{2})$. Entonces,
+  \begin{enumerate}[label=(\roman*)]
+    \item $\exists \overline{g}: X' \to X'''$ aplicación tal que $(\overline{g} \circ f) = (f' \circ g)$
+    \item Si $ g: ( X, \mathcal{T} ) \to ( X'', \mathcal{T}'' )$ continua $\Rightarrow \overline{g}$ continua.
+  \end{enumerate}
+\end{prop}
+
+REVISAR
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item []
+    \item $\overline{g}: X' \to X''': x' \mapsto \overline{g}(x_{0}') = f'(g(x)), \; \forall x \in f^{-1}(X') \Rightarrow f(x) = x' \Rightarrow \overline{g}(f(x)) = (f' \circ \overline{g})(x), \; \forall x \in X \Leftrightarrow (\overline{g} \circ f) = (f' \circ g)$.
+    \item $(\overline{g} \circ f) = (f' \circ g)$, $(g \text{ continua } \Rightarrow (f' \circ g) \text{ continua })$. Entonces, (Propiedad Universal Topología Cociente) $\Rightarrow \overline{g}$ continua.
+  \end{enumerate}
+\end{dem}
+
+\begin{prop}
+  Sea $( X, \mathcal{T} ), ( X', \mathcal{T}' )$ e.t., $f: X \to X'$ aplicación suprayectiva, $R_{f}$ relación de equivalencia tal que $x_{1}, x_{2} \in X, x_{1} R_{f} x_{2} \Leftrightarrow(def.) f(x_{1}) = f(x_{2})$. Entonces, $\exists \alpha: ( X, \mathcal{T} ) \to ( X', \mathcal{T}' )$ homeomorfa tal que $(\alpha \circ f) = p \Leftrightarrow f: ( X, \mathcal{T} ) \to ( X', \mathcal{T}' )$ es identificación.
+\end{prop}
+
+\begin{dem}
+  content
+\end{dem}
