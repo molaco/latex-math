@@ -46,9 +46,12 @@ REVISAR
 \end{dem}
 
 \begin{prop}
-  Sea $( X, \mathcal{T} ), ( X', \mathcal{T}' )$ e.t., $f: X \to X'$ aplicación suprayectiva, $R_{f}$ relación de equivalencia tal que $x_{1}, x_{2} \in X, x_{1} R_{f} x_{2} \Leftrightarrow(def.) f(x_{1}) = f(x_{2})$. Entonces, $\exists \alpha: ( X, \mathcal{T} ) \to ( X', \mathcal{T}' )$ homeomorfa tal que $(\alpha \circ f) = p \Leftrightarrow f: ( X, \mathcal{T} ) \to ( X', \mathcal{T}' )$ es identificación.
+  Sea $( X, \mathcal{T} ), ( X', \mathcal{T}' )$ e.t., $f: X \to X'$ aplicación suprayectiva, $R_{f}$ relación de equivalencia tal que $x_{1}, x_{2} \in X, x_{1} R_{f} x_{2} \Leftrightarrow(\text{ def. }) f(x_{1}) = f(x_{2})$. Entonces, $\exists \alpha: ( X, \mathcal{T} ) \to ( X', \mathcal{T}' )$ homeomorfa tal que $(\alpha \circ f) = p \Leftrightarrow f: ( X, \mathcal{T} ) \to ( X', \mathcal{T}' )$ es identificación.
 \end{prop}
 
 \begin{dem}
-  content
+  \begin{enumerate}[label=(\roman*)]
+    \item [($\Rightarrow$)] $(\alpha \circ f) = p \Rightarrow f = (\alpha^{-1} \circ p) \Rightarrow f $ identificación.
+    \item [($\Leftarrow$)] Sea $\alpha: X \to X' / \mathcal{R}_{f} : x \mapsto \alpha(x') = [x] : x \in f^{-1}(X')$. Esta bien definida ya que, si $x_{1}, x_{2} \in f^{-1}(x) \Rightarrow f(x_{1}) = f(x_{2}) \Leftrightarrow x_{1} \mathcal{R}_{f} \Leftrightarrow [x_{1}] = [x_{2}]$. Sea $\varphi: X / \mathcal{R}_{f} \to X' / \mathcal{R}_{f}: [x] \mapsto \varphi /[x] = f(x)$. Está bien definida ya que, si $[x_{1}] = [x_{2}] \Leftrightarrow x_{1} \mathcal{R} x_{2} \Leftrightarrow f(x_{1}) = f(x_{2})$. Entonces, $(\varphi \circ \alpha = 1_{X'}, \alpha \circ \varphi = 1_{\mathcal{R}_{f}}) \Rightarrow \alpha$ inyectiva y $\alpha^{-1}=\varphi$. Por tanto, $\alpha(f(f(x)) = \alpha(x') = [x] p(x), \forall x \in X \Rightarrow \alpha \circ f = p$ continua $\Rightarrow \alpha $ continua.
+  \end{enumerate}  
 \end{dem}

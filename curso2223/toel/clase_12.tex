@@ -1,0 +1,105 @@
+\section{Espacio Suma}
+\begin{defn}[Topología Suma]
+  Sea $\{ ( X_{j}, \mathcal{T}_{j} ) \}_{j \in J}$, familia $\neq \emptyset$ de e.t.,
+  \[
+    \sum_{ j \in J } X_{j} = \bigcup_{j \in J} X_{j} \times \{ j \}
+  \]
+  su unión disjunta. Se llama topología suma a
+  \[ 
+    \sum_{ j \in J } \mathcal{T}_{k}  = \Big\{ G \subset \sum_{ j \in J } X_{k} : j_{k}^{-1}(G) \in \mathcal{T}_{k}, \forall k \in J  \Big\}
+  \] 
+  El par $( \sum_{k \in J} X_{k}, \sum_{k \in J} \mathcal{T}_{k})$ se llama espacio topológico suma.
+\end{defn}
+
+\begin{obs}
+  $\forall k_{0} \in J$, $j_{k_{0}}: ( X_{k_{0}}, \mathcal{T}_{k_{0}} ) \to (X_{k_{0}} \times \{ k_{0} \}, \sum_{k \in J} \mathcal{T}_{k} / (X_{k_{0}} \times \{ {k_{0}}) \}) : x \mapsto (x, k_{0})$ es homomorfismo $j_{k_{0}}^{-1}(x , k_{0})= x = p_{1}(x, k_{0})$
+\end{obs}
+
+\begin{obs}
+  $\forall c \subset \sum_{ k \in J } X_{k}, j_{k_{0}}^{-1}(c) = p(C \cap (X_{k_{0}} \times \{ k_{0} \}))$.
+\end{obs}
+
+\begin{prop}
+  Sea $ \{ ( X_{j}, \mathcal{T}_{j} ) \}_{j \in J}$ familia $\neq \emptyset$ e.t.. Entonces, la topología suma es la más fina de las topologías sobre $\sum_{ k \in J } X_{k}$ que hacen continua todas las inclusiones.
+\end{prop}
+
+\begin{dem}
+  Sea $\mathcal{T}$ topología sobre $\sum_{ j \in J } X_{k}$ tal que 
+  \[ 
+    \forall k_{0} \in J, j_{k_{0}}(X_{k_{0}}, \mathcal{T}_{k_{0}}) \xhookrightarrow{} ( \sum_{ k \in J } X_{k}, \mathcal{T} )
+  \] 
+  $\Rightarrowfa k_{0} \in J, \forall A \in \mathcal{T}, j_{0}^{-1}(A) \in \mathcal{T}_{k_{0}} \Rightarrow \forall A \in \mathcal{T}, A \in \sum_{ k \in J } \mathcal{T}_{k} \Rightarrow \mathcal{T}\subset \sum_{ k \in J } \mathcal{T}_{k}$.
+\end{dem}
+
+\begin{prop}[Propiedad Universal Universal Topología Suma]
+  \\
+  
+  Sea $\{ ( X_{j}, \mathcal{T}_{j} ) \}_{j \in J}$, $( X, \mathcal{T} )$ e.t., $f: ( \sum_{k \in J} X_{k}, \sum_{k \in J} \mathcal{T}_{k}) \to ( X, \mathcal{T} )$ aplicación continua $\Leftrightarrow \forall k_{0} \in J, f \circ j_{k_{0}}: ( X_{k_{0}}, \mathcal{T}_{k_{0}} ) \to ( X, \mathcal{T} )$ es continua.
+\end{prop}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item [($\Rightarrow$)] Trivial
+    \item [($\Leftarrow$)] $\forall k_{0} \in J, f \circ j_{k_{0}}$ continua $\Rightarrow \forall A \in \mathcal{T}, \forall k_{0} \in J, (f \circ j_{k})^{-1}(A) = j_{k_{0}}^{-1}(f^{-1}(A)) \in \mathcal{T}_{k_{0}} \Rightarrow f^{-1}(A) \in \sum_{ k \in J } \mathcal{T}_{k} \Rightarrow f$ continua.
+  \end{enumerate}
+\end{dem}
+
+\begin{defn}
+  Sea $(P)$ propiedad de e.t.. Se dice que es aditiva si para toda familia de e.t. cada uno cumpliendo $(P)$, la suma cumple $(P)$.
+\end{defn}
+
+\chapter{Propiedades de Separación}
+
+\begin{defn}
+  Sea $( X, \mathcal{T} )$ e.t.. Se dice que es $T_{0}$ si $\forall x, y \in X, x \neq y \Rightarrow \exists \mathcal{U}^{x} : y \not \in \mathcal{U}^{x} $ ó $ \exists \mathcal{U}^{y} : x \not \in \mathcal{U}^{y}$.
+\end{defn}
+
+\begin{defn}
+  Sea $( X, \mathcal{T} )$ e.t.. Se dice que es $T_{1}$ si $ \forall x, y \in X, x \neq y \Rightarrow \exists \mathcal{U}^{x}: y \not \in \mathcal{U}^{x}, \exists \mathcal{U}^{y}: x \not \in \mathcal{U}^{y}$.
+\end{defn}
+
+\begin{obs}
+  $T_{1} \Rightarrow T_{0}$
+\end{obs}
+
+\begin{obs}
+  $T_{0} \not \Rightarrow T_{1}$, ej.: $X = \{ a, b \}$, $\mathcal{T} = \{ \emptyset, X, \{ a \} \}$ es $T_{0}$, no $T_{1}$
+\end{obs}
+
+\begin{prop}
+  Sea $( X, \mathcal{T} )$ e.t. son equivalentes
+  \begin{enumerate}[label=(\roman*)]
+    \item $( X, \mathcal{T} )$ es $T_{1}$,
+    \item $\forall x \in X, \{ x \}$ es cerrado de $( X, \mathcal{T} )$,
+    \item $\forall E \subset X, E = \bigcap_{G \in \mathcal{T}: E \subset G} G$.
+  \end{enumerate}
+\end{prop}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item []
+    \item [$  (a \Rightarrow b)$] Sea $X T_{1}, x \in X$ entonces, $\forall y \neq x, \exists \mathcal{U}^{y}: \mathcal{U}^{y} \subset X \setminus \{ x \} \Rightarrow X \setminus \{ x \} \in \mathcal{T} \Rightarrow \{ x \}$ es cerrado de $( X, \mathcal{T} )$.
+    \item $A \subset X \Rightarrow A = \bigcap_{x \in X \setminus A} X \setminus \{ x \} \Rightarrow A \subset \bigcap_{G \in \mathcal{T} A \subset G} G \subset \bigcap_{x \in X \setminus E} (X \setminus \{ x \}) = A$.
+    \item $\forall x, y \in X : x \neq y$, $\{ x \} = \bigcap_{G \in \mathcal{T}; \{ x \} \subset G} G \Rightarrow \exists \mathcal{G}^{x} \in \mathcal{T} : y \in \mathcal{G}^{x} \Rightarrow T_{1}$.
+  \end{enumerate}
+\end{dem}
+
+\begin{defn}
+  Sea $( X, \mathcal{T} )$ e.t.. Se dice que es $T_{2}$ ó de Hausdorff si $\forall x, y \in X, x \neq y \Rightarrow \exists \mathcal{U}^{x}: x \in \mathcal{U}^{x}, \exists \mathcal{U}^{y}: y \in \mathcal{U}^{y}$ tal que $\mathcal{U}^{x} \cap \mathcal{U}^{y} = \emptyset$.
+\end{defn}
+
+\begin{obs}
+  $T_{2} \Rightarrow T_{1}$.
+\end{obs}
+
+\begin{prop}
+  Sea $ ( X, \mathcal{T} )$ e.t.. Entonces, $( X, \mathcal{T} )$ es $T_{2}$ si y solo si $ \Delta = \{  (x,x) \in X \times X \}$ es cerrado en $( X, \mathcal{T} ) \times ( X, \mathcal{T} )$.
+\end{prop}
+
+\begin{dem}
+  Probamos que $\Delta^c \in \mathcal{T}$.
+  \begin{enumerate}[label=(\roman*)]
+    \item [($\Rightarrow$)] $\forall (x,y) \in (X \times X) \setminus \Delta$, $x \neq y \Rightarrow$ $\exists \mathcal{U}^{x}, \mathcal{U}^{y}: \mathcal{U}^{x} \cap \mathcal{U}^{y} = \emptyset \Rightarrow$. ¿$\mathcal{U}^{x} \times \mathcal{U}^{y}$ entorno de $(x,y): \mathcal{U}^{x} \times \mathcal{U}^{y} \subset (X \times X) \setminus \Delta$? Si $\exists (z,z) \in \mathcal{U}^{x} \times \mathcal{U}^{y} \Rightarrow z \in \mathcal{U}^{x} \cap \mathcal{U}^{y} = \emptyset$ es absurdo. Entonces, $(X \times X) \setminus \Delta \in \mathcal{T} \times \mathcal{T} \Leftrightarrow \Delta$ es cerrado de $(X \times X, \mathcal{T} \times \mathcal{T})$.
+    \item [($\Leftarrow$)] $\forall x,y \in X, x \neq y \Rightarrow (x, y) \in (X \times X) \setminus \Delta \in \mathcal{T} \times \mathcal{T} \Rightarrow \exists \mathcal{U}^{x}, \mathcal{U}^{y} : \mathcal{U}^{x} \times \mathcal{U}^{y} \subset (X \times X) \setminus \Delta \Rightarrow \mathcal{U}^{x} \cap \mathcal{U}^{y} = \emptyset$. En caso contrario, $\exists z \in \mathcal{U}^{x} \cap \mathcal{U}^{y} \Rightarrow (z, z) \in \mathcal{U}^{x} \times \mathcal{U}^{y}$ es absurdo. Entonces, $( X, \mathcal{T} )$ es $T_{2}$.
+  \end{enumerate}
+\end{dem}

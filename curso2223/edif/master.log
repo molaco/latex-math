@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.8.13)  23 SEP 2022 00:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.8.13)  25 SEP 2022 16:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -289,12 +289,40 @@ Package: enumitem 2019/06/20 v3.9 Customized lists
 \enit@inbox=\box58
 \enit@count@id=\count284
 \enitdp@description=\count285
+) (/usr/share/texmf-dist/tex/latex/mathtools/mathtools.sty
+Package: mathtools 2022/02/07 v1.28a mathematical typesetting tools
+ (/usr/share/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count286
+\calc@Bcount=\count287
+\calc@Adimen=\dimen150
+\calc@Bdimen=\dimen151
+\calc@Askip=\skip123
+\calc@Bskip=\skip124
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count288
+\calc@Cskip=\skip125
+) (/usr/share/texmf-dist/tex/latex/mathtools/mhsetup.sty
+Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 )
-\c@theo=\count286
-\c@cor=\count287
-\c@lem=\count288
-\c@defn=\count289
-\c@prop=\count290
+\g_MT_multlinerow_int=\count289
+\l_MT_multwidth_dim=\dimen152
+\origjot=\skip126
+\l_MT_shortvdotswithinadjustabove_dim=\dimen153
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen154
+\l_MT_above_intertext_sep=\dimen155
+\l_MT_below_intertext_sep=\dimen156
+\l_MT_above_shortintertext_sep=\dimen157
+\l_MT_below_shortintertext_sep=\dimen158
+\xmathstrut@box=\box59
+\xmathstrut@dim=\dimen159
+)
+\c@theo=\count290
+\c@cor=\count291
+\c@lem=\count292
+\c@defn=\count293
+\c@prop=\count294
 ) (./master.aux
 LaTeX Info: Redefining \. on input line 9.
 LaTeX Info: Redefining \% on input line 9.
@@ -319,17 +347,30 @@ LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
  (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count291
-\scratchdimen=\dimen150
-\scratchbox=\box59
-\nofMPsegments=\count292
-\nofMParguments=\count293
+\scratchcounter=\count295
+\scratchdimen=\dimen160
+\scratchbox=\box60
+\nofMPsegments=\count296
+\nofMParguments=\count297
 \everyMPshowfont=\toks31
-\MPscratchCnt=\count294
-\MPscratchDim=\dimen151
-\MPnumerator=\count295
-\makeMPintoPDFobject=\count296
+\MPscratchCnt=\count298
+\MPscratchDim=\dimen161
+\MPnumerator=\count299
+\makeMPintoPDFobject=\count300
 \everyMPtoPDFconversion=\toks32
+) (/usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+ (/usr/share/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2021/03/04 v1.4d Standard LaTeX Graphics (DPC,SPQR)
+ (/usr/share/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+) (/usr/share/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+)
+\Gin@req@height=\dimen162
+\Gin@req@width=\dimen163
 )
 LaTeX Font Info:    Trying to load font information for U+msa on input line 7.
  (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -378,89 +419,120 @@ Package mdframed Info: mdframed detected package amsthm
 (mdframed)              on input line 14.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 25.
-Package mdframed Info: Not enough space on this page on input line 51.
+(mdframed)              on input line 18.
+
+./clase_03.tex:23: LaTeX Error: Unicode character ^^S (U+0013)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.23 ...encia uniforme en un espacio de Banach.^^S
+                                                  
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 26.
+Package mdframed Info: Not enough space on this page on input line 35.
 [2
 
 ]
-Package mdframed Info: Not enough space on this page on input line 51.
+Package mdframed Info: Not enough space on this page on input line 35.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 53.
+(mdframed)              on input line 37.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 64.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 71.
-LaTeX Font Info:    Font shape `OT1/cmss/m/it' in size <8> not available
-(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 77.
-LaTeX Font Info:    Font shape `OT1/cmss/m/it' in size <6> not available
-(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 77.
-Package mdframed Info: Not enough space on this page on input line 87.
+(mdframed)              on input line 65.
  [3]
-Package mdframed Info: Not enough space on this page on input line 87.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 93.
+(mdframed)              on input line 76.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 97.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
-(Font)              using `OT1/cmss/m/sc' instead on input line 99.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
-(Font)              using `OT1/cmss/m/sc' instead on input line 100.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
-(Font)              using `OT1/cmss/m/sc' instead on input line 101.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
-(Font)              using `OT1/cmss/m/sc' instead on input line 102.
-
+(mdframed)              on input line 83.
+LaTeX Font Info:    Font shape `OT1/cmss/m/it' in size <8> not available
+(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 89.
+LaTeX Font Info:    Font shape `OT1/cmss/m/it' in size <6> not available
+(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 89.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 106.
-
-LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
-(Font)              using `OT1/cmss/m/sc' instead on input line 109.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
-(Font)              using `OT1/cmss/m/sc' instead on input line 110.
+(mdframed)              on input line 105.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 109.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
 (Font)              using `OT1/cmss/m/sc' instead on input line 111.
 
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
+(Font)              using `OT1/cmss/m/sc' instead on input line 112.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
+(Font)              using `OT1/cmss/m/sc' instead on input line 113.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
+(Font)              using `OT1/cmss/m/sc' instead on input line 114.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
+(Font)              using `OT1/cmss/m/sc' instead on input line 115.
+
+
+Package mdframed Warning: You got a bad break
+(mdframed)                because the last box will be empty
+(mdframed)                you have to change it manually
+(mdframed)                by changing the text, the space
+(mdframed)                or something else on input line 117.
+
+Package mdframed Info: Box was splittet wrong
+ starting loop to iterate the splitting point
+(mdframed)              on input line 117.
+[4]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 115.
-[4]
+(mdframed)              on input line 119.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
+(Font)              using `OT1/cmss/m/sc' instead on input line 122.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
+(Font)              using `OT1/cmss/m/sc' instead on input line 123.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
+(Font)              using `OT1/cmss/m/sc' instead on input line 124.
+
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 128.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 138.
-
-./clase_03.tex:151: Missing $ inserted.
+(mdframed)              on input line 141.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 151.
+./clase_03.tex:164: Missing $ inserted.
 <inserted text> 
                 $
-l.151 
+l.164 
       
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./clase_03.tex:151: Missing } inserted.
+./clase_03.tex:164: Missing } inserted.
 <inserted text> 
                 }
-l.151 
+l.164 
       
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -468,18 +540,18 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./clase_03.tex:151: Display math should end with $$.
+./clase_03.tex:164: Display math should end with $$.
 <to be read again> 
                    \tex_par:D 
-l.151 
+l.164 
       
 The `$' that I just saw supposedly matches a previous `$$'.
 So I shall assume that you typed `$$' both times.
 
-./clase_03.tex:151: Extra }, or forgotten \endgroup.
+./clase_03.tex:164: Extra }, or forgotten \endgroup.
 \par ...m \@noitemerr {\@@par }\fi \else {\@@par }
                                                   \fi 
-l.151 
+l.164 
       
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -488,22 +560,22 @@ the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
 
-./clase_03.tex:152: LaTeX Error: Bad math environment delimiter.
+./clase_03.tex:165: LaTeX Error: Bad math environment delimiter.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.152   \]
+l.165   \]
           
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./clase_03.tex:152: Missing $ inserted.
+./clase_03.tex:165: Missing $ inserted.
 <inserted text> 
                 $
-l.152   \]
+l.165   \]
           
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -511,10 +583,10 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./clase_03.tex:152: Display math should end with $$.
+./clase_03.tex:165: Display math should end with $$.
 <to be read again> 
                    \endgroup 
-l.152   \]
+l.165   \]
           
 The `$' that I just saw supposedly matches a previous `$$'.
 So I shall assume that you typed `$$' both times.
@@ -522,87 +594,236 @@ So I shall assume that you typed `$$' both times.
 [5]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 164.
+(mdframed)              on input line 175.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
-(Font)              using `OT1/cmss/m/sc' instead on input line 178.
+(Font)              using `OT1/cmss/m/sc' instead on input line 189.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
-(Font)              using `OT1/cmss/m/sc' instead on input line 179.
+(Font)              using `OT1/cmss/m/sc' instead on input line 190.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
-(Font)              using `OT1/cmss/m/sc' instead on input line 180.
+(Font)              using `OT1/cmss/m/sc' instead on input line 191.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
-(Font)              using `OT1/cmss/m/sc' instead on input line 181.
+(Font)              using `OT1/cmss/m/sc' instead on input line 192.
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 185.
+(mdframed)              on input line 196.
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
-(Font)              using `OT1/cmss/m/sc' instead on input line 187.
+(Font)              using `OT1/cmss/m/sc' instead on input line 199.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 187--188
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 192--194
+Underfull \hbox (badness 10000) in paragraph at lines 199--200
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 198--200
+Underfull \hbox (badness 10000) in paragraph at lines 204--206
 
  []
 
 
-LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
-(Font)              using `OT1/cmss/m/sc' instead on input line 216.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 216--217
+Underfull \hbox (badness 10000) in paragraph at lines 210--212
 
  []
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
-(Font)              using `OT1/cmss/m/sc' instead on input line 242.
+(Font)              using `OT1/cmss/m/sc' instead on input line 228.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 228--229
+
+ []
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
-(Font)              using `OT1/cmss/m/sc' instead on input line 243.
+(Font)              using `OT1/cmss/m/sc' instead on input line 253.
 
-Package mdframed Info: Box was splittet wrong
- starting loop to iterate the splitting point
-(mdframed)              on input line 244.
+
+Underfull \hbox (badness 10000) in paragraph at lines 264--267
+
+ []
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
+(Font)              using `OT1/cmss/m/sc' instead on input line 273.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 273--274
+
+ []
+
+
+Overfull \hbox (12.41736pt too wide) in paragraph at lines 279--281
+\OT1/cmss/m/sl/12 Entonces, $\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t; u[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t\OT1/cmr/m/n/12 ))\OMS/cmsy/m/n/12 g [] \OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t; u\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t\OT1/cmr/m/n/12 ))$ \OT1/cmss/m/sl/12 uni-for-me-men-te $\OMS/cmsy/m/n/12 8\OML/cmm/m/it/12 t \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 I$\OT1/cmss/m/sl/12 . Adem^^Sas,
+ []
+
 [6]
 Package mdframed Info: Box was splittet wrong
  starting loop to iterate the splitting point
-(mdframed)              on input line 244.
- [7]) [8] (./master.aux
+(mdframed)              on input line 295.
+ [7] [8]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 299.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
+(Font)              using `OT1/cmss/m/sc' instead on input line 305.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
+(Font)              using `OT1/cmss/m/sc' instead on input line 306.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
+(Font)              using `OT1/cmss/m/sc' instead on input line 307.
+
+Package mdframed Info: Box was splittet wrong
+ starting loop to iterate the splitting point
+(mdframed)              on input line 312.
+[9]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 322.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 326.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 330.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 338.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
+(Font)              using `OT1/cmss/m/sc' instead on input line 341.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
+(Font)              using `OT1/cmss/m/sc' instead on input line 342.
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 350.
+Package mdframed Info: Not enough space on this page on input line 359.
+[10]
+Package mdframed Info: Not enough space on this page on input line 359.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 361.
+
+Underfull \hbox (badness 10000) in paragraph at lines 365--367
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 383--385
+
+ []
+
+Package mdframed Info: Box was splittet wrong
+ starting loop to iterate the splitting point
+(mdframed)              on input line 399.
+[11]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 401.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 409.
+
+Underfull \hbox (badness 10000) in paragraph at lines 417--419
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 420--421
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 435--437
+
+ []
+
+Package mdframed Info: Box was splittet wrong
+ starting loop to iterate the splitting point
+(mdframed)              on input line 446.
+[12]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 450.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 461.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 465.
+
+Underfull \hbox (badness 10000) in paragraph at lines 483--485
+
+ []
+
+Package mdframed Info: Box was splittet wrong
+ starting loop to iterate the splitting point
+(mdframed)              on input line 491.
+[13]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 493.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 501.
+
+./clase_03.tex:506: Undefined control sequence.
+l.506 ... E) : v(t_{0}) = x_{0}, ||v -v_{0}||\leqb
+                                                  , v_{0}(t) = x_{0}, \foral...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 505--507
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 546--548
+
+ []
+
+Package mdframed Info: Box was splittet wrong
+ starting loop to iterate the splitting point
+(mdframed)              on input line 558.
+[14]) [15] (./master.aux
 LaTeX Info: Redefining \. on input line 9.
 LaTeX Info: Redefining \% on input line 9.
 ) ) 
 Here is how much of TeX's memory you used:
- 6159 strings out of 478238
- 101907 string characters out of 5850456
- 432248 words of memory out of 5000000
- 24297 multiletter control sequences out of 15000+600000
+ 7014 strings out of 478238
+ 117290 string characters out of 5850456
+ 461134 words of memory out of 5000000
+ 25130 multiletter control sequences out of 15000+600000
  481269 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 87i,7n,93p,493b,420s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 87i,13n,93p,493b,459s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on master.pdf (9 pages, 184264 bytes).
+Output written on master.pdf (16 pages, 211811 bytes).
 PDF statistics:
- 114 PDF objects out of 1000 (max. 8388607)
- 70 compressed objects within 1 object stream
+ 136 PDF objects out of 1000 (max. 8388607)
+ 85 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

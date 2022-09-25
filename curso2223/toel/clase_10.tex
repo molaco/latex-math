@@ -67,15 +67,15 @@ VER DIBUJO(Revisar abierta o continua)
 \end{obs}
 
 \begin{prop}
-  Sea $( X, \mathcal{T} )$ e.t., $Y \neq \emptyset$, $f: X \to Y$. La topología cociente inducida por $f$ es la más fina de las topologías sobre $Y$ que hacen continuas a $f$.
+  Sea $( X, \mathcal{T} )$ e.t., $Y \neq \emptyset$, $f: X \to Y$ aplicación continua. La topología cociente inducida por $f$ es la más fina de las topologías sobre $Y$ que hacen continuas a $f$.
 \end{prop}
 
 \begin{dem}
-  Sea $\mathcal{S}$ topología sobre $Y$ tal que $f: ( X, \mathcal{T} ) \to ( Y, \mathcal{S} )$ es continua. Entonces, $\forall A \in \mathcal{S}, f^{-1}(A) \in \mathcal{T} \Rightarrow \forall A \in \mathcal{S}, A \in \mathcal{T}_{f} \Leftrightarrow S \subset \mathcal{T}_{f}$.
+  Sea $\mathcal{S}$ topología sobre $Y$ tal que $f: ( X, \mathcal{T} ) \to ( Y, \mathcal{S} )$ es continua. Entonces, $\forall A \in \mathcal{S}, f^{-1}(A) \in \mathcal{T} \Rightarrow \forall A \in \mathcal{S}, A \in \mathcal{T}_{f} \Leftrightarrow \mathcal{S} \subset \mathcal{T}_{f}$.
 \end{dem}
 
 \begin{prop}[Propiedad Universal Topología Cociente]
-  Sea $( X, \mathcal{T} )$ e.t., $( Z, \mathcal{S} )$ e.t., $f: X \to Y$, $g: Y \to Z$ aplicaciones. Entonces, $g: (Y, \mathcal{T}_{f}) \to (Z,\mathcal{S})$ es continua $\Leftrightarrow f: (X, \mathcal{T}) \to (Z, \mathcal{S})$ es continua.
+  Sea $( X, \mathcal{T} )$ e.t., $( Z, \mathcal{S} )$ e.t., $f: X \to Y$, $g: Y \to Z$ aplicaciones. Entonces, $g: (Y, \mathcal{T}_{f}) \to (Z,\mathcal{S})$ es continua $\Leftrightarrow f: (X, \mathcal{T}) \to (Y, \mathcal{T}_{f})$ es continua.
 \end{prop}
  
 \begin{dem}
