@@ -74,4 +74,42 @@
   \[ 
     \Re \Bigg ( \int_{a}^{b} g(t) dt \Bigg ) = \int_{a}^{b} \Re (g(t)) dt 
   \] 
+  dado que $ \int_{a}^{b} g(t) dt = \int_{a}^{b} u(t) dt + i \int_{a}^{b} v(t) dt = u(t) + i v(t)$. \\
+
+  Sea $\int_{a}^{b} g(t) dt = r e^{i \theta}$, entonces $r = \int_{a}^{b} e^{-i \theta} g(t) dt$
+  \[ 
+    \Rightarrow r = \Re (r) = \int_{a}^{b} \Re (e^{-i \theta} g(t)) dt 
+  \] 
+  como $\Re (e^{-i \theta} g(t) ) \leq | e^{-i \theta} g(t) | = | g(t) |, \text{ ya que } | e^{-i \theta} | = 1$, entonces tenemos que $\int_{a}^{b} \Re (e^{-i \theta} g(t)) dt \leq \int_{a}^{b} | g(t) | dt$
+  \[ 
+    \Rightarrow \Bigg | \int_{a}^{b} g(t) dt \Bigg | = r \leq \int_{a}^{b} | g(t) | dt. 
+  \] 
+  Y usando $| z z' | = | z || z' |$ tenemos que
+  \[ 
+    | \int_{\gamma}^{} f | = |  \int_{a}^{b} f(\gamma(t))\gamma'(t) dt | \leq \int_{a}^{b} | f(\gamma(t))\gamma'(t) | dt = \int_{a}^{b} | f(\gamma(t)) || \gamma'(t) | dt
+  \] 
 \end{dem}
+
+\begin{theo}[Fundamental del Cálculo]
+  Sea $\gamma: [0,1] \to \mathbb{C}$ una curva diferenciable a trozos, $\Omega \subset \mathbb{C}$ abierto tal que $\gamma([0,1]) \subset \Omega$, $F: \Omega \to \mathbb{C}$ función holomorfa con $F'$ continua. Entonces,
+  \[ 
+    \int_{\gamma}^{} F'(z) dz = F(\gamma(1)) - F(\gamma(0)) 
+  \] 
+\end{theo}
+
+\begin{obs}
+  Si $\gamma(0) = \gamma(1)$, entonces $\int_{\gamma}^{} F'(z) dz = 0$
+\end{obs}
+
+\begin{dem}
+  \[ 
+    \int_{\gamma}^{} F'(z) dz = \int_{0}^{1} F'(\gamma(t))\gamma'(t) dt = \int_{0}^{1} (F \circ \gamma)'(t) dt = F(\gamma(1)) - F(\gamma(0))
+  \] 
+\end{dem}
+
+\begin{cor}
+  Si $\gamma$ es una curva cerrada, entonces
+  \[ 
+    \int_{\gamma}^{} f(z) dz= 0 
+  \] 
+\end{cor}

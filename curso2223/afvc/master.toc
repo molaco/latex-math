@@ -9,4 +9,5 @@
 \contentsline {section}{\numberline {2.2}Ecuaciones de Cauchy-Riemann}{13}{}%
 \contentsline {section}{\numberline {2.3}Función Inversa}{15}{}%
 \contentsline {section}{\numberline {2.4}Funciones Harmónicas}{16}{}%
-\contentsline {section}{\numberline {2.5}Integral de Funciones Complejas sobre Curvas}{18}{}%
+\contentsline {section}{\numberline {2.5}Aplicaciones Conformes}{17}{}%
+\contentsline {section}{\numberline {2.6}Integral de Funciones Complejas sobre Curvas}{18}{}%
