@@ -1,0 +1,77 @@
+\section{Integral de Funciones Complejas sobre Curvas}
+
+\begin{defn}[Integral]
+  Sea $h: [a, b] \subset \mathbb{R} \to \mathbb{C}$ un función compleja de una variable real y sean $u, v$ sus partes real e imaginaria respectivamente tal que $h(t) = u(t) + i v(t)$. Suponemos que $u, v$ son continuas. Entonces, llamamos la integral de $h$ a
+  \[ 
+    \int_{a}^{b} h(t) dt = \int_{a}^{b} u(t) dt + i \int_{a}^{b} v(t) dt,
+  \] 
+  donde las integrales de $u$ y $v$ tienen el sentido usual de cálculo unidimensional.
+\end{defn}
+
+\begin{defn}
+  Sea $f$ continua y definida en un conjunto abierto $A \subset \mathbb{C}$, $\gamma: [a, b] \to \mathbb{C}$una curva diferenciable a trozos tal que $\gamma([a, b]) \subset A$. Entonces,
+  \[ 
+    \int_{\gamma}^{} f = \int_{\gamma}^{} f(z) dz = \sum_{i = 0}^{n-1} \int_{a_{i}}^{a_{i-1}} f(\gamma(t))\gamma'(t) dt
+  \]
+  es la integral de línea de $f$ a lo largo de $\gamma$.
+\end{defn}
+
+\begin{prop}
+  Sea $ f(z) = u(x, y)+ i v(x, y)$, entonces
+  \[ 
+    \int_{\gamma}^{} f = \int_{\gamma}^{} [u(x, y)dx - v(x, y)dy] + i \int_{\gamma}^{} [u(x,y)dy + v(x, y)dx]
+  \] 
+\end{prop}
+
+\begin{dem}
+  \[ 
+    f(\gamma(t))\gamma'(t) = [u(x(t), y(tb)) + i v(x(t), y(t))] \cdot [x'(t) + iy'(t)]
+  \] 
+  \[ 
+    = [u(x(t), y(t))x'(t) - v(x(t), y(t))y'(t)] + i[v(x(t), y(t))x'(t) + u(x(t), y(t))y'(t)]
+  \] 
+  donde integrado sobre $[a_{i}, a_{i +1}]$ tenemos la expresión requerida.
+\end{dem}
+
+\begin{defn}[Reparametrización]
+  Sea $\gamma: [a, b] \to \mathbb{C}$ una curva diferenciable a trozos. Una curva diferenciable a trozos $\overline{\gamma} [\overline{a}, \overline{b}] \to \mathbb{C}$ se llama reparametrización de $\gamma$ si $\exists \alpha: [a, b] \to [\overline{a}, \overline{b}]$ con $\alpha'(t) > 0, \alpha(a) = \overline{a}$ y $\alpha(b)= \overline{b}$ tal que $\gamma(t) = \overline{\gamma}(\alpha(t))$.
+\end{defn}
+
+\begin{prop}
+  Si $\overline{\gamma}$ es una reparametrización de $\gamma$, entonces
+  \[ 
+    \int_{\gamma}^{} f = \int_{\overline{\gamma}}^{} f 
+  \] 
+  para $f: \Omega \subset \mathbb{C} \to \mathbb{C}$ donde $ \gamma([a, b]) \subset \Omega$.
+\end{prop}
+
+\begin{prop}
+  Sean $f,g$ funciones continuas, $c_{1}, c_{2} \in \mathbb{C}$, $\gamma_{1}, \gamma_{2}, \gamma$ curvas diferenciables, entonces
+  \begin{enumerate}[label=(\roman*)]
+    \item $\int_{\gamma}^{} (c_{1} f + c_{2} g) = c_{1} \int_{\gamma}^{} f + c_{2} \int_{\gamma}^{}  g$,
+    \item $\int_{-\gamma}^{} f = - \int_{\gamma}^{} f$,
+    \item $\int_{\gamma_{1} + \gamma_{2}}^{} f = \int_{\gamma}^{} f + \int_{\gamma}^{} f$.
+  \end{enumerate}
+\end{prop}
+
+\begin{theo}
+  Sea $\gamma$ un curva diferenciable a trozos. Si $h(z)$ es una función continua en $\gamma$, entonces
+  \[ 
+    \Big | \int_{\gamma}^{} h(z) dz \Big | \leq \int_{\gamma}^{} | h(z) | | dz | .
+  \] 
+  Además, si $\gamma$ tiene longitud $L$ y $| h(z) | \leq M$ en $\gamma$, entonces
+  \[ 
+    \Big | \int_{\gamma}^{} h(z) dz \Big | \leq ML .
+  \] 
+\end{theo}
+
+\begin{obs}
+  $\int_{\gamma}^{} | h(z) | | dz | = \int_{a}^{b} | f(\gamma(t)) || \gamma'(t) | dt.$ 
+\end{obs}
+
+\begin{dem}
+  Sea $g: [a, b] \to \mathbb{C}$, entonces
+  \[ 
+    \Re \Bigg ( \int_{a}^{b} g(t) dt \Bigg ) = \int_{a}^{b} \Re (g(t)) dt 
+  \] 
+\end{dem}

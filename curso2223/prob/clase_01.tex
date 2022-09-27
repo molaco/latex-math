@@ -1,0 +1,157 @@
+\chapter{Espacio de Probabilidad}
+\section{Experimentos aleatorios}
+
+\begin{defn}[Experimento Determinista]
+  Experimeto cuyo desarrolo es previsible con certidumbre y sus resultados están perfectamente determinados una vez fijadas las condiciones del mismo.
+\end{defn}
+
+\begin{ejm}
+  Averiguar el espacio recorrido por un cuerpo en caída libre en el vacío al cabo de cierto tiempo $t$, donde se sabe que $x = \frac{1}{2}g t^2$ con $g$ la gravedad de la Tierra.
+\end{ejm}
+
+\begin{defn}[Experimento Aleatorio]
+  Experimento en contexto de incertidumbre. Se caracterizan porque su desarrolo no ese previsible con certidumbre.
+\end{defn}
+
+\begin{ejm}
+  Lanzar un dado.
+\end{ejm}
+
+\section{Espacio Muestral}
+
+\begin{defn}[Espacio Muestral]
+  Dado un experimento aleatorio, $\Omega$ es el conjunto de todos los posibles resultados del experimento. Decimos que $\Omega$ es el espacio muestral del experimento y los elementos de $\Omega$ se llaman sucesos elementales.
+\end{defn}
+
+\begin{ejm}
+  Dado el experiemento "Lanzar un dado y obtener un $6$", el espacio muestral es $\Omega = \{ 1, 2, 3, 4, 5, 6 \}$. Si consideramos "Lanzar un dado y obtener un número par", el espacio muestral sería $\Omega = \{ \text{ par }, \text{ impar } \}$.
+\end{ejm}
+
+\subsection{Tipos de Espacios Muestrales}
+
+\begin{defn}[Espacio Muestral Finito]
+  Sea $\Omega$ un espacio muestral. Entonces, decimos que $\Omega$ es finito si tiene un número finito de elementos.
+\end{defn}
+
+\begin{ejm}
+  Lanzar un dado.
+\end{ejm}
+
+\begin{defn}[Espacio Muestral Infinito Numerable]
+  Sea $\Omega$ un espacio muestral. Entonces, decimos que $\Omega$ es infinito numerable si tiene un número infinito y numerable de elementos.
+\end{defn}
+
+\begin{ejm}
+  Lanzar una moneda hasta obtener cara por primera vez. Aquí debemos considerar que se puede dar el caso en el que no se obtenga nunca cara y tiremos la moneda infinitas veces.
+\end{ejm}
+
+\begin{defn}[Espacio Muestra Continuo]
+  Sea $\Omega$ un espacio muestral. Entonces, decimos que $\Omega$ es continuo si no hay discontinuidades o cambios abrutos entre los elementos del espacio muestral.
+\end{defn}
+
+\begin{ejm}
+  El nivel del agua de un pantano entre los tiempos $t_{1}, t_{2}$. El espacio muestral $\Omega = \{  f_{t} ; t \in [t_{1}, t_{2}] \}$.
+\end{ejm}
+
+\section{Sucesos}
+
+\begin{note}
+  Sea $\mathcal{A} \subset \Omega$. Decimos que se ha presentado el suceso $A \subset \mathcal{A}$ si el resultado del experiemento ha sido $w \in A$, un suceso elemental contenido en $\mathcal{A}$.
+\end{note}
+
+\section{Sucesiones de Conjuntos}
+
+\begin{defn}[Sucesión de Conjuntos]
+  Sea $\Omega$ espacio muestral, $f: \mathbb{N} \to \mathcal{P}(\Omega)$ una aplicación. Decimos que $f$ es una sucesión de conjuntos y la repesentamos $\{ A_{n} \}_{n \in \mathbb{N}} \subset \mathcal{P}(\Omega)$.
+\end{defn}
+
+\section{Límites de una sucesión de conjuntos}
+
+\begin{defn}[Límite Inferior]
+  Sea $\Omega$ espacio muestral, $\{ A_{n} \}_{n \in \mathbb{N}} \subset \mathcal{P}(\Omega)$ sucesión de conjuntos. Entoces, el límite inferior de $\{ A_{n} \}_{n \in \mathbb{N}}$ es el conjunto de puntos de $\Omega$ cuyos elementos pertenecen a todos los $A_{n}$ excepto a lo sumo a un número finito de ellso. $\lim \inf A_{n}$.
+\end{defn}
+
+\begin{defn}[Límite Superior]
+  Sea $\Omega$ espacio muestral, $\{ A_{n} \}_{n \in \mathbb{N}} \subset \mathcal{P}(\Omega)$ sucesión de conjuntos. Entoces, el límite superior de $\{ A_{n} \}_{n \in \mathbb{N}}$ es el conjunto de puntos de $\Omega$ cuyos elementos pertenecen a infinitos $A_{n}$. Y se denota $\lim \sup A_{n}$.
+\end{defn}
+
+\begin{obs}
+  $A \in \{ A_{2n} \}_{n \in \mathbb{N}} \Rightarrow A \in \lim \sup A_{n}$ pero $A \not \in \lim \inf A_{n}$
+\end{obs}
+
+\begin{prop}
+  Sea $\Omega$ espacio muestral, $\{ A_{n} \}_{n \in \mathbb{N}} \subset \mathcal{P}(\Omega)$ una sucesión de conjuntos. Entonces,
+  \begin{enumerate}[label=(\roman*)]
+    \item $\lim \inf A_n = \bigcup_{k=1}^{\infty} \bigcap_{n=k}^{\infty} A_{n}$,
+    \item $\lim \sup A_n = \bigcap_{k=1}^{\infty} \bigcup_{n=k}^{\infty} A_{n}$.
+  \end{enumerate}
+\end{prop}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item []
+    \item
+      \begin{enumerate}[label=(\roman*)]
+        \item [($\Rightarrow$)]  Sea $w \in \lim \inf A_n$. Entonces, $\exists k \in \mathbb{N} : w \in A_{n}, \forall n \geq k$. Por tanto,
+          \[ 
+            w \in \bigcap_{n = k}^{\infty} A_{n} \Rightarrow w \in \bigcup_{n = 1}^{\infty} \bigcap_{n = k}^{\infty} A_{n}
+          \] 
+        \item [($\Leftarrow$)] Sea $w \in \bigcup_{n = 1}^{\infty} \bigcap_{n = k}^{\infty} A_{n}$. Entonces, $\exists k \in \mathbb{N} : w \in \bigcap_{n = k}^{\infty} A_{n} \Rightarrow w \in A_{k} \cap A_{k+1} \cap \cdots \Rightarrow w$ pertenece a infinitos $A_{n}$ salvo a lo sumo a un número finito de ellos.
+      \end{enumerate}
+    \item 
+      \begin{enumerate}[label=(\roman*)]
+        \item [($\Rightarrow$)] Sea $w \in \lim \sup A_n$. Entonces, $w \in A_{n}, \forall n \in \mathbb{N}$
+          \[
+            \Rightarrow w \in \bigcup_{n = k}^{\infty} A_{n} \Rightarrow w \in \bigcap_{n = 1}^{\infty} \bigcup_{n = k}^{\infty} A_{n}.
+          \]
+        \item [($\Leftarrow$)] Sea $w \in \bigcap_{n = 1}^{\infty} \bigcup_{n = k}^{\infty} A_{n}$. Entonces, $w \in \bigcup_{n = 1}^{\infty} A_{n} \Rightarrow w \in A_{n}, \forall n \in \mathbb{N} \Rightarrow w \in \lim \sup A_n$.
+      \end{enumerate}
+  \end{enumerate}
+\end{dem}
+
+\begin{prop}
+  $\forall \{ A_{n} \}_{n \in \mathbb{N}} \subset \mathcal{P}(\Omega) \Rightarrow \lim \inf A_{n} \subset \lim \sup A_n$.
+\end{prop}
+
+\begin{dem}
+  Sea $w \in \lim \inf A_{n}$. Entonces, $w \in \bigcup_{n = 1}^{\infty} \bigcap_{n = k}^{\infty} A_{n} \Rightarrow \exists k \in \mathbb{N} : w \in \bigcap_{n = k}^{\infty} A_{n} \Rightarrow w \in A_{n}, \forall n \geq k \Rightarrow w \in \bigcup_{n = k}^{\infty} A_{n} \Rightarrow w \in \bigcap_{n = 1}^{\infty} \bigcup_{n = k}^{\infty} A_{n} \Rightarrow w \in \lim \sup A_n$.
+\end{dem}
+
+\subsection{Sucesión de conjuntos convergente}
+
+\begin{defn}[Covergencia]
+  Sea $\Omega$ un espacio muestral, $\{ A_{n} \}_{n \in \mathbb{N}} \subset \mathcal{P}(\Omega)$ una sucesión. Entonces, decimos que $\{ A_{n} \}_{n \in \mathbb{N}}$ es convergente si y solo si $\lim \inf A_{n} = \lim \sup A_n$.
+\end{defn}
+
+\subsection{Sucesiones Monótonas}
+
+\begin{defn}[Sucesión Monótona]
+  Sea $\Omega$ un espacio muestral, $\{ A_{n} \}_{n \in \mathbb{N}} \subset \mathcal{P}(\Omega)$ una sucesión. Entonces, decimos que $\{ A_{n} \}_{n \in \mathbb{N}}$ es monótona creciente si y solo si $\forall n \in \mathbb{N}, A_{n} \subset A_{n+1}$. Y decimos que $\{ A_{n} \}_{n \in \mathbb{N}}$ es monótona decreciente si y solo si $\forall n \in \mathbb{N}, A_{n+1} \subset A_{n}$.
+\end{defn}
+
+\begin{nota}
+  \begin{enumerate}[label=(\roman*)]
+    \item []
+    \item $\uparrow A_{n}$ sucesión monótona creciente,
+    \item $\downarrow A_{n}$ sucesión monótona creciente.
+  \end{enumerate}
+\end{nota}
+
+\begin{prop}
+Sea $\Omega$ un espacio muestral, $\{ A_{n} \}_{n \in \mathbb{N}} \subset \mathcal{P}(\Omega)$ una sucesión monónota. Entonces, $\lim \inf A_{n} = \lim \sup A_n$.
+\end{prop}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item Sea $\downarrow A_{n}$. Entonces, $A_{n+1} \subset A_{n} \Rightarrow$
+      \[
+         \lim \sup A_n = \bigcap_{k=1}^{\infty} \bigcup_{n=k}^{\infty} A_{n} = \bigcap_{k = 1}^{\infty} A_{k}
+      \]
+      y
+      \[
+        \lim \inf A_n = \bigcup_{k=1}^{\infty} \bigcap_{n=k}^{\infty} A_{n} = \bigcap_{n = 1}^{\infty} A_{n}
+      \]
+      Por tanto, $\lim \inf A_n  = \lim \sup A_n$.
+    \item 
+  \end{enumerate}
+\end{dem}

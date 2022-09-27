@@ -1,0 +1,10 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {chapter}{\numberline {1}Espacio de Probabilidad}{2}{}%
+\contentsline {section}{\numberline {1.1}Experimentos aleatorios}{2}{}%
+\contentsline {section}{\numberline {1.2}Espacio Muestral}{2}{}%
+\contentsline {subsection}{\numberline {1.2.1}Tipos de Espacios Muestrales}{3}{}%
+\contentsline {section}{\numberline {1.3}Sucesos}{3}{}%
+\contentsline {section}{\numberline {1.4}Sucesiones de Conjuntos}{3}{}%
+\contentsline {section}{\numberline {1.5}Límites de una sucesión de conjuntos}{3}{}%
+\contentsline {subsection}{\numberline {1.5.1}Sucesión de conjuntos convergente}{5}{}%
+\contentsline {subsection}{\numberline {1.5.2}Sucesiones Monótonas}{5}{}%

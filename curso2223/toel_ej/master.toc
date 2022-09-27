@@ -1,0 +1,2 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{\numberline {0.1}Espacios Topológicos}{1}{}%

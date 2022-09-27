@@ -503,7 +503,7 @@ Revisar notación $t \in J$
   \[
     v(t) \mapsto T v(t) = x_{0} + \int_{t_{0}}^{t} f(s, v(s)) ds, \; \forall t \in I,
   \]
-  donde $X = \{ v \in C(I, E) : v(t_{0}) = x_{0}, ||v -v_{0}||\leqb, v_{0}(t) = x_{0}, \forall t \in I \}$. \\
+  donde $X = \{ v \in C(I, E) : v(t_{0}) = x_{0}, ||v -v_{0}||\leq b, v_{0}(t) = x_{0}, \forall t \in I \}$. \\
 
   Dado que, $f$ es Lipschitz continua respecto a $x$
   \[ 
@@ -517,33 +517,33 @@ Revisar notación $t \in J$
     \leq \lambda \int_{t_{0}}^{t} | v(s) - \overline{v}(s) | ds
   \] 
   \[ 
-    \leq \lambda \int_{t_{0}}^{t} \sup_{s \in [t_{0}, t]}| v(s) - \overline{v}(s) | ds
+    \leq \lambda \int_{t_{0}}^{t} \sup_{l \in [t_{0}, t]}| v(l) - \overline{v}(l) | ds
   \] 
   \[ 
-    \leq \lambda \int_{t_{0}}^{t} | v(t) - \overline{v}(t) | ds
+    \leq \lambda \int_{t_{0}}^{t} || v - \overline{v} || ds
   \] 
   \[ 
-    = \lambda (t - t_{0}) || v(t) - \overline{v}(t) ||, \; \forall t \in R
+    = \lambda (t - t_{0}) || v - \overline{v} ||, \; \forall t \in R
   \] 
-  Observando que
-  \[ 
-    | T^2 v(t) - T^2 \overline{v}(t) | \leq \alpha \int_{t_{0}}^{t} | Tv(s) - T \overline{v}(s) | ds
-  \] 
-  \[ 
-    \leq \lambda^2 \int_{t_{0}}^{t} (t - t_{0})||v(t) - \overline{v}(t)|| ds 
-  \] 
-  \[ 
-    = \frac{\alpha^2}{2}(t - t_{0})^2 ||v(t) - \overline{v}(t)||, \; \forall t \in R
-  \] 
-  \[
-    \Rightarrow || Tv(t) - T^2 \overline{v} (t) || \leq \frac{\alpha^2}{2!}(t - t_{0})^2 ||v(t) - \overline{v}(t)||
-  \]
-  \[
-    \Rightarrow || T^2v(t) - T^3 \overline{v} (t) || \leq \frac{\alpha^3}{3!}(t - t_{0})^3 ||v(t) - \overline{v}(t)||
-  \]
-  \[
-    \Rightarrow || T^{n}v(t) - T^{n} \overline{v}(t) || \leq \frac{\alpha^n}{n!}(t - t_{0})^n ||v(t) - \overline{v}(t)||
-  \]
+%  Observando que
+%  \[ 
+%    | T^2 v(t) - T^2 \overline{v}(t) | \leq \alpha \int_{t_{0}}^{t} | Tv(s) - T \overline{v}(s) | ds
+%  \] 
+%  \[ 
+%    \leq \lambda^2 \int_{t_{0}}^{t} (t - t_{0})||v(t) - \overline{v}(t)|| ds 
+%  \] 
+%  \[ 
+%    = \frac{\alpha^2}{2}(t - t_{0})^2 ||v(t) - \overline{v}(t)||, \; \forall t \in R
+%  \] 
+%  \[
+%    \Rightarrow || Tv(t) - T^2 \overline{v} (t) || \leq \frac{\alpha^2}{2!}(t - t_{0})^2 ||v(t) - \overline{v}(t)||
+%  \]
+%  \[
+%    \Rightarrow || T^2v(t) - T^3 \overline{v} (t) || \leq \frac{\alpha^3}{3!}(t - t_{0})^3 ||v(t) - \overline{v}(t)||
+%  \]
+%  \[
+%    \Rightarrow || T^{n}v(t) - T^{n} \overline{v}(t) || \leq \frac{\alpha^n}{n!}(t - t_{0})^n ||v(t) - \overline{v}(t)||
+%  \]
   Entonces, $T$ es una contracción $\forall v, \overline{v} \in X, \forall t \in I$. \\
 
   Sea $\{ u_{m} \}_{ m \in \mathbb{N}}$ una sucesión de funciones en $X$ tal que
