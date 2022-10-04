@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1664888504 "master.tex" "master.pdf" "master" 1664888504
-  "../preamble.tex" 1664824606 1586 d4dbd9cc3a2b1b7380848a1e30ee878b ""
+["pdflatex"] 1664785324 "master.tex" "master.pdf" "master" 1664785324
+  "../preamble.tex" 1664124583 1552 71f422caa2522a97895c66bf3589e47b ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1650183167 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1650183167 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1650183167 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -34,7 +34,6 @@
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb" 1650183167 36741 fa121aac0049305630cf160b86157ee4 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1650183167 35469 70d41d2b9ea31d5d813066df7c99281c ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1650183167 32722 d7379af29a190c3f453aba36302ff5a9 ""
-  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb" 1650183167 32734 69e00a6b65cedb993666e42eedb3d48f ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1650183167 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb" 1650183167 24393 3b7eb51a67a0a62aec5849271bdb9c2e ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb" 1650183167 24416 36515493f76659302880e2604105b074 ""
@@ -97,12 +96,10 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1650183167 39911 2da6c67557ec033436fe5418a70a8a61 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1660398646 4278762 af3ac1370db81a450c1118eabf1fe718 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1660398628 2927661 78b77340393324bbf3b236d0407a8fe4 ""
-  "ej_25.tex" 1664882085 1511 71b52aae44aaeeb89efe296f62af7248 ""
-  "ej_35.tex" 1664888504 2696 09ed34bc9cb3da42298bcabe1e182335 ""
-  "ej_40.tex" 1664729141 1675 611e19cf3db76caaae47c69455ef093a ""
-  "master.aux" 1664888484 399 cbd589806cb9a84e3ea401de1bfac67c "pdflatex"
-  "master.tex" 1664881028 354 c374e9b3251ba26fdf048cda21f9ee3b ""
-  "master.toc" 1664888484 83 6147d9c77fd6e0d4f3c0920d5f84d614 "pdflatex"
+  "ej_entrega2.tex" 1664785323 1892 83fe930bb0a9f1eb5a0ffac9529e6804 ""
+  "master.aux" 1664785322 405 3d4cbdab38affb01a4d381fc5207c681 "pdflatex"
+  "master.tex" 1664781152 306 23554b20d3376ff95f20e0dbe92f0259 ""
+  "master.toc" 1664785322 89 d6b7e152f5d371c3e5942f15deb5876f "pdflatex"
   (generated)
   "master.aux"
   "master.log"

@@ -558,6 +558,7 @@ INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmssi12.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmcsc10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmssi8.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmssi8.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmssbx10.tfm
 INPUT ./clase_04.tex
 INPUT clase_04.tex
 INPUT ./clase_04.tex

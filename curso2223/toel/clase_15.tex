@@ -1,0 +1,110 @@
+\begin{prop}
+  Sea $( X, \mathcal{T} )$ e.t. metrizable. Entonces, $( X, \mathcal{T} )$ es $T_{3a}$.
+\end{prop}
+
+\begin{dem}
+  $( X, \mathcal{T} )$ es $T_{2}$ y $\exists d$ métrica tal que $\mathcal{T} = \mathcal{T}_{d}$. Entonces, $\forall C $ cerrado de $\mathcal{T}$, $\forall x \in X: x \not \in C \Rightarrow d(x, C) > 0$. Sea $g: ( X, \mathcal{T} ) \to \mathbb{R}: z \mapsto g(z) = \frac{d(z, C)}{d(x, C)} \Rightarrow g$ es continua y
+  \[ 
+    g =
+    \begin{cases}
+      1, \text{ si } z=x,\\
+      \{ 0 \} \text{ si z = C}
+    \end{cases} 
+  \] 
+  la imagen de $g$ es un subconjunto de las semirectas derechas. Sea $f: ( X, \mathcal{T} ) \to [0, 1] : z \mapsto f(z) = \min \{  g(z), 1 \}$ entonces,
+  \[ 
+    f =
+    \begin{cases}
+      1, \text{ si } z=x,\\
+      \{ 0 \} \text{ si } z = C
+    \end{cases} 
+  \] 
+  $\Rightarrow ( X, \mathcal{T} )$ es $\mathcal{T}_{3a}$.
+\end{dem}
+
+\begin{obs}
+  Ser completamente regular $(T_{3a})$ es un invariante topológico.
+\end{obs}
+
+\begin{prop}
+  Todo subespacio de un espacio completamente regular $(T_{3a})$ es completamente regular $(T_{3a})$.
+\end{prop}
+
+\begin{dem}
+  Sea $( X, \mathcal{T} )$ completamente regular, $E \subset X$, $E \neq \emptyset$. Entonces, $\forall C$ cerrado de $ ( E, \mathcal{T}|_{E})$, $\forall x \in E: x \not \in C \Rightarrow \exists F \neq \emptyset$ cerrado de $( X, \mathcal{T} ): C = F \cap E \Rightarrow f: ( X, \mathcal{T} ) \to [0, 1]$ tal que
+  \[ 
+    f(x) =
+    \begin{cases}
+      0, \text{ si } x \in X,\\
+      \{ 1 \} \text{ si } x = F
+    \end{cases} 
+  \] 
+  $\Rightarrow f|_{E}: ( E, \mathcal{T}|_{E}) \to [0, 1]$ es continua tal que
+  \[ 
+    f|_{E} =
+    \begin{cases}
+      0, \text{ si } x \in X,\\
+      \{ 1 \} \text{ si } x = C
+    \end{cases} 
+  \] 
+  $\Rightarrow $ completamente regular.
+\end{dem}
+
+\begin{prop}
+  Sea $\{ ( X_{j}, \mathcal{T}_{j} ) \}_{j \in J}$ familia de e.t.. Entonces, $( \prod_{j \in J} X_{j}, \prod_{j \in J} \mathcal{T}_{j} )$ es completamente regular $(T_{3a})$ si y solo si $ ( X_{j}, \mathcal{T}_{j} )$ es completamente regular $(T_{3a}), \forall j \in J$.
+\end{prop}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item [($\Rightarrow$)] Trivial.
+    \item [($\Leftarrow$)] $\forall C$ cerrado de $( \prod_{j \in J} X_{j}, \prod_{j \in J} \mathcal{T}_{j} )$, $\forall x = ( x_{j} )_{j \in J} \in \prod_{j \in J} x_{j} \setminus C \in \prod_{j \in J} \mathcal{T}_{j} \Rightarrow \exists B \in \mathcal{B}$ base de $\prod_{j \in J} \mathcal{T}_{j}$ tal que $x \in B \subset \prod_{j \in J} X_{j} \setminus C, B = \bigcap_{k = 1}^{\infty} p_{j_{k}}^{-1}(U_{j_{k}}), U_{j_{k}} \in \mathcal{T}_{j_{k}}, \forall k \in \{  1, \cdots, n \}$. (hip.) $\Rightarrow \forall k \in \{ 1, \cdots, n \}, \exists f_{k}: ( X_{j_{k}}, \mathcal{T}_{j_{k}} ) \to [0, 1]$ continua $\Rightarrow f_{k}(x_{j_{k}}) = 0, f_{k}(X_{j_{k}} \setminus U_{j_{k}}) = \{  1 \}$. Sea $f: ( \prod_{j \in J} X_{j}, \prod_{j \in J} \mathcal{T}_{j} ) \to [0, 1]$ tal que $\forall z \in \prod_{j \in J} X_{j}, f(z) := \max \big\{  \big\}$ es continua dado que el máximo de funciones continuas es continuo $\Rightarrow f(x) = 0$ y si $\forall z \in C \Rightarrow \no \in B \Rightarrow \existsk_{o} \in \{ 1, \cdots , n \} : z_{j_{k_{0}}} \not \in U_{j_{k_{0}}} \Rightarrow f_{k_{0}}(z_{j_{k_{0}}}) = 1 \Rightarrow f(z) = 1 \Rightarrow f(C) = \{ 1 \}$.
+\end{enumerate}
+\end{dem}
+
+\begin{prop}
+  Sea $( \sum_{k \in J} X_{k}, \sum_{k \in J} \mathcal{T}_{k})$ familia de e.t.. Entonces, $( \sum_{k \in J} X_{k}, \sum_{k \in J} \mathcal{T}_{k})$ es completamente regular $(T_{3a})$ si y solo si $ ( X_{j}, \mathcal{T}_{j} )$ es completamente regular $(T_{3a}), \forall j \in J$.
+\end{prop}
+
+\begin{dem}
+  pág. 54
+\end{dem}
+
+\begin{obs}
+  El cociente de e.t. es $T_{3a}$ no es completamente regular.
+\end{obs}
+
+\begin{defn}
+  Sea $( X, \mathcal{T} )$ e.t.. Decimos que es normal si $\forall C_{1}, C_{2}$ cerrados disjuntos $ \exists G_{i}, i \in \{  1, 2 \}$ abiertos disjuntos tal que $ C_{i} \subset G_{i}$. Decimos que es $T_{4}$ si es normal y $T_{1}$.
+\end{defn}
+
+\begin{prop}
+  Todo e.t. metrizable es $T_{4}$.
+\end{prop}
+
+\begin{dem}
+  $( X, \mathcal{T} )$ e.t. metrizable $\Rightarrow \exists d$ métrica de $( X, \mathcal{T} )$ tal que $\mathcal{T} = \mathcal{T}_{d} \Rightarrow \mathcal{T}$ es $T_{2}$. Entonces, $\forall C_{1}, C_{2}$ cerrados disjuntos de $( X, \mathcal{T} )$ se pueden dar dos caos
+  \begin{itemize}
+    \item Si $C_{1} = \emptyset$, sea $G_{1} = \emptyset, G_{2} = X$. Entonces, $( X, \mathcal{T} )$ es $T_{4}$.
+    \item Si $C_{1}, C_{2} \neq \emptyset \Rightarrow \forall x \in C_{1}, \exists \epsilon_{x} > 0: B_{\epsilon_{x}}(x) \cap C_{2} = \emptyset$ y $\forall y \in C_{2}, \exists \delta_{y}: B_{\delta_{y}}(y) \cap C_{1} = \emptyset \Rightarrow C_{1} \subset \bigcup_{x \in C_{1}} B_{\epsilon_{\frac{x}{3}}}(x) := G_{1} \in \mathcal{T}$ y $C_{1} \subset \bigcup_{x \in C_{2}} B_{\delta_{\frac{y}{3}}}(y) := G_{2} \in \mathcal{T}$. En caso contrario, $\exists z \in G_{1} \cap G_{2} \Rightarrow \exists x_{0} \in C_{1} : z \in B_{\epsilon_{\frac{x_{0}}{3}}}(x_{0})$ y $\exists y_{0} \in C_{1} : z \in B_{\delta_{\frac{y_{0}}{3}}}(y_{0})$. Suponemos que $\delta_{y_{0}} \leq \epsilon_{x_{0}}$, entonces $ d(x_{0}, y_{0}) \leq d(x_{0}, z) + d(z, y_{0}) < = \frac{\epsilon_{x_{0}}}{3} + \frac{\delta_{y_{0}}}{3} \leq \frac{2}{3}\epsilon_{x_{0}} \Rightarrow y_{0} \in B_{\epsilon_{x_{0}}}, y_{0} \in C_{2}$ absurdo.
+  \end{itemize}
+\end{dem}
+
+\begin{prop}
+  Sea $( X, \mathcal{T} )$ e.t.. Entonces, son equivalentes
+  \begin{enumerate}[label=(\roman*)]
+    \item $( X, \mathcal{T} )$ es normal.
+    \item $\forall C$ cerrado, $\forall U \in \mathcal{T}: C \subset U, \exists V \in \mathcal{T}: C \subset V \subset \overline{V} \subset U$.
+    \item $\forall C_{1}, C_{2}$ cerrados disjuntos, $\exists G_{1} \in \mathcal{T}: C_{1} \subset G_{1}: \overline{G_{1}} \cap C_{2} = \emptyset$.
+    \item $\forall C_{1}, C_{2}$ cerrados disjuntos $\exists G_{i} \in \mathcal{T} : \overline{G_{1}} \cap \overline{G_{2}} = \emptyset$ y $C_{i} \subset G_{i}, i \in \{ 1, 2 \}$
+  \end{enumerate}
+\end{prop}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item []
+    \item [$(a \Rightarrow b)$] Sea $C \subset U \in \mathcal{T}: C$ y $X \setminus U$ son cerrados disjuntos. Entonces, $( X, \mathcal{T} )$ normal $\Rightarrow \exists V_{i}, i \in \{ 1, 2 \}$ disjuntos tal que $C \subset V_{1}$ y $X \setminus U \subset V_{2}$ disjuntos $\Rightarrow V_{1} \subset X \setminus V_{2} \Rightarrow \overline{V_{1}} \subset X \setminus V_{2} $ cerrado $\Rightarrow C \subset V_{1} \subset \overline{V_{1}} \subset X \setminus V_{2} \subset U$.
+    \item [$(b \Rightarrow c)$] $C_{1}, C_{2}$ cerrados disjuntos $\Rightarrow C_{1} \subset X \setminus C_{2} \in \mathcal{T} \Rightarrow \exists G_{1} \in \mathcal{T} : C_{1} \subset G_{1} \subset \overline{G_{1}} \subset X \setminus G_{2} \Rightarrow \overline{G_{1}} \cap C_{2} = \emptyset$.
+    \item [$(c \Rightarrow d)$] $\forall C_{1}, C_{2}$ cerrados disjuntos $\Rightarrow \exists G_{1} \in \mathcal{T} : C_{1} \subset G_{1}, \overline{G_{1}} \cap C_{2} = \emptyset $ y $ \exists G_{2} \in \mathcal{T} : C_{2} \subset G_{2} : \overline{G_{2}} \cap \overline{C_{2}} = \emptyset$.
+    \item [$(d \Rightarrow a)$] $\forall C_{1}, C_{2}$ cerrados disjuntos $\exists G_{1}, G_{2} \in \mathcal{T}: \overline{G_{1}} \cap \overline{G_{2}} = \emptyset$, $C_{1} \subset G_{1}, C_{2} \subset G_{2}$ donde $\overline{G_{1}} \cap \overline{G_{2}} = \emptyset \Rightarrow G_{1} \cap G_{2} = \emptyset \Rightarrow$ normal.
+  \end{enumerate}
+\end{dem}

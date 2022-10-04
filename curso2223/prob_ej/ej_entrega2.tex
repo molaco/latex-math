@@ -1,0 +1,43 @@
+
+\chapter{Probabilidad}
+
+\begin{ejr}[Problema 1 Examen Enero 2022]
+  Se tienen $2n$ carta ,arcados con los valores $1,1,2,2,3,3, \cdots, n,n$. tras barajar las cartas, se van descrubiendo una por una y poniendo en fila sobre una measa. Cuando el valor de la carta que se ha descubierto coincide con el de alguna que ya está sobre la mesa, se retirean ambas cartas. Sea $N_{k}, k \in \{ 1,2,\cdots , 2n \}$ el número de cartas que hay sobre la mesa tras el $k$-ésimo turno. Se tiene, obviamente, $N_{1} = N_{2n -1} = 1$ y $N_{2n} = 0$. Se pide:
+  \begin{enumerate}[label=(\roman*)]
+    \item Calcular $\mathbb{P}(N_{n} = n)$
+%    \item Determinar la función de masa de $N_{k+1}$ condicionada a $N_{k}$
+  \end{enumerate}
+\end{ejr}
+
+\begin{sol}[Problema 1 Examen Enero 2022]
+  \begin{itemize}
+    \item []
+    \item El número total de cartas es $2n$.
+    \item De cada carta distinta hay otra igual.
+    \item $N_{k} \equiv \text{ 'Número de cartas distintas tras el $k$-ésimo turno' }$.
+  \end{itemize}
+
+  Si $\mathbb{P}(N_{n} = n)$ entonces, en el turno $n$ hay $n$ cartas sobre la mesa $\Rightarrow$ de $n$ cartas ninguna coincide, es decir, la carta $n$ no coincide con ninguna de las anteriores $n-1$ y $\forall k < n$ cartas anteriores a $n$ no coinciden con $k-1$ cartas anteriores a $k$.
+  \[ 
+    \mathbb{P}(N_{n} = n) = \bigcap_{k =1}^{n} \mathbb{P}(N_{k} = k)
+  \] 
+  donde
+  \[ 
+    \mathbb{P}(N_{k} = k) = 1 - \frac{\text{casos favorable}}{\text{casos totales}} 
+  \] 
+  \[ 
+    = 1 - \frac{k}{2n - k}  
+  \] 
+  \[ 
+    = \frac{2n - 2k }{2n - k} 
+  \] 
+  Por tanto,
+  \[ 
+    \mathbb{P}(N_{n} = n) = \bigcap_{k = 1}^{n} \frac{2n - 2k}{2n - k}
+  \] 
+  Y dado que son sucesos independientes, tenemos que
+  \[ 
+    \mathbb{P}(N_{n} = n) = 1 \cdot \frac{2n - 2}{2n - 1} \cdot \frac{2n - 4}{2n - 3} \cdot \cdots \cdot \frac{2}{n + 1} 
+  \] 
+  es la probabilidad pedida.
+\end{sol}

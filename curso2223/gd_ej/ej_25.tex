@@ -1,0 +1,32 @@
+
+\chapter{Curvas}
+
+\begin{ejr}[25]
+  Sea $\alpha: I \subset \mathbb{R} \to \mathbb{R}^{3}$ una curva regular $\mathcal{C}^{\infty}$. Demuestra que la recta tangente en cada punto $\alpha(s_{0})$ es límite de rectas secantes, es decir, el límite de las rectas que pasan por $\alpha(s_{1})$ y $\alpha(s_{2})$ cuando $s_{1}$ y $s_{2}$ tienden a $s_{0}$.
+\end{ejr}
+
+\begin{sol}[25]
+  Sea $\alpha: I \subset \mathbb{R} \to \mathbb{R}^{3}$ una curva regular $\mathcal{C}^{\infty}$, $s_{0}, s_{1}, s_{2} \in I : s_{1} < s_{0} < s_{2}$. Entonces,
+  \[ 
+    S \equiv \alpha(s_{2}) - \alpha(s_{1})
+  \] 
+  es la recta secante que pasa por $s_{1}$ y $s_{2}$. Si $s_{i} \rightarrow s_{0}$, $i \in \{ 1, 2 \}$ entonces, $s_{1} = s_{0} - h_{1} \xrightarrow[]{ h_{1} \rightarrow 0 } s_{0}$ y $s_{2} = s_{0} + h_{2} \xrightarrow[]{ h_{2} \rightarrow 0 } s_{0}$. Consideramos el vector secante unitario
+  \[ 
+    \vec{v} = \frac{\alpha(s_{2}) - \alpha(s_{1})}{||s_{2} - s_{1}||}
+  \]
+  \[ 
+    = \frac{\alpha(s_{0} + h_{2}) - \alpha(s_{0} - h_{1})}{||h_{2} + h_{1}||}
+  \] 
+  donde tomando límites
+  \[ 
+    \lim_{h_{1},h_{2} \to 0} \frac{\alpha(s_{0} + h_{2}) - \alpha(s_{0} - h_{1})}{||h_{2} + h_{1}||} 
+  \] 
+  \[ 
+     = \lim_{h_{2} \to 0} \Big ( \lim_{h_{1} \to 0} \frac{\alpha(s_{0} + h_{2}) - \alpha(s_{0} - h_{1})}{||h_{2} + h_{1}||} \Big )
+  \] 
+  \[ 
+    = \lim_{h_{2} \to 0} \frac{\alpha(s_{0} + h_{2}) - \alpha(s_{0})}{||h_{2}||} = \alpha'(s_0)
+  \] 
+  es el vector tangente unitario en $s_{0} \in I$.
+
+\end{sol}

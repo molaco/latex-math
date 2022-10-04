@@ -1,0 +1,68 @@
+\begin{theo}[Goursat]
+  Sea $\Omega \subset \mathbb{C}$ abierto, $f: \Omega \to \mathbb{C}$ holomorfa. Entonces, $f'$ es continua.
+\end{theo}
+
+\begin{dem}
+  Esta demostración se basa en el teorema de Morera. Sea $T$ un triángulo cerrado en $D$. Subdividimos $T$ en cuatro subtriángulos iguales. Como la integral de $f(z)$ alrededor de $\partial T$ es la suma de las integrales a lo largo de los subtriángulos, hay almenos un subtriángulo $T_{1}$ tal que
+  \[ 
+    \Bigg |  \int_{\partial{T_{1}}}^{} f(z) dz \Bigg | \geq \frac{1}{4} \Bigg | \int_{\partial{ T}}^{} f(z) dz \Bigg |
+  \] 
+  Ahora, subdividimos $T_{1}$ en cuatro subtriángulos iguales y repetimos el proceso. De manera inductiva obtenemos una sucesión de triángulos encajados $\{ T_{n} \}_{n \in \mathbb{N}}$ tal que
+  \[ 
+    \Bigg |  \int_{\partial{T_{n}}}^{} f(z) dz \Bigg | \geq \frac{1}{4} \Bigg | \int_{\partial{T_{n-1}}}^{} f(z) dz \Bigg | \geq \cdots \geq \frac{1}{4^{n}} \Bigg | \int_{\partial{T}}^{} f(z) dz \Bigg |
+  \] 
+  Dado que $\{ T_{n} \}_{n \in \mathbb{N}}$ es decreciente y $\diam(T_{n}) \xrightarrow[]{ n \rightarrow \infty } 0$, $T_{n} \xrightarrow[]{ n \rightarrow \infty } z_{0} \in D$. Y dado que $ f(z)$ es diferenciable en $z_{0}$
+  \[ 
+    | \frac{f(z) - f(z_{0})}{z - z_{0}} - f'(z_{0}) | \leq \epsilon_{n}. z \in T_{n} 
+  \] 
+  donde $\epsilon_{n} \xrightarrow[]{ n \rightarrow \infty } 0$. Sea $L$ la longitud de $\partial{ T}$. Entonces, la longitud de $T_{n}$ es $\frac{L}{2^{n}}$. Si $z \in T_{n}$ entonces
+  \[ 
+    | f(z) - f(z_{0}) - f'(z_{0})(z-z_{0}) | \leq \epsilon_{n} | z - z_{0} | \leq 2 \epsilon_{n} \frac{L}{2^n} 
+  \] 
+  Por el toerema de Cauchy y la estimación de Cauchy
+  \[ 
+    \Big | \int_{\partial{T_{n}}}^{} f(z) dz \Big | = \Big | \int_{\partial{T_{n}}}^{}  d f(z) - f(z_{0}) - f'(z_{0})(z-z_{0}) \Big | \leq 2 \epsilon_{n} \frac{L}{2^n} \cdot \frac{L}{2^{n}} = \frac{2L^{2} \epsilon_{n}}{4^{n}}
+  \] 
+  \[ 
+    \Rightarrow \Big | \int_{\partial{T}}^{} f(z) dz \Big | \leq 4^{n} \Big | \int_{\partial{T_{n}}}^{} f(z) dz \Big |  \leq 2 L^{2} \epsilon_{n}
+  \] 
+  Como $\epsilon_{n} \xrightarrow[]{ n \rightarrow \infty } 0$, entonces
+  \[ 
+    \int_{\partial{T}}^{} f(z) dz = 0 
+  \] 
+  Por el Teorema de Morera $f(z)$ es holomorfa.
+\end{dem}
+
+\begin{theo}[Cauchy-Goursat]
+  Sea $D \subset \mathbb{C}$ abierto, conexo y acotado tal que $\partial D$ es una curva simple cerrada, $\Omega \subset \mathbb{C}$ abierto tal que $\overline{D} \subset \Omega, f: \Omega \to \mathbb{C}$ holomorfa. Entonces, 
+  \[ 
+    \int_{\partial D^+}^{} f(z) dz = 0 
+  \] 
+\end{theo}
+
+\begin{defn}[Simplemente Conexo]
+  Sea $\Omega \subset \mathbb{C}$ abierto y conexo. Entonces, si $\mathbb{C}^* \setminus \Omega$ es conexo, decimos que $\Omega$ es simplemente conexo.
+\end{defn}
+
+\begin{obs}
+  $\Omega \subset \mathbb{C}$ conexo es simplemente conexo si $\forall \gamma \in \Omega$ curva cerrada es homotópica.
+\end{obs}
+
+%\begin{defn}[Convexo]
+%  Un conjunto $A$ es convexo si $\forall z_{0}, z_{1} \in A \Rightarrow \lambda z_{1} + (1 - \lambda) z_{0} \in A, \lambda \in (0, 1)$.
+%\end{defn}
+
+\begin{prop}
+  Una curva que se puede transformar en un punto es una curva homótopa.
+\end{prop}
+
+\begin{theo}[Cauchy Homotópico]
+  Sea $\Omega \subset \mathbb{C}$ simplemente conexo, $f: \Omega \to \mathbb{C}$  holomorfa y $\gamma \subset \Omega$ curva cerrada simple. Entonces, 
+  \[ 
+    \int_{\gamma}^{} f(z) dz = 0 
+  \] 
+\end{theo}
+
+\begin{dem}
+  $\Omega$ simplemente conexo $\Rightarrow \gamma$ es homotópica a una curva constante $\lambda(t) = z_{0}, \forall t$ $\Rightarrow \int_{\gamma}^{} f = \int_{\lambda}^{} f = 0$.
+\end{dem}

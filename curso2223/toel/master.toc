@@ -8,5 +8,5 @@
 \contentsline {section}{\numberline {1.5}Funciones continuas}{16}{}%
 \contentsline {section}{\numberline {1.6}Espacio Producto}{19}{}%
 \contentsline {section}{\numberline {1.7}Espacio Cociente}{22}{}%
-\contentsline {section}{\numberline {1.8}Espacio Suma}{24}{}%
-\contentsline {chapter}{\numberline {2}Propiedades de Separación}{26}{}%
+\contentsline {section}{\numberline {1.8}Espacio Suma}{25}{}%
+\contentsline {chapter}{\numberline {2}Propiedades de Separación}{27}{}%

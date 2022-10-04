@@ -1,0 +1,71 @@
+\begin{lem}[Jones]
+  Sea $( X, \mathcal{T} )$ e.t.. Si $\exists D$ denso en $ ( X, \mathcal{T} )$, $E$ cerrado en $( X, \mathcal{T} )$ tal que $( E, \mathcal{T}|_{E})$ es discreto y $\card(E) \geq 2^{\card(D)}$. Entonces, $( X, \mathcal{T} )$ no es normal.
+\end{lem}
+
+\begin{dem}
+  Sea $( X, \mathcal{T} )$ normal, $\forall C \subset E, C$ y $E$ son disjuntos y cerrados en $( E, \mathcal{T}|_{E})$ y en $( X, \mathcal{T} )$ que es normal. Entonces, $\exists U_{C}, V_{C} \in \mathcal{T}: C \subset U_{C}, E \setminus C \subset V_{C} $. Ahora, sea $f: \mathcal{P}(E) \to \mathcal{P}(D): c \mapsto f(c) = U_{C} \cap D$ aplicación. Veamos que $f$ es inyectiva, $\forall C_{1}, C_{2} \in \mathcal{P}(E) : C_{1} \neq C_{2} \Rightarrow \exists x \in C_{1} : x \not \in C_{2} \Rightarrow C_{i} \subset U_{C_{i}}, E \setminus C_{i} \subset V_{C_{i}}, i \in \{ 1, 2 \} \Rightarrow x \in U_{C_{1}} \cap V_{C_{2}} \in \mathcal{T} \Rightarrow (\text{ $D$ denso }) y \in U_{C_{1}} \cap V_{C_{2}} \cap D \neq \emptyset \Rightarrow$
+  \[ 
+    \begin{cases}
+      y \in U_{C_{1}} \cap D = f(C_{1}) \\ 
+      y \not \in U_{C_{2}} \cap D = f(C_{2}) 
+    \end{cases} 
+  \] 
+  $\Rightarrow f(C_{1}) \neq f(C_{2}) \Rightarrow  \card(E) < \card(\mathcal{P}(E)) \leq \card(\mathcal{P}(D)) = 2^{\card(D)} $
+\end{dem}
+
+\begin{prop}
+  Sea $( X, \mathcal{T} )$ e.t. normal $( T_{4})$, $E \subset X,$ $E$ cerrado en $( X, \mathcal{T} )$. Entonces, $( E, \mathcal{T}|_{E})$ es normal $(T_{4})$.
+\end{prop}
+
+\begin{dem}
+  $\forall C_{1}, C_{2}$ cerrados disjuntos en $( E, \mathcal{T}|_{E})$. Entonces, $C_{1}, C_{2}$ cerrados disjuntos de $ ( X, \mathcal{T} )$ que es normal $ \Rightarrow \exists U_{i} \in \mathcal{T}$ disjuntos tal que $C_{i} \subset U_{i},  i \in \{  1, 2 \} \Rightarrow U_{i} \cap E \in \mathcal{T}|_{E}$ disjuntos tal que $C_{i} \subset U_{i} \cap E, i \in \{ 1, 2 \}$.
+\end{dem}
+
+\begin{obs}
+  El producto de e.t. normales no es necesariamente normal.
+\end{obs}
+
+\begin{prop}
+  Sea $\{ ( X_{j}, \mathcal{T}_{j} ) \}_{j \in J}$ familia de e.t.. Entonces, $( \sum_{k \in J} X_{k}, \sum_{k \in J} \mathcal{T}_{k})$ es normal $(T_{4}) \Leftrightarrow \forall j \in J, ( X_{j}, \mathcal{T}_{j} )$ es normal $(T_{4})$.
+\end{prop}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item [($\Rightarrow$)] $\forall j_{0} \in J, X_{j_{0}} \simeq X_{j_{0}} \times \{ j_{0} \} \subset \sum_{ j \in J } X_{j}$ es cerrado.
+    \item [($\Leftarrow$)] $\forall C_{1}, C_{2}$ cerrados disjuntos de $( \sum_{k \in J} X_{k}, \sum_{k \in J} \mathcal{T}_{k}) \Rightarrow \forall k \in J, j_{k}^{-1}(C_{1}), j_{k}^{-1}(C_{2})$ cerrados disjuntos de $( X_{k}, \mathcal{T}_{k} )$ que es normal $\Rightarrow \forall j \in J, \exists U_{k,1}, U_{k,2} \in \mathcal{T}_{k}$ disjuntos tal que $j_{k}^{-1}(C_{i}) \subset U_{k,i} \in \mathcal{T}_{k}, i \in \{ 1, 2 \}$. Entonces, $U_{1} = \bigcup_{k \in J} U_{k,1} \times \{ k \}, \bigcup_{k \in J} U_{k,1} \times \{ k \} \in \sum_{k \in J} \mathcal{T}_{k}$ son abiertos disjuntos y $C_{1} \subset U_{1}, C_{2} \subset U_{2}$.
+  \end{enumerate}
+\end{dem}
+
+\begin{prop}
+  Sea $( X, \mathcal{T} )$, $( Y, \mathcal{S} )$ e.t. tal que $ ( X, \mathcal{T} )$ es normal, $f: ( X, \mathcal{T} ) \to ( Y, \mathcal{S} )$ suprayectiva, continua y cerrada. Entonces, $( Y, \mathcal{S} )$ es normal $(T_{4})$.
+\end{prop}
+
+\begin{dem}
+  %
+$\forall C_{1}, C_{2}$ cerrado disjunto $( Y, \mathcal{T} ) \Rightarrow f^{-1}(C_{1}), f^{-1}(C_{2})$ cerrados disjuntos de $( X, \mathcal{T} ) \Rightarrow \exists U_{i} \in \mathcal{T}$ disjuntos tal que $f^{-1}(C_{i}) \subset U_{i}, i \in \{ 1, 2 \} \Rightarrow (f \text{ cerrada }) V_{i} = Y \setminus f(X \setminus U_{i}) \in \mathcal{S}, i \in \{ 1, 2 \} $ 
+\[
+  \Rightarrow V_{1} \cap V_{2} = ( Y \setminus f(X \setminus U_{1}) ) \cap ( Y \setminus f(X \setminus U_{2})) 
+\]
+\[
+  = (Y \setminus (f(X \setminus U_{1}) \cup f(X \setminus U_{2})) )
+\]
+\[ 
+  = Y \setminus f(X \setminus U_{1} \cup X \setminus U_{2}) 
+\] 
+\[ 
+  = Y \setminus f(X \setminus (U_{1} \cap U_{2}))
+\] 
+\[ 
+  Y \setminus f(X) = Y \setminus Y = \emptyset 
+\] 
+$\Rightarrow$ disjuntos. \\
+
+¿$C_{i} \subset X \setminus f(X \setminus U_{i})$? $ \forall y \in C_{i} \Rightarrow f^{-1}(y) \subset f^{-1}(C_{i}) \subset U_{i} \Rightarrow X \setminus U_{i} \subset X \setminus f^{-1}(y) \Rightarrow f(X \setminus U_{i} ) \subset f(X \setminus f^{-1}(y)) \Rightarrow z \in Y \setminus f(X \setminus f^{-1}(y)) \subset Y \setminus f(X \setminus U_{i}) = V_{i} \Rightarrow z \not \in f(X \setminus f^{-1}(y)) \Rightarrow z = f(x') : x' \in X \setminus f^{-1}(y) \Rightarrow x' \in f^{-1}(y) \Rightarrow f(x') = y \Rightarrow z = y \Rightarrow \forall y \in C_{i}, y \in V_{i}$. \\
+
+Para ver que es $T_{4}$:  $( X, \mathcal{T} )$ es $T_{4}$, $\forall y \in Y, \exists x \in X, f(x) = y \Rightarrow (T_{1}) \ \{ x \} \text{ cerrado } ( X, \mathcal{T} ) \Rightarrow (f \text{ cerrada }) \ f(\{ x \})$ es cerrado en $( Y, \mathcal{S} )$ y $ f(\{ x \}) = \{  y \}$.
+%
+\end{dem}
+
+\begin{lem}[Urysohn]
+  Sea $( X, \mathcal{T} )$ e.t.. Entonces, $( X, \mathcal{T} )$ normal $\Leftrightarrow \forall C_{1}, C_{2}$ cerrado disjunto, $\exists f: ( X, \mathcal{T} ) \to [0, 1]$ continua tal que $f(C_{1}) = \{  0 \}, f(C_{2}) = \{ 1 \}$.
+\end{lem}

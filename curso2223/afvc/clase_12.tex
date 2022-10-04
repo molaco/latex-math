@@ -113,3 +113,107 @@
     \int_{\gamma}^{} f(z) dz= 0 
   \] 
 \end{cor}
+
+\begin{theo}
+  Si $\Omega \subset \mathbb{C}$ es abierto convexo, y $f: \Omega \to \mathbb{C}$es continua, entonces $f$ tiene primitica en $ \Omega$ si y solo si 
+  \[ 
+    \int_{\partial T}^{} f(z) dz 
+  \] 
+  para $T \subset \Omega$ triángulo.
+\end{theo}
+
+\begin{dem}
+  content
+\end{dem}
+
+\section{Teorema de Cauchy}
+
+\begin{defn}[Teorema de Green]
+  Sea $D \subset \mathbb{C}$ abierto conexo acotado tal que $\partial D$ es una una curva cerrada y simple, $\Omega$ abierto tal que $\overline{D} \subset \Omega$ y $P,Q: \Omega \to \mathbb{R}$ de clase $C^1$. Entonces,
+  \[ 
+    \int_{\patial D^+}^{} Pdx Qdy = \iint_{D}^{} (\frac{\partial{Q}}{\partial{x}} - \frac{\partial{P}}{\partial{y}})dxdy
+  \] 
+\end{defn}
+
+\begin{theo}[Cauchy]
+  Sea $D \subset \mathbb{C}$ abierto conexo acotado tal que su frontera es una curva simple cerrada, $\Omega$ abierto tal que $\overline{D} \subset \Omega$, $f: \Omega \to \mathbb{C}$ función holomorfa tal que $f'$ es continua. Entonces,
+  \[ 
+    \int_{\patial D }^{} f(z) dz = 0
+  \] 
+\end{theo}
+
+\begin{dem}
+  Sea $ f = u + i v $,
+  \[ 
+    \int_{\gamma}^{} f = \int_{\gamma}^{} f(z) dz 
+  \] 
+  \[ 
+    = \int_{\gamma}^{} (u + i v)(dx + dy) 
+  \] 
+  \[ 
+    = \int_{\gamma}^{} (u dx - v dy) + i \int_{\gamma}^{} (u dy + v dx)
+  \] 
+  donde aplicando el teorema de Green, tenemos que
+  \[ 
+    \int_{\gamma}^{} f = \iint_{A}^{} \Bigg[ - \frac{\partial{v}}{\partial{x}} - \frac{\partial{u}}{\partial{y}} \Bigg] dxdy + i \iint_{A}^{} \Bigg[ \frac{\partial{u}}{\partial{x}} - \frac{\partial{v}}{\partial{y}} \Bigg] dx dy
+  \] 
+  a partir de las ecuaciones de Cauchy-Riemann ambos términos son nulos.
+\end{dem}
+
+\begin{theo}[Fórmula Integral de Cauchy]
+  Sea $D \subset \mathbb{C}$ abierto, conexo y acotado tal que $\partial D$ es una curva simple cerrada, $\Omega$ abierto tal que $\overline{D} \subset \Omega$. Sea $f: \Omega \to \mathbb{C}$ un función holomorfa tal que $f'$ es continua. Entonces,
+  \[ 
+    f(z) = \frac{1}{2 \pi i} \int_{\partial D^+}^{} \frac{f(w)}{w - z} dw, \forall z \in D 
+  \] 
+\end{theo}
+
+\begin{dem}
+  Sea $z \in D, \epsilon >0, D_{\epsilon} = D \setminus \{ | w - z | \leq \epsilon \}$. La frontera $\partial D^+$ es la unión de $\partial D$ y $\{ | w - z | = \epsilon \}$ con orientación positiva. \\
+
+  Dado que $ \frac{f(z)}{w-z}$ es holomorfa para $w \in D_{\epsilon}$, por el teorema de Cauchy tenemos
+  \[ 
+    \int_{\partial D^+}^{} \frac{f(w)}{w - z} dw = 0 
+  \] 
+  separando la frontera e invirtiendo la orientación se tiene
+  \[ 
+    \Rightarrow \int_{|  w - z | = \epsilon}^{}  \frac{f(z)}{w-z} dw = \int_{\partial D}^{} \frac{f(w)}{w - z} dw 
+  \] 
+  si escribimos $w = z + \epsilon e^{i \theta}, dw = i \epsilon e^{i \theta} dw$, obtenemos
+  \[ 
+    \int_{0}^{2 \pi} f(z + \epsilon e^{i \theta}) \frac{d \theta}{2 \pi} =  \frac{1}{2 \pi i} \int_{\patial D}^{} \frac{f(w)}{w - z} dw
+  \] 
+  por el teorema del valor medio para la funciones armónicas, la integral de la izquierda coincide con $f(z)$.
+\end{dem}
+
+\begin{theo}[Fórmula Integral de Cauchy para las Derivadas]
+  Sea $D \subset \mathbb{C}$ abierto, conexo y acotado talque $\partial D$ es unacurva simple cerrada, $\Omega \subset \mathbb{C}$ abierto tal que $\overline{D} \subset \Omega$, $f: \Omega \to \mathbb{C}$ función holomorfa tal que $ f'$ es continua. Entonces,
+  \[ 
+    f^{(n)}(z) = \frac{n!}{2 \pi i} \int_{\partial D^+}^{} \frac{f(w)}{(w - z)^{n+1}} dw, \forall z \in D, \forall n \in \mathbb{N}.
+  \] 
+\end{theo}
+
+%\begin{dem}
+\begin{dem}
+  Sea $z \in D$ entonces $dist (z, \partial D) = r > 0$, $f$ continua en $\partial D \Rightarrow \exists M>0 : | f(w) | < M, \forall w \in \partial D$ y $| \frac{1}{w - z} | \leq \frac{1}{r} $
+  \[ 
+    | \frac{f(w)}{w-z} |  \leq \frac{M}{r}, \forall w \in \partial D
+  \] 
+  y dado que $\frac{d{}}{d{z}}(\frac{f(w)}{w -z}) = \frac{f(w)}{w-z}^2$ entonces, por el teorema de derivación bajo el signo integral tenemos que
+  \[ 
+    f'(z) = \frac{1}{2 \pi i} \int_{\partial D}^{} \frac{f(w)}{(w-z)^2} dz
+  \] 
+  donde usando inducción y el teorema de derivación bajo el signo integral podemos ver que se cumple para las derivadas de orden $n$.
+%\end{dem}
+\end{dem}
+
+\begin{cor}
+  Sea $f: \Omega \to \mathbb{C}$ función holomorfa, $f': \Omega \to \mathbb{C}$ continua. Entonces $f$ es infinitamente derivable.
+\end{cor}
+
+\begin{theo}[Morera]
+  Sea $f: \Omega \to \mathbb{C}$ función continua y $\int_{\partial T}^{} f(z) dz = 0, \forall T \subset \Omega$ triángulo. Entonces, $f$ es infinitamente derivable.
+\end{theo}
+
+\begin{dem}
+  (Teorema fundamental del cálculo) $\Rightarrow f$ tiene primitiva, es decir, $\exists F: f = F', F$ holomorfa en $D$ y $F' = f$  continua. Entonces, por el corolario anterior $F$ infinitamente derivable $\Rightarrow F'$ infinitamente derivable.
+\end{dem}

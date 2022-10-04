@@ -12,15 +12,15 @@
 \end{note}
 
 \begin{defn}[Espacio Banach]
-  Un espacio de Banach es un espacio vectorial normado.
-\end{defn}
-
-\begin{defn}[Operadores?]
-  content
+  Un espacio de Banach es un espacio vectorial normado completo.
 \end{defn}
 
 \begin{obs}
-  La convergencia de la norma del supremo equivale a convergencia uniforme en un espacio de Banach.
+  Sea $A \subset \mathbb{R}^{p}$. Entonces, $\mathcal{C}(A; \mathbb{R},d)$ es un espacio de Banach.
+\end{obs}
+
+\begin{obs}
+  La convergencia de la norma del supremo equivale a convergencia uniforme en un espacio de Banach.
 \end{obs}
 
 \begin{lem}[Lema de Gronwall]
@@ -83,14 +83,14 @@
 \begin{nota}
   Conjunto de funciones localmente Lipschitz continuas
   \[ 
-    C^{0,1-}(T \times X, Y) = \{ f: T \times X \to Y | f \in C(T \times X, Y),
+    C^{0,1-}(T \times X, Y) = \{ f: T \times X \to Y : f \in C(T \times X, Y),
   \] 
   \[ 
      f \text{ Lipschitz continua respecto a } x \in X \}  
   \] 
   Si $f: X \to Y$, entonces
   \[ 
-    C^{1-}(X,Y) = \{ f: X \to Y | f \text{ es Lipschitz continua } \} .
+    C^{1-}(X,Y) = \{ f: X \to Y : f \text{ es Lipschitz continua } \} .
   \]
   Conjunto de funciones continuas con dereivas parciales respecto a $x \in X$
   \[ 
@@ -106,39 +106,27 @@
   Sea $X,Y$ espacios métricos, $T$ un e.t. compacto. Supongamos que $K \subset X$ es compacto y $f \in C^{0,1-}(T \times X, Y)$. Entonces, existe un entorno abierto $W$ de $K$ en $X$ tal que $f|_{T \times W}$ es uniformemente Lipschitz continua respecto a $x \in W$.
 \end{prop}
 
-\begin{nota}
-  \begin{enumerate}[label=(\roman*)]
-    \item $J \subset \mathbb{R}$ es un intervalo abierto.
-    \item $E$ es un espacio de Banach sobre $\mathbb{K}$.
-    \item $D \subset E$ es un abierto.
-    \item $ f \in C(J \times D, E)$.
-    \item $(t_{0}, x_{0}) \in J \times D, \; a, b \in \mathbb{R}: a, b > 0 \text{ tal que } [t_{0} - a, t_{0} + a] \subset J$ y $ \overline{\mathbb{B}}(x_{0}, b) \subset D; \text{ y } R = [t_{0} - a, t_{0} + a] \times \overline{\mathbb{B}}(x_{0}, b)$
-  \end{enumerate}
-\end{nota}
-
 \begin{defn}[Solución ecuación diferencial]
-  Sea $u: J_{u} \to D$. Entonces, decimos que $u$ es solución de la ecuación diferencial $\dot{x} = f(t,x)$ Si se verifica
-  \begin{enumerate}[label=(\roman*)]
-    \item $J_{u} \subset J : \mathring{(J_{u})} \neq \emptyset$ .
-    \item $u \in C^{1}(J_{u}, D)$,
-    \item $\dot{u}(t) = f(t, u(t)), \forall t \in J_{u}$.
-  \end{enumerate}
+  Sea $U \subset \mathbb{R}^{d}$ abierto, $u \in C^{1}([0,T] \times \overline{U}, \mathbb{R}^{d})$. Entonces, decimos que $u$ es solución de la ecuación diferencial $\dot{x} = f(t,x)$ Si se verifica
+  \[
+    \dot{u}(t) = f(t, u(t)), \forall t \in [0, T]
+  \]
 \end{defn}
 
 \begin{lem}[Forma Integral Solución PVI]
-  Sea $J_{u}$ un subintervalo perfecto de $J$, $u: J_{u} \to D$. Entonces $u$ es una solución de la ecuación diferencial $\dot{x} = f(t,x) \Leftrightarrow u \in C^{}(J_{u}, D)$ y
+  Sea $U \subset \mathbb{R}^{d}$ abierto, $u \in C^{1}([0,T] \times \overline{U}, \mathbb{R}^{d})$. Entonces $u$ es una solución de la ecuación diferencial $\dot{x} = f(t,x) \Leftrightarrow u \in C^{}(J_{u}, D)$ y
       \[ 
-        u(t) = u(t_{0}) + \int_{t_{0}}^{t} f(s, u(s)) ds, \forall t \in J_{u} 
+        u(t) = u_{0} + \int_{0}^{t} f(s, u(s)) ds, \forall t \in [0, T] 
       \] 
       donde $t_{0} \in J_{u}$.
 \end{lem}
 
-AÑADIR ESPACIO BANACH, 
-EQUICONTINUA, ETC?
+\section{Teorema Picard}
+\subsection{Unicidad Solución PVI}
 
-\section{Picard}
+CAMBIAR NOTACIÓN
 
-\begin{theo}[de Unicidad]
+\begin{theo}[Unicidad Solución PVI]
   Sea $J \subset \mathbb{R}; D \subset E$ abierto donde $E$ es un espacio de Banach; $f \in C^{0,1-}(J \times D, E)$; $(t_{0}, x_{0}) \in J \times D$; $ a, b, \lambda \in \mathbb{R}$ y $R = [t_{0} - a, t_{0} + a] \times \overline{\mathbb{B}}(x_{0}, b) \subset J \times D$. Entonces, el PVI
   \[ 
     \dot{x} = f(t, x), \; x(t_{0}) = x_{0},
@@ -172,129 +160,192 @@ Revisar notación $t \in J$
   $\Rightarrow $ (Teo. Gronwall $a = 0$) $ | u(t) - u'(t) | = 0, \; \forall t \in J \Rightarrow u(t) = u'(t), \; \forall t \in J$.
 \end{dem}
 
-\begin{theo}[Picard]
-  Sean $J \subset \mathbb{R}$ abierto, $E$ espacio de Banach, $D \subset E$. Sea $f \in C^{0,1-}( J \times D, E)$, $(t_{0}, x_{0}) \in J \times D$ y $a, b, \lambda, M \in \mathbb{R}$ tal que $R = [t_{0} - a, t_{0} + a] \times \overline{\mathbb{B}}(x_{0}, b) \subset J \times D$ y $| f(t,x) |\leq M, \forall (t,x) \in R$, $\alpha = \min\big ( a, \frac{b}{M} \big )$ y $I = [t_{0} - \alpha, t_{0} +\alpha]$. Entonces el PVI
+%\begin{theo}[Picard]
+%  Sean $J \subset \mathbb{R}$ abierto, $E$ espacio de Banach, $D \subset E$. Sea $f \in C^{0,1-}( J \times D, E)$, $(t_{0}, x_{0}) \in J \times D$ y $a, b, \lambda, M \in \mathbb{R}$ tal que $R = [t_{0} - a, t_{0} + a] \times \overline{\mathbb{B}}(x_{0}, b) \subset J \times D$ y $| f(t,x) |\leq M, \forall (t,x) \in R$, $\alpha = \min\big ( a, \frac{b}{M} \big )$ y $I = [t_{0} - \alpha, t_{0} +\alpha]$. Entonces el PVI
+%  \[ 
+%    \dot{x} = f(t, x), x(t_{0}) = x_{0}, 
+%  \] 
+%  tiene solución única $u: I \to \mathbb{B}(x_{0}, b)$
+%\end{theo}
+%
+%\begin{note}[Esquema Demostración]
+%  Usando la iteración de picard
+%  \[ 
+%    u_{n}(t) = x_{0} + \int_{t_{0}}^{t} f(s, u_{n-1}(s)) ds, \; \forall n \in \mathbb{N}, \; t \in I.
+%  \] 
+%  \begin{enumerate}[label=(\roman*)]
+%    \item $\{ u_{n} \}_{j \in J}$ está bien definida, $u_{n}$ tiene derivadas continuas $\forall n \in N$, $| u_{n} - x_{0} | \leq b$ y $f(t, u_{n}(t))$ está bien definida.
+%    \item $\{ u_{n} \}_{j \in J}$ satisface $| u_{n}(t) - u_{n-1}(t) | \leq \frac{M}{\lambda}\frac{(h \lambda)^{n}}{n!}, t \in I$.
+%    \item $\{ u_{n} \}_{j \in J}$ converge uniformemente en $I$.
+%    \item $u$ satisface PVI en $I$.
+%  \end{enumerate}
+%\end{note}
+%
+%\begin{dem}
+%%\begin{dem}
+%  \begin{enumerate}[label=(\roman*)]
+%    \item Pocedemos por inducción. \\ 
+%
+%      Si $m=1$ es trivial comprobar que existe
+%      \[
+%        u_{1}(t) = x_{0} + \int_{t_{0}}^{t} f(s, x_{0}) ds, \; t \in I,
+%      \]
+%      y tiene derivada continua en $I$ tal que $| u_{1}(t) - x_{0} | < b, \; t \in I \Rightarrow (t, x_{0}) \in R_{1} = I \times \overline{\mathbb{B}}(x_{0}, b)$; y $f(t, x_{0})$ está definida y es continua en $I$. Además, $| f(t, x_{0}) | \leq M, \; t \in I$. \\
+%      
+%      Suponemos que se cumple para $m=n-1$, es decir, existe $u_{n-1}(t)$ de manera que 
+%      \[
+%        u_{n-1}(t) = x_{0} + \int_{t_{0}}^{t} f(s, u_{n-2}(s)) ds, \; t \in I,
+%      \]
+%      y tiene derivada continua en $I$ tal que $| u_{n-1}(t) - x_{0} | < b, \; t \in I \Rightarrow (t, x_{0}) \in R_{1} = I \times \overline{\mathbb{B}}(x_{0}, b)$; y $f(t, u_{n-1})$ está definida y es continua en $I$. Además, $| f(t, u_{n-1}) | \leq M, \; t \in I$. \\
+%
+%      Ahora, vemos que se cumple para $m=n$. Sea
+%      \[ 
+%        u_{n}(t) = x_{0} + \int_{t_{0}}^{t} f(s, u_{n-1}(s)) ds, \; t \in I,
+%      \] 
+%      Entonces, $u_{n}$ existe y tiene derivada continua en $I$. Luego,
+%      \[ 
+%        | u_{n}(t) - x_{0} | = \Big | \int_{t_{0}}^{t} f(s, u_{n-1}(s)) ds \Big |, \forall t \in I,
+%      \] 
+%      \[ 
+%        \leq \int_{t_{0}}^{t} | f(s, u_{n-1}(s)) | ds
+%      \] 
+%      \[ 
+%        \leq \int_{t_{0}}^{t} M ds \leq M(t - t_{0}) \leq Mh \leq b 
+%      \] 
+%      $\Rightarrow (t, u_{n}(t)) \in R_{1}$ y $f(t, u_{n}(t))$ está bien definida y es continua.
+%    \item Procedemos por inducción. \\
+%
+%      Es trivial comprobar que se cumple para $m=1$. Suponemos que se cumple para $m=n-1$
+%      \[ 
+%        | u_{n-1}(t) - u_{n-2}(t) | \leq \frac{M \lambda^{n-1}}{(n-1)!}(t - t_{0})^{n-1}, \; t \in I,
+%      \] 
+%      Entonces, 
+%      \[ 
+%        | u_{n}(t) - u_{n-1}(t) | =  \Big | \int_{t_{0}}^{t} f(s, u_{n-1}(s)) - f(s, u_{n-2}(s)) ds \Big |, \; t \in I,
+%      \] 
+%      \[ 
+%        \leq \lambda \int_{t_{0}}^{t} | u_{n-1}(s) - u_{n-2} | ds
+%      \] 
+%      \[ 
+%        \leq \lambda \int_{t_{0}}^{t} \frac{M \lambda^{n-2}}{(n-1)!}(s - t_{0})^{n-2} ds 
+%      \] 
+%      \[ 
+%        \leq  \frac{M \lambda^{n-1}}{(n-1)!} \frac{(s-t_{0})^{n}}{n} \Bigg |_{t_{0}}^{t}
+%      \] 
+%      \[ 
+%        = \frac{M \lambda^{n-1}}{(n)!} (t - t_{0})^n 
+%      \] 
+%      \[ 
+%        = \frac{M}{\lambda} \frac{\lambda^n}{n!} \alpha^n \leq \frac{M}{\alpha} \frac{(\lambda \alpha)^n}{n!}
+%      \] 
+%    \item (ii) $\Rightarrow | u_{n}(t) - u_{n-1}(t) | \leq \frac{M}{\lambda} \frac{(\lambda \alpha)^{n}}{n!}$ Entonces, como la serie
+%      \[ 
+%        \sum_{n = 1}^{k} \frac{M}{\lambda}\frac{(\lambda \alpha)^{n}}{n!} = \frac{M}{\lambda}\big ( 1 + \frac{\lambda \alpha}{1!} + \frac{(\lambda \alpha)^{2}}{2!}  + \cdots \big )
+%      \] 
+%      converge a 
+%      \[ 
+%        \lim_{k \to \infty} \sum_{n = 1}^{k} \frac{M}{\lambda}\frac{(\lambda \alpha)^{n}}{n!} = \frac{M}{\lambda} ( e^{\lambda \alpha} -1)
+%      \] 
+%      tenemos que 
+%      \[ 
+%        \lim_{k \to \infty} \sum_{n = 1}^{k} | u_{n}(t) - u_{n-1}(t) | 
+%      \] 
+%      converge uniformemente $\forall t \in I$ por el teorema de Weierstrass (M-test).
+%      \\
+%      
+%      Considerando la serie de sumas parciales
+%      \[ 
+%        S_{n}(x) = x_{0} + \sum_{n=1}^{k} | u_{i}(t) - u_{i-1}(t) | = u_{t}
+%      \] 
+%      Entonces, $\{ S_{n} \} = \{ u_{n} \} \xrightarrow[]{n \rightarrow \infty} u$ uniformemente $\forall t \in I$. Además, $u_{n}$ continua $\forall t \in I \rightarrow u(t)$ continua $\forall t \in I$.
+%    \item Queremos ver que $u$ satisface el PVI. \\
+%
+%      Como $| u_{n} - x_{0} | \leq b, \; \forall t \in I, \forall n \in \mathbb{N} \Rightarrow | u - x_{0} | \leq b$ y $u_{n} \xrightarrow[]{n \rightarrow \infty} u$ uniformemente $\forall t \in I$, y 
+%
+%      \[ 
+%        | f(t, u_{n}(t)) - f(t, u(t)) | \leq \lambda | u_{n}(t) - u(t) | 
+%      \] 
+%      Entonces, $\{ f(t, u_{n}(t)) \} \xrightarrow[]{ n \rightarrow \infty } f(t, u(t))$ uniformemente $\forall t \in I$. Además, $f(t , u_{n}(t))$ continua $\forall n \in \mathbb{N} \Rightarrow f(t, u(t))$ continua $\forall t \in I$.
+%
+%      Por tanto, 
+%      \[ 
+%        u(t) = \lim_{n \to \infty} u_{n}(t) = x_{0} + \lim_{n \to \infty} \int_{t_{0}}^{t} f(s,u_{n}(s)) ds
+%      \] 
+%      \[ 
+%        = x_{0} + \int_{t_{0}}^{t} \lim_{n \to \infty} f(s,u_{n}(s)) ds
+%      \] 
+%      \[ 
+%        = x_{0} + \int_{t_{0}}^{t} f(s, u(s)) ds, \; \forall t \in I. 
+%      \] 
+%      que satisface la forma integral del PVI.
+%  \end{enumerate}
+%%\end{dem}
+%\end{dem}
+
+\subsection{Teorema del Punto Fijo de Banach}
+
+\begin{defn}[Función Contractiva]
+  Sea $X$ un espacio de Banach, $A \subset X$ cerrado y $f: A \to A$. Entonces, se dice que $f$ es una contracción si $\exists \alpha \in (0,1)$ tal que
   \[ 
-    \dot{x} = f(t, x), x(t_{0}) = x_{0}, 
+    ||f(x) - f(y)|| \leq \alpha ||x - y||, \; \forall x, y \in A.
   \] 
-  tiene solución única $u: I \to \mathbb{B}(x_{0}, b)$
+\end{defn}
+
+\begin{obs}
+  Si $f$ es contracción decimos que $x \in X$ es un punto fijo si $f(x) = x$. Además, 
+\end{obs}
+
+\begin{theo}[del Punto Fijo de Banach]
+  Sea $(X, d)$ un espacio métrico completo, $f: X \to X$ una aplicación contractiva. Entonces, $\exists ! x^* \in X : f(x^*) = x^*$. Además, $\forall x_{0} \in X$ , $x_{n+1} = f(x_{n}), n \in \mathbb{N}$. Entonces, $x_{n} \xrightarrow[ n \rightarrow \infty ]{} x^*$.
 \end{theo}
 
-\begin{note}[Esquema Demostración]
-  Usando la iteración de picard
-  \[ 
-    u_{n}(t) = x_{0} + \int_{t_{0}}^{t} f(s, u_{n-1}(s)) ds, \; \forall n \in \mathbb{N}, \; t \in I.
-  \] 
-  \begin{enumerate}[label=(\roman*)]
-    \item $\{ u_{n} \}_{j \in J}$ está bien definida, $u_{n}$ tiene derivadas continuas $\forall n \in N$, $| u_{n} - x_{0} | \leq b$ y $f(t, u_{n}(t))$ está bien definida.
-    \item $\{ u_{n} \}_{j \in J}$ satisface $| u_{n}(t) - u_{n-1}(t) | \leq \frac{M}{\lambda}\frac{(h \lambda)^{n}}{n!}, t \in I$.
-    \item $\{ u_{n} \}_{j \in J}$ converge uniformemente en $I$.
-    \item $u$ satisface PVI en $I$.
-  \end{enumerate}
-\end{note}
-
 \begin{dem}
-%\begin{dem}
-  \begin{enumerate}[label=(\roman*)]
-    \item Pocedemos por inducción. \\ 
+  Sea $| x_{1} - x_{0} | = d$. Entonces, 
+  \[ 
+    | x_{n+1} - x_{n} | = | f(x_{n}) - f(x_{n-1}) | \leq \alpha | x_{n} - x_{n-1} |\leq \cdots \leq \alpha^n d
+  \] 
+  donde $\alpha \in (0,1)$ 
+  \[
+    \Rightarrow \lim_{k \to \infty}\sum_{n=0}^{k} \alpha^n = \frac{1}{1 - \alpha}
+  \]
+  \[
+    \Rightarrow \forall \epsilon > 0, \exists N \in \mathbb{N}: \alpha^N < \frac{\epsilon}{d}
+  \]
+  \[ 
+    \Rightarrow | x_{n+1} - x_{n} | \leq \epsilon, \forall n \geq N
+  \] 
+  Entonces, la sucesión $(x_{n})$ es de Cauchy y $X$ completo $\Rightarrow \lim_{n \to \infty} x_{n} = x^*$. Además
+  \[ 
+    x^* = \lim_{n \to \infty} x_{n} = \lim_{n \to \infty} f(x_{n-1}) = f( \lim_{n \to \infty} x_{n-1}) = f(x^*)
+  \] 
+  $\Rightarrow x^*$ es un punto fijo de $f$. \\
 
-      Si $m=1$ es trivial comprobar que existe
-      \[
-        u_{1}(t) = x_{0} + \int_{t_{0}}^{t} f(s, x_{0}) ds, \; t \in I,
-      \]
-      y tiene derivada continua en $I$ tal que $| u_{1}(t) - x_{0} | < b, \; t \in I \Rightarrow (t, x_{0}) \in R_{1} = I \times \overline{\mathbb{B}}(x_{0}, b)$; y $f(t, x_{0})$ está definida y es continua en $I$. Además, $| f(t, x_{0}) | \leq M, \; t \in I$. \\
-      
-      Suponemos que se cumple para $m=n-1$, es decir, existe $u_{n-1}(t)$ de manera que 
-      \[
-        u_{n-1}(t) = x_{0} + \int_{t_{0}}^{t} f(s, u_{n-2}(s)) ds, \; t \in I,
-      \]
-      y tiene derivada continua en $I$ tal que $| u_{n-1}(t) - x_{0} | < b, \; t \in I \Rightarrow (t, x_{0}) \in R_{1} = I \times \overline{\mathbb{B}}(x_{0}, b)$; y $f(t, u_{n-1})$ está definida y es continua en $I$. Además, $| f(t, u_{n-1}) | \leq M, \; t \in I$. \\
-
-      Ahora, vemos que se cumple para $m=n$. Sea
-      \[ 
-        u_{n}(t) = x_{0} + \int_{t_{0}}^{t} f(s, u_{n-1}(s)) ds, \; t \in I,
-      \] 
-      Entonces, $u_{n}$ existe y tiene derivada continua en $I$. Luego,
-      \[ 
-        | u_{n}(t) - x_{0} | = \Big | \int_{t_{0}}^{t} f(s, u_{n-1}(s)) ds \Big |, \forall t \in I,
-      \] 
-      \[ 
-        \leq \int_{t_{0}}^{t} | f(s, u_{n-1}(s)) | ds
-      \] 
-      \[ 
-        \leq \int_{t_{0}}^{t} M ds \leq M(t - t_{0}) \leq Mh \leq b 
-      \] 
-      $\Rightarrow (t, u_{n}(t)) \in R_{1}$ y $f(t, u_{n}(t))$ está bien definida y es continua.
-    \item Procedemos por inducción. \\
-
-      Es trivial comprobar que se cumple para $m=1$. Suponemos que se cumple para $m=n-1$
-      \[ 
-        | u_{n-1}(t) - u_{n-2}(t) | \leq \frac{M \lambda^{n-1}}{(n-1)!}(t - t_{0})^{n-1}, \; t \in I,
-      \] 
-      Entonces, 
-      \[ 
-        | u_{n}(t) - u_{n-1}(t) | =  \Big | \int_{t_{0}}^{t} f(s, u_{n-1}(s)) - f(s, u_{n-2}(s)) ds \Big |, \; t \in I,
-      \] 
-      \[ 
-        \leq \lambda \int_{t_{0}}^{t} | u_{n-1}(s) - u_{n-2} | ds
-      \] 
-      \[ 
-        \leq \lambda \int_{t_{0}}^{t} \frac{M \lambda^{n-2}}{(n-1)!}(s - t_{0})^{n-2} ds 
-      \] 
-      \[ 
-        \leq  \frac{M \lambda^{n-1}}{(n-1)!} \frac{(s-t_{0})^{n}}{n} \Bigg |_{t_{0}}^{t}
-      \] 
-      \[ 
-        = \frac{M \lambda^{n-1}}{(n)!} (t - t_{0})^n 
-      \] 
-      \[ 
-        = \frac{M}{\lambda} \frac{\lambda^n}{n!} \alpha^n \leq \frac{M}{\alpha} \frac{(\lambda \alpha)^n}{n!}
-      \] 
-    \item (ii) $\Rightarrow | u_{n}(t) - u_{n-1}(t) | \leq \frac{M}{\lambda} \frac{(\lambda \alpha)^{n}}{n!}$ Entonces, como la serie
-      \[ 
-        \sum_{n = 1}^{k} \frac{M}{\lambda}\frac{(\lambda \alpha)^{n}}{n!} = \frac{M}{\lambda}\big ( 1 + \frac{\lambda \alpha}{1!} + \frac{(\lambda \alpha)^{2}}{2!}  + \cdots \big )
-      \] 
-      converge a 
-      \[ 
-        \lim_{k \to \infty} \sum_{n = 1}^{k} \frac{M}{\lambda}\frac{(\lambda \alpha)^{n}}{n!} = \frac{M}{\lambda} ( e^{\lambda \alpha} -1)
-      \] 
-      tenemos que 
-      \[ 
-        \lim_{k \to \infty} \sum_{n = 1}^{k} | u_{n}(t) - u_{n-1}(t) | 
-      \] 
-      converge uniformemente $\forall t \in I$ por el teorema de Weierstrass (M-test).
-      \\
-      
-      Considerando la serie de sumas parciales
-      \[ 
-        S_{n}(x) = x_{0} + \sum_{n=1}^{k} | u_{i}(t) - u_{i-1}(t) | = u_{t}
-      \] 
-      Entonces, $\{ S_{n} \} = \{ u_{n} \} \xrightarrow[]{n \rightarrow \infty} u$ uniformemente $\forall t \in I$. Además, $u_{n}$ continua $\forall t \in I \rightarrow u(t)$ continua $\forall t \in I$.
-    \item Queremos ver que $u$ satisface el PVI. \\
-
-      Como $| u_{n} - x_{0} | \leq b, \; \forall t \in I, \forall n \in \mathbb{N} \Rightarrow | u - x_{0} | \leq b$ y $u_{n} \xrightarrow[]{n \rightarrow \infty} u$ uniformemente $\forall t \in I$, y 
-
-      \[ 
-        | f(t, u_{n}(t)) - f(t, u(t)) | \leq \lambda | u_{n}(t) - u(t) | 
-      \] 
-      Entonces, $\{ f(t, u_{n}(t)) \} \xrightarrow[]{ n \rightarrow \infty } f(t, u(t))$ uniformemente $\forall t \in I$. Además, $f(t , u_{n}(t))$ continua $\forall n \in \mathbb{N} \Rightarrow f(t, u(t))$ continua $\forall t \in I$.
-
-      Por tanto, 
-      \[ 
-        u(t) = \lim_{n \to \infty} u_{n}(t) = x_{0} + \lim_{n \to \infty} \int_{t_{0}}^{t} f(s,u_{n}(s)) ds
-      \] 
-      \[ 
-        = x_{0} + \int_{t_{0}}^{t} \lim_{n \to \infty} f(s,u_{n}(s)) ds
-      \] 
-      \[ 
-        = x_{0} + \int_{t_{0}}^{t} f(s, u(s)) ds, \; \forall t \in I. 
-      \] 
-      que satisface la forma integral del PVI.
-  \end{enumerate}
-%\end{dem}
+  Si $x_{1}^*, x_{2}^*$ son dos puntos fijos, entonces
+  \[ 
+    | f(x_{1}^*) - f(x_{2}^*) | = | x_{1}^* - x_{2}^* | \geq d | x_{1}^* - x_{2}^* | \Rightarrow | x_{1}^* - x_{2}^* | = 0.
+  \] 
+  es contradicción
 \end{dem}
 
-\section{Peano}
+\subsection{Teorema Existencia y Unicidad Picard}
+
+\begin{theo}
+  Sea $U \subset \mathbb{R}^{d}$ abierto, $u_{0} \in U$, $f \in \mathcal{C}^{0,1-}([0, T] \times U, \mathbb{R}^{d})$. Entoces, $\forall T_{E}$ existe, a lo sumo, una solución del PVI. Además, $\exists T_{E}: 0 < T_{E} \leq T$ tal que la soulución es única.
+\end{theo}
+
+\begin{dem}
+  Demos
+\end{dem}
+
+\section{Teorema de Peano}
+
+\begin{note}
+  Demostramos que existe al menos una solución del PVI sin la condición Lipschitz.
+\end{note}
+
+\subsection{Equicontinuidad y Compacidad Relativa}
+
+CAMBIAR NOTACIÓN
 
 \begin{defn}[Solución Aproximada de ecuación diferencial]
   Sea $\epsilon > 0$, $u: J_{u} \to D$. Entonces, decimos que $u$ es solución $\epsilon$-aproximada de la ecuación diferencial \[ 
@@ -398,12 +449,16 @@ Revisar notación $t \in J$
   entonces, $u$ es una solución $\epsilon$-aproximada de $\dot{x} = f(t, x)$.
 \end{dem}
 
+\subsection{Teorema de Existencia de Peano}
+
+CAMBIAR NOTACIÓN
+
 \begin{theo}[Peano]
-  Sea $f \in C(J \times D, E)$. Entonces, el PVI 
+  Sea $f \in C([0,T] \times \overline{\mathbb{B}}(u_{0},R), \mathbb{R}^{d})$. Entonces, el PVI 
   \[ 
     \dot{x} = f(t,x), \; x(t_{0}) = x_{0} 
   \] 
-  tiene alemnos una solución $u$ en $[t_{0} - \alpha, t_{0} + \alpha]$ con $u([t_{0}  \alpha, t_{0} +\alpha]) \subset \overline{\mathbb{B}}(x_{0}, b)$.
+  tiene al menos una solución $u$ en $[t_{0} - \alpha, t_{0} + \alpha]$ con $u([t_{0} + \alpha, t_{0} +\alpha]) \subset \overline{\mathbb{B}}(x_{0}, b)$.
 \end{theo}
 
 \begin{dem}
@@ -417,7 +472,7 @@ Revisar notación $t \in J$
   \] 
   $ \Rightarrow \{ u_{n} \}_{n \in \mathbb{N}}$ está acotada en $C(\overline{J}_{\alpha}, E)$. Por tanto, $\{ u_{n} \}_{n \in \mathbb{N}}$ es precompacto. \\
 
-  Entonces, por el teorema de Ascoli, $\exists \{ u_{n_{k}} \}: u_{n_{k}} \xrightarrow[]{ k \rightarrow \infty} u \in C(\overline{J}_{\alpha}, E) \Rightarrow u_{n_{k}} \rightarrow u$ uniformrmente. \\
+  Entonces, por el teorema de Ascoli, $\exists \{ u_{n_{k}} \}: u_{n_{k}} \xrightarrow[]{ k \rightarrow \infty} u \in C(\overline{J}_{\alpha}, E) \Rightarrow u_{n_{k}} \rightarrow u$ uniformemente. \\
 
   Sea
   \[
@@ -445,115 +500,8 @@ Revisar notación $t \in J$
   que satisface la forma integral del PVI.
 \end{dem}
 
-\section{Banach}
+\section{Teorema de Extensión}
 
-\begin{defn}[Función Contractiva]
-  Sea $X$ un espacio métrico y $f: X \to X$. Entonces, se dice que $f$ es una contracción si $\exists \alpha \in (0,1)$ tal que
-  \[ 
-    | f(x) - f(y) | \leq \alpha | x - y |, \; \forall x, y \in X.
-  \] 
+\begin{defn}[Intervalo Maximal de Existencia]
+  Sea $U \subset \mathbb{R}^{d}$ abierto y $f \in C^{0,1-}([0, T] \times U, \mathbb{R}^{d})$, $u_{0} \in U$.
 \end{defn}
-
-\begin{obs}
-  Si $f$ es contracción decimos que $x \in X$ es un punto fijo si $f(x) = x$. Además, 
-\end{obs}
-
-\begin{theo}[del Punto Fijo de Banach]
-  Sea $(X, d)$ un espacio métrico completo, $f: X \to X$ una aplicación contractiva. Entonces, $\exists ! x^* \in X : f(x^*) = x^*$. Además, $\forall x_{0} \in X$ , $x_{n+1} = f(x_{n}), n \in \mathbb{N}$. Entonces, $x_{n} \xrightarrow[ n \rightarrow \infty ]{} x^*$.
-\end{theo}
-
-\begin{dem}
-  Sea $| x_{1} - x_{0} | = d$. Entonces, 
-  \[ 
-    | x_{n+1} - x_{n} | = | f(x_{n}) - f(x_{n-1}) | \leq \alpha | x_{n} - x_{n-1} |\leq \cdots \leq \alpha^n d
-  \] 
-  donde $\alpha \in (0,1)$ 
-  \[
-    \Rightarrow \lim_{k \to \infty}\sum_{n=0}^{k} \alpha^n = \frac{1}{1 - \alpha}
-  \]
-  \[
-    \Rightarrow \forall \epsilon > 0, \exists N \in \mathbb{N}: \alpha^N < \frac{\epsilon}{d}
-  \]
-  \[ 
-    \Rightarrow | x_{n+1} - x_{n} | \leq \epsilon, \forall n \geq N
-  \] 
-  Entonces, la sucesión $(x_{n})$ es de Cauchy y $X$ completo $\Rightarrow \lim_{n \to \infty} x_{n} = x^*$. Además
-  \[ 
-    x^* = \lim_{n \to \infty} x_{n} = \lim_{n \to \infty} f(x_{n-1}) = f( \lim_{n \to \infty} x_{n-1}) = f(x^*)
-  \] 
-  $\Rightarrow x^*$ es un punto fijo de $f$. \\
-
-  Si $x_{1}^*, x_{2}^*$ son dos puntos fijos, entonces
-  \[ 
-    | f(x_{1}^*) - f(x_{2}^*) | = | x_{1}^* - x_{2}^* | \geq d | x_{1}^* - x_{2}^* | \Rightarrow | x_{1}^* - x_{2}^* | = 0.
-  \] 
-  es contradicción
-\end{dem}
-
-\begin{theo}
-  Sean $J \subset \mathbb{R}$ abierto, $E$ espacio de Banach, $D \subset E$. Sea $f \in C^{0,1-}( J \times D, E)$, $(t_{0}, x_{0}) \in J \times D$ y $a, b, \lambda, M \in \mathbb{R}$ tal que $R = [t_{0} - a, t_{0} + a] \times \overline{\mathbb{B}}(x_{0}, b) \subset J \times D$ y $| f(t,x) |\leq M, \forall (t,x) \in R$, $\alpha = \min\big ( a, \frac{b}{M} \big )$ y $I = [t_{0} - \alpha, t_{0} +\alpha]$. Entonces el PVI
-  \[ 
-    \dot{x} = f(t, x), x(t_{0}) = x_{0}, 
-  \] 
-  tiene solución única $u: I \to \mathbb{B}(x_{0}, b)$
-\end{theo}
-
-\begin{dem}
-  Sea $T: X \to C(J \times D, E)$ una aplicación
-  \[
-    v(t) \mapsto T v(t) = x_{0} + \int_{t_{0}}^{t} f(s, v(s)) ds, \; \forall t \in I,
-  \]
-  donde $X = \{ v \in C(I, E) : v(t_{0}) = x_{0}, ||v -v_{0}||\leq b, v_{0}(t) = x_{0}, \forall t \in I \}$. \\
-
-  Dado que, $f$ es Lipschitz continua respecto a $x$
-  \[ 
-    \Rightarrow | f(t,x) - f(\overline{t},\overline{x}) | \leq \lambda | x - \overline{x} |, \; \forall (t,x), (\overline{t}, \overline{x}) \in R
-  \] 
-  Sean $v, \overline{v} \in X$, entonces
-  \[ 
-    \Rightarrow | Tv(t) - T\overline{v}(t) | = | \int_{t_{0}}^{t} f(s, v(s)) - f(s, \overline{v}(s)) ds |
-  \] 
-  \[ 
-    \leq \lambda \int_{t_{0}}^{t} | v(s) - \overline{v}(s) | ds
-  \] 
-  \[ 
-    \leq \lambda \int_{t_{0}}^{t} \sup_{l \in [t_{0}, t]}| v(l) - \overline{v}(l) | ds
-  \] 
-  \[ 
-    \leq \lambda \int_{t_{0}}^{t} || v - \overline{v} || ds
-  \] 
-  \[ 
-    = \lambda (t - t_{0}) || v - \overline{v} ||, \; \forall t \in R
-  \] 
-%  Observando que
-%  \[ 
-%    | T^2 v(t) - T^2 \overline{v}(t) | \leq \alpha \int_{t_{0}}^{t} | Tv(s) - T \overline{v}(s) | ds
-%  \] 
-%  \[ 
-%    \leq \lambda^2 \int_{t_{0}}^{t} (t - t_{0})||v(t) - \overline{v}(t)|| ds 
-%  \] 
-%  \[ 
-%    = \frac{\alpha^2}{2}(t - t_{0})^2 ||v(t) - \overline{v}(t)||, \; \forall t \in R
-%  \] 
-%  \[
-%    \Rightarrow || Tv(t) - T^2 \overline{v} (t) || \leq \frac{\alpha^2}{2!}(t - t_{0})^2 ||v(t) - \overline{v}(t)||
-%  \]
-%  \[
-%    \Rightarrow || T^2v(t) - T^3 \overline{v} (t) || \leq \frac{\alpha^3}{3!}(t - t_{0})^3 ||v(t) - \overline{v}(t)||
-%  \]
-%  \[
-%    \Rightarrow || T^{n}v(t) - T^{n} \overline{v}(t) || \leq \frac{\alpha^n}{n!}(t - t_{0})^n ||v(t) - \overline{v}(t)||
-%  \]
-  Entonces, $T$ es una contracción $\forall v, \overline{v} \in X, \forall t \in I$. \\
-
-  Sea $\{ u_{m} \}_{ m \in \mathbb{N}}$ una sucesión de funciones en $X$ tal que
-  \[
-    u_{m+1}(t) = x_{0} + \int_{t_{0}}^{t} f(s, u_{m}(s)) ds, \; \forall m \in \mathbb{N}, \forall t \in I.
-  \] 
-  Entonces, $u_{m} \xrightarrow[]{ m \rightarrow \infty } u$ uniformemente 
-  \[ 
-    u(t) = x_{0} + \int_{t_{0}}^{t} f(s, u(s)) ds, \; \forall t \in I. 
-  \] 
-  que es solución única del PVI.
-\end{dem}
-

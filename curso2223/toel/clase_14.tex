@@ -1,0 +1,98 @@
+\begin{defn}[Espacio Regular]
+  Sea $( X, \mathcal{T} )$ e.t. Diremos que es regular si $\forall C$ cerrado de $( X, \mathcal{T} )$, $\forall x \in X : x \not \in C, \exists U , V \in \mathcal{T}$ disjuntos tal que $x \in U, C \subset V$. Diremos que es $T_{3}$ si es regular y $T_{0}$.
+\end{defn}
+
+\begin{obs}
+  Regular y $T_{0}$ $\Leftrightarrow $ regular y $ T_{1}$ $\Leftrightarrow$ regular y $T_{2}$.
+\end{obs}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item [($\Rightarrow$)] $( X, \mathcal{T} )$ regular y $T_{0} \Rightarrow$ $\forall x,y \in X : x \neq y$, $\exists \mathcal{U}^{x} \in \mathcal{T}: y \in \mathcal{U}^{x} \Rightarrow X \setminus \mathcal{U}^{x}$ es cerrado $\Rightarrow \exists V_{i} \in \mathcal{T}, i \in \{  1, 2 \}$ disjuntos tal que $x \in V_{1}, y \in X \setminus \mathcal{U}^{x} \subset V_{2} \Rightarrow$ es $T_{2}$.
+    \item [($\Leftarrow$)] Trivial.
+  \end{enumerate}
+\end{dem}
+
+\begin{obs}
+  $T_{3} \Rightarrow T_{2}$.
+\end{obs}
+
+\begin{obs}
+  Regular $\not \Rightarrow T_{0}$.
+\end{obs}
+
+\begin{prop}
+  Sea $( X, \mathcal{T} )$ e.t.. Entonces, son equivalentes
+  \begin{enumerate}[label=(\roman*)]
+    \item $( X, \mathcal{T} )$ regular
+    \item $\forall x \in X : \forall U \in \mathcal{T} : x \in U, \exists V \in \mathcal{T}: x \in V \subset \overline{V} \subset U$.
+    \item $\forall x \in X, \exists \mathcal{B}$ base de entornos de $x$ cerrados en $( X, \mathcal{T} )$.
+  \end{enumerate}
+\end{prop}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item []
+    \item [($i \Rightarrow ii$)] $x \in U \in \mathcal{T} \Rightarrow x \not \in X \setminus U$ cerrado $ \Rightarrow \exists V_{i}  \in \mathcal{T}, i \in \{  1, 2 \}: X \setminus U \subset V_{2} \Rightarrow V_{1} \subset X \setminus V_{2}$ cerrado $\Rightarrow \overline{V_{1}} \subset X \setminus V_{2} \Rightarrow x \in V_{1} \subset \overline{V_{1}} X \setminus V_{2} \subset U$.
+  \item [($ii \Rightarrow iii$)] $\forall x \in X, \{ \overline{V} : V \in \mathcal{T}, x \in V \}$ es base de entornos cerrados $ \Rightarrow \forall \mathcal{U}^{x}, x \in \mathring{\mathcal{U}^{x}} \Rightarrow \exists V \in \mathcal{T}: x \in V \subset \overline{V} \subset \mathring{\mathcal{U}^{x}}} \subset \mathcal{U}^{x}$.
+    \item [($iii \Rightarrow i$)] $x \not \in C$ cerrado $\Rightarrow x \in X \setminus C \in \mathcal{T} \Rightarrow \exists V$ entorno cerrado de $x: V \subset X \setminus C \Rightarrow x \in \mathring{V} \in \mathcal{T}$ y $C \subset X \setminus V$ disjuntos.
+  \end{enumerate}
+\end{dem}
+
+\begin{obs}
+  La regularidad ( y ser $T_{3}$) son invariantes topológicos.
+\end{obs}
+
+\begin{prop}
+  Todo subespacio de uno regular ($T_{3}$) es regular $( T_{3})$.
+\end{prop}
+
+\begin{dem}
+  $( X, \mathcal{T} )$ regular $E \subset X, \forall C$ cerrado de $(E, \mathcal{T}|_{E})$, $\forall x \in E: x \not \in C \Rightarrow \exists F$ cerrado de $( X, \mathcal{T} )$ tal que $C = F \cap E \Rightarrow x \not \in F \Rightarrow \exists U, V \in T$ disjuntos tal que $x \in U, F \subset V \Rightarrow U \cap E, V \cap E \in \mathcal{T}|_{E}$ disjuntos tal que $x \in U \cap E, C \subset V \cap E$.
+\end{dem}
+
+\begin{prop}
+  Sea $\{ ( X_{j}, \mathcal{T}_{j} ) \}_{j \in J}$ familia de e.t.. Entonces $( \prod_{j \in J} X_{j}, \prod_{j \in J} \mathcal{T}_{j} )$ es regular ($T_{3}$) $\Leftrightarrow \forall j \in J, ( X_{j}, \mathcal{T}_{j} )$ es regular $(T_{3})$.
+\end{prop}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item [($\Rightarrow$)] Trivial
+    \item [($\Leftarrow$)] $\forall x = ( x_{j} )_{j \in J} \in \prod_{j \in J} X_{j}$, $\forall \mathcal{U}^{x}$ entorno de $x$ $\Rightarrow \exists B \subset \mathcal{B}$ base de $\prod_{j \in J} \mathcal{T}_{j}$ tal que $ x \in B \subset \mathcal{U}^{x}, B = \bigcap_{k=1}^{n} p_{j_{k}}^{-1}(U_{j_{k}})$ donde $U_{j_{k}} \in \mathcal{T}_{j_{k}}$. Entonces, $x \in B \Rightarrow x_{j_{k}} \in U_{j_{k}}, \forall k \in \{ 1, \cdots , n\} \Rightarrow \exists \mathcal{V}^{x_{j_{k}}}$ entorno cerrado de $x_{j_{k}}, \forall k \in \{  1, \cdots, n \}$ tal que $\mathcal{V}^{x_{j_{k}}} \subset U_{j_{k}} \Rightarrow \bigcap_{k = 1}^{n}p_{j_{k}}^{-1} (\mathcal{V}^{x_{j_{k}}}) \subset B \subset \mathcal{U}^{x}$ entorno cerrado de $x$, que es la caracterización antrior de regular.
+  \end{enumerate}
+\end{dem}
+
+\begin{prop}
+  Sea $\{ ( X_{j}, \mathcal{T}_{j} ) \}_{j \in J}$ familia de e.t.. Entonces, $( \sum_{k \in J} X_{k}, \sum_{k \in J} \mathcal{T}_{k})$ es regular $(T_{3}) \Leftrightarrow \forall j \in J, ( X_{j}, \mathcal{T}_{j} )$ regular $(T_{3})$.
+\end{prop}
+
+ \begin{dem}
+   \begin{enumerate}[label=(\roman*)]
+     \item [($\Rightarrow$)] $\forall j_{0} \in J, X_{j_{0}}$ es homeomorfo a $X_{j_{0}} \times \{ j_{0} \} \subset \sum_{ j \in J } X_{j}$.
+     \item [($\Leftarrow$)] $\forall x \in \sum_{ j \in J } X_{j} \Rightarrow (\text{ por ser unión disjunta }) \exists! j_{0} \in J: x \in X_{j_{0}} \times \{ x_{j_{0}} \}$ que es homeomorfo a $ X_{j_{0}}$.
+   \end{enumerate}
+ \end{dem}
+
+ \begin{obs}
+   El coiente e.t. $T_{3}$ no es necesariamente regular.
+ \end{obs}
+
+ \begin{ejm}
+   pg. 50
+ \end{ejm}
+
+ \begin{defn}
+   Sea $( X, \mathcal{T} )$ e.t.. Diremos que $( X, \mathcal{T} )$ es completamente regular si $\forall x \in X, \forall C$ cerrado de $( X, \mathcal{T} )$, $x \not \in C, \exists f: ( X, \mathcal{T} ) \to [0,1]$ continua, $f(x) = 0, f(C) = \{ 1 \}$. Diremos que es $T_{3a}$ si es completamente regular y $T_{1}$
+ \end{defn}
+
+  \begin{obs}
+    $( X, \mathcal{T} )$ es completamente regular $\Leftrightarrow \forall C$ cerrado, $\forall x \not \in C, \exists g: ( X, \mathcal{T} ) \to [0,1]$ continua tal que $ f(x) = 1, g(C) = \{  C \}$.
+  \end{obs}
+
+  \begin{obs}
+    completamente regular $\Rightarrow$ regular.
+  \end{obs}
+
+  \begin{obs}
+    $T_{3} \not \Rightarrow T_{3a}$.
+  \end{obs}

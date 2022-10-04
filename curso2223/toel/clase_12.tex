@@ -54,9 +54,21 @@
   Sea $( X, \mathcal{T} )$ e.t.. Se dice que es $T_{0}$ si $\forall x, y \in X, x \neq y \Rightarrow \exists \mathcal{U}^{x} : y \not \in \mathcal{U}^{x} $ ó $ \exists \mathcal{U}^{y} : x \not \in \mathcal{U}^{y}$.
 \end{defn}
 
+\begin{ejm}
+  Sea $\mathcal{R}$ una relación en $X$ tal que $x \mathcal{R} y \Leftrightarrow \overline{\{ x \}} = \overline{\{ y \}}$. Entonces, $\mathcal{R}$ es una relación de equivalencia en $X$ y el espacio cociente resultante $( X/\cali{R}, \mathcal{T}/\cali{R} )$ es $T_{0}$.
+\end{ejm}
+
+\begin{obs}
+  Los subespacios o espacios productos genereados a partir de espacios $T_{0}$ son también $T_{0}$, pero los espacios cocientes no lo son necesariamente.
+\end{obs}
+
 \begin{defn}
   Sea $( X, \mathcal{T} )$ e.t.. Se dice que es $T_{1}$ si $ \forall x, y \in X, x \neq y \Rightarrow \exists \mathcal{U}^{x}: y \not \in \mathcal{U}^{x}, \exists \mathcal{U}^{y}: x \not \in \mathcal{U}^{y}$.
 \end{defn}
+
+\begin{obs}
+  $( X, \mathcal{T} )$ es $T_{1}$ si y solo si $\forall x, y \in X : x \neq y$ existe un entorno de cada uno que no contiene al otro.
+\end{obs}
 
 \begin{obs}
   $T_{1} \Rightarrow T_{0}$
@@ -78,7 +90,7 @@
 \begin{dem}
   \begin{enumerate}[label=(\roman*)]
     \item []
-    \item [$  (a \Rightarrow b)$] Sea $X T_{1}, x \in X$ entonces, $\forall y \neq x, \exists \mathcal{U}^{y}: \mathcal{U}^{y} \subset X \setminus \{ x \} \Rightarrow X \setminus \{ x \} \in \mathcal{T} \Rightarrow \{ x \}$ es cerrado de $( X, \mathcal{T} )$.
+    \item [$  (a \Rightarrow b)$] Sea $( X, \mathcal{T} )$ e.t. $T_{1}, x \in X$ entonces, $\forall y \neq x, \exists \mathcal{U}^{y}: \mathcal{U}^{y} \subset X \setminus \{ x \} \Rightarrow X \setminus \{ x \} \in \mathcal{T} \Rightarrow \{ x \}$ es cerrado de $( X, \mathcal{T} )$.
     \item $A \subset X \Rightarrow A = \bigcap_{x \in X \setminus A} X \setminus \{ x \} \Rightarrow A \subset \bigcap_{G \in \mathcal{T} A \subset G} G \subset \bigcap_{x \in X \setminus E} (X \setminus \{ x \}) = A$.
     \item $\forall x, y \in X : x \neq y$, $\{ x \} = \bigcap_{G \in \mathcal{T}; \{ x \} \subset G} G \Rightarrow \exists \mathcal{G}^{x} \in \mathcal{T} : y \in \mathcal{G}^{x} \Rightarrow T_{1}$.
   \end{enumerate}

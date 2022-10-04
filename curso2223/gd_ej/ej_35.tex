@@ -1,0 +1,70 @@
+
+\begin{ejr}[35]
+  Sea $\alpha  : I \subset \mathbb{R} \to \mathbb{R}^{3}$ curva p.p.a., $M: \mathbb{R}^3 \to \mathbb{R}^3$ movimiento rígido y $\beta = M \circ \alpha$ curva. Demostrar
+  \begin{enumerate}[label=(\roman*)]
+    \item $M$ conserva la orientación $\Rightarrow k_{\beta} = k_{\alpha}$, $\tau_{\beta} = \tau_{\alpha}$,
+    \item $M$ invierte la orientación $\Rightarrow k_{\beta} = k_{\alpha}$, $\tau_{\beta} = - \tau_{\alpha}$.
+  \end{enumerate}
+\end{ejr}
+
+\begin{sol}[35]
+  Sea $\beta = (M  \circ \alpha)$ donde $\phi: \mathbb{R}^3 \to \mathbb{R}^3 : t \mapsto \phi(t) = At + \vec{v}$ es un movimiento rígido con $A$ matriz ortonormal asociada a la isometría y $\vec{v} \in \mathbb{R}^3$.
+  
+  Sea $\alpha$ p.p.a entonces,
+  \[ 
+    ||\beta'|| = ||(M \circ \alpha )'|| = ||A \alpha'|| = ||\alpha'|| = 1
+  \] 
+  $\beta$ es p.p.a.. Esto se debe a que
+  \[ 
+    \frac{d}{dt}(M(t)) = \frac{d}{dt}(At + \vec{v}) = A
+  \]
+  \[ 
+    \Rightarrow \frac{d{}}{d{t}}(M \circ \alpha)(t) = \frac{d{}}{d{t}}(A \alpha(t) + \vec{v}) = \frac{d{}}{d{t}}(A \alpha'(t))
+  \] 
+  y dado que $A$ es ortonormal, es decir, $A^{t} = A^{-1}$
+  \[
+    \Rightarrow ||A x|| = \sqrt{ Ax \cdot Ax } = \sqrt{ x \cdot A^{t}A } = ||x||, \; \forall x \in \mathbb{R}^{3}
+  \]
+  $\Rightarrow A$ conserva la norma. \\
+
+
+  Para la curvatura de $\beta$, que es $k_{\beta} = ||\beta''||$, tenemos que
+  \[ 
+    k_{\beta} = ||(M \circ \alpha)''|| = ||(A \alpha + \vec{v})''|| = ||A \alpha''|| = ||\alpha''|| =  k_{\alpha}
+  \]
+  dado que $A$ es la matriz asociada a la ismoetría del movimiento rígido $M$, y conserva la norma. Entonces, $k_{\beta} = k_{\alpha} \Rightarrow$ la curvatura es invariante por movimiento rígido.  \\
+
+  Y para la torsión de $\beta$ que es
+  \[ 
+   \tau_{\beta} = (\beta ' \times \beta '') \cdot \beta''' = (A \alpha' \times A \alpha'') \cdot A \alpha'''
+  \] 
+  \[ 
+    = \det(A) A (\alpha' \times \alpha'') \cdot A \alpha'''
+  \] 
+  \[ 
+    = \det(A) (\alpha' \times \alpha'') \cdot \alpha'''
+  \] 
+  \[ 
+    = \det(A) \tau_{\alpha}
+  \] 
+  donde
+  \[ 
+     det(A) =
+    \begin{cases}
+     1, \text{ si $A$ conserva la orientación }\\
+     -1, \text{ si $A$ invierte la orientación }\\
+    \end{cases} 
+  \] 
+  esto se debe a que el producto vectorial bajo transformaciones de matrices obedece $(Ba) \times (Bb) = (\det(B))(B^{-1})^t (a \times b), B \in \mathcal{M}_{3 \times 3}, a y b$ vectores
+
+ACABAR -> isometría ortgonal $A^{-1}^t = A$\\\
+
+  Por tanto, la torsión de $\beta$ es
+  \[ 
+    \tau_{\beta} =
+    \begin{cases}
+      \tau_{\alpha}, \text{ si $A$ conserva la orientación} \\
+      -\tau_{\alpha}, \text{ si $A$ invierte la orientación}
+    \end{cases}
+  \] 
+\end{sol}

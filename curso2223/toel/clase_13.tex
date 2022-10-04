@@ -1,0 +1,77 @@
+\begin{cor}
+  Sean $( X, \mathcal{T} ), ( Y, \mathcal{S} )$ e.t., $( Y, \mathcal{S} )$ es $T_{2}$, $f: ( X, \mathcal{T} ) \to ( Y, \mathcal{S} )$ aplicación. Entonces, $G_{f} = \{  (x, f(x)) : x \in X \}$ es cerrado en $(X \times Y, \mathcal{T} \times \mathcal{S})$.
+\end{cor}
+
+\begin{dem}
+  $Y$ es $T_{2} \Rightarrow \Delta_{Y}$ es cerrado en $Y \times Y$, $f$ continua $\Rightarrow f \times 1_{Y}: ( X, \mathcal{T} ) \times ( Y, \mathcal{S} ) \to ( Y, \mathcal{S} ) \times ( Y, \mathcal{S} )$ continua $\Rightarrow (f \times 1_{Y})^{-1}(\Delta_{Y}) = \{ (x, y) \in X \times Y : f(x) = y \}$ es cerrado. 
+\end{dem}
+
+\begin{prop}
+  Sean $( X, \mathcal{T} ), ( Y, \mathcal{S} )$ e.t., $( Y, \mathcal{S} )$ es $T_{2}$, $f: ( X, \mathcal{T} ) \to ( Y, \mathcal{S} )$ continua. Entonces, $ E =\{ (x_{1}, x_{2}) \in X \times X : f(x_{1}) = f(x_{2})\}$ es cerrado en $ ( X \times X, \mathcal{T} \times \mathcal{T})$
+\end{prop}
+
+\begin{dem}
+  $\forall (x_{1}, x_{2}) \subset (X \times X) \setminus E$, $f(x_{1}) \neq f(x_{2}) \Rightarrow \exists \mathcal{V}^{f(x_{i})}, i \in \{ 1,2 \}$ entorno de $x_{i}$, por ser $Y$ $T_{2}$. Como $f$ es continua $\Rightarrow f^{-1}(\mathcal{V}^{f(x_{i})})$ entorno de $x_{i} \Rightarrow f^{-1}(\mathcal{V}^{f(x_{1})}) \times f^{-1}(\mathcal{V}^{f(x_{i})})$ entorono de $(x_{1}, x_{2})$ en $( X \times X, \mathcal{T} \times \mathcal{T})$. Veamos que $f^{-1}(\mathcal{V}^{f(x_{1})}) \times f^{-1}(\mathcal{V}^{f(x_{i})}) \subset (X \times X) \setminus E$. Si $(z_{1}, z_{2}) \in E, (z_{1}, z_{2}) \in f^{-1}(\mathcal{V}^{f(x_{1})}) \times f^{-1}(\mathcal{V}^{f(x_{2})}) \Rightarrow f(z_{1})= f(z_{2})$ donde $f(z_{1}) \in \mathcal{V}^{f(x_{1})}$ y $ f(z_{2}) \in \mathcal{V}^{f(x_{2})}$ que es absurdo.
+\end{dem}
+
+\begin{prop}
+  Sean $ ( X, \mathcal{T} ), ( Y, \mathcal{S} )$ e.t., $f: ( X, \mathcal{T} ) \to ( Y, \mathcal{S} )$ aplicación suparyectiva y abierta. Entonces, $( Y, \mathcal{S} )$ es $ T_{2}$.
+\end{prop}
+
+\begin{dem}
+  $\forall y_{1}, y_{2} \in Y : y_{1} \neq y_{2} \Rightarrow (f \text{ supra})$ $\exists x_{i} \in X, i \in \{  1, 2 \}: f(x_{i}) = y_{i} \Rightarrow (x_{1}, x_{2}) \in (X \times X) \setminus E \Rightarrow (\text{ hip.})$ $ \exists \mathcal{U}^{x_{i}}, i \in \{  1, 2 \}: \mathcal{U}^{x_{1}} \times \mathcal{U}^{x_{2}} \subset (X \times X) \setminus E \Rightarrow (f \text{ ab.})$ $f(\mathcal{U}^{x_{i}}), i \in \{  1, 2 \}$ entorno de $y_{i}$. ¿Son disjuntos? Si $ \exists z \in f(\mathcal{U}^{x_{1}}) \cap f(\mathcal{U}^{x_{2}}) \Rightarrow z = f(t_{i}) : t_{i}  \in \mathcal{U}^{x_{i}}, i \in \{ 1, 2 \} \Rightarrow (t_{1}, t_{2}) \in E$ y $ (t_{1}, t_{2}) \in (\mathcal{U}^{x_{1}} \times \mathcal{U}^{x_{2}})$ que es absurdo.
+\end{dem}
+
+\begin{prop}
+  Sean $( X, \mathcal{T} ), ( Y, \mathcal{S} )$ e.t., $( Y, \mathcal{S} )$ es $T_{2}$, $f, g: ( X, \mathcal{T} ) \to ( Y, \mathcal{S} )$ aplicaciones continuas. Entonces, $\{ x \in X :  f(x) = g(x) \}$ es cerrado en $( X, \mathcal{T} )$.
+\end{prop}
+ 
+\begin{dem}
+  Sea $f \times g: ( X, \mathcal{T} ) \to ( Y, \mathcal{S} ) \times ( Y, \mathcal{S} )$ continua. Entonces, $Y$ es $T_{2}$ $\Leftrightarrow \Delta_{Y}$ es cerrado $\Rightarrow (f \times g)^{-1}(\Delta_{Y})$ cerrado en $( X, \mathcal{T} )$ donde $(f \times g)^{-1}(\Delta_{Y}) = \{  x \in X : f(x) = g(x) \}$.
+\end{dem}
+
+\begin{cor}
+  Sean $( X, \mathcal{T} ), ( Y, \mathcal{S} )$ e.t., $( Y, \mathcal{S} )$ es $T_{2}$, $f,g: ( X, \mathcal{T} ) \to ( Y, \mathcal{S} )$ aplicación continua. Si $\exists D$ denso en $ ( X, \mathcal{T} )$ tal que $ f|_{D} = g|_{D} \Rightarrow f= g$.
+\end{cor}
+ 
+\begin{dem}
+  $f|_{D} = g|_{D} \Rightarrow D \subset \{ x \in X : f(x) = g(x) \} = \mathcal{C} \Rightarrow \overline{D} \subset \overline{\mathcal{C}} = \mathcal{C}$ donde $\overline{D} = X \Rightarrow X = \mathcal{C} \Leftrightarrow f = g$.
+\end{dem}
+
+\begin{obs}
+  $T_{0}, T_{1}, T_{2}$ son invariantes topológicos.
+\end{obs}
+
+\begin{prop}
+  Todo subespacio de e.t. $T_{2}$ es $T_{2}$.
+\end{prop}
+
+\begin{dem}
+  Sea $( X, \mathcal{T} )$ $T_{2}$, $E \subset X$. Entonces, $\forall x_{1}, x_{2} \in E \subset X : x_{1} \neq x_{2} \Rightarrow \exists \mathcal{U}^{x_{1}}, \mathcal{U}^{x_{2}}$ entornos de $x_{1}$, $x_{2}$ en $( X, \mathcal{T} )$ disjuntos $\Rightarrow \mathcal{U}^{x_{1}} \cap E, \mathcal{U}^{x_{2}} \cap E$ entorno en $(E, \mathcal{T}|_{E})$ disjuntos.
+\end{dem}
+
+\begin{prop}
+  Sea $\{ ( X_{j}, \mathcal{T}_{j} ) \}_{j \in J}$ familia de e.t.. Entonces, $( \prod_{j \in J} X_{j}, \prod_{j \in J} \mathcal{T}_{j} )$ es $T_{2}$ $\Leftrightarrow ( X_{j}, \mathcal{T}_{j} )$ es $ T_{2}$, $\forall j \in J$.
+\end{prop}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item [($\Rightarrow$)] $\forall j \in J, \forall ( a_{j} )_{j \in J} \in \prod_{j \in J} X_{j}, \{ (x_{j})_{j \in J} \in \prod_{j \in J} X_{j} : x_{j} = a_{j}, \forall j \in J \setminus \{ 0 \} \} \subset \prod_{j \in J} X_{j}$ es homeomorfo a $X_{j_{0}} \times \{ ( a_{j} )_{j \in J \setminus {0}} \}$ que es homeomorfoa a $X_{j_{0}} \times \prod_{j \in J \setminus \{ 0 \}} \{ a_{j} \}$.
+    \item [($\Leftarrow$)] Ver despacio
+  \end{enumerate}
+\end{dem}
+
+\begin{prop}
+    Sea $\{ ( X_{j}, \mathcal{T}_{j} ) \}_{j \in J}$ familia de e.t.. Entonces, $( \prod_{j \in J} X_{j}, \prod_{j \in J} \mathcal{T}_{j} )$ es $T_{2}$ $\Leftrightarrow ( X_{j}, \mathcal{T}_{j} )$ es $ T_{2}$, $j \in J$.
+\end{prop}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item [($\Rightarrow$)] Sea $( \prod_{j \in J} X_{j}, \prod_{j \in J} \mathcal{T}_{j} )$ espacio $T_{2}$. Entonces, $\forall j \in J, b_{j} \in X_{j} \Rightarrow $ el subespacio $ \mathcal{S}_{j} = \{ x \in \prod_{j \in J} X_{j} : x_{j_{0}} = b_{j_{0}}, \forall j \neq j_{0} \}$ es $T_{2}$ y es homeomorfo a $X_{j}$ bajo la restricción de $\mathcal{S}_{j} $ a la proyeción $p_{j}$ $ \Rightarrow X_{j}$ es $T_{2}, \forall j \in J$.
+    \item [($\Leftarrow$)] Sea $( X_{j}, \mathcal{T}_{j} )$ e.t. $T_{2}$, $\\forall j \in J$. Entonces, $\forall x,y \in \prod_{j \in J} X_{j} : x \neq y \Rightarrow \exists j_{0} \in J : x_{j_{0}} \neq y_{j_{0}} \Rightarrow \exists \mathcal{U}^{x}_{j_{0}}, \mathcal{U}^{y}_{j_{0}}$ entornos disjuntos de $x_{j_{0}}$ e $y_{j_{0}}$ en $( X_{j_{0}}, \mathcal{T}_{j_{0}} ) \Rightarrow p_{j_{0}^{-1}(\mathcal{U}^{x}_{j_{0}})}, p_{j_{0}^{-1}(\mathcal{U}^{y}_{j_{0}})}$ entornos disjuntos de $x$ e $y$ en $( \prod_{j \in J} X_{j}, \prod_{j \in J} \mathcal{T}_{j} ) \Rightarrow ( \prod_{j \in J} X_{j}, \prod_{j \in J} \mathcal{T}_{j} )$ es $T_{2}$.
+  \end{enumerate}
+\end{dem}
+
+\begin{obs}
+  El cociente de un e.t. $T_{2}$ no es necesariamente $T_{2}$.
+\end{obs}

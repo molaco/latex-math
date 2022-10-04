@@ -11,3 +11,4 @@
 \contentsline {section}{\numberline {2.4}Funciones Harmónicas}{16}{}%
 \contentsline {section}{\numberline {2.5}Aplicaciones Conformes}{17}{}%
 \contentsline {section}{\numberline {2.6}Integral de Funciones Complejas sobre Curvas}{18}{}%
+\contentsline {section}{\numberline {2.7}Teorema de Cauchy}{22}{}%

@@ -1,0 +1,23 @@
+\begin{ejr}[40]
+  Sea $\alpha$ una curva $C^{\infty}$ con $k(s)>0$. Demostrar que el plano osculador en $\alpha(s)$ generado por $T(s), N(s)$ es el límite de los planos que pasan por las tripletas $\alpha(s_{1}), \alpha(s_{2}), \alpha(s_{3})$ cuando $s_{i} \rightarrow s$.
+\end{ejr}
+
+\begin{sol}[40]
+  Sea $\alpha: I \subset \mathbb{R} \to \mathbb{R}^{3}$ una curva regular p.p.a., $s_{1}, s_{2}, s_{3} \in I : \alpha(s_{1}), \alpha(s_{2}), \alpha(s_{3})$ puntos no alineados y $P(s_{1}, s_{2}, s_{3})$ el plano generado por $\alpha(s_{1}), \alpha(s_{2}), \alpha(s_{3})$. Sea la curva
+  \[
+    \phi(s) = \alpha(s) \cdot n(s_{1}, s_{2}, s_{3}), s \in I
+  \]
+  donde $n$ es el vector unitario perpendicular al plano $P$. Como
+  \[
+    \alpha(s_{i}) \in P(s_{1},s_{2},s_{3})  \Rightarrow \phi(s_{i}) = \alpha(s_{i}) \cdot n(s_{1}, s_{2}, s_{3}) = 0, \forall i \in \{ 1, 2, 3 \}
+  \]
+  entonces, por el teorema de Rolle
+  \[
+    \exists c_{i} \in (s_{i},s_{i+1}): \phi'(c_{i})= \alpha'(c_{i}) \cdot n(s_{1}, s_{2}, s_{3}) = 0, \forall i \in \{ 1, 2 \}
+  \]
+  Volviendo a aplicar el teorema de Rolle
+  \[
+    \exists t \in (c_{1},c_{2}) : \phi''(t) = \alpha''(t) \cdot n(s_{1},s_{2},s_{3}) = 0
+  \]
+  Por tanto, $n(s_{1}, s_{2}, s_{3}) = \alpha'(c_{i}) \times \alpha''(t), i \in \{ 1, 2 \}$. Si $s_{i} \rightarrow s_{0}$ entonces, $ n(s_{1}, s_{2}, s_{3}) \rightarrow \vec{n} = n(s_{0},s_{0},s_{0}) = \alpha'(s_{0}) \times \alpha''(s_{0}) \Rightarrow \vec{n}$ es normal al plano generado por $\alpha'$ y $\alpha''$, es decir, el límite de los planos que pasan por las tripletas $\alpha(s_{1}), \alpha(s_{2}), \alpha(s_{3})$ es el plano osculador, generado por $T, N$.
+\end{sol}

@@ -2,6 +2,10 @@
   Sean $( X, \mathcal{T} ), ( X', \mathcal{T}' )$ e.t. $f: X \to X'$ aplicación. Se dice que $f: ( X, \mathcal{T} ) \to ( X', \mathcal{T}' )$ es homeomorfismo si $f$ es biyectiva y $ f^{-1}$ es continua. En este caso, se dice que $( X, \mathcal{T} )$ es homeomorfo a $( X', \mathcal{T}' )$.
 \end{defn}
 
+\begin{obs}
+ Sean $( X, \mathcal{T} ), ( X', \mathcal{T}' )$ e.t., $f: X \to X'$ biyectiva. Entonces, $f$ es homeomorfismo si y solo si $A \in \mathcal{T} \Leftrightarrow f(A) \in \mathcal{T}'$.
+\end{obs}
+
 \begin{defn}[Invariante Topológico]
   Sea $(P)$ una propiedad de e.t.. Se dice que $(P)$ es un invariante topológico si para todo e.t. que cumpla $(P)$ todos los e.t. homeomorfos cumplen $(P)$.
 \end{defn}
@@ -30,14 +34,24 @@
 \begin{dem}
   \begin{enumerate}[label=(\roman*)]
     \item []
-    \item [(i $\Rightarrow$ ii)] $f$ homeomorfismo $\Rightarrow \exists f^{-1}$ aplicación continua $\Rightarrow \forall A' \in \mathcal{T}, (f^{-1}(A))^{-1} \in \mathcal{T}'$ donde $(f^{-1}(A))^{-1} = f(A) \Rightarrow f$ aplicación abierta.
-    \item [(ii $\Rightarrow$ i)] $f$ abierta y continua $\Rightarrow \forall A \in \mathcal{T}, f(A) \in \mathcal{T}'$ donde $ f(A) = (f^{-1}(A))^{-1} \Rightarrow f^{-1}$ aplicación continua.
+    \item [(i $\Rightarrow$ ii)] $f$ homeomorfismo $\Rightarrow \exists f^{-1}$ aplicación continua $\Rightarrow \forall A \in \mathcal{T}, ((f^{-1})^{-1}(A) \in \mathcal{T}'$ donde $((f^{-1})^{-1}(A) = f(A) \Rightarrow f$ aplicación abierta.
+    \item [(ii $\Rightarrow$ i)] $f$ abierta y continua $\Rightarrow \forall A \in \mathcal{T}, f(A) \in \mathcal{T}'$ donde $ f(A) = ((f^{-1})^{-1}(A) \Rightarrow f^{-1}$ aplicación continua.
     \item [(i $ \Leftrightarrow$ iii)] es análoga.
   \end{enumerate}
 
 \end{dem}
 
 \section{Espacio Producto}
+
+\begin{note}
+  Queremos construir nuevos espacios topológicos de los ya existentes. Nos gustaria que ocurriera como los subespacios topológicos, si $f$ es una función continua en un espacio topológico, también lo sea en el subespacio. \\
+
+  Dados $X, Y$, $X \times Y = \{ (x, y) : x \in X, y \in Y \}$. Si consideramos $( X, \mathcal{T} ), ( X', \mathcal{T}' )$ queremos ver que topología debemos usar para que poder trabajar con funciones. Si consideramos la topología $\mathcal{T} \times \mathcal{T}' \subset \mathcal{P}(X \times X¡)$ podemos ver que la unión de conjuntos de $\mathcal{T} \times \mathcal{T}'$ no pertenece a $\mathcal{T} \times \mathcal{T}'$. Entonces, eligimos la topología producto como la topología genereada por la base $\mathcal{T} \times \mathcal{T}',$
+  \[
+     \{ W \subset X \times Y : \forall (x, y) \in W, \exists U \times V \in \mathcal{T}\times \mathcal{T}' : (x, y) \in U \times V \subset W}
+  \]
+  .
+\end{note}
 
 \begin{defn}[Producto Cartesiano]
   Sea $\{ X_{j} \}_{j \in J} \neq \emptyset$ familia de conjuntos no vacios. Se llama producto castesiano de $\{ X_{j} \}_{j \in J}$ a 
@@ -86,6 +100,14 @@ La base engendrada por $\mathcal{S}$ es
 
 \begin{obs}
   El producto espacios discretos no es neceseariamente discreto.
+\end{obs}
+
+\begin{obs}
+  $\mathcal{B} = \{  \prod_{j \in J} B_{j} : B_{j} \in \mathcal{T}_{j}\}$.
+\end{obs}
+
+\begin{obs}
+  Si $\mathcal{B}_{j}$ es base de $( X_{j}, \mathcal{T}_{j} )$, entonces $\mathcal{B} = \{ \prod_{j \in J} B_{j} : B_{j} \in \mathcal{B}_{j} \}$ es base de $( \prod_{j \in J} X_{j}, \prod_{j \in J} \mathcal{T}_{j} )$.
 \end{obs}
 
 \begin{prop}

@@ -45,12 +45,12 @@
   Lanzar una moneda hasta obtener cara por primera vez. Aquí debemos considerar que se puede dar el caso en el que no se obtenga nunca cara y tiremos la moneda infinitas veces.
 \end{ejm}
 
-\begin{defn}[Espacio Muestra Continuo]
+\begin{defn}[Espacio Muestral Continuo]
   Sea $\Omega$ un espacio muestral. Entonces, decimos que $\Omega$ es continuo si no hay discontinuidades o cambios abrutos entre los elementos del espacio muestral.
 \end{defn}
 
 \begin{ejm}
-  El nivel del agua de un pantano entre los tiempos $t_{1}, t_{2}$. El espacio muestral $\Omega = \{  f_{t} ; t \in [t_{1}, t_{2}] \}$.
+  El nivel del agua de un pantano entre los tiempos $t_{1}, t_{2}$. El espacio muestral $\Omega = \{  f_{t} : t \in [t_{1}, t_{2}] \}$.
 \end{ejm}
 
 \section{Sucesos}
@@ -152,6 +152,243 @@ Sea $\Omega$ un espacio muestral, $\{ A_{n} \}_{n \in \mathbb{N}} \subset \mathc
         \lim \inf A_n = \bigcup_{k=1}^{\infty} \bigcap_{n=k}^{\infty} A_{n} = \bigcap_{n = 1}^{\infty} A_{n}
       \]
       Por tanto, $\lim \inf A_n  = \lim \sup A_n$.
-    \item 
+    \item Sea $\uparrow A_{n}$. Entonces, $A_{n} \subset A_{n + 1} \Rightarrow$
+      \[
+         \lim \sup A_n = \bigcap_{k=1}^{\infty} \bigcup_{n=k}^{\infty} A_{n} = \bigcup_{n = 1}^{\infty} A_{n}
+      \]
+      y
+      \[
+        \lim \inf A_n = \bigcup_{k=1}^{\infty} \bigcap_{n=k}^{\infty} A_{n} = \bigcup_{k = 1}^{\infty} A_{k}
+      \]
+      Por tanto, $\lim \inf A_n  = \lim \sup A_n$.
+ 
   \end{enumerate}
 \end{dem}
+
+\section{Estructuras con Subconjuntos}
+
+\subsection{Álgebra}
+
+\begin{defn}[Álgebra]
+  Dado el espacio total $\Omega$, una clase $\mathcal{Q} \subset \mathcal{P}(\Omega)$ tiene estructura de álgebra si y solo si
+  \begin{enumerate}[label=(\roman*)]
+    \item $\Omega, \emptyset \in \mathcal{Q}$,
+    \item $\forall A \in \mathcal{Q}, A^{c} \in \mathcal{Q}$
+    \item $\forall A, A' \in \mathcal{Q}, A \cap A' \in \mathcal{Q}$,
+  \end{enumerate}
+\end{defn}
+
+\begin{defn}[$\sigma$-Álgebra]
+  Dado el espacio total $\Omega$, una clase $\mathcal{Q} \subset \mathcal{P}(\Omega)$ tiene estructura de $\sigma$-álgebra si y solo si
+  \begin{enumerate}[label=(\roman*)]
+    \item $\Omega, \emptyset \in \mathcal{Q}$,
+    \item $\forall A \in \mathcal{Q}, A^{c} \in \mathcal{Q}$
+    \item $\forall \{ A_{j} \}_{j \in J} \subset \mathcal{Q}, \; \bigcap_{j \in J} A_{j} \in \mathcal{Q}$
+  \end{enumerate}
+\end{defn}
+
+\section{Espacio Medibles}
+
+\begin{defn}[Espacio Medible]
+  Sea $\Omega$ espacio muestralm $\mathcal{A} \subset \mathcal{P}(\Omega)$ $\sigma$-álgebra. Entoces, al par $(\Omega, \mathcal{A})$ lo llamamos espacio medible. Los elementos de $\mathcal{A}$ se llaman conjuntos medibles.
+\end{defn}
+
+\section{Probabilidad}
+
+\begin{defn}[Medida de Probabilida]
+  Sea $(\Omega, \mathcal{A})$ un espacio medible, $P: \mathcal{A} \to \mathbb{R}$ aplicación. Entonces, se dice que $P$ es una medida de probabilidad si cumpe
+  \begin{enumerate}[label=(\roman*)]
+    \item $\forall A \in \Omega, P(A) \geq 0$,
+    \item $P(\Omega) = 1$,
+    \item $\forall \{ A_{j} \}_{j \in J} \subset \mathcal{A}: A_{i} \cap A_{j} = \emptyset, \forall j \neq i \Rightarrow$
+      \[ 
+        P \Big ( \bigcup_{n = 1}^{\infty} A_{n} \Big ) = \sum_{ n = 1 }^{\infty} P(A_{n}).
+      \] 
+  \end{enumerate}
+\end{defn}
+
+\begin{prop}[Propiedades Medida Probabilidad]
+  \begin{enumerate}[label=(\roman*)]
+    \item []
+    \item $P(\emptyset)$,
+    \item $\forall \{ A_{j} \}_{j \in J}$ familia finita con elementos disjuntos dos a dos, entonces
+      \[ 
+        P \Big ( \bigcup_{k = 1}^{n} A_{k} \Big ) = \sum_{ k = 1 }^{k} P(A_{k}),
+      \] 
+    \item $\forall A \in \mathcal{A}, P(A^c) = 1 - P(A)$,
+    \item $\forall A,B \in \mathcal{A}: A \subset B, P(A) \leq P(B)$,
+    \item $\forall A \in \mathcal{A}, P(A) \leq 1$,
+    \item $\forall A,B \in \mathcal{A}, P(A \cap B) = P(A) + P(B) - P(A \cup B)$
+    \item $\forall \{ A_{j} \}_{j \in J} \subset \mathcal{A}, P \big (\bigcup_{i = 1}^{n} A_{j} \big) = \sum_{j = 1}^{\n} P(A_{j}) - \sum_{j_{1}, j_{1} = 1, j_{1} < j_{2}}^{\n} P(A_{j_{1}} \cap A_{j_{2}}) + \cdots + (-1)^{j+1} P \big ( \bigcap_{j = 1}^{n} A_{j} \big )$
+    \item $\forall A, B \in \mathcal{A}, P(A \cup B) \leq P(A) + P(B)$,
+    \item $\forall \{ A_{j} \}_{j \in J} \subset \mathcal{A}$ finita
+      \[ 
+        P \Big ( \bigcup_{j = 1}^{n} A_{j} \Big ) \leq \sum_{j = 1}^{n} P(A_{j})
+      \] 
+    \item $\forall \{ A_{j} \}_{j \in J} \subset \mathcal{A}$
+      \[ 
+        P \Big ( \bigcup_{j = 1}^{\infty} A_{j} \Big ) \leq \sum_{j = 1}^{\infty} P(A_{j})
+      \] 
+    \item $\forall \{ A_{j} \}_{j \in J} \subset \mathcal{A}$,
+      \[ 
+        P \Big ( \bigcap_{j = 1}^{\infty} A_{j} \Big ) \geq 1 - \sum_{j = 1}^{\infty} P(A^{c}_{j})
+      \] 
+  \end{enumerate}
+\end{prop}
+
+\section{Espacio de Probabilidad}
+
+\begin{defn}[Espacio de Probabilidad]
+  Sea $\Omega$ espacio muestra, $\mathcal{A} \subset \mathcal{P}(\Omega)$ $\sigma$-álgebra, $P$ medida de probabilidad. Entonces, a la terna $(\Omega, \mathcal{A}, P)$ se le llama espacio de probabilidad. Los elementos de $\mathcal{A}$ se llaman sucesos.
+\end{defn}
+
+\section{Continuidad Secuencial de la Probabilidad}
+
+\begin{theo}
+  Sea $(\Omega, \mathcal{A}, P)$ un espacio de probabilidad, $\{ A_{j} \}_{j \in J} \subset \mathcal{A}, \uparrow A_{j}$. Entonces, 
+  \[ 
+    P(\lim_{n \to \infty} A_{n}) = \lim_{n \to \infty} P(A_{n}).
+  \] 
+\end{theo}
+
+\begin{dem}
+  $A_{n} \uparrow \Rightarrow \lim_{n \to \infty} A_{n} = \bigcup_{n = 1}^{\infty} A_{n} $. Sea $A$ tal que
+  \[
+    A = A_{1} \cup \Bigg[ \bigcup_{j = 1}^{\infty} (A_{j+1} - A_{j}) \Bigg]
+  \]
+  entonces, $A$ es unión de conjuntos disjuntos. Aplicado la aditividad finita tenemos que 
+  \[ 
+    P(A) = P(A_{1}) + \sum_{j =1}^{\infty} (A_{j+1} - A_{j})  
+  \] 
+  \[ 
+    = P(A_{1}) + \lim_{n \to \infty} \sum_{j = 1}^{n} (P(A_{j+1}) - P(A_{j})) 
+  \] 
+  \[ 
+    = \lim_{n \to \infty} \big ( P(A_{1}) + P(A_{2}) - P(A_{1}) + P(A_{3}) - P(A_{2}) + \cdots + P(A_{n+1})- P(A_{n}) \big )
+  \] 
+  \[ 
+    = \lim_{n \to \infty} P(A_{n+1}) = \lim_{n \to \infty} P(A_{n}) .
+  \] 
+\end{dem}
+
+\begin{theo}
+  Sea $(\Omega, \mathcal{A}, P)$ un espacio de probabilidad, $\{ A_{j} \}_{j \in J} \subset \mathcal{A}, \downarrow A_{j}$. Entonces, 
+  \[ 
+    P(\lim_{n \to \infty} A_{n}) = \lim_{n \to \infty} P(A_{n}).
+  \] 
+\end{theo}
+
+\begin{dem}
+  $A_{n} \downarrow \Rightarrow \exists \lim_{n \to \infty} A_{n} = \bigcap_{n=1}^{\infty} A_{n} = A$ y $A^{c}_{n} \uparrow \Rightarrow$ (por la proposición anterior) 
+  \[ 
+    P(\lim_{n \to \infty} A^c_{n}) = \lim_{n \to \infty} P(A^{c}_{n})  
+  \] 
+  donde $\lim_{n \to \infty} A^c_{n} = A^c$. \\ 
+
+  Ahora,
+  \[ 
+    P(\lim_{n \to \infty} A_{n}) = P(A) = 1 - P(A^c) 
+  \]
+  \[ 
+    = 1 - P(\lim_{n \to \infty} A_{n}^c)  
+  \] 
+  \[ 
+    = 1 - \lim_{n \to \infty} P(A_{n}^c) 
+  \]
+  \[ 
+    = 1 - \lim_{n \to \infty} \big\{ 1 - P(A_{n}) \big\}  
+  \] 
+  \[
+    = 1 - 1 + \lim_{n \to \infty} P(A_{n}) = \lim_{n \to \infty} P(A_{n})
+  \] 
+\end{dem}
+
+\section{Probabilidad Condicionada}
+
+\begin{defn}[Probabilida Condicionada]
+  Sea $(\Omega, \mathcal{A}, P )$ un espacio de probabilidad y se $ A \subset \mathcal{A}$ un suceso tal que $P(A) > 0$. Entonces, decimos que
+  \[ 
+     P(B | A) = \frac{P(A \cap B)}{P(A)} , P(A) > 0
+  \] 
+  es la probabilidad de $B$ condiconada por $A$.
+\end{defn}
+
+\subsection{Teorema del producto}
+
+\begin{theo}[Regla multiplicación]
+  Sea $(\Omega, \mathcal{A}, P )$ un espacio de probabilidad, $A,B \mathcal{A}: P(A), P(B) > 0 $. Entonces,
+  \[ 
+    P(A \cap B) = P(A) \cdot P(B | A)  \text{ y}
+  \] 
+  \[ 
+    P(A \cap B) = P(B) \cdot P(A | B) 
+  \] 
+\end{theo}
+
+\subsection{Teorema de Probabilidad Total}
+
+\begin{theo}[Probabilidad Total]
+  Sea $(\Omega, \mathcal{A}, P )$ espacio de probabilidad, $\{ A_{n} \}_{n \in \mathbb{N}}\subset \mathcal{A}: A_{i} \cap A_{j} = \emptyset, \forall i \neq j, \bigcup_{n = 1}^{\infty} A_{n} = \Omega $. Entonces, para $B \in \mathcal{A}$
+  \[ 
+    P(B) = \sum_{ j = 1 }^{\infty}  P(B | A_{j})\cdot P(A_{j})
+  \] 
+  donde $P(A_{j}) > 0, \forall j \in \{ 1, 2, \cdots \}$
+\end{theo}
+
+\begin{dem}
+  \[
+    P(B) = P( B \cap \Omega) 
+  \]
+  \[
+    = P \Big ( B \cap \Big[ \bigcup_{i=1}^{\infty} A_{i} \Big] \Big ) 
+  \]
+  \[
+    = P \Big (\bigcup_{i = 1}^{\infty} (B \cap A_{i}) \Big )
+  \]
+  \[ 
+    = \sum_{i = 1}^{\infty} B \cap A_{i} 
+  \] 
+  \[ 
+    = P(B | A_{i}) \cdot P(A_{i}) , \ \forall i \in \mathbb{N}.
+  \] 
+\end{dem}
+
+\begin{theo}[de Bayes]
+  Sea $(\Omega, \mathcal{A}, P )$ espacio de probabilidad, $\{ A_{n} \}_{n \in \mathbb{N}} \subset \mathcal{A}$ tal que $P(A_{i}) >0, \forall i \in \mathbb{N}, B \in \mathcal{A}: P(B) > 0$. Entonces,
+  \[ 
+    P(A_{i} | B) = \frac{P(A_{i})\cdot P(B | A_{i})}{\sum_{i = 1}^{\infty} P(A_{i}) P(B | A_{i})}, i \in \mathbb{N}.
+  \] 
+\end{theo}
+
+\begin{dem}
+  \[ 
+    P(A_{i} | B ) = \frac{P(A_{i} \cap B)}{P(B)} 
+  \] 
+  usando la independencia de sucesos y el teorema de la probaibilidad total tenemos que
+  \[ 
+    P(A_{i} | B)= \frac{P(A_{i}) \cdot P(B | A_{i})}{\sum_{i = 1}^{\infty} P(A_{i}) \cdot P(B | A_{i})}, i \in \mathbb{N}.
+  \] 
+\end{dem}
+
+\section{Independencia de Sucesos}
+
+\begin{defn}
+  Sea $(\Omega, \mathcal{A}, P )$ un espacio de probabilidad, $A, B \in \mathcal{A}$ con $P(B) > 0$. Entonces, $A$ y $B$ se dicen independientes si y solo si 
+  \[ 
+    P( A \cap B) = P(A) \cdot P(B) .
+  \] 
+\end{defn}
+
+\begin{prop}
+  Sea $(\Omega, \mathcal{A}, P )$ un espacio de probabilidad, $A, B \in \mathcal{A}$ tal que $A$ y $B$ son sucesos independientes. Entoces, 
+  \[ 
+    P(A | B) = P(A) \text{ si } P(B) > 0 \text{ y } 
+  \] 
+  \[ 
+    P(B | A) = P(B) \text{ si } P(A) > 0.
+  \] 
+\end{prop}
+
+\begin{prop}
+  Sea $(\Omega, \mathcal{A}, P )$ un espacio de probabilidad, $A, B \in \mathcal{A}$ tal que $A$ y $B$ son sucesos independientes. Entonces, también lo son $A^{c}$ y $B^{c}$, $A^{}$ y $B^{c}$, $A^{c}$ y $B^{}$.
+\end{prop}

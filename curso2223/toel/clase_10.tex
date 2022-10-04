@@ -10,17 +10,21 @@
 \end{dem}
 
 \begin{prop}
-  Sea $\{ ( X_{j}, \mathcal{T}_{j} ) \}_{j \in J}$ familia e.t., $\sigma: J \to J$aplicación biyectiva. Entonces, $( X_{j}, \mathcal{T}_{j} )$ y $( X_{\sigma(j)}, \mathcal{T}_{\sigma(j)} )$ son homeomorfos.
+  Sea $\{ ( X_{j}, \mathcal{T}_{j} ) \}_{j \in J}$ familia e.t., $\sigma: J \to J$ aplicación biyectiva. Entonces, $( X_{j}, \mathcal{T}_{j} )$ y $( X_{\sigma(j)}, \mathcal{T}_{\sigma(j)} )$ son homeomorfos.
 \end{prop}
 
 \begin{dem}
   Sea $\alpha ( \prod_{j \in J} X_{j}, \prod_{j \in J} \mathcal{T}_{j} ) \to ( \prod_{j \in J} X_{\sigma(j)}, \prod_{j \in J} \mathcal{T}_{\sigma(j)} ): ( x_{j} )_{j \in J} \mapsto \alpha(( x_{j} )_{j \in J}) = ( x_{\sigma(j)} )_{j \in J}$, $\alpha$ es biyectiva.
   \begin{enumerate}[label=(\roman*)]
-    \item $(p_{j} \circ \alpha) = p_{\sigma(j)}$ es composición de funciones continuas (Propiedad Unversal).
+    \item $(p_{j} \circ \alpha) = p_{\sigma(j)}$ son continuas (Propiedad Universal).
     \item $(p_{j} \circ \alpha)^{-1} = p_{\sigma(j)}^{-1}$ continua $\alpha^{-1}$ continua.
   \end{enumerate}
-  $\Rightarrow$ holomorfa.
+  $\Rightarrow$ homeomorfa.
 \end{dem}
+
+\begin{obs}
+  El producto de homeomorfismos es homeomorfismo.
+\end{obs}
 
 \begin{defn}
   Sea $(P)$ una propiedad de e.t.. Se dice que $(P)$ es multiplicativa si para toda familia e.t. cada una cumpliendo $(P)$, su producto topológico cumple $(P)$.
@@ -38,6 +42,10 @@
   \end{enumerate}
 \end{dem}
 
+ \begin{obs}
+   El producto de funciones continuas es una función continua.
+ \end{obs}
+
 \begin{prop}
   Sean $\{ ( X_{j}, \mathcal{T}_{j} ) \}_{j \in J}$, $\{ ( X'_{j}, \mathcal{T'}_{j} ) \}_{j \in J}$, $\forall j \in J$, $f_{j}: X_{j} \to X_{j}'$ aplicación continua. Entonces, $\prod_{j \in J} f_{j}: ( \prod_{j \in J} X_{j}, \prod_{j \in J} \mathcal{T}_{j} ) \to ( \prod_{j \in J} X'_{j}, \prod_{j \in J} \mathcal{T'}_{j} ): ( x_{j} )_{j \in J} \mapsto (\prod_{j \in J} f_{j})(( x_{j} )_{j \in J}) = (f_{j}(x_{j}))$ aplicación continua.
 \end{prop}
@@ -53,6 +61,12 @@ VER DIBUJO(Revisar abierta o continua)
 \end{dem}
 
 \section{Espacio Cociente}
+
+\begin{note}
+  La topología cociente es una construcción que formaliza la idea de "pegar". Decimos que $\mathcal{R}$ es una relación de equivalencia en un conjunto $X$ si es reflexiva, simétrica y transitiva. Una relación $\mathcal{R}$ en $X$ parte $X$ en clases de eqivalencia, denotadas $[ x ], \forall x \in X$. \\
+
+  La idea principal es, dado un espacio topológico $( X, \mathcal{T} )$ queremos describir como se pegan las cosas juntas en $( X, \mathcal{T} )$ mediante la definición de una relación de equivalencia. Dos puntos $x_{1}, x_{2}$ están relacionados si $x_{1} \mathcal{R} x_{2}$, se podría decir que $x_{1}, x_{2}$ se pegan entre si. Entonces, definimos una topología en el conjunto de clases de equivalencia $X / \mathcal{R}$ que conserve la topología en $X$ para aquellos puntos que no están relacionados y que "pegue" correctamente.
+\end{note}
 
 \begin{defn}[Topología Cociente]
   Sea $( X, \mathcal{T} )$ e.t., $Y \neq \emptyset, f: X \to Y$. Se llama topología cociente inducida por $f $ a $\mathcal{T}_{f} = \{ G \subset Y : f^{-1}(G) \in \mathcal{T} \}$. El par $( X , \mathcal{T}_{f})$ se llama espacio topológico cociente inducido por $f$.
@@ -98,5 +112,5 @@ VER DIBUJO(Revisar abierta o continua)
 \end{obs}
 
 \begin{defn}
-  Sea $ ( X, \mathcal{T} )$ e.t., $\mathcal{R}$ relación de equivalencia en $X$, $p: X \to X \setminus \mathcal{R}$ proyección canónica. Se llama e.t. cociente de $ ( X, \mathcal{T} )$ respecto a $ \mathcal{R}$ a $( X \setminus \mathcal{R}, \mathcal{T} \setminus \mathcal{R} )$ donde $\mathcal{T} \setminus \mathcal{R}$ es topología cociente inducida por $p$.
+  Sea $ ( X, \mathcal{T} )$ e.t., $\mathcal{R}$ relación de equivalencia en $X$, $p: X \to X / \mathcal{R}$ proyección canónica. Se llama e.t. cociente de $ ( X, \mathcal{T} )$ respecto a $ \mathcal{R}$ a $( X / \mathcal{R}, \mathcal{T} / \mathcal{R} )$ donde $\mathcal{T} / \mathcal{R}$ es topología cociente inducida por $p$.
 \end{defn}

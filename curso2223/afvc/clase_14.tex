@@ -1,0 +1,37 @@
+\begin{theo}[Desigualdades de Cauchy]
+  Sea $\Omega \subset \mathbb{C}$,  $D = \overline{D}(z_{0},R) \subset \Omega$, $f$ holomorfa en $D$. Si $| f(z) | \leq M, \forall z \in \partial{D}$, entonces
+  \[ 
+    \big | f^{(k)}(z_{0}) \big | \leq \frac{k!}{R^{k}}M, \; \forall k \in \mathbb{N}
+  \] 
+\end{theo}
+
+\begin{dem}
+  Por el teorema de Cauchy
+  \[ 
+    f_{(k)}(z_{0}) = \frac{k!}{2 \pi i} \int_{\gamma}^{} \frac{f(w)}{(w - z_{0})^{k+1}} dw 
+  \] 
+  \[ 
+    \Rightarrow | f_{(k)}(z_{0}) | = \frac{k!}{2 \pi} \Big | \int_{\gamma}^{} \frac{f(w)}{(w - z_{0})^{k+1}} dw \Big |
+  \] 
+  Ahora,
+  \[ 
+    \Big | \frac{f(w)}{(w - z_{0})^{k+1}} \Big | \leq \frac{M}{R^{k+1}}
+  \] 
+  dado que $| w - z_{0} | = R, \forall w \in \partial D$. Entonces,
+  \[ 
+     | f_{(k)}(z_{0}) | \leq \frac{k!}{2 \pi} \cdot \frac{M}{R^{k+1}} \cdot L
+  \] 
+  donde $L$ es la longitud de $\gamma$.
+\end{dem}
+
+\begin{theo}[Liouville]
+  Sea $f$ entera. Si $\exists M >0 : | f(z) |\leq M, \forall z \in \mathbb{C}$, entonces $f$ es constante.
+\end{theo}
+
+\begin{dem}
+  content
+\end{dem}
+
+\begin{theo}[Teorema Fundamental del Álgebra]
+  content
+\end{theo}
