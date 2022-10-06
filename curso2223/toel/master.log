@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.8.13)  3 OCT 2022 22:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.8.13)  6 OCT 2022 13:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -317,6 +317,12 @@ Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 \l_MT_below_shortintertext_sep=\dimen158
 \xmathstrut@box=\box59
 \xmathstrut@dim=\dimen159
+) (/usr/share/texmf-dist/tex/latex/bbm-macros/bbm.sty
+Package: bbm 1999/03/15 V 1.2 provides fonts for set symbols - TH
+LaTeX Font Info:    Overwriting math alphabet `\mathbbm' in version `bold'
+(Font)                  U/bbm/m/n --> U/bbm/bx/n on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathbbmss' in version `bold'
+(Font)                  U/bbmss/m/n --> U/bbmss/bx/n on input line 35.
 )
 \c@theo=\count290
 \c@cor=\count291
@@ -1458,13 +1464,18 @@ Package mdframed Info: mdframed detected package amsthm
  changed the theorem header of amsthm
 (mdframed)              on input line 53.
 
-Overfull \hbox (31.24677pt too wide) in paragraph at lines 54--55
+Overfull \hbox (33.91345pt too wide) in paragraph at lines 54--55
 [][]\OT1/cmss/bx/it/12 Proposici^^Son 2.7. []\OT1/cmss/m/sl/12 Sea $\OMS/cmsy/m/n/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 X[]; \OMS/cmsy/m/n/12 T[]\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 g[]$ \OT1/cmss/m/sl/12 fa-mi-lia de e.t.. En-ton-ces, $\OT1/cmr/m/n/12 ([][] \OML/cmm/m/it/12 X[]; [][] \OMS/cmsy/m/n/12 T[]\OT1/cmr/m/n/12 )$
  []
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 57.
+
+Overfull \hbox (17.06914pt too wide) in paragraph at lines 60--61
+\OMS/cmsy/m/n/12 9\OML/cmm/m/it/12 j[]; j[] \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 J \OT1/cmr/m/n/12 : \OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 X[] \OMS/cmsy/m/n/12 ^^B f\OML/cmm/m/it/12 j[]\OMS/cmsy/m/n/12 g\OML/cmm/m/it/12 ; y \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 X[] \OMS/cmsy/m/n/12 ^^B f\OML/cmm/m/it/12 j[]\OMS/cmsy/m/n/12 g$\OT1/cmss/m/sl/12 , en-ton-ces $\OT1/cmr/m/n/12 ([][] \OML/cmm/m/it/12 X[]; [][] \OMS/cmsy/m/n/12 T[]\OT1/cmr/m/n/12 )$
+ []
+
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 64.
@@ -1477,41 +1488,40 @@ Package mdframed Info: mdframed detected package amsthm
  changed the theorem header of amsthm
 (mdframed)              on input line 68.
 
-Overfull \hbox (4.1769pt too wide) in paragraph at lines 71--72
-\OML/cmm/m/it/12 p[]; p[]$ \OT1/cmss/m/sl/12 en-tor-nos dis-jun-tos de $\OML/cmm/m/it/12 x$ \OT1/cmss/m/sl/12 e $\OML/cmm/m/it/12 y$ \OT1/cmss/m/sl/12 en $\OT1/cmr/m/n/12 ([][] \OML/cmm/m/it/12 X[]; [][] \OMS/cmsy/m/n/12 T[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 )
- []
+Package mdframed Warning: You got a bad break
+(mdframed)                because the last box will be empty
+(mdframed)                you have to change it manually
+(mdframed)                by changing the text, the space
+(mdframed)                or something else on input line 73.
 
-) (./clase_14.tex
+[30]) (./clase_14.tex
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1.
-Package mdframed Info: Not enough space on this page on input line 3.
- [30]
-Package mdframed Info: Not enough space on this page on input line 3.
+(mdframed)              on input line 3.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 9.
+(mdframed)              on input line 11.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 24.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
-(Font)              using `OT1/cmss/m/sc' instead on input line 27.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
-(Font)              using `OT1/cmss/m/sc' instead on input line 28.
+(mdframed)              on input line 26.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
 (Font)              using `OT1/cmss/m/sc' instead on input line 29.
 
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
+(Font)              using `OT1/cmss/m/sc' instead on input line 30.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
+(Font)              using `OT1/cmss/m/sc' instead on input line 31.
+
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 33.
-./clase_14.tex:37: Extra }, or forgotten $.
-l.37 ...ine{V} \subset \mathring{\mathcal{U}^{x}}}
+(mdframed)              on input line 35.
+./clase_14.tex:39: Extra }, or forgotten $.
+l.39 ...ine{V} \subset \mathring{\mathcal{U}^{x}}}
                                                    \subset \mathcal{U}^{x}$.
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -1521,48 +1531,54 @@ deleted material, e.g., by typing `I$}'.
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 46.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 50.
+(mdframed)              on input line 48.
+Package mdframed Info: Not enough space on this page on input line 50.
 [31]
+Package mdframed Info: Not enough space on this page on input line 50.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 54.
+(mdframed)              on input line 52.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 56.
 
-Overfull \hbox (34.58163pt too wide) in paragraph at lines 55--56
+Overfull \hbox (34.58163pt too wide) in paragraph at lines 57--58
 [][]\OT1/cmss/bx/it/12 Proposici^^Son 2.11. []\OT1/cmss/m/sl/12 Sea $\OMS/cmsy/m/n/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 X[]; \OMS/cmsy/m/n/12 T[]\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 g[]$ \OT1/cmss/m/sl/12 fa-mi-lia de e.t.. En-ton-ces $\OT1/cmr/m/n/12 ([][] \OML/cmm/m/it/12 X[]; [][] \OMS/cmsy/m/n/12 T[]\OT1/cmr/m/n/12 )$
  []
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 58.
+(mdframed)              on input line 60.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 65.
+(mdframed)              on input line 67.
 
-Overfull \hbox (43.47491pt too wide) in paragraph at lines 66--67
+Overfull \hbox (43.47491pt too wide) in paragraph at lines 68--69
 [][]\OT1/cmss/bx/it/12 Proposici^^Son 2.12. []\OT1/cmss/m/sl/12 Sea $\OMS/cmsy/m/n/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 X[]; \OMS/cmsy/m/n/12 T[]\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 g[]$ \OT1/cmss/m/sl/12 fa-mi-lia de e.t.. En-ton-ces, $\OT1/cmr/m/n/12 ([][] \OML/cmm/m/it/12 X[]; [][] \OMS/cmsy/m/n/12 T[]\OT1/cmr/m/n/12 )$
  []
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 69.
+(mdframed)              on input line 71.
 
-Overfull \hbox (6.14178pt too wide) in paragraph at lines 71--72
+Overfull \hbox (6.14178pt too wide) in paragraph at lines 73--74
 []$\OMS/cmsy/m/n/12 8\OML/cmm/m/it/12 j[] \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 J; X[]$ \OT1/cmss/m/sl/12 es ho-meo-mor-fo a $\OML/cmm/m/it/12 X[] \OMS/cmsy/m/n/12 ^^B f\OML/cmm/m/it/12 j[]\OMS/cmsy/m/n/12 g ^^Z [][] \OML/cmm/m/it/12 X[]$\OT1/cmss/m/sl/12 . 
  []
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 84.
-) (./clase_15.tex
+(mdframed)              on input line 88.
+
+Package mdframed Warning: You got a bad break
+(mdframed)                because the last box will be empty
+(mdframed)                you have to change it manually
+(mdframed)                by changing the text, the space
+(mdframed)                or something else on input line 90.
+
+[32]) (./clase_15.tex
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 1.
-Package mdframed Info: Not enough space on this page on input line 3.
- [32]
-Package mdframed Info: Not enough space on this page on input line 3.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 5.
@@ -1572,6 +1588,7 @@ Package mdframed Info: mdframed detected package amsthm
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 33.
+ [33]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 53.
@@ -1580,13 +1597,9 @@ Overfull \hbox (37.8468pt too wide) in paragraph at lines 54--55
 [][]\OT1/cmss/bx/it/12 Proposici^^Son 2.15. []\OT1/cmss/m/sl/12 Sea $\OMS/cmsy/m/n/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 X[]; \OMS/cmsy/m/n/12 T[]\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 g[]$ \OT1/cmss/m/sl/12 fa-mi-lia de e.t.. En-ton-ces, $\OT1/cmr/m/n/12 ([][] \OML/cmm/m/it/12 X[]; [][] \OMS/cmsy/m/n/12 T[]\OT1/cmr/m/n/12 )$
  []
 
-Package mdframed Info: Not enough space on this page on input line 55.
-[33]
-Package mdframed Info: Not enough space on this page on input line 55.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 57.
-
 ./clase_15.tex:60: Undefined control sequence.
 l.60 ...= 0$ y si $\forall z \in C \Rightarrow \no
                                                    \in B \Rightarrow \exists...
@@ -1623,25 +1636,29 @@ Package mdframed Info: mdframed detected package amsthm
 (mdframed)              on input line 68.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 76.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 80.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 84.
+(mdframed)              on input line 78.
+
+Overfull \hbox (1.21744pt too wide) in paragraph at lines 79--80
+[][]\OT1/cmss/bx/it/12 Definici^^Son 2.6 \OT1/cmss/m/n/12 (Nor-mal)\OT1/cmss/bx/it/12 . []\OT1/cmss/m/sl/12 Sea $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 X; \OMS/cmsy/m/n/12 T\OT1/cmr/m/n/12 )$ \OT1/cmss/m/sl/12 e.t.. De-ci-mos que es nor-mal si $\OMS/cmsy/m/n/12 8\OML/cmm/m/it/12 C[]; C[]$
+ []
+
+
+Package mdframed Warning: You got a bad break
+(mdframed)                because the last box will be empty
+(mdframed)                you have to change it manually
+(mdframed)                by changing the text, the space
+(mdframed)                or something else on input line 80.
+
 [34]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 92.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
-(Font)              using `OT1/cmss/m/sc' instead on input line 95.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
-(Font)              using `OT1/cmss/m/sc' instead on input line 96.
+(mdframed)              on input line 82.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 86.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 94.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
@@ -1651,17 +1668,24 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
 LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
 (Font)              using `OT1/cmss/m/sc' instead on input line 98.
 
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
+(Font)              using `OT1/cmss/m/sc' instead on input line 99.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
+(Font)              using `OT1/cmss/m/sc' instead on input line 100.
+
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 102.
-) (./clase_16.tex
+(mdframed)              on input line 104.
+[35]) (./clase_16.tex
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 1.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 5.
- [35]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 16.
@@ -1684,6 +1708,7 @@ Overfull \hbox (48.66626pt too wide) in paragraph at lines 35--36
 []$\OMS/cmsy/m/n/12 8\OML/cmm/m/it/12 C[]; C[]$ \OT1/cmss/m/sl/12 ce-rra-dos dis-jun-tos de $\OT1/cmr/m/n/12 ([][] \OML/cmm/m/it/12 X[]; [][] \OMS/cmsy/m/n/12 T[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ) 8\OML/cmm/m/it/12 k \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 J; j[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 C[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; j[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 C[]\OT1/cmr/m/n/12 )$
  []
 
+[36]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 39.
@@ -1700,7 +1725,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 63--64
 
  []
 
-[36]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 69.
@@ -1714,7 +1738,55 @@ Overfull \hbox (6.0313pt too wide) in paragraph at lines 70--71
 \OT1/cmss/m/sl/12 ce-rra-do dis-jun-to, $\OMS/cmsy/m/n/12 9\OML/cmm/m/it/12 f \OT1/cmr/m/n/12 : (\OML/cmm/m/it/12 X; \OMS/cmsy/m/n/12 T\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ! \OT1/cmr/m/n/12 [0\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 1]$ \OT1/cmss/m/sl/12 con-ti-nua tal que $\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 C[]\OT1/cmr/m/n/12 ) = \OMS/cmsy/m/n/12 f\OT1/cmr/m/n/12 0\OMS/cmsy/m/n/12 g\OML/cmm/m/it/12 ; f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 C[]\OT1/cmr/m/n/12 ) =
  []
 
-) [37] (./master.aux
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 73.
+
+Underfull \hbox (badness 10000) in paragraph at lines 85--86
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 87--88
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 89--90
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 107--108
+
+ []
+
+
+Overfull \hbox (4.76869pt too wide) in paragraph at lines 112--114
+[]$[]$\OT1/cmss/m/sl/12 , $\OML/cmm/m/it/12 J$ \OT1/cmss/m/sl/12 den-so en $\OT1/cmr/m/n/12 [0\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 1] \OMS/cmsy/m/n/12 ) 8\OML/cmm/m/it/12 z \OMS/cmsy/m/n/12 2 \OT1/cmr/m/n/12 [0\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 1]\OML/cmm/m/it/12 ; \OMS/cmsy/m/n/12 8\OML/cmm/m/it/12 ^^N > \OT1/cmr/m/n/12 0\OML/cmm/m/it/12 ; \OMS/cmsy/m/n/12 9\OML/cmm/m/it/12 m[] \OMS/cmsy/m/n/12 2
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 112--114
+
+ []
+
+LaTeX Font Info:    Trying to load font information for TS1+cmss on input line 114.
+(/usr/share/texmf-dist/tex/latex/base/ts1cmss.fd
+File: ts1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+Underfull \hbox (badness 10000) in paragraph at lines 118--119
+
+ []
+
+Package mdframed Info: Box was splittet wrong
+ starting loop to iterate the splitting point
+(mdframed)              on input line 138.
+[37] [38]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 140.
+) (./clase_17.tex) [39] (./master.aux
 LaTeX Info: Redefining \. on input line 9.
 LaTeX Info: Redefining \% on input line 9.
 )
@@ -1723,18 +1795,18 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 7107 strings out of 478238
- 118490 string characters out of 5850456
- 453154 words of memory out of 5000000
- 25179 multiletter control sequences out of 15000+600000
- 482372 words of font info for 80 fonts, out of 8000000 for 9000
+ 7173 strings out of 478238
+ 119941 string characters out of 5850456
+ 474348 words of memory out of 5000000
+ 25234 multiletter control sequences out of 15000+600000
+ 482753 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 87i,12n,93p,1220b,516s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on master.pdf (38 pages, 292134 bytes).
+ 87i,12n,93p,1220b,663s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsi1200.pfb>
+Output written on master.pdf (40 pages, 310044 bytes).
 PDF statistics:
- 209 PDF objects out of 1000 (max. 8388607)
- 135 compressed objects within 2 object streams
+ 221 PDF objects out of 1000 (max. 8388607)
+ 143 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

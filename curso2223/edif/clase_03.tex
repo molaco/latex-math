@@ -502,6 +502,38 @@ CAMBIAR NOTACIÓN
 
 \section{Teorema de Extensión}
 
-\begin{defn}[Intervalo Maximal de Existencia]
-  Sea $U \subset \mathbb{R}^{d}$ abierto y $f \in C^{0,1-}([0, T] \times U, \mathbb{R}^{d})$, $u_{0} \in U$.
+\begin{defn}[Prolongación]
+  Sea $u(t)$ solución de $x' = f(t,x)$ en $I_{u}$. Se dice que $ v(t)$ es una prolongación de $u(t)$ si $v(t)$ es solución de $x'$ en $I_{v}$ tal que $I_{u} \subset I_{v}$ y $u(t) = v(t), \forall t \in I_{u} \cap I_{v}$.
 \end{defn}
+
+\begin{defn}[Solución Maximal]
+  Se dice que $x(t)$ es una solución maximal del PVI si no admite ninguna prolongación.
+\end{defn}
+
+\begin{obs}
+  El intervalo de definición de una solución maximal ha de ser abierto. Si fuera $(a, b]$ entonces se pordría prolongar a la derecha $(b, x(b))$.
+\end{obs}
+
+\begin{theo}
+  Sea $f \in C^{0,1-}(J \times D, E)$, $u: J_{u} \to D$ y $v: J_{v} \to D$ soluciones de $\dot{x} = f(t, x)$ tal que $\exists t_{0} \in J_{u} \cap J_{v}: u(t_{0}) = v(t_{0})$ Entonces, $u = v$ en $ J_{u} \cap J_{v}$.
+\end{theo}
+
+\begin{ejm}[Método de Prolongación]
+  Sea $(t_{0}, x_{0}) \in J \times D$. Entonces, por el teorema de Picard, $\exists \alpha >0$ tal que el PVI
+  \[ 
+    \dot{x} = f(t, x), \; x(t_{0}) = x_{0}  
+  \] 
+  tiene solución única $u$ en $\overline{J}_{\alpha} = [t_{0} - \alpha, t_{0} + \alpha]$. Usando de nuevo el teorema de Picard, $\exists \beta >0$ tal que el PVI
+  \[ 
+    \dot{x} = f(t,x), \; x(t_{0} + \alpha) = u(t_{0} + \alpha) 
+  \] 
+tiene solución única $v$ en $\overline{J}_{\alpha, \beta} = [t_{0} + \alpha - \beta, t_{0} + \alpha - \beta]$. Por el teorema de Unicidad $u(t) = v(t)$ en $\overline{J}_{\alpha} \cap \overline{J}_{\alpha, \beta}$ y la función
+  \[ 
+    u_{1}  =
+    \begin{cases}
+      u, \text{ en } \overline{J}_{\alpha} \\
+      v, \text{ en } \overline{J}_{\alpha, \beta}
+    \end{cases} 
+  \] 
+  es una prolongación de la solución $u$.
+\end{ejm}

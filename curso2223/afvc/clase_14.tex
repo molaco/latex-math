@@ -29,9 +29,26 @@
 \end{theo}
 
 \begin{dem}
-  content
+  Por las desigualdades de Cauchy con $k = 1$, $\forall z_{0} \in \mathbb{C} \Rightarrow | f'(z_{0}) | \leq \frac{M}{R}$ y para $z_{0}$, $\frac{M}{R} \xrightarrow[]{ R \rightarrow \infty } 0 \Rightarrow | f'(z_{0}) | = 0 \Rightarrow f'(z_{0}) = 0 \Rightarrow f$ es constante.
 \end{dem}
 
 \begin{theo}[Teorema Fundamental del Álgebra]
-  content
+  Sea $a_{0}, \cdots, a_{n} \in \mathbb{C}$, $n \geq 1$, $a_{n} \neq 0$, $P(z) = a_{0} + a_{1} z + \cdots + a_{n} z^{n}$. Entonces, $\exists z_{0} \in \mathbb{C}: P(z_{0}) = 0$.
 \end{theo}
+
+\begin{dem}
+  Sea $p(z_{0}) \neq 0, \forall z_{0} \in \mathbb{C}$. Entonces, $f(z) = \frac{1}{P(z)}$ es entera $\Rightarrow f(z)$ no es constante dado que $a_{n} \neq 0$. Basta ver que, por el teorema de Liouville, que $f(z)$ es acotada. \\
+
+  Sea $M>0$, a partir de $P(z)$ por la desigualdad triangular
+  \[ 
+    | P(z) | \geq | a_{n} || z |^{n} - | a_{0} | - \cdots - | a_{n-1} || z |^{n-1} 
+  \] 
+  Sea $a = | a_{0} | + \cdots + | a_{n-1} |$. Si $z > 1$ entonces
+  \[ 
+    | P(z) | \geq | z |^{n-1} \Bigg ( | a_{n} || z | - \frac{| a_{0} |}{| z |^{n-1}} - \frac{| a_{1} |}{| z |^{n-2}} - \cdots - \frac{| a_{n-1} |}{1} \Bigg )
+  \] 
+  \[ 
+    \geq | z |^{n-1}(| a_{n} || z | - a)
+  \] 
+  Sea $ K = \max \{ 1, \frac{M+ a}{| a_{n} |} \}$ entonces,  si $| z | > K \Rightarrow | P(z) | \geq M$. Por tanto, si $| z | > K \Rightarrow \frac{1}{| P(z) |} < \frac{1}{M}$. Pero si $z$ es tal que $| z | \leq K$, entonces $ \frac{1}{P(z)}$ es acotada y en valor absoluto por que es continua, es decir, $\exists L >0 : \frac{1}{| P(z) |} < \max \{ \frac{1}{M}, L \} \Rightarrow | f(z) |$ es acotada en $\mathbb{C}$.
+\end{dem}

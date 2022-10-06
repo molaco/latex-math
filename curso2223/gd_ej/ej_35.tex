@@ -16,10 +16,10 @@
   \] 
   $\beta$ es p.p.a.. Esto se debe a que
   \[ 
-    \frac{d}{dt}(M(t)) = \frac{d}{dt}(At + \vec{v}) = A
+    d_{t} M = \frac{d{}}{d{t}} (At + \vec{v}) = A
   \]
   \[ 
-    \Rightarrow \frac{d{}}{d{t}}(M \circ \alpha)(t) = \frac{d{}}{d{t}}(A \alpha(t) + \vec{v}) = \frac{d{}}{d{t}}(A \alpha'(t))
+    \Rightarrow d_{t} (M \circ \alpha) = \frac{d{}}{d{t}}(A \alpha(t) + \vec{v}) = A \alpha'(t)
   \] 
   y dado que $A$ es ortonormal, es decir, $A^{t} = A^{-1}$
   \[
@@ -47,17 +47,18 @@
   \[ 
     = \det(A) \tau_{\alpha}
   \] 
-  donde
   \[ 
-     det(A) =
-    \begin{cases}
-     1, \text{ si $A$ conserva la orientación }\\
-     -1, \text{ si $A$ invierte la orientación }\\
-    \end{cases} 
+    \pm \det(A) \tau_{\alpha} 
   \] 
-  esto se debe a que el producto vectorial bajo transformaciones de matrices obedece $(Ba) \times (Bb) = (\det(B))(B^{-1})^t (a \times b), B \in \mathcal{M}_{3 \times 3}, a y b$ vectores
-
-ACABAR -> isometría ortgonal $A^{-1}^t = A$\\\
+%  donde
+%  \[ 
+%     det(A) =
+%    \begin{cases}
+%     1, \text{ si $A$ conserva la orientación }\\
+%     -1, \text{ si $A$ invierte la orientación }\\
+%    \end{cases} 
+%  \] 
+  esto se debe a que el producto vectorial bajo transformaciones de matrices obedece $(Ba) \times (Bb) = (\det(B))(B^{-1})^t (a \times b), B \in \mathcal{M}_{3 \times 3}, a, b \in \mathbb{R}^{3}$. Luego,  $A$ es ortogonal por ser la matriz asociada a una isometría linea $\Rightarrow (A^{t})^{-1} = A$. Y $\det(A) = \pm 1$ por ser $A$ matriz ortogonal.\\
 
   Por tanto, la torsión de $\beta$ es
   \[ 

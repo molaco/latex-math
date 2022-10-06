@@ -10,3 +10,6 @@
 \contentsline {section}{\numberline {1.7}Espacio Cociente}{22}{}%
 \contentsline {section}{\numberline {1.8}Espacio Suma}{25}{}%
 \contentsline {chapter}{\numberline {2}Propiedades de Separación}{27}{}%
+\contentsline {section}{\numberline {2.1}Espacio Regular}{31}{}%
+\contentsline {section}{\numberline {2.2}Espacio Completamente Regular}{32}{}%
+\contentsline {section}{\numberline {2.3}Espacios Normales}{34}{}%

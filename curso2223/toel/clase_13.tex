@@ -51,13 +51,13 @@
 \end{dem}
 
 \begin{prop}
-  Sea $\{ ( X_{j}, \mathcal{T}_{j} ) \}_{j \in J}$ familia de e.t.. Entonces, $( \prod_{j \in J} X_{j}, \prod_{j \in J} \mathcal{T}_{j} )$ es $T_{2}$ $\Leftrightarrow ( X_{j}, \mathcal{T}_{j} )$ es $ T_{2}$, $\forall j \in J$.
+  Sea $\{ ( X_{j}, \mathcal{T}_{j} ) \}_{j \in J}$ familia de e.t.. Entonces, $( \sum_{j \in J} X_{j}, \sum_{j \in J} \mathcal{T}_{j} )$ es $T_{2}$ $\Leftrightarrow ( X_{j}, \mathcal{T}_{j} )$ es $ T_{2}$, $\forall j \in J$.
 \end{prop}
 
 \begin{dem}
   \begin{enumerate}[label=(\roman*)]
-    \item [($\Rightarrow$)] $\forall j \in J, \forall ( a_{j} )_{j \in J} \in \prod_{j \in J} X_{j}, \{ (x_{j})_{j \in J} \in \prod_{j \in J} X_{j} : x_{j} = a_{j}, \forall j \in J \setminus \{ 0 \} \} \subset \prod_{j \in J} X_{j}$ es homeomorfo a $X_{j_{0}} \times \{ ( a_{j} )_{j \in J \setminus {0}} \}$ que es homeomorfoa a $X_{j_{0}} \times \prod_{j \in J \setminus \{ 0 \}} \{ a_{j} \}$.
-    \item [($\Leftarrow$)] Ver despacio
+    \item [($\Rightarrow$)] $\forall j \in J, \forall ( a_{j} )_{j \in J} \in \sum_{j \in J} X_{j}, \{ (x_{j})_{j \in J} \in \sum_{j \in J} X_{j} : x_{j} = a_{j}, \forall j \in J \setminus \{ 0 \} \} \subset \sum_{j \in J} X_{j}$ es homeomorfo a $X_{j_{0}} \times \{ ( a_{j} )_{j \in J \setminus {0}} \}$ que es homeomorfoa a $X_{j_{0}} \times \sum_{j \in J \setminus \{ 0 \}} \{ a_{j} \}$.
+    \item [($\Leftarrow$)] $\forall x, y \in \sum_{ j \in J } X_{j}: x \neq y$, entonces se dan dos posibilidades. Si $ \exists j_{1}, j_{2} \in J : x \in X_{j_{1}} \times \{ j_{1} \}, y \in X_{j_{2}} \times \{ j_{2} \}$, entonces $( \prod_{j \in J} X_{j}, \prod_{j \in J} \mathcal{T}_{j} )$ es $T_{2}$. Y si $\exists ! j_{0}  \in J: x, y \in X_{j_{0}} \times \{ j_{0} \}$ homeomorfo a $X_{j_{0}}$ que es $T_{2} \Rightarrow p_{1}(x), p_{1}(y) \in X_{j_{0}} \Rightarrow \exists \mathcal{U}^{x}: p_{1}(x)\in \mathcal{x}^{x}, \exists \mathcal{U}^{y}: p_{1}(y) \in \mathcal{U}^{y} $ abiertos de $\sum_{j \in J} \mathcal{T}_{j} \Rightarrow \mathcal{U}^{x} \times \{ j_{0} \}, \mathcal{U}^{y} \times \{ j_{0} \}$ en $( \sum_{k \in J} X_{k}, \sum_{k \in J} \mathcal{T}_{k}) \Rightarrow \text{ es } T_{2}$.
   \end{enumerate}
 \end{dem}
 
@@ -68,7 +68,7 @@
 \begin{dem}
   \begin{enumerate}[label=(\roman*)]
     \item [($\Rightarrow$)] Sea $( \prod_{j \in J} X_{j}, \prod_{j \in J} \mathcal{T}_{j} )$ espacio $T_{2}$. Entonces, $\forall j \in J, b_{j} \in X_{j} \Rightarrow $ el subespacio $ \mathcal{S}_{j} = \{ x \in \prod_{j \in J} X_{j} : x_{j_{0}} = b_{j_{0}}, \forall j \neq j_{0} \}$ es $T_{2}$ y es homeomorfo a $X_{j}$ bajo la restricción de $\mathcal{S}_{j} $ a la proyeción $p_{j}$ $ \Rightarrow X_{j}$ es $T_{2}, \forall j \in J$.
-    \item [($\Leftarrow$)] Sea $( X_{j}, \mathcal{T}_{j} )$ e.t. $T_{2}$, $\\forall j \in J$. Entonces, $\forall x,y \in \prod_{j \in J} X_{j} : x \neq y \Rightarrow \exists j_{0} \in J : x_{j_{0}} \neq y_{j_{0}} \Rightarrow \exists \mathcal{U}^{x}_{j_{0}}, \mathcal{U}^{y}_{j_{0}}$ entornos disjuntos de $x_{j_{0}}$ e $y_{j_{0}}$ en $( X_{j_{0}}, \mathcal{T}_{j_{0}} ) \Rightarrow p_{j_{0}^{-1}(\mathcal{U}^{x}_{j_{0}})}, p_{j_{0}^{-1}(\mathcal{U}^{y}_{j_{0}})}$ entornos disjuntos de $x$ e $y$ en $( \prod_{j \in J} X_{j}, \prod_{j \in J} \mathcal{T}_{j} ) \Rightarrow ( \prod_{j \in J} X_{j}, \prod_{j \in J} \mathcal{T}_{j} )$ es $T_{2}$.
+    \item [($\Leftarrow$)] Sea $( X_{j}, \mathcal{T}_{j} )$ e.t. $T_{2}$, $\forall j \in J$. Entonces, $\forall x,y \in \prod_{j \in J} X_{j} : x \neq y \Rightarrow \exists j_{0} \in J : x_{j_{0}} \neq y_{j_{0}} \Rightarrow \exists \mathcal{U}^{x}_{j_{0}}, \mathcal{U}^{y}_{j_{0}}$ entornos disjuntos de $x_{j_{0}}$ e $y_{j_{0}}$ en $( X_{j_{0}}, \mathcal{T}_{j_{0}} ) \Rightarrow p_{j_{0}^{-1}(\mathcal{U}^{x}_{j_{0}})}, p_{j_{0}^{-1}(\mathcal{U}^{y}_{j_{0}})}$ entornos disjuntos de $x$ e $y$ en $( \prod_{j \in J} X_{j}, \prod_{j \in J} \mathcal{T}_{j} ) \Rightarrow ( \prod_{j \in J} X_{j}, \prod_{j \in J} \mathcal{T}_{j} )$ es $T_{2}$.
   \end{enumerate}
 \end{dem}
 

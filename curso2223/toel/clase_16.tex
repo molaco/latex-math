@@ -69,3 +69,82 @@ Para ver que es $T_{4}$:  $( X, \mathcal{T} )$ es $T_{4}$, $\forall y \in Y, \ex
 \begin{lem}[Urysohn]
   Sea $( X, \mathcal{T} )$ e.t.. Entonces, $( X, \mathcal{T} )$ normal $\Leftrightarrow \forall C_{1}, C_{2}$ cerrado disjunto, $\exists f: ( X, \mathcal{T} ) \to [0, 1]$ continua tal que $f(C_{1}) = \{  0 \}, f(C_{2}) = \{ 1 \}$.
 \end{lem}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item [($\Rightarrow$)] Sea 
+      \[ 
+        J = \bigcup_{n \in \mathbb{N} \cup \{ 0 \}} J_{n}, \; J_{n} = \{ \frac{k}{2^{n}} : k \in \{  0,1, \cdots , 2^{n} \} \}
+      \] 
+      Entonces, $\forall r \in J, \exists M_{r} \subset X$ tal que
+      \begin{enumerate}
+        \item $M_{0} = C_{1}, M_{1} = X \setminus C_{2}$
+        \item $\forall r, r' \in J, r < r' \Rightarrow \overline{M}_{r} \subset \mathring{M}_{r}$
+      \end{enumerate}
+
+      Hacemos la demostración por inducción.  \\
+
+      Sea $n = 0$ $\Rightarrow J_{0} = \{ 0, 1 \} \Rightarrow M_{0} = C_{1}, M_{1} = X \setminus C_{2} \Rightarrow \overline{M_{0}} = \overline{C_{1}} = C_{1} \subset X \setminus C_{2} = M_{1} = \mathring{M}_{1}$. \\
+
+      Suponemos que es cierto para $ m = p$. Veamos que se cumple para $m = p + 1$. \\
+
+      Si $m = p+1$, entonces $\forall r \in J, r = \frac{k}{2^{p+1}}$. Distinguimos $k$ par e impar.
+
+      \begin{itemize}
+        \item Si $k$ par, entonces $k = 2k', k' \in \mathbb{Z}^{+} \Rightarrow r = \frac{2k'}{2^{p+1}} = \frac{k'}{2^{p}} \in J_{p} \Rightarrow \exists U_{r} $ tal que cumple $(a)$ y $(b)$.
+        \item Si $k$ es impar $\Rightarrow s = \frac{k - 1}{2^{p+1}}, t = \frac{k + 1}{2^{p+1}} \in J_{p} \Rightarrow \exists M_{s}, M_{t}$ tal que cumplen $(a)$ y $(b)$ dado que $ s < t , \overline{M}_{s} \subset \mathring{M}_{t}$ y como $( X, \mathcal{T} )$ es normal $\Rightarrow \exists M_{r} \in \mathcal{T}: \overline{M_{s}} \subset M_{r} \subset \overline{M}_{r} \subset \mathring{M}_{t}$.
+      \end{itemize}
+
+      Sea $f: X \to [0,1]$ tal que
+      \[ 
+        f(x) =
+        \begin{cases}
+          \inf \{ r \in J: x \in \overline{M}_{r} \}, \text{ si } x \not \in C_{2} \; (\Leftrightarrow x \in M_{1}) \\
+          1, \text{ si } x \in C_{2}
+        \end{cases} 
+      \] 
+
+      entonces, $f(C_{2}) = \{ 1 \}$ por definición. Y $\forall x \in C_{1} = M_{0} = \overline{M}_{0}$ cerrado $\Rightarrow f(x) = 0 \Rightarrow f(C_{1}) = \{ 0 \}$ \\
+
+      Veamos que $f$ es continua
+
+      \begin{itemize}
+        \item \underline{ Si $0 < f(x) < 1$ }, $J$ denso en $[0,1] \Rightarrow \forall z \in [0,1], \forall \delta > 0, \exists m_{0} \in \mathbb{N} : \frac{1}{2^{m_{0}}} < \delta \Rightarrow \frac{k_{0}}{2^{m_{0}}} \in (z - \delta, z + \delta)$. Entonces, $\exists t, s \in J : f(x_{0}) - \epsilon < t < f(x_{0}) < s < f(x_{0}) + \epsilon$. \\
+          \begin{itemize}
+            \item Si $ t < f(x_{0}) \Rightarrow x_{0} \not \in \overline{M}_{t} (\text{ si } x_{0} \in \overline{M}_{t} \Rightarrow \forall j \in J: t < j, x_{0} \in \mathring{M}_{j} \subset \overline{M}_{j} \rightarrow f(x_{0}) \leq t )$.
+            \item Si $t(x_{0}) < s \Rightarrow x_{0} \in \mathring{M}_{s} \; (f(x_{0}) = \inf \{  r \in J : x_{0} \in \overline{M}_{r} \} < s \Rightarrow \exists j \in J : j < s, x_{0} \in \overline{M}_{j} \subset \mathring{M}_{s})$
+          \end{itemize}
+
+      $\Rightarrow x \in (X \setminus \overline{M}_{t} \cap \mathring{M}_{s}) \in \mathcal{T}$ donde $X \setminus \overline{M}_{t} = V^{x_{0}}$. \\
+
+      $x \in V^{x_{0}} \Rightarrow$
+      \begin{itemize}
+        \item Si $ x \not \in \overline{M}_{t} \Rightarrow f(x) \geq t \; (\text{ Si no }, f(x)<t, f(x) = \inf \{  r \in J : x \in \overline{M}_{r} \} \Rightarrow \exists j \in J: j< t, x \in \overline{M}_{j} \subset \mathring{M}_{t} \subset \overline{M}_{t} \text{ absurdo } )$ 
+        \item Si $x \in \mathring{M}_{s} \subset \overline{M}_{s} \Rightarrow f(x) \leq s$
+      \end{itemize}
+
+      Entonces, $f(V^{x_{0}}) \subset [t, s] \subset (f(x_{0}) - \epsilon, f(x_{0}) + \epsilon)$
+
+    \item \underline{ Si $f(x_{0}) = 1$}, $ \forall \epsilon >0, \exists t \in J :  f(x_{0}) - \epsilon = 1- \epsilon < t < f(x_{0}) = 1$. Entonces, $t < f(x_{0}) \rightarrow x_{0} \not \in \overline{M}_{t} \Rightarrow x_{0} \in X \setminus \overline{M}_{t} = V^{x_{0}}$. Por tanto, $\forall x \in V^{x_{0}} \Rightarrow x \not \in \overline{M}_{t} \Rightarrow f(x) \geq t$. Por tanto , $f(V^{x_{0}}) \subset [t, 1] \subset (f(x_{0}) - \epsilon, f(x_{0}) + \epsilon) = (1- \epsilon, 1)$.
+    \item \underline{ Si $f(x_{0})$ = 1}, entonces $\forall \epsilon > 0, \exists s \in J: 0 = f(x_{0}) < s < f(x_{0}) + \epsilon = \epsilon$ donde $f(x_{0}) < s \Rightarrow x_{0} \in \mathring{M}_{s} = V^{x_{0}} \in \mathcal{T}$. Por tanto, $\forall x \in V^{x_{0}}, x \in \mathring{M}_{s} \subset \overline{M} \subset_{s} \Rightarrow f(x) \leq s \Rightarrow f(V^{x_{0}}) \subset [0, s] \subset [0, \epsilon] = [f(x_{0}), f(x_{0})+ \epsilon)$.
+      \end{itemize}
+
+    \item [($\Leftarrow$)] $\forall C_{1}, C_{2}$ cerradps disjuntos.
+      \begin{itemize}
+        \item Si $C_! = \emptyset$. Tomamos $ M_{1} = \emptyset, M_{2} = X$,
+        \item Si $C_{1}, C_{2} \neq \emptyset \Rightarrow \exists f: ( X, \mathcal{T} ) \to [0,1]$ con tinua tal que $f(C_{1}) = \{  0 \}, f(C_{2}) = \{ 1 \} \Rightarrow f^{-1}([0, \frac{1}{2})), f^{-1}((\frac{1}{2},1]) \in \mathcal{T}$ disjuntos, donde $C_{1} \subset f^{-1}([0, \frac{1}{2})),  C_{2} \subset f^{-1}((\frac{1}{2},1]) \in \mathcal{T}$.
+      \end{itemize}
+  \end{enumerate}
+\end{dem}
+
+\begin{cor}
+  $T_{4}$ es más fuerte que $T_{3a}$, $T_{4} \Rightarrow T_{3a}$.
+\end{cor}
+
+\begin{obs}
+  Metrizable $\Rightarrow T_{4}, T_{3a}, T_{3}, T_{2}, T_{1}, T_{0}$.
+\end{obs}
+
+\begin{obs}
+  $T_{3} \not \Rightarrow T_{4}$, $T_{3a}$ es multiplicativa y $T_{4}$ no.
+\end{obs}
