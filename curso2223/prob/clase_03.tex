@@ -1,0 +1,29 @@
+\chapter{Probabilida sobre la recta real}
+
+\section{Probabilidad Sobre La Recta Real}
+
+\begin{nota}
+  Consideramos $(\mathbb{R}, B(\mathbb{R}), P)$ espacio de probabilidad.
+\end{nota}
+
+\subsection{Función de distribución en $\mathbb{R}$}
+
+\begin{defn}[Función de distribución]
+  Sea $F: \mathbb{R} \to \mathbb{R}$ tal que
+  \begin{enumerate}[label=(\roman*)]
+    \item $F$ es monótona no decreciente, es decir, $ \forall x_{1}, x_{2} \in \mathbb{R}: x_{1} < x_{2} \Rightarrow F(x_{1}) < F(x_{2})$.
+    \item $F$ es continua por la derecha, $\lim_{h \to 0} F(x + h) = F(x)$
+    \item $\lim_{x \to -\infty} F(x) = 0$,
+    \item $\lim_{x \to +\infty} F(x) = 1$.
+  \end{enumerate}
+\end{defn}
+
+\begin{theo}
+  La función $F(x) = P \{ (- \infty, x] \}$ es función de distribución en $\mathbb{R}$.
+\end{theo}
+
+\begin{theo}
+  Sea $F$ función de distribución en $\mathbb{R}$. Entonces, $F$ induce en $(\mathbb{R}, B(\mathbb{R}))$, espacio probabilizable, una probabilidad $P$ cuya función de distribución es $F$.
+\end{theo}
+
+\section{Probabilidad sobre $\mathbb{R}^n$}

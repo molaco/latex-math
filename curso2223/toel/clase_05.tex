@@ -95,7 +95,7 @@ Sean $\mathcal{B}_{1}(x), \mathcal{B}_{2}(x)$ dos bases de entornos de $x$ en $\
   \begin{enumerate}[label=(\roman*)]
     \item $( \mathbb{R} , \mathcal{T}_{u} ), \mathcal{B} = \{ ( a, b ) : a < b \}$ es base de $\mathcal{T}_{u}$.
     \item $( X, \mathcal{T}_{u} ), \mathcal{B} = \{ \{ x \} : x \in X \}$ es base de $\mathcal{T}_{u}$.
-    \item $( X, \mathcal{T} )$ metrizble, $\mathcal{T}_{d}$ topología inducida por $d$. Entonces $\mathcal{B} = \{ B_{\epsion} : x \in X, \epsilon > 0 \}$ es base de $\mathcal{T}_{d}$.
+    \item $( X, \mathcal{T} )$ metrizble, $\mathcal{T}_{d}$ topología inducida por $d$. Entonces $\mathcal{B} = \{ B_{\epsilon}(x) : x \in X, \epsilon > 0 \}$ es base de $\mathcal{T}_{d}$.
   \end{enumerate}
 \end{ejm}
 
@@ -110,6 +110,6 @@ Sean $\mathcal{B}_{1}(x), \mathcal{B}_{2}(x)$ dos bases de entornos de $x$ en $\
 \begin{dem}
   \begin{enumerate}[label=(\roman*)]
     \item [($\Rightarrow$)] Suponemos que $\mathcal{B}$ es base de $X$, $x \in X$ y $\mathcal{B}_{x} = \{ B \in \mathcal{B} : x \in B \}$. Sea $U \in \mathcal{B}_{x}$ entonces $ U \in \mathcal{B} \subset \mathcal{T}: x \in U = \mathring{U} \Rightarrow U$ es un entorno de $x$. Sea $U \in \mathcal{V}(x)$, entonces $x \in \mathring{U}\in \mathcal{T}$ donde $\mathcal{T} = \{ \bigcup_{B \in \mathcal{B}_{U}} B : \mathcal{B}_{U} \subset \mathcal{B} \}$, es decir, $\mathring{U}$ es la unión de elementos de $\mathcal{B}$ entonces $\exists B \in \mathcal{B}: x \in B \subset \mathring{U}$. Por tanto, $\forall U \in \mathcal{V}(x), \exists B \in \mathcal{B}_{x} : B \subset U \Rightarrow \mathcal{B}_{x}$ es base de entronos de $x$.
-    \item [($\Leftarrow$)] Suponesmos que $\mathcal{B}_{x}$ es una base de entornos de $x$, $\forall x \in X$ y $\mathcal{B} = \bigcup_{x \in X} \mathcal{B}_{x}$. Entonces, $\forall A \in \mathcal{T}, \forall x \in A , \exists B_{x} \in \mathcal{B} : x \in B_{x} \subset A \Rightarrow A = \bigcup \{ B_{x} : x \in A \} \Rightarrow \mathcal{B} \subset A$, de manera que $\mathcal{B}$ es base para $X$.
+    \item [($\Leftarrow$)] Suponesmos que $\mathcal{B}_{x}$ es una base de entornos de $x$, $\forall x \in X$ y $\mathcal{B} = \bigcup_{x \in X} \mathcal{B}_{x}$. Entonces, $\forall A \in \mathcal{T}, \forall x \in A , \exists B_{x} \in \mathcal{B} : x \in B_{x} \subset A \Rightarrow A = \bigcup \{ B_{x} : x \in A \} \Rightarrow$ $\mathcal{B}$ es base para $X$.
   \end{enumerate}
 \end{dem}

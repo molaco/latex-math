@@ -1,0 +1,52 @@
+\section{Series de Potencias}
+
+\begin{defn}[Serie de Potencias]
+  Sean $a_{1}, a_{2} , \cdots $ tal que $a_{i} \in \mathbb{C}, \forall i$, $z_{0} \in \mathbb{C}$. Entonces,
+  \[
+    \sum_{n = 0}^{\infty} a_{n}(z - z_{0})^{n}
+  \] 
+  es una seríe de potencias.
+\end{defn}
+
+\begin{obs}
+  Sea $w = z - z_{0}$ entonces $\sum_{n = 0}^{\infty} a_{n}(z _ z_{0})^{n} = \sum_{n = 0}^{\infty} a_{n}w^{n}$ es la traslación de la serie.
+\end{obs}
+
+\begin{theo}
+  Sea $\sum_{n = 0}^{\infty} a_{n}z^{n}$. Entonces, $\exists ! R \geq 0$ tal que
+  \begin{enumerate}[label=(\roman*)]
+    \item $\sum_{n = 0}^{\infty} a_{n}z^{n}$ converge absolutamente en $D(0, R)$,
+    \item $\sum_{n = 0}^{\infty} a_{n}z^{n}$ no converge si $| z | > R$,
+    \item $R>0 \Rightarrow \forall r \in (0,R), \sum_{n = 0}^{\infty} a_{n}z^{n}$ converge uniformemente en $\overline{D}(0, R)$.
+  \end{enumerate}
+  Además, $R^{-1} = \lim \sup | a_{n} |^{\frac{1}{n}}$
+\end{theo}
+
+\begin{dem}
+  content
+\end{dem}
+
+\begin{nota}
+  \begin{itemize}
+    \item []
+    \item $R$ es el radio de convergencia,
+    \item $D(0, R)$ es el disco de convergencia.
+  \end{itemize}
+\end{nota}
+
+\begin{prop}[Criterio del Cociente]
+  Sea $\sum_{n = 0}^{\infty} a_{n}z^{n}$ una serie de potencias. Si
+  \[ 
+    \lim_{n \to \infty} \frac{\big |a_{n} \big |}{| a_{n+1} |}
+  \] 
+  existe, entonces es igual a $R$, el radio de convergencia.
+\end{prop}
+
+\begin{ejm}
+  \begin{enumerate}[label=(\roman*)]
+    \item []
+    \item $\sum_{n = 0}^{\infty} z^{n}$ tiene $R =1$ ya que $a_{n} = 1 \Rightarrow \lim_{n \to \infty} | \frac{a_{n}}{a_{n+1}} | = 1$.
+    \item $\sum_{n = 0}^{\infty} \frac{z^{n}}{n!}$ tiene $R = + \infty$ ya que $a_{n} = \frac{1}{n!} \Rightarrow | \frac{a_{n}}{a_{n+1}} | = n +1 \xrightarrow[]{ n \rightarrow \infty } \infty$.
+    \item $\sum_{n = 0}^{\infty} z^{n}n!$ tiene radio de convergencia $R = 0$ ya que $| \frac{a_{n}}{a_{n+1}} | = \frac{1}{n+1} \xrightarrow[]{ n \rightarrow \infty } 0$.
+  \end{enumerate}
+\end{ejm}

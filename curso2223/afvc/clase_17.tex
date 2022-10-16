@@ -1,0 +1,119 @@
+\section{Funciones Analíticas}
+
+\begin{theo}[Derivada de Serie de Potencias]
+  Sea $f : D(a, R) \to \mathbb{C}$ tal que
+  \[
+    f(z) = \sum_{n = 0}^{\infty} a_{n} (z - a)^{n}
+  \]
+  con $R$ radio de convergencia. Entonces, $f$ es analítica y
+  \[ 
+    f'(z) = \sum_{n = 1}^{\infty} n a_{n} (z - a)^{n - 1} 
+  \] 
+  tiene el mismo radio de convergencia y los coeficientes vienen dados por
+  \[
+    a_{n} = \sum \frac{f^{(n)}(a)}{n!}.
+  \]
+\end{theo}
+
+\begin{dem}
+  Supongamos que $a=0$. Sea $g : D(0, R) \to \mathbb{C}$ tal que
+  \[ 
+    g(z) = \sum_{n = 1}^{\infty} n a_{n} z^{n -1} .
+  \] 
+  Queremos ver que $g(z) = f'(z), \forall z \in D(0, R)$. Sea $z_{0} \in D(0, R)$ y $r>0$ tal que $D(z_{0}, 2r) \subset D(0, R)$. Si $z \in D(z_{0},r)$ entonces
+  \[ 
+    \frac{f(z) - f(z_{0})}{z - z_{0}} = \frac{1}{ z - z_{0}} \sum_{n = 1}^{\infty} a_{n} (z^{n} - z_{0}^{n}) 
+  \] 
+  \[ 
+    = a_{1} + \sum_{n = 2}^{\infty} a_{n}(z^{n-1} + z^{n-2} z_{0} + \cdots + z_{0}^{n-1})
+  \] 
+  donde $z^{n} - z_{0}^{n} = (z - z_{0})(z^{n-1} + z_{0} z^{n-2} + \cdots z_{0}^{n-1})$. Entonces, tomado límites
+  \[ 
+    f'(z) = a_{1} + \lim_{z \to z_{0}} \sum_{n = 2}^{\infty} a_{n}(z^{n-1} + z^{n-2} z_{0} + \cdots + z_{0}^{n-1})
+  \] 
+  \[ 
+    =  a_{1} + \sum_{n = 2}^{\infty} a_{n}(z_{0}^{n-1} + z_{0}^{n-2} z_{0} + \cdots + z_{0}^{n-1})
+  \] 
+  \[ 
+    = \sum_{n = 1}^{\infty} n a_{n} z_{0}^{n -1} = g(z_{0}) 
+  \] 
+  dado que la serie converge uniformemente por ser función continua.
+\end{dem}
+
+\begin{obs}
+  $f^{(n)}(z) = n! a_{n} + \sum_{k = n+1}^{\infty} k(k-1)(k-2) \cdots (k-n +1)(z - z_{0})^{k-n}$
+\end{obs}
+
+\begin{obs}
+  Las funciones holomorfas son analíticas.
+\end{obs}
+
+\begin{theo}
+  Sea $\Omega \subset \mathbb{C}$, $f : \Omega \to \mathbb{C}$ holomorfa, $z_{0} \in \Omega$ y $D(z_{0}, R) \subset \mathbb{C}$. Entonces, 
+  \[ 
+    \sum_{n = 0}^{\infty} \frac{f^{(n)}(z_{0})}{n!}(z - z_{0})^{n}
+  \] 
+  converge en $D(z_{0}, r)$ con $r \geq R$ y
+  \[ 
+    f(z) = \sum_{n = 0}^{\infty} \frac{f^{(n)}(z_{0})}{n!}(z - z_{0})^{n}, \quad \forall z \in D(z_{0}, R) 
+  \] 
+\end{theo}
+
+\begin{dem}
+  Sea $D = D(z_{0}, R)$. Por la fórmula integral de Cauchy
+  \[ 
+    f(z) = \frac{1}{2 \pi i} \int_{\partial{ D}}^{} \frac{f(w)}{w-z} dw 
+  \] 
+  Queremos usar la serie geométrica para expandir el integrando como una serie de potencias en $z -z_{0}$. Como $z \in D$ y $w \in \partial{D}$, entonces
+  \[ 
+    \Bigg | \frac{z-z_{0}}{w - z_{0}} \Bigg | < 1
+  \] 
+  donde
+  \[ 
+    \frac{1}{w - z} = \frac{1}{w - z_{0}} \frac{1}{1 - \frac{z - z_{0}}{w - z_{0}}} 
+  \] 
+  \[ 
+    = \frac{1}{w - z_{0}} \sum_{n = 0}^{\infty} \Bigg ( \frac{z - z_{0}}{w - z_{0}} \Bigg )^{n} 
+  \] 
+  por tanto,
+  \[ 
+    f(z) = \frac{1}{2 \pi i} \int_{\partial{D}}^{} \Bigg[ \frac{f(w)}{w - z_{0}} \sum_{n = 0}^{\infty} \big ( \frac{z - z_{0}}{w - z_{0}} \big )^{n}  \Bigg] dw 
+  \] 
+  \[ 
+    = \frac{1}{ 2 \pi i} \int_{\partial{D}}^{} \Bigg[ \sum_{n = 0}^{\infty} \frac{f(w)(z -z_{0})^{n}}{(w-z_{0})^{n+1}} \Bigg] dw 
+  \] 
+  Ahora, la serie
+  \[ 
+    \sum_{n = 0}^{\infty} \Bigg ( \frac{z - z_{0}}{w - z_{0}} \Bigg )^{n}  
+  \] 
+  converge uniformemente en $D$ y $\frac{f(w)}{w - z_{0}}$ es continua en $\partial{D} \Rightarrow$ está acotada, entonces la serie
+  \[ 
+    \sum_{n = 0}^{\infty} \frac{f(w)(z -z_{0})^{n}}{(w-z_{0})^{n+1}} 
+  \] 
+  converge uniformemente en $\partial{D}$ tal que 
+  \[ 
+    \sum_{n = 0}^{\infty} \frac{f(w)(z -z_{0})^{n}}{(w-z_{0})^{n+1}} = \frac{f(w)}{w - z}
+  \] 
+  Por tanto, 
+  \[ 
+    f(z) = \sum_{n = 0}^{\infty} \frac{1}{ 2 \pi i} \int_{\partial{D}}^{} \frac{f(w)(z -z_{0})^{n}}{(w-z_{0})^{n+1}} dw 
+  \] 
+  \[ 
+    = \sum_{n = 0}^{\infty} \Bigg [ (z - z_{0})^{n} \frac{1}{ 2 \pi i} \int_{\partial{D}}^{} \frac{f(w)}{(w-z_{0})^{n+1}} dw \Bigg ]
+  \] 
+  \[ 
+    = \sum_{n = 0}^{\infty} \Bigg[ (z - z_{0})^{n} \frac{f^{(n)}(z_{0})}{n!} \Bigg] 
+  \] 
+\end{dem}
+
+\begin{cor}
+  Sea $\Omega \subset \mathbb{C}, f: \Omega \to \mathbb{C}$ holomorfa. Entonces, $\forall z_{0} \in \Omega$
+  \[ 
+    f(z) = \sum_{n = 0}^{\infty} \frac{f^{(n)}(z_{0})}{n!}(z - z_{0})^{n}, \quad \forall z \in D(z_{0},R)
+  \] 
+  donde $R = \dist (z_{0}, \partial{\Omega})$
+\end{cor}
+
+\begin{ejm}
+  hacer ejemplos $e ^{z}$ y $\log (1 + z)$
+\end{ejm}

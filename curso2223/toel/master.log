@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.8.13)  6 OCT 2022 13:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.8.13)  15 OCT 2022 23:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -323,15 +323,72 @@ LaTeX Font Info:    Overwriting math alphabet `\mathbbm' in version `bold'
 (Font)                  U/bbm/m/n --> U/bbm/bx/n on input line 33.
 LaTeX Font Info:    Overwriting math alphabet `\mathbbmss' in version `bold'
 (Font)                  U/bbmss/m/n --> U/bbmss/bx/n on input line 35.
+) (/usr/share/texmf-dist/tex/latex/import/import.sty
+Package: import 2020/04/01  v 6.2
 )
-\c@theo=\count290
-\c@cor=\count291
-\c@lem=\count292
-\c@defn=\count293
-\c@prop=\count294
+(/usr/share/texmf-dist/tex/latex/pdfpages/pdfpages.sty
+Package: pdfpages 2022/01/29 v0.5u Insert pages of external PDF documents (AM)
+ (/usr/share/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
+) (/usr/share/texmf-dist/tex/latex/eso-pic/eso-pic.sty
+Package: eso-pic 2020/10/14 v3.0a eso-pic (RN)
+\ESO@tempdima=\dimen160
+\ESO@tempdimb=\dimen161
+) (/usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+ (/usr/share/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2021/03/04 v1.4d Standard LaTeX Graphics (DPC,SPQR)
+ (/usr/share/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+) (/usr/share/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+)
+\Gin@req@height=\dimen162
+\Gin@req@width=\dimen163
+)
+\AM@pagewidth=\dimen164
+\AM@pageheight=\dimen165
+\AM@fboxrule=\dimen166
+ (/usr/share/texmf-dist/tex/latex/pdfpages/pppdftex.def
+File: pppdftex.def 2022/01/29 v0.5u Pdfpages driver for pdfTeX (AM)
+)
+\pdfpages@includegraphics@status=\count290
+\AM@pagebox=\box60
+\AM@global@opts=\toks31
+\AM@pagecnt=\count291
+\AM@toc@title=\toks32
+\c@AM@survey=\count292
+\AM@templatesizebox=\box61
+) (/usr/share/texmf-dist/tex/latex/transparent/transparent.sty
+Package: transparent 2019/11/29 v1.4 Transparency via pdfTeX's color stack (HO)
+) (/usr/share/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2021/10/31 v2.13 LaTeX color extensions (UK)
+ (/usr/share/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 227.
+LaTeX Info: Redefining \color on input line 711.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1352.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1356.
+Package xcolor Info: Model `RGB' extended on input line 1368.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1370.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1372.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1373.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1374.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1375.
+)
+\c@theo=\count293
+\c@cor=\count294
+\c@lem=\count295
+\c@defn=\count296
+\c@prop=\count297
+\c@ejr=\count298
 ) (./master.aux
-LaTeX Info: Redefining \. on input line 9.
-LaTeX Info: Redefining \% on input line 9.
+LaTeX Info: Redefining \. on input line 10.
+LaTeX Info: Redefining \% on input line 10.
 )
 \openout1 = `master.aux'.
 
@@ -353,30 +410,28 @@ LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
  (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count295
-\scratchdimen=\dimen160
-\scratchbox=\box60
-\nofMPsegments=\count296
-\nofMParguments=\count297
-\everyMPshowfont=\toks31
-\MPscratchCnt=\count298
-\MPscratchDim=\dimen161
-\MPnumerator=\count299
-\makeMPintoPDFobject=\count300
-\everyMPtoPDFconversion=\toks32
-) (/usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
- (/usr/share/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2021/03/04 v1.4d Standard LaTeX Graphics (DPC,SPQR)
- (/usr/share/texmf-dist/tex/latex/graphics/trig.sty
-Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
-) (/usr/share/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
-File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+\scratchcounter=\count299
+\scratchdimen=\dimen167
+\scratchbox=\box62
+\nofMPsegments=\count300
+\nofMParguments=\count301
+\everyMPshowfont=\toks33
+\MPscratchCnt=\count302
+\MPscratchDim=\dimen168
+\MPnumerator=\count303
+\makeMPintoPDFobject=\count304
+\everyMPtoPDFconversion=\toks34
+) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+)) (/usr/share/texmf-dist/tex/latex/pdflscape/pdflscape.sty
+Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
+ (/usr/share/texmf-dist/tex/latex/graphics/lscape.sty
+Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
-Package graphics Info: Driver file: pdftex.def on input line 107.
-)
-\Gin@req@height=\dimen162
-\Gin@req@width=\dimen163
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )
 LaTeX Font Info:    Trying to load font information for U+msa on input line 7.
  (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -840,15 +895,6 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
 LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
 (Font)              using `OT1/cmss/m/sc' instead on input line 98.
 
-./clase_05.tex:98: Undefined control sequence.
-l.98 ...$d$. Entonces $\mathcal{B} = \{ B_{\epsion
-                                                  } : x \in X, \epsilon > 0 ...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 102.
@@ -988,7 +1034,7 @@ Overfull \hbox (17.1927pt too wide) in paragraph at lines 24--25
 
 
 Overfull \hbox (2.18353pt too wide) in paragraph at lines 24--25
-\OMS/cmsy/m/n/12 T$\OT1/cmss/m/sl/12 . Sea $\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 V[]\OT1/cmr/m/n/12 ) = \OMS/cmsy/m/n/12 U[]$\OT1/cmss/m/sl/12 . En-ton-ces, $\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 U[]\OT1/cmr/m/n/12 ) = \OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 V[]\OT1/cmr/m/n/12 )) \OMS/cmsy/m/n/12 ^^Z [] ^^Z
+\OMS/cmsy/m/n/12 T$\OT1/cmss/m/sl/12 . Sea $\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 ([]) = \OMS/cmsy/m/n/12 U[]$\OT1/cmss/m/sl/12 . En-ton-ces, $\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 U[]\OT1/cmr/m/n/12 ) = \OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 ([])) \OMS/cmsy/m/n/12 ^^Z [] ^^Z
  []
 
 
@@ -1111,21 +1157,24 @@ Package mdframed Warning: You got a bad break
 [19]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 113.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
 (mdframed)              on input line 121.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 125.
+(mdframed)              on input line 129.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 129.
+(mdframed)              on input line 133.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 137.
 
-Overfull \hbox (11.50977pt too wide) in paragraph at lines 130--131
+Overfull \hbox (11.50977pt too wide) in paragraph at lines 138--139
 [][]\OT1/cmss/bx/it/12 Demostraci^^Son. []\OT1/cmss/m/sl/12 Sea $\OMS/cmsy/m/n/12 T$ \OT1/cmss/m/sl/12 to-po-log^^S^^Pa so-bre $[][] \OML/cmm/m/it/12 X[]$ \OT1/cmss/m/sl/12 tal que $\OML/cmm/m/it/12 p[] \OT1/cmr/m/n/12 : ([][] \OML/cmm/m/it/12 X[]; \OMS/cmsy/m/n/12 T\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 !
  []
 
+Package mdframed Info: Not enough space on this page on input line 139.
+[20]
+Package mdframed Info: Not enough space on this page on input line 139.
 ) (./clase_10.tex
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
@@ -1135,9 +1184,6 @@ Overfull \hbox (22.73128pt too wide) in paragraph at lines 2--3
 [][]\OT1/cmss/bx/it/12 Proposici^^Son 1.24 \OT1/cmss/m/n/12 (Pro-pie-dad Uni-ver-sal To-po-log^^S^^Pa Por-duc-to)\OT1/cmss/bx/it/12 . []\OT1/cmss/m/sl/12 Sea $\OMS/cmsy/m/n/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 X[]; \OMS/cmsy/m/n/12 T[]\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 g[]$
  []
 
-Package mdframed Info: Not enough space on this page on input line 3.
-[20]
-Package mdframed Info: Not enough space on this page on input line 3.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 5.
@@ -1171,10 +1217,17 @@ Overfull \hbox (13.49127pt too wide) in paragraph at lines 34--35
 \OML/cmm/m/it/12 J; f[] \OT1/cmr/m/n/12 : \OML/cmm/m/it/12 X \OMS/cmsy/m/n/12 ! \OML/cmm/m/it/12 X[]$ \OT1/cmss/m/sl/12 apli-ca-ci^^Son. En-ton-ces, $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 )[] : (\OML/cmm/m/it/12 X; \OMS/cmsy/m/n/12 T\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ! \OT1/cmr/m/n/12 ([][] \OML/cmm/m/it/12 X[]; [][] \OMS/cmsy/m/n/12 T[]\OT1/cmr/m/n/12 ) :
  []
 
+
+Package mdframed Warning: You got a bad break
+(mdframed)                because the last box will be empty
+(mdframed)                you have to change it manually
+(mdframed)                by changing the text, the space
+(mdframed)                or something else on input line 35.
+
+[21]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 37.
-[21]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 49.
@@ -1204,14 +1257,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 66--67
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 71.
-
-Package mdframed Warning: You got a bad break
-(mdframed)                because the last box will be empty
-(mdframed)                you have to change it manually
-(mdframed)                by changing the text, the space
-(mdframed)                or something else on input line 73.
-
+Package mdframed Info: Not enough space on this page on input line 73.
 [22]
+Package mdframed Info: Not enough space on this page on input line 73.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 75.
@@ -1786,27 +1834,433 @@ Package mdframed Info: Box was splittet wrong
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 140.
-) (./clase_17.tex) [39] (./master.aux
-LaTeX Info: Redefining \. on input line 9.
-LaTeX Info: Redefining \% on input line 9.
+) (./clase_17.tex
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 9.
+
+Overfull \hbox (15.53244pt too wide) in paragraph at lines 27--29
+\OT1/cmss/m/sl/12 Por el cri-te-rio de Wieis-trass $\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 f[]\OMS/cmsy/m/n/12 g[]$ \OT1/cmss/m/sl/12 con-ver-ge uni-for-me-men-te $\OMS/cmsy/m/n/12 ) \OML/cmm/m/it/12 f[] []
+ []
+
+[39]
+Package mdframed Info: Not enough space on this page on input line 31.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 33.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
+(Font)              using `OT1/cmss/m/sc' instead on input line 36.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
+(Font)              using `OT1/cmss/m/sc' instead on input line 37.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
+(Font)              using `OT1/cmss/m/sc' instead on input line 38.
+
+
+Package mdframed Warning: You got a bad break
+(mdframed)                because the last box will be empty
+(mdframed)                you have to change it manually
+(mdframed)                by changing the text, the space
+(mdframed)                or something else on input line 40.
+
+[40]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 42.
+) (./clase_18.tex [41]
+Cap\'{\i }tulo 3.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 3.
+
+Overfull \hbox (4.10072pt too wide) in paragraph at lines 4--5
+[][]\OT1/cmss/bx/it/12 Definici^^Son 3.1 \OT1/cmss/m/n/12 (Nu-me-ra-ble)\OT1/cmss/bx/it/12 . []\OT1/cmss/m/sl/12 Sea $\OML/cmm/m/it/12 X$ \OT1/cmss/m/sl/12 con-jun-to, $\OML/cmm/m/it/12 X$ \OT1/cmss/m/sl/12 es nu-me-ra-ble si $[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 X\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^T
+ []
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 7.
+
+LaTeX Warning: Command \textordmasculine invalid in math mode on input line 12.
+
+
+LaTeX Warning: Command \textordmasculine invalid in math mode on input line 12.
+
+Missing character: There is no º in font cmr12!
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 23.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 45.
+Package mdframed Info: Not enough space on this page on input line 47.
+[42
+
+]
+Package mdframed Info: Not enough space on this page on input line 47.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 49.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
+(Font)              using `OT1/cmss/m/sc' instead on input line 52.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
+(Font)              using `OT1/cmss/m/sc' instead on input line 53.
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 57.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 61.
+
+Underfull \hbox (badness 10000) in paragraph at lines 62--63
+
+ []
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 67.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 71.
+
+Package mdframed Warning: You got a bad break
+(mdframed)                because the last box will be empty
+(mdframed)                you have to change it manually
+(mdframed)                by changing the text, the space
+(mdframed)                or something else on input line 73.
+
+Package mdframed Info: You first box width is to small
+ mdframed fixed it
+(mdframed)              on input line 73.
+[43]
+
+Package mdframed Warning: You got a bad break
+(mdframed)                because the last split box is empty
+(mdframed)                You have to change the settings on input line 73.
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 75.
+./clase_18.tex:76: Missing $ inserted.
+<inserted text> 
+                $
+l.76   $\fbox{a) \Rightarrow}
+                             $ Sea $( \prod_{j \in J} X_{j}, \prod_{j \in J}...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./clase_18.tex:76: Extra }, or forgotten $.
+\fbox  ...x {\color@begingroup \kern \fboxsep {#1}
+                                                  \kern \fboxsep \color@endg...
+l.76   $\fbox{a) \Rightarrow}
+                             $ Sea $( \prod_{j \in J} X_{j}, \prod_{j \in J}...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./clase_18.tex:76: Missing $ inserted.
+<inserted text> 
+                $
+l.76   $\fbox{a) \Rightarrow}
+                             $ Sea $( \prod_{j \in J} X_{j}, \prod_{j \in J}...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./clase_18.tex:76: Missing } inserted.
+<inserted text> 
+                }
+l.76   $\fbox{a) \Rightarrow}
+                             $ Sea $( \prod_{j \in J} X_{j}, \prod_{j \in J}...
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./clase_18.tex:78: Missing $ inserted.
+<inserted text> 
+                $
+l.78   $\fbox{b) \Rightarrow}
+                             $ $\forall j_{0} \in J, p_{j_{0}} : ( \prod_{j ...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./clase_18.tex:78: Extra }, or forgotten $.
+\fbox  ...x {\color@begingroup \kern \fboxsep {#1}
+                                                  \kern \fboxsep \color@endg...
+l.78   $\fbox{b) \Rightarrow}
+                             $ $\forall j_{0} \in J, p_{j_{0}} : ( \prod_{j ...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./clase_18.tex:78: Missing $ inserted.
+<inserted text> 
+                $
+l.78   $\fbox{b) \Rightarrow}
+                             $ $\forall j_{0} \in J, p_{j_{0}} : ( \prod_{j ...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./clase_18.tex:78: Missing } inserted.
+<inserted text> 
+                }
+l.78   $\fbox{b) \Rightarrow}
+                             $ $\forall j_{0} \in J, p_{j_{0}} : ( \prod_{j ...
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./clase_18.tex:80: Missing $ inserted.
+<inserted text> 
+                $
+l.80   $\fbox{a) \Leftarrow}
+                            $ Sea $K$ numerable. $\forall a = ( a_{j} )_{j \...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./clase_18.tex:80: Extra }, or forgotten $.
+\fbox  ...x {\color@begingroup \kern \fboxsep {#1}
+                                                  \kern \fboxsep \color@endg...
+l.80   $\fbox{a) \Leftarrow}
+                            $ Sea $K$ numerable. $\forall a = ( a_{j} )_{j \...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./clase_18.tex:80: Missing $ inserted.
+<inserted text> 
+                $
+l.80   $\fbox{a) \Leftarrow}
+                            $ Sea $K$ numerable. $\forall a = ( a_{j} )_{j \...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./clase_18.tex:80: Missing } inserted.
+<inserted text> 
+                }
+l.80   $\fbox{a) \Leftarrow}
+                            $ Sea $K$ numerable. $\forall a = ( a_{j} )_{j \...
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./clase_18.tex:80: Undefined control sequence.
+l.80 ...\{ \prod_{j \in J} A_{j} = X_{j}, \forallj
+                                                   ij J \setminus F : F \tex...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./clase_18.tex:82: Missing $ inserted.
+<inserted text> 
+                $
+l.82   $\fbox{b) \Leftarrow}
+                            $ $\forall j \in J, \exists \mathcal{B}_{j} = \{...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./clase_18.tex:82: Extra }, or forgotten $.
+\fbox  ...x {\color@begingroup \kern \fboxsep {#1}
+                                                  \kern \fboxsep \color@endg...
+l.82   $\fbox{b) \Leftarrow}
+                            $ $\forall j \in J, \exists \mathcal{B}_{j} = \{...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./clase_18.tex:82: Missing $ inserted.
+<inserted text> 
+                $
+l.82   $\fbox{b) \Leftarrow}
+                            $ $\forall j \in J, \exists \mathcal{B}_{j} = \{...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./clase_18.tex:82: Missing } inserted.
+<inserted text> 
+                }
+l.82   $\fbox{b) \Leftarrow}
+                            $ $\forall j \in J, \exists \mathcal{B}_{j} = \{...
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 85.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 89.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 97.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 101.
+Package mdframed Info: Not enough space on this page on input line 107.
+[44]
+Package mdframed Info: Not enough space on this page on input line 107.
+) (./clase_19.tex
+Underfull \hbox (badness 10000) in paragraph at lines 2--3
+
+ []
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 20.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 24.
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
+(Font)              using `OT1/cmss/m/sc' instead on input line 27.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
+(Font)              using `OT1/cmss/m/sc' instead on input line 28.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
+(Font)              using `OT1/cmss/m/sc' instead on input line 29.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
+(Font)              using `OT1/cmss/m/sc' instead on input line 30.
+
+
+Package mdframed Warning: You got a bad break
+(mdframed)                because the last box will be empty
+(mdframed)                you have to change it manually
+(mdframed)                by changing the text, the space
+(mdframed)                or something else on input line 32.
+
+Package mdframed Info: Box was splittet wrong
+ starting loop to iterate the splitting point
+(mdframed)              on input line 32.
+[45]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 34.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
+(Font)              using `OT1/cmss/m/sc' instead on input line 37.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
+(Font)              using `OT1/cmss/m/sc' instead on input line 38.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
+(Font)              using `OT1/cmss/m/sc' instead on input line 44.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
+(Font)              using `OT1/cmss/m/sc' instead on input line 49.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
+(Font)              using `OT1/cmss/m/sc' instead on input line 51.
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 59.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 63.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 67.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 75.
+Package mdframed Info: Not enough space on this page on input line 77.
+[46]
+Package mdframed Info: Not enough space on this page on input line 77.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 79.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 83.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 87.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 91.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 95.
+
+./clase_19.tex:96: Undefined control sequence.
+l.96 ...{T}_{j} )$ es separable $ \Leftrightarrowk
+                                                   \forall j \in J ( X_{j}, ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (8.51976pt too wide) in paragraph at lines 96--97
+[][]\OT1/cmss/bx/it/12 Proposici^^Son 3.10. []\OT1/cmss/m/sl/12 Sean $\OMS/cmsy/m/n/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 X[]; \OMS/cmsy/m/n/12 T[]\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 g[]$ \OT1/cmss/m/sl/12 fa-mi-lia no va-cia de e.t. $\OML/cmm/m/it/12 T[]$ \OT1/cmss/m/sl/12 y $[] \OML/cmm/m/it/12 X[] \OMS/cmsy/m/n/12 ^^U
+ []
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 99.
+) [47] (./master.aux
+LaTeX Info: Redefining \. on input line 10.
+LaTeX Info: Redefining \% on input line 10.
 )
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 7173 strings out of 478238
- 119941 string characters out of 5850456
- 474348 words of memory out of 5000000
- 25234 multiletter control sequences out of 15000+600000
+ 8612 strings out of 478238
+ 143402 string characters out of 5850456
+ 500387 words of memory out of 5000000
+ 26623 multiletter control sequences out of 15000+600000
  482753 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 87i,12n,93p,1220b,663s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsi1200.pfb>
-Output written on master.pdf (40 pages, 310044 bytes).
+ 87i,13n,93p,1251b,667s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsi1200.pfb>
+Output written on master.pdf (48 pages, 350034 bytes).
 PDF statistics:
- 221 PDF objects out of 1000 (max. 8388607)
- 143 compressed objects within 2 object streams
+ 251 PDF objects out of 1000 (max. 8388607)
+ 163 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

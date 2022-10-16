@@ -11,6 +11,10 @@
 \usepackage{enumitem}
 \usepackage{mathtools}
 \usepackage{bbm}
+\usepackage{import}
+\usepackage{pdfpages}
+\usepackage{transparent}
+\usepackage{xcolor}
 
 %\usepackage[T1]{fontenc}
 %\setmainfont{Times New Roman}
@@ -34,6 +38,7 @@
 \newmdtheoremenv{lem}{Lema}[theo]
 \newmdtheoremenv{defn}{Definición}[chapter]
 \newmdtheoremenv{prop}{Proposición}[chapter]
+\newmdtheoremenv{ejr}{Ejercicio}[section]
 \surroundwithmdframed[
   topline=false,
   rightline=false,
@@ -54,11 +59,18 @@
 \newtheorem*{nota}{Notación}
 \newtheorem*{note}{Nota}
 \newtheorem*{cons}{Consecuencia}
-\newtheorem*{ejr}{Ejercicio}
 \newtheorem*{sol}{Solución}
 
 \DeclareMathOperator{\sgn}{sgn}
 \DeclareMathOperator{\card}{card}
 \DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\dist}{dist}
+
+\newcommand{\incfig}[2][1]{%
+    \def\svgwidth{#1\columnwidth}
+    \import{./figures/}{#2.pdf_tex}
+}
+
+\pdfsuppresswarningpagegroup=1
 
 \author{Hugo Del Castillo Mola}

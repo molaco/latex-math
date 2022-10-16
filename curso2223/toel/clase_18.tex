@@ -1,0 +1,109 @@
+\chapter{Propiedades Numerabilidad}
+
+\begin{defn}[Numerable]
+  Sea $X$ conjunto, $X$ es numerable si $\card(X) \leq \mathcal{X}_{0} = \card(\mathbb{N})$.
+\end{defn}
+
+\begin{defn}[Primer Axioma de Numerabilidad]
+  Sea $( X, \mathcal{T} )$ e.t.. Se dice que verifica el primer axioma de numerabilidad si $\forall x \in X, \exists \mathcal{B}(x)$ base de entornos de $x$ en $( X, \mathcal{T} )$ numerable.
+\end{defn}
+
+\begin{ejm}
+  $\forall X$ conjunto, $( X, \mathcal{T}_{D} ), \mathcal{B} (x) = \{ \{ x \} \}, \forall x \in X$ es finito $\Rightarrow$ numerable $\Rightarrow 1º $ axioma.
+\end{ejm}
+
+\begin{ejm}
+  $\forall X $ conjunto $( X, \mathcal{T} ), \mathcal{V}(x) = \{ x \} = \mathcal{B} (x), \forall x \in X$.
+\end{ejm}
+
+\begin{ejm}
+  Si $( X, \mathcal{T} )$ metrizable, $\mathcal{T} = \mathcal{T}_{d}, \forall x \in X, \mathcal{B} (x) = \{  B_{\frac{1}{n}}^x : n \in \mathbb{N} \}$.
+\end{ejm}
+
+\begin{defn}[Segundo Axioma]
+  Sea $( X, \mathcal{T} )$ e.t.. Se dice que verifica el segundo axioma de numerabilidad si $ \exists \mathcal{B}$ base de $\mathcal{T}$, numerable.
+\end{defn}
+
+\begin{ejm}
+  $\forall X$ conjunto, $( X, \mathcal{T} ), \mathcal{T} = \{  X, \emptyset \}$.
+\end{ejm}
+
+\begin{ejm}
+  Si $( \mathbb{R}^{n}, \mathcal{T}_{u} ), \mathcal{B} = \{ B_{\frac{1}{n}}(x) : n \in \mathbb{N} \}$
+\end{ejm}
+
+\begin{obs}
+  2º axioma $\Rightarrow$ 1º axioma.
+\end{obs}
+
+\begin{obs}
+  1º axioma $\not \Rightarrow $ 2º axioma.
+
+  Sea $X$ conjunto tal que $ \card(X) > \mathcal{X}_{0} \Rightarrow ( X, \mathcal{T}_{d} )$ es 1º axioma pero no segundo. Dado que $ \forall x \in X, \{ x \} \in \mathcal{T}_{d} \Rightarrow \forall \mathcal{B}$ base de $\mathcal{T}_{d},$ $\forall x \in X, \exists B_{x} \subset \mathcal{B} : B_{x} \subset \{ x \} \Rightarrow \mathcal{X}_0 < \card(X) = \card( \{ B_{x} : x \in X \}) \leq \card ((\mathcal{B}))$.
+\end{obs}
+
+\begin{prop}
+  El 1º y 2º axioma de numerabilidad son propiedades hereditarias.
+\end{prop}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item []
+    \item  $( X, \mathcal{T} )$ 1º axioma, $E \subset X$. $\forall x \in E \Rightarrow \exists \mathcal{B} (x) = \{  B_{n}^{x} : n \in \mathbb{N} \}$ base de entornos de $x$ en $( X, \mathcal{T} )$ $\Rightarrow \mathcal{B}(x) = \{  B_{n}^{x} \cap E : n \in \mathbb{N} \}$ es base de entornos de $x$ en $ ( E, \mathcal{T}|_{E})$.
+    \item $( X, \mathcal{T} )$ 2º axioma, $E \subset X \Rightarrow \exists \mathcal{B} = \{ B_{n} : n \in \mathbb{N} \}$ base de $\mathcal{T} \Rightarrow \mathcal{B}' = \{  B_{n} \cap E : n \in \mathbb{N} \}$ es base de $\mathcal{T}|_{E}$.
+  \end{enumerate}
+\end{dem}
+
+\begin{prop}
+  Sean $( X, \mathcal{T} ), ( X', \mathcal{T}' )$ e.t. $f: ( X, \mathcal{T} ) \to ( X', \mathcal{T}' )$ aplicación suprayectiva, abierta y continua, Si $( X, \mathcal{T} )$ es 1º axioma (2º axioma), también lo es $( X', \mathcal{T}' )$.
+\end{prop}
+
+\begin{dem}
+  $\fbox{a)}$ $\forall x' \in X' \xRightarrow[]{ f supra} \exists x \in X : f(x) = x'$. Por hipótesis $\exists \mathcal{B} (x) = \{ B_{n}^{x} : n \in \mathbb{N} \}$ es base de entornos de $x$ numerable $\Rightarrow \mathcal{B}'(x) = \{ f(B_{n}^{x}) : n \in \mathbb{N} \} \subset \mathcal{V}(x)$ es numerable. Veamos que es base de entornos de $x'$. $\forall V^{x'}$ entorno de $ x'$ en $( X', \mathcal{T}' ) \xRightarrow[]{ f cont. } f^{-1}(V^{x'})$ entorno de $x$ $\Rightarrow \exists n_{0} \in \mathbb{N} : B_{n_{0}}^{x} \subset f^{-1}(V^{x'}) \Rightarrow f(B_{n_{0}}^{x}) \subset f(f^{-1}(V^{x'})) = V^{x'}$ donde $ f(B_{n_{0}}^{x'}) \in \mathcal{B}(x)$. \\
+
+$\fbox{b)}$ Por hipótesis, $\exists \mathcal{B} = \{ B_{n} : n \in \mathbb{N} \}$ base de $\mathcal{T} \xRightarrow[]{f \text{ ab. }} \mathcal{B}' = \{  f(B_{n}) : n \in \mathbb{N} \} \subset \mathcal{T}'$. Entonces, $\forall A' \in \mathcal{T}' \setminus \{  \emptyset \}, \forall x' \in A' \xRightarrow[]{f \text{ cont y supra }} x \in f^{-1}(x') \subset f^{-1}(A') \in \mathcal{T} \Rightarrow \exists n_{0} \in \mathbb{N} : B_{n_{0}} \subset f^{-1}(A') \Rightarrow f(x) = x' \in f(B_{n_{0}}) \subset f( f^{-1}(A')) = A$.
+\end{dem}
+
+\begin{cor}
+  1º, 2º axioma son invariantes topológicos.
+\end{cor}
+
+\begin{prop}
+  Sea $\{ ( X_{j}, \mathcal{T}_{j} ) \}_{j \in J}$ familia no vacía de e.t.. Entonces, $( \prod_{j \in J} X_{j}, \prod_{j \in J} \mathcal{T}_{j} )$ 1º axioma (2º axioma) $\Leftrightarrow \forall j \in J, ( X_{j}, \mathcal{T}_{j} )$ es 1º axioma (2º axioma) y $K = \{ j \in J: \mathcal{T}_{j} \text{ no es trivial } \}$ es no numerable.
+\end{prop}
+
+\begin{dem}
+  $\fbox{a) \Rightarrow}$ Sea $( \prod_{j \in J} X_{j}, \prod_{j \in J} \mathcal{T}_{j} )$ 1º axioma. Entonces, $\forall j \in J, p_{j_{0}} : ( \prod_{j \in J} X_{j}, \prod_{j \in J} \mathcal{T}_{j} ) \to ( X_{j_{0}}, \mathcal{T}_{j_{0}} )$ es suprayectiva, continua y abierta $\Rightarrow ( X_{j_{0}}, \mathcal{T}_{j_{0}} )$ es 1º axioma. Por hipótesis, $\forall a = ( a_{j} )_{j \in J}, \exists \mathcal{B} (a) = \{  B_{n}^{a} : n \in \mathbb{N} \}$ numerable $\Rightarrow \forall j \in J, H_{n} = \{ p_{j}(B_{n}^{a}) : n \in \mathbb{N} \}$ es base de entornos de $a_{j}$, $\forall n \in \mathbb{N}, \{ j \in J : p_{j}(B_{n}^{a}) \neq X_{j} \}$ dado que $\prod U_{j} \subset B_{n}^{a} : U_{j} \in \mathcal{T}_{j}$ y $U_{j} = X_{j}, \forall j \in J \setminus F : F$ finito $\Rightarrow \forall j \in J \setminus F, p_{j}(B_{n}^{a}) = X_{j}$. Entonces, $ H_{n}$ es finito $\Rightarrow H = \bigcup_{n \in \mathbb{N}} H_{n}$ es numerable. Falta ver que $K$ es numerable, veamos que $K \subset H$. $\forall j \in J \Rightarrow \mathcal{T}_{j} \neq \{ \emptyset, X_{j} \} \Rightarrow \exists n_{0} \in \mathbb{N} : p_{j}(B_{n_{0}}^{a}) \neq X_{j} \Rightarrow j \in H_{n_{0}} \subset H$.
+
+  $\fbox{b) \Rightarrow}$ $\forall j_{0} \in J, p_{j_{0}} : ( \prod_{j \in J} X_{j}, \prod_{j \in J} \mathcal{T}_{j} ) \to ( X_{j_{0}}, \mathcal{T}_{j_{0}} )$ suprayectiva, continua y abierta $\Rightarrow ( X_{j_{0}}, \mathcal{T}_{j_{0}} )$ es 2º axioma. Y 2º axioma $\Rightarrow$ 1º axioma $\Rightarrow K$ numerable.
+
+  $\fbox{a) \Leftarrow}$ Sea $K$ numerable. $\forall a = ( a_{j} )_{j \in J} \in \prod_{j \in J} X_{j}$, por hipótesis, $\forall j \in J, \exists \mathcal{B} (a_{j}) = \{  B_{n}^{a_{j}} : n \in \mathbb{N} \} \setminus \{  X_{j} \}$ base numerable de $a_{j}$. Sea $\mathcal{B} (a) = \{ \prod_{j \in J} A_{j} = X_{j}, \forallj ij J \setminus F : F \text{ finito y } A_{j} \in \mathcal{B}(a_{j}), j \in F \}$ es base de entornos de $ a$. Luego $\card(\mathcal{B} (a)) = \card( \mathcal{P}_{F}(K)) \Rightarrow$ numerable.
+
+  $\fbox{b) \Leftarrow}$ $\forall j \in J, \exists \mathcal{B}_{j} = \{ B_{n} : n \in \mathbb{N} \}\ \{ X_{j} \}$. Sea $\mathcal{B} = \{  \prod_{j \in J} A_{j}: A_{j} = X_{j}, \forall j \in J \setminus F, F \text{ finito }, A_{j} \in \mathcal{B}_{j}, j \in F \} \Rightarrow \card(\mathcal{B}) = \card(\mathcal{P}_{F}(K)) \Rightarrow $ numerable.
+\end{dem}
+
+\begin{prop}
+  Sea $\{ ( X_{j}, \mathcal{T}_{j} ) \}_{j \in J}$ familia no vacía de e.t.. Entonces, $( \sum_{k \in J} X_{k}, \sum_{k \in J} \mathcal{T}_{k})$ 1º axioma $\Leftrightarrow \forall j \in J, ( X_{j}, \mathcal{T}_{j} )$es 1º axioma
+\end{prop}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item []
+    \item [$(\Rightarrow)$] $\forall j_{0} \in J, X_{j_{0}} \simeq X_{j} \times \{ j_{0} \} \subset \sum_{j = 0}^{} X_{j}$ ACABAR
+    \item [$(\Leftarrow)$] $\forall x \in \sum_{j \in J} \Rightarrow \exists ! j_{0} \in J :  x \in X_{j_{0}} \times \{  j_{0} \} \simeq X_{j_{0}}$. Por hipótesis, $\exists \mathcal{B}$ base entornos de $p_{1}(x)$ en $( X_{j_{0}}, \mathcal{T}_{j_{0}} ) \Rightarrow \exists$ base de entornos de $x$ en $X_{j_{0}} \times \{ j_{0} \}$ y en $( \sum_{k \in J} X_{k}, \sum_{k \in J} \mathcal{T}_{k})$.
+  \end{enumerate}
+\end{dem}
+
+\begin{prop}
+  Sea $\{ ( X_{j}, \mathcal{T}_{j} ) \}_{j \in J}$ familia no vacía de e.t.. Entonces, $( \sum_{k \in J} X_{k}, \sum_{k \in J} \mathcal{T}_{k})$ 2º axioma $\Leftrightarrow \forall j \in J, ( X_{j}, \mathcal{T}_{j} )$es 1º axioma y $\mathcal{T}$ es numerable.
+\end{prop}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item []
+    \item [$(\Rightarrow)$] $\forall j_{0} \in J, X_{j_{0}} \simeq X_{j_{0}} \times \{ j_{0} \} \subset \sum_{j \in J} X_{j}, \exists \mathcal{B}$ base numerable de $\sum_{j \in J} \mathcal{T}_{j} \Rightarrow \forall j \in J, \exists B_{k} \in \mathcal{B} : B_{k} \subset X_{k} \times \{ k \}$ disjuntos dos dos $\Rightarrow \card \{ B_{k} : k \in J \} \leq \card(\mathcal{B}) \leq \mathcal{X}_{0}$ por ser subfamilia. Y por ser disjuntos $\Rightarrow \forall k, k' \in \mathcal{T} : k \neq k', B_{k} \cap B_{k'} = \emptyset \Rightarrow \card J \leq \card \{  B_{k} : k \in J \} \leq \card \mathcal{X}_{0}$.
+    \item [$(\Leftarrow)$] $\forall k \in J, \exists \mathcal{B}_{k}$ base numerable de $\mathcal{T}_{k} \Rightarrow \{  B \times \{ k \} : B \in \mathcal{B}_{k} \}$ base de entornos de $\mathcal{T}_{k} \Rightarrow \mathcal{B} = \bigcup_{k \in J} \{ B \times \{ k \}: B \in \mathcal{B}_{k} \}$ es numerable y es base de $\sum_{j \in J} \mathcal{T}_{j}$.
+  \end{enumerate}
+\end{dem}
+
+

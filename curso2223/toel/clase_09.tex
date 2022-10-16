@@ -81,6 +81,14 @@
 \end{defn}
 
 \begin{obs}
+  $S_{\beta} = \{ \pi_{\beta}^{-1}(U_{\beta}) : U_{\beta} \in \mathcal{T}_{\beta} \} \Rightarrow S = \bigcup_{\beta \in J} S_{\beta}$ es subbase de la topología producto.
+\end{obs}
+
+\begin{obs}
+  Podemos escribir $B = \pi_{\beta_{1}}^{-1}(U_{\beta}) \cap \cdots \cap \pi_{\beta_{n}}^{-1}(U_{\beta_{n}})$
+\end{obs}
+
+\begin{obs}
   El producto de abiertos no es neceseariamente abierto.
 \end{obs}
 
@@ -119,7 +127,7 @@ La base engendrada por $\mathcal{S}$ es
 \end{prop}
 
 \begin{dem}
-  $\forall A \in \prod_{j \in J} A_{j}, A = \bigcup_{\lambda \in \Lambda} : B_{\lambda} \in \mathcal{B}$ donde $\mathcal{B}$ es subbase de $\prod_{j \in J} \mathcal{T}_{j}$, $B_{\lambda} = \{ \prod_{j \in J} U_{\lambda j}: U_{\lambda j} \in \mathcal{T}_{j}, U_{\lambda j} = X_{j}, \forall j \in J \setminus F: F \text{ finito }\}$. Entonces, $p_{j_{0}}(A) = p_{j_{0}}(\bigcup_{\lambda \in \Lambda} B_{\lambda}) = \bigcup_{\lambda \in \Lambda} p_{j_{0}}(B_{\lambda}) = \bigcup_{\lambda \in \Lambda} U_{\lambda j} \in \mathcal{T}_{j} \Rightarrow $ abierto.
+  $\forall A \in \prod_{j \in J} A_{j}, A = \bigcup_{\lambda \in \Lambda} B_{\lambda} : B_{\lambda} \in \mathcal{B}$ donde $\mathcal{B}$ es subbase de $\prod_{j \in J} \mathcal{T}_{j}$, $B_{\lambda} = \{ \prod_{j \in J} U_{\lambda j}: U_{\lambda j} \in \mathcal{T}_{j}, U_{\lambda j} = X_{j}, \forall j \in J \setminus F: F \text{ finito }\}$. Entonces, $p_{j_{0}}(A) = p_{j_{0}}(\bigcup_{\lambda \in \Lambda} B_{\lambda}) = \bigcup_{\lambda \in \Lambda} p_{j_{0}}(B_{\lambda}) = \bigcup_{\lambda \in \Lambda} U_{\lambda j} \in \mathcal{T}_{j} \Rightarrow $ abierto.
 \end{dem}
 
 \begin{prop}

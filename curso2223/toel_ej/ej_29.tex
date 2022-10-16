@@ -1,0 +1,7 @@
+\begin{ejr}[29]
+  Sea $( X, \mathcal{T} ), ( X', \mathcal{T}' )$ e.t., $f: ( X, \mathcal{T} ) \to ( X', \mathcal{T}' )$ continua, abierta y suprayectiva, $\mathcal{B}$ base de $\mathcal{T}$. Entonces, $\mathcal{G} = \{ f(B) : B \in \mathcal{B} \}$ es base de $\mathcal{T}'$.
+\end{ejr}
+
+\begin{sol}
+  $\forall A' \in \mathcal{T}' \xRightarrow[]{f \text{ .cont}} f^{-1}(A') \in \mathcal{T} \xRightarrow[]{ \mathcal{B} \text{ base de } \mathcal{T}} \exists \mathcal{B}' \subset \mathcal{B} : f^{-1}(A') = \bigcup_{B \in \mathcal{B}'} B \xRightarrow[]{ f \text{ supra. } }f(f^{-1}(A')) = f \big ( \bigcup_{B \in \mathcal{B}'} B \big ) = \bigcup_{B \in \mathcal{B}'} f(B)$ donde $f^{-1}(A') \in \mathcal{T} \xRightarrow[]{ f \text{ ab.} } f(f^{-1}(A')) = A' \in \mathcal{T}' \Rightarrow \mathcal{G}$ base de $\mathcal{T}'$.
+\end{sol}

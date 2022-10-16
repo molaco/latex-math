@@ -1,0 +1,203 @@
+\chapter{Modelo Uniforme}
+
+\section{Regla de Laplace}
+
+\begin{prop}[Regla de Laplace]
+  Sea $(\Omega, \mathcal{A}, P )$ espacio de probabilidad tal que el conjunto de sucesos elementales es finito, los sucesos elementales son incompatibles dos a dos y equiprobables. Entonces, si $A \in \mathcal{A}$
+  \[ 
+    P(A) = \frac{\text{ número de sucesos elementales a favor de A}}{\text{número de sucesos elemenetales de $\Omega$}} 
+  \] 
+  a este resultado lo llamamos Regla de Laplace
+\end{prop}
+
+\begin{dem}
+  Sea $a_{1}, a_{2}, \cdots, a_{n}$ el conjunto de sucesos elementales asociados, entonces
+  \[
+    \Omega = a_{1} \cup a_{2} \cup \cdots \cup a_{n},
+  \]
+  por ser incompatibles dos a dos
+  \[ 
+    P(a_{1}) + P(a_{2}) + \cdots + P(a_{n}) = 1
+  \] 
+  y por ser equiprobables, es decir, $P(a_{i}) = \frac{1}{n}, \forall i \in \{  1, \cdots, n \}$. Si $A \in \mathcal{A}$ tal que $A = \bigcup_{j \in J} a_{j}$ donde $ J = \{ 1, \cdots, k \}, k \leq n$, entonces
+  \[ 
+    P(A) = P(a_{1}) + \cdots + P(a_{k}) = \frac{k}{n} 
+  \] 
+  Así, hemos obtenido la Regla de Laplace.
+
+\end{dem}
+
+\section{Población y Muestra}
+
+\begin{note}
+  Dentro del muestreo aleatorio se distingue que la selección sea sin remplazamiento o con remplazamiento.
+\end{note}
+
+\begin{defn}[Selección sin Remplazamiento]
+  Se seleccionan $n$ elementos de la población, mediante $n$ extracciones sucesivas sin remplazamiento, asignando en cada una de ellas probabilidades iguales a los elementos no seleccionados en las anteriores. En, este caso, $n$ es menor o igual que el tamaño de la población.
+\end{defn}
+
+\begin{defn}[Selección con Remplazamiento]
+  Se seleccionan $n$ elementos de la población, mediante $n$ extracciones sucesivas con reemplazamiento, asignando en cada una de ellas probabilidades iguales a todos los elementos de la población.
+\end{defn}
+
+\begin{note}
+  Distinguimos muestras ordenadas y sin ordenar.
+\end{note}
+
+\section{Muestras Ordenadas}
+
+\begin{nota}
+  $(N)_{n} = N \cdot (N-1) \cdot \cdots \cdot (N- n +1), \forall n \leq N$.
+\end{nota}
+
+\begin{prop}
+  Sea $A = \{ a_{1}, \cdots, a_{n} \}$ y $B = \{ b_{1}, \cdots, b_{m} \}$. Entonces, es posible formar $n \cdot m$ pares tales que $(a_{i}, b_{i})$ donde $a_{i} \in A, b_{j} \in B$
+\end{prop}
+
+\begin{obs}
+  El par $(a_{i}, b_{j})$ y el par $(b_{j}, a_{i})$ son iguales.
+\end{obs}
+
+\begin{prop}
+  Sea $A_{1}, A_{2}, \cdots, A_{k}$ con $n_{1}, n_{2}, \cdots, n_{k}$ elementos. Entonces el número de ordenaciones de la forma $(x_{1}, x_{2}, \cdots, x_{k}) : x_{i} \in A_{i}, i \in \{ 1, \cdots, k \}$ es $n_{1} \cdot n_{2} \cdot \cdots \cdot n_{k}$.
+\end{prop}
+
+\begin{cor}
+  $k$ selecciones sucesivas con exactamente $n_{i}$ opciones posibles en el $i$-ésimo paso, producen $n_{1} \cdot \cdots \cdot n_{k}$ resultados diferentes posibles.
+\end{cor}
+
+\begin{theo}
+  De una población de $N$ elementos se pueden seleccionar $N^{n}$ muestras diferentes con remplazamiento de tamaño $n$ y $(N)_{n}$ muestras diferentes sin reemplazamiento de tamaño $n$.
+\end{theo}
+
+\begin{theo}
+  El número de ordenaciones diferentes de $N$ elementos es 
+  \[ 
+    N! = N \cdot (N -1) \cdot \cdots \cdot 2 \cdot 1 
+  \] 
+\end{theo}
+
+\begin{theo}
+  Si se realiza un muestreo aleatorio con remplazamiento de tamaño $n$ de una población con $N$ elementos, la probabilidad de que en la muestra no aparezca ningún elemento dos veces es 
+  \[ 
+    p = \frac{(N)_{n}}{N^{n}} = \frac{N \cdot (N -1) \cdot \cdots \cdot (N-n+1)}{N^{n}} 
+  \] 
+\end{theo}
+
+\section{Subpoblaciones}
+
+\begin{defn}[Subpoblación]
+  Una Subpoblación de tamaño $n$ es  una muestra de tamaño $n$ extraída de una población de tamaño $N$, cuyos elementos extraidos no han considerado ningún orden.
+\end{defn}
+
+\begin{nota}
+  \[
+    \binom{N}{n} = \frac{N!}{n! \cdot (N-n)!}
+  \]
+\end{nota}
+
+\begin{theo}
+  De una población de $N$ elementos se pueden seleccionar $\binom{N}{n}$ subpoblaciones diferenetes de tmaño $n \leq N$.
+\end{theo}
+
+\begin{dem}
+  El número de subpoblaciones posibles de tamaño $n$ de una población $N$ es el número de ordenaciones distintas de $n$ elementos que es $n!$. Además, de una población de $N$ elementos se pueden seleccionar $(N)_{n}$ muestras diferentes sin remplazamiento de tamaño $n$. Entonces,
+  \[ 
+    A = \frac{(N)_{n}}{n!}
+  \] 
+\end{dem}
+
+\begin{ejm}
+  Un equipo está compuesto por $7$ miembros y un club cuenta con $20$ miembros, se podran formar $\binom{20}{7}$ equipos diferentes.
+\end{ejm}
+
+\begin{theo}
+  De una población de $N$ elementos se pueden seleccionar $\binom{N + n -1}{n}$ subpoblaciones diferentes de tamaño $n$, mediante un muestreo con remplazamiento.
+\end{theo}
+
+\section{Prticiones}
+
+\begin{defn}[Partición]
+  Una partición de tamaño $r$ de una población de tamaño $N$ es una división de la población en $r$ grupos ordenados de elementos desordenados donde el grupo $i$ contine $n_{i}$ elementos $\forall i \in \{ 1,2, \cdots, r \}$ y
+  \[ 
+    n_{1} + n_{2} + \cdots + n_{r} = N 
+  \] 
+\end{defn}
+
+\begin{theo}
+  El número de particiones diferentes de tamaño $r$ en las cuales se puede divir una población de $N$ elementos es
+  \[ 
+    \frac{N!}{n_{1}! \cdot n_{2}! \cdots n_{r}!} 
+  \] 
+  siendo $n_{i}$ el tamaño del grupo $i$, $i \in \{ 1, \cdots, r \}$.
+\end{theo}
+
+\begin{ejm}
+  Se lanza un dado en 10 ocasiones. El número total de formas en las cuales se pueden obtener $3$ unos, ningún dos, 2 treses, ningún cuatro, 3 cincos y 2 seises es
+  \[ 
+    \frac{10!}{3! \cdot 0! \cdot 2! \cdot 0! \cdot 3! \cdot 2!} 
+  \] 
+\end{ejm}
+
+%\section{Coeficientes Binomiales}
+
+\section{Variaciones, Combinaciones y Permutaciones}
+
+\subsection{Variaciones de $N$ elementos tomados de $n$ en $n$}
+
+\begin{defn}[Variaciones sin repetición]
+  Las variaciones de $N$ elementos tomados de $n$ en $n$ son los diferentes grupos que se pueden formar a partir de $N$ elementos, tomados de $n$ en $n$. Cada dos grupos difieren entre sipor algún elemento o por el orden.
+  \[ 
+    V_{N, n} = (N)_{n} = N \cdot (N - 1) \cdot (N - n +1)
+  \] 
+\end{defn}
+
+\begin{obs}
+  Es lo mismo que el número de muestras diferentes de tamaño $n$ seleccionadas mediante un muestreo sin remplazamiento de una poblaciçon de tamaño $N$.
+\end{obs}
+
+\subsection{Variaciones de $N$ elementos tomados de $n$ en $n$}
+
+\begin{defn}[Variaciones con repetición] 
+  Las variaciones repetición de $N$ elementos tomados de $n$ en $n$ son los diferentes grupos que se pueden formar a partir de $N$ elementos, tomados de $n$ en $n$, en los que pueden aparecer elementos repetidos y dos grupos son distintos entre sí, tiene distintos elementos o estan situados en distintos lugares.
+  \[ 
+    RV_{M,n}^{N} = N^n
+  \] 
+\end{defn}
+
+\subsection{Permutaciones de $N$ elementos}
+
+\begin{defn}[Permutación]
+  Las Permutaciones de $N$ elementos diferentes son los distintos grupos que pueden formarse entrando en cada uno de llos lo $N$ elementos dados, difiriendo únicamente en el orden de sucesión de sus elementos.
+  \[ 
+    P_{N} = N! = N \cdot (N-1) \cdots 2 \cdot 1 
+  \]  
+\end{defn}
+
+\subsection{Permutaciones con repetición}
+
+\begin{defn}[Permutaciones con repetición]
+  Las permutaciones con repetición de $r$ elementos distintos tales que el elemento $i$ aparece $n_{i}$ veces $\forall i \in \{ 1, 2, \cdots, r \}$ con $ \sum_{i = 1}^{r} n_{r} = N$ es
+  \[ 
+    \frac{N!}{n_{1}! \cdot n_{2}! \cdots n_{r}!} 
+  \] 
+\end{defn}
+
+\subsection{Combinaciones de $N$ elementos tomados de $n$ en $n$}
+
+\begin{defn}[Combinaciones sin repetición]
+  Son los diferente grupos que se pueden formar con $n$ elementos en cada uno, donde por lo menos cada uno tiene un elemento distinto. No se tiene en cuenta el órden en la disposición.
+  \[ 
+    C_{N,n} = \binom{N}{n} = \frac{N!}{n! \cdot (N-n)!}
+  \] 
+\end{defn}
+
+\subsection{Combinaciones con repetición de $N$ elementos tomados de $n$ en $n$}
+
+\begin{defn}[Combinaciones con repetición]
+  Son la distintas disposiciones que se pueden formar tomando $n$ elementos de los $N$, entre lo cuales puden aparecer elementos repetidos, y dos disposicones serán distintas entre sí, si tienen distintos elementos. No se tiene en cuenta el órden en la disposición.
+  \[ 
+    RC_{N, n}  = \binom{N+ n -1}{n} = \binom{N + n -1}{N -1} = \frac{((N + n -1))!}{(N-1)! n!}
+  \] 
+\end{defn}

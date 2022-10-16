@@ -12,3 +12,7 @@
 \contentsline {section}{\numberline {2.5}Aplicaciones Conformes}{17}{}%
 \contentsline {section}{\numberline {2.6}Integral de Funciones Complejas sobre Curvas}{18}{}%
 \contentsline {section}{\numberline {2.7}Teorema de Cauchy}{22}{}%
+\contentsline {chapter}{\numberline {3}Representación Analítica de las funciones holomorfas}{28}{}%
+\contentsline {section}{\numberline {3.1}Sucesiones y Series}{28}{}%
+\contentsline {section}{\numberline {3.2}Series de Potencias}{30}{}%
+\contentsline {section}{\numberline {3.3}Funciones Analíticas}{32}{}%

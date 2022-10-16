@@ -1,0 +1,114 @@
+\chapter{Representación Analítica de las funciones holomorfas}
+
+\begin{note}
+  Si $f$ holomorfa se puede representar localmente como una serie de potencias convergente, en particular, una serie de Taylor.
+\end{note}
+
+\section{Sucesiones y Series}
+
+\begin{defn}[Sucesión Convergente]
+  Sea $\{ z_{n} \}_{n \in \mathbb{N}}$ una sucesión de numeros complejos. Entonces, si
+  \[
+    \forall \epsilon > 0, \exists N \in \mathbb{N}: | z_{n} - z_{0} | < \epsilon, \forall n \geq N,
+  \]
+  decimos que $\{ z_{n} \}_{n \in \mathbb{N}}$ converge a $z_{0}$ y lo denotamos $z_{n} \xrightarrow[]{ n \rightarrow \infty } z_{0}$.
+\end{defn}
+
+\begin{defn}[Serie Convergente]
+  Sea $\sum_{n = 1}^{\infty} a_{n}$ una serie de números complejos. Entonces, si la sucesión de sumas parciales
+  \[
+    s_{n} = \sum_{k = 1}^{n} a_{k}
+  \]
+  converge a $S$, decimos que la serie $\sum_{n = 1}^{\infty} a_{n}$ converge a $S$ y lo denotamos $\sum_{n = 1}^{\infty} a_{n} = S$.
+\end{defn}
+
+¿AÑADIR TEST CONVERGENCE?
+
+\begin{prop}
+  Sea $\{ z_{n} \}_{n \in \mathbb{N}}$ una sucesión de números complejos. Entonces, 
+  \[ 
+    z_{n} \xrightarrow[]{ n \rightarrow \infty } z_{0} \Leftrightarrow 
+    \begin{cases}
+      \Re (z_{n}) \xrightarrow[]{ n \rightarrow \infty } \Re (z_{0}) \\
+      \Im (z_{n}) \xrightarrow[]{ n \rightarrow \infty } \Im (z_{0})
+    \end{cases} 
+  \] 
+\end{prop}
+
+\begin{defn}[Convergencia absoluta]
+  Sea $\sum_{n = 1}^{\infty} a_{n}$ una serie. Entonces, si $\sum_{n = 1}^{\infty} |  a_{n} |$ converge, decimos que $ \sum_{n = 1}^{\infty} a_{n}$ converge absolutamente.
+\end{defn}
+
+\begin{obs}
+  $\sum_{n = 1}^{\infty} a_{n}$ converge absolutamente $\Rightarrow \sum_{n = 1}^{\infty} a_{n}$ converge.
+\end{obs}
+
+\begin{prop}[Producto de Series]
+  Sean $\sum_{n = 0}^{\infty} a_{n}, \sum_{n = 0}^{\infty} b_{n}$ series con $a_{n}, b_{n} \in \mathbb{R}, \forall n \in \mathbb{N}$. Si
+  \[ 
+    c_{n} = \sum_{n = 0}^{\infty} b_{n -k} a_{k}
+  \] 
+  entonces,
+  \[ 
+    \sum_{n = 0}^{\infty} c_{n} = \big ( \sum_{n = 1}^{\infty} a_{n} \big ) \cdot ( \sum_{n = 1}^{\infty} b_{n} )
+  \] 
+\end{prop}
+
+\begin{prop}
+  Sean $\sum_{n = 0}^{\infty} a_{n}, \sum_{n = 0}^{\infty} b_{n}$ series con $a_{n}, b_{n} \in \mathbb{R}, \forall n \in \mathbb{N}$ abosolutamente convergentes. Entonces, $\sum_{n = 0}^{\infty} c_{n}$ es absolutamente convergente.
+\end{prop}
+
+\begin{defn}[Convergencia Puntual]
+  Sea $f, f_{n}: \Omega \to \mathbb{C}$ funciones, $\{ f_{n} \}_{n \in \mathbb{N}}$ sucesión de funciones tal que $f_{n}(z) \xrightarrow[]{ n \rightarrow \infty } f(z), \forall z \in \Omega$. Entonces, $\{ f_{n} \}_{n \in \mathbb{N}} \xrightarrow[]{ n \rightarrow \infty } f$.
+\end{defn}
+
+\begin{obs}
+  $\sum_{}^{} f_{n}(z) \xrightarrow[]{ n \rightarrow \infty } f(z), \forall z \in \Omega \Rightarrow$ $\sum_{}^{} f_{n} \xrightarrow[]{ n \rightarrow  \infty } f$.
+\end{obs}
+
+\begin{defn}[Convergencia Uniforme]
+  Sea $f,f_{n}: \Omega \subset \mathbb{C} \to \mathbb{C}$ funciones, $\{ f_{n} \}_{n \in \mathbb{N}}$ sucesión de funciones. Entonces, si
+  \[ 
+    \forall \epsilon >0, \exists N \in \mathbb{N}: | f_{n}(z) - f(z) | < \epsilon, \forall n \geq N, \forall z \in \Omega 
+  \] 
+  entonces decimos que $\{ f_{n} \}_{n \in \mathbb{N}}$ converge converge uniformemente y lo denotamos $\{ f_{n} \}_{n \in \mathbb{N}} \xrightarrow[]{ n \rightarrow \infty } f$ uniformemente.
+\end{defn}
+
+\begin{obs}
+  $N(\epsilon) \in \mathbb{N}$ no depende de $z \in \Omega$
+\end{obs}
+
+\begin{prop}
+  Sea $f,f_{n}: \Omega \subset \mathbb{C} \to \mathbb{C}$ funciones, $\{ f_{n} \}_{n \in \mathbb{N}}$ sucesión de funciones tal que $\{ f_{n} \}_{n \in \mathbb{N}} \xrightarrow[]{ n \rightarrow \infty } f$ uniformemente en $\Omega$. Entonces,
+  \[ 
+    f_{n} \text{ continua } \forall n \in \mathbb{N} \Rightarrow f \text{ continua }
+  \] 
+\end{prop}
+
+\begin{obs}
+  $f$ no es continua $\Rightarrow \{ f_{n} \}$ no converge uniformemente.
+\end{obs}
+
+\begin{theo}[Weierstrass]
+  Sea $f_{n}: \Omega \subset \mathbb{C} \to \mathbb{C}$ tal que $\exists M_{n} : | f_{n}(z) | \leq M_{n}, \forall n \in \mathbb{N}, \forall z \in \Omega$. Si $\sum_{n = 1}^{\infty} M_{n}$ converge, entonces $\sum_{n = 1}^{\infty} f_{n}$ converge uniformemente en $ \Omega$
+\end{theo}
+
+\begin{obs}
+  $\sum_{n = 1}^{\infty} f_{n}$ converge uniformemente en $ \Omega$ $\Rightarrow \sum_{n = 1}^{\infty} | f_{n} |$ converge unifomemente en $\Omega$ (convergencia absoluta de $\sum_{}^{} f_{n}$).
+\end{obs}
+
+\begin{theo}
+  Sea $\Omega \subset \mathbb{C}$ abierto, $f,f_{n}: \Omega \to \mathbb{C}$ funciones, $\{ f_{n} \}_{n \in \mathbb{N}}$ sucesión de funciones tal que $\{ f_{n} \}_{n \in \mathbb{N}} \xrightarrow[]{ n \rightarrow \infty } f$ uniformemente en $\Omega$ y $f_{n}$ holomorfa $\forall n \in \mathbb{N}$. Entonces, $f$ es holomnorfa.
+\end{theo}
+
+\begin{dem}
+  $f_{n}$ holomorfa $\xRightarrow[]{ T. Cauchy } \int_{\partial{T}}^{} f_{n}(z) dz = 0$ y
+  \[ 
+    \int_{\partial{T}}^{} f_{n}(z) dz \xrightarrow[]{ n \rightarrow \infty } \int_{\partial{T}}^{} f(z) dz 
+  \] 
+  $\Rightarrow \int_{\partial{T}}^{} f(z) dz = 0 \Rightarrow f$ holomorfa.
+\end{dem}
+
+\begin{cor}
+  Si $\{ f_{n} \} \xrightarrow[]{ n \rightarrow \infty } f$ uniformemente en $K$ compacto $\forall K \subset \Omega$, también se cumple el teorema anterior.
+\end{cor}

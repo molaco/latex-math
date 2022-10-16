@@ -1,0 +1,101 @@
+\begin{obs}
+  Si $( X, \mathcal{T} )$ e.t. 1º axioma entonces, $\forall x \in X, \exists \mathcal{B}(x) = \{  B_{n}^{x} : n \in \mathbb{N} \} :  B_{n+1}^{x} \subset B_{n}^{x}, \forall n \in \mathbb{N}$. \\
+
+  \underline{Dem:} $\forall x \in X, \exists \{  V_{n}^{x} : n \in \mathbb{N} \}$ base de entornos numerable. 
+  \[ 
+    B_{1}^{x} = V_{1}^{x}
+  \] 
+  \[ 
+    B_{2}^{x} = V_{1}^{x} \cap V_{2}^{x}
+  \] 
+  \[ 
+    B_{3}^{x} = V_{1}^{x} \cap V_{2}^{x} \cap V_{3}^{x}
+  \] 
+  \[ 
+    B_{n}^{x} = \cap_{k=1}^{n} V_{k}^{x} 
+  \] 
+  entonces $B_{n}^{x} \subset V_{n}^{x}$ y $B_{n+1}^{x} \subset B_{n}^{x}$
+\end{obs}
+
+\begin{defn}[Sucesión Convergente]
+  Sea $( X, \mathcal{T} )$ e.t., $( x_{n} )_{n \in \mathbb{N}} \subset X$. Entonces, $( x_{n} )_{n \in \mathbb{N}} \rightarrow x \in X \Leftrightarrow \forall \mathcal{U}^{x}$ entorno de $x$ in $( X, \mathcal{T} )$, $\exists n_{0} \in \mathbb{N} : x_{n} \in \mathcal{U}^{x}, \forall n \geq n_{0}$.
+\end{defn}
+
+\begin{prop}
+  Sea $( X, \mathcal{T} )$ e.t. 1º axioma. Entonces,
+  \begin{enumerate}[label=(\roman*)]
+    \item $M \subset X, x \in X \Rightarrow x \in \overline{M} \Leftrightarrow \exists ( x_{n} )_{n \in \mathbb{N}} \subset M : ( x_{n} )_{n \in \mathbb{N}} \xrightarrow[]{ n \rightarrow \infty } x$.
+    \item $M \subset X, x \in X \Rightarrow x \in M' \Leftrightarrow \exists ( x_{n} )_{n \in \mathbb{N}} \subset M \setminus \{  x \}: \{ x_{n} \}_{n \in \mathbb{N}} \xrightarrow[]{ n \rightarrow \infty } x$.
+    \item $M \subset X, M$ cerrado en $( X, \mathcal{T} ) \Leftrightarrow \forall ( x_{n} )_{n \in \mathbb{N}} \subset M \Rightarrow \lim ( x_{n} )_{n \in \mathbb{N}} \subset M$.
+    \item $( X', \mathcal{T}' )$ e.t., $f : X \to X', x \in X, f$ continua en $x \Leftrightarrow \forall ( x_{n} )_{n \in \mathbb{N}} \subset M : ( x_{n} )_{n \in \mathbb{N}} \rightarrow x \Rightarrow ( f(x_{n}) )_{n \in \mathbb{N}} \rightarrow f(x)$.
+  \end{enumerate}
+\end{prop}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item
+    \item
+      \begin{enumerate}[label=(\roman*)]
+        \item []
+        \item [$(\Rightarrow)$] $x \in \overline{M}$ y $\exists \mathcal{B}(x) = \{  B_{n}^{x} :  n \in \mathbb{N} \} : B_{n+1}^{x} \subset B_{n}^{x}$. Entonces, $\forall n \in \mathbb{N}, x_{n} \in B_{n}^{x} \cap M \neq \emptyset \Rightarrow ( x_{n} )_{n \in \mathbb{N}} \subset M : ( x_{n} )_{n \in \mathbb{N}} \rightarrow x$.
+        \item [$(\Leftarrow)$] $\forall \mathcal{U}^{x}, \exists n_{0} \in \mathbb{N}: x_{n} \in \mathcal{U}^{x}$ donde $x_{n} \in M , \forall n \geq n_{0} \Rightarrow x_{n} \in M \cap \mathcal{U}^{x} \neq \emptyset$.
+      \end{enumerate}
+    \item
+      \begin{enumerate}[label=(\roman*)]
+        \item []
+        \item [$(\Rightarrow)$] $x \in M' \Rightarrow \forall n \in \mathbb{N}, B_{n}^{x} \setminus \{ x \} \cap M \neq \emptyset \Rightarrow ( x_{n} )_{n \in \mathbb{N}} \subset M \setminus \{ x \}$.
+        \item [$(\Leftarrow)$] Análogo.
+      \end{enumerate}
+    \item $M$ cerrado $\Leftrightarrow$ $\overline{M} = M \Leftrightarrow \forall ( x_{n} )_{n \in \mathbb{N}} \subset M \Rightarrow \lim ( x_{n} )_{n \in \mathbb{N}} \in M$.
+    \item 
+      \begin{enumerate}[label=(\roman*)]
+        \item []
+        \item [$(\Rightarrow)$] $f$ cont en $x$ y $ ( x_{n} )_{n \in \mathbb{N}} \rightarrow x$ $\Rightarrow \forall V^{f(x)}, \exists U^{x} : f(U^{x}) \subset V^{f(x)} \Rightarrow \exists n_{0} \in \mathbb{N} :  x_{n} \in U^{x}, \forall n \geq n_{0} \Rightarrow \exists n_{0} \in \mathbb{N}: f(x_{n}) \in f(U^{x}) \subset V^{f(x)}, \forall n \geq n_{0} \Rightarrow ( f(x_{n}) )_{n \in \mathbb{N}} \rightarrow f(x)$.
+        \item [$(\Leftarrow)$] Si $f$ no es continua, entonces $\exists V^{f(x)} : \forall U^{x}, f(U^{x}) \not \subset V^{f(x)} \Rightarrow \forall n \in \mathbb{N}, f(B_{n}^{x}) \not \subset V^{f(x)} \Rightarrow \forall n \in \mathbb{N}, \exists x_{n} \in B_{n}^{x}: f(x_{n}) \not \in V^{f(x)}$. Ahora, $B_{n+1}^{x} \subset B_{n}^{x}, \forall n \in \mathbb{N} \Rightarrow ( x_{n} )_{n \in \mathbb{N}} \rightarrow x$ y $( f(x_{n}) )_{n \in \mathbb{N}} \not \rightarrow f(x)$.
+      \end{enumerate}
+  \end{enumerate}
+\end{dem}
+
+\begin{defn}
+  Sea $( X, \mathcal{T} )$ e.t.. Se dice que es separable si $\exists D$ denso numerable en $( X, \mathcal{T} )$.
+\end{defn}
+
+\begin{prop}
+  Todo 2º axioma es separable.
+\end{prop}
+
+\begin{dem}
+  $\exists \mathcal{B} = \{  B_{n} : n \in \mathbb{N} \}$ base numerable de $T$. Podemos suponer que $\mathcal{B} \neq \emptyset$. Entonces, $\forall n \in \mathbb{N}, \exists x_{n} \in B_{n}$ de manera que $\{ x_{n} : n \in \mathbb{N} \} = D$ es numerable. Además, $\forall U \in \mathcal{T} \setminus \{ \emptyset \}, \exists n_{0} \in \mathbb{N} : B_{n_{0}} \in \mathcal{B} : x_{n_{0}} \in B_{n_{0}}\subset U$ y $U \cap D \neq \emptyset \Rightarrow D$ es denso.
+\end{dem}
+
+\begin{obs}
+  La sepraración no es hederitaria.
+\end{obs}
+
+\begin{dem}
+  content
+\end{dem}
+
+\begin{prop}
+  Sea $( X, \mathcal{T} )$ e.t. separable, $G \in \mathcal{ \setminus \{  \emptyset \}}$. Entonces, $( G, \mathcal{T}|_{G})$ es seprable.
+\end{prop}
+
+\begin{dem}
+  $\exists D$ denso numera en $( X, \mathcal{T} ) \Rightarrow G \cap D \neq \emptyset$. Como $D$ es numerable $\Rightarrow G$ numerable. Ahora, $\forall U \in \mathcal{T}|_{G} \setminus \{  \emptyset \} \Rightarrow U \subset G \in \mathcal{T} \setminus \{  \emptyset \} \Rightarrow U \cap D \neq \emptyset$ donde $ U \cap D = U \cap (D \cap G) \Rightarrow G \cap D$ denso en $( G, \mathcal{T}|_{G})$.
+\end{dem}
+
+\begin{prop}
+  Sea $( X, \mathcal{T} ), ( X', \mathcal{T}' )$ e.t., $f: ( X, \mathcal{T} ) \to ( X', \mathcal{T}' )$ suprayectiva y continua. Si $( X, \mathcal{T} )$ es separable, entonces también lo es $( X', \mathcal{T}' )$.
+\end{prop}
+
+\begin{dem}
+  $\exists D$ denso numerable en $( X, \mathcal{T} ) \Rightarrow \overline{D} = X \Rightarrow f(\overline{D}) \subset \overline{f(D)}$ donde $f(\overline{D}) = f(X) \Rightarrow f(X) \subset \overline{f(D)} \Rightarrow f(X) = \overline{f(D)} \Rightarrow f(D)$ denso y numerable.
+\end{dem}
+
+\begin{prop}
+  Sean $\{ ( X_{j}, \mathcal{T}_{j} ) \}_{j \in J}$ familia no vacia de e.t. $T_{2}$ y $\card X_{j} \geq 2, \forall j \in J$. Entonces, $( \prod_{j \in J} X_{j}, \prod_{j \in J} \mathcal{T}_{j} )$ es separable $ \Leftrightarrowk \forall j \in J ( X_{j}, \mathcal{T}_{j} )$ es separable y $\card J \leq 2^{\mathcal{X}_{0}}$.
+\end{prop}
+
+\begin{dem}
+  content
+\end{dem}

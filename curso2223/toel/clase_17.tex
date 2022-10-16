@@ -1,0 +1,56 @@
+\begin{theo}[de Extension de Tietze]
+  Sea $( X, \mathcal{T} )$ e.t.. Entonces, $( X, \mathcal{T} )$ es normal $\Leftrightarrow$ $\forall C \neq \emptyset$ cerrado, $\forall f: ( C, \mathcal{T}|_{C}) \to [-1, 1]$ aplicación continua, $\exists F: ( X, \mathcal{T} ) \to [-1, 1]$ continua tal que $ F|_{C} = f$.
+\end{theo}
+
+\begin{obs}
+  Cualquier aplicación continua de $C$ a $[a, b]$ puede extenderse a una aplicación continua de $X$ a $[a, b]$.
+\end{obs}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item [($\Rightarrow$)] Supongamos $C$ cerrado de $( X, \mathcal{T} )$, $f: A \to [-1, 1]$. Sea
+      \[ 
+        A_{1} = \Big \{  x \in C: f(x) \geq \frac{1}{3}  \Big \}, \; B_{1} = \Big \{  x \in C: f(x) \leq -\frac{1}{3} \Big \}
+      \] 
+      Entonces, $A_{1}$ y $ B_{1}$ son cerrados disjuntos en $( X, \mathcal{T} )$ que es normal. Por el Lema de Uryshon $\Rightarrow \exists f_{1}: X \to [-\frac{1}{3}, \frac{1}{3}]$ tal que $f_{1}(A_{1}) = \frac{1}{3}$ , $f_{1}(B_{1}) = - \frac{1}{3}$. Por tanto, $\forall \in C, | f(x) - f_{1}(x) | \leq \frac{2}{3}$.
+
+      De la misma forma, sea $g_{1} = f - f_{1}|_{C}: ( C, \mathcal{T}|_{C}) \to [-\frac{2}{3}, \frac{2}{3}]$ continua y 
+      \[ 
+        A_{2} = \Big \{  x \in C: f(x) \geq \frac{2}{9}  \Big \}, \; B_{2} = \Big \{  x \in C: f(x) \leq -\frac{2}{9} \Big \}
+      \] 
+      Por el Lemma de Uryshon $\Rightarrow \exists f_{2}: ( X, \mathcal{T} ) \to [-\frac{2}{9}, \frac{2}{9}]$ tal que $f_{2}(A_{2}) = \{  \frac{2}{9} \}$ y $f_{2}(B_{2}) = \{ - \frac{2}{9} \}$.
+     Evidentemente, $\forall x \in C | g_{1}(x) - f_{2}(x) | \leq (\frac{2}{3})^2$.
+
+     Continuando el proceso, $\exists \{ f_{n} \}_{n \in \mathbb{N}}, f_{n}: ( X, \mathcal{T} ) \to [-1, 1]$ funciones continuas en $C$ tal que $\forall x \in X, | f_{n}(x) | \leq \big ( \frac{2}{3} \big )^{n}$. Entonces, 
+      \[ 
+        \Big | f - \sum_{k = 1}^{n} f_{k} \Big | \leq \Big (\frac{2}{3} \Big )^{n} 
+      \] 
+      Por el criterio de Wieistrass $\{ f_{n} \}_{n \in \mathbb{N}}$ converge uniformemente $\Rightarrow f_{n} \xrightarrow[]{ n \rightarrow \infty } F \Rightarrow F$ continua $\Rightarrow F|_{C} = f$.
+    \item [($\Leftarrow$)] $\forall C_{1}, C_{2}$ cerrados disjuntos, entonces $C_{1} \cup C_{2}$ es cerrado en $( X, \mathcal{T} )$ y la función $f: C_{1} \cap C_{2} \to [-1, 1]$ definida por $f(C_{1}) = \{  -1 \}, f(C_{2}) = \{ 1 \}$ es continua en $C_! \cap C_{2}$. Entonces, la extensión de $f$ a todo $X$ será la función de Uryshon para $C_{1}$ y $C_{2}$ $\Rightarrow ( X, \mathcal{T} )$ es normal.
+  \end{enumerate}
+\end{dem}
+
+\begin{prop}[Variantes del Teorema de Tietze]
+  Sea $( X, \mathcal{T} )$ e.t., $\forall s > 0$. Entonces, son equivalentes
+  \begin{enumerate}[label=(\roman*)]
+    \item $( X, \mathcal{T} )$ es normal 
+    \item $\forall C \neq \emptyset \text{ cerrado }, \forall f: ( C, \mathcal{T}|_{C}) \to ( -s, s )$ continua, $\exists \overline{f}: ( X, \mathcal{T} ) \to ( -s, s )$ tal que $\overline{f}|_{C} = f$.
+    \item $\forall C \neq \emptyset$ cerrado, $\forall g: ( C, \mathcal{T}|_{C}) \to ( \mathbb{R}, \mathcal{T}_{u} )$ continua, $\exists \hat{g}: ( X, \mathcal{T} ) \to \mathbb{R}$ continua tal que $\hat{g}|_{C} = g$.
+  \end{enumerate}
+\end{prop}
+
+\begin{dem}
+  \fbox{$i) \Rightarrow ii)$} Dado que $(-s, s)$ es abierto y $(-s, s) \subset [-s, s]$, el teorema de Tietze $\Rightarrow \exists F: ( X, \mathcal{T} ) \to [-s, s]$ continua tal que $F|_{C} = f$. 
+  \begin{itemize}
+    \item Si $F(X) \subset (-s, s)$ hemos terminado.
+    \item Si $F(X) \not \subset (-s, s) \big ( \Leftrightarrow F^{-1}(\{ s, -s \}) = C_{1} \neq \emptyset C, C_{1} \text{ disjuntos }\big )$. Entonces, por el Lema de Uryshon $\Rightarrow \exists h: ( X, \mathcal{T} ) \to [0,1]$ continua tal que $h(C_{1}) = \{ 0 \}, h(C) = \{ 1 \}$. Sea $\hat{f} = F(x) \cdot h(x), \forall x \in X$. Entonces, $\hat{f}$ es continua y $\hat{ f }(x) \subset ( -s, s) \Rightarrow \hat{ f }|_{C} = f$
+  \end{itemize}
+
+  \fbox{$ii) \Rightarrow iii)$} Sea $g: ( C, \mathcal{T}|_{C}) \to \mathbb{R}$ continua, $\exists h: \mathbb{R} \to (-s, s) \simeq f = h \circ g : ( C, \mathcal{T}|_{C}) \to (-s, s)$ continua. Por $ii)$ $\Rightarrow \exists \hat{ f }: ( X, \mathcal{T} ) \to (-s, s)$ continua tal que $\hat{ f }|_{C}=f$. Sea $\hat{ g } = h^{-1} \circ \hat{ f }: ( X, \mathcal{T} ) \to \mathbb{R}$ continua $\Rightarrow \hat{ g }|_{C} = h^{-1} \circ f = h \circ (h^{-1} \circ g) = g$. Y como $\mathbb{R} \simeq ( \mathbb{R}, \mathcal{T}_{u} )$, tenemos el resultado requerido.
+
+  \fbox{$iii) \Rightarrow i)$} $\forall C_{1}, C_{2}$ cerrados disjuntos
+  \begin{itemize}
+    \item Si $C_{1} = \emptyset$,  hemos terminado.
+    \item Si $C_{1},C_{2} \neq \emptyset \Rightarrow C_{1} \cup C_{2} \neq \emptyset$ cerrado de $ ( X, \mathcal{T} )$. Sea $g: ( C_{1} \cup C_{2}, \mathcal{T}|_{C_{1} \cup C_{2}}) \to \mathbb{R}$ tal que $g(C_{1}) = \{ -1 \}, g(C_{2}) = \{ 1 \}$, entonces $g$ es continua y por la hipótesis se puede extender, es decirm $\exists \hat{ g }: ( X, \mathcal{T} ) \to \mathbb{R}$ continua tal que $\hat{ g }|_{C_{1} \cup C_{2}} = g \Rightarrow \hat{ g }^{-1}((\leftarrow, 0)), \hat{ g }^{-1}((0, \rightarrow)) \in \mathcal{T}$ donde $ C_{1} \subset \hat{ g }^{-1}((\leftarrow, 0)), C_{2} \subset \hat{ g }^{-1}((0, \rightarrow))$ abiertos disjuntos $\Rightarrow$ $( X, \mathcal{T} )$ es normal.
+  \end{itemize}
+\end{dem}

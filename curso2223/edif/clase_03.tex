@@ -334,7 +334,25 @@ Revisar notación $t \in J$
 \end{theo}
 
 \begin{dem}
-  Demos
+  Sea $T : C^{}([0,T]; U) \to C^{}([0, T], \mathbb{R}^{d}) : u \mapsto u_{0} + \int_{0}^{T} f(s, u(s)) ds$.  Dado que $f$ es Lipschitz continua $\Rightarrow \exists T_{E} \in (0,T), L \geq 0$ y $\overline{B}(u_{0},R)\subset U$ tales que
+  \[ 
+    | f(t,x) - f(t,y) | \leq L | x - y |, \quad \forall t \in [0,T_{1}], \; x,y \in B(u_{0}, R)
+  \] 
+  Sea $M = sup | f(t,x) |, t \in [0,T_{1}], \; x \in B(u_{0}, R)$. Para que el dominio y la imagen de $T$  sean iguales, $T : C^{}([0, T_{2}], \overline{B}(u_{0},R)) \to C^{}([0, T_{2}], \overline{B}(u_{0},R)) $, entonces
+  \[ 
+    | T[u](t) - u_{0} | \leq \int_{0}^{t} | f(s, u(s)) | ds \leq M T_{2}
+  \] 
+  donde $T_{2} \leq T_{1}$ tal que $MT_{2} \leq R, \forall t \in [0, T_{2}], T[u](t) \in B(u_{0}, R)$. Ahora, para que $T$ sea contractiva
+  \[ 
+    | T[u](t) - T[v](t) | \leq \int_{0}^{t} | f(s, u(s)) - f(s, v(s)) | ds 
+  \] 
+  \[ 
+    \leq L \int_{0}^{t} | u(s) - v(s) | ds  
+  \] 
+  \[ 
+    \leq Lt ||u - v|| 
+  \] 
+  entonces, $T$ sería contractiva para $T_{3}$ tal que $L T_{3} < 1$. Por tanto, podemos aplicar el teorema del punto fijo de Banach.
 \end{dem}
 
 \section{Teorema de Peano}
@@ -537,3 +555,7 @@ tiene solución única $v$ en $\overline{J}_{\alpha, \beta} = [t_{0} + \alpha - 
   \] 
   es una prolongación de la solución $u$.
 \end{ejm}
+
+\begin{theo}[de Prolongación caso Lipschitz]
+  Sea $U \subset \mathbb{R}^{d}$ abierto
+\end{theo}

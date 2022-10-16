@@ -1,0 +1,546 @@
+\chapter{Superficies}
+
+\section{Definición de Superficie}
+
+\begin{defn}[Superficies]
+  Sea $S \subset \mathbb{R}^{3}$. Entonces, decimos que $S$ es una superficie si $\forall p \in S, \exists V \subset \mathbb{R}^{3}$ entorno de $p$ en $S$ y $\exists X: U \to V \cap S$ aplicación con $U \subset \mathbb{R}^{2}$ abierto tal que
+  \begin{enumerate}[label=(\roman*)]
+    \item $X$ es diferenciable, 
+    \item $X: U \to V$ es homeomorfismo,
+    \item $(dX)_{q} : \mathbb{R}^{2} \to \mathbb{R}^{3}$ es inyectiva $ \forall q \in U$.
+  \end{enumerate}
+  donde $U \subset \mathbb{R}^{2}$ abierto y $V$ entorno de $p$ en $S$.
+\end{defn}
+
+\begin{obs}
+  En $I)$ si $X(u, v) = (x(u, v), y(u, v), z(u, v))$ entonces, $x(u, v), y(u, v), z(u, v)$ tienen derivadas parciales continuas en $U$.
+\end{obs}
+
+\begin{obs}
+  En $II)$ dado que $X$ es continua por $I)$ solo faltaría ver que $X$ tiene inversa $X^{-1}: V \cap S \to U$ continua.
+\end{obs}
+
+%\begin{figure}[ht]
+%    \centering
+%    \incfig{drawing}
+%    \caption{Riemmans theorem}
+%    \label{fig:riemmans-theorem}
+%\end{figure}
+
+\begin{obs}
+  $(dX)_{q}$ inyectiva $\forall q \in U \Leftrightarrow \frac{\partial{X}}{\partial{u}}(q), \frac{\partial{X}}{\partial{v}}(q)$ l.i.
+\end{obs}
+
+\begin{nota}
+  \begin{itemize}
+    \item []
+    \item $X$ se llama parametrización de $S$.
+    \item $u, v$ se llaman coordenadas locales de $S$.
+    \item Las curvas obtenidas al fijar una de las variables, $X(u_{0}, v), X(u, v_{0})$ se llaman curvas coordenadas.
+    \item La imagén de $X$ se llama entorno coordenado.
+  \end{itemize}
+\end{nota} 
+
+\begin{defn}[Valor Regular]
+  Sea $ f: U \subset \mathbb{R}^{3} \to \mathbb{R}$ una función diferenciable, $a \in \mathbb{R}$. Entonces, decimos que $a$ es un valor regular de $f$ si $\forall p \in U : f(p) = a, (df)_{p} \neq 0$.
+\end{defn}
+
+\begin{theo}[de la Función Implícita]
+  Sea $U \subset \mathbb{R}^{3}$ abierto, $p = (x_{0}, y_{0}, z_{0}) \in U, a \in \mathbb{R}$ y $f: U \to \mathbb{R}$ una función diferenciable. Si $f(p) = a$ y $\frac{\partial{f}}{\partial{z}}(p) \neq 0$, entonces $\exists U^{(x_{0},y_{0})} \subset \mathbb{R}^{2}, V^{z_{0}} \subset \mathbb{R}, g: U \to V$ tal que $U \times V \subset U, g(x_{0}, y_{0}) = z_{0}$ y
+  \[ 
+    \{ p \in U \times V | f(p) = a \} = \big\{ (x,y,g(x,y)) \in \mathbb{R}^{3} : (x,y \in U) \big\} ,
+  \] 
+  es decir, $f(x,y,z) = a$ se puede resolver para $z$ cerca de $p$.
+\end{theo}
+
+\begin{prop}[Gráfica es Superficie]
+  Sea $f : U \subset \mathbb{R}^{2} \to \mathbb{R}$ una función diferenciable. Entonces, la gráfica de $f$ es una superficie regular.
+\end{prop}
+
+\begin{dem}
+  Sea $f : U \subset \mathbb{R}^{2} \to \mathbb{R}^{3}$ aplicación diferenciable, $S = \{ (x, y, z)\in \mathbb{R}^{3} : (x, y) \in U, z = f(x, y) \}$ su gráfica, $X : U \to S : X(u, v) \mapsto (u, v, f(u, v))$ parametrización con $X(U) = S$. Entonces, $X$ es diferenciable dado que $f$ es diferenciable, $X_{u}, X_{v}$ son linealmente independientes y $x^{-1}$ es continua. Por tanto, $S$ es una superficie.
+\end{dem}
+
+\begin{prop}[Imagen Inversa de Valor Regular]
+  Sea $f: U \subset \mathbb{R}^{3} \to \mathbb{R}$ función diferenciable, $a \in f(U) \subset \mathbb{R}$ un valor regular de $f$. Entonces, $S = f^{-1}(\{ a \}) \neq \emptyset \Rightarrow S$ es superficie.
+\end{prop}
+
+\begin{dem}
+  Sea $p \in f^{-1}(\{ a \})$. Entonces, $a$ valor regular $\Rightarrow \exists i \in \{ x, y, z \} : f_{i}(p) \neq 0$. Supongamos que $f_{z}(p) \neq 0$ y sea $F : U \subset \mathbb{R}^{3} \to \mathbb{R}^{3}: (x, y, z) \mapsto (x, y, f(x, y, z))$. Entonces,
+  \[
+    (d F)_{p} = 
+    \begin{pmatrix}
+       1 & 0 & 0\\
+       0 & 1 & 0\\
+       f_{x} & f_{y} & f_{z}
+    \end{pmatrix}
+  \]
+  $\Rightarrow \det ( (d F)_{p}) = f_{z}(p) \neq 0$. Por tanto, podemos aplicar el Teorema de la Función Inversa. Entonces, $\exists V$ entorno de $p$ y $W$ entorno de $f(p)$ tal que $F : V \to W$ es invertible y $F^{-1} : W \to V$ es diferenciable. Por tanto, las funciones coordenada de $F^{-1}$
+  \[ 
+    x = u, \quad y = v, \quad z = g(u, v, t), \qquad (u, v, t) \in W
+  \] 
+  son diferenciables. En particular, $z = g(u, v, a) = h(x, y)$ es una función diferenciable definida en la proyección de $V$ al plano $XY$. Como
+  \[ 
+    F(f^{-1}(a) \cap V) = W \cap \{ (u, v, t) : t = a \}  
+  \] 
+  tenemos que $f^{-1}(a) \cap V$ es la gráfica de $h \Rightarrow$ es un entorno coordenado de $p \Rightarrow \forall p \in f^{-1}(a)$ se puede cubrir con un entorno coordenado $\Rightarrow f^{-1}(a)$ es una superficie regular. 
+  REVISAR
+\end{dem}
+
+\begin{prop}
+  Sea $S \subset \mathbb{R}^{3}$ superficie, $p \in S$, $X: U \subset \mathbb{R}^{2} \to \mathbb{R}^{3}$ aplicación con $p \in X(U) \subset S$ tal que $X$ es diferenciable y $(dX)_{q}$ es inyectiva $\forall q \in U$. Entonces, si $X$ es inyectiva, $X^{-1}$ es continua.
+\end{prop}
+
+\begin{dem}
+  Similar a la siguiente prop
+\end{dem}
+
+\section{Cambio de Parámetros}
+
+\begin{defn}[Difeomorfismo]
+  Un difeomorfismo es un homeomorfismo diferenciable con inversa diferenciable, es decir, una función biyectiva continua diferenciable con inversa continua diferenciable.
+\end{defn}
+
+\begin{obs}
+  Un homeomorfismo es una aplicación biyectiva continua con inversa continua. Como $f$ diferenciable $\Rightarrow f$ continua, para ver que $f$ es difeomorfismo solo es necesario $f$ biyectiva diferenciable con $f^{-1}$ diferenciable.
+\end{obs}
+
+\begin{prop}[]
+  Sea $S \subset \mathbb{R}^{3}$ superficie, $X: U \to S$ parametrización tal que $p \in X(U)$. Sea $p_{0} \in U: X(p_{0}) = p$. Entonces, $\exists V$ entorno de $p_{0}$ y $\pi: \mathbb{R}^{3} \to \mathbb{R}^{2}$ proyección ortogonal tal que $W = (\pi \circ X)(V) \subset \mathbb{R}^{2}$ abierto y $\pi \circ X: V \to W$ es un difeomorfismo.
+\end{prop}
+
+\begin{dem}
+  Sea $X(u, v) = (x(u, v), y(u, v), z(u, v))$. Entonces, 
+  \[ 
+    (d X)_{p_{0}} = 
+    \begin{pmatrix}
+       x_{u} & x_{v} \\
+       y_{u} & y_{v} \\
+       z_{u} & z_{v} 
+     \end{pmatrix}_{(p_{0})}
+  \] 
+  Sea $\pi : \mathbb{R}^{3} \to \mathbb{R}^{2} : (x, y, z) \mapsto \pi(x, y, z) = (x, y)$, entonces $\pi \circ X : U \to \mathbb{R}^{2}$ es diferenciable y
+  \[ 
+    d(\pi \circ X)_{p_{0}} = 
+    \begin{pmatrix}
+       x_{u} & x_{v} \\
+       y_{u} & y_{v}
+     \end{pmatrix}_{(p_{0})}
+  \] 
+  donde $\det(d(\pi \circ X)_{p_{0}}) \neq 0 \Rightarrow$ por el teorema de la función inversa, $\exists V \subset U$ entorno de $p_{0}$ en $U$ y $V_{1}$ entorno de $\pi \circ X (p_{0})$ en $\mathbb{R}^{2}$ tal que $\pi \circ X$ es biyectiva y diferenciable con $(\pi \circ X)^{-1}$ diferenciable $\Rightarrow$ difeomorfismo, tal que $d(\pi \circ X)_{p_{0}}^{-1} = d(\pi \circ X ^{-1})_{p_{0}}$.
+\end{dem}
+
+\begin{obs}
+  Un difeomorfismo es un homeomorfismo diferenciable con inverasa diferenciable.
+\end{obs}
+
+\begin{obs}
+  $Y = X \circ ( \pi \circ X)^{-1} : W \to S$ es parametrización del abierto $\pi^{-1}(W)\cap U \cap S$ como grafo sobre alguno de los planos coordenados.
+\end{obs}
+
+\begin{prop}
+  Sea $S \subset \mathbb{R}^{3}$ superfice, $p \in S$. Entonces, $\exists V$ entorno de $p$ en $S$ tal que V es la gráfica de una función diferenciable definida en uno de los planos coordenados.
+\end{prop}
+
+\begin{dem}
+  Sea $X : U \subset \mathbb{R}^{2} \to S$ parametrización de $S$ en $p$ tal que
+  \[
+    X(u, v) = (x(u, v), y(u, v), z(u, v), (u, v) \in U.
+  \]
+  Dado que $X_{u}, X_{v}$ son linealmente independientes $ \Rightarrow \det((d X)_{q}) \neq 0$ donde $ q = X^{-1}(p)$, suponemos que
+  \[ 
+    \begin{vmatrix}
+     x_{u} & x_{v} \\
+     y_{u} & y_{v}
+    \end{vmatrix}
+    _{q}
+    \neq 0
+  \]
+  Sea $\pi : \mathbb{R}^{3} \to \mathbb{R}^{2} : (x,y,z) \mapsto \pi(x,y,z) = (x,y)$, entonces $\pi \circ X : U \to \mathbb{R}^{2}$ y $\det(d (\pi \circ X)_{q}) \neq 0$. Entonces, podemos aplicar el teorema de la función inversa $\Rightarrow \exists V_{1}$ entorno de $q$, $V_{2}$ entorno de $(\pi \circ X)(q)$ tal que $(\pi \circ X)|_{V_{1}} : V_{1} \to V_{2}$ difeomorfismo con inversa $(\pi \circ X)^{-1} : V_{2} \to V_{1}$.
+
+  Además, como $X$ es homemorfismo, $X(V_{1}) = V$ es entorno de $p$ en $S$. Ahora, sea $z(u(x,y),v(x,y)) = f(x,y)$. Entonces, $V$ es la gráfica de la función $f$.
+\end{dem}
+
+\begin{prop}[Cambio de Parámetros]
+  Sea $S \subset \mathbb{R}^{3}$ superfice, $p \in S$, $X: U \subset \mathbb{R}^{2} \to S$, $Y: V \subset \mathbb{R}^{2} \to S$ dos parametrizaciones de $S$ tal que $p \in X(U) \cap Y(V) = W$. Entonces, $h = X^{-1} \circ Y: Y^{-1}(W) \to X^{-1}(W)$ es un difeomorfismo. Se dice que $h$ es un cambio de parámetros.
+\end{prop}
+
+\begin{obs}
+  Si $X, Y$ vienen dados por
+  \[ 
+    X(u, v) = (x(u, v), y(u, v), z(u, v)), \quad (u,v)\in U
+  \] 
+    \[ 
+    Y(\xi, \omega ) = (x(\xi, \omega ), y(\xi, \omega ), z(\xi, \omega )), \quad (\xi, \omega ) \in V
+  \] 
+  entonces $h$ viene dado por
+  \[ 
+    u = u(\xi, \omega), v=v(\xi, \omega), \quad (\xi, \omega ) \in Y^{-1}(W) 
+  \] 
+  Además, $h$ se puede invertir tal que $h^{-1}$ viene dado por
+  \[ 
+    \xi = \xi(u,v), \omega = \omega(u,v), \quad (u,v) \in X^{-1}(W)
+  \] 
+\end{obs}
+
+\begin{dem}
+  Sea $S \subset \mathbb{R}^{3}$ superficie, $p \in S$,
+  \[
+    X : U \subset \mathbb{R}^{2} \to S, \quad Y : V \subset \mathbb{R}^{3} \to S
+  \]
+  parametrizaciones de $S$ tal que $p \in X(U)\cap Y(V) = W$ y
+  \[
+    h = X^{-1} \circ Y : Y^{-1}(W) \to X^{-1}(W)
+  \]
+  cambio de parámetros. Entonces, $X$ parametrización $\Rightarrow X$ diferenciable y $X_{u}, X_{v}$ son l.i. $\Rightarrow \det((d X)_{p}) \neq 0, \forall p \in U$. Entonces, por el teorema de la función inversa $X$ es difeomorfismo. De la misma manera, $Y$ es difeomorfismo. Por tanto, $h = X^{-1} \circ Y$ también lo es.
+\end{dem}
+
+\begin{obs}
+  $X, Y$ son difeomorfismos $\Rightarrow h$ es difeomorfismo.
+\end{obs}
+
+\begin{defn}[Caracterización Superficie]
+  Sea $S \subset \mathbb{R}^{3}$ superficie. Entonces, $ \forall p \in S, \exists V \subset S :  p \in V$ entorno, $U \subset \mathbb{R}^{2}$ abierto y $X : U \to V$ difeomorfismo.
+\end{defn}
+
+\begin{obs}
+  Una superfice regular $S \subset \mathbb{R}^{3}$ es difeomorfica a $\mathbb{R}^{2}$
+\end{obs}
+
+%\begin{theo}
+%  Los cambios de parámetros son difeomorfismos.
+%\end{theo}
+%
+%\begin{dem}
+%  content
+%\end{dem}
+
+\section{Funciones Diferenciables}
+
+\begin{note}
+  La idea es reducir la difereciabilidad de una superficiea a diferenciabilidad en $\mathbb{R}^{2}$.
+\end{note}
+
+\begin{defn}[Función Diferenciable en $\mathbb{R}$]
+  Sea $S \subset \mathbb{R}^{3}$ superficie, $f: V \subset S \to \mathbb{R}$ función. Entonces, $f$ es diferenciable en $p \in V$ si $\exists X: U \subset \mathbb{R}^{2} \to S$ parametrización con $p \in x(U) \subset V$ tal que $f \circ X:  U \subset \mathbb{R}^{2} \to \mathbb{R}$ es diferenciable en $q = X^{-1}(p)$.
+\end{defn}
+
+\begin{obs}
+  $f$ es diferenciable en $V$ si $f$ es diferenciable $\forall p \in V$.
+\end{obs}
+
+\begin{obs}
+  La diferenciabilidad no depende de la elección de parametrización. Si $Y: V \subset \mathbb{R}^{2} \to S$ es otra parametrización con $p \in Y(V)$ y $h = X^{-1} \circ Y$ entonces $f \circ Y = f \circ X \circ h$ también es diferenciable.
+\end{obs}
+
+\begin{defn}[Función Diferenciable en $\mathbb{R}^{k}$]
+  Sea $S \subset \mathbb{R}^{3}$ superficie, $f: S \to \mathbb{R}^{k}$. Si $f_{j}: S \to \mathbb{R}$ es diferenciable $\forall j \in \{ 1, \cdots, k \}$ con $f(p) = ( f_{1}(p), \cdots , f_{k}(p) )$, entonces $f$ es diferenciable.
+\end{defn}
+
+\begin{defn}[Función Diferenciable entre Superficies]
+  Sea $S_{1} \subset \mathbb{R}^{3}$, $S_{2} \subset \mathbb{R}^{3}$ superficies,
+  \[
+    \varphi: V_{1} \subset S_{1} \to S_{2}
+  \]
+  una aplicación continua. Dadas
+  \[
+    X_{1}: U_{1} \subset \mathbb{R}^{2} \to S_{1}, \quad X_{2}: U_{2} \subset \mathbb{R}^{2} \to S_{2}
+  \]
+  con $p \in X_{1}(U)$ y $\varphi(X_{1}(U_{1})) \subset X_{2}(U_{2})$ tal que
+  \[
+    X_{2}^{-1} \circ \varphi \circ X_{1} : U_{1} \to U_{2}
+  \]
+  es diferenciable en $q = X_{1}^{-1}(p)$, entonces, $\varphi$ es diferenciable en $p \in V_{1}$.
+\end{defn}
+
+\begin{prop}[Composición de Funciones Diferenciables]
+  Sea $S_{1},S_{2},S_{3} \subset \mathbb{R}^{3}$ superficies, $f : S_{1} \to S_{2}, g : S_{2} \to S_{3}$ diferenciables. Entonces, $f \circ g$ es diferenciable.
+\end{prop}
+
+\begin{dem}
+  content
+\end{dem}
+
+%\begin{defn}[Superficie Parametrizada]
+%  Una superfice parametrizada es una aplicación diferenciable $X: U \subset \mathbb{R}^{2} \to \mathbb{R}^{3}$. El conjunto $X(U) \subset \mathbb{R}^{3}$ se llama traza de $X$. Una superfice parametrizada es regular si $(dX)_{q} : \mathbb{R}^{2} \to \mathbb{R}^{3}$ es inyectiva $\forall q \in U$. Un punto $p \in U$ tal que $(dX)_{p}$ no es inyectiva, es un punto singular de $X$.
+%\end{defn}
+%
+%\begin{obs}
+%  Una superfice parametrizada regular puede tener auto-intersecciones.
+%\end{obs}
+
+\section{Plano Tangente}
+
+\begin{defn}[Vector Tangente]
+  Sea $S \subset \mathbb{R}^{3}$ superficie, $p \in S$. Decimos que $v \in \mathbb{R}^{3}$ es un vector tangente a $S$ en $p$ si $\exists \alpha : (-\epsilon, \epsilon) \to S, \epsilon > 0$ tal que $\alpha(0) = p$ y $\alpha'(0) = v$
+\end{defn}
+
+\begin{nota}
+  El conjunto de vectores tangentes a $S$ en $p$ se llama Plano Tangente en $p$ y se representa $T_{p}S$.
+\end{nota}
+
+\begin{prop}[Caracterización Plano Tangente]
+  Sea $S \subset \mathbb{R}^{3}$ una superfice, $X : U \subset \mathbb{R}^{2} \to S$ parametrización, $q \in U$. Entonces,
+  \[ 
+    T_{X(q)}(S) = (d X)_{q}(\mathbb{R}^{2}) 
+  \] 
+\end{prop}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item []
+    \item [$(\Rightarrow)$] Sea $w \in T_{X(q)}(S)$. Entonces, para $\epsilon >0$, $\exists \alpha : (-\epsilon,\epsilon) \to X(U) \subset S$ diferenciable tal que $\alpha(0) = X(q)$ y $\alpha'(0) = w$. Entonces, $\beta = X^{-1} \circ \alpha : (-\epsilon, \epsilon) \to U$ es diferenciable. Por tanto, para $X \circ \beta = \alpha$, la definición de diferencial $\Rightarrow (d X)_{q}(\beta'(0)) = \alpha'(0) = w \Rightarrow w \in (d X)_{q}$.
+    \item [$(\Leftarrow)$] Sea $w = (d X)_{q}(v), v \in \mathbb{R}^{2}$, donde $v \in \mathbb{R}^{2}$ es la pendiente de $\gamma : (-\epsilon, \epsilon) \to U$ tal que $\gamma(t) = v t + q, \quad t \in (-\epsilon, \epsilon)$. Entonces, por definición de diferencial, $w = \alpha'(0)$ para $\alpha = X \circ \gamma \Rightarrow w \in T_{q}(S)$
+  \end{enumerate}
+\end{dem}
+
+\begin{obs}
+  El plano tangente a $S$ en $p$ $T_{p}S = (dX)_{X^{-1}(p)}(\mathbb{R}^{2})$ no depende de la elección de $X$ parametrización. Pero si que determina una base $\{ \frac{\partial{X}}{\partial{u}}(q), \frac{\partial{X}}{\partial{v}}(q) \}$ que genera $T_{X(q)}S$.
+\end{obs}
+
+\begin{ejm}
+  Sea $S \subset \mathbb{R}^{3}$ superficie, $X : U \subset \mathbb{R}^{2} \to S$ parametrización de $S$, $T_{p}(S)$ plano tangente en $p$ generado por $X$, $w \in T_{p}(S)$ vector tangente. Entonces, las coordenadas de $w$ en la base asociada a $X$ se determina de la siguiente manera. \\
+
+  El vector tangente $w = \alpha'(0)$ donde $\alpha = X \circ \beta$ donde $\beta : (-\epsilon, \epsilon) \to U$ es una curva diferenciable dada por $\beta(t) = (X^{-1} \circ \alpha) (t) = (u(t), v(t))$ con $\beta(0) = q = X^{-1}(p)$. Entonces,
+  \[ 
+    \alpha'(0) = \frac{d{}}{d{t}}(X \circ \beta)(0) = \frac{d{}}{d{t}}X(u(t), v(t))(0)
+  \] 
+  \[ 
+    = X_{u}(q) u'(0) + X_{v}(q) v'(0) = w
+  \] 
+  Por tanto en la base $\{ X_{u}(q), X_{v}(q) \}$, $w$ tiene coordenadas $(u'(0), v'(0))$.
+\end{ejm}
+
+\begin{obs}
+  Sea $S_{1}, S_{2} \subset \mathbb{R}^{3}$ superficies, $\varphi : V \subset S_{1} \to S_{2}$ aplicación diferenciable. $\forall p \in V, \exists w \in T_{p}(S_{1})$ tal que $\alpha : (-\epsilon, \epsilon) \to V$ curva diferenciable con $\alpha'(0) = w, \alpha(0) = p$. Entonces, $\beta = \varphi \circ \alpha$ curva con $\beta(0) = \varphi(p) \Rightarrow \beta'(0) \in T_{\varphi(p)}(S_{2})$.\\
+
+  Además, $\beta'(0)$ no depende de la elección de $\alpha$. La apliación $(d \varphi)_{p} : T_{p}(S_{1}) \to T_{\varphi(p)}(S_{2})$ definida por $(d \varphi)_{p}(w) = \beta'(0)$ es lineal.
+\end{obs}
+
+\begin{defn}[Normal]
+  content
+\end{defn}
+
+\section{Diferencial de una Aplicación Diferenciable}
+
+\begin{defn}[Diferencial]
+  Sea $F : U \subset \mathbb{R}^{n} \to \mathbb{R}^{m}$ una aplicación diferenciable. Sea $w \in \mathbb{R}^{n}$ y $\alpha : (-\epsilon, \epsilon) \to U$ curva diferenciable tal que $\alpha(0) = p$ y $\alpha'(0) = w$. Entonces, la curva $\beta = F \circ \alpha : (-\epsilon, \epsilon) \to \mathbb{R}^{m}$ es diferenciable y $(dF)_{p}(w) = \beta'(0)$ es la diferencial de $F$ en $p$, donde $(d F)_{p} : \mathbb{R}^{n} \to \mathbb{R}^{m} $ es aplicación lineal.
+\end{defn}
+
+\begin{obs}
+  Forma para tangente
+\end{obs}
+
+\begin{prop}
+  La aplicación $(d f)_{p} : T_{p}S \to \mathbb{R}^{m}$ está bien definida, es decir, $(d f)_{p}(v)$ no depende de $\alpha$. Además, es una aplicación lineal.
+\end{prop}
+
+\begin{dem}
+  Sea $S \subset \mathbb{R}^{3}$ superficie, $X : U \subset \mathbb{R}^{2} \to S$ parametrización con $p \in X(U)$. Entonces, $T_{p}S = (d X)_{q}(\mathbb{R}^{2})$ con $q = X^{-1}(p) \Rightarrow (d X)_{q} : \mathbb{R}^{2} \to T_{p}S$ es un isomorfismo lineal (definición).\\
+
+  Tomando $\epsilon > 0$ suficientemente pequeño, $\alpha(-\epsilon, \epsilon) \subset X(U)$. Ahora, la curva $X^{-1} \circ \alpha : (-\epsilon, \epsilon) \to U$ es tal que $(X^{-1} \circ \alpha)(0) = q$. Como $X \circ (X^{-1} \circ \alpha) = \alpha$ derivando en $t = 0 $ tenemos que
+  \[
+    (d X)_{q}\big[ (X^{-1} \circ \alpha)'(0) \big] = \alpha'(0) = w,
+  \]
+  es decir,
+  \[ 
+    (X^{-1} \circ \alpha)'(0) = (d X)_{q}^{-1}(w) .
+  \] 
+  Por la regla de la cadena,
+  \[ 
+     (f \circ \alpha)'(0) = \frac{d{}}{d{y}}(f \circ X) \circ (X^{-1} \circ \alpha)
+  \] 
+  \[ 
+    = d(f \circ X)_{q} ((X^{-1} \circ \alpha)'(0)) = d(f \circ X)_{q} \circ (d X)_{q}^{-1}(w)
+  \] 
+  Por tanto,
+  \[ 
+    (d f)_{p} = d(f \circ X)_{q} \circ (d X)_{q}^{-1}
+  \] 
+\end{dem}
+
+%\begin{prop}
+%  Sea $S \subset \mathbb{R}^{3}$ superficie, $p \in S$, $w \in \mathbb{R}^{3}$ vector tangente, $\alpha : (-\epsilon, \epsilon) \to S, \epsilon > 0$ tal que $\alpha'(0) = w$, $\alpha(0) = p$ y $\beta = X^{-1} \circ \alpha : (-\epsilon, \epsilon) \to U$ con $(d \alpha)_{p}(w) = \beta'(0)$. Entonces, $\beta'(0)$ no depende de la elección de $\alpha$ y $(d \alpha)_{p} : T_{p}(S_{1}) \to T_{\alpha(p)}(S_{2})$ es lineal.
+%\end{prop}
+
+%\begin{dem}
+%  content
+%\end{dem}
+
+\begin{theo}[Regla de la Cadena]
+  Sean $S_{1}, S_{2}, S_{3} \subset \mathbb{R}^{3}$ superficies, $f : S_{1} \to S_{2}, g : S_{2} \to S_{3}$ aplicaiones diferenciables. Entonces, dado $p \in S_{1}$ tenemos que
+  \[ 
+    d(g \circ f)_{p} = (d g)_{f(p)} \circ (d f)_{p}
+  \] 
+  (También para F:rnm -> rnn, G:rnn -> rnk)
+\end{theo}
+
+\begin{dem}
+  Si $ v \in T_{p}S_{1}$, elegimos
+  \[
+    \alpha : (-\epsilon, \epsilon) \to S_{1}
+  \]
+  tal que $\alpha(0) = p$ y $\alpha'(0) = v$. Entonces,
+  \[
+    f \circ \alpha : (-\epsilon, \epsilon) \to S_{2}
+  \]
+  tal que $(f \circ \alpha)(0) = f(p)$ y $(f \circ \alpha)'(0) = (d f)_{p}(v)$. Por tanto,
+  \[
+    d(g \circ f)_{p}(v) = [(g \circ f) \circ \alpha]'(0)
+  \] 
+  \[ 
+    = [g \circ ( f \circ \alpha)'](0)
+  \] 
+  \[ 
+    = (d g)_{f(p)}((d f)_{p}(v)).
+  \] 
+\end{dem}
+
+%\begin{prop}
+%  Sea $f : U \subset \mathbb{R}^{2} \to \mathbb{R}$ función difereciable, $U$ abierto conexo. Si $(d f)_{p} : \mathbb{R}^{n} \to \mathbb{R}$ es $(d f)_{p} = 0, \forall p \in U$, entonces $f$ es constante en $U$.
+%\end{prop}
+%
+%\begin{dem}
+%  content
+%\end{dem}
+
+\begin{theo}[de la Función Inversa]
+  Sea $F : U \subset \mathbb{R}^{n} \to \mathbb{R}^{n}$ difereciable, $p \in U : (d F)_{p} : \mathbb{R}^{n} \to \mathbb{R}^{n}$ es isomorfismo. Entonces, $\exists V \subset U :  p \in V$ entorno y $\exists W \subset \mathbb{R}^{n} : F(p) \in W$ entorno tal que $F : V \to W$ tiene inversa difereciable $F^{-1} : W \to V$. $F|_{V}$ es difeomorfismo.
+\end{theo}
+
+\begin{obs}
+  Un isomorfismo es una función biyectiva.
+\end{obs}
+
+\begin{prop}
+  Sea $S \subset \mathbb{R}^{3}$ superficie. Entonces,
+  \begin{enumerate}[label=(\roman*)]
+    \item $f : S \to \mathbb{R}^{m}$ diferenciable, $S$ conexo y $(d f)_{p} = 0, \forall p \in S \Rightarrow f$ es constante.
+    \item $f : S \to \mathbb{R}$ diferenciable y $p \in S$ es un extremo local de $f$ $\Rightarrow p$ es un punto crítico de $f$.
+  \end{enumerate}
+\end{prop}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item []
+    \item Sea $a \in f(S)$. Entonces, $A = \{ p \in S : f(p) = a \} \neq \emptyset, A \subset S$ cerrado. Veamos que $A$ es abierto. Si $p \in A$, $X : U \to S$ parametrización tal que $p \in X(U)$ con $U$ conexo, entonces $\forall q \in U, d(f \circ X)_{q} = (d X)_{X(p)} \circ (d X)_{q} = 0$. Entonces, $f \circ X$ es constante en $U \Rightarrow f = (f \circ X) \circ X^{-1}$ es constante en $X(U)$. Como $\forall p \in A, f(p) = a \Rightarrow p \in X(U) \subset A \Rightarrow A$ es abierto. Luego, $S$ conexo $\Rightarrow A = S$, es decir, $f$ es constante.
+    \item Sea $p \in S$ extremo local de $f$. Si $v \in T_{p}S$ y $\alpha : (-\epsilon, \epsilon) \to S$ tal que $\alpha(0) = p$ y $\alpha'(0) = v$, entonces $(f \circ \alpha)$ tiene un extremo local en $t =0 \Rightarrow (d f)_{p}(v) = (f \circ \alpha)'(0) = 0 \Rightarrow p$ es punto crítico de $f$.
+  \end{enumerate}
+\end{dem}
+
+\begin{theo}[de la Función Implícita para Superficies]
+  Sea $S \subset \mathbb{R}^{3}$ superficie, $f : S \to \mathbb{R}$ diferenciable, $p \in S$, $a \in \mathbb{R}$. Si $f(p) = a$ y $(d f)_{p} \neq 0$ ($p$ no es punto crítico de $f$). Entoces, $\exists V \subset S$ entorno de $p$ en $S$ y $ \alpha : (-\epsilon, \epsilon) \to \mathbb{R}^{3}$ curva regular inyectiva homeomorfa a su imagen con $\epsilon >0 $ tal que
+  \[
+    \alpha(0) = p \quad \text{ y } \quad f^{-1}(\{ a \}) \cap V = \alpha(-\epsilon,\epsilon)
+  \]
+  Por tanto, si $a \in f(S)$ entonces $f^{-1}(\{ a \})$ es una curva simple.
+\end{theo}
+
+\begin{dem}
+  Sea $U \subset \mathbb{R}^{2} : (0, 0) \in U$, $X : U \to S$ parametrización con $X(0, 0) = p$. Definimos
+  \[
+    g : U \to \mathbb{R}
+  \]
+  tal que $g = f \circ X$, entonces
+  \[
+    g(0,0) = f(X(0,0)) = f(p) = a
+  \]
+  y, por la regla de la cadena,
+  \[
+    (d f)_{(0, 0)} = (d f)_{p} \circ (d X)_{(0,0)}.
+  \]
+  Dado que $(d X)_{(0,0)}$ es inyectiva y $(d f)_{p} \neq 0$, tenemos que
+  \[
+    (d g)_{(0, 0)} \neq 0,
+  \]
+  es decir, $(g_{u}, g_{v})(0, 0) \neq (0, 0)$. Supongamos que $g_{v}(0, 0) \neq 0$. Por el toerema de la aplicación implícita, $\exists \epsilon, \delta >0$ y
+  \[ 
+    h : (-\epsilon, \epsilon) \to (-\delta, \delta) 
+  \] 
+  tal que $(-\epsilon, \epsilon) \times (-\delta, \delta) \subset U$ y $h(0) = 0$
+  ACABAR
+\end{dem}
+
+\begin{note}
+
+\end{note}
+
+\begin{defn}[Superficies Transversales]
+  Sea $S_{1}, S_{2} \subset \mathbb{R}^{3}$ superficies, $p \in S_{1} \cap S_{2}$ es un punto de intersección. Si
+  \[
+    T_{p}(S_{1}) = T_{p}(S_{2}),
+  \]
+  entonces $S_{1}$ y $S_{2}$ son tangentes en $p$. En el caso contrario, si 
+  \[
+    T_{p}(S_{1}) \neq T_{p}(S_{2}),
+  \]
+  entonces $S_{1}$ y $S_{2}$ se cortan transversalmente en $p$ y, de forma local, la intersección es la traza de la curva.
+\end{defn}
+
+\begin{obs}
+  $S_{1}$ y $S_{2}$ son transversales si lo son $\forall p \in S_{1} \cap S_{2}$.
+\end{obs}
+
+\begin{prop}
+  Sea $S_{1}, S_{2} \subset \mathbb{R}^{3}$ superficies que se cortan transversalmente en $p$. Entonces, $\exists V \subset \mathbb{R}^{3}$ entorno de $p$, $I \subset \mathbb{R}$ abierto, $\alpha : I \to \mathbb{R}^{3}$ homeomorfa a $\alpha(I)$ tal que $\alpha(I) = V \cap S_{1} \cap S_{2}$.
+\end{prop}
+
+\begin{dem}
+  Sea $O \subset \mathbb{R}^{3}$ entorno de $p$ y $g : O \to \mathbb{R}$ tal que $0$ es un valor regular y $S_{2} \cap O = g^{-1}(\{ 0 \})$. Definimos
+  \[
+    f :  S_{1} \cap O \to \mathbb{R}
+  \]
+  por $f = g|_{S_{1} \cap O}$ diferenciable tal que $p \in f(S_{1} \cap O)$. Ademaś, $f(p) = g(p) = 0$ y $(d f)_{p} = (d g)_{p|_{T_{p}S_{1}}}$. Si $ p$ fuera punto crítico de $f$, tendríamos que $T_{p}S_{1} \subset \ker(dg)_{p} = T_{p}S_{2}$. Pero esto es imposible ya que $S_{1}$ y $S_{2}$ se cortan transversalmente. Aplicando el teorema de la función implícita tenemos el resultado.
+\end{dem}
+
+\begin{theo}
+  La intersección transversal de dos superficies es vacía o es un curva simple.
+\end{theo}
+
+\begin{theo}[Función Inversa]
+  Sean $S_{1}, S_{2} \subset \mathbb{R}^{3}$, $f : S_{1} \to S_{2}$ aplicación difereciable, $p \in S_{1}$. Si $(d f)_{p} : T_{p}(S_{1}) \to T_{f(p)}(S_{2})$ es un isomorfismo lineal, entonces $\exists V_{1}$ entorno de $ p $ en $S_{1}$ y $\exists V_{2}$ entorno de $f(p)$ en $S_{2}$ tal que $f(V_{1}) = V_{2}$ y $f|_{V_{1}} : V_{1} \to V_{2}$ es un difeomorfismo.
+\end{theo}
+
+\begin{dem}
+  Sea
+  \[
+    X_{i}: U_{i} \to S_{i}, \quad i \in \{ 1, 2 \}
+  \]
+  parametrizaciones tal que $p \in X_{1}(U_{1}), f(p) \in X_{2}(U_{2})$ y $f(X_{1}(U_{1})) \subset X_{2}(U_{2})$. Sea $q_{i} \in U_{i}, i \in \{ 1, 2 \}$ tal que $X_{1}(q_{1}) = p$ y $X_{2}(q_{2}) = f(p)$. La aplicación
+  \[
+    X_{2}^{-1} \circ f \circ X_{1} : U_{1} \to U_{2}
+  \]
+  es diferenciable y
+  \[
+    d(X_{2}^{-1} \circ f \circ X_{1})_{q_{1}} = (d X_{2})_{q_{2}}^{-1} \circ (d f)_{p} \circ (d X_{1})_{q_{1}}
+  \]
+  es un isomorfismo lineal por ser composición de isomorfismos. Ahora, podemos aplicar el teorema de la función inversa. Entonces, $\exists W_{i} \subset U_{i}$ entornos de $q_{i}, i \in \{ 1, 2 \}$ tal que
+  \[
+    (X_{2}^{-1} \circ f \circ X_{1})(W_{1}) = W_{2}
+  \]
+  y tal que
+  \[ 
+    X_{2}^{-1} \circ f \circ X_{1} : W_{1} \to W_{2} 
+  \] 
+  es un difeomorfismo. Para $V_{i} = X_{i}(W_{i}) \subset S_{i}, i \in \{ 1, 2 \}$, tenemos que $V_{1} \subset S_{1}$ es un entorno de $p$ y $V_{2}\subset S_{2}$ es un entorno de $f(p)$. Además, $f(V_{1}) = V_{2}$ y
+  \[
+    f|_{V_{1}} = X_{2} \circ (X_{2}^{-1} \circ f \circ X_{1}) \circ X_{1}^{-1} : V_{1} \to V_{2}
+  \]
+  es un difeomorfismo, ya que es composición de difeomorfismos.
+\end{dem}
+
+\begin{prop}
+  Sean $S_{1}, S_{2} \subset \mathbb{R}^{3}$ superficies, $\phi : S_{1} \to S_{2}$ difeomorfismo, $ p \in S_{1}$. Entonces, $(d \phi)_{p} : T_{p}(S_{1}) \to T_{f(p)(S_{2})}$ es isomorfismo lineal y $(d \phi)_{p}^{-1} = (d \phi ^{-1})_{p}$.
+\end{prop}
+
+\begin{dem}
+  Sea $w \in T_{\phi(p)}S_{2}$ y $\beta : (-\epsilon, \epsilon) \to S_{2}$ tal que $\beta(0) = \phi(p), \beta'(0) = w$. Entonces, $\alpha = \phi^{-1} \circ \beta : (-\epsilon, \epsilon) \to S_{1}$ diferenciable tal que $\alpha(0) = p, \alpha'(0) = w$ y $(d \phi)_{p}(\alpha(0)) = (\phi \circ \alpha)'(0) = \beta'(0) = w$
+\end{dem}
+
+%\begin{prop}
+%  Sean $S_{1}, S_{2} \subset \mathbb{R}^{3}$ superficies, $\varphi : U \subset S_{1} \to S_{2}$ apliación diferenciable tal que $(d \varphi)_{p}$ es un isomorfismo. Entonces, $\varphi$ es un difeomorfismo local en $p$.
+%\end{prop}
+%
+%\begin{dem}
+%  Teorema de la Función Inversa
+%\end{dem}

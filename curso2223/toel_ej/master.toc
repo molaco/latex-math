@@ -1,2 +1,3 @@
 \babel@toc {spanish}{}\relax 
-\contentsline {section}{\numberline {0.1}Espacios Topológicos}{1}{}%
+\contentsline {chapter}{\numberline {1}Espacios Topológicos}{2}{}%
+\contentsline {section}{\numberline {1.1}Funciones Continuas}{2}{}%
