@@ -3,5 +3,46 @@
 \end{ejr}
 
 \begin{sol}
-  _content
+  \begin{enumerate}[label=(\roman*)]
+    \item []
+    \item [$(\Rightarrow)$] $\forall B \in \mathcal{B}$ base de $\prod_{j \in J} (\mathcal{T}_{j}|_{A_{j}})$, $B = \prod_{j \in J} G_{j}$ tal que $G_{j} \in \mathcal{T}_{j}|_{A_{j}}, \forall j \in J$ donde $A_{j} = X_{j}, \forall j \in J \setminus F$, con $F$ finito de manera que
+
+      \[ 
+        \forall j \in F, \exists U_{j} \in \mathcal{T}_{j} : G_{j} = U_{j} \cap A_{j}
+      \] 
+      \[ 
+        \forall j \in J \setminus F, \exists U_{j} = X_{j} : G_{j} = U_{j} \cap A_{j} = X_{j} \cap A_{j} = A_{j}
+      \] 
+      Como $\prod_{j \in J} U_{j} \in \prod_{j \in J} \mathcal{T}_{j}$ (\textit{para ver esto escribir la base de $\prod_{j \in J} \mathcal{T}_{j}$}). Entonces,
+      \[ 
+        B = \prod_{j \in J} (U_{j} \cap A_{j}) = \Big ( \prod_{j \in J} U_{j} \Big ) \cap \Big ( \prod_{j \in J} A_{j} \Big ) \in \big ( \prod_{j \in J} \mathcal{T}_{j} \big ) |_{\prod_{j \in J} A_{j}}
+      \] 
+
+    \item [$(\Leftarrow)$] Sea $\mathcal{B'}$ base de $\big ( \prod_{j \in J} \mathcal{T}_{j} \big ) |_{\prod_{j \in J} A_{j}}$, entonces $\forall G \in \mathcal{B'}, G = B \ \cap \ \prod_{j \in J} A_{j}, B \in \mathcal{B}$ base de $\prod_{j \in J} \mathcal{T}_{j}$, donde $B = \prod_{j \in J} B_{j}$ tal que
+      \[ 
+        B_{j} =
+        \begin{cases}
+          \begin{aligned}
+            X_{j}, \text{ si } j \in J \setminus F \\
+            B_{j}, \text{ si } j \in F
+          \end{aligned}
+        \end{cases} 
+      \] Ahora,
+      \[
+        \mathcal{B}' = \{ x : J \to \bigcup_{j \in J} X_{j}: \forall j \in F, x_{j} \in B_{j} \cap A_{j}, B_{j} \in \mathcal{T}_{j} \text{ y }
+      \] 
+      \[ 
+        \forall j \in J \setminus F, x_{j} \in X_{j} \cap A_{j} \} 
+      \] 
+      \[ 
+        = \{ \bigcap_{j \in J} p_{j}^{-1}(B_{j}') : B_{j}' \in \mathcal{T}_{j}|_{A_{j}}, \forall j \in J \}  
+      \] 
+      \[ 
+        = \{ \prod_{j \in J} B_{j}': B_{j}' \in \mathcal{T}_{j}|_{A_{j}} \} 
+      \] 
+      Por tanto,
+      \[ 
+        G = \prod_{j \in J} B_{j}' \in \prod_{j \in J}\big ( \mathcal{T}_{j}|_{A_{j}} \big ).
+      \] 
+  \end{enumerate}
 \end{sol}

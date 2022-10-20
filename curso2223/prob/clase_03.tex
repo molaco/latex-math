@@ -27,3 +27,15 @@
 \end{theo}
 
 \section{Probabilidad sobre $\mathbb{R}^n$}
+
+\begin{defn}[Función de Distribución]
+  Una función $F: \mathbb{R}^{n} \to \mathbb{R}$ se dice que es de distribución en $\mathbb{R}^{n}$ si y solo si
+  \begin{enumerate}[label=(\roman*)]
+    \item $\forall a, b \in \mathbb{R}^{n} :  a \leq b \Rightarrow F((a, b]) \geq 0$.
+    \item $F$ continua por la derecha en cada variable, es decir, si $\{ x^{k} \}_{n \in \mathbb{N}} \downarrow : \{ x^{n} \}_{n \in \mathbb{N}} \rightarrow x$ con $x^{k} \in \mathbb{R}^{n}, \forall k \in \mathbb{N}$, entonces
+    \[ 
+      \lim_{n \to \infty} F(x^{n}) = F(x)
+    \] 
+    \item $\lim_{x_{i} \to -\infty} F(x_{1}, \cdots, x_{n}) = 0, \forall i \in \{ 1, \cdots, n \}$ y $F(+ \infty, \cdots, + \infty) = \lim_{x_{1}, \cdots, x_{n} \to + \infty} F(x_{1}, \cdots, x_{n}) = 1$.
+  \end{enumerate}
+\end{defn}

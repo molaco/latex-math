@@ -56,7 +56,9 @@
   \end{enumerate}
 \end{dem}
 
-\begin{defn}
+\section{Separable}
+
+\begin{defn}[Separable]
   Sea $( X, \mathcal{T} )$ e.t.. Se dice que es separable si $\exists D$ denso numerable en $( X, \mathcal{T} )$.
 \end{defn}
 
@@ -93,9 +95,24 @@
 \end{dem}
 
 \begin{prop}
-  Sean $\{ ( X_{j}, \mathcal{T}_{j} ) \}_{j \in J}$ familia no vacia de e.t. $T_{2}$ y $\card X_{j} \geq 2, \forall j \in J$. Entonces, $( \prod_{j \in J} X_{j}, \prod_{j \in J} \mathcal{T}_{j} )$ es separable $ \Leftrightarrowk \forall j \in J ( X_{j}, \mathcal{T}_{j} )$ es separable y $\card J \leq 2^{\mathcal{X}_{0}}$.
+  Sean $\{ ( X_{j}, \mathcal{T}_{j} ) \}_{j \in J}$ familia no vacia de e.t. $T_{2}$ y $\card X_{j} \geq 2, \forall j \in J$. Entonces, $( \prod_{j \in J} X_{j}, \prod_{j \in J} \mathcal{T}_{j} )$ es separable $ \Leftrightarrowk \forall j \in J, ( X_{j}, \mathcal{T}_{j} )$ es separable y $\card J \leq 2^{\mathcal{X}_{0}}$.
 \end{prop}
 
 \begin{dem}
-  content
+  \begin{enumerate}[label=(\roman*)]
+    \item []
+    \item [$(\Rightarrow)$] $\forall j \in J, p_{j} $ continua y suprayectiva $\Rightarrow ( X_{j}, \mathcal{T}_{j} )$ separable $\forall j \in J$. Luego, $\forall j \in J, \exists U_{j}, V_{j} \in \mathcal{T}_{j} \setminus \{  \emptyset \}  : U_{j} \cap V_{j} = \emptyset$ de manera que $p_{j}^{-1}(U_{j}) \in \prod_{j \in J} \mathcal{T}_{j}$ no vacío y $\exists D$ denso en $( \prod_{j \in J} X_{j}, \prod_{j \in J} \mathcal{T}_{j} ) \Rightarrow D \cap p_{j}^{-1}(U_{j}) = D \cap D_{j} \neq \emptyset$. Sea
+      \[
+        F: J \to \mathcal{P}(D) : j \mapsto D_{j}.
+      \]
+      Veamos que $F$ es inyectiva. $\forall j, j' \in J : j \neq j', p_{j}^{-1}(U_{j}) \cap p_{j'}^{-1}(V_{j}) \neq \emptyset$ por ser $p_{j}$ aplicación abierta. Entonces, $D \cap p_{j}^{-1}(U_{j}) \cap (p_{j'})^{-1}(V_{j}) \neq \emptyset$.
+    \item [$(\Leftarrow)$] Sea
+      \[
+        D = \{  P^{n_{1}, \cdots, n_{k}}_{J_{1}, \cdots, J_{k}}, k \in \mathbb{N}, n_{1}, \cdots, n_{k} \in \mathbb{N},
+      \]
+      \[
+         J_{1}, \cdots, J_{k} \text{ segmento de extremos racionales disjuntos contenido en } [0,1] \}
+      \]
+      Entonces, $D \subset \prod_{j \in J} X_{j}$ y $D$ es numerable. Por tanto, $\forall U \in \prod_{j \in J} \mathcal{T}_{j} \setminus \{ \emptyset \}, \exists B \in \mathcal{B} : B \subset U$ tal que $B = \bigcap_{i = 1}^{m} p_{ji}^{-1}(U_{ji})$ donde $U_{ji} \in \mathcal{T}_{ji} \setminus \{ \emptyset \}, \forall i \in \{  1, \cdots, m \}$. Por tanto, $\forall i \in \{  1, \cdots, m \}, D_{j_i} \cap U_{j_i} = d_{j_i}_{n_i} \neq \emptyset, j_{1}, \cdots, j_{m} \in [0, 1]$. Entonces, $P^{n_{1}, \cdots, n_{k}}_{J_{1}, \cdots, J_{k}}$ in $D$ y $\forall i \in \{ 1, \cdots, m \}$, $p_{ji}(P^{n_{1}, \cdots, n_{k}}_{J_{1}, \cdots, J_{k}}) = d_{j_{i}}_{n_{i}} \in U_{i_{j}} \Rightarrow P^{n_{1}, \cdots, n_{k}}_{J_{1}, \cdots, J_{k}} \in D, B \Rightarrow D \cap B \neq \emptyset \Rightarrow D \cap U \neq \emptyset$.
+  \end{enumerate}
 \end{dem}

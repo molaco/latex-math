@@ -1,0 +1,27 @@
+\begin{ejr}[2]
+  Sea $S = \{ (x, y, z) \in \mathbb{R}^{3} : z = x^{2} - y^{2} \}$. Demostrar que
+  \begin{enumerate}[label=(\roman*)]
+    \item $S$ es una superficie
+    \item $\varphi : \mathbb{R}^{2} \to \mathbb{R}^{3}$ definida por $\varphi(u, v) = (u +v, u-v, 4uv)$ es una parametrización de $S$ y dibujar las líneas coordenadas.
+  \end{enumerate}
+\end{ejr}
+
+\begin{sol}
+  \begin{enumerate}[label=(\roman*)]
+    \item []
+    \item   Sea $f : U \subset \mathbb{R}^{2} \to \mathbb{R}^{3}$ definida por
+  \[
+    f(x, y) = x^{2} - y^{2}.
+  \]
+  La aplicación es diferencible y 
+  \[ 
+    S = \{ (x, y, z) \in \mathbb{R}^{3} : (x, y) \in U, z = f(x, y) \} 
+  \] 
+  \[ 
+    = \{ (x, y, z) \in \mathbb{R}^{3} : z = x^{2} - y^{3} \} 
+  \] 
+  es la gráfica de $f$. Luego, $X : U \to S : (u, v) \mapsto (u, v, f(u, v))$ es parametrización de $S$. Entonces, $S$ es una superficie.
+
+    \item $\varphi = X \circ h$ donde $h : \mathbb{R}^{2} \to \mathbb{R}^{2}$ definida por $h(u, v) = (u +v, u - v)$. Como $X$ es parametrización $\Rightarrow X$ difeomorfismo y $h$ es difeomorfismo, entonces $\varphi$ es difeomorfismo con $\varphi(\mathbb{R}^{2}) = S \Rightarrow \varphi$ es parametrización.
+  \end{enumerate}
+\end{sol}

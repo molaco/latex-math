@@ -1,0 +1,72 @@
+\section{Ceros de Funciones Analíticas}
+
+\begin{prop}
+  Sea $\Omega \subset \mathbb{C}$ abierto, $z_{0} \in \Omega$, $f : \Omega \to \mathbb{C}$ analítica. Si $f^{(n)}(z_{0}) = 0, \forall k \in \mathbb{Z}^{+}$, entonces $\exists r>0 : f(z) = 0, \forall z \in D(z_{0}, r)$.
+\end{prop}
+
+\begin{prop}
+  Sea $\Omega \subset \mathbb{C}$ abierto, $z_{0} \in \Omega$, $f : \Omega \to \mathbb{C}$ analítica tal que $f$ no es idéticamente nula. Entonces, $ \exists n \in \mathbb{Z}^+ : f^{(n)}(z_{0}) \neq 0$.
+  \begin{enumerate}[label=(\roman*)]
+    \item Si $n=0$, entonces $f(z_{0}) \neq 0$.
+    \item Si $n >0$, entonces $f(z_{0}) = f'(z_{0}) = \cdots = f^{(n-1)}(x) = 0$ pero $f^{(n)}(x) \neq 0$. En este caso decimos que $f$ tiene un cero de orden $n$ en $z_{0}$.
+  \end{enumerate}
+\end{prop}
+
+\begin{cor}
+  Sea $\Omega \subset \mathbb{C}$ abierto, $z_{0} \in \Omega$, $f : \Omega \to \mathbb{C}$ analítica. Si $f(z_{0}) = 0$ y $ \exists n \in \mathbb{Z}^+ : f^{(n)}(z_{0}) \neq 0$, entonces $\exists \varphi : \Omega \to \mathbb{C}$ anlítica en $D(z_{0}, r)$ tal que $\varphi(z_{0}) \neq 0$ y 
+  \[ 
+    f(z) = (z - z_{0})^{n} \varphi(z), \forall z \in D(z_{0}, r)
+  \] 
+  y también $\exists r' >0 : f(z) = 0$ solo para $z_{0}$ en $D(z_{0}, r')$ 
+\end{cor}
+
+\begin{cor}
+  Sea $\Omega \subset \mathbb{C}$, $f : \Omega \to \mathbb{C}$ analítica, $z_{0} \in \Omega$. Si $\exists \{ z_{n} \}_{n \in \mathbb{N}}$ sucesión de puntos distintos en $\Omega$ tal que $z_{n} \xrightarrow[]{ n \rightarrow \infty } z_{0}$ y $f(z_{k}) = 0, \forall k \in \mathbb{N}$, entonces $f(z) = 0, \forall z \in D(z_{0}, r )$ con $r$ de manera que $D \subset \Omega$.
+\end{cor}
+
+\begin{prop}
+  Sea $\Omega \subset \mathbb{C}$ abierto conexo. Sea $f : \Omega \to \mathbb{C}$ holomorfa. Si $\exists z_{0} \in \Omega: f^{(n)}(z_{0}) = 0, \forall n \in \mathbb{Z}^+$, entonces $f(z) = 0, \forall z \in \Omega$.
+\end{prop}
+
+\begin{obs}
+  Si $\Omega$ no es conexo $\Omega = U \cup V$ para $U, V$ abiertos, entonces $f$ puede tomar valor $f = 0$ en $U$ y $f = 75$ en $V$.
+\end{obs}
+
+\begin{dem}
+  content
+\end{dem}
+
+\begin{cor}
+  Sea $\Omega \subset \mathbb{C}$ abierto conexo. Sea $f : \Omega \to \mathbb{C}$ holomorfa tal que $f$ no es idénticamente nula. Supongamos $f(a) = 0$, entonces $\exists m \in \mathbb{N}$ y $g : \Omega \to  \mathbb{C}$ holomorfa tal que $g(a) \neq 0$ y $f(z) = (z-a)^{m} g(z)$.
+\end{cor}
+
+\begin{dem}
+  content
+\end{dem}
+
+\begin{theo}[Principio de Identidad]
+  Sea $\Omega \subset \mathbb{C}$ abierto conexo. Sean $f,g : \Omega \to \mathbb{C}$ holomorfas. Si $A \subset \Omega : A' \cap \Omega \neq \emptyset$ y $f(z) = g(z), \forall z \in A$, entonces  $f(z) = g(z), \forall z \in \Omega$.
+\end{theo}
+
+\begin{dem}
+  Suponemos que $g = 0$. sea $\{ z_{n} \}_{n \in \mathbb{N}} \subset \Omega : z_{i} \neq z_{j}, \forall i \neq j$ y $z_{n} \xrightarrow[]{ n \rightarrow \infty } z_{0} \in \Omega$. Entonces, $f(z_{n}) = 0, \forall n \in \mathbb{N} \Rightarrow f(z_{0}) = 0$. Sea $m$ el orden del cero $z_{0}$. Si desarrollamos $f$ en $z_{0}$
+  \[ 
+    f(z) = \sum_{k = m}^{\infty} a_{k}(z - z_{0})^{k} = (z - z_{0})^{m} \cdot h(z) 
+  \] 
+  donde $h$ es holomorfa y $h(z_{0}) = a_{m} \neq 0$. Entonces, $\exists r > 0 : h(z) \neq 0, \forall z \in D(z_{0}, r)$. Por tanto,
+  \[ 
+    $f(z_{n}) = (z_{n} - z_{0})^{m} h(z_{n}) \neq 0$
+  \] 
+  es una contradicción.
+
+
+  REVISAR DESPUÉS DE VER DEMOS ANTERIORES
+\end{dem}
+
+\begin{theo}[de La Aplicación Abierta]
+  Sea $\Omega \subset \mathbb{C}$ abierto. Sea $f : \Omega \to \mathbb{C}$ holomorfa no constante. Entonces, $f(G)$ es abierto $\forall G \subset \Omega$.
+\end{theo}
+
+\begin{dem}
+  content
+\end{dem}

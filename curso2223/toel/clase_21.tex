@@ -1,0 +1,156 @@
+\begin{prop}
+  Todo e.t. Lindelöf y regular es normal.
+\end{prop}
+
+\begin{dem}
+  Sea $ ( X, \mathcal{T} )$ e.t. Lindelöf y regular. Entonces, $\forall C_{1}, C_{2}$ cerrados de $ ( X, \mathcal{T} )$
+  \begin{itemize}
+    \item Si $C_{1} = \emptyset$, entonces $U_{1} = \emptyset, U_{2} = X$.
+    \item Si $C_{1}, C_{2} \neq \emptyset$, entonces
+      \[
+        \begin{cases}
+          \forall x \in C_{1}, \exists V^{x} \in \mathcal{T} : \overline{V}^{x} \cap C_{2} = \emptyset  \Rightarrow C_{1} \subset \bigcup_{x \in C_{1}} V^{x} \\
+          \forall y \in C_{2}, \exists U^{y} \in \mathcal{T} : \overline{U}^{y} \cap C_{1} = \emptyset \Rightarrow C_{2} \subset \bigcup_{y \in C_{2}} U^{y}
+        \end{cases}
+      \]
+      Dado que todo espacio cerrado de un e.t. Lindelöf es Lindelöf, entonces
+      \[ 
+        \begin{cases}
+          \exists \{ V^{x_{n}} : n \in \mathbb{N} \} : C_{1} \subset \bigcup_{n \in \mathbb{N}} V^{x_{n}} \text{ subfamilia numerable} \\
+          \exists \{ U^{y_{n}} : n \in \mathbb{N} \} : C_{2} \subset \bigcup_{n \in \mathbb{N}} U^{y_{n}} \text{  subfamilia numerable}
+        \end{cases} 
+      \] 
+      Ahora, sean
+      \[ 
+        A_{1} = V^{x_{1}}, \quad B_{1} = U^{y_{1}} \setminus \overline{A_{1}} 
+      \] 
+      \[ 
+        A_{2} = V^{x_{2}} \setminus \overline{B_{1}}, \quad B_{2} = U^{y_{2}} \setminus \overline{A_{1} \cup A_{2}} 
+      \] 
+      \[ 
+        A_{3} = V^{x_{3}} \setminus \overline{B_{1} \cup B_{2}}, \quad B_{3} = U^{y_{3}} \setminus \overline{A_{1} \cup A_{2} \cup A_{3}} 
+      \] 
+      \[ 
+        \cdots 
+      \] 
+      son recubrimietos abiertos de $T$. Sean
+      \[ 
+        G_{1} = \bigcup_{n \in \mathbb{N}} A_{n} \in \mathcal{T}, \quad G_{2} = \bigcup_{n \in \mathbb{N}} B_{n} \in \mathcal{T}.
+      \]
+      Veamos que $C_{i} \subset G_{i}, \forall i \in \mathbb{N}$ y $G_{1} \cap G_{2} = \emptyset$. \\
+
+      \fbox{$C_{1} \subset G_{1}$} $\forall z \in C_{1} \Rightarrow \exists n \in \mathbb{N} : z \in V^{x_{n}}$. Como $z \in C_{1}$, entonces $z \not \in \overline{U}^{y_{m}}, \forall m \in \mathbb{N} \Rightarrow U^{y_{m}} \subset B_{m} \Rightarrow z \not \in \overline{U}^{y_{m}} \subset \overline{B}_{m}, \forall m \in \mathbb{N} \Rightarrow z \in A_{n} \subset G_{1}$. \\
+
+      Veamos que $G_{1}$ y $G_{2}$ son disjuntos. \\
+
+      \fbox{$G_{1} \cap G_{2} = \emptyset$} Si $\exists z \in G_{1} \cap G_{2}$, entonces
+      \[ 
+        \begin{cases}
+          \exists n_{0} \in \mathbb{N} : z \in A_{n_{0}} \Rightarrow z \not \in B_{n}, \forall n < n_{0} \\
+          \exists m_{0} \in \mathbb{N} : z \in B_{m_{0}} \Rightarrow z \not \in A_{m}, \forall m \leq m_{0} 
+        \end{cases} 
+      \] 
+
+      pero $ z \in A_{n_{0}} \Rightarrow n_{0} > m_{0}$ y $z \in B_{m_{0}} \Rightarrow m_{0} \geq n_{0}$ es absurdo.
+  \end{itemize}
+\end{dem}
+
+\begin{theo}
+  Sea $( X, \mathcal{T} )$ e.t. metrizable. Entonces, son equivalentes
+  \begin{enumerate}[label=(\roman*)]
+    \item $( X, \mathcal{T} )$ es 2º axioma,
+    \item $( X, \mathcal{T} )$ es Lindelöf,
+    \item $( X, \mathcal{T} )$ es separable.
+  \end{enumerate}
+\end{theo}
+
+\begin{dem}
+  Sea $( X, \mathcal{T} )$ tal que $\mathcal{T} = \mathcal{T}_{d}$.
+
+  \begin{enumerate}[label=(\roman*)]
+    \item [\fbox{$b \Rightarrow a$}] Como $( X, \mathcal{T} )$ Lindelöf, entonces $ \forall \mathcal{U}$ recubrimiento abierto de $\mathcal{U}$, $\exists \mathcal{V}$ subrecubrimiento numerable de $\mathcal{U}$. Por tanto, $\forall n \in \mathbb{N}$,
+  \[ 
+    \mathcal{U}_{n} = \{ B_{\frac{1}{n}}(x) : x \in X \}
+  \] 
+  es un recubrimiento abierto de $( X, \mathcal{T} )$. Luego, $\forall n \in \mathbb{N}, \exists \mathcal{V}_{n} \subset \mathcal{U}_{n} : \mathcal{V}_{n}$ es subrecubrimiento numerable de $\mathcal{U}_{n}$. Entonces, $\bigcup_{n \in \mathbb{N}} \mathcal{V}_{n} \equiv \mathcal{B} \subset \mathcal{T}$.
+
+  Veamos que $\mathcal{B}$ es base de $\mathcal{T}$. $\forall W \in \mathcal{T}, \forall x \in W \Rightarrow \exists m \in \mathbb{N} : B_{\frac{1}{m}}(x) \subset W$ entonces,  $\mathcal{V}_{2 m}$ es recubrimiento abierto de $( X, \mathcal{T} ) \Rightarrow \exists y \in X : x \in B_{\frac{1}{2 m}}(y) \in \mathcal{V}_{2 m}$.
+
+  Ahora, $x \in B_{\frac{1}{2 m}}(y) \subset B_{\frac{1}{m}}(x) \subset W$. Entonces, $\mathcal{B}$ es base de $\mathcal{T}$. Para ver esto, $\forall z \in B_{\frac{1}{2 m }}(x), d(z, x) \leq d(z, y) + d(y, x) \leq \frac{1}{2 m} + \frac{1}{2 m} = \frac{1}{m} \Rightarrow B_{\frac{1}{2 m}}(y) \subset B_{\frac{1}{m}}(x) \Rightarrow \mathcal{B}$ es base de $\mathcal{T}$.
+
+\item [\fbox{$c \Rightarrow a$}] $( X, \mathcal{T} )$ separable $\Rightarrow \exists D =\{ d_{n} :  n \in \mathbb{N} \}$ numerable y denso en $( X, \mathcal{T} )$. Sea $ \mathcal{B} = \{  B_{\frac{1}{m}}(d_{n}) : n, m \in \mathbb{N} \} \subset \mathcal{T}$ es colección de abiertos numerable $\Rightarrow$ $\mathcal{B}$ es numerable. 
+
+  Veamos que $\mathcal{B}$ es base de $\mathcal{T}$.
+  \[
+    \forall W \in \mathcal{T}, \forall x \in W \Rightarrow \exists m \in \mathbb{N} : B_{\frac{1}{m}}(x) \subset W.
+  \]
+  Por ser $D$ denso y $B_{\frac{1}{2 m}}(x)$ abierto. Entonces,
+  \[
+    \forall z \in B_{\frac{1}{2 m }}(d_{n}), d(z, x) \leq d(z, d_{n}) + d(x, d_{n}) \leq \frac{1}{2 m} + \frac{1}{2 m} = \frac{1}{m} 
+  \]
+  entonces, $ B_{\frac{1}{2 m}}(y) \subset B_{\frac{1}{m}}(x) \Rightarrow \mathcal{B}$ es base de $\mathcal{T}$. 
+  \end{enumerate}
+\end{dem}
+
+\chapter{Espacios Compactos}
+
+\begin{defn}[Compacto]
+  Sea $ ( X, \mathcal{T} )$ e.t.. Se dice que $(  X, \mathcal{T} )$ es compacto si $\forall \mathcal{U}$ recubrimiento abierto de $( X, \mathcal{T} )$, $\exists \mathcal{V}$ sub recubrimiento finito suyo.
+\end{defn}
+
+\begin{obs}
+  Compacto $\Rightarrow$ Lindelöf.
+\end{obs}
+
+\begin{obs}
+  Lindelöf $\not \Rightarrow$ Compacto.
+\end{obs}
+
+\begin{ejm}
+  $( \mathbb{R}, \mathcal{T}_{u} )$ es de Lindelöf pero no es compacto.
+\end{ejm}
+
+\begin{obs}
+  La compacidad se conserva por aplicaciones continuas (imagen directa).
+\end{obs}
+
+\begin{prop}
+  Sea $( X, \mathcal{T} ), ( X', \mathcal{T}' )$ e.t., $( X, \mathcal{T} )$ compacto, $f : ( X, \mathcal{T} ) \to ( X', \mathcal{T}' )$ suprayectiva y continua. Entonces, $( X', \mathcal{T}' )$ es compacto.
+\end{prop}
+
+\begin{dem}
+  $\forall \mathcal{U}' = \{  U_{j}' : j \in J \} \xRightarrow[]{ f \text{ cont.} } \mathcal{U} = \{ f^{-1}(U_{j}') \}$ es recubrimiento abierto de $( X, \mathcal{T} )$. Entonces, $\mathcal{V} = \{ f^{-1}(U'_{j_{1}}), \cdots, f^{-1}(U_{j_{n}}') \} \xRightarrow[]{ f \text{ supra.} } \mathcal{V}' = \{  U_{j_{1}}', \cdots, U_{j_{n}}' \}$ es subrecubrimiento finito de $\mathcal{U}$.
+\end{dem}
+
+\begin{cor}
+  La compacidad es invariante topológico.
+\end{cor}
+
+\begin{prop}
+  SEa $( X, \mathcal{T} )$ e.t. compacto, $E \neq \emptyset \subset X$ cerrado de $ ( X, \mathcal{T} )$. Entonces, $( E, \mathcal{T}|_{E})$ es compacto.
+\end{prop}
+
+ \begin{dem}
+   $\forall \mathcal{U} = \{ U_{j} : j \in J \}$ recubrimiento abierto de $( E, \mathcal{T}|_{E}) \Rightarrow \forall j \in J, \exists V_{j} \in \mathcal{T} :  U_{j} = V_{j} \cap E \Rightarrow \mathcal{U}' = \{ V_{j} : j \in J \} \cup \{  X \setminus E \}$ recubrimiento abierto de $( X, \mathcal{T} ) \xRightarrow[]{ \text{ hip. } } \exists \mathcal{V}' = \{  V_{j_{1}}, \cdots, V_{j_{n}} \} \cup \{  X \setminus E \}$ subrecubrimiento finito de $\mathcal{U'} \Rightarrow \mathcal{V} = \{ U_{j}, \cdots, U_{j_{n}} \}$ subrecubrimiento finito de $\mathcal{U}$.
+ \end{dem}
+
+ \begin{prop}
+   Sea $( X, \mathcal{T} )$ e.t.. Entonces, $( X, \mathcal{T} )$ es compacto $ \Leftrightarrow \forall \mathcal{C} = \{ C_{j} \}_{j \in J}$ familia de cerrados de $( X, \mathcal{T} )$ con la propiedad de intersección finita (todas las intersecciónes de subfamilias de $\mathcal{C}$ son no vacías), se tiene que $\bigcap_{j \in J} C_{j} \neq \emptyset$.
+ \end{prop}
+
+ \begin{dem}
+   \begin{enumerate}[label=(\roman*)]
+     \item []
+     \item [$(\Rightarrow)$] Supongamos que $\exists \mathcal{C} = \{ C_{j} \}_{j \in J}$ familia de cerrados con la p.i,f, tal que $\bigcap_{j \in J} C_{j} = \emptyset$. Entonces,
+       \[
+         \{ X \setminus C_{j} \}_{j \in J} \subset \mathcal{T}
+       \]
+       es recubrimiento abierto de $( X, \mathcal{T} )$ y no tiene subrecubrimiento finito. Por tanto, $( X, \mathcal{T} )$ no es compacto.
+       
+     \item [$(\Leftarrow)$] Supongamos que $( X, \mathcal{T} )$ no es compacto. Entonces, $\mathcal{U} = \{ U_{j} \}_{j \in J}$ recubrimiento abierto de $( X, \mathcal{T} )$ tal que $\not\exists$ subrecubrimiento finito. Luego, $\{ X \setminus U_{j} : j \in J \}$ es familia de cerrados con la p.i.f tal que $\bigcap_{j \in J}(X \setminus U_{j}) = \emptyset$, es una contradicción.
+   \end{enumerate}
+ \end{dem}
+
+ \begin{prop}
+   Sea $( X, \mathcal{T} )$ $T_{2}$, $E \subset X : ( E, \mathcal{T}|_{E})$ es compacto. Entonces, $E$ es cerrado de $( X, \mathcal{T} )$.
+ \end{prop}

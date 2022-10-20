@@ -1,6 +1,7 @@
 \documentclass[oneside]{book}
 \usepackage[spanish]{babel}
 %\usepackage[a4paper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+\usepackage{tikz}
 \usepackage{amsfonts} 
 \usepackage{mathrsfs}
 \usepackage{amssymb}
@@ -38,7 +39,7 @@
 \newmdtheoremenv{lem}{Lema}[theo]
 \newmdtheoremenv{defn}{Definición}[chapter]
 \newmdtheoremenv{prop}{Proposición}[chapter]
-\newmdtheoremenv{ejr}{Ejercicio}[section]
+\newmdtheoremenv{ejr}{Ejercicio}[chapter]
 \surroundwithmdframed[
   topline=false,
   rightline=false,
@@ -65,6 +66,7 @@
 \DeclareMathOperator{\card}{card}
 \DeclareMathOperator{\diam}{diam}
 \DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\Fr}{Fr}
 
 \newcommand{\incfig}[2][1]{%
     \def\svgwidth{#1\columnwidth}

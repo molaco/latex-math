@@ -1,0 +1,189 @@
+\section{Variable Aleatoria Real}
+
+\begin{defn}[Variable aleatoria]
+  Sea $(\Omega, \mathcal{A}, P )$ un espacio de probabilida y sea $( \mathbb{R}, \mathbb{B})$ un espacio probabilizable. Una aplicación $X : \Omega \to \mathbb{R}$ es una variable aleatoria $\Leftrightarrow X^{-1}(B) \in \mathcal{A}, \forall B \in \mathbb{B}$.
+\end{defn}
+
+\begin{prop}
+  $X :  \Omega \to \mathbb{R}$ es v.a si $X^{-1}(-\infty,a] \in \mathcal{A}, \forall a \in \mathbb{R}$.
+\end{prop}
+
+\section{Función Indicador}
+
+\begin{defn}[Función Indicador]
+  Sea $(\Omega, \mathcal{A})$ un espacio probabilizable. $\forall A \in \mathcal{A}$
+  \[ 
+    I_{A}(w) =
+    \begin{cases}
+      1 \text{ si } w \in A \\
+      0 \text{ si } w \not \in A \\
+    \end{cases} 
+  \] 
+  es la función indicador.
+\end{defn}
+
+\begin{obs}
+  La función indicador es variable aleatoria.
+\end{obs}
+
+\begin{obs}
+  $I_{A \cap B} = I_{A} \cdot I_{B}$, $I_{A} + I_{A^{c}} = 1$ y $I_{A \cup B} = I_{A} + I_{B} - I_{A \cap B}$.
+\end{obs}
+
+\section{Ley de Probabilida de Una Varibale Aleatoria}
+
+\begin{prop}
+  Sea $(\Omega, \mathcal{A}, P )$ un espacio de porbabilidad, $X$ una variable aletoria real con $X : (\Omega, \mathcal{A}, P ) \to (\mathbb{R}, \mathbb{B})$. Entonces, $X$ induce una medida de probabilidad $P_{X}$ sobre $(\mathbb{R}, \mathbb{B})$ tal que $(\mathbb{R}, \mathbb{B}, P_{X})$ es un espacio de probabilidad, donde $P_{X}$ viene definida por
+  \[
+    P_{X}(B) = P(X^{-1}(B)) = P(A), \forall B \in \mathbb{B}, \quad \text{ donde } X(A) = B.
+  \]
+\end{prop}
+
+\section{Función de Masa}
+
+\begin{defn}
+  Sea $X$ una v.a. sobre $(\Omega, \mathcal{A}, P )$ espacio de probabilidad y $P_{X}$ la probabilidad inducida por $X$ sobre $(\mathbb{R}, \mathhbb{B})$. Llamamos función de masa de $X$ a la aplicación
+  \[ 
+    p_{X} : \mathbb{R} \to [0,1] 
+  \] 
+  definida por
+  \[ 
+    \forall x \in \mathbb{R}, p_{X}(x) = P_{X}\{ x \} = P \{  X^{-1}(x)  \} = P \{  w \in \Omega :  X(w) = x \}.
+  \] 
+\end{defn}
+
+\begin{prop}
+  Sea $X$ v.a. con función de masa $p_{X}$ y sea $D_{X} = \{ x \in \mathbb{R} : p_{X}(x) > 0 \}$. Entonces, $D_{X}$ es numerable.
+\end{prop}
+
+\section{Variable Aleatoria Discreta}
+
+\begin{defn}[Variable Aleatoria Discreta]
+  Sea $X$ v.a. sobre $(\Omega, \mathcal{A}, P )$ con función de masa $p_{x}$ y
+  \[
+    D_{X} = \{  x \in \mathbb{R}: p_{X}(x) > 0 \}.
+  \]
+  Si $D_{X} \neq \emptyset$ y $\sum_{x \in D_{x}} p_{X}(x) = 1$, entonces la variable aleatoria $X$ se dice que es discreta y $D_{X}$ se le llama soporte de $X$.
+\end{defn}
+
+\begin{prop}
+  Dado $D \subset \mathbb{R}$ numerable y $p :  \mathbb{R} \to [0, 1]$ tal que
+  \[
+    p(x)  =
+    \begin{cases}
+      0 \text{ si } x \not \in D \\
+      >0 \text{ si } x \in D \\
+    \end{cases}
+  \]
+  con $\sum_{x \in D} p(x) = 1$. Entonces, se determina una ley de proabilidad $P_{X}$ sobre $X$ tal que
+  \[ 
+    P_{X}(B)  =
+    \begin{cases}
+      \sum_{x \in B \cap D} p(x), \quad \forall B \in \mathbb{R} \setminus (B \cap D) \neq \emptyset \\
+      0, \quad \text{ si } B \cap D = \emptyset
+    \end{cases} 
+  \] 
+\end{prop}
+
+\section{Funnción de Densidad sobre $\mathbb{R}$}
+
+\begin{defn}
+  Una función $f : \mathbb{R} \to \mathbb{R}$ se llama función de densidad sobre $\mathbb{R}$ si cumple
+  \begin{enumerate}[label=(\roman*)]
+    \item $f(x) \geq 0, \forall x \in \mathbb{R}$ 
+    \item $f$ admite a lo más un número finito de discontinuidades sobre cada intervalo finito de $\mathbb{R}$, es decir, $f$ es integrable Riemann.
+    \item $\int_{-\infty}^{+\infty} f(x) dx = 1$
+  \end{enumerate}
+\end{defn}
+
+\section{Variable Aleatoria Continua}
+
+\begin{defn}[Varible Aleatoria Continua]
+  Sea $X : (\Omega, \mathcal{A}) \to (\mathbb{R}, \mathbb{B})$ se dice continua si su función de distribución $F_{X}$ puede ser representada $\forall x \in \mathbb{R}$ por
+  \[ 
+    F_{X}(x) = \int_{-\infty}^{x} f_{X}(t) dt 
+  \] 
+  donde $f_{X}$ es una función de densidad sobre $\mathbb{R}$. A esta función de le llama función de densidad de la variable aleatoria continua $X$, y al conjunto
+  \[ 
+    C_{X} = \{  x \in \mathbb{R}: f_{X}(x) > 0 \}
+  \] 
+  se le llama soporte de la variable aleatoria.
+\end{defn}
+
+\begin{theo}
+  Sea $X$ v.a. continua con función de densidad $f_{X}$ y función de distribución $ F_{X}$. Entonces se verifica
+  \begin{enumerate}[label=(\roman*)]
+    \item $F_{X}$ es continua,
+    \item Si $f_{X}$ es continua en $x \Rightarrow F_{X}$ derivable en $X$ y
+      \[ 
+        F_{X}'(x) = f_{X}(x)
+      \] 
+    \item $D_{X} = \{ x \in \mathbb{R} : p_{X}(x) > 0 \} = \emptyset$
+    \item Para cualquier $I \subset \mathbb{R}$ con extremos $a, b$, $P \{ X \in I \} = \int_{a}^{b} f(t) dt$.
+  \end{enumerate}
+\end{theo}
+
+\section{Transformaciones Medibles}
+
+\subsection{Caso discreto}
+
+\begin{theo}
+  Sea $X$ v.a. discreta con soporte $D_{X}$ y función de masa $p_{X}$. Sea $\varphi :  \mathbb{R} \to \mathbb{R}$ medible, $Y = \varphi(X)$ v.a. transformada. Entonces, $Y$ es una v.a. discreta con soporte $D_{Y} = \varphi(D_{X})$ y función de masa
+  \[ 
+    p_{Y}(y)  =
+    \begin{cases}
+      \begin{aligned}
+        \sum_{x \in [\{ x \in \mathbb{R} : \varphi(x) = y \} \cap D_{X}]} p_{X}(x), \quad \text{ si } y \in D_{y} \\
+      0, \quad \text{ si } y \not \in D_{Y}
+      \end{aligned}
+    \end{cases} 
+  \] 
+\end{theo}
+
+\subsection{Caso Continuo}
+
+\begin{theo}
+  Sea $X$ v.a. continua con soporte $C_{X}$ y función de densidad $f_{X}$. Sea $Y = \varphi(Y)$ v.a. transformada. Si $\varphi(C_{X})$ es un conjunto discreto entonces $Y$ es v.a. discreta con soporte $D_{Y} \subset \varphi(C_{X})$ y función de masa
+  \[ 
+    p_{Y}(y)  =
+    \begin{cases}
+      \begin{aligned}
+        \int_{\{ x : p(x) = y \}}^{} f_{X}(x) dx, \quad \text{ si } y \in \varphi(C_{X}) \\
+        0, \quad \text{ si } y \not \in \varphi(C_{X})
+      \end{aligned}
+    \end{cases} 
+  \] 
+\end{theo}
+
+\begin{theo}
+  Sea $X$ v.a. continua con soporte $C_{X}$ y densidad $f_{X}$. Suponemos que $ C_{X} \subset \mathbb{R}$ es un intervalo. Sea $\varphi :  \mathbb{R} \to \mathbb{R}$ continua, estrictamente creciente o decreciente sobre $C_{X}$ tal que $\varphi^{-1}$ sobre $\varphi(C_{X})$ admite una derivada continua. Entonces, $Y$ es una v.a. continua con soporte $C_{Y} = \varphi(C_{X})$ y función de densidad
+  \[ 
+    f_{Y}(y) = 
+    \begin{cases}
+      \begin{aligned}
+        f_{X}^{-1}(\varphi^{-1}(y)) \cdot | (\varphi^{-1})'(y) |, \quad \text{ si } y \in C_{Y} \\
+        0, \quad \text{ si } y \not \in C_{Y}
+      \end{aligned}
+    \end{cases} 
+  \] 
+\end{theo}
+
+\begin{theo}
+  Sea $X$ v.a. continua con soporte $C_{X}$ y función de densidad $f_{x}$. Sea $ \varphi : \mathbb{R} \to \mathbb{R}$ derivable $\forall x \in C_{X}$ tal que $\varphi'$ es continua y $\varphi'(x) \neq 0$ salvo un número finito de puntos. Suponemos que $\forall y \in \mathbb{R}$ se cumple una de las siguientes afirmaciones
+  \begin{enumerate}[label=(\roman*)]
+    \item $\exists x_{1}(y), \cdots, x_{m(y)}(y) \in C_{X}$ tal que
+      \[
+        \varphi(x_{k}(y)) = y \quad \text{ y } \quad \varphi'(x_{k}(y)) \neq 0
+      \]
+    \item Si $m(y) = 0$. Entonces, $\varphi(X) = Y$ es v.a. continua con función de densidad
+      \[ 
+        f_{Y}(y) =
+        \begin{cases}
+          \begin{aligned}
+          \sum_{k = 1}^{m(y)} f_{X}(x_{k}(y)) \cdot | \varphi'(x_{k}(y)) |^{-1}, \quad \text{ si } m(y) > 0\\
+          0, \quad \text{ si } m(y) = 0
+          \end{aligned}
+        \end{cases} 
+      \] 
+  \end{enumerate}
+\end{theo}

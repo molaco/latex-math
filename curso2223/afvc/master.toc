@@ -16,3 +16,4 @@
 \contentsline {section}{\numberline {3.1}Sucesiones y Series}{28}{}%
 \contentsline {section}{\numberline {3.2}Series de Potencias}{30}{}%
 \contentsline {section}{\numberline {3.3}Funciones Analíticas}{32}{}%
+\contentsline {section}{\numberline {3.4}Ceros de Funciones Analíticas}{34}{}%

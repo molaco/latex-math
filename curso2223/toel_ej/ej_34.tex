@@ -1,0 +1,29 @@
+\begin{ejr}[34]
+  Si $X, Y$ son e.t. y $A \subset X$, $B \subset Y$, probar que en el espacio $X \times Y$ se verifica
+  \begin{enumerate}[label=(\roman*)]
+    \item $\mathring{A \times B} = \mathring{A} \times \mathring{B}$
+    \item $\overline{A \times B} = \overline{A} \times \overline{B}$
+    \item $\Fr({A \times B}) = (\overline{A} \times \Fr(B)) \cup (\Fr(A) \times \overline{B})$
+  \end{enumerate}
+\end{ejr}
+
+\begin{sol}
+Sea $( X, \mathcal{T} ), ( X', \mathcal{T}' )$ e.t., $A \subset X, A' \subset X'$. Entonces, $( X \times X', \mathcal{T} \times \mathcal{T}')$ es e.t..
+  \begin{enumerate}[label=(\roman*)]
+    \item \begin{enumerate}[label=(\roman*)]
+      \item []
+      \item [$(\Rightarrow)$] $\mathring{A} \in \mathcal{T}, \mathring{A}' \in \mathcal{T}'$. Como $\mathring{A} \times \mathring{A'} \subset A \times A' \in \mathcal{T} \times \mathcal{T}'$ es abierto, tenemos que $\mathring{A} \times \mathring{A'} \subset \mathring{A \times A'}$ por ser $\mathring{A \times A'}$ el mayor abierto de $A \times A'$.
+      \item [$(\Leftarrow)$] Por la definición de abierto, $\mathring{A \times A'} = \bigcup \{ S \subset X \times X' : S \in \mathcal{T} \times \mathcal{T}', S \subset A \times A' \}$. Por tanto,
+        \[
+          \mathring{A \times A'} = \bigcup_{j \in J} (U_{j} \times U_{j}')
+        \]
+        donde $U_{j} \in \mathcal{T}$, $U_{j}' \in \mathcal{T}'$ y $U_{j} \subset A$, $U_{j}' \subset A', \forall j \in J$. Como $U_{j} \subset \mathring{A}$ y $U_{j}' \subset \mathring{A}, \forall j \in J$, entonces
+        \[ 
+          \bigcup_{j \in J} (U_{j} \times U_{j}') \subset \mathring{A} \times \mathring{A'},
+        \] 
+        es decir, $\mathring{A \times A'} \subset \mathring{A} \times \mathring{A}'$.
+    \end{enumerate}
+    \item 
+    \item 
+  \end{enumerate}
+\end{sol}

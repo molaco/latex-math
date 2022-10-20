@@ -1,0 +1,108 @@
+
+
+\section{Entrega 3}
+
+\begin{ejr}[Ejercicio 2, Hoja 4]
+  Sean $A$ y $B$ dos sucesos tales que $P(A) = \frac{1}{4}, P(B | A) = \frac{1}{2}$ y $P(A | B) = \frac{1}{4}$. Indicar si son ciertas o falsas las siguientes afirmaciones:
+  \begin{enumerate}
+    \item $A \subset B$,
+    \item $A$ y $B$ independientes,
+    \item $A^{c}$ y $B^{c}$ independientes,
+    \item $A$ y $B$ incompatibles,
+    \item $P(A^{c} | B^{c}) = \frac{1}{2}$,
+    \item $P(A | B) + P(A | B^{c}) = 1$
+  \end{enumerate}
+\end{ejr}
+
+\begin{sol}
+  Sea $(\Omega, \mathcal{A}, P )$ donde $\mathcal{A} \subset \mathcal{P}(\Omega)$, $A, B \in \mathcal{A}$ tal que $P(A) = \frac{1}{4}, P(B | A) = \frac{1}{2}$ y $P(A | B) = \frac{1}{4}$.
+  \begin{enumerate}[label=(\roman*)]
+    \item (FALSO) Supongamos que $A \subset B$, entonces $A \cap B = A \Rightarrow P(A \cap B) = P(A)$ y
+
+      \[
+        P(B | A) = \frac{P(A \cap B)}{P(A)} = \frac{P(A)}{P(A)} = 1
+      \]
+      Es contradicción, dado que $P(B | A) = \frac{1}{2}$. Por tanto, $A \not \subset B$.
+
+    \item (CIERTO) Sabemos que
+      \[ 
+        P(B | A) = \frac{P(A \cap B)}{ P(A)},
+      \] 
+      entonces
+      \[ 
+        P(B | A) \cdot P(A) = P(A \cap B) 
+      \] 
+      \[ 
+        \Rightarrow P(A \cap B) = \frac{1}{4} \cdot \frac{1}{2} = \frac{1}{8} 
+      \]  
+      Ahora,
+      \[ 
+        P(A | B) = \frac{P(A \cap B)}{P(B)}
+      \] 
+      \[ 
+        \Rightarrow P(B) = \frac{P(A \cap B)}{P(A | B)} = \frac{\frac{1}{8}}{\frac{1}{4}} = \frac{1}{2} 
+      \] 
+      Como $A$ y $B$ son independientes $\Leftrightarrow$
+      \[ 
+        P(A \cap B) = P(B) \cdot P(A) 
+      \] 
+      donde $P(A \cap B) = \frac{1}{8}$ y $P(A) \cdot P(B) = \frac{1}{4} \cdot \frac{1}{2} = \frac{1}{8}$. Deducimos que $A$ y $B$ son independientes.
+
+    \item (CIERTO) Veamos que $A$ y $B$ independientes $\Rightarrow$ $A^{c}$ y $B^{c}$ independientes. Queremos ver que $P(A^{c} \cap B^{c}) = P(A^{c})\cdot P(B^{c})$.
+      \[ 
+        P(A^{c} \cap B^{c}) = P((A \cup B)^{c}) = 1 - P(A \cup B) = 1 - P(A) - P(B) + P(A \cap B)
+      \] 
+      donde $P(A \cap B) = P(A) \cdot P(B)$ por ser $A$ y $ B$ independientes,
+      \[ 
+        P(A^{c} \cap B^{c}) = 1 - P(A) - P(B) + P(A)\cdot P(B)
+      \] 
+      \[ 
+        = 1 - P(A) - P(B)(1 - P(A)) = P(A^{c}) - P(B) \cdot P(A^{c}) 
+      \]
+      \[ 
+        = P(A^{c})(1 - P(B^{c})) = P(A^{c}) \cdot P(B^{c}) 
+      \] 
+
+    \item (FALSO) Si $A$ y $B$ son incompatibles, $P(A \cap B) = 0$ pero $P(A \cap B) = \frac{1}{8}$.
+    \item (FALSO) Por ser $A^{c}$ y $B^{c}$ independients, tenemos que
+      \[
+        P(A^{c} | B^{c}) = P(A^{c}) = 1 - P(A) = \frac{3}{4} \neq \frac{1}{2}
+      \] 
+
+    \item (FALSO) Por ser $A$ y $B$ independientes, $A^{c}$ y $B^{c}$ son independientes. También lo son $ A$ y $B^{c}$ ya que
+      \[ 
+        P(A^{c} \cap B) = P(B \setminus (A \cap B)) = P(B) - P(A \cap B)
+      \] 
+      donde $A \cap B \subset B$, entonces
+      \[ 
+        P(A^{c} \cap B) = P(B)(1 - P(A)) = P(B) \cdot P(A^{c}) 
+      \] 
+      A partir de la independencia de estos sucesos,
+      \[ 
+        P(A | B) + P(A | B^{c}) = P(A) + P(A) = \frac{1}{4} + \frac{1}{4} = \frac{1}{2} \neq \frac{1}{2}.
+      \] 
+  \end{enumerate}
+\end{sol}
+
+\begin{ejr}[Ejercicio 6, Hoja 4]
+  Sean $A_{1}, A_{2}, A_{3}, A_{4}, A_{5}$ sucesos independientes. Demostrar que:
+  \begin{enumerate}[label=(\roman*)]
+    \item $A_{1} \cup A_{2}$, $A_{3} \cap A_{4}$ y $A_{5}$ son independientes,
+    \item $(A_{1} \cup A_{2}) \cap A_{3}$ y ${A_{4}}^c \cup {A_{5}}^2$ son independientes.
+  \end{enumerate}
+\end{ejr}
+
+\begin{sol}
+  \begin{enumerate}[label=(\roman*)]
+    \item
+    \item Primero, $A_{1} \cup A_{2}$ y $A_{3} \cap A_{4}$ son independientes si y solo
+      \[ 
+        P((A_{1} \cup A_{2}) \cap (A_{3} \cap A_{4})) = P(A_{1} \cup A_{2}) \cdot P(A_{3} \cap A_{4}) 
+      \]
+      Como
+      \[ 
+        P((A_{1} \cup A_{2}) \cap (A_{3} \cap A_{4})) = P(A_{1} \cup A_{2}) + P(A_{3} \cap A_{4}) - P((A_{1} \cup A_{2}) \cup (A_{3} \cap A_{4}))
+      \] 
+    \item 
+  \end{enumerate}
+\end{sol}

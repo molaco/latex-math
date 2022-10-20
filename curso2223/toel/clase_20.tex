@@ -1,0 +1,83 @@
+
+\begin{prop}
+  Sea $\{ ( X_{j}, \mathcal{T}_{j} ) \}_{j \in J}$ familia no vacía de e.t.. Entonces, $( \sum_{j \in J} X_{j}, \sum_{j \in J} \mathcal{T}_{j})$ separable $ \Leftrightarrow \forall j \in J, ( X_{j}, \mathcal{T}_{j} )$ es separable y $J$ es numerable.
+\end{prop}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item []
+    \item [$(\Rightarrow)$]   Por hipótesis, $D$ denso numerable en $( \sum_{k \in J} X_{k}, \sum_{k \in J} \mathcal{T}_{k}) \Rightarrow \forall k \in J, (X_{k} \times \{ k \}) \cap D \neq \emptyset$. Sea $z_{k} \in (X_{k} \times \{ k \}) \cap D$, entonces $\{ z_{k} :  k \in J \} \subset D$ es conjunto de puntos distintos. Podemos usar una aplicación injectiva de $\{ z_{k} :  k \in J \}$ a $ J$ para ver que $\card J \leq \card D \leq \mathcal{X}_{0}$.
+
+    \item [$(\Leftarrow)$] $\forall k \in J, \exists D_{k}$ denso numerable en $( X_{k}, \mathcal{T}_{k} )$. Sea $D = \bigcup_{k \in J}mb D_{k} \times \{ k \}$ es numerable por ser unión de conjuntos numerables y es subespacio del espacio suma $\Rightarrow$ es denso en $( \sum_{k \in J} X_{k}, \sum_{k \in J} \mathcal{T}_{k})$.
+  \end{enumerate}
+\end{dem}
+
+\section{Lindelöf}
+
+\begin{defn}[Recubrimiento]
+  Sea $ ( X, \mathcal{T} )$ e.t., $\mathcal{U} \subset \mathcal{P}(X)$. Se dice que $ \mathcal{U}$ es un recubrimiento de $X$ si $\bigcup_{U \in \mathcal{U}} U = X$. Si $\forall U \in \mathcal{U}, U \in \mathcal{T}$, entonces $\mathcal{U}$ es un recubrimiento abierto.
+\end{defn}
+
+\begin{defn}[Subrecubrimiento]
+  Sea $( X, \mathcal{T} ), \mathcal{U}$ recubrimiento de $X$, $\mathcal{V} \subset \mathcal{U}$. Se dice que $\mathcal{V}$ es un subrecubrimiento  si $\mathcal{V}$ también es un recubrimiento de $X$.
+\end{defn}
+
+\begin{obs}
+  Puede ser que $ \mathcal{V} = \mathcal{U}$.
+\end{obs}
+
+\begin{defn}[Lindelöf]
+  Sea $ ( X, \mathcal{T} )$ e.t. es Lindelöf si $\forall \mathcal{U}$ recubrimiento abierto de $X$, $\exists \mathcal{V}$ subrecubrimiento numerable de $\mathcal{U}$.
+\end{defn}
+
+\begin{prop}
+  Todo e.t. 2º axioma es de Lindelöf.
+\end{prop}
+
+\begin{dem}
+  Sea $( X, \mathcal{T} )$ 2º axioma $\Rightarrow \exists \mathcal{B}$ base numerable de $\mathcal{T}$. Entonces, $\forall \mathcal{U}$ recubrimiento abierto de $( X, \mathcal{T} ) \Rightarrow \forall U \in \mathcal{U}, \forall x \in U, \exists B_{U}^{x} \in \mathcal{B}: x \in B_{U}^{x} \subset U$. Sea $\mathcal{C} = \{ B_{U}^{x} : x \in U \in \mathcal{U}\}\subset \mathcal{B} \Rightarrow \mathcal{C}$ numerable y $\mathcal{C}$ recubre a $X$ pero no es subrecubrimiento. Luego, $\forall B im \mathcal{C}, \exists U_{B} \in \mathcal{U} : B \subset U_{B} \Rightarrow \mathcal{V} = \{ U_{B} : B \in \mathcal{C} \} \subset \mathcal{U}$ es numerable y recubre a $X \Rightarrow \mathcal{V}$ es subrecubrimiento de $\mathcal{U} \Rightarrow $ es $( X, \mathcal{T} )$ es Lindelöf.
+\end{dem}
+
+\begin{obs}
+  Lindelöf no es hereditaria.
+\end{obs}
+
+\begin{ejm}
+  VER EJEMPLO
+\end{ejm}
+
+\begin{prop}
+  Todo subespacio cerrado de un e.t. Lindelöf es Lindelöf.
+\end{prop}
+
+\begin{dem}
+  Sea $( X, \mathcal{T} )$, Lindelöf, $E$ cerrado no vación de $( X, \mathcal{T} )$. Entonces, $\forall \mathcal{U}$ recubrimiento abierto de $( E, \mathcal{T}|_{E})$, $\mathcal{U} = \{  U_{j} : j \in J \} \Rightarrow \forall j \in J, \exists V_{j} \in \mathcal{T} : U_{j} = V_{j} \cap E$. Luego, $ \mathcal{U}' = \{ V_{j} : j \in J \} \cup \{ X \setminus E \}$ es recubrimiento abierto de $( X, \mathcal{T} ) \Rightarrow \exists \mathcal{V}' = \{ V_{jn} : n \in \mathbb{N} \} \cup \{ X \setminus E \}$ es sub recubrimiento de $\mathcal{U}' \Rightarrow \mathcal{V} = \{  U_{jn} : n \in \mathbb{N} \}$ es subrecubrimiento de $\mathcal{U}$.
+\end{dem}
+
+\begin{prop}
+  Sea $( X, \mathcal{T} ), ( X', \mathcal{T}' )$ e.t., $( X, \mathcal{T} )$ Lindelöf, $f : ( X, \mathcal{T} ) \to ( X', \mathcal{T}' )$ aplicación continua suprayectiva. Entonces, $( X', \mathcal{T}' )$ es Lindelöf.
+\end{prop}
+
+\begin{dem}
+  $\forall \mathcal{U}' = \{ U_{j}' : j \in J \}$ recubrimiento abierto de $( X', \mathcal{T}' )$. Entonces, $ \mathcal{U} = \{  f^{-1}(U_{jn}') : n \in \mathbb{N} \}$ es recubrimiento abierto de $( X, \mathcal{T} )$. Por ser $( X, \mathcal{T} )$ Lindelöf $\Rightarrow \exists \mathcal{V} = \{  f^{-1}(U_{jn}') : n \in \mathbb{N} \}$ subrecubrimiento numerable de $\mathcal{U} \xRightarrow[]{ f \text{ supra.} } \mathcal{V}' = \{  U_{jn}' : n \in \mathbb{N} \}'$ subrecubrimiento numerable de $\mathcal{U}'$.
+\end{dem}
+
+\begin{obs}
+  El producto de dos e.t. de Lindelöf no es Lindelöf.
+\end{obs}
+
+\begin{ejm}
+  VER EJEMPLO
+\end{ejm}
+
+\begin{prop}
+  Sea $\{ ( X_{j}, \mathcal{T}_{j} ) \}_{j \in J}$ familia no vacía de e.t.. Entonces, $( \sum_{j \in J} X_{j}, \sum_{k \in J} \mathcal{T}_{k})$ es Lindelöf $\Leftrightarrow ( X_{j}, \mathcal{T}_{j} )$ es Lindeöf $\forall j \in J$ y $J $ es numerable.
+\end{prop}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item []
+    \item [$(\Rightarrow)$] $\forall k \in J, X_{k} \simeq X_{k} \times \{ k \} \subset \sum_{j \in J} X_{j}$ y dado que Lindelöf se conserva por aplicaciones continuas $\Rightarrow$ Lindelöf es invariante, tenemos que $( X_{k}, \mathcal{T}_{k} )$ es Lindelöf, $\forall k \in J$. Como $\{ X_{k} \times \{ k \} : k \in J \}$ es recubrimiento de $( \sum_{k \in J} X_{k}, \sum_{k \in J} \mathcal{T}_{k})$ por conjuntos disjuntos doa a dos $\Rightarrow J$ numerable. REVISAR.
+    \item [$(\Leftarrow)$] Sea $\mathcal{U}$ recubrimiento abierto de $( \sum_{k \in J} X_{k}, \sum_{k \in J} \mathcal{T}_{k})$. Entonces, $\forall k \in J, \{  U \cap ( X_{k} \times \{ k \} ) :  U \in \mathcal{U} \} = \mathcal{U}_{k}$ recubrimiento abierto de $X_{k} \times \{ k \} \simeq ( X_{k}, \mathcal{T}_{k} )$. Por tanto $\forall k \in J, \exists \mathcal{V}_{k}$ subrecubrimiento numerable de $\mathcal{U}_{k}$. Sea $ \mathcal{V} = \bigcup_{k \in J} \{ U : U \cap ( X_{k} \times \{ k \} ) \in \mathcal{V}_{k} \} \subset \mathcal{U} \Rightarrow \mathcal{V}$ es subrecubrimiento numerable de $\mathcal{U} \Rightarrow ( \sum_{k \in J} X_{k}, \sum_{k \in J} \mathcal{T}_{k})$ es Lindelöf.
+  \end{enumerate}
+\end{dem}

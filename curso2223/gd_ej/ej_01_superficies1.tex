@@ -1,0 +1,13 @@
+\chapter{Superficies}
+
+\begin{ejr}[1]
+  Halla el plano tangente en cada punto de la esfera de radio 2 en $\mathbb{R}^{3}$.
+\end{ejr}
+
+\begin{sol}
+  Sea $\mathbb{S}^{2}(r) = \{ p \in \mathbb{R}^{3} : |p - p_{0}| \leq r \}$ con $p_{0} \in \mathbb{R}^{3}$ es la esfera de centro $p_{0}$ y radio $r$. \\
+
+  Sea $f : \mathbb{R}^{3} \to \mathbb{R}$ definida por $f(p) = | p - p_{0} |^{2}$ y $r \in f(\mathbb{R}^{3}) \subset \mathbb{R}$. Entonces, $\forall p \in \mathbb{R}^{3} : f(p) = r$ se tiene que $(d f)_{p} \neq 0$. Por tanto, $r$ es valor regular de $f$. Luego, $\mathbb{S}^{2}(r)$ es superfice. En particular, $\mathbb{S}^{2}(2) = f^{-1}(\{ 2 \})$ es superficie. \\
+
+  Ahora, si $v \in T_{p}(S)$, entonces $\exists \alpha : (-\epsilon, \epsilon) \to S$ con $\alpha(0) = p$ y $\alpha'(0) = v$. Por tanto, $(f \circ \alpha)(t) = r, \forall t \in (-\epsilon, \epsilon) \Rightarrow (d f)_{p} = (f \circ \alpha)'(0) = 0 \Rightarrow v \in \ker (d f)_{p}$. Como $T_{p}(S) \subset \ker (d f)_{p}$ y ambos son subespacios lineales de dimensión dos, entonces $T_{p}(S) = \ker (d f)_{p}$.
+\end{sol}
