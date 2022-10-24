@@ -1,0 +1,162 @@
+
+\begin{obs}
+  No confundir. Todo subconjunto cerrado de un espacio compacto es compacto, y un subconjunto compacto de un espacio $T_{2}$ es cerrado.
+\end{obs}
+
+\begin{obs}
+  Si $C \subset X$ es compacto, entonces $\forall K$ subfamilia arbitraria the subconjuntos abiertos $C \subset \bigcup_{G \in K} G$, $\exists F \subset K$ subfamilia finita $C \subset \bigcup_{G \in F} G$.
+\end{obs}
+
+\begin{dem}
+  Sea $E \subset X$. Entonces, como $X$ es $T_{2}$, $\forall x \in X \setminus E, \forall y \in E, \exists U^{x}_{y}, \exists U^{y} \in \mathcal{T}$ disjuntos. La colección
+  \[
+    \{ U^{y} : y \in E \}
+  \]
+  es un recubrimiento abierto de $E$, entonces $E$ compacto $\Rightarrow \exists y_{1}, \cdots y_{n} \in E$ tal que $\{ U^{y_{1}} , \cdots, U^{y_{n}} \}$ es un subrecubrimiento finito de $E$. Por tanto,
+  \[ 
+    E \subset \bigcup_{i = 1}^{n} U^{y_{i}} \equiv G \in \mathcal{T}
+  \] 
+  que es disjunto de
+  \[ 
+    x \in U^{x}_{y_{1}} \cap \cdots \cap U^{x}_{y_{2}} \equiv V^{x}
+  \] 
+  ya que $\forall z \in U^{y}_{i_{0}}, z \not \in U^{x}_{y_{0}} \Rightarrow z \not \in V^{x}$. Entonces, 
+  \[ 
+    V^{x} \cap G = \emptyset \Rightarrow V^{x} \cap E = \emptyset \Leftrightarrow V^{x} \subset X \setminus E \in \mathcal{T}
+  \] 
+  si y solo si $E$ es cerrado de $( X, \mathcal{T} )$.
+\end{dem}
+
+\begin{obs}
+  La compacidad ni es propiedad hereditaria.
+\end{obs}
+
+\begin{ejm}
+  $( [0, 1], \mathcal{T}_{u}|_{[0,1]} )$ pero $( (0,1), \mathcal{T}_{u}|_{(0,1)} )$ no es compacto.
+\end{ejm}
+
+\begin{prop}
+  Sea $( X, \mathcal{T} ), ( X', \mathcal{T}' )$ e.t., $( X, \mathcal{T} )$ compacto, $( X', \mathcal{T}' )$ $T_{2}$, $f : ( X, \mathcal{T} ) \to ( X', \mathcal{T}' )$ continua. Entonces, $f$ es apicación cerrada.
+\end{prop}
+
+\begin{dem}
+  $\forall E \subset X : E \neq \emptyset$ es cerrado, entonces $( E, \mathcal{T}|_{E})$ es cerrado $\xRightarrow[]{ f \text{ cont.} }$ $( f(E), \mathcal{T}'|_{f(E)})$ es compacto en $( X', \mathcal{T}' )$ que es $T_{2} \Rightarrow$ $( f(E), \mathcal{T}'|_{f(E)})$ es cerrado de $( X', \mathcal{T}' )$.
+\end{dem}
+
+\begin{dem}
+  $\forall E \subset X$ cerrado $\Rightarrow ( E, \mathcal{T}|_{E})$ es cerrado  y por ser $( X, \mathcal{T} )$ compacto, entonces $( E, \mathcal{T}|_{E})$ es compacto. Ahora, $f|_{E} : ( E, \mathcal{T}|_{E}) \to ( f(E), \mathcal{T}|_{f(E)})$ es suprayectiva y continua, y $( X, \mathcal{T} )$ compacto $\Rightarrow ( f(E), \mathcal{T}|_{f(E)})$ es compacto en $( X', \mathcal{T}' )$. Como $( X', \mathcal{T}' )$ es $T_{2}$, entonces $( f(E), \mathcal{T}|_{f(E)})$ es cerrado de $( X', \mathcal{T}' )$.
+\end{dem}
+
+\begin{prop}
+  Sea $( X, \mathcal{T} )$ e.t. $T_{2}$, $C_{1}, C_{2} \subset X$ disjuntos tal que $( C_{i}, \mathcal{T}|_{C_{i}})$ compacto, $\forall i \in \{ 1, 2 \}$. Entonces, $\exists G_{i} \in \mathcal{T}, i \in \{ 1, 2 \}$ disjuntos tal que $C_{i} \subset G_{i}$.
+\end{prop}
+
+\begin{dem}
+  Por ser $( X, \mathcal{T} )$ $T_{2}$ tenemos que $\forall x \in C_{1}, \forall y \in C_{2}, \exists U^{x}_{y}, \exists U^{y}_{x} \in \mathcal{T}$ disjuntos. Consideramos $x \in C_{1}$ entonces $\{ U^{y}_{x} : y \in C_{2}\}$ es un recubrimiento abierto de $( C_{2}, \mathcal{T}|_{C_{2}}) \Rightarrow \exists y_{1}, \cdots, y_{n} \in C_{2} : \{ U^{y_{1}}_{x}, \cdots, U^{y_{n}}_{x} \}$ es subrecubrimiento finito de $( C_{1}, \mathcal{T}|_{C_{1}})$ tal que
+  \[ 
+    C_{2} \subset \bigcap_{i = 1}^{n} U^{y_{i}}_{x} \equiv A_{x} 
+  \] 
+  es disjunto de
+  \[ 
+    x \in U^{x}_{y_{1}} \cap \cdots \cap U^{x}_{y_{n}} \equiv V^{x} \in \mathcal{T}
+  \] 
+  Como $C_{1} \subset \bigcup_{x \in C_{1}} V^{x}$ es recubrimiento abierto de $( C_{1}, \mathcal{T}|_{C_{1}})$, entonces $\exists x_{1}, \cdots, x_{m} \in C_{1} : \{ V^{x_{1}, \cdots, V^{x_{n}}} \}$ es subrecubrimiento finito tal que
+  \[ 
+    C_{1} \subset \bigcup_{j =1}^{m} V^{x_{j}} \equiv G_{1} \in \mathcal{T}.
+  \] 
+  Entonces, para
+  \[ 
+    C_{2} \subset A_{x_{1}} \cap \cdots \cap A_{x_{m}} \equiv G_{2} \in \mathcal{T} 
+  \] 
+  tenemos que $ G_{1} \cap G_{2} = \emptyset$.
+
+\end{dem}
+
+\begin{cor}
+  Todo e.t. compacto y $T_{2}$ es $T_{4}$.
+\end{cor}
+
+\begin{prop}
+  Sea $( X, \mathcal{T} )$ e.t. regular, $C_{1}, C_{2} \subset X$ disjuntos tal que $( C_{1}, \mathcal{T}|_{C_{1}})$ es compacto y $( C_{2}, \mathcal{T}|_{c_{2}})$ es cerrado. Entonces, $\exists G_{i} \in \mathcal{T}, i \in \{ 1, 2 \}$ disjuntos tal que $C_{i} \subset G_{i}$.
+\end{prop}
+
+\begin{dem}
+  Suponemos que $C_{2} \neq \emptyset$. Entonces, por regularidad $\forall x \in C_{1}, \exists U^{x}, \exists U_{x} \in \mathcal{T}$ disjuntos tal que $x \in U^{x}, C_{2} \subset U_{x}$. Entonces, $\{ U^{x} :  x \in C_{1} \}$ es recubrimiento abierto de $( C_{1}, \mathcal{T}|_{C_{1}})$ tal que
+  \[ 
+    C_{1} \subset \bigcup_{x \in C_{1}} U^{x}
+  \] 
+  entonces, $\exists x_{1}, \cdots, x_{n}$ tal que
+  \[
+    \{ U^{x_{1}}, \cdots U^{x_{n}} \}
+  \]
+  es subrecubrimiento finito de $( C_{1}, \mathcal{T}|_{C_1})$ y
+  \[ 
+    C_{1} \subset \bigcap_{i = 1}^{n} U^{x_{i}}
+  \] 
+  Ahora, 
+  \[ 
+     C_{2} \subset U_{x_{1}} \cap \cdots \cap U_{x_{n}} \equiv G_{2} \in \mathcal{T} 
+  \] 
+  entonces, $G_{1} \cap G_{2} = \emptyset$.
+\end{dem}
+
+POSIBLE ERROR: en las demostraciones anteriores ponemos como recubrimiento y subrecubrimientos finitos cuando la compacidad es relativa a un subconjunto de $X$, es decir, serían familias y subfamilias finitas, y no rcubrimientos y subrecubrimientos finitos.
+
+\begin{prop}
+  Sean $( X, \mathcal{T} ), ( Y, \mathcal{S} )$ e,t, $A \subset X, B \subset Y : ( A, \mathcal{T}|_{A})$ es compacto y $( B, \mathcal{S}|_{B})$ es compacto, $W \in \mathcal{T} \times \mathcal{S} : A \times B \subset W$. Entonces, $\exists U \in \mathcal{T}, \exists V \in \mathcal{S} : A \times B \subset U \times V \subset W$.
+\end{prop}
+
+\begin{dem}
+  $\forall (x, y ) \in A \times B \subset W \in \mathcal{T} \times \mathcal{S} \Rightarrow \exists U^{x}_{y} \in \mathcal{T}, \exists V^{y}_{x} \in \mathcal{S} : U^{x}_{y} \times V^{y}_{x} \subset W$. Ahora, $\forall y \in B \subset Y$,
+  \[ 
+    A \subset \bigcup_{x \in A} U^{x}_{y}
+  \] 
+  donde $A$ es compacto. Por tanto, $\exists x_{1}, \cdots, x_{n} \in A$ tal que
+  \[ 
+    A \subset \bigcup_{i = 1}^{n} U^{x_{i}}_{y} \equiv G_{y} \in \mathcal{T}.
+  \] 
+  Luego, 
+  \[ 
+    y \in V^{y}_{x_{1}} \cap \cdots \cap V^{y}_{x_{n}} \equiv V^{y} \in \mathcal{S} 
+  \] 
+  entonces, $G_{y} \times V^{y} \subset W$ (ya que $\forall (z,t) \in G_{y} \times V^{x}, z \in U^{x_{i_{0}}}_{y}, t \in V^{y}_{x_{i_{0}}} \Rightarrow (z, t) \in U^{x_{i_{0}}} \times V^{y}_{x_{i_{0}}} \subset W$). Ahora,
+  \[ 
+    B \subset \bigcup_{y \in B} V^{y} 
+  \] 
+  entonces, $\exists y_{1}, \cdots, y_{n} \in B$ tal que
+  \[ 
+    B \subset \bigcup_{j=1}^{n} V^{y_{j}} \equiv V \in \mathcal{S}
+  \] 
+  donde $B$ es compacto. Por tanto, $\exists y_{1}, \cdots, y_{m} \in B$ tal que
+  \[ 
+    B \subset \bigcup_{j =1} V^{y_{j}} \equiv V \in \mathcal{S}.
+  \] 
+  Luego, 
+  \[ 
+    A \subset G_{y_{1}} \cap \cdots \cap G_{y_{m}} \equiv U \in \mathcal{T} 
+  \] 
+  Hemos visto que $A \times B \subset U \times V$. Veamos que $U \times V \subset W$. Sea $ (z, t) \in U \times V, z \in U, t \in V \Rightarrow \exists j_{0} : z \in V^{y_{j_{0}}}$ y $G_{y_{j_{0}}} \Rightarrow V^{y_{j_{0}}} \times G_{y_{j_{0}}} \subset W$.
+\end{dem}
+
+\begin{theo}[de Tychonoff]
+  Sea $\{ ( X_{j}, \mathcal{T}_{j} ) \}_{j \in J}$ familia no vacía de e.t.. Entonces, $( \prod_{j \in J} X_{j}, \prod_{j \in J} \mathcal{T}_{j} )$ es compacto si y solo si $( X_{j}, \mathcal{T}_{j} )$ es compacto $\forall j \in J$.
+\end{theo}
+
+\begin{prop}
+  Sea $\{ ( X_{j}, \mathcal{T}_{j} ) \}_{j \in J}$ familia e.t.. Entonces, $( \sum_{k \in J} X_{k}, \sum_{k \in J} \mathcal{T}_{k})$ es compacto si y solo si $\forall j \in J, ( X_{j}, \mathcal{T}_{j} )$ es compacto y $J$ es finito.
+\end{prop}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item []
+    \item [$(\Rightarrow)$] $\forall k \in J, X_{k} \simeq X_{k} \times \{ k \} \subset \sum_{j \in J} X_{j}$ donde $X_{k} \times \{ k \}$. Como la compacidad es invariante topológico, tenemos que $( X_{k}, \mathcal{T}_{k} )$ es compacto $\forall k$. Veamos que $J$ es finito. Sea $\mathcal{U} = \{ X_{k} \times \{ k \} : k \in J \}$ entonces, $\mathcal{U}$ es recubrimiento abierto de $( \sum_{k \in J} X_{k}, \sum_{k \in J} \mathcal{T}_{k})$ por conjuntos disjuntos dos a dos. Por tanto, $J$ es finito.
+
+    \item [$(\Leftarrow)$] $\forall \mathcal{U}$ recubrimiento abierto de $( \sum_{k \in J} X_{k}, \sum_{k \in J} \mathcal{T}_{k})$, $\forall k \in J , \mathcal{U}_{k} = \{  U \cap (X_{k} \times \{ k \}) : U \in \mathcal{U} \}$ es recubrimiento abierto de $X_{k} \times \{ k \} \simeq X_{k} \Rightarrow \exists \mathcal{V}_{k} \subset \mathcal{U}_{k} : \mathcal{V}_{k}$ es subrecubrimiento finito de $\mathcal{U}_{k}$. 
+
+      Sea $\mathcal{V} = \bigcup_{k \in J} \{  U \in \mathcal{U} : U \cap (X_{k} \times \{ k \}) \in \mathcal{V}_{k} \}$. Entonces $\mathcal{V}$ es subrecubrimiento finito de $\mathcal{U}$. Por tanto, $( \sum_{k \in J} X_{k}, \sum_{k \in J} \mathcal{T}_{k})$ es compacto.
+  \end{enumerate}
+\end{dem}
+
+\begin{lem}[del número $\rho$ de Lebesgue]
+  Sea $( X, \mathcal{T} )$ e.t. compacto y metrizable, $\mathcal{U} = \{ U_{j} \}_{j \in J}$ recubrimiento abierto de $( X, \mathcal{T} )$. Entonces, $\exists \rho > 0 : \forall x \in X, B_{\rho}(x) \subset U_{j_{x}} \in \mathcal{U}$.
+\end{lem}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.8.13)  19 OCT 2022 12:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.8.13)  23 OCT 2022 20:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -719,23 +719,85 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
 LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
 (Font)              using `OT1/cmss/m/sc' instead on input line 25.
 
-) [6] (./master.aux
+) (./ej_03_superficies1.tex
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1.
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--23
+
+ []
+
+[6]) (./ej_04_superficies1.tex
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1.
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--11
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 38--40
+
+ []
+
+) (./ej_05_superficies1.tex
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
+(Font)              using `OT1/cmss/m/sc' instead on input line 4.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
+(Font)              using `OT1/cmss/m/sc' instead on input line 13.
+
+[7]
+Package mdframed Info: Not enough space on this page on input line 15.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
+(Font)              using `OT1/cmss/m/sc' instead on input line 20.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
+(Font)              using `OT1/cmss/m/sc' instead on input line 63.
+
+[8]) (./ej_11_superficies1.tex
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1.
+) (./ej_01_superficies2.tex [9]
+Cap\'{\i }tulo 3.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 3.
+) (./ej_02_superficies2.tex
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1.
+ [10
+
+]) [11] (./master.aux
 LaTeX Info: Redefining \. on input line 10.
 LaTeX Info: Redefining \% on input line 10.
 ) ) 
 Here is how much of TeX's memory you used:
- 18428 strings out of 478238
- 358885 string characters out of 5850456
- 651241 words of memory out of 5000000
- 36279 multiletter control sequences out of 15000+600000
+ 18460 strings out of 478238
+ 359621 string characters out of 5850456
+ 656243 words of memory out of 5000000
+ 36293 multiletter control sequences out of 15000+600000
  481478 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 105i,12n,107p,521b,447s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 105i,12n,107p,584b,495s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on master.pdf (7 pages, 155178 bytes).
+Output written on master.pdf (12 pages, 175033 bytes).
 PDF statistics:
- 101 PDF objects out of 1000 (max. 8388607)
- 63 compressed objects within 1 object stream
+ 116 PDF objects out of 1000 (max. 8388607)
+ 73 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

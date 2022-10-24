@@ -33,8 +33,20 @@
 \end{obs}
 
 \begin{dem}
-  content
+  Sea $G = \{  z \in \Omega : f^{(n)}(z) = 0, \forall n \geq 0 \}$. Entonces, $z_{0} \in G \Rightarrow G \neq \emptyset$. Luego, $\forall z \in G, \exists r > 0 : D(z, r) \subset \Omega$ tal que 
+  \[ 
+    f(w) = \sum_{n = 0}^{\infty} \frac{f^{(n)}(z)}{n!}(w - z)^{n} = 0, \quad \forall w \in D(z, r) 
+  \] 
+  entonces, $D(z, r) \subset G \Rightarrow G$ abierto. Ahora, 
+  \[ 
+    G = \bigcap_{n = 0}^{\infty} \{ z \in \Omega : f^{(n)}(z) = 0 \}
+  \] 
+  la intersección de cerrados es cerrado $\Rightarrow G$ es cerrado. Por tanto, $G$ abierto y cerrado no vacío $\Rightarrow G = \Omega$.
 \end{dem}
+
+\begin{obs}
+  $G$ cerrado en $\Omega$, cerrado relativo.
+\end{obs}
 
 \begin{cor}
   Sea $\Omega \subset \mathbb{C}$ abierto conexo. Sea $f : \Omega \to \mathbb{C}$ holomorfa tal que $f$ no es idénticamente nula. Supongamos $f(a) = 0$, entonces $\exists m \in \mathbb{N}$ y $g : \Omega \to  \mathbb{C}$ holomorfa tal que $g(a) \neq 0$ y $f(z) = (z-a)^{m} g(z)$.
@@ -55,12 +67,9 @@
   \] 
   donde $h$ es holomorfa y $h(z_{0}) = a_{m} \neq 0$. Entonces, $\exists r > 0 : h(z) \neq 0, \forall z \in D(z_{0}, r)$. Por tanto,
   \[ 
-    $f(z_{n}) = (z_{n} - z_{0})^{m} h(z_{n}) \neq 0$
+    f(z_{n}) = (z_{n} - z_{0})^{m} h(z_{n}) \neq 0
   \] 
   es una contradicción.
-
-
-  REVISAR DESPUÉS DE VER DEMOS ANTERIORES
 \end{dem}
 
 \begin{theo}[de La Aplicación Abierta]
@@ -68,5 +77,17 @@
 \end{theo}
 
 \begin{dem}
-  content
+  Basta ver que $f(\Omega)$ es abierto. Por el Principio de Identidad, los ceros de $f'$ son aislados. Entonces,
+  \[ 
+    \Omega = (\Omega \setminus \{ z_{n} \}_{n \in \mathbb{N}}) \cup D_{1} \cup D_{2} \cdots 
+  \] 
+  donde $\{ z_{n} \}_{n \in \mathbb{N}}$ son los ceros de $f'$ y $D_{n}$ son los discos centrados en z_n. Por tanto, $f'(z) \neq 0, \forall z \in \Omega \setminus \{ z_{n} \}_{n \in \mathbb{N}} \xRightarrow[]{ T.F.I } f(\{ \Omega \setminus \{ z_{n} \}_{n \in \mathbb{N}} \})$ es abierto. Como $f(D_{n})$ es abierto $\forall n \in \mathbb{N}$, entonces $f(\Omega)$ es abierto.
+\end{dem}
+
+\begin{theo}[Principio del Módulo Máximo]
+  Sea $\Omega \subset \mathbb{C}$ abierto conexo. Sea $f : \Omega \to \mathbb{C}$ holomorfa. Si $\exists a \in \Omega : | f(a) | \geq | f(z) |, \forall z \in \Omega$, entonces $f$ constante.
+\end{theo}
+
+\begin{dem}
+  Si $f$ no es constante, entonces $f(\Omega)$ es abierto, pero $f(a) \not \in \mathring{f(\Omega)}$, es una contradicción.
 \end{dem}

@@ -1,0 +1,47 @@
+\begin{ejr}[4]
+  Sea $V = \{ (\theta, \phi) : \theta \in (0, \pi), \phi \in (0, 2 \pi) \}$, $X : V \to \mathbb{R}^{3}$ definida por 
+  \[ 
+    X(\theta, \phi) = (\sen(\theta)\cos(\phi), \sen(\theta)\sen(\phi), \cos(\theta)).
+  \] 
+  Demostrar que $X$ es una parametrización de un abierto de la esfera.
+\end{ejr}
+
+\begin{sol}
+  Es claro que $X(V) \subset \mathbb{S}^{2}$. Veamos que $X$ es una parametrización de $S$.\\
+
+  Primero, $X$ es diferenciable y tiene derivadas parciales continuas. Por tanto, $X$ es diferenciable. Además,
+  \[ 
+    X_{\theta} = (\cos(\theta) \cos(\phi), \cos(\theta) \sen(\phi), -\sen(\theta)) 
+  \] 
+  \[ 
+    X_{\phi} = (-\sen(\theta) \sen(\phi), \sen(\theta) \cos(\phi), 0) 
+  \] 
+  \[ 
+    X_{\theta} \times X_{\phi} =
+    \begin{vmatrix}
+      \vec{i} & \vec{j} & \vec{k} \\
+      \cos(\theta) \cos(\phi) & \cos(\theta) \sen(\phi) & -\sen(\theta) \\
+      -\sen(\theta) \sen(\phi) & \sen(\theta) \cos(\phi) & 0
+    \end{vmatrix} 
+  \] 
+  \[ 
+    = \big (- \sen^{2}(\theta) \cos^{2}(\phi), -\sen^{2}(\theta) \sen(\phi), \cos(\theta) \sen(\theta) \big ) 
+  \] 
+  \[ 
+    X_{\theta} \times X_{\phi} = \sqrt{\sen^{4}(\theta)\cos^{2}(\phi) + \sen^{4}(\theta) \sen^{2}(\phi) + \cos^{2}(\theta) \sen^{2}(\theta)}
+  \] 
+  \[ 
+    = {\sen^{4}(\theta) + \cos^{2}(\theta) \sen^{2}(\theta)} 
+  \] 
+  \[ 
+    = {\sen^{2}(\theta)}
+  \] 
+  Entonces, $X_{\theta} \times X_{\phi} = 0 \Leftrightarrow \sen^{2}(\theta) = 0$. Pero $\forall \theta \in (0, \pi), \sen^{2}(\theta) \neq 0$. Por tanto, $(d X)_{p}$ son linealmente independientes $\forall p \in V$. Falta ver que $X$ es continua y tiene inversa continua. \\
+
+  (ESCRIBIR BIEN INTERVALOS)
+  Como $(0, 0), (0, 2 \pi), (\pi, 0), (\pi, 2 \pi) \not \in V$ definimos $\mathbb{S}^{2} \setminus C$ donde $C$ es el semicírculo
+  \[ 
+    \{ (x, y, z) \in \mathbb{S}^{2} : y = 0, x \geq 0 \} .
+  \] 
+  Entonces, $X$ es continua en $\mathbb{S}^{2} \setminus C$ y por el teorema de la función inversa $\Rightarrow X$ tiene inversa $X^{-1}$ en $\mathbb{S}^{2} \setminus C$. Satisfechas las condiciones anteriores y siendo $X$ inyectiva, tenemos que $X^{-1}$ es continua. Por tanto, $X$ es una parametrización de $\mathbb{S}^{2} \setminus C$.
+\end{sol}

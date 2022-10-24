@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1666176282 "master.tex" "master.pdf" "master" 1666176282
+["pdflatex"] 1666548926 "master.tex" "master.pdf" "master" 1666548926
   "../preamble.tex" 1666163547 1953 b48b1cbc137b26b9b61d47cc7c464c69 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1650183167 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1650183167 1004 54797486969f23fa377b128694d548df ""
@@ -172,14 +172,20 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1650183167 39911 2da6c67557ec033436fe5418a70a8a61 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1660398646 4278762 af3ac1370db81a450c1118eabf1fe718 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1660398628 2927661 78b77340393324bbf3b236d0407a8fe4 ""
-  "ej_01_superficies1.tex" 1666097552 1091 9e63a82988c4591d14fe2f263f0d0995 ""
+  "ej_01_superficies1.tex" 1666531023 1093 681403692bba1bcba3d3c36233f80cb5 ""
+  "ej_01_superficies2.tex" 1666546006 325 676820f4d991aa97a5f4083b8d9ca752 ""
   "ej_02_superficies1.tex" 1666176282 1220 1ac570391e858729381fd06a3d495b2e ""
+  "ej_02_superficies2.tex" 1666548926 1085 91acfe78c1a6e07fcd50072e8d867a63 ""
+  "ej_03_superficies1.tex" 1666513876 1923 444d781e6e465124bb16288831373be2 ""
+  "ej_04_superficies1.tex" 1666530822 2217 ab0c379ac600590d54507a0c1eddb5a9 ""
+  "ej_05_superficies1.tex" 1666540839 2669 abb909744350739c2777544b7cc52954 ""
+  "ej_11_superficies1.tex" 1666543842 60 81f4c3df87126dd0544270809ebb8281 ""
   "ej_25_curvas.tex" 1664882085 1511 71b52aae44aaeeb89efe296f62af7248 ""
   "ej_35_curvas.tex" 1665058925 2830 b3b34197b75a5fcdf4a71466ebec6a66 ""
   "ej_40_curvas.tex" 1665056243 1688 50b46d5ff1055b55ed8947ac896eaa62 ""
-  "master.aux" 1666176266 613 a56ca5301b528c2feca689fb939296f5 "pdflatex"
-  "master.tex" 1666172239 445 167efd3164afadf619e11d1e277de47a ""
-  "master.toc" 1666176266 141 036333baff3bf120f8554be0da42bd60 "pdflatex"
+  "master.aux" 1666548920 795 90840e0c589c081efb06f070060a0f04 "pdflatex"
+  "master.tex" 1666546057 655 97998f8fef4a3aecb62b8b25356aabbc ""
+  "master.toc" 1666548920 205 183be2ab34bb788488c7e70808fcacf4 "pdflatex"
   (generated)
   "master.aux"
   "master.log"

@@ -64,7 +64,7 @@
       \] 
 
     \item (FALSO) Si $A$ y $B$ son incompatibles, $P(A \cap B) = 0$ pero $P(A \cap B) = \frac{1}{8}$.
-    \item (FALSO) Por ser $A^{c}$ y $B^{c}$ independients, tenemos que
+    \item (FALSO) Por ser $A^{c}$ y $B^{c}$ independientes, tenemos que
       \[
         P(A^{c} | B^{c}) = P(A^{c}) = 1 - P(A) = \frac{3}{4} \neq \frac{1}{2}
       \] 
@@ -88,21 +88,79 @@
   Sean $A_{1}, A_{2}, A_{3}, A_{4}, A_{5}$ sucesos independientes. Demostrar que:
   \begin{enumerate}[label=(\roman*)]
     \item $A_{1} \cup A_{2}$, $A_{3} \cap A_{4}$ y $A_{5}$ son independientes,
-    \item $(A_{1} \cup A_{2}) \cap A_{3}$ y ${A_{4}}^c \cup {A_{5}}^2$ son independientes.
+    \item $(A_{1} \cup A_{2}) \cap A_{3}$ y ${A_{4}}^c \cup {A_{5}}^c$ son independientes.
   \end{enumerate}
 \end{ejr}
 
 \begin{sol}
+  Veamos primero que si $A, B$ y $C$ son independientes, entonces $A \cup B$ y $C$ también lo son.
+  \[ 
+    P((A \cup B) \cap C) = P((A \cap C) \cup (B \cap C))  
+  \] 
+  \[ 
+    = P(A \cap C) + P(B \cap C) - P(A \cap B \cap C) 
+  \]
+  \[ 
+    = P(A) \cdot P(C) + P(B) \cdot P(C) - P(A) \cdot P(B) \cdot P(C) 
+  \] 
+  \[ 
+    = P(C) \cdot (P(A) + P(B) - P(A) * P(B)) 
+  \] 
+  \[ 
+    = P(C)\cdot P(A \cup B) 
+  \] 
+  por tanto, $A \cup B$ y $C$ son independientes. \\
+
+  Veamos ahora que si $A, B$ y $C$ son independientes, entonces $A \cap B$ y $C$ son independientes.
+  \[ 
+    P((A \cap B) \cap C) = P(A \cap B \cap C) 
+  \] 
+  \[ 
+    = P(A) \cdot P(B) \cdot P(C) 
+  \] 
+  \[ 
+    = P(A \cap B) \cdot P(C) 
+  \] 
+  por tanto, $A \cap B$ y $C$ son independientes.
+
   \begin{enumerate}[label=(\roman*)]
-    \item
-    \item Primero, $A_{1} \cup A_{2}$ y $A_{3} \cap A_{4}$ son independientes si y solo
+    \item Por lo que hemos visto antes tenemos que $A_{1} \cup A_{2}$ y $A_{5}$ son independientes y $A_{3} \cap A_{4}$ y $A_{5}$ son independientes. Vemos que $A_{1} \cup A_{2}$ y $A_{3} \cap A_{4}$ son independientes. 
       \[ 
-        P((A_{1} \cup A_{2}) \cap (A_{3} \cap A_{4})) = P(A_{1} \cup A_{2}) \cdot P(A_{3} \cap A_{4}) 
-      \]
-      Como
-      \[ 
-        P((A_{1} \cup A_{2}) \cap (A_{3} \cap A_{4})) = P(A_{1} \cup A_{2}) + P(A_{3} \cap A_{4}) - P((A_{1} \cup A_{2}) \cup (A_{3} \cap A_{4}))
+        P((A_{1}\cup A_{2}) \cap (A_{3} \cap A_{4})) = P((A_{1} \cap A_{3} \cap A_{4}) \cup (A_{2} \cap A_{3} \cap A_{4})) 
       \] 
-    \item 
+      \[ 
+        = P(A_{1} \cap A_{3} \cap A_{4}) + P(A_{2} \cap A_{3} \cap A_{4}) - P((A_{1} \cap A_{3} \cap A_{4}) \cap (A_{2} \cap A_{3} \cap A_{4})) 
+      \] 
+      \[ 
+        =P(A_{1}) \cdot P(A_{3} \cap A_{4}) + P(A_{2}) \cdot P(A_{3} \cap A_{4}) - P(A_{1} \cap A_{2} \cap A_{3} \cap A_{4})
+      \] 
+      \[ 
+        =P(A_{1}) \cdot P(A_{3} \cap A_{4}) + P(A_{2}) \cdot P(A_{3} \cap A_{4}) - P(A_{1}) \cdot P(A_{2}) \cdot P(A_{3} \cap A_{4})
+      \] 
+      \[ 
+        = P(A_{3} \cap A_{4}) \cdot (P(A_{1}) + P(A_{2}) + P(A_{1}) \cdot P(A_{2})) 
+      \] 
+      \[ 
+        = P(A_{3} \cap A_{4}) \cdot P(A_{1} \cup A_{2}) 
+      \] 
+      Por tanto, $A_{1} \cup A_{2}$ y $A_{3} \cap A_{4}$ son independientes. 
+    \item Vemos que $(A_{1} \cup A_{2}) \cap A_{3}$ y ${A_{4}}^c \cup {A_{5}}^c$ son independientes.
+
+      Sean $A$ y $B$ sucesos independientes arbitrarios $\Rightarrow A$ y $B^{c}$ independientes, $A^{c}$ y $B^{c}$ independietes, y $A^{c}$ y $B$ independientes (demostrado en el ejercicio 2). Como $A_{4}^{c} \cup A_{5}^{c} = (A_{4} \cap A_{5})^{c}$ entonces, basta ver que $(A_{1} \cup A_{2}) \cap A_{3}$ y $A_{4} \cap A_{5}$ son independientes.
+
+      \[ 
+        P ((A_{1} \cup A_{2}) \cap A_{3}) \cap ({A_{4}} \cap {A_{5}})) = P \Big [ \big [ (A_{1} \cup A_{2}) \cap (A_{4} \cap A_{5}) \big ] \cap \big [ A_{3} \cap (A_{4} \cap A_{5}) \big ] \Big ]
+      \] 
+      \[ 
+        = P((A_{1} \cup A_{2}) \cap (A_{4} \cap A_{5}) \cap A_{3})
+      \] 
+      donde $A_{1} \cup A_{2}$, $A_{4} \cap A_{5}$ y $A_{3}$ son independientes. Por tanto,
+      \[ 
+        P((A_{1} \cup A_{2}) \cap (A_{4} \cap A_{5}) \cap A_{3}) = P(A_{1} \cup A_{2}) \cdot P(A_{4} \cap A_{5}) \cdot P(A_{3})
+      \] 
+      \[ 
+        = P((A_{1} \cup A_{2}) \cap A_{3}) \cdot P(A_{4} \cap A_{5}) 
+      \] 
+      entonces $(A_{1} \cup A_{2}) \cap A_{3}$ y $A_{4} \cap A_{5}$ son independientes $\Rightarrow$ $(A_{1} \cup A_{2}) \cap A_{3}$ y $A_{4}^{c} \cup A_{5}^{c}$ son independientes.
   \end{enumerate}
 \end{sol}

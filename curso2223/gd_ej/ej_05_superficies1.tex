@@ -1,0 +1,66 @@
+\begin{ejr}[5]
+  Una forma de definir un sistema de coordenadas para la esfera $\mathbb{S}^{2}$, dada por $x^{2} + y^{2} + (z - 1)^{2} = 1$, es considerar la proyección estereográfica $\pi : \mathbb{S}^{2} \setminus \{ N \} \to \mathbb{R}^{2}$ que lleva el punto $p = (x, y, z)$ de la esfera $\mathbb{S}^{2} \setminus \{ N \}$ donde $N = (0, 0, 2)$ a la intersección del plano $XY$ con la línea recta que conecta $N$ con $p$. Sea $(u, v) = \pi (x, y, z)$ donde $(x, y, z) \in \mathbb{S}^{2} \setminus \{ N \}$ y $(u, v) \in XY$.
+  \begin{enumerate}[label=(\roman*)]
+    \item Mostrar que $\pi ^{-1} : \mathbb{R}^{2} \to \mathbb{S}^{2}$ viene dada por
+      \[ 
+        \pi^{-1}
+        \begin{cases}
+          x = \frac{4u}{u^{2} + v^{2} + 4} \\
+          y = \frac{4v}{u^{2} + v^{2} + 4} \\
+          z = \frac{2(u^{2} + v^{2})}{u^{2} + v^{2} + 4} \\
+        \end{cases} 
+      \] 
+    \item Mostrar si es posible, usando la proyección estereográfica, cubrir la esfera con dos entornos coordenados.
+  \end{enumerate}
+\end{ejr}
+
+\begin{sol}
+  \begin{enumerate}[label=(\roman*)]
+    \item []
+    \item Dado $q \in XY$ tal que $q = (q_{1}, q_{2})$ hallamos el punto $p \in \mathbb{S}^{2} : \pi(p) = q$. Buscamos el punto de intersección entre la esfera $\mathbb{S}^{2}$ y la recta $r$ que une $q$ con $N$. Una parametrización de la recta puede ser
+      \[ 
+        r \equiv 
+        \begin{pmatrix}
+          q_{1} \\
+          q_{2} \\
+          0
+        \end{pmatrix}
+        +
+        \begin{pmatrix}
+          -q_{1} \\
+          -q_{2} \\
+          2
+        \end{pmatrix}
+        t
+      \] 
+      entonces, $\forall (x, y, z) \in r$ tenemos que
+      \[ 
+        x = q_{1}(1-t), \quad y = q_{2}(1-t), \quad z = 2t 
+      \] 
+      Sustituimos en la ecuación de la esfera $x^{2} + y^{2} + (z-1)^{2} = 1$ para hallar el punto de intersección
+      \[ 
+        q_{1}^{2}(1-t)^{2} + q_{2}^{2}(1-t)^{2} + (2t - 1)^{2} = 1 
+      \] 
+      \[ 
+        (q_{1}^{2} + q_{2}^{2})(1-t)^{2} + (2t -1)^{2} = 1 
+      \] 
+      \[ 
+        (q_{1}^{2} + q_{2}^{2})(1-t)^{2} = 4t(1 - t)
+      \] 
+      \[ 
+        (q_{1}^{2} + q_{2}^{2})(1-t) = 4t
+      \] 
+      \[ 
+        q_{1}^{2} + q_{2}^{2} = t(4 + q_{1}^{2} + q_{2}^{2})
+      \] 
+      \[ 
+        \Rightarrow t = \frac{q_{1}^{2} + q_{2}^{2}}{4 + q_{1}^{2} + q_{2}^{2}} 
+      \] 
+      \[ 
+        \Rightarrow x = \frac{4u}{u^{2} + v^{2} + 4}, \quad y = \frac{4v}{u^{2} + v^{2} + 4}, \quad z = \frac{2(u^{2} + v^{2})}{u^{2} + v^{2} + 4}
+      \] 
+
+    \item Se puede cubrir la esfera usando dos parametrizaciones, una $X$ usando $N = (0,0,2)$ y otra $Y$ usando $S = (0, 0, 0)$.
+
+  \end{enumerate}
+\end{sol}

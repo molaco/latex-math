@@ -1,0 +1,48 @@
+\begin{ejr}[3]
+  Parametrizar el elipsoide
+  \[ 
+    \frac{x^{2}}{a^{2}} + \frac{y^{2}}{b^{2}} + \frac{z^{2}}{c^{2}} = 1, \quad a, b, c > 0
+  \] 
+  Además, para cada plano $Ax + By +Cz = 0$ encontrar los puntos del elipsoide cuyo plano tangente es paralelo.
+\end{ejr}
+
+\begin{sol}
+  Sea el conjunto de puntos del elipsoide
+  \[ 
+    S = \Bigg \{ (x, y, z) \in \mathbb{R}^{3} : \frac{x^{2}}{a^{2}} + \frac{y^{2}}{b^{2}} + \frac{z^{2}}{c^{2}} = 1 \Bigg \}
+  \] 
+  y sea una función
+  \[ 
+    f : \mathbb{R}^{3} \to \mathbb{R} : (x, y, z) \mapsto \frac{x^{2}}{a^{2}} + \frac{y^{2}}{b^{2}} + \frac{z^{2}}{c^{2}} - 1
+  \] 
+  Entonces, $f^{-1}(0) = S$ donde $0$ es valor regular ya que
+  \[
+    \nabla f(x, y, z) = \Big ( \frac{2x}{a^{2}}, \frac{2y}{b ^{2}}, \frac{2z}{c^{2}} \Big ) \neq 0, \quad \forall (x, y, z) \in f^{-1}(0)
+  \]
+  y por tanto, $S$ es una superficie. \\
+
+  Ahora, el plano tangente de $S$ es el núcleo de $(d f)_{p}$. Sea $p =(p_{1}, p_{2}, p_{3}) \in S$. Entonces,
+  \[ 
+    T_{p}S = \ker (d f)_{p} 
+  \] 
+  \[ 
+    = \Bigg\{ (v_{1}, v_{2}, v_{3}) \in \mathbb{R}^{3} : \Big ( \frac{2p_{1}}{a^{2}}, \frac{2p_{2}}{b ^{2}}, \frac{2p_{3}}{c^{2}} \Big ) \cdot 
+      \begin{pmatrix}
+       v_{1} \\
+       v_{2} \\
+       v_{3} 
+      \end{pmatrix}
+    = 0
+  \Bigg\} 
+  \] 
+  \[ 
+    = \Bigg\{ (v_{1}, v_{2}, v_{3}) \in \mathbb{R}^{3} : \frac{2p_{1}}{a^{2}} \cdot v_{1} + \frac{2p_{2}}{b ^{2}} \cdot v_{2} + \frac{2p_{3}}{c^{2}} \cdot v_{3} = 0
+    \Bigg \}
+  \] 
+  es un plano tangente a $S$ en el punto $p$ que pasa por el origen. Luego, los puntos del elipsoide cuyo plano tangente es paralelo a $Ax + By +Cz = 0$ serán 
+  \[ 
+    \Bigg\{ (p_{1}, p_{2}, p_{3}) \in S : \frac{2p_{1}}{a^{2}} = A \cdot k, \frac{2p_{2}}{b ^{2}} = B \cdot k, \frac{2p_{3}}{c^{2}} = C \cdot k, \quad k \in \mathbb{R} \Bigg\} 
+  \] 
+  ya que dos planos son paralelos si y solo si sus vectores normales son paralelos.
+
+\end{sol}

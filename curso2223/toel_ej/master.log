@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.8.13)  19 OCT 2022 10:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.8.13)  21 OCT 2022 11:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -711,8 +711,13 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
 (Font)              using `OT1/cmss/m/sc' instead on input line 27.
 
 
+Overfull \hbox (12.78343pt too wide) detected at line 33
+[] \OT1/cmr/m/n/12 = []\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 C \OMS/cmsy/m/n/12 ^^B \OML/cmm/m/it/12 C[] \OMS/cmsy/m/n/12 ^^Z \OML/cmm/m/it/12 A \OMS/cmsy/m/n/12 ^^B \OML/cmm/m/it/12 A[] \OT1/cmr/m/n/12 : \OML/cmm/m/it/12 C \OMS/cmsy/m/n/12 ^^B \OML/cmm/m/it/12 C[][]; A \OMS/cmsy/m/n/12 ^^B \OML/cmm/m/it/12 A[] \OMS/cmsy/m/n/12 ^^Z \OML/cmm/m/it/12 C \OMS/cmsy/m/n/12 ^^B \OML/cmm/m/it/12 C[]\OMS/cmsy/m/n/12 g
+ []
+
+
 LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
-(Font)              using `OT1/cmss/m/sc' instead on input line 28.
+(Font)              using `OT1/cmss/m/sc' instead on input line 44.
 
 ) [5] (./master.aux
 LaTeX Info: Redefining \. on input line 10.
@@ -727,7 +732,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  105i,15n,107p,654b,465s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/molaco/.texlive/texmf-var/fonts/pk/ljfour/public/bbm/bbm12.600pk></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on master.pdf (6 pages, 170467 bytes).
+Output written on master.pdf (6 pages, 171899 bytes).
 PDF statistics:
  111 PDF objects out of 1000 (max. 8388607)
  69 compressed objects within 1 object stream

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.8.13)  19 OCT 2022 23:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.8.13)  20 OCT 2022 23:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1530,77 +1530,60 @@ Package mdframed Info: mdframed detected package amsthm
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 35.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 39.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 43.
-Package mdframed Info: Not enough space on this page on input line 45.
+Package mdframed Info: Box was splittet wrong
+ starting loop to iterate the splitting point
+(mdframed)              on input line 45.
 [35]
-Package mdframed Info: Not enough space on this page on input line 45.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 47.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 51.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 55.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 59.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 63.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 75.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 79.
 
-./clase_18.tex:58: Display math should end with $$.
-<to be read again> 
-                   f
-l.58     $f
-           (z_{n}) = (z_{n} - z_{0})^{m} h(z_{n}) \neq 0$
-The `$' that I just saw supposedly matches a previous `$$'.
-So I shall assume that you typed `$$' both times.
-
-./clase_18.tex:58: Missing $ inserted.
+./clase_18.tex:84: Missing $ inserted.
 <inserted text> 
                 $
-l.58     $f(z_
-              {n}) = (z_{n} - z_{0})^{m} h(z_{n}) \neq 0$
+l.84 ...$ y $D_{n}$ son los discos centrados en z_
+                                                  n. Por tanto, $f'(z) \neq ...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./clase_18.tex:84: Missing $ inserted.
+<inserted text> 
+                $
+l.84 ...s centrados en z_n. Por tanto, $f'(z) \neq
+                                                   0, \forall z \in \Omega \...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-./clase_18.tex:59: LaTeX Error: Bad math environment delimiter.
+Overfull \hbox (37.05196pt too wide) in paragraph at lines 83--85
+\OT1/cmss/m/sl/12 donde $\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 z[]\OMS/cmsy/m/n/12 g[]$ \OT1/cmss/m/sl/12 son los ce-ros de $\OML/cmm/m/it/12 f[]$ \OT1/cmss/m/sl/12 y $\OML/cmm/m/it/12 D[]$ \OT1/cmss/m/sl/12 son los dis-cos cen-tra-dos en z$[]\OML/cmm/m/it/12 :Portanto;$\OT1/cmss/m/sl/12 f'(z)
+ []
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.59   \]
-         
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-./clase_18.tex:59: Missing $ inserted.
-<inserted text> 
-                $
-l.59   \]
-         
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-./clase_18.tex:59: Display math should end with $$.
-<to be read again> 
-                   \endgroup 
-l.59   \]
-         
-The `$' that I just saw supposedly matches a previous `$$'.
-So I shall assume that you typed `$$' both times.
-
+Package mdframed Info: Not enough space on this page on input line 85.
+[36]
+Package mdframed Info: Not enough space on this page on input line 85.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 66.
+(mdframed)              on input line 87.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 70.
-) [36] (./master.aux
+(mdframed)              on input line 91.
+) [37] (./master.aux
 LaTeX Info: Redefining \. on input line 10.
 LaTeX Info: Redefining \% on input line 10.
 )
@@ -1609,18 +1592,18 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 18538 strings out of 478238
- 360589 string characters out of 5850456
+ 18540 strings out of 478238
+ 360626 string characters out of 5850456
  671228 words of memory out of 5000000
- 36349 multiletter control sequences out of 15000+600000
+ 36351 multiletter control sequences out of 15000+600000
  482753 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  105i,18n,107p,560b,445s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on master.pdf (37 pages, 277065 bytes).
+Output written on master.pdf (38 pages, 280263 bytes).
 PDF statistics:
- 209 PDF objects out of 1000 (max. 8388607)
- 136 compressed objects within 2 object streams
+ 212 PDF objects out of 1000 (max. 8388607)
+ 138 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -23,7 +23,23 @@ Sea $( X, \mathcal{T} ), ( X', \mathcal{T}' )$ e.t., $A \subset X, A' \subset X'
         \] 
         es decir, $\mathring{A \times A'} \subset \mathring{A} \times \mathring{A}'$.
     \end{enumerate}
-    \item 
+
+    \item \begin{enumerate}[label=(\roman*)]
+      \item []
+      \item [$(\Rightarrow)$] $A \subset \overline{A}$ y $A' \subset \overline{A}' \Rightarrow A \times A \subset \overline{A} \times \overline{A}' $. Como $\overline{A \times A'}$ es el menor cerrado que contine a $A \times A'$ entonces, $\overline{A \times A'} \subset \overline{A} \times \overline{A}'$¿ $\in \mathcal{T} \times \mathcal{T}'$?. 
+      \item [$(\Leftarrow)$] A partir de la definición de clausura,
+        \[
+          \overline{A \times A'} = \bigcap \{ C \times C' \subset A \times A' : C \times C' \text{ es cerrado en }, A \times A' \subset C \times C' \}
+        \]
+        Entonces,
+        \[ 
+          \overline{A \times A'} = \bigcap_{j \in J} (G_{j} \times G_{j}')
+        \] 
+        donde $G_{j}$ cerrado en $( X, \mathcal{T} )$ y $G_{j}'$ es cerrado en $( X', \mathcal{T}' )$, y $A \subset G_{j}$ y $A' \subset G_{j}', \forall j \in J$ $\Rightarrow \overline{A} \subset G_{j}$ y $\overline{A}' \subset G_{j}', \forall j \in J$. Por tanto,
+        \[ 
+          \overline{A} \times \overline{A}' \subset \bigcap_{j \in J} (G_{j} \times G_{j}') = \overline{A \times A'}
+        \] 
+    \end{enumerate}
     \item 
   \end{enumerate}
 \end{sol}
