@@ -1,0 +1,21 @@
+\begin{ejr}[36]
+  Seas $\{ ( X_{j}, \mathcal{T}_{j} ) \}_{j \in J}$, $\{ ( X'_{j}, \mathcal{T}_{j}' ) \}_{j \in J}$ familias no vacías de e.t., $( X_{j}, \mathcal{T}_{j} )$ es homeomorfo a $( X'_{j}, \mathcal{T}_{j}' )$, $\forall j \in J$. Entonces, $( \prod_{j \in J} X_{j}, \prod_{j \in J} \mathcal{T}_{j} )$ es homeomorfo a $( \prod_{j \in J} X'_{j}, \prod_{j \in J} \mathcal{T}'_{j} )$.
+\end{ejr}
+
+\begin{sol}
+  Como $( X_{j}, \mathcal{T}_{j} ) \simeq( X'_{j}, \mathcal{T}_{j}' )$, entonces $\exists f_{j} : ( X_{j}, \mathcal{T}_{j} ) \to ( X'_{j}, \mathcal{T'}_{j} )$ homeomorfismo. Sea
+  \[
+    f : ( \prod_{j \in J} X_{j}, \prod_{j \in J} \mathcal{T}_{j} ) \to ( \prod_{j \in J} X'_{j}, \prod_{j \in J} \mathcal{T'}_{j} )
+  \]
+  \[ 
+    f = \prod_{j \in J} f_{j} = f_{1} \times f_{2} \times \cdots 
+  \] 
+  donde
+  \[ 
+    (x_{1}, x_{2}, \cdots) \mapsto (f_{1}(x_{1}), f_{2}(x_{2}), \cdots)
+  \] 
+  Entonces, $f_{j}$ continua $\forall j \in J \Rightarrow f$ continua y $f_{j}^{-1}$ continua $\forall j \in J \Rightarrow f^{-1}$ continua, ya que
+  \[ 
+    \prod_{j \in J}(f_{j}^{-1}) = (\prod_{j \in J} f_{j}) ^{-1} 
+  \] 
+\end{sol}

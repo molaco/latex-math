@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1666299738 "master.tex" "master.pdf" "master" 1666299738
+["pdflatex"] 1666949715 "master.tex" "master.pdf" "master" 1666949715
   "../preamble.tex" 1666163547 1953 b48b1cbc137b26b9b61d47cc7c464c69 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1650183167 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/jknappen/ec/tcsi1200.tfm" 1650183167 2048 cceae9f9f77a49cce0034ce4f8d2ca3e ""
@@ -174,8 +174,8 @@
   "/usr/share/texmf-dist/tex/latex/zref/zref-abspage.sty" 1650181202 2245 c8a4088d07cffc2e5207730c738edd76 ""
   "/usr/share/texmf-dist/tex/latex/zref/zref-base.sty" 1650181202 20785 71a3d72ab517959a6979c27e6176bec1 ""
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1650183167 39911 2da6c67557ec033436fe5418a70a8a61 ""
-  "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1660398646 4278762 af3ac1370db81a450c1118eabf1fe718 ""
-  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1660398628 2927661 78b77340393324bbf3b236d0407a8fe4 ""
+  "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1666772701 4278762 af3ac1370db81a450c1118eabf1fe718 ""
+  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1666772697 2927664 adf00fdb84e58c180832dbfae6670803 ""
   "clase_01.tex" 1662454388 3264 3f37dc94e720493f9ac44812434bca06 ""
   "clase_02.tex" 1662616768 2369 b7dc82df785d29cf26af92b6673af200 ""
   "clase_03.tex" 1662622860 2997 45bc68680202ab330b4f058971c47d8d ""
@@ -192,10 +192,11 @@
   "clase_15.tex" 1665131966 5299 13536ae355b11ce815cbfbc1e32c9fd5 ""
   "clase_16.tex" 1665693084 1979 ca6f0f1b448e9f9e119276c2caa669b2 ""
   "clase_17.tex" 1665503895 4232 bc586c7026da8dc8bcea6cdfa68b9f87 ""
-  "clase_18.tex" 1666299738 5241 8d5af02604087da0e9584616bd28cd07 ""
-  "master.aux" 1666299732 2535 57f9ee50c56559fc77dd41ca8dd202f2 "pdflatex"
-  "master.tex" 1666122389 623 02213903bb8a41008e2a591fc837c93a ""
-  "master.toc" 1666299732 1329 66d65dad01341881b6fc8d56b9aec70c "pdflatex"
+  "clase_18.tex" 1666299739 5241 8d5af02604087da0e9584616bd28cd07 ""
+  "clase_20.tex" 1666949714 4316 609fdb6ec5f05ccaed8007bced6802a4 ""
+  "master.aux" 1666949703 2945 4b28833554d00e8fc29c75239198f2ce "pdflatex"
+  "master.tex" 1666902931 674 c9612417fd11ca46b93771e869c103cb ""
+  "master.toc" 1666949703 1540 6fa6c27de82f0d7d472c4b8032d0aeb8 "pdflatex"
   (generated)
   "master.aux"
   "master.log"

@@ -1,0 +1,52 @@
+\begin{ejr}[Evaluación Continua]
+  Sea $S \subset \mathbb{R}^{3}$ superficie. Demostrar que
+  \begin{enumerate}
+    \item Si $X : U \subset \mathbb{R}^{2} \to S$ es una parametrización y $h : V \subset \mathbb{R}^{2} \to U \subset \mathbb{R}^{2}$ es difeomorfismo, entonces $X \circ h : V \to S$ es parametrización.
+    \item Sea $S' \subset \mathbb{R}^{3}$ superficie. Si $X : U \subset \mathbb{R}^{2} \to S$ es parametrización y $\phi : S \to S'$ difeomorfismo, entonces $\phi \circ X : U \to S'$ es parametrización de $S'$.
+    \item $Y : U \subset \mathbb{R}^{2} \to S$ parametrización de $Y(U)$ $\Leftrightarrow Y$ es un difeomorfismo.
+  \end{enumerate}
+\end{ejr}
+
+\begin{sol}
+  \begin{enumerate}
+    \item [] 
+    \item Lo vemos usando la definición. Debemos comprobar que 
+      \begin{enumerate}
+        \item $X \circ h$ es diferenciable. \\
+
+          $X$ es parametrización $\Rightarrow X$ es diferenciable y $h$ difeomorfismo $\Rightarrow h$ diferenciable. Por tanto, $X \circ h$ es diferenciable ya que la composición de aplicaciones diferenciables es diferenciable.
+        \item $X \circ h$ es homeomorfismo. \\
+
+          $X$ parametrización $\Rightarrow X$ homeomorfismo y $h$ difeomorfismo $\Rightarrow h$ homeomorfismo diferenciable con inversa diferenciable. Entoces, $X \circ h$ es homeomorfismo ya que la composición de homeomorfismos es homeomorfismo.
+        \item $ d(X \circ h)_{p}$ es inyectiva. \\
+
+          $X$ parametrización $ \Rightarrow (d X)_{q}$ es inyectiva y $h$ difeomorfismo $\Rightarrow (d h)_{p}$ es inyectiva (*). Como la composición de funciones inyectivas es inyectiva, entonces $d(X \circ h)$ es inyectiva.
+
+
+      \end{enumerate}
+      Por tanto, $X \circ h$ es parametrización.
+    \item Usamos que $Y$ es parametrización $\Leftrightarrow Y$ es difeomorfismo. Como $X$ parametrización $\Rightarrow X$ difeomorfismo, entonces $\phi \circ X$ es difeomorfismo por ser composición de difeomorfismos. Por tanto, $\phi \circ X$ difeomorfismo $\Rightarrow \phi \circ X$ parametrización.
+    \item 
+      \begin{enumerate}[label=(\roman*)]
+        \item [$(\Rightarrow)$] Si $Y : U \subset \mathbb{R}^{2} \to S$ es una parametrización, entonces
+          \[ 
+            Y^{-1} : Y(U) \to \mathbb{R}^{2}
+          \] 
+          es diferenciable. Además, $\forall p \in Y(U)$, $\forall Z : V \subset \mathbb{R}^{2} \to S$ parametrización,
+          \[ 
+            Y^{-1} \circ Z : Z^{-1}(W) \to Y^{-1}(W)
+          \] 
+          donde $W = Y(U) \cap Z(V)$, es diferenciable. Por tanto, $U$ y $Y(U)$ son difeomorfos.
+        \item [$(\Leftarrow)$] Sea $S \subset \mathbb{R}^{3}$ superficies. Si $Y : U \subset \mathbb{R}^{2} \to S$ es difeomorfismo, entonces $Y$ es diferenciable, $Y$ es homeomorfismo y $(d Y)_{p}$ (*) es inyectiva. Por tanto, $Y$ es parametrización de $S$. \\
+      \end{enumerate}
+  \end{enumerate}
+
+  (*) Veamos que $f : X \subset \mathbb{R}^{m} \to  Y \subset \mathbb{R}^{m}$ difeomorfismo $\Rightarrow (d f)_{p}$ isomorphismo, $p \in X : f(p) \in Y$. Si $f$ difeomorfismo, entonces $f$ tiene inversa $f^{-1}$. Ahora, 
+\[ 
+  (d I_{Y})_{f(p)} = d(f \circ f^{-1})_{f(p)} = (d f)_{p} \circ (d f^{-1})_{f(p)},
+\] 
+\[ 
+  (d I_{X})_{p} = d(f^{-1} \circ f)_{p} = (d f^{-1})_{f(p)} \circ (d f)_{p} 
+\] 
+entonces, $(d f)_{p}$ es un isomorfismo.
+\end{sol}

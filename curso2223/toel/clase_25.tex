@@ -1,0 +1,116 @@
+\begin{defn}[Compactación Alexandrof]
+  Sea $( X, \mathcal{T} )$ e.t. no compacto. Se llama compactación de Alexandrof a $(( X^*, \mathcal{T}^* ), j)$.
+\end{defn}
+
+\begin{obs}
+  Es una compactación por un solo punto.
+\end{obs}
+
+\begin{prop}
+  Sea $( X, \mathcal{T} )$ e.t. no compacto. Entonces,
+  \begin{enumerate}[label=(\roman*)]
+    \item $( X, \mathcal{T} )$ admite alguna compactación $T_{2}$ por un solo punto $\Leftrightarrow$ $( X, \mathcal{T} )$ es localmente compacto y $T_{2}$.
+    \item  Si $( X, \mathcal{T} )$ es localmente compacto y $T_{2}$. Entonces, Todas las compactaciones $T_{2}$ por un punto son topológicamente equivalentes.
+  \end{enumerate}
+\end{prop}
+
+\begin{obs}
+  En la segunda parte de la proposición la equivalencia no depende del punto.
+\end{obs}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item 
+      \begin{enumerate}[label=(\roman*)]
+        \item []
+        \item [$(\Rightarrow)$] $\exists ( ( X', \mathcal{T}' ), f )$ compactación $T_{2}$ por un punto de $( X, \mathcal{T} )$, entonces
+          \[
+            X' \setminus f(X) = \{ x_{0}' \} \Leftrightarrow X' \setminus \{ x_{0}' \} = f(X).
+          \]
+          Como $( ( X', \mathcal{T}' ), f )$ compactación $T_{2} \Rightarrow $ $( X', \mathcal{T}' )$ es localmente compacto y $T_{2} \Rightarrow$ $( X', \mathcal{T}' )$ es $T_{1} \Rightarrow$ $\{ x_{0}' \}$ es cerrado en $( X', \mathcal{T}' )$. Por tanto, $X' \setminus \{ x_{0}' \}$ es abierto $\Rightarrow f(X)$ es abierto ($f$ homeomorfismo) $\Rightarrow f$ abierta. Entonces, $f(X)$ localmente compacto.
+        \item [$(\Leftarrow)$] $( X, \mathcal{T} )$ no compacto, localmente compacto y $T_{2}$. Veamos que $( X, \mathcal{T} )$ admite una compactación $T_{2}$ por un solo punto. En particular, admite una compactación de Alezandrof $T_{2}$.
+
+          $\forall w \not \in X, X^* = X \cup \{ w \}$, $( ( X^*, \mathcal{T}^* ), j )$ es compactación de Alexandrof. Ahora, $\forall x \in X$, $( X, \mathcal{T} )$ localmente compacto y $T_{2}$ $\Rightarrow \exists U^{x}$ entorno compacto y cerrado  en $( X, \mathcal{T} )$. Consideramos, 
+          \[ 
+            X^* \setminus U^{x} = W 
+          \] 
+          entonces, $w \in W, X \setminus W = X \setminus ( W \cap X) = U^{x}$. Como $U^{x}$ es compacto y cerrado $\Rightarrow w \in W \in \mathcal{T}^*$ y $U^{x} \cap W = \emptyset$ disjuntos $\Rightarrow ( X^*, \mathcal{T}^* )$ es $T_{2}$.
+      \end{enumerate}
+    \item $( X, \mathcal{T} )$ localmente compacto $T_{2}$. Sean $( ( X_{1}', \mathcal{T}'_{1} ), f_{1} )$, $( ( X_{2}', \mathcal{T}'_{2} ), f_{2} )$ compactaciones $T_{2}$ en un solo punto de $( X, \mathcal{T} )$. Entonces, por ser compactaciones por un solo punto
+      \[ 
+        X_{1}' \setminus f_{1}(X) = \{  x_{1}' \}
+        X_{2}' \setminus f_{2}(X) = \{  x_{2}' \}
+      \] 
+      Buscamos un homeomorfismo que complete el diagrama. Sea $h : X_{1}' \to X_{2}'$ definido por
+      \[ 
+        h(z) =
+        \begin{cases}
+          \begin{aligned}
+            f_{2}(f_{1}^{-1}(z)), \text{ si } z \in f_{1}(X)\\
+            x_{2}', \text{ si } z = x_{1}
+          \end{aligned}
+        \end{cases} 
+      \] 
+      $h$ así definida es aplicación abierta y cierra el diagrama, $h \circ f_{1} = f_{2}$.
+
+      Veamos que $h$ es aplicación abierta. $\forall G' \in \mathcal{T}_{1}'$
+      \begin{itemize}
+        \item Si $G' \not \ni x_{1}' \Rightarrow h(G') = (f_{2} \circ f_{1}^{-1})(G') \in \mathcal{T}_{2}'|_{f_{2}(X)} \Rightarrow h(G') \in T'_{2}$.
+        \item Si $G' \ni x'_{1} \Leftrightarrow X'_{1} \setminus G' \not \ni x'_{1} \Rightarrow h(X'_{1} \setminus G') = (f_{2} \circ f_{1}^{-1}) (X_{1}' \setminus G')$ es compacto en $(X_{2}', \mathcal{T}'_{2})$, ya que $(X_{1}' \setminus G')$ es compacto y $f_{2} \circ f_{1}^{-1}$ es continua. Como, $X_{1}' \setminus G'$ es cerrado $h(X_{1}' \setminus G')$ es compacto en $( X_{2}', \mathcal{T}_{2}' )$ $T_{2}$ y $h$ es continua, entonces $h(X_{1}' \setminus G')$ es cerrado. Por tanto, $X_{2}' \setminus h(X_{1}' \setminus G') = h(G') \in \mathcal{T}'_{2}$ (no necesariamente inmedianto ver los contenidos por puntos) $\Rightarrow h(G') \in \mathcal{T}'_{2}$.
+      \end{itemize}
+      Igual que hemos cogido $h : X'_{1} \to X'_{2}$ lo podíamos haber hecho $h : X_{2}' \to X'_{1}$. Por tanto, $h^{-1}$ es continua $\Rightarrow h$ es homeomorfismo.
+  \end{enumerate}
+\end{dem}
+
+\begin{ejm}
+  $\mathbb{S}^{n} = \{ x \in \mathbb{R}^{n+1} : ||x|| = 1 \}$ es compactación de Alexandrof.
+\end{ejm}
+
+\chapter{Conexión}
+
+\begin{defn}[Conexo]
+  Sea $( X, \mathcal{T} )$ e.t.. Se dice que es conexo si $\not \exists C_{i} \neq \emptyset, i \in \{ 1, 2 \}$ cerrado, disjuntos de $( X, \mathcal{T} )$ tal que $X = C_{1} \cap C_{2}$.
+\end{defn}
+
+\begin{obs}
+  $( X, \mathcal{T} )$ conexo $\Leftrightarrow \not \exists A_{i} \in \mathcal{T} \setminus \{ \emptyset \}, i \in \{ 1, 2 \} $ disjuntos tal que $X = A_{1} \cup A_{2}$ $\Leftrightarrow \not \exists C \neq \emptyset \subset X : C \in \mathcal{T}$ y cerrado simultaneamente.
+\end{obs} 
+
+\begin{obs}
+  La conexión no es hereditaria.
+\end{obs}
+
+\begin{ejm}
+  $( \mathbb{R}, \mathcal{T}_{u} )$ conexo y $[ 0, 1 ] \cup (2, 3)$ no lo es.
+\end{ejm}
+
+\begin{prop}
+  Sean $( X, \mathcal{T} ), ( X', \mathcal{T}' )$ e.t. tal que $( X, \mathcal{T} )$ conexo, $f : ( X, \mathcal{T} ) \to ( X', \mathcal{T}' )$ continua y suprayectiva. Entonces, $( X', \mathcal{T}' )$ conexo.
+\end{prop}
+
+\begin{obs}
+  Se puede omitir suprayectiva.
+\end{obs}
+
+\begin{dem}
+  Supongamos que no sucede. Entonces, $\exists A_{i} \in \mathcal{T} \setminus \{  \emptyset \}, i \in \{ 1, 2 \}$ disjuntos tal que $X' = A_{1} \cup A_{2} \Rightarrow f^{-1}(A_{i}') \in \mathcal{T} \setminus \{  \emptyset \}, i \in \{ 1, 2 \}$ disjuntos. Por tanto, $X = f^{-1}(A_{1}') \cup f^{-1}(A_{2}') \Rightarrow ( X, \mathcal{T} )$ no es conexo, que es absurdo.
+\end{dem}
+
+\begin{cor}
+  La conexión es invariante topológico.
+\end{cor}
+
+\begin{prop}
+  Sea $( X, \mathcal{T} )$ e.t., $\{ X_{j} \}_{j \in J} \subset \mathcal{P}(X)$ tal que $\bigcup_{j \in J} X_{j} = X$ donde $( X_{j}, \mathcal{T}|_{X_{j}})$ es conexo $\forall j \in J$ y $\bigcap_{j \in J} X_{j} \neq \emptyset$. Entoces, $( X, \mathcal{T} )$ es conexo.
+\end{prop}
+
+\begin{dem}
+  Si $( X, \mathcal{T} )$ no conexo $\Rightarrow \exists C_{i} \neq \emptyset, i \in \{ 1, 2 \}$ disjuntos tal que $X = C_{1} \cap C_{2}$. Por otra parte, $\bigcap_{j \in J} X_{j} \neq \emptyset \Rightarrow \exists x \in \bigcap_{j \in J} X_{j} \Rightarrow \exists i_{0} \in J : x \in C_{i_{0}}$. Suponemos que $ x \in C_{1}$. Ahora, $C_{2} \neq \emptyset $ corta a algún $X_{j}$ $\Rightarrow \exists j_{0} \in J : C_{2} \cap X_{j_{0}} \equiv F_{2} \neq \emptyset $. Entonces, $x \in C_{1} \cap X_{j_{0}} \equiv F_{1} \neq \emptyset \Rightarrow F_{i}, i \in \{ 1, 2  \}$ cerrados de $( X_{j_{0}}, \mathcal{T}|_{X_{j_{0}}X_{j_{0}}})$ y $F_{i} \subset C_{i}, i \in \{ 1, 2 \}$ disjuntos $\Rightarrow F_{i}, i \in \{ 1, 2 \}$ disjuntos. Por tanto,
+  \[
+    F_{1} \cup F_{2} = (C_{1} \cap X_{j_{0}}) \cup (C_{2} \cap X_{j_{0}})
+  \]
+  \[ 
+    = (C_{1} \cup C_{2}) \cap X_{j_{0}} = X \cap X_{j_{0}} = X_{j_{0}},
+  \] 
+  entonces, $( X_{j_{0}}, \mathcal{T}|_{X_{j_{0}}})$ es conexo.
+\end{dem}

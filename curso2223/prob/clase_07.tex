@@ -1,0 +1,603 @@
+\chapter{Distribuciones Unidimensionales}
+
+\section{Distribución Degenerada}
+
+\begin{defn}
+  Una v.a. $X$ se dice que tiene una distribución degenera en un punto h si su función de masa es
+  \[ 
+    p_{X}(x) =
+    \begin{cases}
+      \begin{aligned}
+        1 \quad \text{ si } x = h \\
+        0 \quad \text{ si } x \neq h
+      \end{aligned}
+    \end{cases}
+  \] 
+\end{defn}
+
+\begin{prop}
+  \begin{itemize}
+    \item []
+    \item Función Distribución 
+      \[ 
+        F_{X}(x) =
+        \begin{cases}
+          \begin{aligned}
+            0 \quad \text{ si } x < h \\
+            1 \quad \text{ si } x \geq h
+          \end{aligned}
+        \end{cases} 
+      \] 
+    \item Momentos respecto al origen
+      \[ 
+        \alpha_{k} = \mathbb{E} [ X^{k} ] = h^{k}
+      \] 
+    \item Momentos respecto a la media
+      \[ 
+        \mu_{k}  = \sum_{j = 1}^{k} (-1)^{k - j} \binom{k}{j} \alpha^{k - j}_{1} \alpha_{j} = 0
+      \] 
+    \item Función característica
+      \[ 
+        \varphi(t) = \mathbb{E} [ e^{itX} ] = e^{ith} \cdot \mathbb{P} { X = h } = e^{ith} 
+      \] 
+  \end{itemize}
+\end{prop}
+
+\section{Distribución Uniforme Discreta}
+
+\begin{defn}
+  Una v.a. $X$ se dice que tiene una distribución uniforme discreta si su función de masa es
+  \[ 
+    p_{X}(x) = \frac{1}{n}, \quad \text{ si } x \in D_{X} = \{ x_{1}, \cdots, x_{n} \}
+  \] 
+\end{defn}
+
+\begin{prop}
+  \begin{itemize}
+    \item []
+    \item Función Distribución
+      \[ 
+        F_{X}(x) = \sum_{k \leq x} p_{X}(k) = \sum_{k \leq x} \frac{1}{n} = \frac{i}{n} 
+      \] 
+      \[ 
+         =
+        \begin{aligned}
+          \begin{cases}
+            0 \quad \text{ si } x < \min \{ x_{1}, \cdots, x_{n} \} \\
+            \frac{i}{n} \quad \text{ si } x_{i} \leq x \leq x_{i + 1} \\
+            1 \quad \text{ si } $x \leq \max \{ x_{1}, \cdots, x_{n} \}$
+          \end{cases} 
+        \end{aligned}
+      \] 
+    \item Momentos respcto al origen
+      \[ 
+        \alpha_{k} = \mathbb{E} [ X^{k} ] = \sum_{i = 1}^{n} x_{i}^{k} \cdot p_{X}(x_{i}) = \frac{1}{n} \sum_{i = 1}^{n} x_{i}^{k}, \quad k \in \{ 1, 2, \cdots \} 
+      \] 
+    \item Momentos respecto a la media 
+      \[ 
+        V(X) = \mathbb{E} [ X^{2} ] - (\mathbb{E} [ X ]) ^{2} = \frac{1}{n} \sum_{i = 1}^{n}(x_{i} - \mathbb{E} [ X ])^{2} 
+      \] 
+    \item Función característica
+      \[ 
+        \varphi_{X}(t) = \mathbb{E} [ e^{itX} ] = \sum_{i = 1}^{n} e^{itx_{i}} \cdot \frac{1}{n} 
+      \] 
+    \item Función generatríz de momentos
+      \[ 
+        M_{X}(\theta) = \mathbb{E} [ e^{\theta X} ] = \sum_{i = 1}^{n} e^{\theta x_{i}} ^ \frac{1}{n} 
+      \] 
+  \end{itemize}
+\end{prop}
+
+\section{Distribución de Bernoulli}
+
+\begin{defn}
+  Una v.a. $X$ se dice que tiene distribución de Bernoulli si tiene función de masa
+  \[ 
+    P_{X}(x) = \mathbb{P} \{ X = x \} = p ^{x} \cdot q^{1-x}, \quad x \in \{ 0, 1 \}
+  \] 
+\end{defn}
+
+\begin{prop}
+  \begin{itemize}
+    \item []
+    \item Función Distribución
+      \[ 
+        F_{X}(x) = \mathbb{P} \{ X \leq x \} =
+        \begin{cases}
+          \begin{aligned}
+            0, \text{ si } x < 0 \\
+            q, \text{ si } 0 \leq x < 1 \\
+            p + q = 1 \text{ si } x \geq 1
+          \end{aligned}
+        \end{cases} 
+      \] 
+    \item Momentos respecto al origen
+      \[ 
+        \alpha_{k} = \mathbb{E} [ X^{k} ] = (0)^{k} p_{X}(0) + 1^{k} p_{X}(1) = p 
+      \] 
+    \item Momentos respecto a la media
+      \[ 
+        \mu_{k} = \mathbb{E} [ (X - \alpha_{1})^{k} ] = (0 - p)^{k} \cdot q + (1 - p)^{k} \cdot p
+      \] 
+      \[ 
+        = q (-p)^{k} + q^{k} p
+      \] 
+      \[ 
+        Var (X) = \mu_{2} = pq(p + q) = pq
+      \] 
+    \item Función característica
+      \[ 
+        \varphi_{X}(t) = \mathbb{E} [ e^{itx} ] = e^{it0}q + e^{it1} p = q + e^{it} p
+      \] 
+    \item Función generatriz de momentos
+      \[ 
+        M_{X}(\theta) = \mathbb{E} [ e^{\theta X} ] = e^{\theta \cdot 0} q + e^{\theta \cdot 1} p = q + e^{\theta} p 
+      \] 
+  \end{itemize}
+\end{prop}
+
+\section{Distribución Binomial}
+
+\begin{defn}
+  Una v.a. $X$ se dice que sigue una distribución binomial si su función de masa es
+  \[ 
+    p_{X}(x) = \mathbb{P} \{ X = x \} = \binom{n}{x} p^{x} q^{n -x}, \quad x \in \{ 0, 1, \cdots, n \}
+  \]
+  Es claro que es una variable aleatoria discreta. Esta distribución consiste en hacer una serie de experimentos indpendientes y considerar el número de existos, dada la probalidad de exito $p$.
+\end{defn}
+
+\begin{obs}
+  $X \equiv Ber(p) \Leftrightarrow X \equiv Bi(1, p)$.
+\end{obs}
+
+\begin{prop}
+  \begin{itemize}
+    \item []
+    \item Función Distribución (no es muy manejable)
+      \[ 
+        F_{X}(x) = \mathbb{P} \{ X \leq x \} = \sum_{i \leq x} p_{X}(i) = \sum_{i \leq x} \binom{n}{i} p ^{i} q^{n - i}
+      \] 
+    \item Momentos respecto al origen
+      \[ 
+        \mathbb{E} [ X ] = \mathbb{E} [ X_{1} + \cdots + X_{n} ] = \sum_{i = 0}^{n} \mathbb{E} [ X_{i} ] = \sum_{i = 0}^{n} p = n \cdot p 
+      \] 
+    \item Momentos respecto a la media
+      \[ 
+        V(X) = V(X_{1} + \cdots + X_{n}) = \sum_{i = 0}^{n} V(X_{i}) = \sum_{i = 1}^{n} pq = npq 
+      \] 
+    \item Función característica
+      \[ 
+        \varphi_{X}(t) = \mathbb{E} [ e^{itX} ] = \mathbb{E} [ e^{it(X_{1} + \cdots + X_{n})} ]
+      \] 
+      \[ 
+        = \mathbb{E} [ e^{it X_{1}} ] \cdot \cdots \cdot \mathbb{E} [ e^{it X_{n}} ]
+      \] 
+      \[ 
+        = (p \cdot e^{it} + q)^{n}
+      \] 
+    \item Función generatriz de momentos
+      \[ 
+        M_{X}(\theta) = (p e^{\theta} + q)^{n} 
+      \] 
+    \item Función generatriz de probabilidad
+      \[ 
+        G(s) = M \log (s) = (ps + q)^{n} 
+      \] 
+  \end{itemize}
+\end{prop}
+
+\begin{theo}
+  La suma de variable Binomiales es Binomial. Si $X_{1} \equiv B(n_{1}, p)$ y $X_{2} \equiv B(n_{2}, p)$, entonces $X_{1} + X_{2} \equiv B(n_{1} + n_{2}, p)$
+\end{theo}
+
+\begin{dem}
+  content
+\end{dem}
+
+\section{Distribución de Poisson}
+
+La distribución de Poisson de parámetro $\lambda$ se obtiene como límite de la binomial de parámetros $(n, p)$. Sea $\lambda = np$.
+\[ 
+  \lim_{n \to \infty} p_{X}(x) = \lim_{n \to \infty} \Bigg [ \binom{n}{x}p ^{n} q^{n - x} \Bigg ]
+\] 
+\[ 
+  = \lim_{n \to \infty} \Big [ \binom{n}{x} \Big ( \frac{\lambda}{n} \Big )^{x} \Big ( 1 - \frac{\lambda}{n} \Big )^{n-x} \Big ]  
+\] 
+\[ 
+  = \frac{\lambda^{x}}{x!} \cdot e^{-\lambda} 
+\] 
+
+\begin{defn}
+  Una v.a. $X$ sigue uma distribución Poisson de parámetro $\lambda$ si su función de masa es
+  \[ 
+    p_{X}(x) = \frac{e^{-\lambda} \lambda^{x}}{x !}, \quad x \in \{ 0, 1, \cdots \} 
+  \] 
+\end{defn}
+
+\begin{prop}
+  \begin{itemize}
+    \item []
+    \item Función Distribución
+      \[ 
+        F_{X}(x) = \sum_{r \leq x} p_{X}(r) = \sum_{r \leq x} \frac{e^{-\lambda} \lambda^{r}}{r!} 
+      \] 
+    \item Momentos respecto al origen
+      \[ 
+        \mathbb{E} [ X ] = \sum_{x = 0}^{\infty} x \frac{e^{-\lambda} \lambda^{x}}{x!} = e^{-\lambda} \sum_{x = 0}^{\infty} x \frac{ \lambda^{x}}{x!}
+      \] 
+      \[ 
+        = e^{-\lambda} \sum_{x = 1}^{\infty} x \frac{\lambda^{x}}{x!} = e^{-\lambda} \sum_{x = 1}^{\infty} \frac{\lambda^{x}}{(x-1)!}
+      \] 
+      \[ 
+        e^{-\lambda} \lambda \sum_{y = 0}^{\infty} \frac{\lambda^{y}}{y!} = e^{- \lambda} \lambda e^{\lambda} = \lambda
+      \] 
+    \item Momentos respecto a la media
+      \[ 
+        \mathbb{E} [ X^{2} ] = \lambda + \lambda^{2} 
+      \] 
+      \[ 
+        V(X) = \mathbb{E} [ X^{2} ] - \mathbb{E} [ X ]^{2} = \lambda + \lambda^{2} - \lambda^{2} = 0
+      \] 
+    \item Función característica
+      \[ 
+        \varphi(t) = e^{\lambda(e^{i t} - 1)} 
+      \] 
+    \item Función generatriz de momentos
+      \[
+        M_{X}(\theta) = \mathbb{E} [ e^{\theta X} ] = \sum_{x = 0}^{\infty} e^{\theta x} e^{\lambda} \frac{\lambda^{x}}{x!} = e^{-\lambda} \sum_{x = 0}^{\infty} \frac{(e^{\theta} \lambda)^{x}}{x!}
+      \]
+      \[ 
+        = e^{-\lambda} e^{e^{\theta} \lambda} = e^{\lambda(e^{\theta} - 1)} 
+      \] 
+  \end{itemize}
+\end{prop}
+
+\begin{theo}
+  La suma de variable aleatorias Poisson indpendientes, es una variable aleatoria Poisson cuyo parámetro es la suma de los parámetros.
+\end{theo}
+
+\begin{dem}
+  content
+\end{dem}
+
+\section{Distribución Hipergeométrica}
+
+Supongamos que una caja contiene $N$ piezas, de las cuales $D$ son defectuosas y $N - D$ aceptables. Consideramos el experimento de extraer $n$ piezas simultaneamente. Este procedimiento es equivalente a un muestreo sin remplazamiento de $n$ piezas.
+
+\begin{defn}
+  Una v.a $X$ sigue una distribución hipergeométrica si su función de masa es
+  \[ 
+    \mathbb{P} \{ X = x \} = \frac{\binom{D}{x} \binom{N - D}{n - x}}{\binom{N}{n}} 
+  \] 
+\end{defn}
+
+\begin{prop}
+  \begin{itemize}
+    \item []
+    \item Momentos respecto al origen
+      \[ 
+        \alpha = \frac{ \sum_{x = 0}^{n}  x \binom{D}{x} \binom{N - D}{n - x}}{\binom{N}{n}} 
+      \] 
+    \item Momentos respecto a la media
+      \[ 
+        V(X) = npq \frac{N - n}{N - 1} 
+      \] 
+  \end{itemize}
+\end{prop}
+
+\section{Distribución Geométrica}
+
+Sea un experimento aleatorio y $A$ un suceso del experimento $P(A) = p$. Queremos ver el número de pruebas necesarias para que aparezaca $A$.
+
+\begin{defn}
+  Una v.a. $X$ sigue una distribución geométrica si su función de masa es
+  \[ 
+    p_{X}(x) = \mathbb{P} \{ X = x \} = (1 - p)^{x -1} p, \quad x \in \{ 1, 2, \cdots \}
+  \] 
+\end{defn}
+
+\begin{prop}
+  \begin{itemize}
+    \item []
+    \item Función Distribución
+      \[ 
+        F(x)  =
+        \begin{cases}
+          \begin{aligned}
+            0, \text{ si } x < 1 \\
+            1 - q^{x} \text{ si } x \geq 1
+          \end{aligned}
+        \end{cases}
+      \] 
+    \item Momentos respecto al origen
+      \[ 
+        \alpha_{1} = \mathbb{E} [ X ] = \sum_{x = 1}^{\infty} x \cdot q^{x -1} \cdot p = p \sum_{x = 1}^{\infty} x q^{x -1} 
+      \] 
+    \item Momentos respecto a la media
+      \[ 
+        V(X) = \frac{q}{p^{2}} 
+      \] 
+    \item Función característica
+      \[ 
+        \varphi(t) = \mathbb{E} [ e^{i t X} ] = \sum_{x = 1}^{\infty} e^{itx} q^{x-1} p = p e^{it} \frac{1}{1 - e^{it} q}
+      \] 
+    \item Función generatriz de momento
+      \[ 
+        M(\theta) = \mathbb{E} [ e^{\theta X} ] = \sum_{x = 1}^{\infty} e^{\theta x} q^{x - 1} p = \frac{p e^{it}}{1 - p e^{\theta}}
+      \] 
+  \end{itemize}
+\end{prop}
+
+\section{Distribución Binomial Negativa}
+
+Consideramos una sucesión de realizaciones de un experimento. Según el número de veces que suceda $A$ queremos ver el número de fallos anteriores.
+
+\begin{defn}
+  Una v.a. $X$ sigue una distribución binomial negativa si tiene función de masa
+  \[ 
+    \mathbb{P} \{ X = x \} = \binom{n + x - 1}{n - 1} p ^{n - 1} q ^{x} \cdot p 
+  \] 
+\end{defn}
+
+\begin{prop}
+  \begin{enumerate}[label=(\roman*)]
+    \item []
+    \item Función distribución 
+      \[ 
+        F(x) = \mathbb{P} \{ X \leq x \} = \sum_{i = 0}^{n} \binom{n + i -1}{i} p^{n} q^{i}
+      \] 
+    \item Función característica
+      \[ 
+        \varphi(t) = \mathbb{E} [ e^{itX} ] = \sum_{x = 0}^{\infty} e^{itx} \binom{n + x - 1}{x} p^{n} q^{x}
+      \] 
+      \[ 
+        = p^{n} \sum_{x = 0}^{\infty} \binom{n + x - 1}{x} (e^{it} q)^{x} = p^{n}( 1 - e^{it}q)^{-n}
+      \] 
+    \item Momentos
+      \[ 
+        \alpha_{1} = \frac{nq(nq + 1)}{p^{2}} 
+      \] 
+      \[ 
+        V(X) = \frac{nq}{p^{2}} 
+      \] 
+    \item
+  \end{enumerate}
+\end{prop}
+
+\section{Distribución Uniforme}
+
+\begin{defn}
+  Una v.a. $X$ continua sigue una distribución uniforme en $[ a, b ]$ si su función de densidad viene dada por
+  \[ 
+    f(x) =
+    \begin{aligned}
+      \begin{cases}
+        \frac{1}{b - a} & \text{ si } a \leq x \leq b \\
+        0  & \text{ en caso contrario }
+      \end{cases} 
+    \end{aligned}
+  \] 
+\end{defn}
+
+
+\begin{prop}
+  \begin{itemize}
+    \item []
+    \item Función distribución
+      \[ 
+        F(x) =
+        \begin{aligned}
+          \begin{cases}
+            0 & x < a \\
+            \frac{x-a}{b-a} & a \leq x \leq b \\
+            1 & x > b
+          \end{cases}
+        \end{aligned} 
+      \] 
+    \item Momentos respecto al origen
+      \[ 
+        \alpha_{1} = \mathbb{E} [ X ] = \int_{- \infty}^{+ \infty} x f(x) dx 
+      \] 
+      \[ 
+        = \int_{a}^{b} \frac{x}{b - a} dx = \frac{1}{b - a} \frac{x^{2}}{2} \Bigg |_{a}^{b} 
+      \] 
+    \item Momentos respecto a la media
+      \[ 
+        \sigma^{2} = \mathbb{E} [ (X -\alpha_{1})^{2} ] = \int_{- \infty}^{+ \infty} \Big ( x - \frac{a + b}{2} \Big )^{2} f(x) dx
+      \] 
+      \[ 
+        = \frac{1}{b - a} \int_{- \infty}^{+ \infty} \Big ( x - \frac{a + b}{2} \Big )^{2} dx
+      \] 
+      donde $ t = x -\frac{a + b}{2}, dx = dt$
+      \[ 
+        \sigma^{2} = \frac{1}{b - a} \int_{\frac{a -b}{2}}^{\frac{b-a}{2}} t^{2} dt = \frac{(b - a)^{2}}{12} 
+      \] 
+    \item Función característica
+      \[ 
+        \varphi(t) = \mathbb{E} [ e^{itX} ] = \int_{a}^{b} e^{itx} \frac{1}{b - a} dx
+      \] 
+      \[ 
+        = \frac{1}{it(b -a)} \cdot (e^{itb} - e^{ita}) 
+      \] 
+    \item Función generatriz de momentos
+  \end{itemize}
+\end{prop}
+
+\section{Distribución Normal}
+
+\begin{defn}
+  Una v.a. $X$ sigue una distribución normal $N(0,1)$ si su función de densidad es de la forma
+  \[ 
+    f(x) = \frac{1}{\sqrt{2 \pi}} e^{- \frac{x^{2}}{2}}, \quad x \in (-\infty, + \infty)
+  \] 
+\end{defn}
+
+\begin{defn}
+  Una v.a. $X$ sigue una distribución normal $N(\mu, \sigma)$ si su función de densidad es de la forma
+  \[ 
+    f(x) = \frac{1}{\sigma \sqrt{2 \pi}} e^{- \frac{(x -\mu)^{2}}{2 \sigma^{2}}}, \quad x \in (-\infty, + \infty)
+  \] 
+\end{defn}
+
+\begin{prop}
+  \begin{itemize}
+    \item []
+    \item Función distribución
+      \[ 
+        F(x) = \int_{-\infty}^{x} \frac{1}{\sigma \sqrt{2 \pi}} e^{-\frac{(x -\mu)^{2}}{2 \sigma^{2}}} dx
+      \] 
+      donde haciendo el cambio $\frac{x - \mu}{\sigma} = y$ tenemos
+      \[ 
+        F(x) = \frac{1}{\sqrt{2 \pi}} \int_{- \infty}^{\frac{x - \mu}{\sigma}} e^{-\frac{1}{2}y^{2}} dx
+      \] 
+    \item Relación entre $N(0,1)$ y $N(\mu, \sigma)$. Si $X \equiv N(\mu, \sigma)$,
+      \[ 
+        Y = \frac{X - \mu}{\sigma}
+      \] 
+      entonces, $Y \equiv N(0, 1)$.
+    \item Función característica
+      \[ 
+        \varphi(t) =\mathbb{E} [ e^{itX} ] = e^{it \mu - \frac{t^{2}\sigma^{2}}{2}}
+      \] 
+    \item Momentos respecto al origen
+      \[ 
+        \alpha_{1} = \frac{\varphi'(t)}{i} \Big|_{i = 0}^{} 
+      \] 
+      \[ 
+        \varphi'(t) = e^{it \mu - \frac{t^{2} \sigma^{2}}{2}} \cdot i \mu - \frac{2t \sigma^{2}}{2} 
+      \] 
+      \[ 
+        \Rightarrow \varphi'(0) = i \mu  \Rightarrow \sigma_{1} = \mu
+      \] 
+    \item Momentos respecto a la media
+      \[ 
+        \alpha_{2} = \frac{\varphi''(t)|_{t = 0}}{i^{2}} = \mu^{2} + \varphi^{2}
+      \] 
+      \[ 
+        \Rightarrow V(X) = \mu^{2} + \varphi^{2} - \mu^{2} = \varphi^{2} 
+      \] 
+    \item Función generatriz de momentos
+  \end{itemize}
+\end{prop}
+
+\begin{theo}
+  La suma de normales es normal.
+\end{theo}
+
+\section{Distribución Gamma}
+
+\begin{defn}[Función Gamma]
+  Llamamos función gamma a
+  \[ 
+    \Gamma(p) = \int_{0}^{\infty} x^{p-1} e^{-x} dx 
+  \] 
+\end{defn}
+
+\begin{prop}[Propiedades]
+  \begin{enumerate}[label=(\roman*)]
+    \item $\Gamma(1) = 1$,
+    \item $\Gamma(p) = (p - 1) \Gamma(p - 1)$
+    \item $p \in \mathbb{Z}^{+}, \Gamma(p) = (p - 1)!$
+  \end{enumerate}
+\end{prop}
+
+\begin{defn}
+  Una v.a. $X$ sigue una distribución gamma de parámetros $\gamma(p, a)$ si su función de densidad es de la forma 
+  \[ 
+    f_{X}(x) = \frac{a^{p} e^{-ax} x^{p-1}}{\Gamma(p)}, \quad $x > 0$
+  \] 
+\end{defn}
+
+\begin{prop}
+  \begin{itemize}
+    \item []
+    \item Función distribución
+      \[ 
+        F_{X}(x) = \frac{a^{p}}{\Gamma(p)} \int_{0}^{x} e^{-ax} s^{p-1} ds, \quad 0 < x < \infty 
+      \] 
+    \item Función característica
+      \[ 
+        \varphi(t) = \mathbb{E} [ e^{itX} ]  = \Big ( 1 - \frac{it}{a} \Big )^{-p}
+      \] 
+    \item Función generatriz de momentos
+      \[ 
+        M(\theta) = \Big ( 1 - \frac{\theta}{a} \Big )^{-p} 
+      \] 
+    \item Momentos respecto al origen
+      \[ 
+        \alpha_{k} = M^{(n)}(\theta) \Big|_{\theta = 0} 
+      \] 
+      \[ 
+        \Rightarrow \alpha_{1} = \frac{p}{a}, \quad \alpha_{2} = \frac{p(p+1)}{a^{2}}
+      \] 
+    \item Momentos respecto a la media
+      \[ 
+        V(X) = \frac{p(p + 1)}{a^{2}} - \frac{p ^{2}}{a^{2}} = \frac{p}{a^{2}} 
+      \] 
+  \end{itemize}
+\end{prop}
+
+\begin{theo}
+  La suma de v.a. gamma independientes es gamma.
+\end{theo}
+
+\begin{dem}
+  content
+\end{dem}
+
+
+\section{Distribución Exponencial}
+
+\begin{defn}
+  Una v.a. $X$ sigue una distribución exponencial de parámetro $\theta$ si su función de densidad es de la forma
+  \[ 
+    f_{X}(x) =
+    \begin{aligned}
+      \begin{cases}
+        \theta e^{-\theta x} & x > 0 \\
+        0 & x \leq 0
+      \end{cases}
+    \end{aligned} 
+  \] 
+\end{defn}
+
+\begin{obs}
+  $Exp (\theta) = \gamma(1, \theta)$.
+\end{obs}
+
+\begin{prop}
+  \begin{itemize}
+    \item []
+    \item Función distribución
+      \[ 
+        F_{X}(x) =
+        \begin{aligned}
+          \begin{cases}
+            0 & x \leq 0 \\
+            1 - e^{-\theta x} & x > 0
+          \end{cases}
+        \end{aligned} 
+      \] 
+    \item Función característica
+      \[ 
+        \varphi(t) = \Big ( 1 - \frac{i t}{\theta} \Big )^{-1} 
+      \] 
+    \item Función generatriz de momentos
+      \[ 
+        M(s) = \Big ( 1 - \frac{s}{\theta} \Big ) ^{-1}
+      \] 
+    \item Momentos respecto a la media
+      \[ 
+        \alpha_{1} = \frac{1}{\theta}, \quad \alpha_{2} = \frac{2}{\theta^{2}}
+      \] 
+    \item Momentos respecto al origen
+      \[ 
+        V(X) = \frac{1}{\theta^{2}} 
+      \] 
+    \item 
+  \end{itemize}
+\end{prop}
+
+\begin{theo}
+  La suma de $n$ variable aleatorias indpendientes e idénticamente distribuidas $X_{i} \equiv Exp (\theta)$es una $\gamma(n, \theta)$.
+\end{theo}

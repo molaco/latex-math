@@ -1,0 +1,136 @@
+\chapter{Función Característica}
+
+\section{Función generatriz}
+
+\begin{defn}[Función Generatriz Discreta]
+  Sea $X$ v.a. discreta con función de masa $p_{X}$ y soporte $D_{X}$. Entonces, la función generatriz de $X$ es 
+  \[ 
+    G(s) = E [ s^{X} ] = \sum_{i = 1}^{\infty} s^{x_{i}} p_{i}
+  \] 
+  siempre que $\sum_{i = 1}^{\infty} |s^{x_{i}}| p_{i} < \infty$.
+\end{defn}
+
+\begin{defn}[Función Generatriz Continua]
+  Sea $X$ v.a. continua con función de densidad $f$. Entonces, la función generatriz de $X$ es
+  \[ 
+    G(s) = E [s^{X}] = \int_{- \infty}^{+ \infty} s^{x}f(x) dx
+  \] 
+  siempre que $\int_{- \infty}^{+ \infty} |s^{X}|f(x) dx$.
+\end{defn}
+
+\begin{prop}[Propiedades Función Generatriz]
+  La derivada de orden $n$ de la función generatriz es
+  \[ 
+    G^{(n)}(s) = \sum_{x = n}^{\infty} \binom{x}{n} n! f(x) s^{x - n}
+  \] 
+  que cumple lo siguiente
+  \begin{enumerate}[label=(\roman*)]
+    \item $G(0) = P(X = 0) = f(0)$,
+    \item $\frac{1}{n!}G^{(n)}(0) = P(X = n) = f(n)$,
+    \item $E(X) = G'(1)$,
+    \item $G^{(n)}(1) = E [ X(X - 1) \cdots (X - n + 1) ]$
+  \end{enumerate}
+\end{prop}
+
+\section{Función Generatriz de Momentos}
+
+\begin{defn}[Función Generatriz de Momentos]
+  Llamaremos función generatriz de momentos respecto al origen de la variable aleatoria $X$ con función de distribución $F_{X}$ a
+  \[ 
+    M(\theta) = E [e ^{\theta X}] = \int_{\mathbb{R}}^{} e ^{\theta X} dF_{X}(x)
+  \] 
+\end{defn}
+
+\subsection{Función Generatriz de Momentos Discreta}
+
+\begin{defn}[Función Generatriz de Momentos Discreta]
+  Sea $X$ v.a. discreta con función de masa $p_{X}$. Lamamos función generatriz de momentos a la función
+  \[ 
+    M(\theta) = \sum_{i = 0}^{\infty} e ^{\theta x_{i}} p_{i} 
+  \] 
+  siempre que $\sum_{i = 0}^{\infty} |e ^{\theta x_{i}}| p_{i} < \infty$.
+\end{defn}
+
+\subsection{Función Generatriz de Momentos Continua}
+
+\begin{defn}[Función Generatriz de Momentos Continua]
+  Sea $X$ v.a. continua con función de densidad $f$. Lamamos función generatriz de momentos a la función
+  \[ 
+    M(\theta) = \int_{-\infty}^{+\infty} e ^{\theta x} f(x) dx
+  \] 
+  siempre que $\int_{-\infty}^{+\infty} |e ^{\theta x}| f(x) dx$.
+\end{defn}
+
+\subsection{Propiedades Función Generatriz De Momentos}
+
+\begin{prop}
+  A partir del desarrolo de Taylor de $M(\theta)$ en $\theta = 0$ se tiene
+  \[ 
+    M(\theta) = \sum_{j = 0}^{\infty} \frac{E(X^{j})}{j!}\theta^{j} 
+  \] 
+  donde $M^{(j)}(0) = E(X^{j})$.
+\end{prop}
+
+\section{Función Característica}
+
+\begin{defn}[Función Característica]
+  Sea $(\Omega, \mathcal{A}, P )$ espacio de probabilidad, $X$ v.a. con función de distribución $F_{X}$. Se llama función característica de $X$ a
+  \[ 
+    \varphi(t) = E [e^{itx}] = \int_{\mathbb{R}}^{} e^{itx} dF_{X}(x)
+  \] 
+  \[ 
+    = \int_{\mathbb{R}}^{} \cos(tx) dF_{X}(x) + i \int_{\mathbb{R}}^{} \sen(tx) dF_{X}(x)
+  \] 
+\end{defn}
+
+\subsection{Propiedades Función Característica}
+
+\begin{prop}
+  Sea $X$ v.a. con función de distribución $F_{X}$. Entonces, la función característica satisface
+  \begin{enumerate}[label=(\roman*)]
+    \item $\varphi$ existe $\forall t \in \mathbb{R}$,
+    \item $\varphi(0) = 1$,
+    \item $| \varphi(t) | \leq 1, \forall t \in \mathbb{R}$,
+    \item $\varphi(t)$ es uniformemente continua,
+    \item Si $Y = aX + b$, entonces $\varphi_{Y}(t) = e^{itb} \cdot \varphi_{X}(at)$.
+  \end{enumerate}
+\end{prop}
+
+\begin{dem}
+  content
+\end{dem}
+
+\section{Problema de los Momentos}
+
+\begin{theo}
+  Supuesto que los momentos de la variable aleatoria $X$ existen
+  \[ 
+    \alpha_{n} = \int_{\mathbb{R}}^{} x^{n} dF(x) 
+  \] 
+  Entonces,
+  \begin{enumerate}[label=(\roman*)]
+    \item $\exists \varphi^{(n)}(0) = i^{n} \alpha_{n}$
+    \item $\exists \varphi^{(n)}(t) = i^{n} \int_{\mathbb{R}}^{} e^{itx} x^{n} dF(x)$
+  \end{enumerate}
+\end{theo}
+
+\begin{dem}
+  content
+\end{dem}
+
+\begin{theo}
+  \begin{enumerate}[label=(\roman*)]
+    \item []
+    \item Si $\exists \varphi^{(2n)}(t)$ entonces $\exists \alpha_{2n} = \frac{\varphi^{(2n)}(0)}{i^{2n}}$
+    \item Si $\exists \varphi^{(2n - 1)}(t)$ entonces $\exists \alpha_{2n - 2} = \frac{\varphi^{(2n -2)}(0)}{i^{2n - 2}}$
+  \end{enumerate}
+\end{theo}
+
+\section{Teorema de Inversión}
+
+\begin{theo}[de Inversión]
+  Sea $X$ v.a. con función de distribución $F_{X}$ y $\varphi(t)$ su función característica, entonces
+  \[ 
+    f(x) = \frac{1}{2 \pi} \int_{+\infty}^{-\infty} e^{-itx} \varphi(t) dt
+  \] 
+\end{theo}

@@ -1,0 +1,93 @@
+\chapter{Singularidades Aisladas}
+
+\section{Series de Laurent}
+
+\begin{theo}
+  Sea $0 \leq r_{1} < r_{2}$, $z_{0} \in \mathbb{C}$. Consideramos la región $A = \{ z \in \mathbb{C} : r_{1} < | z -z_{0} | < r_{2} \}$ donde puede ser $r_{1} = 0$ o/y $r_{2} = \infty$. Sea $f$ analítica en $A$. Entonces,
+  \[ 
+    f(z) = \sum_{n = 0}^{\infty} a_{n}(z - z_{0})^{n} + \sum_{n = 1}^{\infty} \frac{b_{n}}{(z - z_{0})^{n}} 
+  \] 
+  donde ambas series convergen absolutamente en $A$ y uniformemente en $B_{\rho_{1}, \rho_{2}} = \big\{ z : \rho_{1} \leq | z - z_{0} | \leq \rho_{2} \big\}$ donde $r_{1} < \rho_{1} < \rho_{2} < r_{2}$. Esta serie se llama serie de Laurent alrededor de $z_{0}$ en la corona circular $A$.
+
+  Si $\gamma$ es un círculo alrededor de $z_{0}$ con radio $r$, donde $r_{1} < r < r_{2}$, entonces los coeficientes vienen dados por
+  \[ 
+    a_{n} = \frac{1}{2 \pi i} \int_{\gamma}^{} \frac{f(w)}{(w - z_{0})^{n + 1}} dw, \quad n = \{ 0, 1, \cdots \}
+  \] 
+  \[ 
+    b_{n} = \frac{1}{2 \pi i} \int_{\gamma}^{} f(w){(w - z_{0})^{n - 1}} dw, \quad n = \{ 1, 2, \cdots \}
+  \] 
+\end{theo}
+
+\begin{obs}
+  Si escribimos $b_{n} = a_{-n}$, entonces la fórmula cubre ambos casos
+\end{obs}
+
+\begin{obs}
+  La serie de Laurent es única.
+\end{obs}
+
+\begin{dem}
+  content
+\end{dem}
+
+\section{Singularidades Aisladas}
+
+\begin{defn}[Singularidades Aisaladas]
+  Caso de la serie de Laurent con $r_{1} = 0$. En este caso, $f$ es analítica en $D(z_{0}, r_{2}) \setminus \{ z_{0} \} = \{ z : 0 < | z -z_{0} | < r_{2} \}$. Decimos que $z_{0}$ es singularidad aislada. Podemos expandir la serie de Laurent de la siguient forma:
+  \[ 
+    f(z) = \cdots + \frac{b_{n}}{(z - z_{0})^{n}} + \cdots + \frac{b_{1}}{z - z_{0}} + a_{0} + a_{1}(z -z_{0}) + a_{2}(z - z_{0})^{2} + \cdots
+  \] 
+  donde $ 0 < | z - z_{0} | < r_{2}$.
+\end{defn}
+
+\begin{defn}
+  Si $f$ es analítica en $D(z_{0}, R) \setminus \{  z_{0} \}, R > 0$, entonces $z_{0}$ es una singularidad aislada.
+  \begin{enumerate}[label=(\roman*)]
+    \item $\forall j \in J \setminus F, b_{j} = 0, F$ finito, entonces $z_{0}$ es un polo de $f$. Sea $j_{0} = \max \{ j \in J : b_{j} \neq 0\}$. Entonces $z_{0}$ es un polo de orden $j_{0}$.
+    \item $\forall j \in J, b_{j} \neq 0$, entonces $z_{0}$ es una singularidad esencial.
+    \item $\forall j \in J, b_{j} = 0$, entonces $z_{0}$ es una singularidad evitable. 
+  \end{enumerate}
+\end{defn}
+
+\begin{obs}
+  $f$ tiene un polo en $z_{0}$ si y solo si la serie de Laurent en $D(z_{0}, R) \setminus \{ z_{0} \}$ es de la forma
+  \[ 
+    \frac{b_{k}}{(z - z_{0})^{k}} + \cdots + \frac{b_{1}}{z - z_{0}} + a_{0} + a_{1}(z - z_{0}) + \cdots 
+  \] 
+  la parte de los $b's$ se llama parte principal.
+\end{obs}
+
+\begin{obs}
+  Si $f$ tiene una singularidad evitable, entonces la serie de Laurent es de la forma
+  \[ 
+    f(z) = \sum_{n = 0}^{\infty} a_{n}(z - z_{0})^{n} 
+  \] 
+  que es una serie convergente. $f$ tiene una singularidad evitable en $z_{0}$ si y solo $f$ se puede definir en $z_{0}$ tal que $f$ es analítica en $z_{0}$.
+\end{obs}
+
+\begin{prop}
+  Sea $f$ analítica en $A$, $z_{0}$ singularidad aislada.
+  \begin{enumerate}[label=(\roman*)]
+    \item $z_{0}$ tiene una singularidad evitable si y solo si se da una de las siguentes condiciones
+      \begin{enumerate}
+        \item $f$ es acotada en $D(z_{0}, R) \setminus \{ z_{0} \}$.
+        \item $\exists \lim_{z \to z_{0}} f(z)$.
+        \item $\exists \lim_{z \to z_{0}} (z - z_{0}) \cdot f(z) = 0$
+      \end{enumerate}
+    \item $z_{0}$ es un polo simple $\Leftrightarrow \exists \lim_{z \to z_{0}} (z - z_{0}) \cdot f(z) \neq 0$
+    \item $z_{0}$ es un polo de orden $\leq k \Leftrightarrow$ se cumple una de las siguientes
+      \begin{enumerate}
+        \item $\exists M > 0, k \geq 1 : | f(z) | \leq \frac{M}{| z -z_{0} |^{k}}$ en $D(z_{0}, R) \setminus \{ z_{0} \}$.
+        \item $\lim_{z \to z_{0}} (z - z_{0})^{k+1} \cdot f(z) = 0$.
+        \item $\exists \lim_{z \to z_{0}} (z -z_{0})^{k} f(z)$.
+      \end{enumerate}
+    \item $z_{0}$ es un polo de orden $k \geq 1 \Leftrightarrow \exists \phi : U \to \mathbb{C}$ donde $U \setminus (z_{0}) \subset A, \phi(z_{0}) \neq 0$ y
+      \[ 
+        f(z) = \frac{\phi(z)}{(z -z_{0})^{k}}, \quad \forall z \in U, z \neq z_{0}
+      \] 
+  \end{enumerate}
+\end{prop}
+
+\begin{dem}
+  content
+\end{dem}

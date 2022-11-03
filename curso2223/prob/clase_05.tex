@@ -1,0 +1,277 @@
+\chapter{Esperanza Matemática}
+
+\section{Esperanza de una Variable Aleatoria Simple}
+
+Sea $(\Omega, \mathcal{A}, P )$ un espacio de probabilidad y ${ A_{i} }_{i = 1}^{n} \subset \mathcal{A}$ tal que $\bigcup_{i = 1}^{n} A_{i} = \Omega$ y $A_{i} \cap A_{j} = \emptyset, \forall i \emptyset j$. Consideramos $X = \sum_{i = 1}^{n} x_{i} I_{A}$ una variable aleatoria simple definida en $(\Omega, \mathcal{A}, P )$ con $x_{i} \in \mathbb{R}, \forall i \in \{ 1, \cdots, n \}$.
+
+\begin{defn}[Esperanza Variable Aleatoria Simple]
+  Llamamos esperanza de $X$ v.a. simple al número
+  \[ 
+    E[X] = \sum_{i = 1}^{ n} x_{i} P(A_{i}) = \int_{\Omega}^{} X dP(\omega)
+  \] 
+\end{defn}
+
+\begin{prop}[Propiedades]
+  \begin{enumerate}[label=(\roman*)]
+    \item []
+    \item Si $X \geq 0$, entonces $E[X] \geq 0$,
+    \item $\forall X, Y$ v.a. simples, $\forall a, b \in \mathbb{R}$
+      \[ 
+      E \big[ aX + bY \big] = aE[X] + bE[Y],
+      \] 
+    \item $X \geq Y \Rightarrow E[X] \geq E[Y]$,
+    \item $E[I_A] = P(A), \forall A \in \mathcal{A}$,
+    \item $E[| X + Y |] \leq E[| X |] + E[| Y |]$,
+    \item $| E \big[ X \big] | \leq E [ | X | ]$,
+    \item $E[X \cdot I_{A}] = \int_{A}^{} X dP(\omega)$
+    \item $E [ X I_{A_{1} \cap A_{2}} ] = \int_{A_{1}}^{} X dP(\omega) + \int_{A_{2}}^{} X dP(\omega), \quad \forall A_{1}, A_{2} \in \mathcal{A} : A_{1} \cap A_{2} = \emptyset$,
+  \end{enumerate}
+\end{prop}
+
+\begin{dem}
+  content
+\end{dem}
+
+\section{Esperanza De Una Variable Aleatoria No Negativa}
+
+\begin{prop}
+  Sea $X \geq 0$ una v.a., entonces $\exists \{ X_{n} \}_{n \in \mathbb{N}}$ no decreciente tal que $X_{n} \geq 0, \forall n \in \mathbb{N}$ tal que $\lim_{n \to \infty} X_{n} = X$, entonces $\{ E[X_{n}] \}_{n \in \mathbb{N}}$ será creciente y por tanto con límite (finito o no).
+\end{prop}
+
+\begin{defn}
+  Llamaremos esperanza de $X$ v.a. no negativa a
+  \[ 
+    E(X) = \int_{\Omega}^{} X dP = \lim_{n \to \infty} E[X_{n}] = \lim_{n \to \infty} \int_{\Omega}^{} X_{n} dP(\omega)
+  \] 
+\end{defn}
+
+\begin{prop}
+  Sean $\{ X_{n} \}_{n \in \mathbb{N}}, \{ Y_{n} \}_{n \in \mathbb{N}}$ dos sucesiones de v.a. simples no negativas tales que $X_{n} \leq X, Y_{n} \leq Y$ y $\lim_{n \to \infty} X_{n} = \lim_{n \to \infty} Y_{n} = X $. Entonces $\lim_{n \to \infty} E[X_{n}] = \lim_{n \to \infty} E[Y_{n}]$.
+\end{prop}
+
+\begin{prop}[Propiedades]
+  \begin{enumerate}[label=(\roman*)]
+    \item $E[X] \geq 0$.
+    \item Sean $X$ e $Y$ variables aleatorias no negativas y sean $a, b \in \mathbb{R}$. Entonces,
+      \[
+        E[aX + bY] = a E[X] + b E [ Y ].
+      \]
+    \item $X \geq Y \Rightarrow E[X] \geq E[Y]$, en donde $X$ e $Y$ son variables aleatorias no negativas.
+    \item $X$ v.a. no negativa y $A_{1} \cap A_{2} = \emptyset$, entonces
+      \[ 
+        \int_{A_{1} \cap A_{2}}^{} X dP(\omega) = \int_{A_{1}}^{} X dP(\omega) + \int_{A_{1}}^{} X dP(\omega).
+      \] 
+  \end{enumerate}
+\end{prop}
+
+\begin{dem}
+  content
+\end{dem}
+
+\begin{defn}[Variable Aleatoria Integrable]
+  Una variable aleatoria no negativa $X$ es integrable $\Leftrightarrow$ $X$ tiene esperaza finita, es decir, $E[X] < +\infty$.
+\end{defn}
+
+\section{Esperanza De Una Variable Aleatoria Real}
+
+\begin{defn}[Esperanza De Una Variable Real]
+  Sea $X$ v.a real tal que $X = X^{+} - X^{-}$, llamaremos esperanza matemática de $X$ a
+  \[ 
+    E[X] = E [ X^{+} ] - E [ X^{-} ]
+  \] 
+  siempre que $E [ X^{+} ]$ o $E [ X^{-} ]$ sean menores que $\infty$.
+\end{defn}
+
+\begin{defn}
+  Diremos que $X$ variable aleatoria real es integrable $\Leftrightarrow$ $E[x^{+}]$ o $E[x^{-}]$ son integrables y $E[X] < \infty$.
+\end{defn}
+
+\begin{prop}[Propiedades de la variables Aleatorias Reales]
+  Sean $X, Y$ v.a. integrables tal que $A \cap B = \emptyset$. Entonces,
+  \begin{enumerate}[label=(\roman*)]
+    \item $X, X+ Y, | X |, aX$ con $a \in \mathbb{R}$ son integrables.
+    \item Si $a( \in \mathbb{R})$ entonces 
+      \[ 
+        \int_{}^{} aX + bY dP(\omega) = a \int_{}^{} X dP(\omega) + b \int_{}^{} Y dP(\omega).
+      \] 
+    \item $X \geqY \Rightarrow \int_{}^{} X dP(\omega) \geq \int_{}^{}  Y dP(\omega)$.
+    \item $\Big | \int_{}^{} X dP(\omega) \Big | \geq \int_{}^{} | X | dP(\omega)$.
+    \item $X \geq 0$ y $\int_{}^{} X dP(\omega) = 0 \Rightarrow P \{ X \neq 0 \} = 0$.
+    \item $\int_{A \cup B}^{} X dP(\omega) = \int_{A}^{} X dP(\omega)$
+    \item $P \{ X \neq Y \} = 0 \Rightarrow \int_{}^{} X dP(\omega) = \int_{}^{} Y dP(\omega)$
+  \end{enumerate}
+\end{prop}
+
+\begin{dem}
+  content
+\end{dem}
+
+\section{Teorema De Caracterización De La Esperanza}
+
+\begin{theo}
+  La esperanza matemática de una v.a. se caracteriza a partir de su probabilidad inducidad
+  \[ 
+    E [X]  = \int_{\Omega}^{} X dP(\Omega) = \int_{\mathbb{R}}^{} \xi(x) dP_{X}(x) = \int_{\mathbb{R}}^{} \xi(x) dF_{X}(x)
+  \] 
+  donde $\xi $ es la la función identidad en $\mathbb{R}$.
+\end{theo}
+
+\begin{dem}
+  content
+\end{dem}
+
+\subsection{Esperanza De Una Variable Aleatoria Elemental}
+
+\begin{defn}
+  Sea $X \geq 0$ tal que $X = \sum_{j = 1}^{\infty} x_{j} X_{A_{j}}$ donde $A_{j}$ forman una partición numerabkes de $\Omega$ y $x_{j} >0$. Definimos la esperanza de $X$ como
+  \[ 
+    E [ X ] = \sum_{j = 1}^{\infty} x_{j} P(A_{j}).
+  \] 
+\end{defn}
+
+\subsection{Esperanza De Una Variable Aleatoria Discreta}
+
+\begin{prop}
+  Sea $X$ v.a. discreta con soporte $D_{X}$ y función de masa $p_{X}$. Sabemos que $D_{X}$ es un conjunto numerable. Entonces, $P(A_{j}) = P_{X}(X = x_{j}) = p_{X}(x_{j})$ con
+  \[ 
+    \sum_{x \in D_{X}} p_{X}(x) = \sum_{j = 1}^{\infty} p_{X}(x_{j}) = 1 
+\] 
+  \[ 
+    \Rightarrow E [ X ] = \sum_{x \in D_{X}}^{\infty} x_{j} P_{X}(x_{j}) = \sum_{j = 1}^{\infty} x_{j} p_{X}(x_{j}) 
+  \] 
+  supuesta la convergencia absoluta de la serie, es decir, $\sum_{j = 1}^{\infty} | x_{j} | p_{X}(x_{j}) < \infty$.
+\end{prop}
+
+\subsection{Esperanza De Una Variable Aleatoria Continua}
+
+\begin{defn}[Esperanza De Una Variable Aleatoria Continua]
+  Sea $X$ v.a. continua tal que
+  \[ 
+    F(x) = \int_{-\infty}^{x} f_{X}(t) dt 
+  \] 
+  es su función de distribución donde $f_{x}$ es su función de densidad. Entonces,
+  \[ 
+    E[X] = \int_{\mathbb{R}}^{} \xi(x) f_{X}(x) dx
+  \] 
+  siendo $\xi(x)$ la dunción medible identidad en $( \mathbb{R}, \mathbb{B})$.
+\end{defn}
+
+\begin{theo}
+  Sea $X$ una v.a. tal que $\exists E[X]$, $\varphi : \mathbb{R} \to \mathbb{R}$ aplicación medible tal que $\varphi(X) = Y$. Si $\exists E[\varphi(Y)]$ esta se puede expresar a través de la probabilidad inducidad por $X$ y se cumple que
+  \[ 
+    E[Y] = \int_{\Omega}^{} Y dP = \int_{\mathbb{R}}^{} \varphi dP_{X}
+  \] 
+\end{theo}
+
+\section{Momentos}
+
+\subsection{Momentos respecto al origen}
+
+\begin{defn}[Momento de orden $k$ de $X$ respecto al origen]
+  Se llama momento de orden $k$ de la v.a. $X$ respecto al origen, a la esperanza de $g(X) = X^{k}$. Lo representaremos por $\alpha_{k}$, es decir,
+  \[ 
+    \alpha_{k} = E[X^{k}] = \int_{\mathbb{R}}^{} x^{k} dP_{X}(x) = \int_{\mathbb{R}}^{} x^{k} dF_{X}(x) 
+  \] 
+  siendo $P_{X}$ la distribución de $X$ y $F_{X}$ la función de distribución de la v.a $X$.
+\end{defn}
+
+\subsection{Momentos respecto a la media}
+
+\begin{defn}[Momento de orden $k$ de $X$ respecto al media]
+  Se llama momento de orden $k$ de la v.a. $X$ respecto al media, a la esperanza de $g(X) = (X -\alpha_{1})^{k}$. Lo representaremos por $\mu_{k}$, es decir,
+  \[ 
+    \mu = E[(X - \alpha_{1})^{k}]
+  \] 
+  En particular, $\mu_{2}$ recibe el nombre de varianza.
+\end{defn}
+
+\subsection{Momentos Absolutos respecto al origen}
+
+\begin{defn}[Momento absoluto respecto al origen]
+  Se llama momento absoluto de orden $k$ de la v.a. $X$ a la esperanza de $g(X) = | X |^{k}$. Lo representamos por $\beta_{k}$, es decir,
+  \[ 
+    \beta_{k} = E[| X |^{k}] 
+  \] 
+\end{defn}
+
+\begin{prop}
+  Dada $X$ v.a. tal que $\exists \alpha_{k}$. Entonces, $\exists \alpha_{n}, \forall n \leq k$.
+\end{prop}
+
+\begin{dem}
+  content
+\end{dem}
+
+\section{Teorema de Markov}
+
+\begin{theo}
+  Sea $X$ v.a., $g(X)$ función medible tal que $g(X) \geq 0$. Entoces,
+  \[ 
+    P \{ g(X) > k \} \leq \frac{E[g(X)]}{k}, \quad \forall k > 0 
+  \] 
+  supuesto que $\exists E[X]$.
+\end{theo}
+
+\begin{dem}
+  Sea $A = \{ x : g(x) > k \}$, entonces
+  \[ 
+    \mathbb{E} [ g(X) ] = \int_{\mathbb{R}}^{} g(x) dF_{X}(x)
+  \] 
+  \[ 
+    \int_{A}^{} g(x) dF_{X} + \int_{A^{*}}^{} g(x) dF_{X}(x)
+  \] 
+  \[ 
+    \geq \int_{A}^{} g(x) dF_{X}(x) \geq \int_{A}^{} k dF_{X}(x) \geq k \mathbb{P} \{ g(X) > k \} 
+  \] 
+  \[ 
+    \Rightarrow \mathbb{P} \{ g(X) > k \} \leq \frac{\mathbb{E} [ g(X) ]}{k}.
+  \] 
+\end{dem}
+
+\section{Acotación de Tchebychev}
+
+\begin{prop}
+  Sea $X$ v.a., $g$ función medible no negativa tal que $\exists E[(g(X))^{k}]$, entonces
+  \[ 
+    P \{ g(X) > t \} \leq \frac{E[(g(X))^{k}]}{t^{k}} 
+  \] 
+\end{prop}
+CORREGIR + AÑADIR TEOREMA CHEVYCHEB
+
+\begin{dem}
+  Sea $A = \{ x : g(x) > t \}$. Entonces,
+  \[ 
+    \mathbb{E} [ g(X)^{k} ] = \int_{\mathbb{R}}^{} (g(x))^{k} dF(x)
+  \] 
+  \[ 
+    = \int_{A}^{} g(x)^{k} dF(x) + \int_{A^{c}}^{} g(x)^{k} dF(x)
+  \] 
+  \[ 
+    \geq \int_{A^{c}}^{} (g(x))^{k} dF(x) \geq \int_{A^{c}}^{} t^{k} dF(x)
+  \] 
+  \[ 
+    = t^{k} \mathbb{P} \{ X \in A^{c} \} 
+  \] 
+  entonces,
+  \[ 
+    \mathbb{E} [ g(X)^{k} ] \geq t^{k} \mathbb{P} \{ g(X) > t \} 
+  \] 
+  Por tanto,
+  \[ 
+    \mathbb{P} \{ g(X) > t \} \leq \frac{\mathbb{E} [ g(X)^{k} ]}{t^{k}}
+  \] 
+\end{dem}
+
+\begin{theo}
+  Sea $X$ v.a.. Si $\exists V(X)$, entonces para $t>0$ tenemos
+  \[ 
+    \mathbb{P} \{ | X - \mathbb{E} [ X ] | \geq t \} \leq \frac{V(X)}{t^{2}} 
+  \] 
+\end{theo}
+
+\begin{dem}
+  Sea $g(X) = [ X - \mathbb{E} [ X ] ]^{2}$. Entonces, $\mathbb{P} \{ g(X) \geq  0\} = 1$ y $\mathbb{E} [ g(X) ] = V(X)$. Aplicado la desigualdad de Markov tenemos
+  \[ 
+    \mathbb{P} \{ | X - \mathbb{E} [ X ] | \geq t \} = \mathbb{P} \{ g(X) \geq t^{2} \} \leq \frac{\mathbb{E} [ g(X) ]}{t^{2}}  = \frac{V(X)}{t^{2}}.
+  \] 
+\end{dem}

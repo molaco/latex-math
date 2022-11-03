@@ -1,0 +1,15 @@
+\begin{ejr}[5]
+  Demostrar que si todas las rectas normales a una superficie $M$ conexa concurren en un punto $p_{0} \in \mathbb{R}^{3}$, entonces $M$ está contenida en una esfera de centro $p_{0}$.
+\end{ejr}
+
+\begin{sol}
+  Sea $f : M \to \mathbb{R}$ definida por
+  \[ 
+    f(p) = | p -p_{0} |^{2}, \quad \forall p \in M.
+  \] 
+  Como todas las rectas normales a $M$ en $p$ pasan por $p_{0}$, entonces $\forall p \in M, p$ es un punto crítico $\Rightarrow (d f)_{p} = 0$. Ahora, $M$ conexa y $(d f)_{p} = 0, \forall p \in M \Rightarrow f$ es constante. Entoces, $\exists R>0$ tal que
+  \[ 
+    f(p) = | p - p_{0} |^{2} = R, \quad \forall p \in M 
+  \] 
+  Por tanto, $\forall p \in M, p \in \mathbb{S}^{2}(p_{0}, R)$.
+\end{sol}

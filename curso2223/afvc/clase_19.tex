@@ -1,0 +1,106 @@
+\chapter{Singularidades Aisladas}
+
+\section{Clasificación Singularidades}
+
+\begin{defn}[Singularidad Aislada]
+  Decimos que $f$ tiene una singularidad aislada en $z_{0} \in \mathbb{C}$ si $\exists R>0$ tal que $f : D(z_{0}, R) \setminus \{ z_{0} \} \to \mathbb{C}$ es holomorfa.
+\end{defn}
+
+\begin{ejm}
+  \begin{enumerate}[label=(\roman*)]
+    \item $f(z) = \frac{\sen(z)}{z}$ tiene singularidad aislada en $z_{0} = 0$
+    \item $f(z) = \frac{1}{z}$ tiene singularidad aislada en $z_{0} = 0$
+    \item $f(z) = e^{\frac{1}{z}}$ tiene singularidad aislada en $z_{0} = 0$
+  \end{enumerate}
+\end{ejm}
+
+\begin{obs}
+  El logaritmo principal tiene singularidades no aisladas, forman una recta.
+\end{obs}
+
+\begin{defn}[Singularidad Aislada Evitable]
+  Sea $z_{0} \in \mathbb{C}$ singularidad aislada de $f$ y $g : D(z_{0}, R) \to \mathbb{C}$ holomorfa tal que $g(z) = f(z), \forall z \in D(z_{0}, R) \setminus \{ z_{0} \}$. Entonces, decimos que $f$ tiene una sigularidad aislada evitable en $z_{0}$.
+\end{defn}
+
+\begin{ejm}
+  La función 
+  \[ 
+    g(z) =
+    \begin{cases}
+      \begin{aligned}
+        \frac{\sen(z)}{z}, \quad \text{si } $z \neq 0$ \\
+        1, \quad \text{si } $z = 0$
+      \end{aligned}
+    \end{cases}
+  \] 
+  tiene una sigularidad aislada evitable en $z_{0}$.
+\end{ejm}
+
+\begin{obs}
+  Si $f$ tiene una singularidad aislada evitable en $z_{0}$, entonces $f(z_{0})$ está acotada cerca de $z_{0}$.
+\end{obs}
+
+\begin{prop}
+  Sea $z_{0}$ singularidad aislada de $f$. Entonces, $z_{0}$ es evitable si y solo si
+  \[
+    \lim_{z \rightarrow z_{0}} f(z) = 0.
+  \]
+\end{prop}
+
+\begin{prop}
+  Sea $z_{0}$ singularidad aislada de $f$. Entonces, $z_{0}$ es evitable si y solo si
+  \[ 
+    \lim_{z \rightarrow z_{0}} (z - z_{0}) f(z)  = 0.
+  \] 
+\end{prop}
+
+\begin{ejm}
+  Sea $f(z) = \frac{\sen(z)}{z}$, entonces
+  \[ 
+    lim_{z \rightarrow 0} z \frac{\sen(z)}{z} = \lim_{z \rightarrow 0} \sen(z)  = 0
+  \] 
+  Por tanto, $f$ tiene una sigularidad aislada evitable en $z = 0$.
+\end{ejm}
+
+\begin{cor}
+  Sea $z_{0}$ singularidad aislada de $f$. Si $\exists R>0 : f$ está acotada en $D(z_{0}, R) \setminus \{ z_{0} \}$, entonces $z_{0}$ es evitable.
+\end{cor}
+
+\begin{ejm}
+  $f(z) = \frac{1}{z}$ no está acotada en $D(0, R) \setminus \{ 0 \} \Rightarrow z_{0} = 0$ no es evitable.
+\end{ejm}
+
+\begin{defn}[Polo]
+  Sea $z_{0}$ singularidad aislada de $f$. Si
+  \[ 
+    \lim_{z \rightarrow z_{0}} z \cdot f(z) = \infty, 
+  \] 
+  decimos que $z_{0}$ es un polo de $f$.
+\end{defn}
+
+\begin{obs}
+  $\forall M >0, \exists R > 0 : | f(z) | > M , \forall z \in D(z_{0}, R)$
+\end{obs}
+
+\begin{ejm}
+  $z_{0} = 0$ es un polo de $f(z) = \frac{1}{z}$.
+\end{ejm}
+
+\begin{ejm}
+  $f(z) = e^{\frac{1}{z}}$ y $\not \exists \lim_{z \rightarrow 0} e^{\frac{1}{z}}$. Entoces, $ z_{0}$ no es evitable y no es un polo.
+\end{ejm}
+
+\begin{defn}[Singularidad Esencial]
+  Sea $z_{0}$ singularidad aislada de $f$. Si $z_{0}$ no es ni evitable ni polo, entonces $z_{0}$ se dice que es singularidad esencial.
+\end{defn}
+
+\begin{obs}
+  Cualquier singularidad es evitable, esencial o polo.
+\end{obs}
+
+\begin{prop}
+  Sea $z_{0}$ singularidad aislada de $f$. Entonces, $z_{0}$ es un polo $\Leftrightarrow$ $\exists h : D(z_{0}, R) \to \mathbb{C}$ tal que $h(z_{0}) \neq 0$ y $\exists m \geq 1$ tal que $h(z_{0}) \neq 0$ tal que
+  \[ 
+    f(z) = \frac{1}{(z - z_{0})^{m}} h(z), \quad \forall z \in D(z_{0}, R) \setminus \{ z_{0} \} 
+  \] 
+\end{prop}

@@ -18,3 +18,4 @@
 \contentsline {section}{\numberline {3.2}Separable}{46}{}%
 \contentsline {section}{\numberline {3.3}Lindelöf}{48}{}%
 \contentsline {chapter}{\numberline {4}Espacios Compactos}{53}{}%
+\contentsline {chapter}{\numberline {5}Conexión}{69}{}%

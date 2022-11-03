@@ -1,0 +1,21 @@
+\begin{ejr}[4]
+  Sea $M \subset \mathbb{R}^{3}$ una superficie y $p_{0} \not \in M$. Se define la función $f : M \to \mathbb{R}$ como
+  \[
+    f(p) = | p - p_{0} |^{2}, \quad \forall p \in M.
+  \]
+  Demostrar que $(d f)_{p}(w) = 2w \cdot (p - p_{0}), \forall w \in T_{p}(M)$. Demostrar también que $p \in M$ es punto crítico de $f \Leftrightarrow $ $\vec{p_{0} p}$ es normal a $M$.
+\end{ejr}
+
+\begin{sol}
+  Sea $p \in M, w \in T_{p}(M), \alpha : (-\epsilon. \epsilon) \to M$ curva tal que $\alpha(0) = p$ y $\alpha'(0) = w$. Entonces, para $p_{0} \in \mathbb{R}^{3} \setminus M$, tenemos por la regla de la cadena que
+  \[ 
+    (d f)_{p}(w) = \frac{d{}}{d{t}} | \alpha(t) - p_{0} |^{2}
+  \] 
+  \[ 
+    = 2(\alpha'(0) \cdot (\alpha(0) - p_{0})) 
+  \] 
+  \[ 
+    = 2(w \cdot (p -p_{0})) 
+  \] 
+  Como $(d f)_{p}(w) = 0 \Leftrightarrow p$ es punto crítico. Entonces, $p$ es punto crítico $\Leftrightarrow 2(w \cdot (p - p_{0})) = 0$. Es equivalente a que $\vec{p p_{0}}$ sea normal a $M$.
+\end{sol}

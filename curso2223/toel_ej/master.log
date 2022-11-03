@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.8.13)  21 OCT 2022 11:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.10.26)  27 OCT 2022 22:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -719,23 +719,76 @@ Overfull \hbox (12.78343pt too wide) detected at line 33
 LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
 (Font)              using `OT1/cmss/m/sc' instead on input line 44.
 
-) [5] (./master.aux
+) (./ej_35.tex
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1.
+
+Overfull \hbox (4.49002pt too wide) in paragraph at lines 2--3
+[][]\OT1/cmss/bx/n/12 Ejercicio 1.9 \OT1/cmss/m/n/12 (35)\OT1/cmss/bx/n/12 . []\OT1/cmss/m/sl/12 Sea $\OMS/cmsy/m/n/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 X[]; \OMS/cmsy/m/n/12 T[]\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 g[]$ \OT1/cmss/m/sl/12 fa-mi-lia no vac^^S^^Pa de e.t., $\OML/cmm/m/it/12 A[] \OMS/cmsy/m/n/12 ^^Z \OML/cmm/m/it/12 X[]; \OMS/cmsy/m/n/12 8\OML/cmm/m/it/12 j \OMS/cmsy/m/n/12 2
+ []
+
+./ej_35.tex:8: Undefined control sequence.
+<recently read> \prodd 
+                       
+l.8 ...er $\prod_{j \in J} A_{j}$ denso en $\prodd
+                                                  _{j \in J} X_{j}$, tenemos...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./ej_35.tex:10: Undefined control sequence.
+l.10 ... \overline{\prod_{j \in J} A_{j}} = \prodd
+                                                  _{j \in J} X_{j}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[5]) (./ej_36.tex
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1.
+
+Overfull \hbox (26.65193pt too wide) in paragraph at lines 2--3
+\OT1/cmss/m/sl/12 de e.t., $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 X[]; \OMS/cmsy/m/n/12 T[]\OT1/cmr/m/n/12 )$ \OT1/cmss/m/sl/12 es ho-meo-mor-fo a $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 X[]; \OMS/cmsy/m/n/12 T[]\OT1/cmr/m/n/12 )$\OT1/cmss/m/sl/12 , $\OMS/cmsy/m/n/12 8\OML/cmm/m/it/12 j \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 J$\OT1/cmss/m/sl/12 . En-ton-ces, $\OT1/cmr/m/n/12 ([][] \OML/cmm/m/it/12 X[]; [][] \OMS/cmsy/m/n/12 T[]\OT1/cmr/m/n/12 )$
+ []
+
+) (./ej_37.tex
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1.
+) (./ej_38.tex
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1.
+ [6]
+Package mdframed Info: Not enough space on this page on input line 3.
+
+Overfull \hbox (9.12128pt too wide) in paragraph at lines 9--10
+[][]\OT1/cmss/bx/n/12 Soluci^^Son. []\OT1/cmss/m/sl/12 https://math.stackexchange.com/questions/311196/homeomorphism-
+ []
+
+) [7] (./master.aux
 LaTeX Info: Redefining \. on input line 10.
 LaTeX Info: Redefining \% on input line 10.
 ) ) 
 Here is how much of TeX's memory you used:
- 18452 strings out of 478238
- 359292 string characters out of 5850456
+ 18473 strings out of 478238
+ 359517 string characters out of 5850455
  659229 words of memory out of 5000000
- 36290 multiletter control sequences out of 15000+600000
+ 36299 multiletter control sequences out of 15000+600000
  481664 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  105i,15n,107p,654b,465s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/molaco/.texlive/texmf-var/fonts/pk/ljfour/public/bbm/bbm12.600pk></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on master.pdf (6 pages, 171899 bytes).
+ </home/molaco/.texlive/texmf-var/fonts/pk/ljfour/public/bbm/bbm12.600pk></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on master.pdf (8 pages, 192191 bytes).
 PDF statistics:
- 111 PDF objects out of 1000 (max. 8388607)
- 69 compressed objects within 1 object stream
+ 129 PDF objects out of 1000 (max. 8388607)
+ 81 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,0 +1,117 @@
+\begin{ejm}
+  $\mathbb{R}^{n} = \bigcup_{x \in \mathbb{R}^{n}, x \neq 0} [x]$, $\bigcap_{x \in \mathbb{R}, x \neq 0} [x] = \{ 0 \} \neq \emptyset$ y $[x] \simeq \mathbb{R}$ conexo.
+\end{ejm}
+
+\begin{prop}
+  Sea $( X, \mathcal{T} )$ e.t., $\{ X_{n} \}_{n \in \mathbb{N}}: \bigcup_{n \in \mathbb{N}} X_{n} = X, ( X_{n}, \mathcal{T}|_{X_{n}})$ es conexo $\forall n \in \mathbb{N}$, $X_{n} \cap X_{n+1} \neq \emptyset$. Entonces, $ ( X, \mathcal{T} )$ es conexo.
+\end{prop}
+
+\begin{dem}
+  $\forall m \in \mathbb{N}, C_{m} = X_{1} \cup \cdots  \cup X_{m}$. Si $m = 1, C_{1} = X_{1}$ conexo. Supongamos que se cumple para $m = p$ y veamos que también se cumple para $m = p+1$. En este caso,
+  \[ 
+    C_{p+1} = X_{1} \cup \cdots \cup X_{p} \cup X_{p+1} 
+  \] 
+  donde $X_{p+1}$ es conexo y $X_{1} \cup \cdots \cup X_{p} = C_{p}$ es conexo por la hipótesis de induccción. Además, $X_{p} \cap X_{p+1} \neq \emptyset \Rightarrow C_{p} \cap X_{p+1} \neq \emptyset$. Entonces, por la Prop. 5.2. $C_{p+1}$ es conexo y por inducción $C_{m}$ es conexo $\forall m \in \mathbb{N}$. Aplicando otra vez la Prop. 5.2. tenemos que $X = \bigcup_{m \in \mathbb{N}} C_{m}$ con $C_{m}$ conexo y $\bigcap_{m \in \mathbb{N}} C_{m} = C_{1} = X_{1} \neq \emptyset$ conexo. Por tanto, $( X, \mathcal{T} )$. 
+\end{dem}
+
+\begin{prop}
+  Sea $( X, \mathcal{T} )$ e.t., $E \subset X$ tal que $( E, \mathcal{T}|_{E})$ es conexo, $C \subset X, E \subset C \subset \overline{E}$. Entonces, $( C, \mathcal{T}|_{C})$ es conexo.
+\end{prop}
+
+\begin{dem}
+  Si $ C$ no es conexo, entonces $\exists F_{1}, F_{2}$ cerrados de $( C, \mathcal{T}|_{C})$ disjuntos tal que $C = F_{1} \cup F_{2} \Rightarrow F_{1}, F_{2} \in \mathcal{T}|_{C}$. Ahora, $E \subset C \Rightarrow \forall x \in E \subset C, x \in F_{1}$ o $x \in F_{2}$. Supongamos que $x \in F_{1}$, entonces $\exists U \in \mathcal{T} : x \in F_{1} = U \cap C$ y $x \in \overline{E} \Rightarrow U \cap E \neq \emptyset$. Como $E \subset C \Rightarrow U \cap E \cap C \neq \emptyset$ donde $ U \cap C = F_{1}$, entonce $F_{1} \cap E \equiv H_{1} \neq \emptyset$. Análogamente, $F_{2} \cap E \equiv H_{2} \neq \emptyset$. Por tanto, $H_{1}, H_{2}$ son cerrados de $( E, \mathcal{T}|_{E})$ tal que $H_{1} \cap H_{2} = \emptyset$ y $F_{1} \cup F_{2} = C \Rightarrow H_{1} \cup H_{2} = E$ que es absurdo ya que $E$ era conexo por hipótesis.
+\end{dem}
+
+\begin{prop}
+  Sea $\{ ( X_{j}, \mathcal{T}_{j} ) \}_{j \in J}$ familia no vacía de e.t.. Entonces, $( \prod_{j \in J} X_{j}, \prod_{j \in J} \mathcal{T}_{j} )$ conexo $\Leftrightarrow ( X_{j}, \mathcal{T}_{j} )$ conexo $\forall j \in J$.
+\end{prop}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item []
+    \item [$(\Rightarrow)$] Trivial.
+    \item [$(\Leftarrow)$] $\forall x \in \prod_{j \in J} X_{j}, x = ( x_{j} )_{j \in J}$. Sea $E$ la unión de todos los espacios conexos del producto $( \prod_{j \in J} X_{j}, \prod_{j \in J} \mathcal{T}_{j} )$ que continen a $x$. Entonces, $E$ es conexo por la Prop. 5.2.. Además, es el mayor espacio conexon que contiene a $x$. Queremos ver que $E$ es denso. $\forall U \in \prod_{j \in J} \mathcal{T}_{j} \setminus \{  \emptyset \} \Rightarrow \exists B \in \mathcal{B}$ base tal que $B \subset U, B = \bigcap_{k = 1}^{n} p_{j_{k}}^{-1}(U_{j_{k}}), U_{j_{k}} \in \mathcal{T}_{j_{k}}, \forall k = 1, \cdots, n \Rightarrow \exists b_{k} \in U_{j_{k}}, \forall k \in \{ 1, \cdots, n \}$. Sea 
+      \[ 
+        E_{1} = \{ ( z_{j} )_{j \in J} \in \prod_{j \in J} X_{j} : z_{j} = x_{j}, \forall j \in J \setminus \{ j_{1} \}\} \simeq X_{j_{1}} \times \{ ( x_{j} )_{j \in J \setminus \{ j_{1} \} }\}
+      \] 
+      \[ 
+        E_{2} = \{ ( z_{j} )_{j \in J} \in \prod_{j \in J} X_{j} : z_{j_{1}} = b_{1},  z_{j} = x_{j}, \forall j \in J \setminus \{ j_{1}, j_{2} \}\} \simeq \{ b_{1} \} \times X_{j_{2}} \times \{ ( x_{j} )_{j \in J \setminus \{ j_{1}, j_{2} \} }\}
+      \] 
+      donde $E_{1} \simeq X_{j_{1}}$ conexo y $X_{j_{2}} \simeq E_{2}$ conexo. Repitiendo el proceso tenemos que
+      \[ 
+        E_{n} = \{ ( z_{j} )_{j \in J} \in \prod_{j \in J} X_{j} : z_{j_{k}} = b_{k}, \forall k \in \{ 1, \cdots, j_{n-1} \},
+      \] 
+      \[ 
+        z_{j} = x_{j}, \forall j \in J \setminus \{ j_{1}, \cdots, j_{n} \}\} \simeq \{ b_{1}, \cdots, b_{n-1} \} \times X_{j_{n}} \times \{ ( x_{j} )_{j \in J \setminus \{ j_{1}, \cdots, j_{n-1} \} }\}
+      \] 
+      de manera que $E_{n} \simeq X_{j_{n}}$ conexo. Haciedo uso de la Prop. 5.3. para
+      \[ 
+        F = \bigcup_{k = 1}^{n} E_{k} \text{ conexo} 
+      \] 
+      Ahora, $E_{1} \subset F$ conexo donde $E$ es la unión de todos los espacios conexos del producto que contienen a $x$ $\Rightarrow F \subset E$. Sea $ y = ( y_{j} )_{j \in J}$ con $y_{j_{k}} = b_{k}, \forall k \in \{ 1, \cdots, n \}$ y $y_{j} = x_{j}, \forall j \in J \setminus \{ j_{1}, \cdots, j_{n} \}$. Entonces, $y \in E_{n} \subset F$ y $y \in B \subset U \Rightarrow U cao F \neq \emptyset \Rightarrow U \cap E \neq \emptyset \Rightarrow E$ es denso $\Leftrightarrow \overline{E} = \prod_{j \in J} X_{j}, E$ es conexo $\Rightarrow$ $\overline{E}$ conexo $\Rightarrow \prod_{j \in J} X_{j}$ conexo.
+  \end{enumerate}
+\end{dem}
+
+\begin{obs}
+  $\forall ( X, \mathcal{T} ), ( X', \mathcal{T}' )$ e.t. conexos, $( X + X', \mathcal{T} \mathcal{T}' )$ no es conexo.
+\end{obs}
+
+\begin{defn}
+  Sea $( X, \mathcal{T} )$ e.t., $x \in X$. Se llama componente conexa de $x$, a la unión de todos los subespacios conexos de $( X, \mathcal{T} )$ que contienen a $x$.
+\end{defn}
+
+\begin{nota}
+  $C_{x}$ componente conexa de $x$.
+\end{nota}
+
+\begin{obs}
+  Si $( X, \mathcal{T} )$ e.t., $x \in X, C_{x}$ es el mayor subespacio conexo de $( X, \mathcal{T} )$ que contien a $x$.
+\end{obs}
+
+\begin{obs}
+  $\forall x, y \in X$, es $C_{x} = C_{y}$ o $C_{x} \cap C_{y} = \neq$.
+\end{obs}
+
+\begin{dem}
+  Si $C_{x} \cap C_{y} \neq \emptyset \Rightarrow C_{x} \cup C_{y} \ni y \subset C_{x}, \subset C_{y} \Rightarrow C_{x} = C_{y}$.
+\end{dem}
+
+\begin{prop}
+  Si $( X, \mathcal{T} )$ e.t., todas sus componentes son cerras.
+\end{prop}
+
+\begin{dem}
+  $\forall x \in X, C_{x}$ componente $\Rightarrow \overline{C_{x}}$ conexa y $x \in \overline{C_{x}} \Rightarrow \overline{C_{x} \subset C_{x}} \Rightarrow \overline{C_{x}} = C_{x}$ cerrado.
+\end{dem}
+
+\begin{obs}
+  Las componentes de un e.t. no son necesariamente abiertas.
+\end{obs}
+
+\begin{ejm}
+  $( \mathbb{Q}, \mathcal{T}_{u}|_{\mathbb{Q}})$
+\end{ejm}
+
+\begin{defn}
+  Sea $( X, \mathcal{T} )$ e.t.. Se dice que $( X, \mathcal{T} )$ es localmente conexo si $\forall x \in X$ existe alguna base de entornos conexos.
+\end{defn}
+
+\begin{obs}
+  localmente conexo $\not \Rightarrow$ conexo.
+\end{obs}
+
+\begin{ejm}
+  $((0,1) \cup (2, 5))$
+\end{ejm}
+
+\begin{obs}
+  Conexo $\not \Rightarrow$ localmente conexo.
+\end{obs}
+
+\begin{ejm}
+  $X = [0, 1] \times \{ \frac{1}{n} : n \in \mathbb{N} \} \cup \{ 0 \} \cup (\{ 0, 1 \} \times \mathbb{R}) ; \mathcal{T}_{u}$
+\end{ejm}
+
+\begin{obs}
+  La conexión local no es hereditaria. Se puede ver por el ejemplo anterior.
+\end{obs}

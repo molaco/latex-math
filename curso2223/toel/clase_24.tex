@@ -1,0 +1,154 @@
+\begin{theo}[de Baire]
+  Sea $( X, \mathcal{T} )$ e.t. localmente compacto y $T_{2}$, $\{ A_{j} \}_{j \in J}$ familia numerable de abiertos densos de $( X, \mathcal{T} )$. Entonces, $\bigcap_{n \in \mathbb{N}} A_{n}$ es denso.
+\end{theo}
+
+\begin{dem}
+  Como $ A_{n}$ es denso en $( X, \mathcal{T} )$, entonces $\forall U \in \mathcal{T} \setminus \{  \emptyset \}, U \cap A_{1} \neq \emptyset $ donde $U \cap A_{1} \in \mathcal{T} \times \mathcal{T}$. Por ser $( X, \mathcal{T} )$ localmente compacto y $T_{2}$, $\exists B_{1} \in \mathcal{T} : x_{1} \in B_{1}, \overline{B_{1}} \subset U \cap A_{1}$ con $\overline{B_{1}}$ compacto.
+
+  \begin{enumerate}[label=(\roman*)]
+    \item [] Veamos esta última implicación. $x \in G \in \mathcal{T}, ( X, \mathcal{T} )$ l.c. $T_{2} \Rightarrow \exists C^{x}$ entorno compacto de $x$ tal que $x \in C^{x} \subset G$. Entonces, $x \in \mathring{C}^{x}$ y por ser $( X, \mathcal{T} )$ regular, tenemos que $\exists V^{x} \in \mathcal{T} : x \in V^{x} \subset \overline{V}^{x} \subset \mathring{C}^{x} \subset G$ donde $\overline{V}^{x}$ es compacto.
+  \end{enumerate}
+
+  Ahora, $B_{1} \in \mathcal{T} \setminus \{ \emptyset \}$ y $A_{2}$ denso $\Rightarrow A_{2} \cap B_{1} \neq \emptyset \Rightarrow x_{2} \in A_{2} \cap B_{1}$. Entonces, $\exists B_{2} \in \mathcal{T}: \overline{B}_{2} \subset A_{2} \cap B_{1}$ con $\overline{B}_{2}$ compacto. Repitiendo el proceso, $\exists \{ B_{n} \}_{n \in \mathbb{N}} \subset \mathcal{T} : \overline{B_{n}}$ es compacto, $\overline{B_{n+1}} \subset B_{n}, \forall n \in \mathbb{N}$ y $ \overline{B}_{1} \subset U, B_{n} \subset A_{n}, \forall n \in \mathbb{N}$. Entonces, la colección de adherencias es familia de cerrados con la propiedad de intersección finita y $\{ B_{n} \}_{n \in \mathbb{N}} \subset \overline{B_{1}}$ entonces
+  \[
+    \emptyset \neq \bigcap_{n \in \mathbb{N}} \overline{B}_{n} \subset \Big ( \bigcap_{n \in \mathbb{N}} A_{n} \Big ) \cap U
+  \]
+  Por tanto, $\bigcap_{n \in \mathbb{N}} A_{n}$ es denso en $( X, \mathcal{T} )$.
+\end{dem}
+
+\begin{obs}
+  La hipótesis de que la familia se numerable y de abiertos es esencial.
+\end{obs}
+
+\begin{ejm}
+  $( \mathbb{R}, \mathcal{T}_{u} )$ es l.c y $T_{2}$. Sea, $\forall x \in \mathbb{R}, A_{x} = \mathbb{R} \setminus \{ x \} \in \mathcal{T}_{u}$ denso. Entonces, $\{ A_{x} \}_{x \in \mathbb{R}}$ no es numerable y $\bigcap_{x \in \mathbb{R}} A_{x} = \bigcap_{x \in \mathbb{R}}( \mathbb{R} \setminus \{ x \}) = \mathbb{R} \setminus \mathbb{R} = \emptyset$.
+\end{ejm}
+
+\begin{ejm}
+  $( \mathbb{R}, \mathcal{T}_{u} ), A_{1} = \mathbb{Q}, A_{2} = \mathbb{R} \setminus \mathbb{Q}$ son densos y $ A_{1} \cap A_{2} = \emptyset$ ya que np spn abiertos no se cumple el teorema de Baire.
+\end{ejm}
+
+\begin{defn}[Inversión topológica]
+  Sea $( X, \mathcal{T} ), ( Y, \mathcal{S} )$ e.t.. Decimos que $( X, \mathcal{T} )$ está sumergido en $( Y, \mathcal{S} )$ si $\exists f :  ( X, \mathcal{T} ) \to ( f(X), \mathcal{S}|_{f(X)})$ homeomorfismo. En este caso, $f$ es inversión topológica de $( X, \mathcal{T} )$ en $( Y, \mathcal{S} )$.
+\end{defn}
+
+\begin{defn}[Compactación]
+  Sea $( X, \mathcal{T} )$ e.t.. Se llama compactación de $X$ a todo par $(K, f)$ tal que $ K$ es compacto y $f$ inversión topológica de $X$ en $K$ tal que $f(X)$ es denso.
+\end{defn}
+
+\begin{ejm}
+  $( (0, 1), \mathcal{T}_{u}|_{(0, 1)})$ entonces $( [0, 1), j )$ es compactación.
+\end{ejm}
+
+\begin{defn}[Compactación $T_2$]
+  Si $( X, \mathcal{T} )$ e.t., $( K, f )$ compactación de $X$. Se dice que $( K, f )$ es compactación $T_{2}$ si $K$ es $T_{2}$.
+
+  Se dice que $( K, f )$ es "compactación por un solo punto" si $K \setminus f(X)$ es un punto.
+\end{defn}
+
+\begin{defn}[Equivalencia Topológica]
+  Sea $( X, \mathcal{T} )$ e.t. $( K_{1}, f_{1} ), ( K_{2}, f_{2} )$ dos compactaciones de $X$. Se dice que son topológicamente equivalentes si $\exists g : K_{1} \to K_{2}$ homeomorfismo tal que $g \circ f_{1} = f_{2}$
+\end{defn}
+
+\begin{obs}
+  es relación de equivalencia.
+\end{obs}
+
+\begin{defn}
+  Sea $( X, \mathcal{T} )$ e.t., $( K_{1}, f_{1} ), ( T_{2}, f_{2} )$ dos compactaciones de $X$. Decimos que $( K_{1}, f_{1} ) \geq ( K_{2}, f_{2} )$ si $\exists g : K_{1} \to K_{2}$ suprayectiva y continua tal que $g \circ f_{1} = f_{2}$. 
+\end{defn}
+
+\begin{obs}
+  Es una relación reflexiva y transitiva.
+\end{obs}
+
+\begin{prop}
+  Sea $( X, \mathcal{T} )$ e.t. $( K_{1}, f_{1} ), ( K_{2}, f_{2} )$ compactaciones $T_{2}$ tal que $( K_{1}, f_{1} ) \geq ( K_{2}, f_{2} )$ y $( K_{2}, f_{2} ) \geq ( K_{1}, f_{1} )$. Entonces, $( K_{1}, f_{1} )$ y $( K_{2}, f_{2} )$ son topológicamente equivalentes.
+\end{prop}
+
+\begin{dem}
+  Por hipótesis,
+  \[ 
+    \exists g_{1} : K_{1} \to K_{2} \text{ supra. cont. tal que } g_{1} \circ f_{1} = f_{2}
+  \] 
+  \[ 
+    \exists g_{2} : K_{1} \to K_{2} \text{ supra. cont. tal que } g_{2} \circ f_{1} = f_{2}
+  \] 
+  entonces,
+  \[ 
+    g_{2} \circ g_{1} : K_{1} \to K_{2} \text{ cont., } T_{2}  
+  \] 
+  Por tanto,
+  \[ 
+    (g_{2} \circ g_{1})|_{f_{1}(X)} = 1_{f_{1}(X)} 
+  \] 
+  Por ser $f$ inversión topológica con $f(X)$ denso
+  \[ 
+    \overline{f(X)} = K_{1} 
+  \] 
+  entonces,
+  \[ 
+    g_{2} \circ g_{1} = 1_{K_{1}} 
+  \] 
+  \[ 
+    g_{1} \circ g_{2} = 1_{K_{2}} 
+  \] 
+  Por tanto, $g_{1}$ es biyectiva y $g_{1}^{-1} = g_{2} \Rightarrow g_{1}$, y $g_{2}$ es biyectiva y $g_{2}^{-1} = g_{1} \Rightarrow g_{2}$. Entonces, $g_{1}$ y $g_{2}$ son homeomorfismos.
+\end{dem}
+
+\begin{theo}[Alessandroff]
+  Sea $( X, \mathcal{T} )$ e.t. no compacto, $\omega \not \in X$,
+  \[
+    X^* = X \cup \{ \omega \},
+  \]
+  \[
+    \mathcal{T}^* = \mathcal{T} \cup \{ U \subset X^* : \omega \in U \text{ y } X \setminus U \text{ es compactación y cerrado } \},
+  \]
+  Entonces, $\mathcal{T}^*$ es topología sobre $ X^*$, $( X^*, \mathcal{T}^* )$ es compacto y $X$ es denso en $( X^*, \mathcal{T}^* )$.
+\end{theo}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item []
+    \item Veamos que $\mathcal{T}^*$ es topología.
+      \begin{enumerate}
+      \item $\emptyset \in \mathcal{T}, \mathcal{T} \subset \mathcal{T}^* \Rightarrow \emptyset \in \mathcal{T}^*$ y $X^*$ pertenenece a la segunda familia $\Rightarrow X^* \in \mathcal{T}^*$.
+      \item $\forall U_{1}, U_{2} \in \mathcal{T}^*$
+        \begin{itemize}
+          \item $\forall U_{i} \in \mathcal{T}, i \in \{ 1, 2 \} \Rightarrow U_{1} \cap U_{2} \in \mathcal{T} \subset \mathcal{T}^*$.
+          \item $\forall U_{i} : \omega \in U_{i}, X \setminus U_{i}$ compacto y cerrado $\forall i \in \{  1, 2 \} \Rightarrow w \in U_{1} \cap U_{2}, X \setminus (U_{1} \cap U_{2}) = (X \setminus U_{1}) \cup (X \setminus U_{2})$ que es compacto y cerrado en $( X^*, \mathcal{T}^* )$.
+          \item $\forall U_{1} \in \mathcal{T}, \omega \in U_{2}, X \setminus U_{2}$ compacto cerrado. Como $X \setminus U_{2}$ es compacto y cerrado $\rightarrow X \setminus (U_{2} \cap X) = X \setminus U_{2}$, entonces $U_{2} \cap X \in \mathcal{T} \Rightarrow U_{1} \cap U_{2} = U_{1} \cap (U_{2} \cap X) \in \mathcal{T} \subset \mathcal{T}^*$.
+        \end{itemize}
+      \item $\forall \{ U_{j} \}_{j \in J} \subset \mathcal{T}^*$
+        \begin{itemize}
+          \item $\forall \{ U_{j} \}_{j \in J} \subset \mathcal{T} \Rightarrow \bigcap_{j \in J} U_{j} \in \mathcal{T} \subset \mathcal{T}^*$.
+          \item $\forall j \in J, \omega \in U_{j}, X \setminus U_{j}$ compacto y cerrado, entoces $\omega \in \bigcup_{j \in J} U_{j}, X \setminus (\bigcup_{j \in J} U_{j}) = \bigcap_{j \in J} (X \setminus U_{j})$ cerrado en $X \setminus U_{j_{0}}$ compacto $\Rightarrow X \setminus (\bigcup_{j \in J} U_{j})$ cerrado y compacto.
+          \item El terces caso se reduce a $U_{1} \in \mathcal{T}, \omega \in U_{2}, X \setminus U_{2}$ compacto y cerrado $\Rightarrow \omega \in U_{1} \cup U_{2}$ y $X \setminus (U_{1} \cup U_{2}) = (X \setminus U_{1}) \cap (X \setminus U_{2})$ cerrado y compacto.
+        \end{itemize}
+    \end{enumerate}
+    \item $\mathcal{T}^*|_{X} = \mathcal{T}$
+      \begin{enumerate}[label=(\roman*)]
+        \item [$(\Rightarrow)$] $\forall U \in \mathcal{T}^*$
+          \[ 
+            \begin{cases}
+                \text{ si } U \in \mathcal{T}, U \subset X \Rightarrow U \cap X = U \in \mathcal{T} \\
+                \text{ si } \omega \in U, X \setminus U \text{ compacto y cerrado } \Rightarrow U \cap X \in \mathcal{T}
+            \end{cases} 
+          \] 
+        \item [$(\Leftarrow)$] $\forall \mathcal{U}$ recubrimiento abierto de $( X^*, \mathcal{T}^* )$, $ \exists U_{0} \in \mathcal{U} : \omega \in U_{0} \Rightarrow X^* \setminus U_{0} = X \setminus U_{0}$ compacto y cerrado en $( X, \mathcal{T} )$, por ser compactación. Entonces, $\exists U_{1}, \cdots, U_{n}$ sub familia finita tal que 
+          \[ 
+            \bigcap_{i = 1}^{n} \supset X \setminus U_{0} 
+          \] 
+          Ahora, considramos
+          \[ 
+            \mathcal{V} = \{ U_{0} \} \cup \{  U_{1}, \cdots, U_{n} \} \subset \mathcal{U}
+          \] 
+          que es un subrecubrimiento finito. Por tanto, $\mathcal{V}$ es compacto.
+      \end{enumerate}
+    \item Veamos que $X$ es denso en $X^*$. $\forall U \in \mathcal{T}^*\setminus \{  \emptyset \}$
+      \begin{itemize}
+        \item $U \in \mathcal{T} \Rightarrow U \cap X = U \neq \emptyset$.
+        \item $U \ni \omega, X \setminus U$ cerrado y compacto en $( X, \mathcal{T} )$. Como $X \setminus U = X \setminus ( U \cap X)$, entonces $U \cap X = \emptyset$. En caso contrario $X$ es compacto, que es absurdo.
+      \end{itemize}
+  \end{enumerate}
+\end{dem}

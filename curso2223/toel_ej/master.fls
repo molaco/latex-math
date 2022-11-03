@@ -913,6 +913,22 @@ INPUT ej_34.tex
 INPUT ./ej_34.tex
 INPUT ej_34.tex
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmcsc10.tfm
+INPUT ./ej_35.tex
+INPUT ej_35.tex
+INPUT ./ej_35.tex
+INPUT ej_35.tex
+INPUT ./ej_36.tex
+INPUT ej_36.tex
+INPUT ./ej_36.tex
+INPUT ej_36.tex
+INPUT ./ej_37.tex
+INPUT ej_37.tex
+INPUT ./ej_37.tex
+INPUT ej_37.tex
+INPUT ./ej_38.tex
+INPUT ej_38.tex
+INPUT ./ej_38.tex
+INPUT ej_38.tex
 INPUT master.aux
 INPUT /home/molaco/.texlive/texmf-var/fonts/pk/ljfour/public/bbm/bbm12.600pk
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
@@ -922,6 +938,7 @@ INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb
@@ -931,3 +948,4 @@ INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb

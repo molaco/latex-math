@@ -1,0 +1,177 @@
+\begin{dem}
+  $( X, \mathcal{T} )$ compacto $\Rightarrow \exists \mathcal{U}' \subset \mathcal{U} : \mathcal{U}' = \{ U_{1}, \cdots, U_{n} \}'$ es un subrecubrimiento finito de $\mathcal{U}$. Ahora,
+  \[ 
+    \forall x \in X, \exists i_{x} \in \{ 1, \cdots, n \} : x \in U_{i_{x}} \in \mathcal{U}' \subset \mathcal{U}
+  \]  
+  \[ 
+    \Rightarrow x \not \in X \setminus U_{i_{x}} 
+  \] 
+  Definimos, $\forall i \in \{ 1, \cdots, n \}, f_{i} :  X \to \mathbb{R}$ tal que
+  \[
+    f_{i}(x) = d(x, X \setminus U_{i})
+  \]
+  entonces, $f_{i}$ es continua. Sea $f : X \to \mathbb{R}$ tal que 
+  \[ 
+    f(x) = max \{ f_{i}(x) : i \in \{ 1, \cdots, n \} \} 
+  \] 
+  entonces, $f$ es continua. Por ser $f$ máximo de $f_{i}$ tenemos que
+  \[ 
+    \forall x \in X, f(x) \geq f_{i}(x) = d(x, X \setminus U_{i_{x}})  > 0
+  \] 
+  Por tanto, $f(X) \subset (0, \rightarrow)$ donde $f(X)$ es compacto por ser $X$ compacto y $f$ continua. Como $f$ continua $\Rightarrow$ tiene un valor mínimo. Entoces,
+  \[ 
+    \exists \rho > 0 : f(x) > \rho, \forall x \in X 
+  \] 
+  Veamos que $\rho$ es el número de Lebesgue. Dado que $f(x)$ es máximo, entonces $\exists i \in \{ 1, \cdots, n \}$ tal que
+  \[ 
+    f(x) = f_{i}(x) = d(x, X \setminus U_{i}) 
+  \] 
+  Consideramos, $\forall y \in B_{\rho}(x)$. Entonces,
+  \[ 
+    \rho < d(x, X \setminus U_{i}) \leq d(x, y) + d(y, X \setminus U_{i}) < \rho + d(y, X \setminus U_{i}) 
+  \] 
+  por tanto, $d(y, X \setminus U_{i}) > 0 \Leftrightarrow y \in U_{i} \Rightarrow B_{\rho}(x) \subset U \in \mathcal{U}$.
+\end{dem}
+
+\begin{defn}[Compacidad Local]
+  Sea $( X, \mathcal{T} )$ e.t.. Diremos que es localmente compacto si $\forall x \in X, \exists \mathcal{B}(x)$ base de entornos de $x$ en $( X, \mathcal{T} )$ formada por compactos.
+\end{defn}
+
+\begin{obs}
+  Es equivalente que alguno de los elementos de la base sea compacto y que lo sean todos si el espacio es Hausdorff.
+\end{obs}
+
+\begin{obs}
+  Localmente compacto $\not \Rightarrow$ compacto.
+\end{obs}
+
+\begin{ejm}
+  $( \mathbb{R}, \mathcal{T}_{u} )$ es localmente compacto pero no es compacto-
+\end{ejm}
+
+\begin{obs}
+  Compacto $\not \Rightarrow$ localmente compacto.
+\end{obs}
+
+\begin{ejm}
+  $X = \mathbb{Q} \cup \{ r \} : r \not \in \mathbb{Q}$, $\mathcal{T} = \mathcal{T}_{u}|_{\mathbb{Q}} \cup \{ X \}$. Entonces $( X, \mathcal{T} )$ es compacto pero no hay base formada por compactos.
+\end{ejm}
+
+\begin{obs}
+  Localmente compacto y $T_{2} \Rightarrow$ regular.
+\end{obs}
+
+\begin{prop}
+  Sea $( X, \mathcal{T} )$ e.t. $T_{2}$. Entonces, $( X, \mathcal{T} )$ es localmente compacto $\Leftrightarrow \forall x \in X$ existe algún entorno de $x$ compacto en $( X, \mathcal{T} )$.
+\end{prop}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item []
+    \item [$(\Rightarrow)$] Por la definición de localmente compacto, existe una base de entornos de $x$ formada por compactos.
+    \item [$(\Leftarrow)$] $\forall x \in X, \exists C^{x}$ entorno compacto de $x$ en $( X, \mathcal{T} )$.Sea $\forall U$ entorno de $x$ en $( X, \mathcal{T} )$. Entonces,
+      \[ 
+        \mathring{U \cap C^{x}} \equiv V 
+      \] 
+      es entorno abierto de $x$ en $( X, \mathcal{T} )$. Ahora, $\overline{V} \subset \overline{C}^{x} = C^{x}$ donde $C^{x}$ es compacto en $( X, \mathcal{T} )$. Entoces, $( \overline{V}, \mathcal{T}|_{\overline{V}})$ es subespacio compacto de $( X, \mathcal{T} )$ $T_{2}$ $\Rightarrow ( \overline{V}, \mathcal{T}|_{\overline{V}})$ es $T_{4}$. En particular, $ ( \overline{V}, \mathcal{T}|_{\overline{V}})$ es regular.
+
+      Ahora, $V$ es entorno abierto de $x$ en $\overline{V}$. Por regularidad, $\exists W \in \mathcal{T} : x \in W$ tal que
+      \[ 
+        W \cap \overline{V} \subset \overline{W} \cap \overline{V} \subset V \subset U 
+      \] 
+      donde $x \in W \cap V \in \mathcal{T}$ y $\overline{W} \cap \overline{V}$ es compacto. Entonces, $\overline{W} \cap \overline{V}$ es entorno compacto de $x$ en $( X, \mathcal{T} )$.
+  \end{enumerate}
+\end{dem}
+
+\begin{cor}
+  Todo e.t. compacto y $T_{2}$ es localmente compacto.
+\end{cor}
+
+\begin{obs}
+  La compacidad local no es hereditaria.
+\end{obs}
+
+\begin{ejm}
+  $( \mathbb{R}, \mathcal{T}_{u} )$ es localmente compacto pero $( \mathbb{Q}, \mathcal{T}|_{\mathbb{Q}})$ no lo es.
+\end{ejm}
+
+\begin{prop}
+  Sea $( X, \mathcal{T} )$ e.t. localmente compacto.
+  \begin{enumerate}[label=(\roman*)]
+    \item $\forall U \in \mathcal{T} \setminus \{ \emptyset \}$, entonces $( U, \mathcal{T}|_{U})$ es localmente compacto.
+    \item $\forall F \neq \emptyset$ cerrado de $( X, \mathcal{T} )$, entonces $( F, \mathcal{T}|_{F})$ es localmente compacto.
+  \end{enumerate}
+\end{prop}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item []
+    \item $\forall U \in \mathcal{T} \setminus \{ \emptyset \}, \forall x \in U, \forall V^{x}$ entorno abierto de $x$ en $( U, \mathcal{T}|_{U})$ subespacio abierto. Entonces, $V^{x}$ es entorno abierto de $x$ en $\mathcal{T} \Rightarrow \exists C^{x}$ entorno compacto de $x$ en $( X, \mathcal{T} )$ tal que $C^{x} \subset V^{x} \subset U$.
+
+    \item $\forall F \neq \emptyset$ cerrado de $( X, \mathcal{T} )$, $\forall x \in F, \forall V^{x}$ entorno de $x$ en $( F, \mathcal{T}|_{F})$. Entonces, $\exists U^{x}$ entorno de $x$ en $( X, \mathcal{T} )$ tal que $V^{x} = U^{x} \cap F$. Ahora, por hipótesis, $\exists C^{x}$ entorno compacto de $x$ en $( X, \mathcal{T} )$ tal que $C^{x} \subset U^{x} \Rightarrow C^{x} \cap F \subset U^{x} \cap F = V^{x}$ entorno compacto de $x$ en $( F, \mathcal{T}|_{F})$.
+  \end{enumerate}
+\end{dem}
+
+\begin{prop}
+  Sean $( X, \mathcal{T} ), ( X', \mathcal{T}' )$ e.t., $( X, \mathcal{T} )$ localmente compacto, $f : ( X, \mathcal{T} ) \to ( X', \mathcal{T}' )$ suprayectiva, continua y abierta. Entonces, $( X', \mathcal{T}' )$ es localmente compacto.
+\end{prop}
+
+\begin{dem}
+  $\forall x' \in X', \forall V^{x'}$ entorno de $x'$ en $( X', \mathcal{T}' )$ dado que $f$ es suprayectiva, tenemos que $f^{-1}(x') \neq \emptyset$ y $f^{-1}(V^{x'})$ es entorno de $\forall x \in f^{-1}(x')$. Ahora, por hipótesis, $\exists C^{x}$ entorno compacto de $x$ en $( X, \mathcal{T} )$ tal que $C^{x} \subset f^{-1}(V^{x'}) \xRightarrow[]{ f \text{ cont. ab.} } f(C^{x}) \subset V^{x'}$, donde $f(C^{x})$ es entorno compacto de $x'$. Por tanto, $( X', \mathcal{T}' )$ es localmente compacto.
+\end{dem}
+
+\begin{cor}
+  La compacidad local es invariante topológico.
+\end{cor}
+
+\begin{prop}
+  Sea $\{ ( X_{j}, \mathcal{T}_{j} ) \}_{j \in J}$ familia no vacía de e.t.. Entonces $( \sum_{k \in J} X_{k}, \sum_{k \in J} \mathcal{T}_{k})$ es localmente compacto $\Leftrightarrow$ $\forall j \in J$ $( X_{j}, \mathcal{T}_{j} )$ es localmente compacto  y $\forall j \in J \setminus F, F$ finito, $( X_{j}, \mathcal{T}_{j} )$ compacto.
+\end{prop}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item []
+    \item [$(\Rightarrow)$] Para la primera parte, $\forall j \in J, p_{j}$ suprayectiva continua y abierta $\Rightarrow$ por la proposición anterior, $( X_{j}, \mathcal{T}_{j} )$ es localmente compacto. Veamos la segunda parte. Consideramos $\forall x = ( x_{j} )_{j \in J} \in \prod_{j \in J} X_{j}, \exists C^{x}$ entorno compacto de $x$ en $( \prod_{j \in J} X_{j}, \prod_{j \in J} \mathcal{T}_{j} )$. Entonces, $\exists B \in \mathcal{B}$ base de $\prod_{j \in J} \mathcal{T}_{j}$ tal que $x \in B \subset C^{x}$. Este $B$ es de la forma
+      \[ 
+        B = \bigcap_{k = 1}^{n} p_{j_{k}}^{-1}(U_{j_{k}}) : U_{j_{k}} \in \mathcal{T}_{j_{k}}, \quad \forall k \in \{ 1, \cdots, n \} 
+      \] 
+      donde los $x \in U_{j_{k}}$ son entornos de $x_{j_{k}}$. Por tanto, $p_{j}(B) \subset p_{j}(C^{x})$. Ahora, sea $F_{0} = \{ j_{1}, \cdots, j_{n} \}\subset J$, $F_{0}$ es finito y
+      \[
+        \forall j_{0} \in J \setminus F_{0}, \quad p_{j_{0}}(B) = X_{j_{0}} \subset p_{j_{0}}(C^{x}) \subset X_{j_{0}}
+      \]
+      \[ 
+        \Rightarrow p_{j_{0}}(C^{x}) = X_{j_{0}}
+      \] 
+      Entonces, $X_{j_{0}}$ es compacto. Por tanto, $\forall j \in J \setminus F_{0}, ( X_{j}, \mathcal{T}_{j} )$ es compacto.
+
+    \item [$(\Leftarrow)$] $\forall ( x_{j} )_{j \in J} \in \prod_{j \in J} X_{j}$, entonces $\forall U^{x}$ entorno de $x$ en $( \prod_{j \in J} X_{j}, \prod_{j \in J} \mathcal{T}_{j} ), \existsB \in \mathcal{B}$ base de $\prod_{j \in J} \mathcal{T}_{j}$ tal que $ x \in B \subset U^{x}$. Este $B$ es de la forma
+      \[ 
+        B = \bigcap_{k = 1}^{n} p_{j_{k}}^{-1}(U_{j_{k}}) : U_{j_{k}} \in \mathcal{T}_{j_{k}}, \quad \forall k \in \{ 1, \cdots, n \} 
+      \] 
+      donde los $x \in U_{j_{k}}$ son entornos de $x_{j_{k}}$. Por tanto, $p_{j}(B) \subset p_{j}(U^{x})$. Ahora, sea $F_{0} = \{ j_{1}, \cdots, j_{n} \}\subset J$, $F_{0}$ es finito. Ahora, $F_{0} \cup F = H \subset J$ es finito y $\forall j \in H$
+        \begin{itemize}
+          \item Si $j \in F_{0} \Rightarrow \exists k \in \{ 1, \cdots, n \} : j = j_{k} \in F_{0}$ $\Rightarrow \exists V^{x_{j}}$ entorno compacto de $x_{j_{k}}, V^{x_{j_{k}}} \subset U^{x_{j_{k}}}$.
+          \item Si $ j \in F \Rightarrow \exists V^{x_{j}}$ entorno compacto tal que $V^{x_{j}} \subset X_{j}$.
+        \end{itemize}
+      Entonces, $\bigcap_{j \in H} p_{j} ^{-1}(V^{x_{j}})$ es entorno de $x$ y $\bigcap_{j \in H} p_{j} ^{-1}(V^{x_{j}}) \subset B \subset U^{x}$. Además,
+      \[
+        \bigcap_{j \in H} p_{j} ^{-1}(V^{x_{j}}) \simeq \prod_{j \in H} V^{x_{j}} \times \prod_{j \in J \setminus H} X_{j}
+      \]
+      pero $J \setminus H = (J \setminus F_{0}) \cap (J \setminus F) \subset J \setminus F$. Entonce, $\prod_{j \in J \setminus H} X_{j}$ es compacto. Como $\prod_{j \in H} V^{x_{j}}$ es compacto, entonces $\prod_{j \in H} V^{x_{j}} \times \prod_{j \in J \setminus H} X_{j}$ es un entorno compacto de $x_{j}$ en $( \prod_{j \in J} X_{j}, \prod_{j \in J} \mathcal{T}_{j} )$. Por tanto, $( \prod_{j \in J} X_{j}, \prod_{j \in J} \mathcal{T}_{j} )$ es localmente compacto. 
+
+      REVISAR TEO Tychonoff
+
+  \end{enumerate}
+\end{dem}
+
+\begin{prop}
+  Sea $\{ ( X_{j}, \mathcal{T}_{j} ) \}_{j \in J}$ familia no vacía de e.t.. Entonces, $( \sum_{k \in J} X_{k}, \sum_{k \in J} \mathcal{T}_{k})$ es localmente compacto $\Leftrightarrow$ $( X_{j}, \mathcal{T}_{j} )$es localmente compacto, $\forall j \in J$.
+\end{prop}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item []
+    \item [$(\Rightarrow)$] $\forall k \in J, X_{k} \simeq X_{k} \times \{ k \} \subset \sum_{j \in J} X_{j} \Rightarrow ( X_{j}, \mathcal{T}_{j} )$ localmente compacto.
+    \item [$(\Leftarrow)$] $\forall x \in \sum_{j \in J} X_{j} \Rightarrow \exists! j_{0} \in J : x \in X_{j_{0}} \times \{ j_{0} \} \simeq X_{j_{0}}$. Por hipótesis, $p_{1}(x)$ tiene una base de entornos compactos en $( X_{j_{0}}, \mathcal{T}_{j_{0}} )$. Ahora, $p_{1}$ es continua. Entonces, por imagen inversa, $x$ tiene base de entornos compactos en $X_{j_{0}} \times \{  j_{0} \}$. Por tanto, la suma de las bases es base de entornos compactos en $( \sum_{k \in J} X_{k}, \sum_{k \in J} \mathcal{T}_{k})$.
+  \end{enumerate}
+\end{dem}

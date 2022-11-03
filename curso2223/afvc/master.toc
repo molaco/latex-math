@@ -17,3 +17,6 @@
 \contentsline {section}{\numberline {3.2}Series de Potencias}{30}{}%
 \contentsline {section}{\numberline {3.3}Funciones Analíticas}{32}{}%
 \contentsline {section}{\numberline {3.4}Ceros de Funciones Analíticas}{34}{}%
+\contentsline {chapter}{\numberline {4}Singularidades Aisladas}{38}{}%
+\contentsline {section}{\numberline {4.1}Series de Laurent}{38}{}%
+\contentsline {section}{\numberline {4.2}Singularidades Aisladas}{39}{}%

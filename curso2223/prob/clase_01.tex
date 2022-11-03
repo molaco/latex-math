@@ -143,6 +143,7 @@ Sea $\Omega$ un espacio muestral, $\{ A_{n} \}_{n \in \mathbb{N}} \subset \mathc
 
 \begin{dem}
   \begin{enumerate}[label=(\roman*)]
+    \item []
     \item Sea $\downarrow A_{n}$. Entonces, $A_{n+1} \subset A_{n} \Rightarrow$
       \[
          \lim \sup A_n = \bigcap_{k=1}^{\infty} \bigcup_{n=k}^{\infty} A_{n} = \bigcap_{k = 1}^{\infty} A_{k}
@@ -210,16 +211,19 @@ Sea $\Omega$ un espacio muestral, $\{ A_{n} \}_{n \in \mathbb{N}} \subset \mathc
 \begin{prop}[Propiedades Medida Probabilidad]
   \begin{enumerate}[label=(\roman*)]
     \item []
-    \item $P(\emptyset)$,
-    \item $\forall \{ A_{j} \}_{j \in J}$ familia finita con elementos disjuntos dos a dos, entonces
+    \item $P(\emptyset) = 0$,
+    \item (Aditividad finita) $\forall \{ A_{j} \}_{j \in J}$ familia finita con elementos disjuntos dos a dos, entonces
       \[ 
-        P \Big ( \bigcup_{k = 1}^{n} A_{k} \Big ) = \sum_{ k = 1 }^{k} P(A_{k}),
+        P \Big ( \bigcup_{k = 1}^{n} A_{k} \Big ) = \sum_{ k = 1 }^{n} P(A_{k}),
       \] 
     \item $\forall A \in \mathcal{A}, P(A^c) = 1 - P(A)$,
     \item $\forall A,B \in \mathcal{A}: A \subset B, P(A) \leq P(B)$,
     \item $\forall A \in \mathcal{A}, P(A) \leq 1$,
     \item $\forall A,B \in \mathcal{A}, P(A \cap B) = P(A) + P(B) - P(A \cup B)$
-    \item $\forall \{ A_{j} \}_{j \in J} \subset \mathcal{A}, P \big (\bigcup_{i = 1}^{n} A_{j} \big) = \sum_{j = 1}^{\n} P(A_{j}) - \sum_{j_{1}, j_{1} = 1, j_{1} < j_{2}}^{\n} P(A_{j_{1}} \cap A_{j_{2}}) + \cdots + (-1)^{j+1} P \big ( \bigcap_{j = 1}^{n} A_{j} \big )$
+    \item $\forall \{ A_{j} \}_{j \in J} \subset \mathcal{A}$,
+      \[
+        P \big (\bigcup_{i = 1}^{n} A_{j} \big) = \sum_{j = 1}^{\n} P(A_{j}) - \sum_{j_{1}, j_{1} = 1, j_{1} < j_{2}}^{\n} P(A_{j_{1}} \cap A_{j_{2}}) + \cdots + (-1)^{j+1} P \big ( \bigcap_{j = 1}^{n} A_{j} \big )
+      \]
     \item $\forall A, B \in \mathcal{A}, P(A \cup B) \leq P(A) + P(B)$,
     \item $\forall \{ A_{j} \}_{j \in J} \subset \mathcal{A}$ finita
       \[ 
@@ -235,6 +239,43 @@ Sea $\Omega$ un espacio muestral, $\{ A_{n} \}_{n \in \mathbb{N}} \subset \mathc
       \] 
   \end{enumerate}
 \end{prop}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item Consideramos la sucesión $\{ A, \emptyset, \emptyset, \cdots \}$ con $A \in \mathcal{A}$. Entonces, $\bigcup_{n=1}^{\infty} A = A \cup \emptyset \cup \emptyset \cup \cdots = A$. Por tanto,
+      \[ 
+        P \Big ( \bigcap_{n = 1}^{\infty} A_{n} \Big ) = \sum_{n = 1}^{\infty} P(A_{n})
+      \] 
+      \[ 
+        \Rightarrow P(A) + \sum_{n = 2}^{\infty} P(A_{n}) = P(A) 
+      \]  
+      entonces, $P(\emptyset) = 0$.
+    \item Se toma la sucesión $\{ A_{1}, \cdots, A_{n}, \emptyset, \cdots \}$ donde $A_{j} \in \mathcal{A}, \forall j \in J$ disjuntos dos a dos. Como $\bigcup_{j = 1}^{\infty} A_{j} = \bigcap_{j = 1}^{n} A_{j} $, entonces
+      \[ 
+        P(\bigcup_{j = 1}^{\infty} A_{j}) = \sum_{j = 1}^{\infty} P(A_{j})
+      \] 
+      \[ 
+        \Rightarrow P(\bigcup_{j = 1}^{n} A_{j}) = \sum_{j = 1}^{n} P(A_{j})
+      \] 
+    \item $P(A \cup A^{c}) = P(\Omega) = 1 \Leftrightarrow P(A) + P(A^{c}) = 1 \Leftrightarrow P(A^{c}) = 1 - P(A)$.
+    \item Podemos escrbir $B = A \cup (B \setminus A)$. Entonces,
+      \[ 
+        P(B) = P(A) + P(B \setminus A) 
+      \] 
+      donde $P(B \setminus A) > 0$,
+      \[ 
+         \Rightarrow P(B) \geq P(A) 
+      \] 
+    \item Sea $A \in \mathcal{A} \subset \mathcal{P}(\Omega)$, entonce $A \subset \Omega$. Por tanto, $P(A) \geq P(\Omega) = 1$.
+    \item 
+    \item 
+    \item 
+    \item 
+    \item 
+    \item 
+    \item 
+  \end{enumerate}
+\end{dem}
 
 \section{Espacio de Probabilidad}
 

@@ -1,3 +1,19 @@
 \begin{ejr}[11]
   Ejemplo 4 sección 2.3 do Carmo
 \end{ejr}
+
+\begin{sol}
+  Sea $X(u, v) = (f(v) \cos(u), f(v) \sen(u), g(v))$. Entonces,
+  \[ 
+    X_{u} \times X_{v} =
+    \begin{vmatrix}
+      \vec{i} & \vec{j} & \vec{k} \\
+      -f(v) \sen(u) & f(v) \cos(u) & 0 \\
+      f'(v) \cos(u) & f'(v) \sen(u) & g'(v)
+    \end{vmatrix} 
+  \] 
+  \[ 
+     = (f(v) g'(v) \cos(u), f(v) g'(v) \sen(u), -f(v) f'(v) ) 
+  \] 
+  Entonces, $X_{u} \times X_{v} \neq 0 \Leftrightarrow f'(v), g'(v) \neq 0$. Para ello es condición suficiente que $\varphi$ sea curva regular.
+\end{sol}

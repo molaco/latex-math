@@ -887,6 +887,10 @@ INPUT ./clase_04.tex
 INPUT clase_04.tex
 INPUT ./clase_04.tex
 INPUT clase_04.tex
+INPUT ./clase_05.tex
+INPUT clase_05.tex
+INPUT ./clase_05.tex
+INPUT clase_05.tex
 INPUT master.aux
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb

@@ -1,0 +1,28 @@
+\begin{ejr}[35]
+  Sea $\{ ( X_{j}, \mathcal{T}_{j} ) \}_{j \in J}$ familia no vacía de e.t., $A_{j} \subset X_{j}, \forall j \in J$. Entonces, $\prod_{j \in J} A_{j}$ es denso en $\prod_{j \in J} X_{j}$ si y solo si $A_{j}$ es denso en $X_{j}$, $\forall j \in J$.
+\end{ejr}
+
+\begin{sol}
+  \begin{enumerate}[label=(\roman*)]
+    \item []
+    \item [$(\Rightarrow)$] Por ser $\prod_{j \in J} A_{j}$ denso en $\prodd_{j \in J} X_{j}$, tenemos que
+      \[ 
+        \overline{\prod_{j \in J} A_{j}} = \prodd_{j \in J} X_{j}
+      \] 
+      entonces,
+      \[ 
+        X_{j_{0}} = p_{j_{0}}(\prod_{j \in J} X_{j}) = p_{j_{0}}(\overline{\prod_{j \in J} A_{j}}) \subset \overline{p_{j_{0}}(\prod_{j \in J} A_{j})} = \overline{A_{j_{0}}}
+      \] 
+      por tanto, $X_{j_{0}} = \overline{A_{j_{0}}} \Rightarrow A_{j}$ es denso en $X_{j}, \forall j \in J$.
+
+    \item [$(\Leftarrow)$] Sea $A_{j}$ denso en $X_{j}, \forall j \in J$. Ahora, $\forall U \in \prod_{j \in J} \mathcal{T}_{j} \setminus \{ \emptyset \}, \exists B \in \mathcal{B}$ base de $\prod_{j \in J} \mathcal{T}_{j}: B \subset U$, entonces
+      \[ 
+        B = \prod_{j \in J} U_{j} : U_{j} \in \mathcal{T}_{j} \quad \text{ y } \quad U_{j} = X_{j}, \forall j \in J \setminus F, F \text{ finito}
+      \] 
+      Como $A_{j}$ es denso en $X_{j}$, tenemos que $U_{j} \cap A_{j} \neq \emptyset, \forall j \in J$. Por tanto,
+      \[ 
+        \emptyset \neq (\prod_{j} U_{j}) \cap (\prod_{j \in J} A_{j}) \subset U \cap (\prod_{j \in J} A_{j})
+      \] 
+      Es decir, $\prod_{j \in J} A_{j}$ es denso en $\prod_{j \in J} X_{j}$.
+  \end{enumerate}
+\end{sol}
