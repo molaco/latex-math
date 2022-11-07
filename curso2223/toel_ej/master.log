@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.10.26)  27 OCT 2022 22:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.10.26)  6 NOV 2022 11:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -772,20 +772,24 @@ Overfull \hbox (9.12128pt too wide) in paragraph at lines 9--10
 [][]\OT1/cmss/bx/n/12 Soluci^^Son. []\OT1/cmss/m/sl/12 https://math.stackexchange.com/questions/311196/homeomorphism-
  []
 
+) (./ej_46.tex
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1.
 ) [7] (./master.aux
 LaTeX Info: Redefining \. on input line 10.
 LaTeX Info: Redefining \% on input line 10.
 ) ) 
 Here is how much of TeX's memory you used:
- 18473 strings out of 478238
- 359517 string characters out of 5850455
+ 18478 strings out of 478238
+ 359572 string characters out of 5850455
  659229 words of memory out of 5000000
- 36299 multiletter control sequences out of 15000+600000
+ 36301 multiletter control sequences out of 15000+600000
  481664 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  105i,15n,107p,654b,465s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/molaco/.texlive/texmf-var/fonts/pk/ljfour/public/bbm/bbm12.600pk></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on master.pdf (8 pages, 192191 bytes).
+Output written on master.pdf (8 pages, 193220 bytes).
 PDF statistics:
  129 PDF objects out of 1000 (max. 8388607)
  81 compressed objects within 1 object stream

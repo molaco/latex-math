@@ -15,9 +15,44 @@
   $\forall p \in S$, hay dos vectores unitarios de $\mathbb{R}^{3}$ perpendiculares al plano tangente $T_{p}(S)$.
 \end{obs}
 
+\begin{note}
+  Sea $X : U \to S$ una parametrización con $p \in S$. Determinamos la orientación asociada a $\{ X_{u}, X_{v} \}$. Si $p$ pertence a un entorno coordenado de otra parametrización $\overline{X}(\overline{u}, \overline{v})$, la nueva base $\{ \overline{X}_{\overline{u}}, \overline{X}_{\overline{v}} \}$ se expresa en términos de la primera
+  \[ 
+    \overline{X}_{\overline{u}} = X_{u} \frac{\partial{u}}{\partial{\overline{u}}} + X_{v} \frac{\partial{v}}{\partial{\overline{u}}},
+  \] 
+  \[ 
+    \overline{X}_{\overline{v}} = X_{u} \frac{\partial{u}}{\partial{\overline{v}}} + X_{v} \frac{\partial{v}}{\partial{\overline{v}}},
+  \] 
+  donde $u = (\overline{u}, \overline{v})$ y $v = (\overline{u}, \overline{v})$. Por tanto, las bases $\{ X_{u}, X_{v} \}$ y $\{ \overline{X}_{\overline{u}}, \overline{X}_{\overline{v}} \}$ determinan la misma orientación de $T_{p}(S)$ si y solo si el Jacobiano
+  \[ 
+    \frac{\partial{(u, v)}}{\partial{(\overline{u}, \overline{v})}} 
+  \] 
+  del cambio de coordenadas.
+\end{note}
+
+\begin{note}[Interpretación Geométrica Orientabilidad]
+  Sea $S \subset \mathbb{R}^{2}$ superficie. Entonces, eligiendo $X : U \subset \mathbb{R}^{2} \to S$ en $p \in S$ determinamis un vector normal unitario $\forall q \in X(U)$,
+  \[ 
+    N(q) = \frac{X_{u} \times X_{v}}{| X_{u} \times X_{v} |}(q)
+  \] 
+  de manera que $N : X(U) \to \mathbb{R}^{3}$ es diferenciable. Tomando otro sistema local de coordenadas $\overline{X}(\overline{u}, \overline{v})$ en $p$ tenemos que
+  \[ 
+    \overline{X}_{\overline{u}} \times \overline{X}_{\overline{v}} = (X_{u} \times X_{v}) \frac{\partial{(u, v)}}{\partial{(\overline{u}, \overline{v})}},
+  \] 
+  donde $\frac{\partial{(u, v)}}{\partial{(\overline{u}, \overline{v})}}$ es el jacobiano del cambio de coordenadas. Por tanto, $N$ conservará o invertirá el signo dependiendo de si el jacobiano es positivo o negativo.
+\end{note}
+
 \begin{prop}
-  Sea $S \subset \mathbb{R}^{3}$ superficie, $X : U \to \mathbb{R}^{3}$ parametrización de $S$. Entonces, $\exists N \subset V = X(U)$ campo normal unitario.
+  Sea $S \subset \mathbb{R}^{3}$ superficie, $X : U \to \mathbb{R}^{3}$ parametrización de $S$. Entonces, $\exists N : V = X(U) \to \mathbb{R}^{3}$ campo normal unitario.
 \end{prop}
+
+\begin{dem}
+  content
+\end{dem}
+
+\begin{lem}
+  Sea $S$ una superficie conexa y $N_{1}, N_{2}$ dos campos normales unitarios en $S$. Entonces, $N_{1} = N_{2}$ o $N_{1} = -N_{2}$.
+\end{lem}
 
 \begin{dem}
   content
@@ -31,9 +66,81 @@
   el campo vectorial unitario global $N$ se conoce como aplicación de Gauss.
 \end{obs}
 
+\begin{ejm}[Plano]
+  Por la Prop. 4.1. los planos son orientables. Sea
+  \[
+    P = \{  p \in \mathbb{R}^{3} : (p - p_{0}) \cdot a = 0 \}
+  \]
+  el plano que pasa por $p_{0}$ con vector normal unitario $a$. Si $p \in P$, entonces
+  \[ 
+    T_{p}(P) = \{ v \in \mathbb{R}^{3} : v \cdot a = 0 \} .
+  \] 
+  Por tanto, $N : P \to \mathbb{R}^{3}$ definida por $ N(p) = a, \forall p \in P$ es un campo normal unitario en $P$.
+\end{ejm}
+
+\begin{ejm}[Esfera]
+  Hacemos uso de la Prop. 4.1. Sea $\mathbb{S}^{2}(r)$ la esfera de radio $r$ centrada en $p_{0}$. Si $p \in \mathbb{S}^{2}(r)$ el plano tangente correspondiente es el complemento ortogonal del vector $p -p_{0}$, es decir,
+  \[ 
+    T_{p}(\mathbb{S}^{2}(r)) = \{ v \in \mathbb{R}^{3} : (p - p_{0}) \cdot v = 0 \} .
+  \]
+  Entonces, la aplicación $N : \mathbb{S}^{2}(r) \to \mathbb{R}^{3}$ definida por
+  \[ 
+    N(p) = \frac{1}{r}(p - p_{0}), \quad \forall p \in \mathbb{S}^{2}(r)
+  \] 
+  es el campo normal unitario definido en la esfera.
+\end{ejm}
+
+\begin{ejm}[Grafo]
+  Hacemos uso de la Prop. 4.1. Sea $S$ una superficie que es el grafo de una función diferenciable $f : U \subset \mathbb{R}^{2} \to \mathbb{R}$ donde $U$ es abierto. Sabemos que $X : U \to \mathbb{R}^{3}$ definida por $X(u, v) = (u, v, f(u, v))$ es parametrización que cubre $S$ totalmente. Entonces, $N = N^{X} \circ X^{-1} : S \to \mathbb{R}^{3}$ con
+  \[ 
+    N^{X} = \frac{X_{u} \times X_{v}}{| X_{u} \times X_{v}|} = \frac{1}{\sqrt{1 + | \nabla f |^{2}}}(-f_{u}, - f_{v}, 1),
+  \] 
+  campo normal unitario en $S$.
+\end{ejm}
+
+\begin{ejm}[Imagen Inversa]
+  Sea $O \subset \mathbb{R}^{3}$ abierto, $f : O \to \mathbb{R}$ diferenciable, $a \in \mathbb{R}$ valor regular de $f$ y $S = f^{-1}(\{ a \}) \neq \emptyset$ superficie. Entonces, $\forall p \in S$,
+  \[ 
+    T_{p}(S) = \ker (d f)_{p} = \{  v \in \mathbb{R}^{3} : (\nabla f)_{p} \cdot v = 0 \}.
+  \] 
+  Por tanto, $\nabla f|_{S} = (f_{x}, f_{y}, f_{z})$ es un campo normal en $S$. Como $a$ es valor regular, $\nabla f (p) \neq 0, \forall p \in S$. Entonces, la aplicación $N : S \to \mathbb{R}^{3}$ definida por
+  \[ 
+    N = \frac{1}{|  \nabla f |}\nabla f |_{S} = \frac{1}{\sqrt{f_{x}^{2} + f_{y}^{2} + f_{z}^{2}}}(f_{x}, f_{y}, f_{z}),
+  \] 
+   es el campo normal unitario en $S$.
+\end{ejm}
+
+\begin{ejm}[Cilindro]
+  Sea $O = \mathbb{R}^{3}$ y $f(x, y, z) = x^{2} + y^{2}$. Entonces, $S = f^{-1}(\{ r ^{2} \}), r >0$ es un cilindro de radio $r$ con eje principal el eje $z$. Por tanto, $N(x, y, z) = \frac{1}{r}(x, y, 0)$ es un campo normal unitario en el cilindro.
+\end{ejm}
+
 \begin{prop}
-  Sea $S \subset \mathbb{R}^{3}$ superficie. Entoces, $S$ es orientable $\Leftrightarrow \exists N : S \to \mathbb{R}^{3}$ en $S$.
+  Sea $S \subset \mathbb{R}^{3}$ superficie. Entonces, $S$ es orientable $\Leftrightarrow \exists N : S \to \mathbb{R}^{3}$ en $S$.
 \end{prop}
+
+\begin{dem}
+  content
+\end{dem}
+
+\begin{ejm}[Superficie no orientable]
+  content
+\end{ejm}
+
+\begin{prop}
+  Sea $S = \{ (x, y, z) \in \mathbb{R}^{3} : f(x, y, z) = a \}$ superficie con $f : U \subset \mathbb{R}^{3} \to \mathbb{R}$ diferenciable y $a$ valor regular de $f$. Entonces, $S$ es orientable.
+\end{prop}
+
+\begin{dem}
+  Ejemplo imagen inversa.
+\end{dem}
+
+\begin{theo}
+  $S$ es una superficie orientable $\Leftrightarrow $ $\exists \{ X_{i} : U_{i} \to S  \}_{i \in J}$ familia de parametrizaciones que cubren $S$ tal que $X_{j} \circ X_{i}$ tiene jacobiano positivo $\forall j, i \in J, \forall p \in S$.
+\end{theo}
+
+\begin{lem}
+  $X_{i}^{-1} \circ X_{j}$ tiene jacibiano positivo $\Leftrightarrow N^{X_{j}}, N^{X_{i}}$ inducen la misma orientación en la intersección $N^{X_{i}} \circ X_{i}^{-1}|_{W} = N^{X_{j}} \circ X_{j}^{-1}|_{W}$ con $W  = X_{i}(U_{i}) \cap X_{j}(U_{j})$.
+\end{lem}
 
 \begin{dem}
   content

@@ -1,0 +1,44 @@
+\chapter{Primera Forma Fundamental}
+
+\section{Primera Forma Fundamental, Isometrías}
+
+\begin{prop}
+  Sea $S \subset \mathbb{R}^{3}$ superficie. Entonces, el producto interior natural de $\mathbb{R}^{3}$ induce en cada plano tangente $T_{p}(S)$ un producto interior $\langle  { , } \rangle_{p}$, cuya forma quadrática es $I_{p} : T_{p}(S) \to \mathbb{R}$ definida por
+  \[ 
+    I_{p}(w) = \langle w{ , }w \rangle_{p} = | w |^{w} \geq 0.
+  \] 
+\end{prop}
+
+\begin{defn}
+  Sea $S \subset \mathbb{R}^{3}$ superficie. Decimos que la primera forma fundamental de $S$ es la restricción del producto escalar de $\mathbb{R}^{3}$ a cada plano tangente $T_{p}(S)$. Es decir, la forma quadrática $I_{p}$ en $T_{p}(S)$ es la primera forma fundamental de $S$ en $p$.
+\end{defn}
+
+\begin{obs}
+  La primera forma fundamental nos permite tomar medidas sobre la superficie sin referirnos al espacio $\mathbb{R}^{3}$.
+\end{obs}
+
+\begin{note}[Expresión de la Primera Forma Fundamental]
+  Sea $S \subset \mathbb{R}^{3}$ superfice, $X : U \subset \mathbb{R}^{2} \to S$ parametrización. Entonces, $\exists \{ X_{u}, X_{v} \}$ base de $X$ en $p \in S$. Como el vector tangete $w \in T_{p}(S)$ es tangete a la curva $\alpha(t) = X(u(t), v(t))$ con $t \in (-\epsilon, \epsilon)$ y $p = \alpha(0) = X(u_{0}, v_{0})$ tenemos que
+  \[ 
+    I_{p}(\alpha'(0)) = \langle \alpha'(0){ , }\alpha'(0) \rangle_{p}
+  \] 
+  \[ 
+    \langle X_{u}u' + X_{v}v'{ , } X_{u}u' + X_{v}v' \rangle_{p}
+  \] 
+  \[ 
+    \langle X_{u}{ , }X_{u} \rangle_{p}(u')^{2} + 2 \langle X_{u}{ , }X_{v} \rangle_{p} u' v' + \langle X_{v}{ , }X_{v} \rangle_{p}(v')^{2} 
+  \]
+  \[ 
+    E(u')^{2} + 2 F u' v' + G(v')^{2} 
+  \] 
+  donde $t = 0$ y 
+  \[ 
+    E(u_{0}, v_{0}) = \langle X_{u}{ , }X_{u} \rangle_{p},
+  \] 
+  \[ 
+    F(u_{0}, v_{0}) = \langle X_{u}{ , }X_{v} \rangle_{p}, 
+  \] 
+  \[ 
+    G(u_{0}, v_{0}) = \langle X_{v}{ , }X_{v} \rangle_{p} 
+  \] 
+\end{note}

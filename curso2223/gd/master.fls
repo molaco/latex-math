@@ -847,6 +847,7 @@ INPUT ./master.toc
 INPUT master.toc
 INPUT master.toc
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmssbx10.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmssbx10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmr6.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
@@ -891,6 +892,10 @@ INPUT ./clase_05.tex
 INPUT clase_05.tex
 INPUT ./clase_05.tex
 INPUT clase_05.tex
+INPUT ./clase_06.tex
+INPUT clase_06.tex
+INPUT ./clase_06.tex
+INPUT clase_06.tex
 INPUT master.aux
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb

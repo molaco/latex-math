@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1667427153 "master.tex" "master.pdf" "master" 1667427153
+["pdflatex"] 1667502241 "master.tex" "master.pdf" "master" 1667502241
   "../preamble.tex" 1666163547 1953 b48b1cbc137b26b9b61d47cc7c464c69 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1650183167 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1650183167 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -192,11 +192,11 @@
   "clase_12.tex" 1666471494 6975 74d745d0d600bfcc536ca499cbdff2b0 ""
   "clase_13.tex" 1666035004 7396 a59cc278d5e12903565af06b6af57213 ""
   "clase_14.tex" 1664956122 5900 34528c731067f17ce92f190f55d1670a ""
-  "clase_15.tex" 1664955898 7654 9d0f3d39bb6bdceaf15ac5f2f9071d94 ""
+  "clase_15.tex" 1667499287 7655 f116795d4d17dccdb082c7b8b89bec36 ""
   "clase_16.tex" 1665055089 10705 6d582395ec3a80eaf136d4631032be0a ""
   "clase_17.tex" 1665227678 5392 faa1917da8668ad7ac74b3d051c02b7e ""
   "clase_18.tex" 1666259800 9182 42e481a19366e4b215135d0b52c3ce11 ""
-  "clase_19.tex" 1666259758 8467 6d8de9ff1553e8e6569d8c4a81f172b0 ""
+  "clase_19.tex" 1667502240 8478 71f19bd3c4bbf57f1231c5e28e89fb0a ""
   "clase_20.tex" 1666259709 6143 97a3bed968b409494b29701091f02cdc ""
   "clase_21.tex" 1666416346 8920 a5f969b28da222d5dbdca4d83b8809f0 ""
   "clase_22.tex" 1666458018 9388 7d746d9f47819683873267e8cccae46a ""
@@ -204,9 +204,9 @@
   "clase_24.tex" 1667026345 9551 98b4716d944dca213b2dfc5a6c984c56 ""
   "clase_25.tex" 1667049403 7242 1f966c6537053f47ceb30f8ed4d467b1 ""
   "clase_26.tex" 1667427152 7041 b27adc72ceeaa5372674a4959ba5f3b2 ""
-  "master.aux" 1667427150 2787 d7e9aa5c9f67152d6f75a618cec8dee8 "pdflatex"
+  "master.aux" 1667502116 2787 d7e9aa5c9f67152d6f75a618cec8dee8 "pdflatex"
   "master.tex" 1667420289 815 97f4cb55f49221ff609acce157c97b8d ""
-  "master.toc" 1667427150 1347 4c60a6267f5f388feeb5a695d3f4a7dc "pdflatex"
+  "master.toc" 1667502116 1347 4c60a6267f5f388feeb5a695d3f4a7dc "pdflatex"
   (generated)
   "master.aux"
   "master.log"
