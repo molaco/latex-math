@@ -1,0 +1,16 @@
+\section{Cálculo de Residuos}
+
+\begin{note}
+  Si $f$ tiene una singularidad aislada en $z_{0}$, entonces $f$ admite desarrollo de Laurent en un entrono $U \setminus \{ z_{0} \}$ de $z_{0}$
+  \[ 
+    f(z) = \cdots + \frac{b_{2}}{(z - z_{0})}^{2} + \frac{b_{1}}{(z - z_{0})} + a_{0} + a_{1}(z - z_{0}) + \cdots 
+  \] 
+  donde $b_{1} = \Res (f, z_{0})$ es el residuo de $f$ en $z_{0}$
+\end{note}
+
+\begin{prop}
+  Sea $f$ con singularidad aislada en $z_{0}$ y sea $k \geq 0$ el menor entero tal que $\exists \lim_{n \to \infty} (z - z_{0}) f(z)$. Entonces, $f(z)$ tiene un polo de orden $k$ en $z_{0}$. Sea $\phi(z) = (z - z_{0}) f(z)$, entonces $\phi$ se puede definir unicamente en $z_{0}$ tal que $\phi$ es analítica en $z_{0}$ y
+  \[ 
+    \Res(f, z_{0}) = \frac{\phi^{(k-1)}(z_{0})}{(k-1)!} 
+  \] 
+\end{prop}

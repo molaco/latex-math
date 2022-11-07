@@ -20,3 +20,4 @@
 \contentsline {chapter}{\numberline {4}Singularidades Aisladas}{38}{}%
 \contentsline {section}{\numberline {4.1}Series de Laurent}{38}{}%
 \contentsline {section}{\numberline {4.2}Singularidades Aisladas}{39}{}%
+\contentsline {section}{\numberline {4.3}Cálculo de Residuos}{40}{}%
