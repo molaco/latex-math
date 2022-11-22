@@ -1,0 +1,124 @@
+\begin{prop}
+  Sea $( X, \mathcal{T} )$ e.t., $\mathcal{F}$ filtro, $x \in X$. Entonces, $x$ es punto de aglomeración de $\mathcal{F}$ en $( X, \mathcal{T} )$ $\Leftrightarrow \exists \mathcal{G} \text{ ultrafiltro } : \mathcal{F} \subset \mathcal{G}$ y $\mathcal{G} \rightarrow x$.
+\end{prop}
+
+\begin{dem}
+  Hemos visto que $x$ es putno de aglomeración de $\mathcal{F}$ $\Leftrightarrow \exists \mathcal{F}'$ filtro tal que $\mathcal{F} \subset \mathcal{F}'$ y $\mathcal{F}' \rightarrow x$. También hemos visto que para todo filtro existe ultrafiltro más fino.
+ 
+  \begin{enumerate}[label=(\roman*)]
+    \item [$(\Rightarrow)$] $x$ punto de aglomeración de $\mathcal{F} \Rightarrow \exists \mathcal{F}'$ tal que $\mathcal{F} \subset \mathcal{F}'$ y $\mathcal{F}' \rightarrow x$. Por tanto, $\exists \mathcal{G}$ ultrafiltro tal que $\mathcal{F}' \subset \mathcal{G}$ donde $\mathcal{F} \subset \mathcal{F}'$. Como $\mathcal{V}(x) \subset \mathcal{F}'$, entonces $\mathcal{V}(x) \subset \mathcal{G} \Leftrightarrow \mathcal{G} \rightarrow x$.
+
+    \item [$(\Leftarrow)$] Equivalente a la caracterización de punto de aglomeración.
+  \end{enumerate}
+\end{dem}
+
+\section{Redes}
+
+\begin{defn}[Conjunto Dirigido]
+  Sea $D \neq \emptyset$ conjunto y $\leq$ relación binaria en $D$ tal que es reflexiva y transitiva, y $\forall d_{1}, d_{2} \in D, \exists d_{3} \in D : d_{1}, d_{2} \leq d_{3}$. El par $(D, \leq)$ se llama conjunto dirigido.
+\end{defn}
+
+\begin{defn}[Red]
+  Sea $X \neq \emptyset$ conjunto se llama red en $X$ a cualquier aplicación $s$ de un conjunto dirigido en $X$, 
+  \[ 
+    s : D \to X 
+  \] 
+  \[ 
+    d \mapsto s(d) \equiv s_{d} 
+  \] 
+\end{defn}
+
+\begin{nota}
+  Una red $s$ se denota $s \equiv (s_{d})_{d \in D}$.
+\end{nota}
+
+\begin{ejm}
+  Toda sucesión es una red.
+\end{ejm}
+
+\begin{ejm}
+  Toda aplicación $s : \mathbb{R} \to X$ es red en $X$.
+\end{ejm}
+
+\begin{defn}[Subred]
+  Sea $X \neq \emptyset$ conjunto, $s$ red en $X$. Se llama subred de $s$ a cualquier red $t : \Lambda \to X: t = s \circ \varphi$ siendo $\varphi : \Lambda \to D$ aplicación que cumple
+  \begin{enumerate}[label=(\roman*)]
+    \item $\forall \lambda_{1}, \lambda_{2} \in \Lambda, \lambda_{1} \leq \lambda_{2} \Rightarrow \varphi(\lambda_{1}) \leq \varphi(\lambda_{2})$. Es decir, $\varphi$ es creciente.
+    \item $\forall d \in D, \exists \lambda \in \Lambda: \alpha(\lambda) \geq d$. Es decir, $\varphi$ es cofinal.
+  \end{enumerate}
+  de esta manera $t = (t_{\lambda})_{\lambda \in \Lambda} = ((s \circ \varphi)(\lambda))_{\lambda \in \Lambda} = (s_{\varphi(\lambda)})_{\lambda \in \Lambda}$.
+\end{defn}
+
+\begin{obs}
+  Toda subsucesión de una sucesión es una subred suya.
+\end{obs}
+
+\begin{obs}
+  Dada una sucesión puede haber subrees que no son sucesiones.
+\end{obs}
+
+\begin{defn}[Punto límite]
+  Sea $( X, \mathcal{T} )$ e.t., $s$ red en $X$, $x \in X$. Se dice que la red $s$ converge a $x$ en $( X, \mathcal{T} )$ (o que $x$ es punto límite de $s$) si $\forall U^{x}$ entorno de $x$ en $( X, \mathcal{T} )$, $\exists d_{0} \in D : s_{d} \in U^{x}, \forall d \geq d_{0}$.
+\end{defn}
+
+\begin{obs}
+  Los conjuntos dirigidos tienen ramificaciones $\Rightarrow$ no todos están en el entorno ( a partir de cierto n) como en los puntos límite de las suceciones.
+\end{obs}
+
+\begin{nota}
+  $s = ( s_{d} )_{d \in D} \xrightarrow[]{ ( X, \mathcal{T} ) }$ o $x \in \lim s$.
+\end{nota}
+
+\begin{defn}[Aglomeración]
+  Sea $( X, \mathcal{T} )$ e.t., $s = (s_{d})_{d \in D}$ red en $X$, $x \in X$. Se dice que $x$ es un punto de aglomeración de $s$ en $( X, \mathcal{T} )$ si $\forall U^{x}$ entorno de $x$, $\forall d_{0} \in D, \exists d \in D : d \geq d_{0}, s_{d} \in U^{x}$.
+\end{defn}
+
+\begin{prop}
+  Sea $( X, \mathcal{T} )$ e.t., $s = (s_{d})_{d \in D}$ red en $X$, $x \in X$. Si $s$ converge a $x$ en $( X, \mathcal{T} )$ entonces, $x$ es putno de aglomeración de $s$.
+\end{prop}
+
+\begin{dem}
+  Por la definición de convergencia, tenemos que $\forall U^{x}, \exists d_{0} \in D : s_{d} \in U^{x}, \forall d \geq d_{0}$. Consideramos, $\forall d_{1} \in D \xRightarrow[]{ \text{cj. dirigido} } \exists d_{2} \in D : d_{0}, d_{1} \leq d_{2} \Rightarrow s_{d_{2}} \in U^{x} \Rightarrow x$ punto de aglomeración de $s$.
+\end{dem}
+
+\begin{prop}
+  Sea $( X, \mathcal{T} )$ e.t. $s$ red en $X$, $x \in X$. Entonces, $x$ es punto de aglomeración de $s$ en $( X, \mathcal{T} )$ $\Leftrightarrow$ existe alguna subred de $s$ que converge a $x$ en $( X, \mathcal{T} )$.
+\end{prop}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item []
+    \item [$(\Rightarrow)$] A partir de la definición de punto de aglomeración definimos
+      \[ 
+        \Lambda = \big\{ (d,U) : d \in D, U \in \mathcal{V}(x) : s_{d} \in U \big\} 
+      \] 
+      como $x$ es punto de aglomeración de $s$, entonces $\Lambda \neq \emptyset$. Definimos ahora una relación binaria
+      \[ 
+        (d_{1}, U_{1}) \leq (d_{2}, U_{2}) \Leftrightarrow d_{1} \leq d_{2}, U_{2} \subset U_{1} 
+      \] 
+     esta relación es reflexiva, transitiva y $D$ es conjunto dirigido. Por tanto, $(\Lambda, \leq)$ es conjunto dirigido. Definimos una aplicación
+     \[ 
+       \varphi : \Lambda \to D : (d, U) \rightarrow \varphi(d, U) \equiv d 
+     \] 
+     donde $\varphi$ es creciente y cofinal. Por tanto, $s \circ \varphi \equiv t$ es subred de $S$. Veamos que converge a $x$. 
+
+     Como $x$ es punto de aglomeración, entonces $\forall U^{x}$ entorno de $x$, $\forall d \in D, \exists d_{0} \in D$ tal que $d_{0} \geq d, s _{ d_{ 0 } } \in U^{x}$. Por tanto, existe $(d_{0}, U^{x}) \in \Lambda \Rightarrow \Lambda \neq \emptyset$. Ahora, $\forall (d, U) \in \Lambda : (d,U) \geq (d_{0}, U^{x}) \Rightarrow t(d, U) = (s \circ \varphi)(d, U) = s(d) \in U \subset U^{x} \Rightarrow t = (t_{\varphi(d)})_{d \in D} \rightarrow x$.
+   \item [$(\Leftarrow)$] Sea $t = (t_{\lambda})_{\lambda \in \Lambda}$ subred de $s$ tal que $t \xrightarrow[]{ ( X, \mathcal{T} ) } x$. Entonces, $\varphi :  \Lambda \to D $ aplicación creciente y cofinal con $s \circ \varphi = t$. Ahora, $t \rightarrow x$, entonces 
+  \[
+    \forall U^{x} \text{entorno de $x$}, \exists \lambda_{0} \in \Lambda : t_{\lambda} \in U^{x}, \forall \lambda \geq \lambda_{0}
+  \]
+     y por ser $t$ subred, $t$ es cofinal, entonces
+     \[
+       \forall d_{0} \in D, \exists \lambda_{1} \in \Lambda : \varphi(\lambda_{1}) \geq d_{0}.
+     \]
+     Como $\Lambda$ es conjunto dirigido, entonces
+     \[
+       \exists \lambda^* \in \Lambda : \lambda_{0}, \lambda_{1} \leq \lambda^* 
+     \] 
+     Sea $\varphi(\lambda^*) \equiv d^* \in D$, como $\varphi$ es creciente
+     \[
+       \varphi(d^*) \geq \varphi(\lambda_{0}), \varphi(\lambda_{1})
+     \]
+     donde $\varphi(\lambda_{1}) \geq d_{0} \Rightarrow d^* \geq d_{0}$. Por tanto, $s_{d^*} = s(\varphi(\lambda^*)) = t(\lambda^*) \in U^{x}, \forall \lambda^* \geq \lambda_{0}$. Entonces, $x$ es punto de aglomeración $s$ en $( X, \mathcal{T} )$.
+  \end{enumerate}
+\end{dem}

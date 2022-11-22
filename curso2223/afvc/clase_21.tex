@@ -14,3 +14,27 @@
     \Res(f, z_{0}) = \frac{\phi^{(k-1)}(z_{0})}{(k-1)!} 
   \] 
 \end{prop}
+
+\begin{theo}[de los Residuos]
+  Sea $\Omega \subset \mathbb{C}$ simplemente conexo, $\{ z_{1}, \cdots, z_{N} \} \subset \Omega$, $f : \Omega \setminus \{ z_{1}, \cdots, z_{N} \} \to \mathbb{C}$ holomorfa, $\{ z_{1}, \cdots, z_{N} \}$ singularidades. Entonces, 
+  \[ 
+    \int_{\gamma^{+}}^{} f(z) dz = 2 \pi \sum_{k = 1}^{n} \Res (f, z_{k})
+  \] 
+\end{theo}
+
+\begin{defn}[Residuos en el Infinito]
+  Sea $F(z) = f(\frac{1}{z})$. Entonces, decimos que
+  \begin{enumerate}[label=(\roman*)]
+    \item $f$ tiene un polo de orden $k$ en $\infty$ si $F$ tiene un polo de orden $k$ en $0$,
+    \item $f$ tiene un zero de orden $k$ en $\infty$ si $F$ tiene un zero de orden $k$ en $0$,
+    \item $\Res(f, \infty) = -  \Res(\frac{1}{z^{2}}F(z), 0)$.
+  \end{enumerate}
+\end{defn}
+
+\begin{prop}
+  Si $a$ es un polo de orden $m$ de $f$, entonces
+  \[
+    \Res (f,a) = \frac{g^{(m-1)}(a)}{(m - 1)!}
+  \]
+  donde $g(z) = (z - a)^{m} f(z)$
+\end{prop}

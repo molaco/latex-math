@@ -1,0 +1,216 @@
+\begin{ejm}
+  Si $C \subset \mathbb{R}^{n}, C $ convexo, $\forall f, g : ( X, \mathcal{T} ) \to ( C, \mathcal{T}_{u} )$ continua, entonces $f \simeq g$.
+\end{ejm}
+
+\begin{dem}
+  Sea $H : X \times I \to C : H(x,t) = (1 - t) f(x) + t g(x)$. Entonces, $H$ cumple
+  \[ 
+    \begin{aligned}
+      \begin{cases}
+        H(x, 0) = f(x), \forall x \in X \\
+        H(x, 1) = g(x), \forall x \in X \\
+      \end{cases}
+    \end{aligned} 
+  \] 
+  Por tanto, $f \simeq g$.
+\end{dem}
+
+\begin{defn}[Clase de Homotopía]
+  Dados dos e.t $X$ e $Y$ y la relación de homotopía de aplicación continua de $X$ en $Y$, entonces cada clase de equivalencia se llama clase de homotopía.
+\end{defn}
+
+\begin{defn}[Contractil]
+  Sea $( X, \mathcal{T} )$ e.t.. Se dice que $X$ es contractil si la identidad en $X$ es homótopa a alguna aplicación constante.
+\end{defn}
+
+\begin{ejm}
+  $\forall C \subset \mathbb{R}^{n}$ conexo, entonces $C$ es contractil.
+\end{ejm}
+
+\begin{dem}
+  $\forall x_{0} \in C, 1_{X} \simeq c_{x_{0}} : X \to x : x \mapsto x_{0}$, entonces
+  \[ 
+    H(x,t) = (1 - t) \cdot c_{x_{0}}(x) + t \cdot 1_{X}(x) 
+  \] 
+  \[ 
+    \Rightarrow  
+    \begin{aligned}
+      \begin{cases}
+        H(x,0) = c_{x_{0}} \\
+        H(x,1) = 1_{X}(x) \\
+      \end{cases}
+    \end{aligned} 
+  \] 
+\end{dem}
+
+\begin{prop}
+  Sean $X, Y, Z$ e.t., $f_{1}, g_{1} : X \to Y$ continuas tal que $f_{1} \simeq g_{1}$ y $f_{2}, g_{2} : Y \to Z$ continuas tal que $f_{2} \simeq g_{2}$. Entonces, $f_{2} \circ f_{1} \simeq g_{2} \circ g_{1}$.
+\end{prop}
+
+\begin{dem}
+  $f_{1} \simeq g_{1} \Rightarrow \exists H_{1} : X \times I \to Y$ continua tal que
+  \[ 
+    \begin{aligned}
+      \begin{cases}
+        H_{1}(x, 0) = f_{1}(x) \\
+        H_{1}(x, 1) = g_{1}(x) \\
+      \end{cases}
+    \end{aligned} 
+  \] 
+  y $\exists H_{1} : Y \times I \to Z$ continua tal que
+  \[ 
+    \begin{aligned}
+      \begin{cases}
+        H_{2}(x, 0) = f_{2}(x) \\
+        H_{2}(x, 1) = g_{2}(x) \\
+      \end{cases}
+    \end{aligned} 
+  \] 
+  Sea $H : X \times I \to Z : H(x, t) = H_{2}(H_{1}(x, t), t)$. Entonces, por ser composición de aplicaciones continuas $H$ también lo es y
+  \[ 
+    H(x, 0) = H_{2}(H_{1}(x, 0), 0) = H_{2}(f_{1}(x), 0) = (f_{2} \circ f_{1})(x),
+  \] 
+  \[ 
+    H(x, 1) = H_{2}(H_{1}(x, 1), 1) = H_{2}(f_{2}(x), 1) = (g_{2} \circ g_{1})(x) 
+  \] 
+\end{dem}
+
+\begin{prop}
+  Sea $( X, \mathcal{T} )$ e.t.. Entonces, $( X, \mathcal{T} )$ es contractil si $\forall ( Y, \mathcal{S} )$ e.t., $\forall f,g : ( Y, \mathcal{S} ) \to ( X, \mathcal{T} )$ continuas es $f \simeq g$.
+\end{prop}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item []
+    \item [$(\Rightarrow)$] $X$ contractil $\Rightarrow \exists x_{0} \in X : 1_{X} \simeq c_{x_{0}}$. Ahora, $\forall ( Y, \mathcal{S} )$ e.t., $\forall f,g : ( Y, \mathcal{S} ) \to ( X, \mathcal{T} )$ continuas, entonces la proposición anterior
+      \[ 
+        \Rightarrow 
+        \begin{aligned}
+          \begin{cases}
+            1_{X} \circ f \simeq c_{x_{0}} \circ f : Y \to X : y \mapsto x_{0} \\
+            1_{X} \circ g \simeq c_{x_{0}} \circ g : Y \to X : y \mapsto x_{0} \\
+          \end{cases}
+        \end{aligned} 
+      \] 
+      Entonces, $c_{x_{0}} \circ f = c_{x_{0}} \circ g$. Por tanto, $f \simeq g$.
+
+    \item [$(\Leftarrow)$] Suponemos que $f \simeq g, \forall f,g : ( Y, \mathcal{S} ) \to ( X, \mathcal{T} )$. Entonces, $1_{X} \simeq c_{x_{0}} \Rightarrow ( X, \mathcal{T} )$ es contractil.
+  \end{enumerate}
+\end{dem}
+
+\begin{defn}[Equivalencia Homotópica]
+  Sean $X, Y$ e.t.. Se dice que $X$ es homotopocamente equivalente a $Y$ (ó que $X$ es del mismo tipo de homotopía que $Y$) si $\exists f : X \to Y$ continua y $\exists g : Y \to X$ continua tal que $g \circ f \simeq 1_{X}$ y $f \circ g \simeq 1_{Y}$. En este caso, decimos que $f$ es una equivalencia homotópica y $g$ es una inversa homotópica suya.
+\end{defn}
+
+\begin{obs}
+  No tienen por que ser suprayectivas, en realidad se está considerando $g|_{f(X)} \circ f$.
+\end{obs}
+
+\begin{prop}
+  Dado un conjunto de e.t., la relación de ser homotópicamente equivalentes es relación de equivalencia.
+\end{prop}
+
+\begin{dem}
+  \begin{itemize}
+    \item Reflexiva: $\forall X$ e.t., $1_{X} : X \to x$ $\Rightarrow X$ es homotópicamente equivalente a $X$.
+    \item Simétrica: $X$ es homotópicamente equivalente a $Y$ $\Leftrightarrow$ $Y$ es homotópicamente equivalente a $X$.
+    \item Transitiva: Sea $X$ homotópicamente equivalente a $Y$ y $Y$ homotópicamente equivalente a $Z$, entonces
+      \[ 
+        \Rightarrow
+        \begin{aligned}
+          \begin{cases}
+            \exists f_{1} : X \to Y \text{ cont. } : g_{1} \circ f_{1} \simeq 1_{X} \\
+            \exists g_{1} : Y \to X \text{ cont. } : f_{1} \circ g_{1} \simeq 1_{Y} 
+          \end{cases}
+        \end{aligned} 
+      \] 
+      \[ 
+        \text{y } \Rightarrow
+        \begin{aligned}
+          \begin{cases}
+            \exists f_{2} : Y \to Z \text{ cont. } : g_{2} \circ f_{2} \simeq 1_{Y} \\
+            \exists g_{2} : Z \to Y \text{ cont. } : f_{2} \circ g_{2} \simeq 1_{Z} 
+          \end{cases}
+        \end{aligned} 
+      \] 
+      \[ 
+        \Rightarrow
+        \begin{aligned}
+          \begin{cases}
+             f_{2} \circ f_{1} : X \to Z \text{ continua} \\
+             g_{2} \circ g_{1} : X \to Z \text{ continua} 
+          \end{cases}
+        \end{aligned}
+      \] 
+      Entonces, por la propiedad asociativa
+      \[ 
+        (g_{1} \circ g_{2}) (f_{2} \circ f_{1}) = g_{1} \circ (g_{2} \circ f_{2}) \circ f_{1}
+      \]
+      \[ 
+        \simeq g_{1} \circ 1_{Y} \circ f_{1}
+      \] 
+      \[ 
+        = g_{1} \circ f_{1} 
+      \] 
+      \[ 
+        \simeq 1_{X}.
+      \] 
+      Análogamente, 
+      \[ 
+        (f_{2} \circ f_{1}) (g_{1} \circ g_{2}) = f_{2} \circ (f_{1} \circ g_{1}) \circ g_{2}
+      \]
+      \[ 
+        \simeq f_{2} \circ 1_{Y} \circ g_{2}
+      \] 
+      \[ 
+        = f_{2} \circ g_{2} 
+      \] 
+      \[ 
+        \simeq 1_{Z}.
+      \] 
+  \end{itemize}
+\end{dem}
+
+\begin{obs}
+  Si $X$ e $Y$ et. homeomorfos, entonces tienen el mismo tipo de homotopía.
+\end{obs}
+
+\begin{prop}
+  Sea $X$ e.t.. Entonces, $X$ es contractil $\Leftrightarrow$ tiene el tipo de homotopía de un punto.
+\end{prop}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item []
+    \item [$(\Rightarrow)$] $1_{X} \simeq c_{x_{0}} : x_{0} \in X$. Consideramos la inclusión
+      \[ 
+        j : \{ x_{0} \} \to X = ( X, \mathcal{T} ) 
+      \] 
+      y la aplicación
+      \[ 
+        c'_{x_{0}} : X \to \{ x_{0} \}.
+      \] 
+      Dado que ambas son continuas, entonces
+      \[
+        c'_{x_{0}} \circ j \simeq 1_{\{ x_{0} \}} \quad \text{y} \quad j \circ c'_{x_{0}} = c_{x_{0}} \simeq 1_{X},
+      \]
+      Por tanto, $X$ y $\{ x_{0} \}$ son homotópicamente equivalentes.
+    \item [$(\Leftarrow)$] $\forall y \in X, \{ y \}$ con la topología trivial. Entonces, $\{ y \}, X$ son homotópicamente equivalentes
+      \[
+        \Leftrightarrow \exists f : X \to \{ y \} \text{ cont.} \quad \text{y } \quad \exists g : \{ y \} \to X \text{ cont.} \text{ tal que}
+      \]
+      \[
+        g \circ f \simeq 1_{X} \quad \text{ y } f \circ g \simeq 1_{\{ y \}}.
+      \]
+      Por tanto, $g \circ f = c_{g(y)} \simeq 1_{X} \xRightarrow[]{ \text{def.} } X$ contractil.
+
+  \end{enumerate}
+\end{dem}
+
+\begin{defn}[Retracción]
+  Sea $X$ e.t., $A \subset X$ no vacío. Se dice que $A$ es un retracto en $X$ si $\exists r : X \to A$ continua tal que $r|_{A} = 1_{A}$ que deja los puntos de $A$ fijos. Si occure esto, se dice que $r$ es una retracción de $X$ en $A$.
+\end{defn}
+
+\begin{defn}[Retracto por Deformación]
+  Sea $X$ e.t., $A \subset X$ no vacío. Se dice que $A$ es un retracto por deformación si $\exists r : X \to A$ retracción tal que $j \circ r \simeq 1_{X}$ donde $j$ es la inclusión $j : A \to X$.
+\end{defn}

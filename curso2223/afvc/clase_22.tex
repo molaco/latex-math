@@ -1,0 +1,82 @@
+\chapter{Miscelanea}
+
+\section{Principio Del Argumento}
+
+\begin{note}[Integral Logarítmica]
+  Sea $f$ holomorfa en $\Omega$, $\gamma$ una curva en $\Omega$ tal que $f(z) \neq 0$ en $\gamma$, entonces
+  \[ 
+    \frac{1}{2 \pi i} \int_{\gamma}^{} \frac{f'(z)}{f(z)} dz = \frac{1}{2 \pi i} \int_{\gamma}^{}  d log(f(z)) 
+  \] 
+  es la integral logarítmica de $f(z)$ a lo largo de $\gamma$ y mide el cambio de $\log(z)$ a lo largo de la curva $\gamma$.
+\end{note}
+
+\begin{note}[Derivada Logarítmica]
+  Sea $f : \Omega \to \mathbb{C}$ tal que $f(z) \neq 0$ en $\Omega$. Entonces, $\log(f(z)) :  \Omega \to \mathbb{C}$ es holomorfa en $\Omega$ y
+  \[ 
+    \log(f(x))' = \frac{f'(z)}{f(z)}
+  \] 
+\end{note}
+
+\begin{prop}
+  Sea $f : \Omega \to \mathbb{C}$ tal que $f(z) \neq 0$ en $\Omega$. Entonces, los ceros de $f$ son singularidades aisladas de la derivada logarítmica. En particular, los ceros de $f$ son polos de la derivada logarítmica.
+\end{prop}
+
+\begin{dem}
+  Suponemos que $a$ es un cero de orden $m$ de $f$. Entonces, 
+  \[ 
+    f(z) = (z - a)^{m} g(z)
+  \] 
+  donde $g$ es holomorfa y $g(a) \neq 0$. Ahora,
+  \[ 
+    f'(z) = m(z - a)^{m - a} g(z) + (z - a)^{m} g'(z)
+  \] 
+  \[ 
+    \Rightarrow \frac{f'(z)}{f(z)} = \frac{m}{z - a} + \frac{g'(z)}{g(z)}, \quad \forall z \neq a.
+  \] 
+  Por tanto, $a$ es un polo simple de la derivada logarítmica y
+  \[
+    \Res \Big ( \frac{f'}{f}, a \Big ) = m.
+  \]
+\end{dem}
+
+\begin{defn}[Meromorfa]
+  Una función $f : \Omega \to \mathbb{C}$ es meromorfa si es holomorfa salvo en los polos.
+\end{defn}
+
+\begin{obs}
+  Si $f$ tiene infinitos polos en $\Omega$ acotado, entonces estos se acumulan en la frontera. En este caso, se puede elegir $\Omega' \subset \Omega$ tal que el número de polos en $\Omega'$ es finito.
+\end{obs}
+
+\begin{prop}
+  Sea $f : \Omega \to \mathbb{C}$ tal que $f \neq 0$ en $\Omega$ y $a \in \Omega$ un polo de orden $m$ de $f$. Entonces, $a$ es un polo de la derivada logarítmica de $f$ y es de orden $-m$.
+\end{prop}
+
+\begin{dem}
+  Sea $f$ con un polo en $a$, entonces
+  \[ 
+    f(z) = \frac{g(z)}{(z - a)} 
+  \] 
+  en un entorno de $a$ en $\Omega$, donde $g$ es holomorfa en un entorno de $a$ y $g(a) \neq 0$. Ahora, 
+  \[ 
+    f'(z) = \frac{-m(z - a)^{-m-1} g(z) + (z - a)^{-m} g(z)}{(za)^{-m}g(z)} 
+  \] 
+  \[ 
+    = - \frac{m}{z - a} + \frac{g'(z)}{g(z)}
+  \] 
+  Por tanto, $a$ es polo simple de $\frac{f'(z)}{f(z)}$ y $\Res(\frac{f'}{f}, a)$.
+\end{dem}
+
+\begin{theo}
+  Sea $\Omega$ simplemente conexo, $f : \Omega \to \mathbb{C}$ melomorfa, $\gamma \subset \Omega$ curva cerrada simple que no pasa por ningún cero y ningún polo de $f$. Entonces,
+  \[ 
+    \int_{\gamma}^{} \frac{f'(z)}{f(z)} dz = 2 \pi i  (Z_{f} - P_{f})
+  \]
+  donde $Z_{f}$ es el número de ceros de $f$ dentro de $\gamma$ y $P_{f}$ es el número de polos de $f$ dentro de $\gamma$, contadas con su multiplicidad.
+\end{theo}
+
+\begin{note}[Interpretación del Principio el Argumento]
+  VER QUE
+  \[
+    2 \pi (Z_{f} - P_{f}) = \Delta_{\gamma} \arg(f)
+  \]
+\end{note}

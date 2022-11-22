@@ -21,3 +21,5 @@
 \contentsline {section}{\numberline {4.1}Series de Laurent}{38}{}%
 \contentsline {section}{\numberline {4.2}Singularidades Aisladas}{39}{}%
 \contentsline {section}{\numberline {4.3}Cálculo de Residuos}{40}{}%
+\contentsline {chapter}{\numberline {5}Miscelanea}{42}{}%
+\contentsline {section}{\numberline {5.1}Principio Del Argumento}{42}{}%

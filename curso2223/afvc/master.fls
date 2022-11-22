@@ -960,6 +960,10 @@ INPUT ./clase_21.tex
 INPUT clase_21.tex
 INPUT ./clase_21.tex
 INPUT clase_21.tex
+INPUT ./clase_22.tex
+INPUT clase_22.tex
+INPUT ./clase_22.tex
+INPUT clase_22.tex
 INPUT master.aux
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb

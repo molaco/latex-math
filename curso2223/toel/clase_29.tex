@@ -1,0 +1,82 @@
+\begin{obs}
+  Sean $X,Y$ conjuntos, $f : X \to Y$ aplicación, $\mathcal{F}$ filtro. Entonces, $\{ f(F) : F \in \mathcal{F} \}$ es base de filtro ya que $\forall F_{1}, F_{2} \in \mathcal{F}, F_{1} \cap F_{2} \in \mathcal{F} \Rightarrow f(F_{1} \cap F_{2}) \subset f(F_{1}) \cap f(F_{2})$ y por tanto el conjunto verifica la caracterización de base de filtro.
+\end{obs}
+
+\begin{nota}
+  $f(\mathcal{F})$ denota el filtro engendrado por la base $\{ f(F) : F \in \mathcal{F} \}$.
+\end{nota}
+
+\begin{prop}
+  Sea $( X, \mathcal{T} ), ( X', \mathcal{T}' )$ e.t., $f : X \to X'$ aplicación, $x \in X$. Entonces, $f$ es continua en $x$ $\Leftrightarrow \forall \mathcal{F}$ en $X$ tal que $\mathcal{F} \xrightarrow[]{  ( X, \mathcal{T} )  } x$ se tiene que $f(\mathcal{F}) \xrightarrow[]{ ( X, \mathcal{T} ) } f(x)$.
+\end{prop}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item []
+    \item [$(\Rightarrow)$] Suponemos $f$ continua y $\mathcal{F} \xrightarrow[]{ ( X, \mathcal{T} ) } x$. Entonces, $\forall V \in \mathcal{V}(f(x)) \xRightarrow[]{ f \text{ cont.} } \exists U \in \mathcal{V}(x) : f(U) \subset V$. Como $\mathcal{V}(x) \subset \mathcal{F}$, entonces $V \in f(\mathcal{F})$. Ahora, $\mathcal{V}(f(x)) \subset f(\mathcal{F}) \Leftrightarrow f(\mathcal{F}) \rightarrow f(x)$.
+    \item [$(\Leftarrow)$] Como $\mathcal{V}(x)$ es filtro y esta contenido en si mismo, entonces $\mathcal{V}(x) \rightarrow x $ y por hipótesis $\Rightarrow f(\mathcal{V}(x)) \rightarrow f(x) \Leftrightarrow \mathcal{V}(f(x)) \subset f(\mathcal{V}(x))$. Por tanto, $\forall V \in \mathcal{V}(f(x)), V \in f(\mathcal{V}(x)) \Rightarrow \exists U \in \mathcal{V}(x) : f(U) \subset V \Rightarrow f$ continua en $x$.
+  \end{enumerate}
+\end{dem}
+
+\begin{prop}
+  Sea $\{ ( X_{j}, \mathcal{T}_{j} ) \}_{j \in J}$ familia no vacía de e.t., $ x \in \prod_{j \in J} X_{j}$, $\mathcal{ F}$ filtro de $\prod_{j \in J} X_{j}$. Entonces, $\mathcal{F} \xrightarrow[]{ ( \prod_{j \in J} _{j}, \prod_{j \in J} \mathcal{T}_{j} ) } x$ $ \Leftrightarrow \forall j \in F , p_{j}(\mathcal{F}) \xrightarrow[]{ ( X_{j}, \mathcal{T}_{j} ) } x_{j} = p_{j}(x)$.
+\end{prop}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item []
+    \item [$(\Rightarrow)$] Por la proposición anterior.
+    \item [$(\Leftarrow)$] $\forall U \in \mathcal{V}(x), \exists B \in \mathcal{B} : x \in B \subset U$ tal que $B = \bigcap_{k = 1}^{n} p_{j_{k}}^{-1}(U_{j_{k}}), x_{j_{k}} \in U_{j_{k}} \in \mathcal{T}_{j_{k}}, \forall k \in \{ 1, \cdots, n \}$. Entonces, $\forall k \in \{ 1, \cdots, n \}, \mathcal{V}(x_{j_{k}}) \subset p_{j_{k}}(\mathcal{F}) \Rightarrow U_{j_{k}} \in p_{j_{k}}(\mathcal{F}) \Rightarrow \forall k \in \{ 1, \cdots, n \}, \exists F_{k} \in \mathcal{F} : p_{j_{k}}(F_{k}) \subset U_{j_{k}}$. Por tanto, $\forall k \in \{ 1, \cdots, n \}, \exists F_{k} \in \mathcal{F}$ tal que $F_{k} \subset p_{j_{k}}^{-1}(U_{j_{k}})$. Entonces, cortando todo tenemos $F_{1} \cap \cdots \cap F_{n} \subset B \subset U$ donde $F_{1} \cap \cdots \cap F_{2} \in \mathcal{F}$ de manera que $U \in \mathcal{F} \Rightarrow \mathcal{V}(x) \subset \mathcal{F} \Leftrightarrow \mathcal{F} \xrightarrow[]{ ( \prod_{j \in J} X_{j}, \prod_{j \in J} \mathcal{T}_{j} ) } x$.
+  \end{enumerate}
+\end{dem}
+
+\begin{prop}[Axioma de Zernado]
+  Todo conjunto no vacío admite alguna "buena" ordenación (cada subconjunto tiene primer elemento).
+\end{prop}
+
+\begin{prop}[Axioma de Zorn]
+  Dado un conjunto ordena tal que toda cadena suya ( subconjunto totalmente ordenado ) tiene cota superior, entonces el conjunto tiene algún elemento maximal.
+\end{prop}
+
+\begin{defn}[Ultrafiltro]
+  Sea $X$ conjutno, $\mathcal{F }$ filtro en $X$. Se dice que $\mathcal{F}$ es ultrafiltro si es maximal. (e.d. si no hay filtro estrictamente más fino que $\mathcal{F}$).
+\end{defn}
+
+\begin{prop}
+  Sea $X$ conjunto, $\mathcal{F}$ filtro en $X$. Entonces, existe algún ultrafiltro más fino que $\mathcal{F}$.
+\end{prop}
+
+\begin{dem}
+  Sea $\mathcal{Y}$ la familia de todos los filtros de $X$ más finos que $\mathcal{F}$, ordenada por $\subset$. Si $\{ F_{j} \}_{j \in J}$ es cadena en $\mathcal{Y}$, tenemos que la unión de los filtros de esa cadena es cota superior, $\bigcup_{j \in J} \mathcal{F}_{j}$. Vemos que es filtro.
+  \begin{itemize}
+    \item $\forall F_{1}, F_{2} \in \bigcup_{j \in J} \mathcal{F}_{j} \Rightarrow \exists j_{i} \in J : F_{i} \in \mathcal{F}_{j_{i}}$. Entonces, $\mathcal{F}_{j_{1}} \subset \mathcal{F}_{j_{2}}$ o $\mathcal{F}_{j_{k}} \subset \mathcal{F}_{j_{2}} \subset \mathcal{F}_{j_{1}}$. Suponemos que $\mathcal{F}_{j_{1}} \subset \mathcal{F}_{j_{2}}$. Ahora, $\forall F_{1}, F_{2} \in \mathcal{F}_{j_{k}}$ filtro $\Rightarrow F_{1} \cap F_{2} \in \mathcal{F}_{j_{2}} \Rightarrow F_{j_{1}} \cap F_{j_{2}} \in \bigcup_{j \in J} \mathcal{F}_{j}$.
+    \item $\forall F \in \bigcup_{j \in J} \mathcal{F}_{j}, \forall F' \subset X : F' \supset F \Rightarrow \exists j_{0} \in J, F \in \mathcal{F}_{j_{0}} $ finito $\Rightarrow F' \in \mathcal{F}_{j_{0}} \subset \bigcap_{j \in J} \mathcal{F}_{j}$.
+  \end{itemize}
+  donde $\mathcal{F} \subset \mathcal{F}_{j_{0}} \subset \bigcup_{j \in J} \mathcal{F}_{j}, \forall j_{0} \in J$. Estamos en condicones de aplicar el Axioma de Zorn, entonces $\exists$ elemento maximal de $\mathcal{Y} \Rightarrow \mathcal{G}$ ultrafiltro, $\mathcal{F} \subset \mathcal{G}$.
+\end{dem}
+
+\begin{prop}
+  Sea $X$ conjunto $\mathcal{F}$ filtro en $X$. Entonces, $\mathcal{F}$ es ultrafiltro $\Leftrightarrow \forall E \subset X, E \in \mathcal{F} \text{ o } X \setminus E \in \mathcal{F}$.
+\end{prop}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item []
+    \item [$(\Rightarrow)$] Suponemos que $\mathcal{F}$ ultrafiltro y $\forall E \subset X$. Entonces, $\forall F \in \mathcal{F}$ se tiene que $F \cap E \neq \emptyset$ o $F \cap (X \setminus E) \neq \emptyset$. (no puede pasar que $\exists F_{1}, F_{2} \in \mathcal{F}$ tal que $F_{1} \subset E$ y $F_{2} \subset X \setminus E$. En este caso, $F_{1} \cap F_{2} \in \mathcal{F}$ que sería absurdo). Suponemos que $\forall F \in \mathcal{F}, F \cap E \neq \emptyset$. Entonces, $\{ F \cap E : F \in \mathcal{F} \}$ familia no vacía de conjuntos no vacíos donde $F \cap E \in \mathcal{F}, \forall F \in \mathcal{F} \Rightarrow $ es base de filtros. Llamamos $\mathcal{G}$ a el fitro engendrado por la base. Entonces, $\forall F \in \mathcal{F}, F \supset F \cap E \Rightarrow F \in \mathcal{G}$, es decir, $\mathcal{F} \subset \mathcal{G}$. Pero $\mathcal{F}$ es ultrafiltro. Por tanto, $\mathcal{F} = \mathcal{G}$. Como $E \supset F \cap E, \forall F \in \mathcal{F}$, entonces $E \in \mathcal{G} = \mathcal{F}$.
+    \item [$(\Leftarrow)$] Por la proposición anterior, $\exists \mathcal{G}$ ultrafiltro en $X$ $\Rightarrow \mathcal{F} \subset \mathcal{G}$. Si $\mathcal{F} \not \subset \mathcal{G}$(contenido propio), entonces $\exists G \in \mathcal{G}: G \not \in \mathcal{F} \Rightarrow X \setminus G \in \mathcal{F} \subset \mathcal{G} \Rightarrow G, X \setminus G \in \mathcal{G}$ filtro, que es absurdo.
+  \end{enumerate}
+\end{dem}
+
+\begin{prop}
+  Sea $X$ conjunto, $f : X \to Y$ aplicación. Si $\mathcal{F}$ es ultrafiltro en $X$, entonces $f(\mathcal{F})$ es ultrafiltro en $\mathcal{Y}$.
+\end{prop}
+
+\begin{dem}
+  $\forall E \subset Y \Rightarrow f^{-1}(E) \subset X$. Entonces, como $\mathcal{F}$ es ultrafiltro, tenemos que $f^{-1}(E) \in \mathcal{F}$ o $(X \setminus f^{-1}) \in \mathcal{F}$.
+  \begin{itemize}
+    \item Si $f^{-1}(E) \in \mathcal{F} \xRightarrow[]{ f(f^{-1}(E)) \subset E } E \in f(\mathcal{F})$.
+    \item Si $X \setminus f^{-1}(E) \in \mathcal{F} \xRightarrow[]{ f(X \setminus f^{-1}(E)) \subset Y \setminus E } Y \setminus E \in f(\mathcal{F})$.
+  \end{itemize}
+  Entonces, por la proposición anterior, $f(\mathcal{F})$ es ultrafiltro.
+\end{dem}
+

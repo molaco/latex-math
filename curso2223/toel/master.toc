@@ -1,21 +1,34 @@
 \babel@toc {spanish}{}\relax 
-\contentsline {part}{I\hspace {1em}Topología General}{2}{}%
-\contentsline {chapter}{\numberline {1}Espacios Topológicos Arbitrarios}{3}{}%
-\contentsline {section}{\numberline {1.1}Espacios Topológicos}{3}{}%
-\contentsline {section}{\numberline {1.2}Entornos}{8}{}%
-\contentsline {section}{\numberline {1.3}Bases}{13}{}%
-\contentsline {section}{\numberline {1.4}Subespacios}{15}{}%
-\contentsline {section}{\numberline {1.5}Funciones continuas}{16}{}%
-\contentsline {section}{\numberline {1.6}Espacio Producto}{19}{}%
-\contentsline {section}{\numberline {1.7}Espacio Cociente}{22}{}%
-\contentsline {section}{\numberline {1.8}Espacio Suma}{25}{}%
-\contentsline {chapter}{\numberline {2}Propiedades de Separación}{27}{}%
-\contentsline {section}{\numberline {2.1}Espacio Regular}{31}{}%
-\contentsline {section}{\numberline {2.2}Espacio Completamente Regular}{32}{}%
-\contentsline {section}{\numberline {2.3}Espacios Normales}{34}{}%
-\contentsline {chapter}{\numberline {3}Propiedades Numerabilidad}{42}{}%
-\contentsline {section}{\numberline {3.1}Axiomas Numerabilidad}{42}{}%
-\contentsline {section}{\numberline {3.2}Separable}{46}{}%
-\contentsline {section}{\numberline {3.3}Lindelöf}{48}{}%
-\contentsline {chapter}{\numberline {4}Espacios Compactos}{53}{}%
-\contentsline {chapter}{\numberline {5}Conexión}{69}{}%
+\contentsline {part}{I\hspace {1em}Topología General}{3}{}%
+\contentsline {chapter}{\numberline {1}Espacios Topológicos Arbitrarios}{4}{}%
+\contentsline {section}{\numberline {1.1}Espacios Topológicos}{4}{}%
+\contentsline {section}{\numberline {1.2}Entornos}{9}{}%
+\contentsline {section}{\numberline {1.3}Bases}{14}{}%
+\contentsline {section}{\numberline {1.4}Subespacios}{16}{}%
+\contentsline {section}{\numberline {1.5}Funciones continuas}{17}{}%
+\contentsline {section}{\numberline {1.6}Espacio Producto}{20}{}%
+\contentsline {section}{\numberline {1.7}Espacio Cociente}{23}{}%
+\contentsline {section}{\numberline {1.8}Espacio Suma}{26}{}%
+\contentsline {chapter}{\numberline {2}Propiedades de Separación}{28}{}%
+\contentsline {section}{\numberline {2.1}Espacio Regular}{32}{}%
+\contentsline {section}{\numberline {2.2}Espacio Completamente Regular}{33}{}%
+\contentsline {section}{\numberline {2.3}Espacios Normales}{35}{}%
+\contentsline {chapter}{\numberline {3}Propiedades Numerabilidad}{43}{}%
+\contentsline {section}{\numberline {3.1}Axiomas Numerabilidad}{43}{}%
+\contentsline {section}{\numberline {3.2}Separable}{48}{}%
+\contentsline {section}{\numberline {3.3}Lindelöf}{50}{}%
+\contentsline {chapter}{\numberline {4}Espacios Compactos}{55}{}%
+\contentsline {section}{\numberline {4.1}Compacidad}{55}{}%
+\contentsline {section}{\numberline {4.2}Compacidad Local}{61}{}%
+\contentsline {section}{\numberline {4.3}Compactación}{66}{}%
+\contentsline {chapter}{\numberline {5}Conexión}{71}{}%
+\contentsline {section}{\numberline {5.1}Espacio conexo}{71}{}%
+\contentsline {section}{\numberline {5.2}Componentes Conexas}{74}{}%
+\contentsline {section}{\numberline {5.3}Espacio Localmente Conexo}{74}{}%
+\contentsline {section}{\numberline {5.4}Conexión por caminos}{76}{}%
+\contentsline {chapter}{\numberline {6}Convergencia}{78}{}%
+\contentsline {section}{\numberline {6.1}Filtros}{78}{}%
+\contentsline {section}{\numberline {6.2}Redes}{85}{}%
+\contentsline {section}{\numberline {6.3}Resultados}{90}{}%
+\contentsline {part}{II\hspace {1em}Topología Algebráica}{96}{}%
+\contentsline {chapter}{\numberline {7}Homotopía}{97}{}%

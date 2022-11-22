@@ -1,0 +1,163 @@
+\begin{prop}
+  Sea $( X, \mathcal{T} )$ e.t., $M \subset X$ no vacío, $x \in X$. Entonces, $x$ es punto adherente ($x \in \overline{M}$) $\Leftrightarrow$ existe una red en $M$ tal que la red converge a $x$ en $( X, \mathcal{T} )$.
+\end{prop} 
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item []
+    \item [$(\Rightarrow)$] Por la definición de punto afherente, $x \in \overline{M} \Leftrightarrow$ $\forall U \in \mathcal{V}(x), U \cap M \neq \emptyset$. Definimos relación binaria
+      \[ 
+        U_{1}, U_{2} \in \mathcal{V}(x), \quad U_{1} \leq U_{2} \Leftrightarrow U_{2} \subset U_{1},
+      \]
+      entonces, $ (\mathcal{V}(x), \leq)$ es conjunto dirigido, ya que $\forall U_{1}, U_{2}, U_{1} \in \mathcal{V}(x), U_{1} \cap U_{2} \in \mathcal{V}(x)$ y $U_{2}, U_{1} \supset U_{1} \cap U_{2}$. Definimos una res $s$ en $M \subset X$
+      \[ 
+        s : \mathcal{V}(x) \to x : u \mapsto s(u) = s_{u} \in M.
+      \] 
+      Como $\forall U^{x}$ entorno de $x$, $U^{x} \in \mathcal{V}(x)$, entonces $\forall U \in \mathcal{V}(x) : U \geq U^{x}, s_{u} \in U \subset U^{x} \Rightarrow s = (s_{u})_{u \in \mathcal{V}(x)} \xrightarrow[]{ ( X, \mathcal{T} ) } x$.
+    \item [$(\Leftarrow)$] $\forall U^{x} $ entorno de $x$, $\exists d_{0} \in D : d \geq d_{0}, s_{d} \in U^{x}, s_{d} \in M \Rightarrow s_{d} \in U^{x} \cap M \Leftrightarrow x \in \overline{M}$.
+  \end{enumerate}
+\end{dem}
+
+\begin{obs}
+  Sea $X, Y$ conjuntos, $f : X \to Y$ aplicación. Si $s$ es una red en $X$, entonces $f \circ s$ es una red en $Y$.
+\end{obs}
+
+\begin{prop}
+  Sea $( X, \mathcal{T} ), ( Y, \mathcal{S} )$ e.t., $f : X \to Y$ aplicación, $x_{0} \in X$. Entonces, $f$ es continua en $x_{0} \Leftrightarrow \forall s$ red en $X$ tal que $s \xrightarrow[]{ ( X, \mathcal{T} ) } x_{0}$ se tiene que $f \circ s \xrightarrow[]{ ( Y, \mathcal{S} ) } f(x_{0})$.
+\end{prop}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item []
+    \item [$(\Rightarrow)$] $\forall V^{f(x_{0})}$, consideramos $s$ red en $X$ tal que $s \xrightarrow[]{ ( X, \mathcal{T} ) } x_{0}$. Como $f$ es continua, entonces $\exists U^{x_{0}}$ entorno de $x_{0}$ en $( X, \mathcal{T} )$ tal que $f(U^{x_{0}}) \subset V^{f(x_{0})}$. Por tanto, $\exists d_{0} \in D : s_{d} \in U^{x_{0}}, \forall d \geq d_{0} \Rightarrow f(s_{d}) \in V^{f(x_{0})}, \forall d \geq d_{0}$.
+    \item [$(\Leftarrow)$] Sea $D = \{ (x, U) : x \in X, \ U \in \mathcal{V}(x), \ x \in U \}$. Entonces, $D \neq \emptyset$, ya que siempre hay un entorno $U^{x_{0}}$ de $x_{0}$ en $( X, \mathcal{T} )$. Defininos una relación binaria 
+      \[ 
+        (x_{1}, U_{1}) \leq (x_{2}, U_{2}) \Leftrightarrow U_{2} \subset U_{1}
+      \] 
+      entonces, $(D, \leq)$ es conjunto dirigido. Sea $s$ red en $X$
+      \[ 
+        s : D \to X : (x,U) \mapsto s(x, U) = x.
+      \] 
+      Veamos $s \rightarrow x$
+      \[
+        \forall U^{x_{0}}, \exists (x_{0}, U^{x_{0}}) \in D,
+      \]
+      \[
+        \forall (x, U) \in D : (x, U) \geq (x_{0}, U^{x_{0}}),
+      \]
+      \[ 
+        s(x, U) = x \in U \subset U^{x_{0}} 
+      \] 
+      \[
+        \Rightarrow s \xrightarrow[]{ ( X, \mathcal{T} ) } x.
+      \]
+      Ahora, como $f \circ s \xrightarrow[]{ ( Y, \mathcal{S} ) } f(x)$, entonces $\forall V^{f(x_{0})}$ entorno de $f(x_{0})$ en $( Y, \mathcal{S} )$, $\exists (z_{0}, U_{0}) \in D : (f \circ s) (x, U) = f(x) \in V^{f(x_{0})}, \forall (x, U) \geq (z_{0}, U_{0})$. Como $\forall x \in U_{0}$ se tiene que $(x, U_{0}) \geq (z_{0}, U_{0}) \Rightarrow f(x) \in V^{f(x_{0})}$, entonces $\forall x \in U_{0}, f(x) \in V^{f(x_{0})} \Rightarrow f(U_{0}) \subset V^{f(x_{0})}$. Por tanto, $f$ es continua.
+  \end{enumerate}
+\end{dem}
+
+\begin{prop}
+  Sea $\{ ( X_{j}, \mathcal{T}_{j} ) \}_{j \in J}$ familia no vacía de e.t., $x \in \prod_{j \in J} X_{j}$, $x$ red en $\prod_{j \in J} X_{j}$. Entonces, $s = (s_{d})_{d \in D} \rightarrow x$ en $( \prod_{j \in J} X_{j}, \prod_{j \in J} \mathcal{T}_{j} ) \Leftrightarrow p_{j} \circ s \xrightarrow[]{ ( X_{j}, \mathcal{T}_{j} ) } x_{j}, \forall j \in J$.
+\end{prop}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item []
+    \item [$(\Rightarrow)$] Dado que $p_{j}$ es continua, $s \rightarrow x \Rightarrow (p_{j} \circ s) \rightarrow x_{j}, \forall j \in J$.
+    \item [$(\Leftarrow)$] $\forall U^{x}$ entorno de $x$ en $( \prod_{j \in J} X_{j}, \prod_{j \in J} \mathcal{T}_{j} )$, $\exists B \in \mathcal{B}$ base de $\prod_{j \in J} \mathcal{T}_{j} : x \in B \subset U^{x}$ donde 
+      \[ 
+        B = \bigcap_{k = 1}^{n} p_{j_{k}}^{-1}(U_{j_{k}}) .
+      \] 
+      Ahora $x_{j_{k}} \in U_{j_{k}} \in \mathcal{T}_{j_{k}}, \forall k \in \{ 1, \cdots, n \}$ y $s \xrightarrow[]{ ( \prod_{j \in J} X_{j}, \prod_{j \in J} \mathcal{T}_{j} ) } x$, entonces
+      \[
+        \forall k \in \{ 1, \cdots, n \}, \exists d_{k} \in D : p_{j_{k}}(s_{d}) \in U_{j_{k}}, \forall d \geq d_{k}.
+      \]
+      Por ser $D$ conjunto dirigido, $\exists d_{0} \in D : d_{1}, \cdots, d_{n} \leq d_{0}$. Por tanto,
+      \[
+        \forall d \geq d_{0}, p_{j_{k}}(s_{d}) \in U_{j_{k}}, \quad \forall k \in \{ 1, \cdots, n \} 
+      \]
+      \[ 
+        \Rightarrow s_{d} \in p_{j_{k}}^{-1}(U_{j_{k}}), \forall k \in \{ 1, \cdots, n \}, \forall d \geq d_{0} \Leftrightarrow s_{d} \in B \subset U^{x}, \forall d \geq d_{0} 
+      \] 
+      Entonces, $s \xrightarrow[]{ ( \prod_{j \in J} X_{j}, \prod_{j \in J} \mathcal{T}_{j} ) } x$.
+  \end{enumerate}
+\end{dem}
+
+\begin{defn}[Red Universal]
+  Sea $X \neq \emptyset$ conjunto, $s$ red en $S$. Se dice que $s$ es red universal si $\forall M \subset X$ se tiene que ó $\exists d_{1} \in D : s_{d} \in M, \forall d \geq d_{1}$ ó $\exists d_{2} \in D : s_{d} \in X \setminus M, \forall d \geq d_{2}$.
+\end{defn}
+
+\begin{prop}
+  Sea $X, Y$ conjuntos no vacíos, $f : X \to Y$ aplicación continua, $s$ red universal en $X$, entonces $f \circ s$ es red universal en $Y$.
+\end{prop}
+
+\begin{dem}
+  $\forall M \subset Y, f^{-1}(M) \subset X$, $s$ red universal
+  \[ 
+    \Rightarrow
+    \begin{aligned}
+      \begin{cases}
+        \exists d_{1} \in D : s_{d} \in f^{-1}(M), \forall d \geq d_{1} \\
+        \exists d_{2} \in D : s_{d} \in X \setminus f^{-1}(M), \forall d \geq d_{2}
+      \end{cases}
+    \end{aligned} 
+  \] 
+  \[ 
+    \Rightarrow
+    \begin{aligned}
+      \begin{cases}
+        \exists d_{1} \in D : f(s_{d}) \in M, \forall d \geq d_{1} \\
+        \exists d_{2} \in D : s_{d} \in Y \setminus M, \forall d \geq d_{2}
+      \end{cases}
+    \end{aligned} 
+  \] 
+  Por tanto, $f \circ s$ es red universal.
+\end{dem}
+
+\section{Resultados}
+
+\begin{defn}[Filtro Asociado]
+  Sea $X$ conjunto no vacío, $s$ red en $X$. Se llama filtro asociado a la red $s$ al filtro $\mathcal{F}_{s}$ engendrado por la base de filtro de las secciones $\{ B_{d_{0}} : d_{0} \in D \}$ tal que $B_{ d_{ 0 } } = \{ s_{d} : d \geq d_{0} \}$.
+\end{defn}
+
+\begin{defn}[Red Asociada]
+Sea $X$ conjunto no vacío, $\mathcal{F}$ filtro en $X$, $D_{\mathcal{F}} = \{ (x, F) : x \in F, F \in \mathcal{F} \}, (x_{1}, F_{1}) \leq (x_{2}, F_{2}) \Leftrightarrow F_{2} \subset F_{1}$. Se llama red asociada al filtro $\mathcal{F}$ a $s_{\mathcal{F}} : D_{\mathcal{F}} \to X : (x, F) \rightarrow s_{\mathcal{F}}(x, F) = x$.
+\end{defn}
+
+\begin{prop}
+  Sea $( X, \mathcal{T} )$ e.t., $x_{0} \in X$, entonces
+  \begin{enumerate}[label=(\roman*)]
+    \item Si $s$ es una red en $X$, $s \xrightarrow[]{ ( X, \mathcal{T} ) } x_{0} \Leftrightarrow \mathcal{F}_{s} \xrightarrow[]{ ( X, \mathcal{T} ) } x_{0}$.
+    \item Si $\mathcal{F}$ filtro en $X$, $\mathcal{F} \xrightarrow[]{ ( X, \mathcal{T} ) } x_{0} \Leftrightarrow s_{\mathcal{F}} \xrightarrow[]{ ( X, \mathcal{T} ) } x_{0}$.
+  \end{enumerate}
+\end{prop}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item []
+    \item Como $s$ es red en $( X, \mathcal{T} )$ y converge a $x$ tenemos que
+      \[
+        s \xrightarrow[]{ ( X, \mathcal{T} ) } x_{0} \Leftrightarrow \forall U^{x_{0}}, \exists d_{0} \in D : s_{d} \in U^{x_{0}}, \forall d \geq d_{0}
+      \]
+      \[
+        \Leftrightarrow \forall U^{x_{0}}, \exists d_{0} \in D : B_{d_{0}} \subset U^{x_{0}}
+      \]
+      \[ 
+        \Leftrightarrow \forall U^{x_{0}}, U^{x_{0}} \in \mathcal{F}_{s}
+      \] 
+      \[ 
+        \Leftrightarrow \mathcal{V}(x_{0})  \subset \mathcal{F}_{s}
+      \] 
+      \[ 
+        \Leftrightarrow \mathcal{F}_{s} \xrightarrow[]{ ( X, \mathcal{T} ) } x_{0}
+      \] 
+    \item 
+      \begin{enumerate}[label=(\roman*)]
+        \item []
+        \item [$(\Rightarrow)$] Sea $\mathcal{F}$ filtro en $( X, \mathcal{T} )$ y $s_{\mathcal{F}}$ la red asociada a $\mathcal{F}$. Como $\mathcal{F} \rightarrow x$ $\Leftrightarrow \mathcal{V}(x) \subset \mathcal{F}$, entonces $\forall U^{x_{0}} \in \mathcal{V}(x_{0}) \subset \mathcal{F}, \exists (x_{0}, U^{x_{0}}) \in D_{\mathcal{F}}$ tal que $\forall (x, F) \in D_{\mathcal{F}}, (x, F) \geq (x_{0}, U^{x_{0}})$(Por la definición de filtro, la intersección de elementos es un elemento del filtro). Por tanto, $s_{\mathcal{F}}(x, F) = x \in F \subset U^{x_{0}} \Rightarrow s_{\mathcal{F}} \rightarrow x_{0}$.
+
+        \item [$(\Leftarrow)$] Sea $\mathcal{F}$ filtro en $( X, \mathcal{T} )$ y $s_{\mathcal{F}}$ la red asociada tal que $s_{\mathcal{F}} \xrightarrow[]{ ( X, \mathcal{T} ) } x_{0}$. Entonces, $\forall U^{x_{0}} \in \mathcal{V}(x_{0}), \exists (z_{0}, F) \in D_{\mathcal{F}}$ tal que $\forall (z, F) \in D_{\mathcal{F}}, (z, F) \geq (z_{0}, F_{0}), s_{\mathcal{F}}(z, F) \in U^{x_{0}}$. \\
+
+          Ahora, $\forall z \in F_{0}, (z, F_{0}) \in D_{\mathcal{F}} \Rightarrow (z, F_{0}) \geq (z_{0}, F_{0})$. Por tanto, $s_{\mathcal{F}}(z, F_{0}) \in U^{x_{0}} \Rightarrow F_{0} \in \mathcal{F}$ y $F_{0} \subset U^{x_{0}} \Rightarrow U^{x_{0}} \in \mathcal{F}$, es decir, $\mathcal{V}(x_{0}) \subset \mathcal{F} \Leftrightarrow \mathcal{F} \xrightarrow[]{ ( X, \mathcal{T} ) } x$.
+      \end{enumerate}
+  \end{enumerate}
+\end{dem}

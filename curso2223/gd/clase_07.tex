@@ -1,0 +1,454 @@
+\chapter{Curvatura}
+
+\section{Resumen Orientación}
+
+\begin{note}
+  Dada una parametrización $X : U \subset \mathbb{R}^{2} \to S$ de una superficie regular $S$ en un punto $p \in S$, podemos elegir un vector normal unitario en cada punto de $X(U)$
+  \[ 
+    N(q) = \frac{X_{u} \times X_{v}}{| X_{u} \times X_{v} |} (q), \quad q \in X(U).
+  \] 
+  Entonces, tenemos una aplicación diferencial $N : X(U) \to \mathbb{R}^{3}$ que asocia a cada $ q \in X(U)$un vector normal unitaro. En general, si $V \subset S$ es un abierto de $S$ y $N : V \to \mathbb{R}^{3}$ es una aplicación diferencial que asocia $\forall q \in V$ un vector normal unitario en $q$, entonces decimos que $N$ es un campo normal unitaro diferenciale en $V$.
+\end{note}
+
+\begin{obs}
+  No todas las superficies admiten un campo normal unitario diferenciable. Por ejemplo, la band de Mobius.
+\end{obs}
+
+\begin{defn}
+  Decimos que $S$ superficie es orientable si admite un campo normal unitario diferenciable en todo $S$. A este campo lo llamamos orientación de $S$.
+\end{defn}
+
+\begin{obs}
+  Toda superficie cubierta por un solo sistema de coordenadas es trivialmente orientable. Por ejemplo, la superficies representadas por grafos de funciones diferenciables.
+\end{obs}
+
+\begin{prop}
+  Una orientación $N$ en $S$ induce una orientación en el espacio tangenete $T_{p}(S)$. Sea $p \in S$. Definimos $\{ v, w \} \subset T_{p}(S)$ como base positiva si $(v \times w) \cdot N > 0$. Entonces, el conjunto de todas las bases positivas de $T_{p}(S)$ es una orientación para $T_{p}(S)$.
+\end{prop}
+
+\begin{nota}
+  Una superficie $S$ orientable tiene orientación $N$, donde $N$ es un campo normal unitario diferenciable.
+\end{nota}
+
+%%\section{Introducción Curvatura}
+%%
+%%\begin{defn}
+%%  Sea $S \subset \mathbb{R}^{3}$ una superficie con orientación $N$. La aplicación $N : S \to \mathbb{R}^{3}$ toma valores en la esfera unidad
+%%  \[ 
+%%    \mathbb{S}^{2} = \{ (x, y, z) \in \mathbb{R}^{3} : x^{2} + y^{2} + z^{2} = 1 \} 
+%%  \] 
+%%  La aplicación $N : S \to \mathbb{S}^{2}$ se llama aplicación de Gauss de $S$.
+%%\end{defn}
+%%
+%%\begin{obs}
+%%  La aplicación de Gauss es diferenciable tal que $(d N)_{p} : T_{p}(S) \to T_{N(p)}(\mathbb{S}^{2})$ es una aplicación lineal. 
+%%\end{obs}
+%%
+%%\begin{ejm}
+%%  Sea $P = \{ (x, y, z) \in \mathbb{R}^{3} : ax + by + cz + d = 0\}$, $N = (a, b, c) / \sqrt{a^{2} + b ^{2} + c^{2}}$. Entonces, $(d N) = 0$.
+%%\end{ejm}
+%%
+%%\begin{ejm}
+%%  Sea $\mathbb{S}^{2} = \{ (x, y, z) \in \mathbb{R}^{3} : x^{2} + y^{2} + z^{2} = 1 \}$. Si $\alpha(t) = (x(t), y(t), z(t))$ es una curva parametrizada en $\mathbb{S}^{2}$, entonces
+%%  \[ 
+%%    2xx' + 2yy' + 2zz' = 0,
+%%  \] 
+%%  es decir, $(x, y, z)$ es normal a la esfera. Por tanto, $\overline{N} = (x, y, z)$ y $N = (-x, -y, -z)$ son campos normales unitarios en $\mathbb{S}^{2}$. Fijamos la orientación $N$ en $\mathbb{S}^{2}$. El vector normal restringido a la curva $\alpha(t)$ es 
+%%  \[ 
+%%    N(t) = (-x(t), -y(t), -z(t)) 
+%%  \] 
+%%  es una función vectorial en $t$ y
+%%  \[ 
+%%    N'(t) = (-x'(t), -y'(t), -z'(t))  
+%%  \]
+%%  es decir, $(d N)_{p}(v) = - v$.
+%%\end{ejm}
+%%
+%%\begin{ejm}
+%%  Sea $C = \{ (x, y, z) \in \mathbb{R}^{3} : x^{2} + y^{2} = 1 \}$. Se tiene que $\overline{N} = (x, y, 0)$ y $N = (-x, -y, 0)$ son vectores unitarios normales a $(x, y, z)$. Fijamos la orientación $N = (-x, -y, -z)$. Considerando la curva $\alpha(t) = (x(t), y(t), z(t))$ contenida en el cilindor, es decir, $(x(t))^{2} + (y(t))^{2} = 1$, tenemos que $N(t) = (-x(t), -y(t), 0)$. Por tanto,
+%%  \[ 
+%%    N'(t) = (-x'(t), -y'(t), 0) 
+%%  \] 
+%%  de manera que $(d N)_{p}(v) = 0$ donde $v$ es un vector tangente al cilindro y paralelo al eje $z$ o $(d N)_{p}(w) = -w$ donde $w$ es un vector tangente al cilindro y paralelo al plano $XY$.
+%%\end{ejm}
+%%
+%%\begin{ejm}
+%%  Sea $p = (0, 0, 0)$, $p \in H = \{ (x, y, z) \in \mathbb{R}^{3} : z = y^{2} - x^{2} \}$. Consideramos la parametrización 
+%%  \[ 
+%%    X(u, v) = (u, v, v^{2} - u^{2})
+%%  \] 
+%%  donde
+%%  \[ 
+%%    X_{u} = (1, 0, -2u), \\
+%%    X_{v} = (0, 1, 2v),
+%%  \] 
+%%  de manera que
+%%  \[ 
+%%    N = \Bigg ( \frac{u}{\sqrt{u^{2} + v^{2} + \frac{1}{4}}}, \frac{-v}{\sqrt{u^{2} + v^{2} + \frac{1}{4}}}, \frac{1}{2 \sqrt{u^{2} + v^{2} + \frac{1}{4}}} \Bigg ) 
+%%  \] 
+%%  Ahora, en $p$ se tiene $X_{u} = (1, 0, 0)$ y $X_{v} = (0, 1, 0)$. Por tanto, el vector tangente a $\alpha(t) = X(u(t),v(t))$ en $p$ con $\alpha(0) = p$ es $(u'(t), v'(t), 0)$. Restringiendo $N(u,v)$ a esta curva tenemos que
+%%  \[ 
+%%    N'(0) = (2u'(0), -2v'(0), 0).
+%%  \] 
+%%  Por tanto, $(d N)_{p}(u'(0), v'(0), 0) = (2u'(0), -2u'(0), 0)$.
+%%\end{ejm}
+%%
+%%\begin{prop}
+%%  La diferencial $(d N)_{p} : T_{p}(S) \to T_{p}(S)$ de la aplicación de Gauss es una aplicación lineal auto-adjunta.
+%%\end{prop}
+%%
+%%\begin{dem}
+%%  content
+%%\end{dem}
+%%
+%%\begin{defn}[Segunfa Forma Fundamental]
+%%  La forma cuadrática $\prod_{p}$, definida en $T_{p}(S)$ por 
+%%  \[ 
+%%    \prod_{p}(v) = - (d N)_{p}(v) \cdot v
+%%  \] 
+%%  se llama segunda forma fundamental de $S$ en $p$.
+%%\end{defn}
+%%
+%%\begin{defn}[Curvatura Normal]
+%%  Sea $C$ un curva regular en $S$ que pasa por $p \in S$, $k$ la curvatura de $C$ en $p$, y $\cos(\theta) = n \cdot N$ donde $n$ es el vector normal a $C$ y $N$ es el vector normal a $S$ en $p$. El número $k_{a} = k \cos(\theta)$ se llama curvatura normal de $C \subset S$ en $p$.
+%%\end{defn}
+%%
+%%\begin{obs}
+%%  $k_{n}$ es la longitud de la proyección del vector $kn$ sobre la normal a la superficie en $p$ con signo dado por la orientación $N$ de $S$ en $p$.
+%%\end{obs}
+%%
+%%\begin{obs}
+%%  La curvatura normal de $C$ no depende de la orientación de $C$ pero cambia de signo si esta cambia.
+%%\end{obs}
+%%
+%%\begin{note}[Interpretación Segunda Forma Fundamental]
+%%  Sea $C \subset S$ una curva parametrizada por $\alpha(s)$, donde $s$ es la longitud de arco de $C$ y $\alpha(0) = p$. Si denotamos por $N(s)$ la restricción de $N$ a la curva $\alpha(s)$ tenemos que $N(s) \cdot \alpha'(s) = 0$. Por tanto,
+%%  \[ 
+%%    N(s) \cdot \alpha''(s) = - (N'(s) \cdot \alpha'(s)) 
+%%  \]
+%%  de manera que
+%%  \[ 
+%%    H_{p}(\alpha'(0)) = - ((d N)_{p})(\alpha'(0) \cdot \alpha'(0)) 
+%%  \] 
+%%  \[ 
+%%    = - (N'(0) \cdot \alpha'(0)) 
+%%  \] 
+%%  \[ 
+%%    = N(0) \cdot \alpha''(0) 
+%%  \] 
+%%  \[ 
+%%    = (N, k n)(p) = k_{n}(p) 
+%%  \] 
+%%\end{note}
+%%
+%%\begin{prop}
+%%  Todas las curvas en $S$ que tienen la misma tangente en $p$ tienen la misma curvatura normal.
+%%\end{prop}
+%%
+%%\begin{defn}[Sección Normal]
+%%  Sea $v \in T_{p}(S)$. La intersección del plano formado por $N(p)$ y $v$ con $S$ se llama sección normal de $S$ en $p$.
+%%\end{defn}
+%%
+%%\begin{obs}
+%%  En un entorno de $p$, la sección normal a $S$ en $p$ es una curva plana regular en $S$ cuyo vector normal $n$ en $p$ es $\pm N(p)$ o $0$. Es decir, el valor absoluto de la curvatura normal en $p$ de $\alpha(s)$ es la curvatura de la sección normal a $S$ en $p$ a lo largo de $\alpha'(0)$.
+%%\end{obs}
+%%
+%%\begin{ejm}
+%%  Consideramos la superficie de revolución obtenida rotando la curva $z = y^{4}$ alrededor del eje $z$. Veamos que $(d N)_{p} = 0$ en $p = (0, 0, 0)$. En $p$, la curvatura de $z = y^{4}$ es cero. Además, como el plano $XY$ es un plano tangente a la superficie, el vector normal $N(p)$ es paralelo al eje $z$. Por tanto, toda sección normal en $p$ se obtiene mediante una rotación de $z = y^{4}$, entonces la curvatura es cero. De esta manera, deducimos que todas las curvaturas normales en $p$ son cero, entonces $(d N)_{p} = 0$.
+%%\end{ejm}
+
+\section{Segunda Forma Fundamental}
+
+\begin{defn}[Aplicación de Gauss]
+  Sea $S \subset \mathbb{R}^{3}$ una superficie con orientación $N$. La aplicación $N : S \to \mathbb{R}^{3}$ toma valores en la esfera unidad
+  \[ 
+    \mathbb{S}^{2} = \{ (x, y, z) \in \mathbb{R}^{3} : x^{2} + y^{2} + z^{2} = 1 \} 
+  \] 
+  La aplicación $N : S \to \mathbb{S}^{2}$ se llama aplicación de Gauss de $S$.
+\end{defn}
+
+\begin{obs}
+  La aplicación de Gauss es diferenciable tal que $(d N)_{p} : T_{p}(S) \to T_{N(p)}(\mathbb{S}^{2}) = T_{p}(S)$ es una aplicación lineal. 
+\end{obs}
+
+\begin{note}
+  Para cada curva parametrizada $\alpha(t)$ en $S$ con $\alpha(0) = p$, la curva parametrizada $N \circ \alpha(t) = N(t) \in \mathbb{S}^{2}$ tiene vector tangente $N'(0) = (d N)_{p}(\alpha'(0)) \in T_{p}(S)$. Es decir, la aplicación lineal $(d N)_{p} : T_{p}(S) \to T_{N(p)}(\mathbb{S}^{2})$ mide la tasa de cambio de los vectores normales a $\alpha(t)$ en $S$.
+\end{note}
+
+\begin{ejm}[Plano]
+  Sea $P = \{ (x, y, z) \in \mathbb{R}^{3} : ax + by + cz + d = 0\}$, $N = (a, b, c) / \sqrt{a^{2} + b ^{2} + c^{2}}$. Entonces, $(d N) = 0$.
+\end{ejm}
+
+\begin{ejm}[Esfera]
+  Sea $\mathbb{S}^{2} = \{ (x, y, z) \in \mathbb{R}^{3} : x^{2} + y^{2} + z^{2} = 1 \}$. Si $\alpha(t) = (x(t), y(t), z(t))$ es una curva parametrizada en $\mathbb{S}^{2}$, entonces
+  \[ 
+    2xx' + 2yy' + 2zz' = 0,
+  \] 
+  es decir, $(x, y, z)$ es normal a la esfera. Por tanto, $\overline{N} = (x, y, z)$ y $N = (-x, -y, -z)$ son campos normales unitarios en $\mathbb{S}^{2}$. Fijamos la orientación $N$ en $\mathbb{S}^{2}$. El vector normal restringido a la curva $\alpha(t)$ es 
+  \[ 
+    N(t) = (-x(t), -y(t), -z(t)) 
+  \] 
+  es una función vectorial en $t$ y
+  \[ 
+    N'(t) = (-x'(t), -y'(t), -z'(t))  
+  \]
+  es decir, $(d N)_{p}(v) = - v$.
+\end{ejm}
+
+\begin{ejm}[Cilindro]
+  Sea $C = \{ (x, y, z) \in \mathbb{R}^{3} : x^{2} + y^{2} = 1 \}$. Se tiene que $\overline{N} = (x, y, 0)$ y $N = (-x, -y, 0)$ son vectores unitarios normales a $(x, y, z)$. Fijamos la orientación $N = (-x, -y, -z)$. Considerando la curva $\alpha(t) = (x(t), y(t), z(t))$ contenida en el cilindor, es decir, $(x(t))^{2} + (y(t))^{2} = 1$, tenemos que $N(t) = (-x(t), -y(t), 0)$. Por tanto,
+  \[ 
+    N'(t) = (-x'(t), -y'(t), 0) 
+  \] 
+  de manera que $(d N)_{p}(v) = 0$ donde $v$ es un vector tangente al cilindro y paralelo al eje $z$ o $(d N)_{p}(w) = -w$ donde $w$ es un vector tangente al cilindro y paralelo al plano $XY$.
+\end{ejm}
+
+\begin{ejm}[Paraboloide Hiperbólico]
+  Sea $p = (0, 0, 0)$, $p \in H = \{ (x, y, z) \in \mathbb{R}^{3} : z = y^{2} - x^{2} \}$. Consideramos la parametrización 
+  \[ 
+    X(u, v) = (u, v, v^{2} - u^{2})
+  \] 
+  donde
+  \[ 
+    X_{u} = (1, 0, -2u), \\
+    X_{v} = (0, 1, 2v),
+  \] 
+  de manera que
+  \[ 
+    N = \Bigg ( \frac{u}{\sqrt{u^{2} + v^{2} + \frac{1}{4}}}, \frac{-v}{\sqrt{u^{2} + v^{2} + \frac{1}{4}}}, \frac{1}{2 \sqrt{u^{2} + v^{2} + \frac{1}{4}}} \Bigg ) 
+  \] 
+  Ahora, en $p$ se tiene $X_{u} = (1, 0, 0)$ y $X_{v} = (0, 1, 0)$. Por tanto, el vector tangente a $\alpha(t) = X(u(t),v(t))$ en $p$ con $\alpha(0) = p$ es $(u'(t), v'(t), 0)$. Restringiendo $N(u,v)$ a esta curva tenemos que
+  \[ 
+    N'(0) = (2u'(0), -2v'(0), 0).
+  \] 
+  Por tanto, $(d N)_{p}(u'(0), v'(0), 0) = (2u'(0), -2u'(0), 0)$.
+\end{ejm}
+
+\begin{prop}
+  La diferencial $(d N)_{p} : T_{p}(S) \to T_{p}(S)$ de la aplicación de Gauss es una aplicación lineal auto-adjunta.
+\end{prop}
+
+\begin{dem}
+  content
+\end{dem}
+
+\begin{defn}[Segunda Forma Fundamental]
+  La forma bilineal $\sigma : T_{p}(S) \times T_{p}(S) \to \mathbb{R}$ definida por 
+  \[
+    \sigma_{p}(v,w) = - \langle (d N)_{p}(v){ , }w \rangle, \quad v, w \in T_{p}(S)
+  \] 
+  se llama segunfa forma fundamental de $S$ en $p$.
+\end{defn}
+
+\begin{defn}[Curvatura Normal]
+  Sea $C$ un curva regular en $S$ que pasa por $p \in S$, $k$ la curvatura de $C$ en $p$, y $\cos(\theta) = n \cdot N$ donde $n$ es el vector normal a $C$ y $N$ es el vector normal a $S$ en $p$. El número $k_{n} = k \cos(\theta)$ se llama curvatura normal de $C \subset S$ en $p$.
+\end{defn}
+
+\begin{obs}
+  $k_{n}$ es la longitud de la proyección del vector $kn$ sobre la normal a la superficie en $p$ con signo dado por la orientación $N$ de $S$ en $p$.
+\end{obs}
+
+\begin{obs}
+  La curvatura normal de $C$ no depende de la orientación de $C$ pero cambia de signo si esta cambia.
+\end{obs}
+
+\begin{note}[Interpretación Segunda Forma Fundamental]
+  Sea $C \subset S$ una curva parametrizada por $\alpha(s)$, donde $s$ es la longitud de arco de $C$ y $\alpha(0) = p$. Si denotamos por $N(s)$ la restricción de $N$ a la curva $\alpha(s)$ tenemos que $N(s) \cdot \alpha'(s) = 0$. Por tanto,
+  \[ 
+    N(s) \cdot \alpha''(s) = - (N'(s) \cdot \alpha'(s)) 
+  \]
+  de manera que
+  \[ 
+    \sigma_{p}(\alpha'(0)) = - ((d N)_{p}(\alpha'(0)) \cdot \alpha'(0)) 
+  \] 
+  \[ 
+    = - (N'(0) \cdot \alpha'(0)) 
+  \] 
+  \[ 
+    = N(0) \cdot \alpha''(0) 
+  \] 
+  \[ 
+    = N(0) \cdot (k(0) \cdot n(0) = k(0) \cdot (N(0) \cdot n(0)) 
+  \] 
+  donde $N \cdot n = \cos(\theta)$
+  Por tanto,
+  \[
+    \sigma_{p}(\alpha'(0)) = k \cdot \cos(\theta) = k_{n}(p).
+  \]
+\end{note}
+
+\begin{obs}
+  $\forall v \in T_{p}(S)$ unitario, $\sigma_{p}(v, v)$ es la curvatura normal de la curva $C$ que pasa por $p$ y es tangente a $v$.
+\end{obs}
+
+\begin{prop}
+  Todas las curvas en $S$ que tienen la misma tangente en $p$ tienen la misma curvatura normal.
+\end{prop}
+
+\begin{dem}
+  Sea $M \subset \mathbb{R}^{3}$ superficie, $p \in M$, $l$ recta perpendicular a $M_{p}$, $X \in M_{p}$ vector unitario. Consideramos el plano $P$ que pasa por $p$ formado por $l$ y $X$, entonces la intersección $P \cap M$ forma una curva $c_{X}$ con $c_{X}(0) = p$. Suponemos que $c_{X}$ es parametrizada por arco tal que $c_{X}'(0) = X$. Elegimos $v(p)$ vector unitario perpendicular a $M_{p}$ tal que $v(p) \cdot X > 0$. Entonces, $c_{X}$ tiene curvatura $k_{X}$ en $0$. Sea $P_{\theta}$ cualquier otro plano que contiene $X$ y forma un ángulo $\theta$ con $P$. Entonces, la intersección $P_{\theta} \cap M$ forma otra curva $c_{\theta}$ con $c_{\theta}(0) = p$ y $c'_{\theta} = X$ y curvatura $k_{\theta}$ en $0$. \\
+
+  Ahora, $c_{X}''(0) = k_{X} v_{p}$, entonces
+  \[ 
+    \sigma_{p}(X) = c_{X}''(0) \cdot v(p)= k_{X},
+  \]
+  y como $c_{X}'(0) = c_{\theta}'(0) = X$, entonces
+  \[ 
+    \sigma_{p}(X) = c_{\theta}''(0) \cdot v(p)= k_{X}.
+  \] 
+  Para $v_{\theta}$ vector unitario perpendicular a $X$ en $P'$ se tiene que
+  \[
+    v' \cdot v(p) = \cos(\theta).
+  \]
+  Por tanto, 
+  \[ 
+    k_{X} = c_{\theta}'' \cdot v(p) = k_{\theta} v_{\theta} \cdot v(p) = k_{\theta}  \cdot \cos(\theta).
+  \] 
+\end{dem}
+
+\begin{defn}[Sección Normal]
+  Sea $v \in T_{p}(S)$. La intersección del plano formado por $N(p)$ y $v$ con $S$ se llama sección normal de $S$ en $p$.
+\end{defn}
+
+\begin{obs}
+  En un entorno de $p$, la sección normal a $S$ en $p$ es una curva plana regular en $S$ cuyo vector normal $n$ en $p$ es $\pm N(p)$ o $0$. Es decir, el valor absoluto de la curvatura normal en $p$ de $\alpha(s)$ es la curvatura de la sección normal a $S$ en $p$ a lo largo de $\alpha'(0)$.
+\end{obs}
+
+\begin{ejm}[Superficie de Revolución]
+  Consideramos la superficie de revolución obtenida rotando la curva $z = y^{4}$ alrededor del eje $z$. Veamos que $(d N)_{p} = 0$ en $p = (0, 0, 0)$. En $p$, la curvatura de $z = y^{4}$ es cero. Además, como el plano $XY$ es un plano tangente a la superficie, el vector normal $N(p)$ es paralelo al eje $z$. Por tanto, toda sección normal en $p$ se obtiene mediante una rotación de $z = y^{4}$, entonces la curvatura es cero. De esta manera, deducimos que todas las curvaturas normales en $p$ son cero, entonces $(d N)_{p} = 0$.
+\end{ejm}
+
+\begin{ejm}[Plano]
+  Si consideramos un plano $P$, todas sus secciones normales son rectas. Por tanto, todas las curvaturas normales son $k_{n} = 0$ y la segunda forma fundamental $\sigma_{p}(w,v) = 0$. De esta forma concluimos que $(d N) \equiv 0$.
+\end{ejm}
+
+\begin{ejm}[Esfera]
+  En la esfera $\mathbb{S}^{2}$ con $N$ orientación hacia afuera, la secciones normales en un punto $p \in \mathbb{S}^{2}$ son círculos de radio $1$. Por tanto, todas las curvaturas normales son $1$ y la segunda forma fundamental $\sigma_{p}(v,v) = 1, \forall p \in \mathbb{S}^{2}, \forall v \in T_{p}(S) : | v | = 1$.
+\end{ejm}
+
+\begin{ejm}[Cilindro]
+  En un cilindro, la secciones normales en un punto $p$ varian desde un círculo perpendicular al eje principal del cilindro, a una recta paralela al eje principal y una familia de elipses. Por tanto, la curvatura normal varia de $0$ a $1$.
+\end{ejm}
+
+\begin{obs}
+  Visualizando como son las secciones normales correspondientes a un punto es posible dar una estimación de las curvaturas normales.
+\end{obs}
+
+\begin{note}
+  Considerando $(d N)_{p}$. Entonces, $\exists \{ e_{1}, e_{2} \}$ bas ortonormal de $T_{p}(S)$ tal que $(d N)_{p}(e_{1}) = - k_{1} e_{1}, (d N)_{p}(e_{2}) = - k_{2} e_{2}$. Además, $k_{1}$, $k_{2}$ con $k_{1} \geq k_{2}$ son el máximo y el mínimo de la segunda forma fundamental $\sigma_{p}$ restringida al circulo unitario de $T_{p}(S)$, es decir, son valores extremos de la curvatura normal.
+\end{note}
+
+\begin{defn}
+  La curvatura máxima normal $k_{1}$ y la curvatura mínima normal $k_{2}$ se llaman curvaturas principales en $p$ y la direcciones $e_{1}$ y $e_{2}$ son las direcciones principales en $p$.
+\end{defn}
+
+\begin{ejm}[Plano]
+  Si consideramos un plano, todas las direcciones de todos los puntos son direcciones principales.
+\end{ejm}
+
+\begin{ejm}[Esfera]
+  Si consideramos una esfera, la segunda forma fundamental restringida a vectores unitarios es constante y por tanto, todas las direcciones son extremos para la curvatura normal.
+\end{ejm}
+
+\begin{ejm}[Cilindro]
+  Si consideramos un cilindro, los vectores $v,w \in T_{p}(S)$ tal que $v$ es paralelo al eje $z$ y $w$ es paralelo al plano $XY$ dan las direcciones principales en $p$, correspondientes a las curvaturas principales $0$ y $1$, respectivamente.
+\end{ejm}
+
+\begin{defn}[Curvatura de recta/Linea de Curvatura]
+  Sea $C$ un curva regular conexa en $S$ tal que $\forall p \in C$ la recta tangente de $C$ en $p$ es la dirección principal en $p$, entonces decimos que $C$ es una recta de curvatura en $S$.
+\end{defn}
+
+\begin{prop}
+  Sea $C$ una curva regular conexa en $S$ tal que $C$ es una recta de curvatura $\Leftrightarrow$ $\forall \alpha(t)$ parametrización de $C$ con $N(t) = N \circ \alpha(t)$ se tiene
+  \[ 
+    N'(t) = \lambda(t) \alpha'(t),
+  \] 
+  donde $\lambda(t)$ es una función diferenciable en $t$. En este caso, $-\lambda(t)$ es la curvatura principal a lo largo de $\alpha'(t)$.
+\end{prop}
+
+\begin{note}
+  Conociendo las curvaturas principales en $p$ podemos calcular la curvatura normal a lo largo de una dirección $v \in T_{p}(S)$. Si $| v | = 1$, entonces $\{ e_{1}, e_{2} \}$ es una base ortonormal de $T_{p}(S)$ y
+  \[ 
+    v = e_{1} \cos(\theta) + e_{2} \sen(\theta),
+  \] 
+  donde $\theta$ es el ángulo entre $e_{1}$ y $v$ en la orientación de $T_{p}(S)$. Entonces, la curvatura normal a lo largo de $v$ viene dada por
+  \[ 
+    k_{n} = \sigma_{p}(v) = - \langle (d N)_{p}(v){ , }v \rangle
+  \] 
+  \[ 
+    = - (d N)_{p}(e_{1} \cos(\theta) + e_{2} \sen(\theta)) \cdot (e_{1} \cos(\theta) + e_{2} \sen(\theta)) 
+  \] 
+  \[ 
+    = (e_{1} k_{1} \cos(\theta) + e_{2} k_{2} \sen(\theta)) \cdot (e_{1} \cos(\theta) + e_{2} \sen(\theta)) 
+  \] 
+  \[ 
+    = k_{1} \cos^{2}(\theta) + k_{2} \sen^{2}(\theta).
+  \] 
+  Esta ultima expresión se conoce como la fórmula de Euler que es la segunda forma fundamental expresada en la base $\{ e_{1}, e_{2} \}$.
+\end{note}
+
+\begin{obs}
+  La aplicación $(d N)_{p}: T_{p}(S) \to T_{p}(S)$ es lineal, de dimensión 2 y tiene base $\{ e_{1}, e_{2} \}$. Por tanto, 
+  \[ 
+    \det (dN_{p}) = 
+    \begin{vmatrix}
+       -k_{1} & 0 \\
+       0 & -k_{2}
+    \end{vmatrix}
+    = (-k_{1})(-k_{2}) = k_{1} \cdot k_{2}
+  \] 
+  y la traza es
+  \[ 
+    \tr (dN_{p}) = -(k_{1} + k_{2}) 
+  \] 
+  si cambiamos la orientación, el determinante no cambia pero si lo hace la traza.
+\end{obs}
+
+\begin{defn}
+  Sea $p \in S$ y $dN_{p} : T_{p}(S) \to T_{p}(S)$ la aplicación diferencial de la aplicación de Gauss. El determinante de $dN_{p}$ es la curvatura $K$ de $S$ en $p$. La mitad negativa de la traza de $dN_{p}$ se llama la curvatura media $H$ de $S$ en $p$.
+\end{defn}
+
+\begin{obs}
+  Considerando la aplicación $dN_{p}$ en la base $\{ e_{1}, e_{2} \}$ escribimos
+  \[ 
+    K = k_{1} k_{2}, \quad H = \frac{k_{1} + k_{2}}{2}
+  \] 
+\end{obs}
+
+\begin{defn}
+  Un punto $p \in S$ superficie se llama
+  \begin{enumerate}[label=(\roman*)]
+    \item Elíptico si $K(p) > 0$,
+    \item Hiperbólico si $K(p) < 0$,
+    \item Parabólico si $K(p) = 0$ con $dN_{p} \neq 0$,
+    \item Plano si $K(p) = 0$.
+  \end{enumerate}
+\end{defn}
+
+\begin{obs}
+  Si $p \in S$ es un punto elíptico, entonces la curvatura es positiva y ambas curvaturas principales tienen el mismo signo. Por tanto, toda curva que pase por $p$ tiene sus vectores normales apuntando hacia el mismo lado del plano tangente.
+\end{obs}
+
+\begin{obs}
+  Si $p \in S$ es un punto hiperbólico, entonces la curvatura es negativa y las curvaturas principales tienen signo contrario. Por tanto, hay curvas en $p$ cuyos vectores normales apuntan hacia ambos lados del plano tangente.
+\end{obs}
+
+\begin{obs}
+  Si $p \in S$ es punto parabólico, entonces la curvatura es cero pero alguna de las curvaturas principales es distinta de cero ($K(p) = 0 : k_1 \neq 0$ ó $k_2 \neq 0 $).
+\end{obs}
+
+\begin{obs}
+  Si $p \in S$ es un punto plano, entonces las curvaturas principales son cero.
+\end{obs}
+
+\begin{defn}[Punto Umbílico]
+  Si $p \in S$, $k_{1} = k_{2}$, entonces $p$ se llama punto umbílico.
+\end{defn}
+
+\begin{obs}
+  Los puntos planos, es decir, $p \in S$ tal que $k_{1} = k_{2} = 0$ son puntos umbílicos.
+\end{obs}
+
+\section{Coordenadas Locales}
+
+\section{Ecuaciones de Compatibilidad}

@@ -70,19 +70,34 @@ $\fbox{b)}$ Por hipótesis, $\exists \mathcal{B} = \{ B_{n} : n \in \mathbb{N} \
   1º, 2º axioma son invariantes topológicos.
 \end{cor}
 
+\begin{obs}
+  El producto numerable de espacios primer/segundo axioma es primer/segundo axioma.
+\end{obs}
+
 \begin{prop}
-  Sea $\{ ( X_{j}, \mathcal{T}_{j} ) \}_{j \in J}$ familia no vacía de e.t.. Entonces, $( \prod_{j \in J} X_{j}, \prod_{j \in J} \mathcal{T}_{j} )$ 1º axioma (2º axioma) $\Leftrightarrow \forall j \in J, ( X_{j}, \mathcal{T}_{j} )$ es 1º axioma (2º axioma) y $K = \{ j \in J: \mathcal{T}_{j} \text{ no es trivial } \}$ es no numerable.
+  Sea $\{ ( X_{j}, \mathcal{T}_{j} ) \}_{j \in J}$ familia no vacía de e.t.. Entonces, $( \prod_{j \in J} X_{j}, \prod_{j \in J} \mathcal{T}_{j} )$ 1º axioma (2º axioma) $\Leftrightarrow \forall j \in J, ( X_{j}, \mathcal{T}_{j} )$ es 1º axioma (2º axioma) y $K = \{ j \in J: \mathcal{T}_{j} \text{ no es trivial } \}$ es numerable.
 \end{prop}
 
 \begin{dem}
-  $\fbox{a) \Rightarrow}$ Sea $( \prod_{j \in J} X_{j}, \prod_{j \in J} \mathcal{T}_{j} )$ 1º axioma. Entonces, $\forall j \in J, p_{j_{0}} : ( \prod_{j \in J} X_{j}, \prod_{j \in J} \mathcal{T}_{j} ) \to ( X_{j_{0}}, \mathcal{T}_{j_{0}} )$ es suprayectiva, continua y abierta $\Rightarrow ( X_{j_{0}}, \mathcal{T}_{j_{0}} )$ es 1º axioma. Por hipótesis, $\forall a = ( a_{j} )_{j \in J}, \exists \mathcal{B} (a) = \{  B_{n}^{a} : n \in \mathbb{N} \}$ numerable $\Rightarrow \forall j \in J, H_{n} = \{ p_{j}(B_{n}^{a}) : n \in \mathbb{N} \}$ es base de entornos de $a_{j}$, $\forall n \in \mathbb{N}, \{ j \in J : p_{j}(B_{n}^{a}) \neq X_{j} \}$ dado que $\prod U_{j} \subset B_{n}^{a} : U_{j} \in \mathcal{T}_{j}$ y $U_{j} = X_{j}, \forall j \in J \setminus F : F$ finito $\Rightarrow \forall j \in J \setminus F, p_{j}(B_{n}^{a}) = X_{j}$. Entonces, $ H_{n}$ es finito $\Rightarrow H = \bigcup_{n \in \mathbb{N}} H_{n}$ es numerable. Falta ver que $K$ es numerable, veamos que $K \subset H$. $\forall j \in J \Rightarrow \mathcal{T}_{j} \neq \{ \emptyset, X_{j} \} \Rightarrow \exists n_{0} \in \mathbb{N} : p_{j}(B_{n_{0}}^{a}) \neq X_{j} \Rightarrow j \in H_{n_{0}} \subset H$.
+  \begin{enumerate}[label=(\roman*)]
+    \item []
+    \item \begin{enumerate}[label=(\roman*)]
+      \item []
+      \item [$(\Rightarrow)$] Suponemos que $( \prod_{j \in J} X_{j}, \prod_{j \in J} \mathcal{T}_{j} )$ es primer axioma. Entonces, $\forall j \in J, p_{j} : ( \prod_{j \in J} X_{j}, \prod_{j \in J} \mathcal{T}_{j} ) \to ( X_{j}, \mathcal{T}_{j} )$ suprayectiva, continua y abierta $\Rightarrow ( X_{j}, \mathcal{T}_{j} )$ es primer axioma. Ahora, por hipótesis, $\forall a \in \prod_{j \in J} X_{j} : a = ( a_{j} )_{j \in J}$, $\exists \mathcal{B}(a) = \{ B_{n}^{a} : n \in \mathbb{N} \}$ base de entornos numerable de $a$ en $( \prod_{j \in J} X_{j}, \prod_{j \in J} \mathcal{T}_{j} )$. Por tanto, $\forall j \in J, H_{n} = \{ p_{j}(B_{n}^{a}) : n \in \mathbb{N} \}$ es base de entornos numerable de $a_{j}$ en $( X_{j}, \mathcal{T}_{j} )$ donde $\forall n \in \mathbb{N}, \{ j \in J : p_{j}(B^{a}_{n}) \neq X_{j} \}$ es numerable. (Esto es debido a que $\prod_{j \in J} U_{j} \subset B^{a}_{n} : U_{j} \in \mathcal{T}_{j}$ donde $U_{j} = X_{j}, \forall J \setminus F$ para $F$ finito, por tanto, $\forall j \in J \setminus F, p_{j}(B^{a}_{n}) = X_{j}$). Como $H_{n}$ es finito $\Rightarrow H = \bigcup_{n \in \mathbb{N}} H_{n}$ es numerable. Falta ver $K \subset H$. $\forall j \in J \Rightarrow \mathcal{T}_{j} \neq \{ \emptyset, X_{j} \} \Rightarrow \exists n_{0} \in \mathbb{N} : p_{j}(B^{a}_{ n_{ 0 } }) \neq X_{j} \Rightarrow j \in H_{ n_{ 0 } } \subset H$.
 
-  $\fbox{b) \Rightarrow}$ $\forall j_{0} \in J, p_{j_{0}} : ( \prod_{j \in J} X_{j}, \prod_{j \in J} \mathcal{T}_{j} ) \to ( X_{j_{0}}, \mathcal{T}_{j_{0}} )$ suprayectiva, continua y abierta $\Rightarrow ( X_{j_{0}}, \mathcal{T}_{j_{0}} )$ es 2º axioma. Y 2º axioma $\Rightarrow$ 1º axioma $\Rightarrow K$ numerable.
-
-  $\fbox{a) \Leftarrow}$ Sea $K$ numerable. $\forall a = ( a_{j} )_{j \in J} \in \prod_{j \in J} X_{j}$, por hipótesis, $\forall j \in J, \exists \mathcal{B} (a_{j}) = \{  B_{n}^{a_{j}} : n \in \mathbb{N} \} \setminus \{  X_{j} \}$ base numerable de $a_{j}$. Sea $\mathcal{B} (a) = \{ \prod_{j \in J} A_{j} = X_{j}, \forallj ij J \setminus F : F \text{ finito y } A_{j} \in \mathcal{B}(a_{j}), j \in F \}$ es base de entornos de $ a$. Luego $\card(\mathcal{B} (a)) = \card( \mathcal{P}_{F}(K)) \Rightarrow$ numerable.
-
-  $\fbox{b) \Leftarrow}$ $\forall j \in J, \exists \mathcal{B}_{j} = \{ B_{n} : n \in \mathbb{N} \}\ \{ X_{j} \}$. Sea $\mathcal{B} = \{  \prod_{j \in J} A_{j}: A_{j} = X_{j}, \forall j \in J \setminus F, F \text{ finito }, A_{j} \in \mathcal{B}_{j}, j \in F \} \Rightarrow \card(\mathcal{B}) = \card(\mathcal{P}_{F}(K)) \Rightarrow $ numerable.
+      \item [$(\Leftarrow)$] Sea $K$ numerable. $\forall a = ( a_{j} )_{j \in J} \in \prod_{j \in J} X_{j}$. Por hipótesis, $\forall j \in J, \exists \mathcal{B} (a_{j}) = \{  B_{n}^{a_{j}} : n \in \mathbb{N} \} \setminus \{  X_{j} \}$ base numerable de $a_{j}$. Sea $\mathcal{B} (a) = \{ \prod_{j \in J} A_{j} : A_{j} = X_{j}, \forall j \in J \setminus F : F \text{ finito y } A_{j} \in \mathcal{B}(a_{j}), \forall j \in F \}$ es base de entornos de $ a$. Luego $\card(\mathcal{B} (a)) = \card( \mathcal{P}_{F}(K)) \Rightarrow$ numerable.
+    \end{enumerate}
+    \item \begin{enumerate}[label=(\roman*)]
+      \item []
+      \item [$(\Rightarrow)$] $\forall j_{0} \in J, p_{j_{0}} : ( \prod_{j \in J} X_{j}, \prod_{j \in J} \mathcal{T}_{j} ) \to ( X_{j_{0}}, \mathcal{T}_{j_{0}} )$ suprayectiva, continua y abierta $\Rightarrow ( X_{j_{0}}, \mathcal{T}_{j_{0}} )$ es 2º axioma. Y 2º axioma $\Rightarrow$ 1º axioma $\Rightarrow K$ numerable.
+      \item [$(\Leftarrow)$] $\forall j \in J, \exists \mathcal{B}_{j} = \{ B_{n} : n \in \mathbb{N} \} \setminus \{ X_{j} \}$. Sea $\mathcal{B} = \{  \prod_{j \in J} A_{j}: A_{j} = X_{j}, \forall j \in J \setminus F, F \text{ finito }, A_{j} \in \mathcal{B}_{j}, j \in F \} \Rightarrow \card(\mathcal{B}) = \card(\mathcal{P}_{F}(K)) \Rightarrow $ numerable.
+    \end{enumerate}
+  \end{enumerate}
 \end{dem}
+
+\begin{obs}[Desmotración a) por contradicción]
+  El producto de espacios es primer axioma, entonces cada espacio es primer axioma dado que son homeomorfos a un subespacio del producto. Si el número de la familia de topologías no triviales es no contable, entoncs para $x \in \prod X_{j}$ el número de bases de entornos es no contable.
+\end{obs}
 
 \begin{prop}
   Sea $\{ ( X_{j}, \mathcal{T}_{j} ) \}_{j \in J}$ familia no vacía de e.t.. Entonces, $( \sum_{k \in J} X_{k}, \sum_{k \in J} \mathcal{T}_{k})$ 1º axioma $\Leftrightarrow \forall j \in J, ( X_{j}, \mathcal{T}_{j} )$es 1º axioma

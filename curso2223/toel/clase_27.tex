@@ -1,0 +1,113 @@
+\begin{prop}
+  Sea $( X, \mathcal{T} )$ e.t.. Entonces, $( X, \mathcal{T} )$ es localmente conexo $\Leftrightarrow \forall U \in \mathcal{T} \setminus \{ \emptyset \}$ sus componentes son abiertas.
+\end{prop}
+
+\begin{dem}
+  Willard pg 201 212
+\end{dem}
+
+\begin{obs}
+  Si $( X, \mathcal{T} )$ es localmente conexo, sus componentes son cerrados y abiertos simultaneamente.
+\end{obs}
+
+\begin{obs}
+  Si $( X, \mathcal{T} )$ es localmente conexo sus y compacto, entonces el conjunto de sus componentes es finito.
+\end{obs}
+
+\begin{prop}
+  Sean $( X, \mathcal{T} )$, $( X', \mathcal{T}' )$ e.t., $( X, \mathcal{T} )$ localmente conexo, $f : ( X, \mathcal{T} ) \to ( X', \mathcal{T}' )$ identificación. Entonces, $( X', \mathcal{T}' )$ es localmente conexo.
+\end{prop}
+
+\begin{dem}
+  content
+\end{dem}
+
+\begin{prop}
+  Sea  $\{ ( X_{j}, \mathcal{T}_{j} ) \}_{j \in J}$ familia de e.t.. Entonces, $( \prod_{j \in J} X_{j}, \prod_{j \in J} \mathcal{T}_{j} )$ localmente conexo $\Leftrightarrow \forall j \in J, ( X_{j}, \mathcal{T}_{j} )$ localmente conexo y $\forall j \in J \setminus F, ( X_{j}, \mathcal{T}_{j} )$ conexo, donde $F$ es finito.
+\end{prop}
+
+\begin{dem}
+  Dugundji
+\end{dem}
+
+\begin{prop}
+  Sea $\{ ( X_{j}, \mathcal{T}_{j} ) \}_{j \in J}$ familia no vacía de e.t.. Entonces, $( \sum_{k \in J} X_{k}, \sum_{k \in J} \mathcal{T}_{k})$ localmente conexo $\Leftrightarrow \forall j \in J, ( X_{j}, \mathcal{T}_{j} )$ localmente conexo.
+\end{prop}
+
+\begin{dem}
+  content
+\end{dem}
+
+\section{Conexión por caminos}
+
+\begin{obs}
+  $I = [0, 1]$ con la topología relativa.
+\end{obs}
+
+\begin{defn}[Conexo por Caminos]
+  Sea $( X, \mathcal{T} )$ e.t.. Decimos que $( X, \mathcal{T} ) $ es conexo por caminos si $\forall x, y \in X, \exists f : I = [0, 1] \to ( X, \mathcal{T} )$ continua tal que $f(0) = x, f(1) = y$. En este caso, se dice que $ f $ es un camini en $X$ de origen $x$ y extremo $y$.
+\end{defn}
+
+\begin{obs}
+  conexo por caminos $\Rightarrow$ conexo.
+\end{obs}
+
+\begin{dem}
+  Dugundji, proof wiki
+\end{dem}
+
+\begin{obs}
+  conexo $\not \Rightarrow $ conexo por caminos.
+\end{obs}
+
+\begin{ejm}
+  content
+\end{ejm}
+
+\begin{obs}
+  La conexión por caminos no es hereditaria.
+\end{obs}
+
+\begin{ejm}
+  content
+\end{ejm}
+
+\begin{obs}
+  Conexo por caminos $\not \Rightarrow $ localmente conexo.
+\end{obs}
+
+\begin{ejm}
+  content
+\end{ejm}
+
+\begin{obs}
+  Localmente conexo $\not \Rightarrow$ conexo por caminos.
+\end{obs}
+
+\begin{ejm}
+  content
+\end{ejm}
+
+\begin{prop}
+  Sea $( X, \mathcal{T} ), ( X', \mathcal{T}' )$ e.t., $( X, \mathcal{T} )$ conexo por caminos, $f : ( X, \mathcal{T} ) \to ( X', \mathcal{T}' )$ continua, suprayectiva. Entonces, $( X', \mathcal{T}' )$ es conexo por caminos.
+\end{prop}
+
+\begin{dem}
+  content
+\end{dem}
+
+\begin{cor}
+  La conexión por caminos es invariante tipológico.
+\end{cor}
+
+\begin{prop}
+  Sea $\{ ( X_{j}, \mathcal{T}_{j} ) \}_{j \in J}$ familia no vacía de e.t.. Entonces, $( \prod_{j \in J} X_{j}, \prod_{j \in J} \mathcal{T}_{j} )$ conexo por caminos $\Leftrightarrow ( X_{j}, \mathcal{T}_{j} )$ es conexo por caminos $\forall j \in J$.
+\end{prop}
+
+\begin{dem}
+  content
+\end{dem}
+
+\begin{obs}
+  $\forall ( X, \mathcal{T} ), ( X', \mathcal{T}' )$ e.t. conexos por caminos, $( X + X', \mathcal{T} + \mathcal{T}' )$ no es conexo $\Rightarrow$ no es conexo por caminos.
+\end{obs}

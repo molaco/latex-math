@@ -1,6 +1,6 @@
 \chapter{Primera Forma Fundamental}
 
-\section{Primera Forma Fundamental, Isometrías}
+\section{Primera Forma Fundamental}
 
 \begin{prop}
   Sea $S \subset \mathbb{R}^{3}$ superficie. Entonces, el producto interior natural de $\mathbb{R}^{3}$ induce en cada plano tangente $T_{p}(S)$ un producto interior $\langle  { , } \rangle_{p}$, cuya forma quadrática es $I_{p} : T_{p}(S) \to \mathbb{R}$ definida por
@@ -42,3 +42,168 @@
     G(u_{0}, v_{0}) = \langle X_{v}{ , }X_{v} \rangle_{p} 
   \] 
 \end{note}
+
+\begin{ejm}
+  Un sistema de coordenadas para un plano $P \subset \mathbb{R}^{3}$ que pasa por el punto $p_{0} = ( x_{0}, y_{0}, z_{0} )$ y que contiene los vectores ortonormales $w_{1} = (a_{1}, a_{2}, a_{3})$, $w_{2} = (b_{1}, b_{2}, b_{3})$ viene dado por
+  \[ 
+    X(u,v) = p_{0} + u w_{1} + v w_{2}, \quad (u, v) \in \mathbb{R}^{2}, 
+  \] 
+  Para calcular la primera forma fundamental en un punto arbitrario de $P$ observamos que $X_{u} = w_{1}, X_{v} = w_{2}$. Dado que $w_{1}$ y $w_{2}$ son vectores unitarios ortogonales, la funciones $E, F, G$ son constantes y vienen dadas por
+  \[ 
+    E = 1, \quad F = 1, \quad G = 1. 
+  \] 
+\end{ejm}
+
+\begin{ejm}
+  El cilindro sobre el círculo $x^{2} + y^{2} = 1$ admite como parametrización $X : U \to \mathbb{R}^{3}$ definida por
+  \[ 
+    X(u, v) = (\cos(u), \sen(u), v),
+  \] 
+  \[ 
+    U = \{ (u, v) \in \mathbb{R}^{2} : u \in (0, 2 \pi), v \in (- \infty, + \infty) \}. 
+  \] 
+  Para calcular la primera forma fundamental, calculamos las derivadas paraciales
+  \[ 
+    X_{u} = (- \sen(u), \cos(v), 0), \quad X_{v} = (0, 0, 1),
+  \] 
+  entonces,
+  \[ 
+    E = 1, \quad F = 0, \quad G = 1. 
+  \] 
+\end{ejm}
+
+\section{Isometrías}
+
+\begin{defn}[Superficies Isométricas]
+  Un difeomorfismo $\varphi : S \to S'$ es un isometría si $\forall p \in S, \forall w_{1}, w_{2} \in T_{p}(S)$ se tiene que
+  \[ 
+  {\langle w_{1}{ , }w_{2} \rangle}_{p} = \langle d \varphi_{p}(w_{1}){ , }d \varphi_{p}(w_{2}) \rangle_{\varphi(p)}
+  \] 
+  Las superficies $S$ y $S'$ se dice que son isométricas.
+\end{defn}
+
+\begin{obs}
+  Si $\forall p \in S, (d \varphi)_{p} : T_{p}(S) \to T_{p}(S')$ conserva el producto escalar, entonces $\varphi$ es una isometría.
+\end{obs}
+
+\begin{defn}
+  Sea $\varphi : V \to \overline{S}$ aplicación donde $V$ es un entorno de $p$ en $S \subset \mathbb{R}^{3}$ superficie. Entonces, $\varphi$ es una isometría local si $\exists \overline{V}$ entorno de $\varphi(p)$ en $\overline{S}$ tal que $\varphi : V \to \overline{V}$ es una isometría.
+
+  \begin{itemize}
+    \item Si $\forall p \in S$, existe una isometría local en $\overline{S}$ entonces, decimos que $S$ es localmente isométrica a $\overline{S}$.
+    \item Decimos que $S$ y $\overline{S}$ son isométricas si $S$ es localmente isométrica a $\overline{S}$ y $\overline{S}$ es localmente isométrica a $S$.
+  \end{itemize}
+\end{defn}
+
+\begin{obs}
+  Si $\varphi : S \to \overline{S}$ es difeomorfismo y isometría local $\forall p \in S$, entonces $\varphi$ es isometría global.
+\end{obs}
+
+\begin{ejm}
+  Consideramos el cilindro del ejemplo anterior. Sea $\varphi : \mathbb{R}^{2} \to C$ definida por
+  \[ 
+    \varphi(u, v) = (\cos(u), \sen(u), v).
+  \] 
+  De esta manera  $\varphi$ es difeomorfismo local e isometría local ya que es $\varphi$ diferenciable, biyectiva, $(d \varphi)_{q}$ es isomorfismo $\forall q \in V$ entonor de $p$ en $S$, $\varphi^{-1}$ es diferenciable y $\langle (d \varphi)_{p}(w){ , }(d X)_{p}(w) \rangle_{p} = ||w||^{2}$.
+\end{ejm}
+
+\begin{prop} 
+  Sea $f : S \to S'$ difeomorfismo local. Entonces, $ f$ es isometría local $\Leftrightarrow$ f preserva longitudes de curvas.
+\end{prop}
+
+\begin{dem}
+  content
+\end{dem}
+
+\begin{prop}
+  Sea $\phi : S \to \overline{S}$ una isometría entre superficies, $X : U \to S$ parametrización de $S$. Entonces, $\overline{X} = \phi \circ X$ es una parametrización de $\phi(X(U)) \subset \overline{S}$ y
+  \[ 
+    E = \overline{E}, \quad F = \overline{F}, \quad G = \overline{G}. 
+  \] 
+\end{prop}
+
+\begin{dem}
+  content
+\end{dem}
+
+\begin{cor}
+  Una propiedad local $P$ de una superficie en términos de $E, F, G$ es invariante por isometrías. Si $\phi : S \to S'$ es isometría, $S$ satisface $P$ si y solo si $S'$ satisface $P$.
+\end{cor}
+
+\begin{prop}
+  Sean $X : U \to S$ y $X' : U \to S'$ parametrizaciones tal que $\forall (u, v) \in U,$
+  \[ 
+    E(u, v) = E'(u, v), \quad F(u, v) = F'(u, v), \quad G(u, v) = G'(u, v),
+  \] 
+  Entonces, $\varphi = X' \circ X^{-1} : X(U) \to S'$ es isometría local.
+\end{prop}
+
+\begin{dem}
+  content
+\end{dem}
+
+\section{Area de una Superficie}
+
+\begin{defn}
+  Sea $S \subset \mathbb{R}^{3}$ superficie, $X : U \to S$ parametrización. Llamamos área de $R = X(Q)$ una región acotada de $S$ a
+  \[ 
+    A(R) = \iint_{Q}^{} ||X_{u} \times X_{v}|| du \ dv 
+  \] 
+  \[ 
+    = \iint_{Q}^{} \sqrt{EG - F^{2}} \ du \ dv 
+  \] 
+\end{defn}
+
+\begin{obs}
+  El área no depende de la parametrización que escojamos.
+\end{obs}
+
+\begin{dem}
+  content
+\end{dem}
+
+\section{Ángulo de Aplicaciones Conformes}
+
+\begin{defn}
+  Sean $\alpha : I \to S, \beta : J \to S$ curvas diferenciables en $S$ que se cortan en $p = \alpha(0) = \beta(0)$. Decimos que se cortan con ángulo $\theta$ donde
+  \[ 
+    \cos(\theta) = \frac{\alpha'(0) \cdot \beta'(0)}{||\alpha'(0)||\cdot ||\beta'(0)||}.
+  \] 
+\end{defn}
+
+\begin{defn}
+  Sea $\varphi : S \to S'$ diferenciable. Decimos que $\varphi$ preserva ángulos en $p \in S$ si $\forall v, w \in T_{p}(S)$, el ángulo entre $v$ y $w$ es el mismo que el ángulo entre $(d \varphi)_{p}(v)$ y $(d \varphi)_{p}(w)$. Decimos que $\varphi$ preserva ángulos si $\varphi$ preserva ángulos $\forall p \in S$.
+\end{defn}
+
+\begin{prop}
+  Las isometrías locales preservan ángulos.
+\end{prop}
+
+\begin{dem}
+  content
+\end{dem}
+
+\begin{prop}
+  Sea $f : \mathbb{R}^{2} \to \mathbb{R}^{2}$ aplicación lineal. Son equivalentes,
+  \begin{enumerate}[label=(\roman*)]
+    \item $f$ preserva ángulos
+      \[ 
+        \frac{f(u) \cdot f(v)}{||f(u)|| ||f(v)||} = \frac{u \cdot v}{||u|| ||v||}, \quad \forall u, v \in \mathbb{R}^{2}.
+      \] 
+    \item $\exists \lambda > 0 : f(v) \cdot f(w) = \lambda^{2} (v \cdot w), \quad \forall v, w \in \mathbb{R}^{2}$.
+    \item $\exists \lambda > 0 : || f(v)|| = \lambda ||v||, \quad \forall v \in \mathbb{R}^{2}$.
+    \item Dada base ortonormal $\{ u_{1}, u_{2} \}, \exists \lambda > 0 : ||f(u_{i})|| = \lambda ||u_{i}||$ y $(f(u_{1}) \cdot f(u_{2})) = 0$.
+  \end{enumerate}
+\end{prop}
+
+\begin{dem}
+  content
+\end{dem}
+
+\begin{defn}
+  Un difeomorfismo $\varphi : S \to \overline{S}$ es una aplicación conforme si $\forall p \in S, \forall v_{1}, v_{2} \in T_{p}(S)$ 
+  \[ 
+    (d \varphi)_{p}(v_{1}) \cdot (d \varphi)_{p}(v_{2}) = \lambda^{2}(p) \langle v_{1}{ , }v_{2} \rangle_{p},
+  \] 
+  donde $\lambda^{2}> 0$ es una aplicación diferenciable en $S$.
+\end{defn}

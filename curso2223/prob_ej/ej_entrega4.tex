@@ -1,0 +1,39 @@
+\section{Entrega 4}
+
+\begin{ejr}[Ejercicio 2, Hoja 6]
+  Estudiar, para cada una de las siguientes funciones, si es función característica de alguna variable aleatoria y, en caso afirmativo, determinar la función de probabilidad correspodiente.
+  \begin{enumerate}[label=(\roman*)]
+    \item $\varphi(t) = \sum_{n = 0}^{\infty} a_{n} \cos(n t)$ con $a_{n} \geq 0$ y $\sum_{n = 0}^{\infty} a_{n} = 1$,
+    \item $\varphi(t) = \frac{1}{1 + a(1 - e^{it})}$ con $a > 0$.
+  \end{enumerate}
+\end{ejr}
+
+\begin{sol}
+  \begin{enumerate}[label=(\roman*)]
+    \item []
+    \item Sea $\varphi_{n}(t) = \cos(n t)$ función característica, entonces $\sum_{n = 0}^{\infty} a_{n} \varphi_{n}(t)$ es una combinación lineal convexa de $\{ \varphi_{n}, n \in \mathbb{N} \}$ numerable. Por tanto, $\varphi(t)$ también es función característica. 
+
+      Para $X_{n}$ v.a. discreta con $D_{X_{n}} = \{ -n, n \}$ y función de masa
+      \[ 
+        p_{X_{n}} =
+        \begin{aligned}
+          \begin{cases}
+            \frac{1}{n} \quad \text{ si } x \in D_{X} \\
+            0 \quad \text{ si } x \not \in D_{X}
+          \end{cases}
+        \end{aligned}
+      \] 
+      Entonces, se tiene que
+      \[
+        \varphi_{n}(t) = \mathbb{E} [ e^{itX_{n}} ] 
+      \]
+      \[ 
+        = \frac{e^{itn} + e^{-itn}}{2} = \cos(nt) 
+      \] 
+      Por tanto la función de distribución asociada a $\varphi_{n}$ es una distribución uniforme discreta $U(-n,n)$. 
+    \item Aplicando el teorema de inversión 
+      \[ 
+        f(x) = \frac{1}{2 \pi} \int_{-\infty}^{\infty} e^{-itx} \frac{1}{1 + a(1 - e^{it})} dt
+      \] 
+  \end{enumerate}
+\end{sol}

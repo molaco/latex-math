@@ -1,0 +1,265 @@
+\begin{prop}
+  Sea $( X, \mathcal{T} )$ e.t.. Son equivalentes:
+   \begin{enumerate}[label=(\roman*)]
+    \item $( X, \mathcal{T} )$ $ T_{2}$,
+    \item $\forall \mathcal{F}$ filtro de $X$ convergente en $( X, \mathcal{T} )$ tiene límite único,
+    \item Toda red de $X$ convergente en $( X, \mathcal{T} )$ tiene límite único.
+   \end{enumerate}
+\end{prop}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item []
+    \item [a) $\Rightarrow$ b)] $\mathcal{F} \rightarrow x$ y $\mathcal{F} \rightarrow y, x \neq y \Rightarrow \mathcal{V}(x) \subset \mathcal{F}$ y $\mathcal{V}(y) \subset \mathcal{F}$, entonces $\forall U^{x}$ entorno de $x$ en $( X, \mathcal{T} )$, $\forall U^{y}$ entorno de $y$ en $( X, \mathcal{T} )$, $U^{x} \cap U^{y} \in \mathcal{F} \Rightarrow U^{x} \cap U^{y} \neq \emptyset \Rightarrow ( X, \mathcal{T} )$ no es Hausdorff. Por tanto, el límite es único.
+    \item [b) $\Rightarrow$ a)] Suponemos que $( X, \mathcal{T} )$ no es Hausdorff $\Leftrightarrow$ $\exists x, y \in X: x \neq y$ tal que
+      \[
+        \forall U^{x}, \forall U^{y}, U^{x} \cap U^{y} \neq \emptyset.
+      \]
+      Sea $\mathcal{B} = \{ U^{x} \cap U^{y} : U^{x} \in \mathcal{V}(x), U^{y} \in \mathcal{V}(y) \}$. Entonces, $\mathcal{B}$ es una famila no vacía de conjuntos no vacíos y
+      \[
+        \forall U_{1}^{x} \cap U_{1}^{y}, U_{2}^{x} \cap U_{2}^{y} \in \mathcal{B},
+      \]
+      \[ 
+        (U_{1}^{x} \cap U_{1}^{y}) \cap (U_{2}^{x} \cap U_{2}^{y}) = (U_{1}^{x} \cap U_{2}^{y}) \cap (U_{1}^{y} \cap U_{2}^{x})
+      \] 
+      \[ 
+        (U_{1}^{x} \cap U_{2}^{y}) \cap (U_{1}^{y} \cap U_{2}^{x}) \supset U_{1}^{x} \cap U_{2}^{y}, U_{1}^{y} \cap U_{2}^{x} \in \mathcal{B}.
+      \] 
+      Por tanto, $\mathcal{B}$ es base de filtro en $X$. Sea $\mathcal{F}$ el filtro engendrado por $\mathcal{B}$, entonces
+      \[
+        \forall U^{x} \in \mathcal{V}(x), \forall U^{y} \in \mathcal{V}(y), U^{x} \cap U^{y} \in \mathcal{B} \subset \mathcal{F}
+      \]
+      \[ 
+        \Rightarrow \mathcal{V}(x) \subset \mathcal{F} \text{ y } \mathcal{V}(y) \subset \mathcal{F}
+      \] 
+      \[ 
+        \Leftrightarrow  \mathcal{F} \rightarrow x \text{ y } \mathcal{F} \rightarrow y, x \neq y
+      \] 
+      contradice que el límite sea único $\Rightarrow ( X, \mathcal{T} )$ es Hausdorff.
+    \item [b) $\Rightarrow$ c)] Suponemos $ \forall \mathcal{F}$ filtro de $X$ tal que $\mathcal{F} \rightarrow x$ tiene límite único y $s_{\mathcal{F}} \rightarrow x$ y $s_{\mathcal{F}} \rightarrow y$ con $x \neq y$. Pero $s_{\mathcal{F}} \rightarrow z \Leftrightarrow \mathcal{F} \rightarrow z$. Lo que contradice que el límite del filtro sea único.
+
+    \item [c) $\Rightarrow$ b)] De manera análoga, suponemos que $\forall s$ red en $X$ convergente en $( X, \mathcal{T} )$, $s$ tiene límite único y que $\exists \mathcal{F}$ filtro en $X$ convergente en $( X, \mathcal{T} )$ tal que el límite no es único. Pero $s \rightarrow z \Leftrightarrow \mathcal{F}_{s} \rightarrow z$. Lo que contradice que el límite sea único.
+  \end{enumerate}
+\end{dem}
+
+\begin{prop}
+  Sea $X$ conjunto no vacío. Entonces,
+  \begin{enumerate}[label=(\roman*)]
+    \item Si $s$ es red en $X$; $s$ es red universal $\Leftrightarrow$ $\mathcal{F}_{s}$ es ultrafiltro.
+    \item Si $\mathcal{F}$ filtro en $X$; $\mathcal{F}$ es ultrafiltro $\Leftrightarrow s_{\mathcal{F}}$ es red universal.
+  \end{enumerate}
+\end{prop}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item []
+    \item $s$ red universal
+      \[ 
+        \Leftrightarrow \forall E \subset X 
+        \begin{aligned}
+          \begin{cases}
+            \text{ó } \exists d_{1} \in D : s_{d} \in E, \forall d \geq d_{1} \\
+            \text{ó } \exists d_{2} \in D : s_{d} \in X \setminus E, \forall d \geq d_{2}
+          \end{cases}
+        \end{aligned} 
+      \] 
+      \[ 
+        \Leftrightarrow \forall E \subset X 
+        \begin{aligned}
+          \begin{cases}
+            \text{ó } \exists d_{1} \in D : B_{d_{1}} \subset E \\
+            \text{ó } \exists d_{2} \in D : B_{d_{2}} \subset X \setminus E
+          \end{cases}
+        \end{aligned} 
+      \] 
+      (el filtro asociado a $s$ tiene como base $\mathcal{B} \subset \mathcal{F}_{s}$ las secciones $\{ B_{d_{0}} : d_{0} \in D \}$ y $\forall F \in \mathcal{F}_{s}, F \subset F' \Rightarrow F' \in \mathcal{F}_{s}$)
+      \[ 
+        \Leftrightarrow \forall E \subset X,
+        \begin{aligned}
+          \begin{cases}
+            \text{ó } E \in \mathcal{F}_{s} \\
+            \text{ó } X \setminus E \in \mathcal{F}_{s} \\
+          \end{cases}
+        \end{aligned} 
+      \] 
+      (es la caracterización de ultrafiltro)
+      \[ 
+        \Leftrightarrow \mathcal{F}_{s} \text{ es ultrafiltro}.
+      \] 
+    \item Suponemos que $\mathcal{F}$ es ultrafiltro
+      \[ 
+        \Leftrightarrow \forall E \subset X,
+        \begin{aligned}
+          \begin{cases}
+            \text{ó } E \in \mathcal{F}_{s} \\
+            \text{ó } X \setminus E \in \mathcal{F}_{s} \\
+          \end{cases}
+        \end{aligned} 
+      \] 
+      \[ 
+        \Leftrightarrow \forall E \subset X,
+        \begin{aligned}
+          \begin{cases}
+            \text{ó } \forall x \in E, \exists (x, E) \in D_{\mathcal{F}} \text{ tal que } \\ 
+            \quad \forall (z, F) \in D_{\mathcal{F}}, (z, F) \geq (x, E), s_{\mathcal{F}}(z,F) \in E \\
+            \\
+            \text{ó } \forall y \in X \setminus E, \exists (y, X \setminus E) \in D_{\mathcal{F}} \text{ tal que } \\ 
+            \quad \forall (z, F) \in D_{\mathcal{F}}, (z, F) \geq (y, X \setminus E), s_{\mathcal{F}}(z,F) \in X \setminus E
+          \end{cases}
+        \end{aligned} 
+      \] 
+      \[ 
+        \Leftrightarrow $s_{\mathcal{F}}$ \text{ es red universal }
+      \] 
+  \end{enumerate}
+\end{dem}
+
+\begin{prop}
+  Sea $( X, \mathcal{T} )$ e.t., son equivalentes
+  \begin{enumerate}[label=(\roman*)]
+    \item $( X, \mathcal{T} )$ es compacto,
+    \item Todo filtro de $X$ tiene algún punto de aglomeración en $( X, \mathcal{T} )$,
+    \item Todo ultrafiltro de $X$ es convergente en $( X, \mathcal{T} )$,
+    \item Toda red tiene algún punto de aglomeración en $( X, \mathcal{T} )$,
+    \item Toda red universal de $X$ es converegente en $( X, \mathcal{T} )$.
+  \end{enumerate}
+\end{prop}
+
+\begin{dem}
+  Vemos $a \Rightarrow b \Rightarrow c \Rightarrow c, b \Leftrightarrow d, c \Leftrightarrow e$.
+  \begin{enumerate}[label=(\roman*)]
+    \item []
+    \item [a) $\Rightarrow$ b)] Sea $\mathcal{F}$ filtro en $X$. Consideramos $\{ \overline{F} : F \in \mathcal{F} \}$ familia de cerrados de $( X, \mathcal{T} )$ compacto con la propiedad de interescciones finitas (la adherencia es un conjunto cerrado y que los filtros tienen la propiedad de interescciones finitas se puede ver por inducción usando la definición de filtro). Entonces, por Prop. 4.3. se tiene que
+      \[ 
+        \bigcap_{F \in \mathcal{F}} \overline{F} \neq \emptyset 
+      \] 
+      donde $\bigcap_{F \in \mathcal{F}} \overline{F} = \Agl(\mathcal{F})$.
+
+    \item [b) $\Rightarrow$ c)] A partir de la Prop. 6.5. $\forall \mathcal{F}$ filtro en $X$, $\exists x \in X$ punto de alglomeración de $\mathcal{F}$. Entonces, $\forall \mathcal{F}'$ ultrafiltro, $\mathcal{F}' \supset \mathcal{F} \Rightarrow \mathcal{F}' \rightarrow x$.
+    \item [c) $\Rightarrow$ a)] $( X, \mathcal{T} )$ no compacto $\Leftrightarrow \exists \mathcal{U}$ recubrimiento abierto sin subrecubrimientos finitos. Entonces,
+      \[
+        \forall n \in \mathbb{N}, \forall U_{1}, \cdots U_{n} \in \mathcal{U}, \bigcup_{i = 1}^{n} U_{i} \neq X
+      \]
+      \[ 
+        \Rightarrow \{ X \setminus (U_{1}, \cdots U_{n}), n \in \mathbb{N}, U_{1}, \cdots, U_{n} \in \mathcal{U}\} 
+      \] 
+      es base de filtro en $X$. Sea $\mathcal{F}$ el filtro engendrado por $\mathcal{B}$, entonces $\exists \mathcal{F}'$ ultrafiltro tal que $\mathcal{F} \subset \mathcal{F}'$. Ahora, por hipótesis $\exists x \in X: \mathcal{F}' \rightarrow x \Rightarrow \subset \mathcal{F}'$ y como $x \in X \Rightarrow \exists U_{0} \in \mathcal{U} : x \in U_{0} \Rightarrow U_{0} \in \mathcal{V}(x) \subset \mathcal{F}'$, entonces $U_{0} \in \mathcal{F}'$. Por tanto, $X \setminus U_{0} \in \mathcal{B} \subset \mathcal{F} \subset \mathcal{F}'$ que es absurdo.
+      
+    \item [b) $\Leftrightarrow$ d)] 
+      \begin{enumerate}[label=(\roman*)]
+        \item []
+        \item [$(\Rightarrow)$] $s$ red en $X$ $\Rightarrow \mathcal{F}_{s}$ filtro asociado a $s$. Por hipótesis, $\mathcal{F}_{s}$ tiene punto de aglomeración $\Leftrightarrow \bigcup_{F \in \mathcal{F}_{s}} \overline{F} \neq \emptyset$. Ahora,
+          \[ 
+            \bigcap_{d \in D} \overline{B_{d}} =  \bigcup_{F \in \mathcal{F}_{s}} \overline{F} \neq \emptyset
+          \] 
+          donde $B_{d_{0}} = \{ s_{d} : d \geq d_{0} \}$. Por tanto,
+          \[
+            \forall d \in D, \exists x \in \bigcap_{d \in D} \overline{B_{d}}, x \in \overline{B_{d}}
+          \]
+          \[ 
+            \Leftrightarrow \forall U^{x}, U^{x} \cap B_{d} \neq \emptyset 
+          \] 
+          \[ 
+            \Leftrightarrow  \exists d' \in D : d' \geq d , s_{d'} \in U^{x}
+          \] 
+          Por tanto, $x$ es punto de aglomeración de $s$.
+        \item [$(\Leftarrow)$] $\mathcal{F}$ filtro en $X$ $\Rightarrow s_{\mathcal{F}} $ red asociada a $\mathcal{F}$ en $X$, y toda red en tiene punto de aglomeración $\Rightarrow \exists x \in X$ punto de aglomeración de $s_{\mathcal{F}}$. Por tanto,
+          \[
+            \forall U^{x}, \forall F \in \mathcal{F}, F \neq \emptyset \Rightarrow \exists z \in F: (z, F) \in D_{\mathcal{F}},
+          \]
+          \[ 
+            \exists (x, F') \in D_{\mathcal{F}}: (x,F') \geq (z, F), 
+          \] 
+          \[ 
+            s_{\mathcal{F}}(x, F') = x \in U^{x}. 
+          \] 
+          donde $x \in F' \subset F \Rightarrow U^{x} \cap F \neq \emptyset \Rightarrow x \in \Agl(\mathcal{F})$.
+
+      \end{enumerate}
+    \item [c) $\Leftrightarrow$ e)] $\mathcal{F}$ ultrafiltro en $X \Leftrightarrow s_{\mathcal{F}}$ red universal $\Rightarrow$ $\exists x \in X : s_{\mathcal{F}} \Leftrightarrow \mathcal{F} \rightarrow x$.
+  \end{enumerate}
+\end{dem}
+
+\begin{theo}[Tychonoff]
+  Sea $\{ ( X_{j}, \mathcal{T}_{j} ) \}_{j \in J}$ familia no vacía de e.t.. Entonces, $( \prod_{j \in J} X_{j}, \prod_{j \in J} \mathcal{T}_{j} )$ es compacto $\Leftrightarrow \forall j \in J, ( X_{j}, \mathcal{T}_{j} )$ es compacto.
+\end{theo}
+
+\begin{dem}[Filtros]
+  \begin{enumerate}[label=(\roman*)]
+    \item []
+    \item [$(\Rightarrow)$] Por la continuidad de las proyecciones.
+    \item [$(\Leftarrow)$] $\forall \mathcal{F}$ ultrafiltro en $\prod_{j \in J} X_{j} \Rightarrow \forall j \in J, p_{j}(\mathcal{F})$ ultrafiltro en $X_{j} \xRightarrow[]{ \text{hip.} } \forall j \in J, \exists x_{j} \in X_{j} : p_{j}(\mathcal{F}) \rightarrow x_{j} \Leftrightarrow \mathcal{F} \xrightarrow[]{ ( \prod_{j \in J} X_{j}, \prod_{j \in J} \mathcal{T}_{j} ) } (x_{j})_{j \in J} \Rightarrow ( \prod_{j \in J} X_{j}, \prod_{j \in J} \mathcal{T}_{j} )$ compacto.
+  \end{enumerate}
+\end{dem}
+
+\begin{dem}[Redes]
+  \begin{enumerate}[label=(\roman*)]
+    \item []
+    \item [$(\Rightarrow)$] Igual
+    \item [$(\Leftarrow)$] $\forall s$ red en $\prod_{j \in J} X_{j} \Rightarrow \forall j \in J, p_{j} \circ s$ red en $X_{j} \Rightarrow \forall j \in J, \exists x_{j} \in X_{j} : p_{j} \circ s \rightarrow x_{j} \Leftrightarrow s \rightarrow ( x_{j} )_{j \in J} \Rightarrow ( \prod_{j \in J} X_{j}, \prod_{j \in J} \mathcal{T}_{j} )$ compacto.
+  \end{enumerate}
+\end{dem}
+
+
+\part{Topología Algebráica}
+\chapter{Homotopía}
+
+\begin{defn}[Homotopía]
+  Sea $X, Y$ e.t., $f,g : X \to Y$ aplicación continua. Se dice que $f$ es homótopa a $g$ ($f \simeq g$) si $\exists H : X \times I \to Y$ continua tal que
+  \[ 
+    H(x,0) = f(x), \forall x \in X,
+  \] 
+  \[ 
+    H(x,1) = g(x), \forall x \in X.
+  \] 
+  A $H$ se le llama homotopía de $f$ en $g$.
+\end{defn}
+
+\begin{prop}
+  Si $X, Y$ e.t., la relación de homotopía entre las aplicaciones continuas de $X$ en $Y$ es de equivalencia.
+\end{prop}
+
+\begin{dem}
+  \begin{itemize}
+    \item []
+  \item Refrexiva: Sea $f : X \to Y$. Entonces, $H : X \times I \to X : H(x,t) = f(x) \Rightarrow f \simeq f$.
+  \item Simétrica: Sean $f,g : X \to Y, f \simeq g \Rightarrow \exists H : X \times I \to X $ homotopía. Sea $H': X \times I \rightarrow Y : H'(x, t) = H(x, 1 - t)$. Entonces, $H'$ es continua y 
+    \[ 
+      H'(x,0) = H(x, 1) = g(x), \forall x \in X,
+    \] 
+    \[ 
+      H'(x,1) = H(x, 0) = f(x), \forall x \in X.
+    \] 
+    Por tanto, $g \simeq f$
+  \item Transitiva: Sean $f,g,h : X \to Y$ continuas. Entonces, $f \simeq g \Rightarrow \exists H_{1} : X \times I \to Y$ tal que
+    \[ 
+      H_{1}(x, 0) = f(x),
+    \] 
+    \[ 
+      H_{1}(x, 1) = g(x).
+    \] 
+    Y $ g \simeq f \Rightarrow \exists H_{2} : X \times I \to Y$ continua tal que
+    \[ 
+      H_{2}(x, 0) = g(x),
+    \] 
+    \[ 
+      H_{2}(x, 1) = h(x).
+    \] 
+    Sea $H : X \times I \to Y$ definida por
+    \[ 
+      H(x,t) =
+      \begin{aligned}
+        \begin{cases}
+          H_{1}(X, 2t), \quad 0 \leq t \leq \frac{1}{2} \\
+          H_{2}(X, 2t - 1), \quad \frac{1}{2} \leq t \leq 1
+        \end{cases}
+      \end{aligned} 
+    \] 
+    Como $X \times [0, \frac{1}{2}]$, $X \times [\frac{1}{2}, 1]$ son cerrados de $I$ y recubren $I$, entonces por Prop. 1.20. $H$ es continua tal que
+    \[ 
+      H(x,0) = f(x),
+      H(x,1) = h(x).
+    \] 
+    Por tanto, $f \simeq h$.
+  \end{itemize}
+\end{dem}

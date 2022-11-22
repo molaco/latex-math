@@ -1,0 +1,158 @@
+\chapter{Convergencia}
+
+\section{Filtros}
+
+\begin{defn}[Sucesión]
+  Sea $X$ conjunto no vacío. Se llama sucesión a cualquier aplicación $s : \mathbb{N} \to X : n \mapsto s(n) \equiv s_{n}$ y $s 3 = (s_{n})_{n \in \mathbb{N}}$.
+\end{defn}
+
+\begin{defn}[Punto límite]
+  Sea $( X, \mathcal{T} )$ e.t. $s = ( s_{n} )_{n \in \mathbb{N}}$ sucesión en $X$, $x \in X$. Se dice que $s$ converge a $x$ en $( X, \mathcal{T} )$ (o que $x$ es punto límite de $s$) si $\forall U_{x}$ entorno de $x$, $\exists n_{0} \in \mathbb{N} : s_{n} \in U^{x}, \forall n \geq n_{0}$. 
+\end{defn}
+
+\begin{obs}
+  Si $( X, \mathcal{T} )$ e.t. $M \subset X$ no vacío, entonces $x \in \overline{M}$ $\not \Leftrightarrow$ $\exists ( s_{n} )_{n \in \mathbb{N}} \subset M : ( x_{n} )_{n \in \mathbb{N}} \rightarrow x$.
+\end{obs}
+
+\begin{ejm}
+  $( \mathbb{R}, \mathcal{T}_{CN} )$, $M = ( 0, 1), 0 \in \overline{M}$ pero $( x_{n} )_{n \in \mathbb{N}} \rightarrow 0 \Rightarrow \exists m \in \mathbb{N} : x_{n} = 0, \forall n \geq m \Rightarrow ( x_{n} )_{n \in \mathbb{N}} \not \subset M$
+\end{ejm}
+
+\begin{obs}
+  No sirven las sucesiones para caracterizar puntos adherentes.
+\end{obs}
+
+\begin{obs}
+  Sucesiones generalzadas se llaman redes.
+\end{obs}
+
+\begin{obs}
+  Los filtros son más genereales que los sitemas de entornos.
+\end{obs}
+
+\begin{defn}
+  Sea $X \neq \emptyset$ conjunto. Se llama filtro en $X$ a cualquier familia $\mathcal{F} \neq \emptyset$ de conjuntos no vacios tal que
+  \begin{enumerate}[label=(\roman*)]
+    \item $\forall F_{1}, F_{2} \in \mathcal{F} \Rightarrow F_{1} \cap F_{2} \in \mathcal{F}$,
+    \item $\forall F \in \mathcal{F}, \forall F' \subset X, F' \supset F \Rightarrow F' \in \mathcal{F}$.
+  \end{enumerate}
+\end{defn}
+
+\begin{ejm}
+  $\forall X$ conjunto, $\forall S \neq \emptyset, \mathcal{F}_{S} = \{ F \subset X : F \supset S \}$.
+\end{ejm}
+
+\begin{ejm}
+  Si $( X, \mathcal{T} )$ e.t. $x \in X$. El sistema de entornos de $x$ es filtro en $X$.
+\end{ejm}
+
+\begin{obs}
+  Los filtros son demasiado grandes. En la práctica usamos bases de filtros.
+\end{obs}
+
+\begin{defn}
+  Sea $X$ conjunto no vacío, $\mathcal{F}$ filtro en $X$. Se llama base del filtro $\mathcal{F}$ a cualquier subfamilia $\mathcal{B} \subset \mathcal{F}$ tal que $\forall F \in \mathcal{F}, \exists B \in \mathcal{B} : B \subset F$. Decimos que $\mathcal{B}$ genera $\mathcal{F}$.
+\end{defn}
+
+\begin{ejm}
+  $\forall X $ conjunto, $S \subset X$, $\mathcal{B} = \{ S \}$ es una base de filtro.
+\end{ejm}
+
+\begin{ejm}
+  Si $( X, \mathcal{T} )$ e.t., $\forall x \in X, \forall \mathcal{B}(x)$ base de entornos de $x$ es una base de filtro de $\mathcal{V}(X)$.
+\end{ejm}
+
+\begin{prop}
+  Sea $X$ conjunto no vacío. Una familia $\mathcal{B} \neq \emptyset$ de conjuntos no vacíos es base de filtros para algún filtro de $X$ $\Leftrightarrow \forall B_{1}, B_{2} \in \mathcal{B}, \exists B_{3} \in \mathcal{B} : B_{3} \subset B_{1} \cap B_{2}$.
+\end{prop}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item []
+    \item [$(\Rightarrow)$] Si $\mathcal{B}$ es base para algún $\mathcal{F}$ filtro $\Rightarrow \mathcal{B}$ es subfamilia de $\mathcal{F}$, es decir, $\mathcal{B} \subset \mathcal{F}$. Luego, $\forall B_{i} \in \mathcal{B}, i \in \{ 1, 2 \} \Rightarrow B_{i} \in \mathcal{F} \Rightarrow B_{1} \cap B_{2} \in \mathcal{F} \Rightarrow B_{3} \subset B_{1} \cap B_{2}$.
+    \item [$(\Leftarrow)$] Sea $\mathcal{F} = \{ F \subset X : F \supset B \text{ para algún } B \in \mathcal{B} \} \supset \mathcal{B}$ es una subfamilia no vacía de conjuntos no vacíos. Veamos que cumple la definición de filtro.
+      \begin{enumerate}[label=(\roman*)]
+        \item $\forall F_{i} \in \mathcal{F}, \forall i \in \{ 1, 2 \} \Rightarrow \exists B_{i} \in \mathcal{B} : B_{i} \subset F_{i}$. Entonces, por hipótesis $\exists B_{3} \in \mathcal{B} : B_{3} \subset B_{1} \cap B_{2} \subset F_{1} \cap F_{2} \Rightarrow F_{1} \cap F_{2} \in \mathcal{F}$.
+        \item $\forall F \in \mathcal{F}, \forall F' \subset X, F' \supset F \Rightarrow \exists B \in \mathcal{B}$ tal que $B \subset F \subset F' \Rightarrow F' \in \mathcal{F}$.
+      \end{enumerate}
+  \end{enumerate}
+\end{dem}
+
+\begin{defn}
+  Sea $X \neq \emptyset$, $\mathcal{F}_{1}, \mathcal{F}_{2}$ dos filtros en $X$. Si $\mathcal{F}_{1} \subset \mathcal{F}_{2}$ se dice que $\mathcal{F}_{2}$ es más fino que $\mathcal{F}_{1}$
+\end{defn}
+
+\begin{defn}
+  Sea $( X, \mathcal{T} )$ e.t., $\mathcal{F}$ filtro en $X$, $x \in X$. Se dice que $\mathcal{F}$ converge a $x$ en $( X, \mathcal{T} )$ (o que $x$ es un punto límite de $\mathcal{F}$) si $\mathcal{V}(x) \subset \mathcal{F}$, es decir, el sistema de entornos de $x$ es más fino que el filtro $\mathcal{F}$.
+\end{defn}
+
+\begin{nota}
+  $\mathcal{F} \xrightarrow[]{ ( X, \mathcal{T} ) } x$ o $ x = \lim \mathcal{F}$.
+\end{nota}
+
+\begin{defn}[Aglomeración]  
+  Sea $( X, \mathcal{T} )$ e.t., $\mathcal{F}$ filtro en $X$, $x \in X$. Se dice que $x$ es un punto de aglomeración de $\mathcal{F}$ en $( X, \mathcal{T} )$ si $\forall U^{x}$ entorno de $x$ en $( X, \mathcal{T} )$, $\forall F \in \mathcal{F}$ tal que $U^{x} \cap F \neq \emptyset$.
+\end{defn}
+
+\begin{obs}
+  La definición de límite es más fuerte que la de aglomeración.
+\end{obs}
+
+\begin{prop}
+  Sea $( X, \mathcal{T} )$ e.t., $\mathcal{F}$ filtro en $X$, $x \in X$. Si $\mathcal{F} \rightarrow x$, entonces $x$ es un punto de aglomeración de $\mathcal{F}$.
+\end{prop}
+
+\begin{dem}
+  $\mathcal{F} \rightarrow x \Leftrightarrow \mathcal{V}(x) \subset \mathcal{F}$ $\Rightarrow \forall U^x \in \mathcal{V}(x) \subset \mathcal{F}, \forall F \in \mathcal{F} \Rightarrow U^{x}, F \in \mathcal{F} \Rightarrow U^{x} \cap F \in \mathcal{F} \Rightarrow U^{x} \cap F \neq \emptyset \Rightarrow x$ es punto de aglomeración de $\mathcal{F}$.
+\end{dem}
+
+\begin{prop}[Caracterización punto de aglomeración]
+  Sea $( X, \mathcal{T} )$ e.t., $\mathcal{F}$ filtro en $X$, $x \in X$. Entonces, $x$ es punto de aglomeración de $\mathcal{F}$ en $( X, \mathcal{T} ) \Leftrightarrow x \in \bigcap_{F \in \mathcal{F}} \overline{F} \equiv \Agl(F)$
+\end{prop}
+
+\begin{dem}
+  $x$ punto de aglomeración de $\mathcal{F} \Leftrightarrow \forall U^{x}, \forall F \in \mathcal{F}, U^{x} \cap F \neq \emptyset \Leftrightarrow \forall F \in \mathcal{F}, x \in \mathcal{F} \Leftrightarrow x \in \bigcap_{F \in \mathcal{F}} \overline{F}$.
+\end{dem}
+
+\begin{prop}
+  Sea $( X, \mathcal{T} )$ e.t. $( x_{n} )_{n \in \mathbb{N}}$ sucesión en $X$, $x \in X$. Entonces, $( x_{n} )_{n \in \mathbb{N}} \xrightarrow[]{ ( X, \mathcal{T} ) } x \Leftrightarrow$ el filtro generado por $\{ \{ x_{n} : n \geq m \} : m \in \mathbb{N} \}$ (familia no vacía de conjuntos no vacíos es base de filtro) converge a $x$ en $( X, \mathcal{T} )$.
+\end{prop}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item []
+    \item [] Sea $\mathcal{B} = \{ \{ x_{n} : n \geq m \} : m \in \mathbb{N} \}$. Entonces, $\mathcal{B}$ es base de filtro $\mathcal{F}$ en $X \Rightarrow ( x_{n} )_{n \in \mathbb{N}} \rightarrow x \Leftrightarrow \forall U^{x}, \exists m \in \mathbb{N} : x_{n} \in U^x, \forall n \geq m \Leftrightarrow \forall U^{x}, \exists m \in \mathbb{N}$ tal que $\{ x_{n} : n \geq m \} \subset U^{x}$ donde $\{ x_{n} : n \geq m \} \in \mathcal{B} \subset \mathcal{F}$ $\Rightarrow \forall U^{x}, U^{x} \in \mathcal{F}$ filtro engendrado por $\mathcal{B} \Leftrightarrow \mathcal{V}(x) \subset \mathcal{F} \Leftrightarrow \mathcal{F} \rightarrow x$.
+  \end{enumerate}
+\end{dem}
+
+\begin{prop}
+  Sea $( X, \mathcal{T} )$ e.t., $x \in X, \mathcal{F}$ filtro en $X$. Entonces, $x$ es punto de aglomeración de $\mathcal{F} \Leftrightarrow \exists \mathcal{F}'$ filtro en $X$ tal que $\mathcal{F} \subset \mathcal{F}'$ y $\mathcal{F}' \rightarrow x$.
+\end{prop}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item []
+    \item [$(\Rightarrow)$] $x$ punto de aglomeración $\Rightarrow \forall U^{x}$ entorno de $x$, $\forall F \in \mathcal{F}, U^{x} \cap F \neq \emptyset$. Sea $\mathcal{B} = \{ U \cap F : U \in \mathcal{V}(x), F \in \mathcal{F} \}$. Entonces, $\mathcal{B}$ es base de filtro en $X$. Sea $\mathcal{F}'$ el filtro engendrado por $\mathcal{B}$. Veamos que cumple las condiciones.
+      \begin{enumerate}[label=(\roman*)]
+        \item $\forall F \in \mathcal{F} \Rightarrow F \supset U \cap F, \forall U \in \mathcal{V}(x)$ donde $U \cap F \in \mathcal{B} \subset \mathcal{F}' \Rightarrow F \in \mathcal{F}' \Rightarrow \mathcal{F} \subset \mathcal{F}'$.
+        \item $\forall U \in \mathcal{V}(x), U \supset U \cap F, \forall F \in \mathcal{F}$ donde $U \cap B \in \mathcal{B} \subset \mathcal{F}' \Rightarrow U \in \mathcal{F}' \Rightarrow \mathcal{V}(x) \subset \mathcal{F}' \Leftrightarrow \mathcal{F}' \rightarrow x$.
+      \end{enumerate}
+    \item [$(\Leftarrow)$] Suponemos que $\mathcal{F}'$ filtro tal que $\mathcal{F} \subset \mathcal{F}'$ y $\mathcal{F} \rightarrow x$. Entonces, $\forall U \in \mathcal{V}(x) \subset \mathcal{F}', \forall F \in \mathcal{F}\subset \mathcal{F}' \Rightarrow U, F \in \mathcal{F}' \Rightarrow U \cap F \in \mathcal{F}' \Rightarrow U \cap F \neq \emptyset \Rightarrow x$ punto de aglomeración de $\mathcal{F}$.
+  \end{enumerate}
+\end{dem}
+
+\begin{prop}[Caracterización de puntos adherentes]
+  Sea $( X, \mathcal{T} )$ e.t., $x \in X$, $M \neq \emptyset \subset X$. Entonces, $x \in \overline{M} \Leftrightarrow \exists \mathcal{F}$ filtro en $X$ tal que $\mathcal{F} \xrightarrow[]{ ( X, \mathcal{T} ) } x$ y $M \in \mathcal{F}$. 
+\end{prop}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)]
+    \item []
+    \item [$(\Rightarrow)$] $\forall U^{x}$ entorno de $x$, $U^{x} \cap M \neq \emptyset$. Sea $\mathcal{B} = \{ U \cap M : U \in \mathcal{V}(x) \}$ familia no vacía de conjuntos no vacíos, es base de filtros en $X$. Sea $\mathcal{F}$ el filtro engendrado por $\mathcal{B}$ Veamos que cumple las condiciones.
+      \begin{enumerate}[label=(\roman*)]
+        \item $M \supset U \cap M \in \mathcal{B}, \forall U \in \mathcal{V}(x) \Rightarrow M \in \mathcal{F}$.
+        \item $\forall U \in \mathcal{V}(x), U \supset U \cap M \in \mathcal{B} \Rightarrow U \in \mathcal{F} \Rightarrow \mathcal{V}(x) \subset \mathcal{F} \Leftrightarrow \mathcal{F} \rightarrow x$.
+      \end{enumerate}
+    \item [$(\Leftarrow)$] $\mathcal{F}$ filtro tal que $M \in \mathcal{F}, \mathcal{F} \rightarrow x$. Entonces, $\forall U \in \mathcal{V}(x) \subset \mathcal{F} \Rightarrow U \cap M \in \mathcal{F} \Rightarrow U \cap M \neq \emptyset \Rightarrow x \in \overline{M}$.
+  \end{enumerate}
+\end{dem}

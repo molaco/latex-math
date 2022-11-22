@@ -1,0 +1,60 @@
+\section{Definiciones}
+
+\begin{defn}[Sistema Autónomo]
+  Un sistema de ecuaciones diferenciales se dice autónomo si no depende explícitamente de la variable temporal $t$. Un sistema autónomo es de la forma
+  \[ 
+     =
+    \begin{aligned}
+      \begin{cases}
+        x_{1}' = a_{11} x_{1} + \cdots + a_{1n} x_{n} \\
+        x_{2}' = a_{21} x_{1} + \cdots + a_{2n} x_{n} \\
+        \vdots \\
+        x_{n}' = a_{n1} x_{1} + \cdots + a_{nn} x_{n} \\
+      \end{cases}
+    \end{aligned} 
+  \] 
+  donde $a_{ij} \in \mathbb{R}$.
+\end{defn}
+
+\begin{defn}[Punto de Equilibrio]
+  Sea el sistema 
+  \[ 
+    y'(t) = A y(t).
+  \] 
+  un sistema lineal autónomo. Se dice que $x \in \mathbb{R}^{n}$ es un punto de equilibrio del sistema si $A x = 0$.
+\end{defn}
+
+\begin{defn}[Punto de Equilibrio Hiperbólico]
+  Un punto de equilibrio es un punto de equilibrio hiperbólico si 
+  \[ 
+    \forall \lambda \in \rho(A), \quad \Ree(\lambda) \neq 0
+  \] 
+\end{defn}
+
+\begin{defn}[Estabilidad]
+  Sea $\overline{u}$ un punto de equilibrio de $\dot{u} = f(u)$. Se dice que $\overline{u}$ es estable si
+  \[
+    \forall \epsilon > 0, \exists \delta(\epsilon) > 0, \delta(\epsilon) \leq \epsilon, \forall u_{0} : ||\overline{u} - u_{0} || \leq \lambda
+  \]
+  entonces, para $\varphi(t, u_{0})$ solución se verifica
+  \[
+    ||\varphi(t, u_{0}) - \overline{u}|| \leq \epsilon, \quad \forall t \geq 0.
+  \]
+\end{defn}
+
+\begin{defn}[Estabilidad Asintótica]
+  Un punto de equilibrio estable es asintóticamente estable si
+  \[
+    \exists \lambda : \lim_{t \to \infty} \varphi(t, u_{0}) = \overline{u}.
+  \]
+\end{defn}
+
+\section{Estabilidad Sistemas Lineales}
+
+\begin{note}
+  Consideramos el sistema lineal
+  \[ 
+    \dot{u}(t) = A(t) u(t) + b(t) \\
+  \] 
+  donde $A \in C(\mathbb{R}; \mathbb{R}^{d \times d})$, $b \in C(\mathbb{R}; \mathbb{R}^{d \times d})$ y $u \in \mathbb{R}^{n}$.
+\end{note}
