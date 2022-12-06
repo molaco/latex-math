@@ -1,0 +1,222 @@
+\begin{lem}
+  Sean $X, X'$ e.t., $\psi_{1}, \psi_{2} : X \to X' $, aplicaciones continuas $\psi_{1}, \simeq \psi_{2}$, $x \in X$. Entonces, $\psi_{1}_* = \varphi_{h} \circ \psi $ tal que $\varphi_{h}$ es isomorfismo inducido por un camino $h$ en $X'$ que conecta $\psi_{1}(x)$ con $\psi_{2}(x)$
+  \[ 
+    \varphi_{h}([g]) ] [h * (g * h')] 
+  \] 
+\end{lem}
+
+\begin{dem}
+  $\psi_{1} \simeq \psi_{2} \Rightarrow \exists H  : X \times I \to X'$ continua tal que
+  \[ 
+    H(z,0) = \psi_{1}(z), \forall z \in Z, 
+  \] 
+  \[ 
+    H(z,1) = \psi_{2}(z), \forall z \in Z,
+  \] 
+  entonces $h : I \to X': h(t) \equiv H(x, t)$ es continua tal que
+  \[ 
+    h(0) = H(x, 0) = \psi_{1}(x)
+    h(1) = H(x, 1) = \psi_{2}(x)
+  \] 
+  Por tanto,
+  \[
+    \psi_{1}_*  :  \pi_{1}(X, x) \to \pi(X', \psi_{1}(x)),
+  \]
+  \[ 
+    [f] \mapsto \psi_{1}_*([f]) = [\psi_{1} \circ f],
+  \] 
+  \[
+    \psi_{2}_*  :  \pi_{1}(X, x) \to \pi(X', \psi_{2}(x)),
+  \]
+  \[ 
+    [f] \mapsto \psi_{2}_*([f]) = [\psi_{2} \circ f],
+  \] 
+  \[ 
+    \varphi_{h} : \pi_{1}(X', \psi_{2}(x)) \to \pi_{1}(X', \psi_{1}),
+  \] 
+  \[ 
+    [g] \mapsto \varphi_{n}([g]) = [h * (g * h')],
+  \] 
+  Veamos que
+  \[
+    \psi_{1}([f]) = [\psi_{1} \circ f]
+  \]
+  \[ 
+    \Rightarrow (\varphi_{h} \circ \psi_{2}_*([f]) = \varphi_{h}([\psi_{2} \circ f]) = [h * (\varphi_{2} \circ f) * h']
+  \] 
+  Construimos una homotopía tal que $\psi_{1} \circ f \simeq_{\{ 0, 1 \}} h * ((\psi_{2} \circ f) * h')$. Sea $F : I \times I \to X'$
+  \[ 
+    F(s, t) =
+    \begin{aligned}
+      \begin{cases}
+        h(2s), \quad 0 \leq s \leq \frac{1 - t}{2} \\
+        H(f(\frac{4s + 2s - 2}{3s + 1})), \quad \frac{1 - t}{2} \leq s \leq \frac{3 + t}{4} \\
+        h'(4s - 3), \quad \frac{3 + t}{4} \leq s \leq 1
+      \end{cases}
+    \end{aligned}
+  \] 
+  que cumple lo que queríamos.
+\end{dem}
+
+\begin{prop}
+  Sea $X, Y$ e.t., $\varphi : X \to Y $ equivalencia homotópica. Entonces, $\forall x \in X, \varphi_* : \pi_{1}(X, x) \to \pi_{1}(Y, \varphi(x))$ es isomorfismo.
+\end{prop}
+
+\begin{dem}
+  Equivalencia homotópica $\Rightarrow \exists \psi : Y \to X$ aplicaciones continua tal que $\psi \circ \varphi \simeq 1_{X}, \varphi \circ \psi \simeq 1_{Y}$. Por tanto, $\exists h$ camino en $X$ conectando $(\psi \circ \varphi)(x)$ con $x$ tal que
+  \[ 
+    (\psi \circ \varphi)_* = \varphi_{h} \circ (1_{X})_*
+  \] 
+  Y $\exists k$ camino en $Y$, conectando $(\psi \circ \varphi)(\varphi(x))$ con $\varphi(x)$ tal que
+  \[ 
+    (\varphi \circ \psi)_* = \varphi_{k} \circ (1_{Y})_*
+  \] 
+  donde $(\varphi \circ \psi)_* = \varphi_* \circ \psi_*$ y $\varphi_* \circ 1_{\pi_{1}(Y, \varphi(x))} = \varphi_*$. Por tanto, $\varphi_*$ inyectiva y suprayectiva $\Rightarrow \varphi_*$ isomorfismo.
+\end{dem}
+
+\begin{cor}
+  Sea $X, Y$ e.t. c.p.c y homotópicamente equivalentes. Entonces, $\pi_{1}(X), \pi_{1}(Y)$ son isomorfos.
+\end{cor}
+
+\begin{obs}
+  También valdría $X$ c.p.c homotópicamente equivalente a $Y$.
+\end{obs}
+
+\begin{prop}
+  Sean $X, Y$ e.t., $a \in X$, $b \in Y$. Entonces, $\pi_{1}(X \times Y, (a, b))$ es isomorfo a $\pi_{1}(X,a) \times \pi_{1}(X, b)$
+\end{prop}
+
+\begin{dem}
+  Las aplicaciones $p_{1} : X \times Y \to X$, $p_{2} : X \times Y \to Y$ son continuas, entonces
+  \[ 
+    \begin{aligned}
+      \begin{cases}
+        p_{1}_* : \pi_{1}(X \times Y, (a, b)) \to \pi_{1}(X, a) \\
+        p_{2}_* : \pi_{2}(X \times Y, (a, b)) \to \pi_{2}(Y, b)
+      \end{cases}
+    \end{aligned} 
+  \] 
+  son homorofismos. Por tanto,
+  \[ 
+    (p_{1}_*, p_{2}_*) : \pi_{1}(X \times Y, (a, b)) \to \pi_{1}(X, a) \times \pi_{1}(Y, b) 
+  \] 
+  homeomorfismos.
+  \begin{itemize}
+    \item F es inyectiva: $[f], [g] \in \pi_{1}(X \times Y, (a, b))$
+      \[ 
+        F([f])] = F([g]) \Leftrightarrow p_{i}_*([f]) = p_{i}_*([g]), i \in \{ 1, 2 \}
+      \] 
+      donde $p_{i}_*([f]) = [p_{i} \circ f],  p_{i}_*([g]) = [p_{i} \circ g]$ y $p_{i} \circ f \simeq_{\{ 0, 1 \}} p_{i} \circ g$
+      \[ 
+        \Leftrightarrow
+        \begin{aligned}
+          \begin{cases}
+            \exists H_{1} : I \times I \to X \text{ cont. }
+            \exists H_{2} : I \times I \to Y \text{ cont. }
+          \end{cases}
+        \end{aligned} 
+      \] 
+      \[ 
+        H_{i}(s, 0) = (p_{i} \circ f)(s) 
+      \] 
+      \[ 
+        H_{i}(s, 1) = (p_{i} \circ g)(s) 
+      \] 
+      \[ 
+        H_{1}(0, t) = a = (p_{1} \circ f)(0) = (p_{1} \circ g)(0), 
+      \] 
+      \[ 
+        H_{1}(1, t) = a = (p_{1} \circ f)(1) = (p_{1} \circ g)(1),
+      \] 
+      \[ 
+        H_{2}(0, t) = b = (p_{2} \circ f)(0) = (p_{2} \circ g)(0),
+      \] 
+      \[ 
+        H_{2}(1, t) = b = (p_{2} \circ f)(1) = (p_{2} \circ g)(1),
+      \] 
+      Sea $H : I \times I \to X \times Y$, $H \equiv (H_{1}, H_{2})$ es continua. Veamos que verifica las condiciones.
+      \[ 
+        H(s, 0) = ((p_{1} \circ f)(s), (p_{2} \circ f)(s)) = f(s),
+      \] 
+      \[ 
+        H(s, 1) = ((p_{1} \circ g)(s), (p_{2} \circ g)(s)) = f(s),
+      \] 
+      \[ 
+        H(0,t) = (H_{1}(0, t), H_{2}(0, t)) = (a, b) = f(0) = g(0),
+      \] 
+      \[ 
+        H(1, t) = (H_{1}(1, t), H_{2}(1, t)) = (a, b) = f(1) = g(1),
+      \] 
+      Por tanto, $f \simeq_{\{ 0, 1 \}} g \Rightarrow [f] = [g]$.
+    \item F suprayectiva: $\forall ([f_{1}], [f_{2}]) \in \pi_{1}(X, a) \times \pi_{1}(Y, b)$. Sea $f : I \to X \times Y$ camino definido por
+      \[ 
+        f(t)  =
+        \begin{aligned}
+          \begin{cases}
+            (f_{1}(2t), b), \quad 0 \leq t \leq \frac{1}{2} \\
+            (a, f_{2}(2t - 1)), \quad \frac{1}{2} \leq t \leq 1
+          \end{cases}
+        \end{aligned} 
+      \] 
+      entonces $f$ es continua y $f(0) = (a, b), f(1) = (a, b)$.
+      $\Rightarrow f$ lazo es $X \times Y$ con base (a, b).
+      \[ 
+        (p_{1} \circ f)(t)  =
+        \begin{aligned}
+          \begin{cases}
+            f_{1}(2t), \quad 0 \leq t \leq \frac{1}{2} \\
+            a, \quad \frac{1}{2} \leq t \leq 1
+          \end{cases}
+        \end{aligned} 
+      \] 
+      \[ 
+        = (f_{1} * c_{a})(t)
+      \] 
+      entonces, $p_{1} \circ f = f_{1}_* c_{a} \simeq_{\{ 0, 1 \}} f_{1}$. También,
+      \[ 
+        (p_{2} \circ f)(t)  =
+        \begin{aligned}
+          \begin{cases}
+            b, \quad 0 \leq t \leq \frac{1}{2} \\
+            f_{2}(2t - 1), \quad \frac{1}{2} \leq t \leq 1
+          \end{cases}
+        \end{aligned}
+      \] 
+      \[ 
+        = (c_{b} * f_{2})(t) 
+      \] 
+      entonces, $p_{2} \circ f = c_{b} * f_{2} \simeq_{\{ 0, 1 \}} f_{2}$. Por tanto,
+      \[ 
+        F([f]) = (p_{1} * [f], p_{2} * [f]) 
+      \] 
+      \[ 
+        = ([p_{1} \circ f], [p_{2} \circ f]) 
+      \] 
+      \[ 
+        = ([f_{1}], [f_{2}]) 
+      \] 
+  \end{itemize}
+\end{dem}
+
+\begin{obs}
+  Sea $\mathbb{S}^{1} = \{ z \in \mathbb{C} : ||z|| = 1 \}$
+  \[ 
+    \varphi : \mathbb{R} \to \mathbb{S}^{1} 
+  \] 
+  \[ 
+    x \mapsto \varphi(x) = \cos(2 \pi x) + i \sen(2 \pi x) 
+  \] 
+  entonces, $\varphi$ es homeomorfismo de grupos de $(\mathbb{R}, +)$ en $(\mathbb{S}^{1}, \cdot)$, ya que
+  \[ 
+    \forall x, y \in \mathbb{R}, \varphi(x + y) = \varphi(x) \cdot \varphi(y)
+  \] 
+  Además, $\varphi$ es continua y es abierta. Por tanto,
+  \[ 
+    \varphi|_{(-\frac{1}{2}, \frac{1}{2})} \to \mathbb{S}^{1}\setminus \{ -1 \}
+  \] 
+  es homeomorfismo, entonces
+  \[ 
+    \Rightarrow h \equiv (\varphi_|_{(-\frac{1}{2}, \frac{1}{2})})^{-1} : \mathbb{S}\setminus \{ -1 \} \to (-\frac{1}{2}, \frac{1}{2})
+  \] 
+  es homeomorfismo.
+\end{obs}

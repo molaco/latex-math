@@ -1,0 +1,322 @@
+\begin{defn}[Homotopía Relativa]
+  Sean $X, Y$ e.t., $A \subset X$ no vacío, $f,g : X \to Y$ aplicación continua. Se dice que $f$ es homótopa a $g$ relativa a $A$ si $\exists H : X \times I \to Y$ continua tal que
+  \[ 
+    H(x,0) = f(x), \forall x \in X,
+  \] 
+  \[ 
+    H(x,1) = g(x), \forall x \in X,
+  \] 
+  \[ 
+    H(a,t) = f(a) = g(a), \forall a \in A, \forall t \in I.
+  \] 
+\end{defn}
+
+\begin{nota}
+  $f$ homótopa a $g$ relativa a $A$ se denota $f \simeq_{A} g$.
+\end{nota}
+
+\begin{obs}
+  La relación de homotopía raltiva a un subespacio es de equivalencia.
+\end{obs}
+
+\begin{obs}
+  $f \simeq_{A} g \Rightarrow f|_{A} = g|_{A}$.
+\end{obs}
+
+\begin{defn}[Producto]
+  Sea $X$ e.t., $a, b, c \in X$, $f$ camino en $X$ de origen $a$ y extremo $b$, $g$ camino en $X$ de origen $b$ y extremo $c$. Se llama producto de $f$ y $g$ al camino en $X$,
+  \[ 
+    (f * g)(t) =
+    \begin{aligned}
+      \begin{cases}
+        f(2t), \quad 0 \leq t \leq \frac{1}{2} \\
+        g(2t - 1), \quad \frac{1}{2} \leq t \leq 1
+      \end{cases}
+    \end{aligned} 
+  \] 
+\end{defn}
+
+\begin{obs}
+  Para que exista el producto de dos caminos $f$ y $g$, es imprescindible que $f(1) = 0$
+\end{obs}
+
+\begin{defn}[Lazo]
+  Sea $X$ e.t., $x_{0} \in X$. Se llama lazo en $X$ de base $x_{0}$ a cualquier camino $f$ en $X$ tal que $f(0) = f(1) = x_{0}$.
+\end{defn}
+
+\begin{obs}
+  Los lazos son un caso particualar de camino, por tanto, también son una clase de equivalencia.
+\end{obs}
+
+\begin{defn}[Lazos Homótopos]
+  Sea $X$ e.t., $x_{0} \in X$. Dos lazos $f$ y $g$ de $X$ con base $x_{0}$, se llaman homótopos si $f \simeq_{\{ 0, 1 \}}$.
+\end{defn}
+
+\begin{nota}
+  Si $X$ e.t., $x_{0} \in X$, $\pi_{1}(X, x_{0})$ dentoa el conjunto cociente de las clase de homotopía de lazos de base $x_{0}$.
+\end{nota}
+
+\begin{prop}
+  Sea $X$ e.t., $f_{1}, g_{1}$ caminos en $X$ tal que $f_{1} \simeq_{\{ 0, 1 \}} g_{1}$ y $f_{2}, g_{2}$ tal que $f_{2} \simeq_{\{ 0, 1 \}}$, y $f_{1}(1) = f_{2}(0)$. Entonces, $f_{1} * f_{2} \simeq g_{1} * g_{2}$.
+\end{prop}
+
+\begin{obs}
+  También vale $f_{1} * f_{2} \simeq g_{1} * g_{2}$.
+\end{obs}
+
+\begin{dem}
+  $\exists H_{1} : I \times I \to X$ continua tal que
+  \[ 
+    H_{1}(s,0) = f_{1}(s), \forall s \in I,
+  \] 
+  \[ 
+    H_{1}(s,1) = g_{1}(s), \forall s \in I,
+  \] 
+  \[ 
+    H_{1}(0, t) = f_{1}(0) = g_{1}(0), \forall t \in I,
+  \] 
+  \[ 
+    H_{1}(1, t) = f_{1}(1) = g_{1}(1), \forall t \in I.
+  \] 
+  $\exists H_{2} : I \times I \to X$ continua tal que
+  \[ 
+    H_{2}(s,0) = f_{2}(s), \forall s \in I,
+  \] 
+  \[ 
+    H_{2}(s,1) = g_{2}(s), \forall s \in I,
+  \] 
+  \[ 
+    H_{2}(0, t) = f_{2}(0) = g_{2}(0), \forall t \in I,
+  \] 
+  \[ 
+    H_{2}(1, t) = f_{2}(1) = g_{2}(1), \forall t \in I.
+  \] 
+  Sea $H : I \times I \to X$ definida por
+  \[ 
+    H(s,t) =
+    \begin{aligned}
+      \begin{cases}
+        H_{1}(2s, t), \quad 0 \leq s \leq \frac{1}{2}, \quad t \in I \\
+        H_{2}(2s - 1, t), \quad \frac{1}{2} \leq s \leq 1, \quad t \in I
+      \end{cases}
+    \end{aligned} 
+  \] 
+  Esta aplicación está bien definida y es continua ya que $[0, \frac{1}{2}] \times I$ y $[0, \frac{1}{2}] \times I$ son cerrados de $I$.
+  \[ 
+    H(s,0) =
+    \begin{aligned}
+      \begin{cases}
+        H_{1}(2s, 0), \quad 0 \leq s \leq \frac{1}{2} \\
+        H_{2}(2s - 1, 0), \quad \frac{1}{2} \leq s \leq 1
+      \end{cases}
+    \end{aligned} 
+  \] 
+  \[ 
+     =
+    \begin{aligned}
+      \begin{cases}
+        f_{1}(2s), \quad 0 \leq s \leq \frac{1}{2} \\
+        f_{2}(2s - 1), \quad \frac{1}{2} \leq s \leq 1
+      \end{cases}
+    \end{aligned} 
+  \] 
+  \[ 
+    = (f_{1} * f_{2})(s),
+  \] 
+  \[ 
+    H(s,1) =
+    \begin{aligned}
+      \begin{cases}
+        H_{1}(2s, 1), \quad 0 \leq s \leq \frac{1}{2} \\
+        H_{2}(2s - 1, 1), \quad \frac{1}{2} \leq s \leq 1
+      \end{cases}
+    \end{aligned} 
+  \] 
+  \[ 
+     =
+    \begin{aligned}
+      \begin{cases}
+        g_{1}(2s), \quad 0 \leq s \leq \frac{1}{2} \\
+        g_{2}(2s - 1), \quad \frac{1}{2} \leq s \leq 1
+      \end{cases}
+    \end{aligned} 
+  \] 
+  \[ 
+    (g_{1} * g_{2})(s),
+  \] 
+  \[ 
+    H(0, t) = H_{1}(0, t) = f_{1}(0) = g_{1}(0) = (f_{1} * f_{2})(0) = (g_{1} * g_{2})(0),
+  \] 
+  \[ 
+    H(1, t) = H_{2}(1, t) = f_{2}(1) = g_{2}(1) = (f_{1} * f_{2})(1) = (g_{1} * g_{2})(1),
+  \] 
+\end{dem}
+
+\begin{cor}
+  Sea $X$ e.t., $x_{0} \in X$, $f_{1}, g_{2}$ lazos en $X$ con base $x_{0}$ tal que son homótopos $([f_{1}] = [g_{1}])$, $f_{2}, g_{2}$ lazos en $X$ con base $x_{0}$ tal que ($[f_{2}] = [g_{2}]$). Entonces, $[f_{q} * f_{2}] = [g_{1} * g_{2}]$
+\end{cor}
+
+\begin{defn}
+  Sea $X$ e.t., $x_{0} \in X$, $\forall [f], [g] \in \pi(X, x_{0})$. Se define $[f] * [g] = [f * g]$.
+\end{defn}
+
+\begin{theo}
+  Sea $X$ e.t., $x_{0} \in X$, $x_{0} \in X$, $(\pi_{1}(X, x_{0}))$ es un grupo.
+\end{theo}
+
+\begin{dem}
+  \begin{itemize}
+    \item []
+    \item Asociatividad: $\forall [f], [g], [h] \in \pi_{1}(X, x_{0})$ veamos que 
+      \[ 
+        ([f] * [g]) * [h] = [f] * ([g] * [h]) 
+      \]  
+      $\Leftrightarrow \forall f,g,h$ lazos de base $x_{0}$ se tiene $(f * g) * h \simeq f * (g * h)$
+      \[ 
+        ((f * g) * h))(t) =
+        \begin{aligned}
+          \begin{cases}
+            f(4t), \quad 0 \leq t \leq \frac{1}{4} \\
+            g(4t - 1), \quad \frac{1}{4} \leq t \leq \frac{1}{2} \\
+            h(2t - 1), \quad \frac{1}{2} \leq t \leq 1
+          \end{cases}
+        \end{aligned} 
+      \] 
+      \[ 
+        (f * (g * h))(t) =
+        \begin{aligned}
+          \begin{cases}
+            f(2t), \quad 0 \leq t \leq \frac{1}{2} \\
+            g(4t - 2), \quad \frac{1}{2} \leq t \leq \frac{1}{4} \\
+            h(4t - 3), \quad \frac{3}{4} \leq t \leq 1
+          \end{cases}
+        \end{aligned} 
+      \] 
+      Sea $H : I \times I \to X$, definida por
+      \[ 
+        H(s,t) =
+        \begin{aligned}
+          \begin{cases}
+            f(\frac{4s}{1 + t}), \quad 0 \leq s \leq \frac{1 + t}{4} \\
+            g(4s -1 -t), \quad \frac{1 + t}{4} \leq s \leq \frac{2 + t}{4} \\
+            h(\frac{4s - 2 - t}{2 - t}), \quad \frac{2 + t}{4} \leq s \leq 1
+          \end{cases}
+        \end{aligned}
+      \] 
+    donde $(s, t) \in I \times I$. Esta aplicación está bien definida y es continua ya que $C_{1} = [0, \frac{1 + t}{4}] \times I$, $C_{2} = [\frac{1 + t}{4}, \frac{2 + t}{4}] \times I$, $C_{3} = [\frac{2 + t}{4}, 1] \times I$ son cerrados de $I^{2}$ y lo recubren, y $H|_{C_{i}]}$ es continua para $i \in \{ 1, 2, 3 \} \Rightarrow H$ es continua. Ahora,
+    \[ 
+      H(s,0) =
+      \begin{aligned}
+        \begin{cases}
+          f(4s), \quad 0 \leq s \leq \frac{1}{4} \\
+          g(4s - 1), \quad \frac{1}{4} \leq s \leq \frac{1}{2} \\
+          h(2s - 1), \quad \frac{1}{4} \leq s \leq 1
+        \end{cases}
+      \end{aligned}  
+    \] 
+    \[ 
+      = ((f * g) * h)(s);
+    \] 
+    \[ 
+      H(s,1) =
+      \begin{aligned}
+        \begin{cases}
+          f(2s), \quad 0 \leq s \leq \frac{1}{2} \\
+          g(4s - 2), \quad \frac{1}{2} \leq s \leq \frac{3}{4} \\
+          h(4s - 3), \quad \frac{3}{4} \leq s \leq 1
+        \end{cases}
+      \end{aligned} 
+    \] 
+    \[ 
+      = (f * (g * h))(s) ;
+    \] 
+    \[ 
+      H(0, t) = f(0) = ((f * g) * h)(0) = (f * (g * h))(0) ;
+    \] 
+    \[ 
+      H(1, t) = h(1) = ((f * g) * h)(s) = (f * (g * h))(s)
+    \] 
+    Por tanto, son homótopos $\Rightarrow$ son clase de homotopía $\Rightarrow$ son clase de homotopía lazos $\Rightarrow$ es asociativa.
+    
+  \item Elemento neutro: Sea $c$ el lazo constante de valor $x_{0}$, entonces $[c] \in \pi_{1}(X, x_{0})$. $\forall [f] \in \pi_{1}(X, x_{0})$, veamos que $[f] * [c] = [f]  = [c] * [f]$
+    \[
+      \Leftrightarrow \forall f \text{ lazo con base } x_{0}, f * c \simeq_{0, 1} f \simeq_{0, 1} c * f
+    \]
+    $\forall t \in I, [0, 1] = [0, \frac{1 - t}{2}] \cup [\frac{1 - t}{2}, 1]$, $\lambda  \frac{2s - 1 + t}{1 + t}$. Sea $H : I^{2} \to X$ definida por 
+    \[ 
+      H(s,t) =
+      \begin{aligned}
+        \begin{cases}
+          x_{0}, \quad 0 \leq s \leq \frac{1 - t}{2} \\
+          f(\frac{2s - 1 + t}{1 - t}), \quad \frac{1 - t}{2} \leq s \leq 1
+        \end{cases}
+      \end{aligned} 
+    \] 
+    La aplicación está bien definida y es continua (prop. anterior). Ahora,
+    \[ 
+      H(s,0) =
+      \begin{aligned}
+        \begin{cases}
+          x_{0}, \quad 0 \leq s \leq \frac{1}{2} \\
+          f(2s - 1), \quad \frac{1}{2} \leq s \leq 1
+        \end{cases}
+      \end{aligned} 
+    \] 
+    \[ 
+      = (c * f)(s) ;
+    \] 
+    \[ 
+      H(s,1) = f(s);
+    \] 
+    \[ 
+      H(0,t) = x_{0} = (c * f)(0) = f(0);
+    \] 
+    \[ 
+      H(1, t) = f(1) = (c * f)(1);
+    \] 
+    Por tanto, $f * c \simeq_{\{ 0,1 \}}f$. Análogamente $f * c \simeq_{\{ 0,1 \}} c * f$.
+    
+  \item Elemento simétrico: $\forall f$ camino en $X$, $f' : I \to X$ definifa por $f'(t) = f(1 - t)$ camino opuesto. $\forall [f] \in \pi_{1}(X, x_{0})$ veamos que 
+    \[ 
+      [f] * [f'] = [c] = [f'] * [f] 
+    \] 
+    \[ 
+      \Leftrightarrow \forall f \text{ lazo con base } x_{0}, \quad f * f' \simeq_{\{ 0, 1 \}} f' * f 
+    \] 
+    Entonces, $\forall t \in I, [0, 1] = [0, \frac{1 - t}{2}] \cup [\frac{1 - t}{2}, \frac{1 + t}{2}] \cup [\frac{1 + t}{2}, 1]$, definimos una aplicación pero la elegimos en lugar de contruirla como antes ya que no sería continua. Sea $H : I^{2} \to X$ definida por
+    \[ 
+      H(s,t)  =
+      \begin{aligned}
+        \begin{cases}
+          f(2s), \quad 0 \leq s \leq \frac{1 - t}{2} \\
+          f(1 - t), \quad \frac{1 - t}{2} \leq s \leq \frac{1 + t}{2} \\
+          f'(2s - 1), \quad \frac{1 + t}{2} \leq s \leq 1
+        \end{cases}
+      \end{aligned} 
+    \] 
+    Esta aplicación esta bien definida y es continua. Ahora, comprobamos que es homotopía
+    \[ 
+      H(s,0) =
+      \begin{aligned}
+        \begin{cases}
+          f(2s), \quad 0 \leq s \leq \frac{1}{2} \\
+          f'(2s - 1), \quad \frac{1}{2} \leq s \leq 1 \\
+        \end{cases}
+      \end{aligned} 
+    \] 
+    \[ 
+      = (f * f')(s) 
+    \] 
+    \[ 
+      H(s, 1) = f(0) = x_{0} = c(s), \quad \forall s \in I
+    \] 
+    \[ 
+      H(0, t) = f(0) = (f * f')(0) = c(0)
+    \] 
+    \[ 
+      H(1, t) = f'(1) = (f * f')(1) = c(1)
+    \] 
+    Como $(f')' = f$, entonces $f * f' \simeq_{\{ 0, 1 \}} c \simeq_{\{ 0, 1 \}} f' * f$
+  \end{itemize}
+  Por tanto, $\pi_{1}(X, x_{0})$ tiene estructura de grupo.
+\end{dem}

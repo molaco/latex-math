@@ -17,11 +17,7 @@
 \end{defn}
 
 \begin{defn}[Punto de Equilibrio]
-  Sea el sistema 
-  \[ 
-    y'(t) = A y(t).
-  \] 
-  un sistema lineal autónomo. Se dice que $x \in \mathbb{R}^{n}$ es un punto de equilibrio del sistema si $A x = 0$.
+  Sea $f \in C^{1}(\Omega)$. Se dice que $x_{0} \in \Omega$ es un punto de equilibrio del sistema $x' = f(x)$ si $f(x_{0}) = 0$. Si $x$ no es un punto de equilibrio, entonces decimos que $x$ es un punto regular.
 \end{defn}
 
 \begin{defn}[Punto de Equilibrio Hiperbólico]
@@ -31,23 +27,50 @@
   \] 
 \end{defn}
 
+%\begin{defn}[Órbita]
+%  La órbita positiva de un punto $x$ se define como
+%  \[ 
+%    O_{x}^{+} = \{ \varphi(t, x) : t \geq 0 \} 
+%  \] 
+%  y la órbita negativa como 
+%  \[ 
+%    O_{x}^{-} = \{ \varphi(t, x) : t \leq 0 \} 
+%  \] 
+%\end{defn}
+%
+%\begin{obs}
+%  Si $O_{x} \cap O_{y} \neq \emptyset$, entonces $O_{x} = O_{y}$.
+%\end{obs}
+%
+%\begin{defn}[Diagrama de Fases]
+%  Llamamos diagrma de fases de $x' = f(x)$ a la partición de $\Omega$ en órbitas.
+%\end{defn}
+%
+%\begin{prop}[Órbitas Periódicas]
+%  Si una curva integral $t \mapsto \varphi(t,x)$ se corta a sí misma entonces es periódica.
+%\end{prop}
+
 \begin{defn}[Estabilidad]
-  Sea $\overline{u}$ un punto de equilibrio de $\dot{u} = f(u)$. Se dice que $\overline{u}$ es estable si
-  \[
-    \forall \epsilon > 0, \exists \delta(\epsilon) > 0, \delta(\epsilon) \leq \epsilon, \forall u_{0} : ||\overline{u} - u_{0} || \leq \lambda
-  \]
-  entonces, para $\varphi(t, u_{0})$ solución se verifica
-  \[
-    ||\varphi(t, u_{0}) - \overline{u}|| \leq \epsilon, \quad \forall t \geq 0.
-  \]
+  Sea $\overline{u}(t)$ un solución de $u' = f(t, x)$ definida en el intervalo $[\beta, \infty )$. Se dice que $\overline{u}$ es estable si, 
+  \[ 
+    \forall t_{0} \geq 0, \epsilon \geq 0, \exists \delta = \delta(\epsilon, t_{0}) > 0 : \forall u_{0}, | u_{0} - \overline{u}(t_{0}) | \leq \lambda 
+  \] 
+  \[ 
+    \Rightarrow | u(t; t_{0}, u_{0}) - \overline{u}(t)| \leq \epsilon, \quad \forall t \geq t_{0}. 
+  \] 
+  Se dice que $\overline{u}(t)$ es asintóticamente estable si es estable y si, además 
+  \[ 
+    \exists \eta = \eta(t_{0}) > 0 : | u_{0} - \overline{u}(t_{0}) | < \eta \Rightarrow \lim_{t \to \infty} | u(t; t_{0}, u_{0}) - \overline{u}(t) | = 0.
+  \] 
 \end{defn}
 
-\begin{defn}[Estabilidad Asintótica]
-  Un punto de equilibrio estable es asintóticamente estable si
-  \[
-    \exists \lambda : \lim_{t \to \infty} \varphi(t, u_{0}) = \overline{u}.
-  \]
+\begin{defn}[Punto Equilibrio Atractor]
+  content
 \end{defn}
+
+\begin{defn}[Punto Equilibrio Repulsor]
+   content
+ \end{defn}
 
 \section{Estabilidad Sistemas Lineales}
 
@@ -56,5 +79,225 @@
   \[ 
     \dot{u}(t) = A(t) u(t) + b(t) \\
   \] 
-  donde $A \in C(\mathbb{R}; \mathbb{R}^{d \times d})$, $b \in C(\mathbb{R}; \mathbb{R}^{d \times d})$ y $u \in \mathbb{R}^{n}$.
+  donde $A \in C(\mathbb{R}; \mathbb{R}^{d \times d})$, $b \in C(\mathbb{R}; \mathbb{R}^{d \times d})$ y $u \in \mathbb{R}^{n}$. \\
 \end{note}
+
+\begin{note}[Estudio Estabilidad]
+  Estudiar la estabilidad de la solución $u(t; t_0, u_0)$ del sistema $\dot{u} = Au + b$ equivale a estimar el creimiento de
+  \[ 
+    | u(t; t_0, u_0) - u(t; t_0, \overline{u}_{0}) |
+  \] 
+  donde $ | u_{0} - \overline{u}_{0} | < \epsilon$.
+\end{note}
+
+\begin{note}[Sistema Homogeneo Asociado]
+  Sea el sistema lineal $\dot{u} = Au + b$, $u(t; t_0, u_0)$, $u(t; t_0, \overline{u_{0}})$ soluciones. Entonces,
+  \[ 
+    v(t) = u(t; t_0, u_0) - u(t; t_0, \overline{u_{0}})
+  \] 
+  es solución de $\dot{v(t)} = A(t) u $ sistema homogeneo.
+\end{note}
+
+\begin{prop}
+   Sea $\dot{u} = Au + b$ sistema lineal entonces, las propiedades de estabilidad de la solución $u(t; t_0, u_0)$ conincide con las propiedade de estabilidad del punto de equilibrio $v(t)$ solución del sistema lineal homogeneo asociado $\dot{v} = Av$.
+\end{prop}
+
+\begin{theo}
+  Sea $\dot{u} = Au + b$ un sistema lineal. Entonces, todas las soluciones tienen las mismas propiedades de estabilidad.
+\end{theo}
+
+\begin{obs}
+  En general, la estabilidad y la acotación son dos conceptos que no están relacionados.
+\end{obs}
+
+\begin{ejm}
+  Sea el sistema $\dot{u}(t) = 1$ y solución $u(t) = t + t_{0}$. Entonces, esta es estable pero no acotada.
+\end{ejm}
+
+\begin{theo}
+  Sea el sistema lineal $\dot{{u}}(t) = Au(t) + b(t)$. Entonces,
+  \begin{itemize}
+    \item $\dot{{u}}(t) = Au(t) + b(t)$ es estable $\Leftrightarrow$ sus soluciones son acotadas, es decir, para toda solución $u(t; t_0, u_0)$
+      \[ 
+        \exists M > 0 : | u(t; t_0, u_0) | < M, 
+      \] 
+    \item $\dot{{u}}(t) = Au(t) + b(t)$ es asintóticamente estable $\Leftrightarrow$ todas sus soluciones convergen a cero, es decir, $\forall u(t; t_0, u_0)$ solución,
+      \[ 
+        \lim_{t \to \infty} u(t; t_0, u_0) = 0 .
+      \] 
+  \end{itemize}
+\end{theo}
+
+\begin{prop}
+  El sistema $\dot{{u}}(t) = Au(t) + b(t)$ es asintóticamente estable $\Leftrightarrow$ para toda solución $u(t; t_0, u_0)$,
+  \[ 
+    \lim_{t \to +\infty} u(t; t_0, u_0) = 0.
+  \] 
+\end{prop}
+
+%\begin{dem}
+%  \begin{enumerate}[label=(\roman*)]
+%    \item []
+%    \item [$(\Rightarrow)$] Suponemos que $\forall u(t; t_0, u_0)$ solución del sistema $\dot{{u}} = Au + b$ se tiene que
+%      \[ 
+%        u(t; t_0, u_0) \xrightarrow[]{ t \rightarrow + \infty } 0,
+%      \] 
+%      entonces la soluciones son acotadas. Por tanto, el sistema es estable. Como toda solución converge a cero, se deduce que el sistema es asintóticamente estable.
+%    \item [$(\Leftarrow)$] Suponemos que el sistema $\dot{u}(t) = A(t) u(t)$ es asintóticamente estable. Entonces,
+%      \[ 
+%        \exists \eta : | u_{0} | \leq \eta \Rightarrow \lim_{t \to +\infty} | u(t; t_0, u_0) | = 0.
+%      \] 
+%      Sea $u(t; t_0, u_0) \neq 0$ solución, entonces
+%      \[ 
+%        \omega(t) = \frac{u}{| \overline{u_{0}} |} \cdot u(t; t_0, u_0).
+%      \] 
+%
+%  \end{enumerate}
+%\end{dem}
+
+\subsection{Pequeñas Perturbaciones}
+
+\begin{theo}
+  Sea el sistema lineal $\dot{{u}}(t) = [A + c(t)] u(t)$ donde $A \in \mathbb{M}_{d \times d}(\mathbb{R})$ con coeficientes constantes y $c \in C^{1}(\mathbb{R}; \mathbb{R}^{d \times d})$. Entonces,
+  \begin{enumerate}[label=(\roman*)]
+    \item $\dot{u} = A u(t)$ estable y
+      \[
+        \int_{t_{0}}^{+ \infty} ||c(s)|| ds < + \infty_{j}
+      \]
+      entonces $\dot{{u}}(t) = [A + c(t)] u(t)$ es estable.
+    \item $\dot{u} = A u(t)$ es asintóticamente estable y
+      \[
+        ||c(t)|| \xrightarrow[]{ t \rightarrow +\infty }0,
+      \]
+      entonces $\dot{{u}}(t) = [A + c(t)] u(t)$ es asintóticamente estable.
+  \end{enumerate}
+\end{theo}
+
+\begin{ejm}
+  Probar que si $a > 0$ y $c \in \mathbb{R}$, entonces el sistema
+  \[ 
+    \ddot{x} + (a + \frac{c}{1 + t^{2}})x = 0
+  \]
+  es estable.
+\end{ejm}
+%
+%\begin{sol}
+%  \[ 
+%    \begin{aligned}
+%      \begin{cases}
+%        u = x \\
+%        v = \dot{x}
+%      \end{cases}
+%    \end{aligned}
+%  \] 
+%  \[ 
+%    \Rightarrow
+%    \begin{pmatrix}
+%       \dot{u} \\
+%       \dot{v}
+%    \end{pmatrix}
+%    =
+%    \begin{pmatrix}
+%       0 & 1 \\
+%       -(a + \frac{c}{1 + t^{2}}) & 0
+%    \end{pmatrix}
+%    \begin{pmatrix}
+%       u \\
+%       v
+%    \end{pmatrix}
+%  \]
+%  \[ 
+%    = (A + c(t)) \begin{pmatrix}
+%       u \\
+%       v
+%    \end{pmatrix} 
+%  \] 
+%  donde $A = 
+%  \begin{pmatrix}
+%     0 & 1 \\
+%     -a & 0
+%  \end{pmatrix}$
+%  \[ 
+%    \Rightarrow c(t) =
+%    \begin{pmatrix}
+%       0 & 1 \\
+%       -(a + \frac{c}{1 + t^{2}}) & 0
+%    \end{pmatrix} 
+%  \] 
+%\end{sol}
+
+\begin{ejm}
+  Probar que si $a, b > 0$ y $c \in \mathbb{R}$, entonces 
+  \[ 
+    \ddot{x} + a \dot{x} + (b + c e^{-t} \sen(t)) = 0
+  \] 
+  es asintóticamente estable.
+\end{ejm}
+
+\begin{theo}
+  Sea $\dot{u} = (A + C(t))u$ un sistema con $A \in \mathbb{M}_{d \times d} (\mathbb{R})$ y $ C \in C(\mathbb{R}; \mathbb{R}^{d \times d})$. Entonces, si $\dot{u} = A u$ es asintóticamente estable y $||C(t)|| \xrightarrow[]{ t \rightarrow +\infty } 0$, entonces $\dot{u} = ( A + C(t)) u$ es asintóticamente estable.
+\end{theo}
+
+\section{Estabilidad sistemas no lineales. Linealización}
+
+\begin{note}
+  Estudiamos sistemas de la forma 
+  \[ 
+    \dot{u}(t) = f(t, u(t)) .
+  \] 
+  Estudiar la estabilidad de la solución
+  \[ 
+    u(t; t_0, u_0) 
+  \] 
+  equivale a estudiar la estabilidad de
+  \[ 
+    v(t) = u(t; t_0, \overline{u}_{0}) - u(t; t_0, u_0)
+  \] 
+  \[ 
+     
+    \dot{v}(t) = \dot{u}(t; t_0, \overline{u}_{0}) - \dot{u}(t; t_0, u_0)
+  \] 
+  \[ 
+    = f(t, u(t; t_0, \overline{u}_{0})) - f(t, u(t; t_0, {u}_{0}))
+  \] 
+  que verifica
+  \[  
+    \dot{v}(t) = f(t, v(t) + u(t; t_0, {u}_{0})) - f(t, u(t; t_0, {u}_{0}))
+  \] 
+  \[ 
+    g(t; v) .
+  \] 
+  Esta ecución se denomina ecución variacional.
+\end{note}
+
+\begin{prop}
+  Estudiar la propiedades de estabilidad de $u(t; t_0, u_0)$ sol de $\dot{u} = f(t, u)$ es equivalente a estudiar las propiedades de estabilidad de $v(t; t_0, u_0)$ sol de $\dot{v}(t) = g(t; v)$.
+\end{prop}
+
+\begin{obs}
+  Se tiene que $g(t, 0) = 0 \Rightarrow (t,0)$ es punto de equilibrio.
+\end{obs}
+
+\begin{prop}
+  Si $| v(t) | \xrightarrow[]{ t \rightarrow +\infty }$ donde $v(t)$ es solución de
+  \[ 
+    \dot{v}(t) = A(t) v(t) + h(t, v) 
+  \] 
+  donde $A(t) = D_{u}f(u(t; t_0, u_0))$ y $h(t, v) \xrightarrow[]{ | v(t) | \rightarrow 0 }$. Entonces, las propiedades de estabilidad de $\dot{v}(t)$ equivalen a las propiedades de estabilidad de $\dot{u}(t)$.
+\end{prop}
+
+\begin{note}
+  Cuando $A(t)$ es de coeficientes constantes podemos asegurar estabilidad asintótica e inestabilidad de las soluciones del sistema no lineal.
+\end{note}
+
+\begin{theo}[Linealización; Estabilidad Asintótica]
+  Sea $\dot{u} = f(t, u(t))$ us sistema y $ u(t; t_0, u_0)$ solución de $\dot{u}$ tal que su matriz de Linealización sea de coeficientes constantes, es decir, 
+  \[ 
+    \dot{v} = Av + h(t, v),
+  \] 
+ y además, 
+ \begin{enumerate}[label=(\roman*)]
+  \item $\forall \lambda \in \rho(A), \Ree(\lambda) < 0$
+  \item $h(t, v) $ es continua para $t \in (t^{*}, +\infty)$ con $t^{*} < t_{0}$ y $h \in C^{1}(v)$ respecto a $v$ en un entorno $V^{0} \subset \mathbb{R}^{d}$. Si suponemos que $| h(t, v) | = \rho(| v |)$ cuando $| v | \rightarrow 0$ uniformemente respecto a $t$.
+ \end{enumerate}
+\end{theo}

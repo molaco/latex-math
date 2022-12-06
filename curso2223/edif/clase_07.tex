@@ -1,0 +1,195 @@
+\part{Estabilidad y Sistemas Autónomos}
+
+\chapter{Estabilidad de Sistemas lineales}
+
+\section{Sistemas lineales Homogéneos con coeficientes constantes}
+
+\begin{defn}[Sistema Autónomo]
+  content
+\end{defn}
+
+\begin{defn}[Punto de equilibrio]
+  content
+\end{defn}
+
+\begin{defn}[Punto de equilibrio Hiperbólico]
+  content
+\end{defn}
+
+\begin{defn}[Punto de equilibrio Atractor]
+  content
+\end{defn}
+
+\begin{defn}[Punto de equilibrio Fuente]
+  content
+\end{defn}
+
+\begin{obs}
+  Si el origen es punto atractor o fuente, entonces es hiperbólico.
+\end{obs}
+
+\begin{defn}[Sistemas Topológicamente equivalentes]
+  content
+\end{defn}
+
+\begin{defn}[Punto de Silla]
+  content
+\end{defn}
+
+\begin{prop}[Caracterización de puntos de equilibrio hiperbólicos]
+  content
+\end{prop}
+
+\begin{prop}[Soluciones Acotadas y Soluciones Periódicas]
+  content
+\end{prop}
+
+\begin{defn}[Estabilidad de Soluciones]
+  content
+\end{defn}
+
+\begin{defn}[Variedad Lineal Estable Local]
+  Sea el sistema autónomo lineal $y'(t) = A(t) y$. Se conoce como variedad lineal estable local $(E_{s})$, variedad lineal inestable local $(E_{s})$ y variedad lineal central $(E_{c})$ a
+  \[ 
+    E_{s} = \langle \lambda_{1}, \cdots, \lambda_{m} \rangle
+  \] 
+  \[ 
+    E_{u} = \langle \lambda_{m}, \cdots, \lambda_{m + n} \rangle
+  \] 
+  \[ 
+    E_{c} = \langle \lambda_{m + n}, \cdots, \lambda_{m + n + k} \rangle
+  \] 
+  donde $\lambda_{i} \in \rho(A)$ tal que
+  \[ 
+    \begin{aligned}
+      \begin{cases}
+        \Re(\lambda_{i}) < 0, \quad 1 \leq i \leq m \\
+        \Re(\lambda_{i}) > 0, \quad m \leq i \leq n + m \\
+        \Re(\lambda_{i}) = 0, \quad m + n \leq i \leq m + n + k \\
+      \end{cases}
+    \end{aligned} 
+  \] 
+\end{defn}
+
+\begin{defn}[Variedad Estable Global]
+  Dado us sistema autónomo $y' = f(x) \in \mathbb{C}(\Omega)$ y $x_{\infty}$ punto de equilibrio. La variedad estable global de $y'$ es 
+  \[ 
+    W_{s}(x_{\infty})  = \{ x_{0} \in \Omega : \lim_{t \to +\infty} x(t; 0, x_{0}) = x_{\infty} \}
+  \] 
+\end{defn}
+
+\begin{defn}[Variedad Inestable Global]
+  Dado us sistema autónomo $y' = f(x) \in \mathbb{C}(\Omega)$ y $x_{\infty}$ punto de equilibrio. La variedad inestable global de $y'$ es 
+  \[ 
+    W_{s}(x_{\infty})  = \{ x_{0} \in \Omega : \lim_{t \to -\infty} x(t; 0, x_{0}) = x_{\infty} \}
+  \] 
+\end{defn}
+
+\section{Sistemas Lineales Homogéneos con Coeficientes Variables}
+
+\begin{obs}[Sistema Considerado]
+  content
+\end{obs}
+
+\begin{obs}[Forma Integral De Las Soluciones De Un Sistema Lineal Homogéneo Con Coeficientes Variables]
+  content
+\end{obs}
+
+\begin{prop}[Caracterización de Soluciones 1]
+  content
+\end{prop}
+
+\begin{prop}[Caracterización de Soluciones 2]
+  content
+\end{prop}
+
+\section{Sistemas Lineales No Homogéneos}
+
+\begin{obs}[Sistema Considerado]
+  content
+\end{obs}
+
+\begin{defn}[Sistema Lineal Asociado]
+  content
+\end{defn}
+
+\begin{prop}[Caracterización de las Soluciones 1]
+  content
+\end{prop}
+
+\begin{prop}[Caracterización de las Soluciones 2]
+  content
+\end{prop}
+
+\section{Diagramas de Fases de Sistemas Planos}
+
+Esquema EDO.
+
+\chapter{Estabilidad de Sistemas no Lineales}
+
+\section{Comportamiento Cualitativo De las Soluciones}
+
+\begin{defn}
+  Dado el problema del valor inicial
+  \[ 
+    \begin{aligned}
+      \begin{cases}
+        y' = f(t,y) \\
+        y(t_{0}) = y_{0}
+      \end{cases}
+    \end{aligned} 
+  \] 
+  donde $f \in \mathcal{C}([ a, b ] \times \Omega ; \mathbb{R}^{n})$. Consideramos el sistema no lineal
+  \[ 
+    y' = f(t,y) 
+  \] 
+  Entonces, decimos que
+  \begin{enumerate}[label=(\roman*)]
+    \item $x \in \Omega$ es un punto de equilibrio de $y' = f(y)$ si $f(x) = 0$.
+    \item Un punto de equilibrio es hiperbólico si
+      \[ 
+        \forall \lambda \in \rho(Df(x)), \Re (\lambda) \neq 0.
+      \] 
+    \item Un punto de equilibrio se denomina no hiperbólico si
+      \[ 
+        \exists \lambda \in \rho(Df(x)): \Re (\lambda) = 0.
+      \] 
+    \item El sistema $y' = Df(x) \cdot y$ es el sistema lineal asociado.
+  \end{enumerate}
+\end{defn}
+
+\begin{defn}[Clasificación De Puntos De Equilibrio]
+  Sea $x$ un punto de equilibrio hiperbólico del sistema no lineal. Considerando el sistema lineal asociado $Df(x)$, entonces este se clasifica de la misma forma que los puntos de equilibrio de un sistema lineal.
+\end{defn}
+
+\begin{obs}
+  Un punto de equilibrio $x$ foco es asintóticamente estable ($\forall \lambda \in \rho(Df(x)), \Re(\lambda) < 0 $).
+\end{obs}
+
+\begin{obs}
+  Un punto de equilibrio fuente o de silla es inestable.
+\end{obs}
+
+\section{Teorema de la Variedad Estable}
+
+\begin{defn}[Variedad No Lineal Estable]
+  Sea $y' = f(y)$ un sistema no lineal, entonces la variedades estables locales de $y'$ son las del sistema lineal asociado $y' = Df(x) y$.
+\end{defn}
+
+\begin{theo}[de la Variedad Estable]
+  content
+\end{theo}
+
+\begin{ejm}[Cálculo de Variedades]
+  Calcular las variedades estables e inestables de un sistema no lineal.
+\end{ejm}
+
+\section{Teorema de Hartman-Grobman}
+
+\begin{obs}
+  Bajo que condiciones los puntos de equilibrio de un sistema no lineal tienen el mismo comportamiento cualitativo que el sistema lineal asociado.
+\end{obs}
+
+\begin{theo}
+  Es condición suficiente que $Df(x_{\infty})$ no tenga autovalores con parte real nula, es decir, que sea hiperbólico.
+\end{theo}

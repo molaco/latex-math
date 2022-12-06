@@ -1,0 +1,60 @@
+\begin{defn}[Grupo Fundamental]
+  Sea $X$ e.t., $x_{0} \in X$. Se llama grupo fundametal con base $x_{0}$ a $(\pi_{1}(X, x_{0}))$.
+\end{defn}
+
+\begin{obs}
+  En la demostración anterior usamos caminos en lugar de lazos. Por tanto, tenemos lo siguiente.
+  \begin{enumerate}[label=(\roman*)]
+    \item Si $f,g,h$ caminos en $X$ e.t. tal que $f(1) = g(0)$ y $g(1) = h(0)$, entonces
+      \[ 
+        ((f*g) * h) \simeq_{\{ 0,1 \}} f * ( g* h)(s).
+      \] 
+    \item Si $f$ es camino en $X$ de origen $a$ y extremo $b$, entonces
+      \[ 
+        c_{a} * f \simeq_{\{ 0, 1 \}} f * c_{b}.
+      \] 
+      donde $c_{a}, c_{b}$ son caminos constantes $a, b$ respectivamente.
+    \item Si $f$ es camino en $X$ de origen $a$ y extremo $b$, entonces
+      \[ 
+        f * f' \simeq_{\{ 0, 1 \}} c_{a}, \quad f * f' \simeq_{\{ 0, 1 \}} c_{b}
+      \] 
+  \end{enumerate}
+\end{obs}
+
+\begin{obs}
+  Solo se conserva la estructura de grupo al cambiar de base si $X$ es conexo por caminos.
+\end{obs}
+
+\begin{obs}
+  Sea $X$ e.t., $x, y \in X$, $h$ camino en $X$ tal que $h(0) = x$, $h(1) = y$ entonces, $\forall f$ lazo en $X$ con base $x$, $(h' * f) * h$ es lazo en $x$ con base $y$. \\
+
+  Si $f,g$ son lazos en $X$ con base $x$ tal que $f \simeq_{\{ 0, 1 \}} g$ y $F$ es homotpía de $f$ en $g$ relativa a $\{ 0, 1 \}$ entonces, sea $H : I \times I \to x$ aplicación definida por
+  \[ 
+    H(s,t) =
+    \begin{aligned}
+      \begin{cases}
+        h'(4s), \quad 0 \leq s \leq \frac{1}{4} \\
+        F(4s - 1, t), \quad \frac{1}{4} \leq s \leq \frac{1}{2} \\
+        h(2s - 1), \quad \frac{1}{2} \leq s \leq 1
+      \end{cases}
+    \end{aligned}
+  \] 
+  Esta aplicación esta bien definida y $C_{i}$ son cerrados de $I^{2}$ y lo recubren, entonces $H|_{C_{i}}$ continua $\Rightarrow H$ continua.
+  \[ 
+    H(s,0) = h' * (f * h)
+  \] 
+  \[ 
+    H(s,1) = (h' * f) * h 
+  \] 
+  Por tanto, $H$ es homotpía de $(h' * f) * h$ en $(h' * g) * h$. Veamos el resultado por caminos
+  \[ 
+    h'(0) = ((h' * f) * h)(0) = ((h' * g) * h)(0) 
+  \] 
+  \[ 
+    h'(1) = ((h' * f) * h)(1) = ((h' * g) * h)(1)
+  \] 
+\end{obs} 
+
+\begin{prop}
+  Sea $X$ e.t. conexo por caminos, entoces $\forall x, y \in X$, $\pi_{1}(X,x), \pi_{1}(X, y)$ son isomorfos.
+\end{prop}

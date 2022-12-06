@@ -1,0 +1,293 @@
+\begin{lem}
+  Sea $f$ camino en $\mathbb{S}^{1}$ de origen $1$. Entonces, existe un único camino en $\hat{ f }$ en $\mathbb{R}$ de origen $0$ tal que $\varphi \circ \hat{ f } = f$.
+\end{lem}
+
+\begin{dem}
+  \begin{itemize}
+    \item []
+    \item Existencia: Sea $f : I \to \mathbb{S}^{1}$. Como $I$ es compacto y metrizable, entonces $f$ es uniformemente continua $\Rightarrow \exists \epsilon > 0$ tal que
+      \[
+        \forall t, t' \in I : | t - t' | < \epsilon \Rightarrow d(f(t), f(t')) < 1
+      \]
+       De manera que si
+       \[
+         f(t) \neq f(t') \Leftrightarrow \frac{f(t)}{f(t')} \neq -1
+       \]
+       Por tanto, $\exists n \in \mathbb{N} : \frac{1}{n} < \epsilon, I = \bigcup_{i = 0}^{n - 1} \Big [ \frac{n - (i + 1)}{n}, \frac{n - i}{n} \Big ]$. Entonces, 
+      \[ 
+        \forall t \in I, \Big | \frac{n - (i + 1)}{n} - \frac{n - i}{n} \Big | = \frac{1}{n}| t | \leq \frac{1}{n} < \epsilon  
+      \] 
+      \[ 
+        \Rightarrow \frac{f(\frac{n - i}{n}t)}{f(\frac{n - (i + 1)}{n}t)} \neq -1, \forall \in \{ 0, \cdots,n - 1 \}
+      \] 
+      \[ 
+        \Rightarrow h(\frac{f(\frac{n - i}{n}t)}{f(\frac{n - (i + 1)}{n}t)}) \in \Big ( -\frac{1}{2}, \frac{1}{2} \Big )
+      \] 
+      Sea $\hat{ f } : I \to \mathbb{R}$ tal que
+      \[ 
+        \hat{ f }(t) = \sum_{i = 0}^{n - 1} h(\frac{f(\frac{n - i}{n}t)}{f(\frac{n - (i + 1)}{n}t)}).
+      \] 
+      Esta función es continua entonces, es un camino con origen
+      \[ 
+        \hat{ f }(0) = h \Big (\frac{f(0)}{f(0)} \Big ) + \cdots + h \Big (\frac{f(0)}{f(0)} \Big ) = n h(1) = 0
+      \] 
+      ya que $\varphi(0) = 1 \Rightarrow h(1) = 0$. Ahora,
+      \[ 
+        (\varphi \circ \hat{ f }) = \frac{f(\frac{n}{n}t)}{f(\frac{n - 1}{n}t)} \frac{f(\frac{n - 1}{n}t)}{f(\frac{n - 2}{n}t)} \cdots \frac{f(\frac{1}{n}t)}{f(0)}
+      \] 
+      \[ 
+        = \frac{f(t)}{1} = f(t) \Rightarrow \varphi \circ \overline{f} = f.
+      \] 
+    \item Unicidad: Si $\exists \hat{ g } : I \to \mathbb{R}$ continua tal que $\hat{ g } = 0, \varphi \circ \hat{ g  } = f$. Sea $F : I \to \mathbb{R}$ tal que $F(t) = \hat{ f }(t) - g(t), \forall t \in I$. Entonces,
+      \[ 
+        \varphi(F(t)) = \frac{(\varphi \circ \hat{ f })(t)}{(\varphi \circ \hat{ f })(t)} = \frac{f(t)}{f(t)} = 1
+      \] 
+      esto se debe a que si
+      \[
+        \varphi(x) = \cos(2 \pi x) + i \sen(2 \pi x) = 1 
+      \]
+      \[ 
+        \Rightarrow 2 \pi x = 2 \pi k, k \in \mathbb{Z} 
+      \] 
+      \[ 
+        \Leftrightarrow x \in \mathbb{Z} 
+      \] 
+      Por tanto, $\{ F(t) : t \in I \} \subset \mathbb{Z}$ es $F(I)$ que es conexo. Entonces, $F(I)$ es un punto y $F(0) = \hat{ f }(0) - \hat{ g }(0) = 0$
+      \[ 
+        \Rightarrow F(I) = 0 \Leftrightarrow F = c_{0} \Rightarrow \hat{ g } = \hat{ f }.
+      \] 
+  \end{itemize}
+\end{dem}
+
+\begin{lem}
+  Sean $f,g$ lazos en $\mathbb{S}^{1}$ con base $1$ y $H$ homotopía de $f$ en $g$ relativa a $\{ 0, 1 \}$. Entonces, $\exists! \hat{H}$ homotopía de $\hat{ f }$ en $\hat{ g }$ relativa a $\{ 0, 1 \}$ tal que $\varphi \circ \overline{H} = H$.
+\end{lem}
+
+\begin{dem}
+  \begin{itemize}
+    \item []
+    \item Existencia: Sea $H : I \times I \to \mathbb{S}^{1}$ continua, entonces como $I \times I$ es compacto y metrizable se tiene que $H$ es uniformemente continua. Por tanto,
+      \[ 
+        \exists \epsilon > 0 : \forall (s, t) \in I \times I : ||(s, t) - (s',t')|| < \epsilon 
+      \] 
+      \[ 
+        \Rightarrow d(H(s,t), H(s', t')) < 1
+      \] 
+      donde
+      \[ 
+        H(s,t) \neq -H(s', t') \Leftrightarrow \frac{H(s,t)}{H(s',t')} \neq -1.
+      \] 
+      Entonces,
+      \[ 
+        \exists n \in \mathbb{N} : \frac{1}{n} < \epsilon, \forall (s,t) \in I \times I, \forall i \in \{ 0, \cdots, n - 1 \}:
+      \] 
+      \[ 
+        ||\frac{n - (i + 1)}{n}(s, t) - \frac{n - i}{n}(s,t)|| = \frac{1}{n} ||(s, t)|| \leq \frac{1}{n} < \epsilon 
+      \] 
+      \[ 
+        \Rightarrow \frac{H(\frac{n - i}{n})(s,t)}{H(\frac{n - (i + 1)}{n})(s,t)} \neq -1
+      \] 
+      \[ 
+        \Rightarrow h \Bigg (\frac{H(\frac{n - i}{n})(s,t)}{H(\frac{n - (i + 1)}{n})(s,t)} \Bigg ) \in \Big ( -\frac{1}{2}, \frac{1}{2} \Big )
+      \] 
+      Sea $\overline{H} : I \times I \to \mathbb{R}$ definida por
+      \[ 
+        \overline{H}(s, t) = \sum_{i = 0}^{n - 1} h(\frac{H(\frac{n - i}{n})(s,t)}{H(\frac{n - (i + 1)}{n})(s,t)})
+      \] 
+      esta aplicación es continua. Ahora,
+      \[ 
+        (\varphi \circ \overline{H})(s,t) = \frac{H(\frac{n}{n})(s,t)}{H(\frac{n - 1)}{n})(s,t)} \cdot \frac{H(\frac{n - 1}{n})(s,t)}{H(\frac{n - 2}{n})(s,t)} \cdots \frac{H(\frac{1}{n})(s,t)}{H(0, 0)}
+      \] 
+      \[ 
+        = \frac{H(s,t)}{H(0,0)} = H(s,t)
+      \] 
+      ya que $H(0, 0) = f(0) = 1$.
+     
+      Vemos que es Homotopía de $\hat{ f }$ en $\hat{ g }$ relativa $\{ 0, 1 \}$.
+      \begin{enumerate}[label=(\roman*)]
+        \item 
+          \[ 
+            \overline{H}(0,t) = h \Bigg ( \frac{H(\frac{n}{n}(0,t))}{H(\frac{n - 1}{n}(0,t))} \Bigg ) + \cdots + h \Bigg ( \frac{H(\frac{1}{n}(0,t))}{H(0, 0)} \Bigg )
+          \] 
+          como $H(0, t) = f(0) = g(0), \forall t \in I$. Entonces,
+          \[ 
+            \overline{H}(0, t) = h \Bigg (\frac{f(0)}{f(0)} \Bigg ) + \cdots + h \Bigg (\frac{f(0)}{f(0)} \Bigg )
+          \] 
+          \[ 
+            = h(1) + \cdots + h(1) = 0
+          \] 
+          \[ 
+            = \hat{ f }(0) = \hat{ g }(0) 
+          \] 
+        \item 
+          \[ 
+            \varphi(\overline{H}(s, 0) - \hat{ f }(s)) = \frac{(\varphi \circ \overline{H})(s, 0)}{(\varphi \circ \overline{H})(s)} = \frac{H(s,0)}{f(s)} = \frac{f(s)}{f(s)} = 1
+          \] 
+          \[ 
+            \Rightarrow \{ \overline{H}(s,0) - \overline{f}(s) : s \in I \}  \subset \mathbb{Z} \text{ conexo}
+          \] 
+          Por tanto, es un punto y
+          \[ 
+            \overline{H}(0, 0) - \hat{ f }(0) = 0 \Rightarrow \overline{H}(s, 0) - \hat{ f } = 0, \forall s \in I
+          \] 
+          \[ 
+            \overline{H}(s, 0) = \hat{ f }(s).
+          \] 
+        \item
+          \[
+            \forall s \in I, \quad \varphi(\overline{H}(s, 1) - \hat{ g }(s)) = \frac{(\varphi \circ \overline{H})(s, 1)}{(\varphi \circ \overline{H})(s)} = \frac{H(s,1)}{g(s)} = \frac{g(s)}{g(s)} = 1
+          \]
+          \[ 
+            \Rightarrow \{ \overline{H}(s,1) - \hat{ g } : s \in I \} \subset \mathbb{Z} 
+          \] 
+          donde $\overline{H}, \hat{ g }$ son funciones contunuas y $I$ es conexo $\Rightarrow $ el conjunto es conexo y por tanto, contiene un solo punto.
+          \[ 
+            \overline{H}(0,1) - \hat{ g }(0) = 0 \Rightarrow \overline{H}(s,1) - \hat{ g } = 0, \quad \forall s \in I 
+          \] 
+          \[ 
+            \Leftrightarrow H(s,1) = \hat{ g }(s)
+          \] 
+        \item 
+          \[ 
+            \forall t \in I, \varphi(\overline{H}(1,t) - \hat{ f }(t)) = \frac{(\varphi \circ \overline{H})(0, t)}{(\varphi \circ \overline{H})(1)} = \frac{H(1,t)}{f(1)} = \frac{f(1)}{f(1)} = 1
+          \] 
+          \[ 
+            \Rightarrow \{ \overline{H}(1,t) - \hat{ f }(1) : t \in I \} \subset \mathbb{Z}
+          \] 
+          es conexo, entonces contiene es un solo punto.
+          \[ 
+            \overline{H}(1,0) - \hat{f} = 0 \Rightarrow \overline{H}(1, t) - \hat{ f }(1) = 0, \quad \forall t \in I
+          \] 
+          \[ 
+            \Leftrightarrow \overline{H}(1, t) = \hat{ f }(1), \quad \forall t \in I.
+          \] 
+        \item
+          \[ 
+            \forall t \in I, \varphi(\overline{H}(1, t) - \hat{ g }(1)) = \frac{(\varphi \circ \overline{H})(1, t)}{(\varphi \circ \overline{H})(1)} = \frac{H(1,t)}{g(1)} = \frac{g(1)}{g(1)} = 1 
+          \] 
+          \[ 
+            \Rightarrow \{ \overline{H}(1,t) - \hat{ g }(1) : t \in I \} \subset \mathbb{Z}
+          \] 
+          es conexo, entonces contiene un solo punto.
+          \[ 
+            \overline{H}(1, 1) - \hat{ g }(1) = 0 \Rightarrow \overline{H}(1,t) - \hat{ g }(1) = 0, \quad \forall t \in I
+          \] 
+          \[ 
+            \overline{H}(1, t) = \hat{ g }(1), \forall t \in I.
+          \] 
+      \end{enumerate}
+
+    \item Unicidad: Suponemos que $\exists \hat{ K } : I^{2} \to \mathbb{R}$ homotopía de $\hat{ f }$ a $\hat{ g }$ relativa a $\{ 0, 1 \}$ tal que $\varphi \circ \hat{ K } = H$. Sea $F = \hat{ H } - \hat{ K } : I^{2} \to \mathbb{R}$ continua
+      \[ 
+        (\varphi \circ F)(s,t) = \frac{(\varphi \circ \overline{H})(s,t)}{(\varphi \circ \hat{ K })(s,t)} = \frac{H(s,t)}{H(s,t)} = 1
+      \] 
+      \[ 
+        \Rightarrow \{ F(s,t) : (s,t) \in I^{2} \} \subset \mathbb{Z} 
+      \] 
+      es conexo, entonces contiene un solo punto.
+      \[ 
+        F(0,0) = \overline{H}(0,0) - \hat{ K }(0, 0) = \hat{ f }(0) - \hat{ g }(0) = 0
+      \] 
+      \[ 
+        \Rightarrow F(s,t) = 0, \quad \forall (s,t) \in I^{2}   
+      \] 
+      \[ 
+        \Leftrightarrow \hat{ K } = \overline{H}.
+      \] 
+  \end{itemize}
+\end{dem}
+
+\begin{obs}
+  Si $f_{1}, f_{2}$ lazos en $\mathbb{S}^{1}$ con base $1$ tal que $f_{1} \simeq_{\{ 0,1 \}}f_{2}$, entinces $\exists \hat{ f }_{i}$ camino en $\mathbb{R}$ de origen $0$ tal que $\varphi \circ \hat{ f }_{i} = f_{i}$. Ahora, por el Lema 2 se tiene que
+  \[
+    \hat{ f }_{1} \simeq_{0, 1} f_{2} \Rightarrow \hat{ f }_{1} = \hat{ f }_{2}
+  \]
+  \[ 
+    \Rightarrow (\varphi \circ \hat{ f }_{1})(1) = f_{1}(1) = 1 
+  \] 
+  \[ 
+    \Rightarrow \hat{ f }_{1} \in \mathbb{Z}
+  \] 
+  Sea $\alpha : \pi_{1}(\mathbb{S}^{1}, 1) \to \mathbb{Z}: [ f ] \mapsto \alpha([ f ]) \equiv \hat{ f }(1)$. Es una aplicación independiente de la base. ¿Es isomorfismo de grupos?
+\end{obs}
+
+\begin{theo}
+  El grupo fundamenta de la circunferencia es isomorfismo al grupo aditivo $\mathbb{Z}$.
+\end{theo}
+
+\begin{dem}
+  \begin{itemize}
+    \item $\varphi$ es homeomorfismo : $\forall f,g$ lazos en $\mathbb{S}^{1}$ con base $1$ entonces, por el lema 1, $\exists ! \hat{ f }, \hat{ g }$ caminos en $\mathbb{R}$ de origen $0$ tal que $\varphi \circ \hat{ f } = f$ y $\varphi \circ \hat{ g } = g$ donde $\hat{ f }(1) = a \in \mathbb{Z}$ y $\hat{ g }(1) \equiv b \in \mathbb{Z}$. Sea $\overline{K} : I \to \mathbb{R} : \hat{ K }(t) = a + \hat{ g }(t) $, entonces $\hat{ K }$ es un camino en $\mathbb{R}$ de origen $a$. Por tanto, $\exists \hat{ f } * \hat{ K }$ camino en $\mathbb{R}$ de origen $ 0$. Ahora,
+      \[ 
+        (\varphi \circ \hat{ K })(t) = \varphi(a) \cdot (\varphi \circ \hat{ g })(t)
+      \] 
+      \[ 
+        = (\varphi \circ \hat{ f })(1) \cdot (\varphi \circ \hat{ g })(t) 
+      \] 
+      \[ 
+        = f(1) \cdot g(t) = 1 \cdot g(t)
+      \] 
+      \[ 
+        \Rightarrow \varphi \circ \hat{ K } = g
+      \] 
+      Entonces, tenemos que
+      \[ 
+        (\varphi \circ (\hat{ f } \cdot \hat{ K }))(t) = ((\varphi \circ \hat{ f }) * (\varphi \circ \hat{ K }))(t) = (f * g)(t)
+      \] 
+      \[ 
+        \Rightarrow \varphi \circ (\hat{ f } * \hat{ K }) = f * g
+      \] 
+      \[ 
+        \xRightarrow[]{ \text{Lem. 1} } \hat{ f * g } = \hat{ f } * \hat{ K }
+      \] 
+      \[ 
+        \Rightarrow \varphi([ f ] * [ g ])  = \varphi([ f * g ]) = \hat{ f \circ g }(1) = (\hat{ f } * \hat{ K })(1)
+      \] 
+      \[ 
+        = \hat{ K }(1) = a + \hat{ g }(1) = \hat{ f }(1) + \hat{ g }(1)
+      \] 
+      \[ 
+        = \varphi([ f ]) + \varphi([ g ])
+      \] 
+      Entonces, $ \varphi$ es un homeomorfismo entre grupos.
+    \item $\alpha$ es monomorfismo: Si $\varphi([ f ]) = 0 \Leftrightarrow \hat{ f }(1) = 0 \Rightarrow \hat{ f }$ lazo en $\mathbb{R}$ con base $0$. Ahora, como $\mathbb{R}$ es contractil
+      \[ 
+        \Rightarrow \hat{ f } \simeq_{\{ 0, 1 \}} \hat{ c }_{0} : I \to \mathbb{R}
+      \] 
+      \[ 
+        \Rightarrow \varphi \circ \hat{ f } = f \simeq_{\{ 0, 1 \}}  \varphi \circ \hat{ c }_{0} = c_{1} : I \to \mathbb{S}^{1}
+      \] 
+      \[ 
+        \Rightarrow [ f ] = [ c_{1} ] 
+      \] 
+    \item $\varphi$ es suprayectiva: $\forall m \in \mathbb{Z}, \hat{ f } : I \to \mathbb{R} : \hat{ f }(t) = m t \Rightarrow \hat{ f }$ camino en $\mathbb{R}$ de origen $0$. Luego, $\varphi \circ \hat{ f } \equiv f :  I \to \mathbb{S}^{1}$ es continua, entonces
+      \[ 
+        \begin{aligned}
+          \begin{cases}
+            f(0) = \varphi(0) = 1 \\
+            f(1) = \varphi(m)
+          \end{cases}
+        \end{aligned} 
+      \] 
+      Por tanto, $f$ es lazo en $\mathbb{S}^{1}$ con base $1 \Rightarrow \varphi([ f ]) = \hat{ f }(1) = m$.
+  \end{itemize}
+\end{dem}
+
+\begin{cor}
+  La circunferencia no es retracto del disco.
+\end{cor}
+
+\begin{dem}
+  Considerando el disco y la $\mathbb{S}^{1}$
+  \[ 
+    D = \{ (x,y) \in \mathbb{R}^{2} : x^{2} + y^{2} \leq 1 \} 
+  \] 
+  \[ 
+    \mathbb{S}^{1} = \{ (x,y) \in \mathbb{R}^{2} : x^{2} + y^{2} = 1 \} 
+  \] 
+  Si $\exists r : D \to \mathbb{S}^{1}$ retracción, entonces $r_*  : \pi_{1}(D) \to \pi_{1}(\mathbb{S}^{1}) $ donde $\pi_{1}(D) = 0$ y $\pi_{1}(\mathbb{S}^{1}) = I$ que es absurdo.
+\end{dem}
+
+\begin{theo}[Del Punto Fijo Bromer en 2 dimensiones]
+  Toda aplicación continua del disco cerrado en si mismo tiene algún punto fijo. 
+\end{theo}

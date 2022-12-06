@@ -23,3 +23,5 @@
 \contentsline {section}{\numberline {4.3}Cálculo de Residuos}{40}{}%
 \contentsline {chapter}{\numberline {5}Miscelanea}{42}{}%
 \contentsline {section}{\numberline {5.1}Principio Del Argumento}{42}{}%
+\contentsline {section}{\numberline {5.2}Teorema de Rouché}{44}{}%
+\contentsline {section}{\numberline {5.3}Propiedades Funciones Armónicas}{44}{}%

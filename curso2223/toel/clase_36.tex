@@ -1,0 +1,180 @@
+\begin{dem}
+  $\exists \varphi : \pi_{1}(X, x) \to \pi_{1}(X, y) \Rightarrow \exists h$ camino en $X$ de $x$ a $y$. Entonces, definimos $\varphi$ como $[f] \mapsto \varphi_{h}([f]) = [(h' * f) * h]$. \\
+
+  Vemos primero que $\varphi$ es homeomorfismo. $\forall [f_{1}], [f_{2}] \in \pi_{1}(X,x)$ se tiene que 
+  \[ 
+    \varphi([f_{1}] * [f_{2}]) = \varphi ([f_{1} * f_{2}]) 
+  \] 
+  \[ 
+     = [(h' * (f_{1} * f_{2})) * h ] 
+  \] 
+  donde $ h' * (f_{1}, f_{2}) * h \simeq_{\{ 0,1 \}} (h' * f_{1}) * (f_{2} * h)$. Por tanto,
+  \[ 
+    [(h' * (f_{1} * f_{2})) * h ] = [(h' * f_{1}) * (f_{2} * h)]
+  \] 
+  donde $f_{1} \simeq_{\{ 0, 1\}} f_{1} * c_{x}$ y $f_{2} \simeq_{\{ 0, 1\}} c_{x} * f_{2}$. Por tanto,
+  \[ 
+    [(h' * f_{1}) * (f_{2} * h)] = [(h' * f_{1}) * (h * h') * (f_{2} * h)]
+  \] 
+  donde $c_{x} \simeq_{\{ 0, 1 \}} h * h'$. Por tanto,
+  \[ 
+    [(h' * f_{1}) * (h * h') * (f_{2} * h)] = [((h' * f_{1}) * h) * ((h' * h) * h)]
+  \] 
+  \[ 
+    = [(h' * f_{1}) * h] * [(h' * f_{2}) * h] 
+  \] 
+  \[ 
+    = \varphi([f_{1}]) * \varphi([f_{2}])
+  \] 
+
+  Vemos ahora que $\varphi$ es isomorfismo. Como $\exists h'$ camino en $X$ que conecta $x$ con $y$, entonces $\exists \alpha :  \pi_{1}(X, y) \to \pi_{1}(X, x)$ definida por $[g] \mapsto \alpha([g]) = [(h * g) * h']$ que es homeomorfismo ya que es la misma aplicación que $\varphi$ pero cambiando el orden. Entonces,
+  \[ 
+    (\alpha \circ \varphi) = \alpha(\varphi ([f])) = \alpha([(h' * f) * h ])
+  \] 
+  \[ 
+    = [h * (h' * f) * h'] 
+  \] 
+  \[ 
+    = [(h * h') * f * (h * h')] 
+  \] 
+  \[ 
+    = [c_{x} * f * c_{x}] 
+  \] 
+  ya que $h * h' \simeq_{\{ 0, 1 \}} c_{x}$. Entonces, 
+  \[ 
+    \alpha \circ \varphi = 1_{\pi_{1}(X,x)} \text{ y } \varphi \circ \alpha = 1_{\pi_{1}}(X, y)
+  \]          
+\end{dem}
+
+\begin{defn}[Grupo Fundamental]
+  Sea $X$ e.t. conexo por caminos. Se llama grupo fundamenta de $X$ al grupo $\pi_{1}(X,x), \forall x \in X$.
+\end{defn}
+
+\begin{nota}
+  El grupo fundamental se denota $\pi_{1}(X)$.
+\end{nota}
+
+\begin{obs}
+  Sea $X, Y$ e.t. , $x_{0} \in X, \varphi : X \to Y$ aplicación continua. Si $f$ es lazo en $X$ con base $x_{0}$, $\varphi$ es lazo en $Y$ con base $\varphi(x_{0})$. \\
+
+  Si $g$ es lazo en $X$ tal que $f \simeq_{\{ 0, 1 \}} g$ y $H$ es homotopía de $f$ en $g$ relativa a $\{ 0, 1 \}$, entonces $\varphi \circ f \simeq_{\{ 0, 1 \}} \varphi \circ g$ y $\varphi \circ H$ es homtopía de $\varphi  \circ f$ en $\varphi \circ g$ en $\{ 0, 1 \}$. Por tanto, $\exists \varphi_{*} : \pi_{1}(X, x) \to \pi_{1}(Y, \varphi(x_{0}))$ aplicación.
+\end{obs} 
+
+\begin{prop}
+  Sean $X, Y$ e.t., $x_{0} \in X$, $\varphi : X \to Y$ aplicación continua. Entonces, $\varphi$ induce un homeomorfismo $\varphi_*  : \pi_{1}(X,x) \to \pi_{1}(Y, \varphi(x_{0}))$.
+\end{prop}
+
+\begin{dem}
+  Si $f,g$ lazos en $X$ con base $x_{0}$
+  \[ 
+    (f * g)(t) =
+    \begin{aligned}
+      \begin{cases}
+        f(2t), \quad 0 \leq t \leq \frac{1}{2} \\
+        g(2t - 1), \quad \frac{1}{2} \leq t \leq 1
+      \end{cases}
+    \end{aligned} 
+  \] 
+  \[ 
+    ((\varphi \circ f) * (\varphi \circ g))(t), \quad \forall t \in I 
+  \] 
+  donde $\varphi \circ f$ y $\varphi \circ g$ son lazos de base $x_{0}$. Entonces,
+  \[ 
+    \varphi \circ (f * g) = (\varphi \circ f) * (\varphi \circ g).
+  \] 
+  Esta última implicación se debe a que $\forall [f], [g] \in \pi_{1}(X,x_{0}),$
+  \[ 
+    \varphi_* ([f] * [g] ) = \varphi_*([f * g]) 
+  \] 
+  \[ 
+    = [\varphi \circ (f * g)] = [(\varphi \circ f) * (\varphi \circ g)]
+  \] 
+  \[ 
+    = [\varphi \circ f] * [\varphi \circ g] = \varphi_*([f]) * \varphi_*([g]) 
+  \] 
+\end{dem}
+
+\begin{prop}[Propiedades Varias]
+  \begin{enumerate}[label=(\roman*)]
+    \item []
+    \item Si $X$ e.t., $\forall x_{0} \in X$ si $\varphi = 1_{X}$ entonces, $\varphi_* = 1_{\pi_{1}(X,x_{0})}$.
+    \item Si $X, Y, Z$ e.t., $\varphi : X \to Y$ aplicación continua, $\alpha :  Y \to Z$ aplicación continua. Entonces, $(\alpha \circ \varphi)_* = \alpha_* \circ \varphi_*$.
+    \item Si $X, Y$ e.t., $x_{0} \in X$, $\varphi : X \to Y$ aplicación continua tal que $\varphi \simeq_{\{ x_{0} \}} \alpha$. Entonces, $\alpha_* = \varphi_*  : \pi_{1}(X, x_{0}) \to \pi_{1}(Y, \varphi(x_{0}))$.
+    \item Si $X$ e.t., $A$ retraxto suyo ($r : X \to A$ retracción y $j : A \to X$ inclusión). Entonces, $r_*$ es epimorfismo y $j_*$ es homeomorfismo.
+  \end{enumerate}
+\end{prop}
+
+\begin{dem}
+  \begin{enumerate}[label=(\roman*)] 
+    \item $\varphi = 1_{X}, \forall [f] \in \pi_{1}(X, x_{0})$, $\varphi_* ([f]) = [\varphi \circ f] = [f] \Rightarrow \varphi_* = 1_{\pi_{1}(X, x_{0})}$.
+    \item $\forall [f] \in \pi_{1}(X, x_{0}), x_{0} \in X$,
+      \[ 
+        (\alpha \circ \varphi)_{*}([f]) = [(\alpha \circ \varphi) \circ f]
+      \] 
+      \[ 
+        = [\alpha \circ ( \varphi \circ f)] = \alpha([\varphi \circ f]) 
+      \] 
+      \[ 
+        = \alpha_*(\varphi_*([f])) = (\alpha_* \circ \varphi_*)([f]) 
+      \] 
+      \[ 
+        \Rightarrow (\alpha \circ \varphi)_* = \alpha_* \circ \varphi_* 
+      \] 
+    \item $\varphi \simeq_{\{ x_{0} \}}, x_{0} \in X \Leftrightarrow \exists H :  X \times I \to Y$ continua tal que
+      \[ 
+        H(x,0) = \varphi(x) 
+      \] 
+      \[ 
+        H(x, 1) = \alpha(x)
+      \] 
+      \[ 
+        H(x_{0}, t)  = \varphi(x_{0}) = \alpha(x_{0}) , \forall t \in I
+      \] 
+      $\forall f$ lazo de $X$ con base $x_{0}$. Sea $F :  I \times I \to Y : F(s,t) \equiv H(f(s), t)$, $F$ es continua ya que $F = H \circ (f * 1_{I})$ es composición de funciones continuas, y es homotopía ya que
+      \[  
+        F(s, 0) = H(f(s), 0) = \varphi(f(s))
+      \] 
+      \[ 
+        F(s, 1) = H(f(s), 1) = \alpha(f(s))
+      \] 
+      \[ 
+        F(0,t) = H(f(0), t) = H(x_{0}, t) = \varphi(x_{0}) = \alpha(x_{0})
+      \] 
+      \[ 
+        F(1,t) = H(f(1), t) = H(x_{0}, t) = \varphi(x_{0}) = \alpha(x_{0})
+      \] 
+      \[ 
+        \Rightarrow \varphi \circ f \simeq_{\{ 0, 1 \}} \varphi \circ f
+      \] 
+      \[ 
+        \Rightarrow \varphi_*([f]) = \varphi_*([f])  
+      \] 
+      \[ 
+        \Rightarrow \varphi_* = \alpha_* 
+      \] 
+    \item $r$ retracción $\Rightarrow r|_{A} = 1_{A} \Leftrightarrow r \circ j = 1_{A}$,
+      \[ 
+        (\text{por 1}) \Rightarrow (r \circ j)_* = r_* \circ j_*
+      \] 
+      \[ 
+        (\text{por 2}) \Rightarrow (r \circ j)_* = 1_{\pi_{1}}(A, a), \forall a \in A
+      \] 
+      es isomorfismo $\Rightarrow$ $j_*$ monomorfismo y $r_*$ epimorfismo.
+  \end{enumerate}
+\end{dem}
+
+\begin{cor}
+  Sea $X, Y$ e.t. y $\varphi : X \to Y$ homomorfismo. Entonces, $\varphi_*  :  \pi_{1}(X, x_{0}) \to \pi_{1}(Y, \varphi(x_{0}))$ es isomorfismo.
+\end{cor}
+
+\begin{dem}
+  $\varphi^{-1} \circ \varphi = 1_{X}$, $\varphi \circ \varphi^{-1} = 1_{Y}$
+  \[ 
+    \Rightarrow (\varphi^{-1} \circ \varphi)_* = (\varphi^{-1})_* \circ \varphi_* = 1_{\pi_{1}(X, x_{0})}  y (\varphi \circ \varphi^{-1})_* = \varphi_* \circ \varphi^{-1}_* = 1_{\pi_{1}(Y, \varphi(x_{0}))}
+  \] 
+  $\Rightarrow \varphi_*$ es isomorfismo y $(\varphi_*)^{-1} = (\varphi^{-1})_*$.
+\end{dem}
+
+\begin{cor}
+  Si $X, Y$ e.t. conexo por caminos y homeomorfos, entonces los grupos fundamentales $\pi_{1}(X), \pi_{1}(Y)$ son isomorfos.
+\end{cor}
