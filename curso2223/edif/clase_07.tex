@@ -193,3 +193,28 @@ Esquema EDO.
 \begin{theo}
   Es condición suficiente que $Df(x_{\infty})$ no tenga autovalores con parte real nula, es decir, que sea hiperbólico.
 \end{theo}
+
+\section{Teorema de Lyapunov}
+
+\begin{obs}
+  Consideramos la estabilidad de los puntos de equilibrio de un sistema no lineal
+  \[ 
+    y' = f(t,y), 
+  \] 
+  Si el punto de equilibrio es hiperbólico de terminamos la estabilidad según el signo de los autovalores del sistema lineal asociado $y' = Df(t) \cdot y$. Ahora, si el punto no es hiperbólico usamos el método de Lyapunov.
+\end{obs}
+
+\begin{theo}[de Lyapunov] 
+  Sea $\dot{u} = f(u)$ us sistema autónomo no lineal $u_{\infty} \in \mathbb{R}^{\infty}$. Si existe $V : \mathbb{R}^{d} \to \mathbb{R}$ 
+  \begin{enumerate}[label=(\roman*)]
+    \item $V(x) = 0 \Leftrightarrow x = u_{\infty}$, 
+    \item $V(x) > 0, \quad \forall x \neq u_{\infty}$,
+  \end{enumerate}
+  Entonces,
+  \begin{itemize}
+    \item $\nabla V(x) \cdot f(x) \leq 0, \quad \forall x \in \mathbb{R}^{d} \Rightarrow u_{\infty}$ es estable,
+    \item $\nabla V(x) \cdot f(x) < 0, \quad \forall x \in \mathbb{R}^{d} \Rightarrow u_{\infty}$ es asintóticamente estable,
+    \item $\nabla V(x) \cdot f(x) > 0, \quad \forall x \in \mathbb{R}^{d} \Rightarrow u_{\infty}$ es inestable.
+  \end{itemize}
+  En caso de que exista, la función $V(x)$ se llama función de Lyapunov.
+\end{theo}

@@ -1,0 +1,66 @@
+\begin{defn}[Simplemente Conexo]
+  Sea $X$ e.t.. Se dice que es simplemente conexo si es conexo por caminos y su grupo fundamental es trivial.
+\end{defn}
+
+\begin{prop}
+  Si $X,Y$ e.t. homotópicamente equivalentes tal que $X$ es simplemente conexo entonces $Y$ es simplemente conexo.
+\end{prop}
+
+\begin{dem}
+  Sea $X$ c.p.c.. Como $X$ es homotópicamente equivalente a $Y$, se tiene que $Y$ es c.p.c.. Y $\pi_{1}(X) \simeq 0 \xRightarrow[]{ \text{homo. equiv.} } \pi_{1}(Y) \simeq 0$.
+\end{dem}
+
+\begin{cor}
+  El ser simplemente conexo es invariante tipológico.
+\end{cor}
+
+\begin{dem}
+  Esto se debe a que la propiedad de equivalencia homotópica es más fuerte que la de invariancia.
+\end{dem}
+
+\begin{prop}
+  Todo e.t. contractil es simplemente conexo.
+\end{prop}
+
+\begin{dem}
+  $X$ contractil, $\forall x, y \in X$ $\Rightarrow 1_{X} \simeq c_{x}$ y $1_{X} \simeq c_{y} \Rightarrow H$ homotopía de $c_{x}$ en $c_{y}$, entonces $\exists h : I \to X$ continua definida por 
+  \[ 
+    h(t) = H(x,t).
+  \]  
+  De manaera que
+  \[ 
+    h(0) = H(x,0) = c_{x}(x) = x 
+  \] 
+  \[ 
+    h(1) = H(y, 1) = c_{y}(x) = x
+  \] 
+  Entonces, $X$ es c.p.c y $X$ tiene homotopía de un solo punto $\Rightarrow \pi_{1}(X) \simeq 0$.
+\end{dem}
+
+\begin{prop}
+  Si $X, Y$ e.t.. Entonces, $X \times Y$ simplemente conexo $\Leftrightarrow X, Y$ simplemente conexo.
+\end{prop}
+
+\begin{dem}
+  $X \times Y$ c.p.c. $\Leftrightarrow X, Y$ c.p.c. y $\pi_{1}(X \times U, (a, b)) \simeq \pi_{1}(X,a) \times \pi_{1}(Y, y)$.
+  \begin{enumerate}[label=(\roman*)]
+    \item [$(\Rightarrow)$] Ejercico
+    \item [$(\Leftarrow)$] Ejercicio
+  \end{enumerate}
+\end{dem}
+
+\begin{obs}
+  El ser simplemente conexo no es propiedad hereditaria.
+\end{obs}
+
+\begin{ejm}
+  $\mathbb{R}^{2}$ es contractil $\Rightarrow \mathbb{R}^{2}$ es simplemente conexo pero $\mathbb{S}^{1}$ no lo es.
+\end{ejm}
+
+\begin{obs}
+  El ser simplemente conexo no se conserva por *.
+\end{obs}
+
+\begin{ejm}
+  $I$ es contractil $\Rightarrow I$ es simplemente conexo pero $\mathbb{S}^{1}$ no lo es.
+\end{ejm}
