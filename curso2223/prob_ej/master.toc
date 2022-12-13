@@ -1,3 +1,2 @@
-\babel@toc {spanish}{}\relax 
+\babel@toc {spanish}{}
 \contentsline {chapter}{\numberline {1}Probabilidad}{2}{}%
-\contentsline {section}{\numberline {1.1}Entrega 4}{2}{}%

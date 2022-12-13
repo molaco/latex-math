@@ -1,4 +1,4 @@
-\babel@toc {spanish}{}\relax 
+\babel@toc {spanish}{}
 \contentsline {part}{I\hspace {1em}Topología General}{3}{}%
 \contentsline {chapter}{\numberline {1}Espacios Topológicos Arbitrarios}{4}{}%
 \contentsline {section}{\numberline {1.1}Espacios Topológicos}{4}{}%
@@ -24,7 +24,7 @@
 \contentsline {chapter}{\numberline {5}Conexión}{71}{}%
 \contentsline {section}{\numberline {5.1}Espacio conexo}{71}{}%
 \contentsline {section}{\numberline {5.2}Componentes Conexas}{74}{}%
-\contentsline {section}{\numberline {5.3}Espacio Localmente Conexo}{74}{}%
+\contentsline {section}{\numberline {5.3}Espacio Localmente Conexo}{75}{}%
 \contentsline {section}{\numberline {5.4}Conexión por caminos}{76}{}%
 \contentsline {chapter}{\numberline {6}Convergencia}{78}{}%
 \contentsline {section}{\numberline {6.1}Filtros}{78}{}%

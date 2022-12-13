@@ -201,7 +201,7 @@ Esquema EDO.
   \[ 
     y' = f(t,y), 
   \] 
-  Si el punto de equilibrio es hiperbólico de terminamos la estabilidad según el signo de los autovalores del sistema lineal asociado $y' = Df(t) \cdot y$. Ahora, si el punto no es hiperbólico usamos el método de Lyapunov.
+  Si el punto de equilibrio es hiperbólico determinamos la estabilidad según el signo de los autovalores del sistema lineal asociado $y' = Df(t) \cdot y$. Ahora, si el punto no es hiperbólico usamos el método de Lyapunov.
 \end{obs}
 
 \begin{theo}[de Lyapunov] 
@@ -218,3 +218,134 @@ Esquema EDO.
   \end{itemize}
   En caso de que exista, la función $V(x)$ se llama función de Lyapunov.
 \end{theo}
+
+\section{Teorema de Poincaré-Bendixson}
+
+\begin{defn}[Órbita]
+  Sea $y' = f(y)$ un sistema autónomo. Si $y$ es una solución en su intervalo máximo de existencia $(\alpha, \omega)$, entonces
+  \[ 
+    \{ y(t) : \alpha < t < \omega \}
+  \] 
+  se dice que es una órbita.
+\end{defn}
+
+\begin{obs}
+  Si $\phi$ es solución de $y'$ entonces, $\{ \phi(t) : t \in (\alpha, \omega) \}$ es una órbita.
+\end{obs}
+
+\begin{prop}
+  Dos órbitas son disjuntas o son iguales.
+\end{prop}
+
+\begin{prop}
+  Si dos órbitas tienen un punto en común, entonces son idénticas.
+\end{prop}
+
+\begin{nota}
+  Se denota $\phi(t, y_{0})$ a la solución única del sistema autónomo $y' = f(y)$ tal que $\phi(t_{0}, y_{0}) = y_{0}$. Es decir, $\phi(t, y_{0})$ es la solución asociada al valor inicial $y_{0}$.
+\end{nota}
+
+\begin{defn}[Positivamente Invariante]
+  Un conjunto $S$ se dice que es positivamente invariante para el sistema $y' = f(y)$ si 
+  \[ 
+    \forall y_{0} \in S, \phi(t, y_{0}) \in S, \quad \forall t \in [0, \omega).
+  \] 
+\end{defn}
+
+\begin{nota}
+  Toda solución $\phi(t,y_{0})$ del sistema autónomo $y' = f(y)$ se corresponde con una órbita en el espacio de fases que denotamos $\gamma(y_{0})$, es decir,
+  \[ 
+    \gamma(y_{0}) = \{ \phi(t, x_{0}) : t \in (\alpha, \omega) \} 
+  \] 
+\end{nota}
+
+\begin{defn}[$\omega$-límite]
+  El conjunto de los puntos límite de una órbita $\phi(t, y_{0})$ en el intervalo $[0, +\infty)$ es
+  \[ 
+    \omega(\gamma(y_{0})) = \{ z \in \mathbb{R}^{n} : \exists ( t_{\lambda} )_{\lambda \in \Lambda} : t_{\lambda} \rightarrow +\infty \Rightarrow \phi(t_{\lambda}, y_{0}) \rightarrow z \}.
+  \] 
+\end{defn}
+
+\begin{obs}
+  Es el conjunto de puntos a los que tiende la solución $\phi(t,y_{0})$ cuando $t \rightarrow +\infty$.
+\end{obs}
+
+\begin{defn}[$\alpha$-límite]
+  El conjunto de los puntos límite de una órbita $\phi(t, y_{0})$ en el intervalo $(-\infty, 0]$ es
+  \[ 
+    \omega(\gamma(y_{0})) = \{ z \in \mathbb{R}^{n} : \exists ( t_{\lambda} )_{\lambda \in \Lambda} : t_{\lambda} \rightarrow -\infty \Rightarrow \phi(t_{\lambda}, y_{0}) \rightarrow z \}.
+  \] 
+\end{defn}
+\begin{obs}
+  Es el conjunto de puntos a los que tiende la solución $\phi(t,y_{0})$ cuando $t \rightarrow -\infty$.
+\end{obs}
+
+\begin{prop}[Solución Periódica]
+  Sea $y' = f(y)$ un sistema autónomo, $y(t)$ una solución tal que $y(0) = y(\omega)$ es una solución periódica.
+\end{prop}
+
+\begin{obs}
+  Una solución $y(t)$ que satisface $y(0) = y(\omega)$ es una curva cerrada.
+\end{obs}
+
+\begin{defn}[Cíclo]
+  Un cíclo es una solución periódica no constante.
+\end{defn}
+
+\begin{defn}[Ciclo-límite]
+  Si un ciclo es el $\omega$-límite o $\alpha$-límite de una órbita distinta, entonces se llama ciclo-límite.
+\end{defn}
+
+\begin{defn}[Ciclo-límite estable]
+  Si un cíclo es el $\omega$-límte de toda órbita cercana, entonces se llama ciclo-límite estable.
+\end{defn}
+
+\begin{theo}[Poincaré-Bendixson]
+  Sea $y' = f(y)$ un sistema autónomo. Si $\phi(t,y)$ es una órbita acotada para $t \geq 0$ entonces, se cumple una de las siguientes
+  \begin{itemize}
+    \item $\omega(\gamma(y))$ es un ciclo,
+    \item $\forall z \in \omega(\gamma(y))$, $\omega(\gamma(z))$ es un conjunto de uno o más puntos de equilibrio.   
+  \end{itemize}
+  El mismo resultado se cumple para órbitas negativas.
+\end{theo}
+
+\begin{prop}
+  Sea $y' = f(y)$ un sistema autónomo, $\phi(t, y_{0})$ ciclo. Entonces, existe almenos un punto de equilibrio dentro del ciclo.
+\end{prop}
+
+\begin{obs}
+  Si $D \subset \mathbb{R}^{2}$ tal que $\partial{D} = \{ \phi(t,y_{0}) : t \in [0, \omega) \}$, entonces $\exists y \in D : f(y) = 0$ es punto de equilibrio.
+\end{obs}
+
+\begin{defn}[Simplemente Conexo]
+  Un conjunto $D \subset \mathbb{R}^{2}$ es simplemente conexo si es conexo y $\forall C$ curva cerrada tal que $C \subset \mathring{D}$ entonces $\mathring{C} \subset D$.
+\end{defn}
+
+\begin{defn}[Divergencia]
+  Sea $F(x,y) = (f(x,y), g(x,y))$ la divergencia de $F$ es 
+  \[ 
+    \dv F(x,y) = f_{x}(x, y) + g_{y}(x,y)
+  \] 
+\end{defn}
+
+\begin{theo}[Bendixon-Dulac]
+  Sea $y' = f(y)$ un sistema autónomo tal que
+  \[ 
+    y' =
+    \begin{aligned}
+      \begin{cases}
+        y_{1}' = f_{1}(y_{1}, y_{2}) \\
+        y_{2}' = f_{2}(y_{1}, y_{2}) \\
+      \end{cases}
+    \end{aligned} 
+  \] 
+  donde $F(y_{1}, y_{2}) = (f_{1}(y_{1}, y_{2}), f_{2}(y_{1}, y_{2}))$. Suponemos $\exists g \in \mathcal{C}^{1}(D)$, con $D \subset \mathbb{R}^{2}$ simplemente conexo tal que
+  \[ 
+    \dv (g(y_{1},y_{2}) \cdot F(y_{1}, y_{2}))
+  \] 
+  es distinto de cero y tiene signo constante en $D$. Entonces, el sistema no tiene ningún cilco en $D$.
+\end{theo}
+
+\begin{obs}
+  El criterio negativo de Bendixon se obtiene cuando $g \equiv 1$.
+\end{obs}

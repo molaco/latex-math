@@ -1,0 +1,172 @@
+\begin{ejr}
+  De los 42 electores del colegio electoral 15 votan $A$ y 27 votan $B$. Entonces,
+  \[ 
+    \mathbb{P} \{ A \leq 3 \} = \sum_{i = 0}^{3} \mathbb{P} \{ A = i \} 
+  \] 
+  \[ 
+    = \frac{\binom{15}{0} \binom{27}{10}}{\binom{42}{10}} +\frac{\binom{15}{1} \binom{27}{9}}{\binom{42}{10}} + \frac{\binom{15}{2} \binom{27}{8}}{\binom{42}{10}} + \frac{\binom{15}{3} \binom{27}{7}}{\binom{42}{10}}
+  \] 
+  \[  
+    = \frac{\binom{27}{10} + 15 \binom{27}{9} + \binom{15}{2} \binom{27}{8} + \binom{15}{3} \binom{27}{7}}{\binom{42}{10}}
+  \] 
+  es la probabilidad de que de entre los $10$ electores, $3$ o menos eligan $A$.
+\end{ejr}
+
+\begin{ejr}
+  Calculamos la probabilidad condicionada de que al lanzar cinco monedas se obtengan $3$ caras sabiendo que se obtienen almenos 2 caras.
+  \[ 
+    \mathbb{P} \{ C = 3 | C \geq 2 \} = \frac{\mathbb{P} \{ (C = 3) \cap (C \geq 2) \}}{\mathbb{P} \{ C \geq 2 \}}
+  \] 
+  \[ 
+    = \frac{\mathbb{P} \{ C = 3 \}}{\mathbb{P} \{ C \geq 2 \}} 
+  \] 
+  donde usando la regla de Laplace tenemow que
+  \[ 
+    \mathbb{P} \{ C = 3 \} = \frac{\binom{5}{3} \binom{2}{2}}{2^{5}} = \frac{5}{16}
+  \] 
+  Ahora, 
+  \[ 
+    \mathbb{P} \{ C \geq 2 \} = 1 - \mathbb{P} \{ C = 0 \} - \mathbb{P} \{ C = 1 \}
+  \] 
+  \[ 
+    1 - \frac{\binom{5}{5}}{2^{5}} -\frac{\binom{5}{1} \binom{4}{4}}{2^{5}} = \frac{13}{16}
+  \] 
+  Por tanto,
+  \[ 
+    \mathbb{P} \{ C = 3 | C \geq 2 \} = \frac{\frac{5}{16}}{\frac{13}{16}} = \frac{5}{13}
+  \] 
+\end{ejr}
+
+\begin{ejr}
+  Comprobamos que la función
+  \[ 
+    \mathbb{P} \{ A \} = \sum_{x \in A} \frac{e^{-\lambda} \lambda^{x}}{x!} 
+  \] 
+  donde $A \in \mathcal{A} \subset \mathcal{P}(\Omega)$ y $\lambda > 0$, es una medida de probabilidad. 
+  \begin{enumerate}[label=(\roman*)]
+    \item Es trivial ver que 
+      \[ 
+        \mathbb{P} \{ A \} = \sum_{x \in A} \frac{e^{-\lambda} \lambda^{x}}{x!} \geq 0, \quad \forall A \in \mathcal{A}
+      \] 
+      ya que los términos son siempre positivos.
+    \item En el caso que el cojunto sea el espacio muestral
+      \[ 
+        \mathbb{P} \{ \Omega \} = \sum_{x \in \Omega} \frac{e^{-\lambda} \lambda^{x}}{x!} = \sum_{k = 0}^{\infty} \frac{e^{-\lambda} \lambda^{k}}{k!}
+      \] 
+      \[ 
+        = e^{-\lambda} \sum_{k = 0}^{\infty} \frac{\lambda^{k}}{k!} = e^{-\lambda} \cdot e^{\lambda}
+      \] 
+    \item Sea $\{ A_{j} \}_{j \in J} \subset \mathcal{A}$ disjuntos dos a dos, entonces
+      \[ 
+        \mathbb{P} \{ \bigcup_{j \in J} A_{j} \} = \sum_{k \in \bigcup_{j \in J} A_{j}} \frac{e^{-\lambda} \lambda^{k}}{k!}
+      \] 
+      \[ 
+        = \sum_{\omega \in A_{1}} \frac{e^{-\lambda} \lambda^{\omega}}{\omega!} + \cdots + \sum_{\omega \in A_{j}} \frac{e^{-\lambda} \lambda^{\omega}}{\omega!} + \cdots
+      \] 
+      \[ 
+        = \sum_{j \in J} \sum_{\omega \in A_{j}} \frac{e^{-\lambda} \lambda^{\omega}}{\omega!} = \sum_{j \in J} \mathbb{P} \{ A_{j} \} 
+      \] 
+  \end{enumerate}
+  Por tanto, la función es una medida de probabilidad.
+\end{ejr}
+
+\begin{ejr}
+  Para calcular la esperaza y la varianza de la variable aleatoria $X$ primero obtenemos su función de densidad derivando al función de distribución
+  \[ 
+    f(x) =
+    \begin{aligned}
+      \begin{cases}
+        \frac{2x}{3}, \quad 0 < x < 1 \\
+        0, \quad \text{otro caso}
+      \end{cases}
+    \end{aligned} 
+  \] 
+  Entonces,
+  \[ 
+    \mathbb{E} [ X ] = \int_{\mathbb{R}} f(x) \cdot x dx = \int_{0}^{1} \frac{2x}{3} \cdot x dx = \frac{2x^{3}}{9} \Big |_{0}^{1} = \frac{2}{9}
+  \] 
+  \[ 
+    \mathbb{E} [ X^{2} ] = \int_{\mathbb{R}} f(x) \cdot x^{2} dx = \int_{0}^{1} \frac{2x}{3} \cdot x^{2} dx = \frac{2x^{4}}{12} \Big |_{0}^{1} = \frac{1}{6}
+  \] 
+  \[ 
+    V(X) = \mathbb{E} [ X^{2} ] - \mathbb{E} [ X ]^{2} = \frac{1}{6} - \frac{2}{9}^{2} 
+  \] 
+\end{ejr}
+
+\begin{ejr}
+  Calculamos la función de densidad de la variable transformada $Y = -2 \cdot \ln(X)$.
+  \[ 
+    F_{y}(y) = \mathbb{P} \{ Y = y \} = \mathbb{P} \{ -2 \cdot \ln(X) = y \}
+  \] 
+  \[ 
+    = \mathbb{P} \{ \ln(X) = - \frac{y}{2} \} 
+  \] 
+  \[ 
+    = \mathbb{P} \{ X = e^{- \frac{y}{2}} \} 
+  \] 
+  \[ 
+    = F_{X}(e^{-\frac{y}{2}}) 
+  \] 
+  Ahora,
+  \[ 
+    f_{y}(y) = \frac{d{F_{y}(y)}}{d{y}} = \frac{d{F_{x}(e^{-\frac{y}{2}})}}{d{x}}\cdot \Big | \frac{d{(e^{-\frac{y}{2}})}}{d{y}} \Big |
+  \] 
+  \[ 
+    = f(e^{-\frac{y}{2}}) \cdot \frac{1}{2}e^{-\frac{y}{2}} = \frac{1}{2} e^{-\frac{y}{2}}
+  \] 
+  donde $0 < x < 1$, entoces $0 < y < +\infty$.
+\end{ejr}
+
+\begin{ejr}
+  Calculamos el número de unidades necesarias para satisfacer el $80 \% $  de la demanda usando la desigualda de Chevyshev con $\mathbb{E} [ X ] = 100, \sigma = 40$.
+  \[ 
+    \mathbb{P} \{ | X - \mathbb{E} [ X ] | \geq t \} \leq \frac{V(X)}{t^{2}}
+  \] 
+  \[ 
+    \Rightarrow \mathbb{P} \{ | X - 100 | \geq t \} \leq \frac{40^{2}}{t^{2}}
+  \] 
+  \[ 
+    \Rightarrow \mathbb{P} \{ t - 100 \leq X \leq t + 100 \} \leq \frac{40^{2}}{t^{2}} = 0,2
+  \] 
+  \[ 
+    \Rightarrow \frac{40}{t} = \sqrt{0,2}
+  \] 
+  \[ 
+    \Rightarrow t = \frac{40}{\sqrt{0,2}} = 89,44
+  \] 
+  Por tanto, debemos disponer de $90$ unidades.
+\end{ejr}
+
+\begin{ejr}
+  \begin{enumerate}[label=(\roman*)]
+    \item []
+    \item Calculamos la función generatriz de momentos, que existe ya que
+      \[ 
+        \int_{\mathbb{R}}^{}  |e^{\theta x}| \cdot f(x) dx < +\infty.
+      \] 
+      Por tanto,
+      \[ 
+        M(\theta) = \int_{\mathbb{R}}^{} e^{\theta x} f(x) dx 
+      \] 
+      \[ 
+        = \int_{0}^{+ \infty} e^{\theta x} \cdot e^{-x} dx
+      \] 
+      \[ 
+        = \int_{0}^{+ \infty} e^{-x(1 - \theta)} dx
+      \] 
+      \[  
+        = \frac{e^{-x(1 - \theta)}}{\theta + 1} \Bigg |_{0}^{+\infty} = \frac{1}{1 - \theta}
+      \]
+      es la función generatriz de momentos.
+    \item Calculamos la función característica.
+      \[ 
+        \varphi(t) = \int_{0}^{+ \infty} e^{itx} \cdot e^{-x} dx 
+      \] 
+      \[ 
+        = \int_{0}^{+\infty} e^{-x(1 - it)} dx
+      \] 
+      \[ 
+        = \frac{e^{-x(1 - it)}}{-(1 - it)} \Bigg |_{0}^{+\infty} = \frac{1}{1 - it}
+      \] 
+  \end{enumerate}
+\end{ejr}

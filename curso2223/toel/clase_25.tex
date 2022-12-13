@@ -107,12 +107,12 @@
 \end{prop}
 
 \begin{dem}
-  Si $( X, \mathcal{T} )$ no conexo $\Rightarrow \exists C_{i} \neq \emptyset, i \in \{ 1, 2 \}$ disjuntos tal que $X = C_{1} \cap C_{2}$. Por otra parte, $\bigcap_{j \in J} X_{j} \neq \emptyset \Rightarrow \exists x \in \bigcap_{j \in J} X_{j} \Rightarrow \exists i_{0} \in J : x \in C_{i_{0}}$. Suponemos que $ x \in C_{1}$. Ahora, $C_{2} \neq \emptyset $ corta a algún $X_{j}$ $\Rightarrow \exists j_{0} \in J : C_{2} \cap X_{j_{0}} \equiv F_{2} \neq \emptyset $. Entonces, $x \in C_{1} \cap X_{j_{0}} \equiv F_{1} \neq \emptyset \Rightarrow F_{i}, i \in \{ 1, 2  \}$ cerrados de $( X_{j_{0}}, \mathcal{T}|_{X_{j_{0}}X_{j_{0}}})$ y $F_{i} \subset C_{i}, i \in \{ 1, 2 \}$ disjuntos $\Rightarrow F_{i}, i \in \{ 1, 2 \}$ disjuntos. Por tanto,
+  Si $( X, \mathcal{T} )$ no conexo $\Rightarrow \exists C_{i} \neq \emptyset, i \in \{ 1, 2 \}$ disjuntos tal que $X = C_{1} \cap C_{2}$. Por otra parte, $\bigcap_{j \in J} X_{j} \neq \emptyset \Rightarrow \exists x \in \bigcap_{j \in J} X_{j} \Rightarrow \exists i_{0} \in J : x \in C_{i_{0}}$. Suponemos que $ x \in C_{1}$. Ahora, $C_{2} \neq \emptyset $ y $C_{2} \subset \bigcup_{j \in J} X_{j}$  $\Rightarrow \exists j_{0} \in J : C_{2} \cap X_{j_{0}} \equiv F_{2} \neq \emptyset $. Entonces, $x \in C_{1} \cap X_{j_{0}} \equiv F_{1} \neq \emptyset \Rightarrow F_{i}, i \in \{ 1, 2  \}$ cerrados de $( X_{j_{0}}, \mathcal{T}|_{X_{j_{0}}X_{j_{0}}})$ y $F_{i} \subset C_{i}, i \in \{ 1, 2 \}$ disjuntos $\Rightarrow F_{i}, i \in \{ 1, 2 \}$ disjuntos. Por tanto,
   \[
     F_{1} \cup F_{2} = (C_{1} \cap X_{j_{0}}) \cup (C_{2} \cap X_{j_{0}})
   \]
   \[ 
     = (C_{1} \cup C_{2}) \cap X_{j_{0}} = X \cap X_{j_{0}} = X_{j_{0}},
   \] 
-  entonces, $( X_{j_{0}}, \mathcal{T}|_{X_{j_{0}}})$ es conexo.
+  entonces, $( X_{j_{0}}, \mathcal{T}|_{X_{j_{0}}} )$ no es conexo, que es una contradicción. Por tanto, $( X_{j_{0}}, \mathcal{T}|_{X_{j_{0}}})$ es conexo.
 \end{dem}
