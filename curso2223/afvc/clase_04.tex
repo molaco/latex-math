@@ -32,11 +32,19 @@
 \end{obs}
 
 \begin{obs}
-  Para distinguir las soluciones, se llama \textbf{rama} del logaritmo a la función que reside en $\{ x + iy: y_{0} \leq y \leq y:0 + 2\pi \}$. Solo definimos la función $\log(z)$ cuando se especifica un intervalo de longitud $2\pi$ donde $\arg(z)$ toma valores y se dice elegir una rama específica.
+  La rama principal del logaritmo es
+  \[ 
+    \Log z = \log | z | + i \Arg(z), \quad z \neq 0
+  \] 
+  De esta manera, $\Log(z)$ es la inversa de $e^{w}$ con valores en $-\pi < \Im w \leq \pi$. 
 \end{obs}
 
 \begin{obs}
-  La determinación principal del argumento induce una rama del logaritmo.
+  Determinada la rama principal del logaritmo se tiene que
+  \[ 
+    \log(z) = \Log(z) + i \pi m, \quad m = 0, \pm 1, \pm 2, \cdots
+  \] 
+  para cualquier otra rama.
 \end{obs}
 
 \begin{defn}[Potencias]

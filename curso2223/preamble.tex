@@ -16,6 +16,13 @@
 \usepackage{pdfpages}
 \usepackage{transparent}
 \usepackage{xcolor}
+\usepackage{color}   %May be necessary if you want to color links
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true, %set true if you want colored links
+    linktoc=all,     %set to all if you want both sections and subsections linked
+    linkcolor=blue,  %choose some color if you want links to stand out
+}
 
 %\usepackage[T1]{fontenc}
 %\setmainfont{Times New Roman}
@@ -63,6 +70,7 @@
 \newtheorem*{sol}{Solución}
 
 \DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\Arg}{Arg}
 \DeclareMathOperator{\card}{card}
 \DeclareMathOperator{\diam}{diam}
 \DeclareMathOperator{\dist}{dist}
@@ -72,6 +80,7 @@
 \DeclareMathOperator{\tr}{tr}
 \DeclareMathOperator{\Ree}{Re}
 \DeclareMathOperator{\dv}{div}
+\DeclareMathOperator{\Log}{Log}
 
 \newcommand{\incfig}[2][1]{%
     \def\svgwidth{#1\columnwidth}
