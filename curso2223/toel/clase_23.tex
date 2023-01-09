@@ -24,13 +24,13 @@
   \] 
   Veamos que $\rho$ es el número de Lebesgue. Dado que $f(x)$ es máximo, entonces $\exists i \in \{ 1, \cdots, n \}$ tal que
   \[ 
-    f(x) = f_{i}(x) = d(x, X \setminus U_{i}) 
+    f(x) = f_{i}(x) = d(x, X \setminus U_{i_{x}}) 
   \] 
   Consideramos, $\forall y \in B_{\rho}(x)$. Entonces,
   \[ 
-    \rho < d(x, X \setminus U_{i}) \leq d(x, y) + d(y, X \setminus U_{i}) < \rho + d(y, X \setminus U_{i}) 
+    \rho < d(x, X \setminus U_{i_{x}}) \leq d(x, y) + d(y, X \setminus U_{i_{x}}) < \rho + d(y, X \setminus U_{i_{x}}) 
   \] 
-  por tanto, $d(y, X \setminus U_{i}) > 0 \Leftrightarrow y \in U_{i} \Rightarrow B_{\rho}(x) \subset U \in \mathcal{U}$.
+  por tanto, $d(y, X \setminus U_{i_{x}}) > 0 \Leftrightarrow y \in U_{i_{x}} \Rightarrow B_{\rho}(x) \subset U_{i_{x}} \in \mathcal{U}$.
 \end{dem}
 
 \section{Compacidad Local}

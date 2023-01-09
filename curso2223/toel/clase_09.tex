@@ -43,16 +43,6 @@
 
 \section{Espacio Producto}
 
-\begin{note}
-  Queremos construir nuevos espacios topológicos de los ya existentes. Nos gustaria que ocurriera como los subespacios topológicos, si $f$ es una función continua en un espacio topológico, también lo sea en el subespacio. \\
-
-  Dados $X, Y$, $X \times Y = \{ (x, y) : x \in X, y \in Y \}$. Si consideramos $( X, \mathcal{T} ), ( X', \mathcal{T}' )$ queremos ver que topología debemos usar para que poder trabajar con funciones. Si consideramos la topología $\mathcal{T} \times \mathcal{T}' \subset \mathcal{P}(X \times X¡)$ podemos ver que la unión de conjuntos de $\mathcal{T} \times \mathcal{T}'$ no pertenece a $\mathcal{T} \times \mathcal{T}'$. Entonces, eligimos la topología producto como la topología genereada por la base $\mathcal{T} \times \mathcal{T}',$
-  \[
-     \{ W \subset X \times Y : \forall (x, y) \in W, \exists U \times V \in \mathcal{T}\times \mathcal{T}' : (x, y) \in U \times V \subset W}
-  \]
-  .
-\end{note}
-
 \begin{defn}[Producto Cartesiano]
   Sea $\{ X_{j} \}_{j \in J} \neq \emptyset$ familia de conjuntos no vacios. Se llama producto castesiano de $\{ X_{j} \}_{j \in J}$ a 
   \[ 
@@ -79,14 +69,6 @@
   \] 
   Esta topología se denota $\prod_{j \in J} \mathcal{T}_{j}$
 \end{defn}
-
-\begin{obs}
-  $S_{\beta} = \{ \pi_{\beta}^{-1}(U_{\beta}) : U_{\beta} \in \mathcal{T}_{\beta} \} \Rightarrow S = \bigcup_{\beta \in J} S_{\beta}$ es subbase de la topología producto.
-\end{obs}
-
-\begin{obs}
-  Podemos escribir $B = \pi_{\beta_{1}}^{-1}(U_{\beta}) \cap \cdots \cap \pi_{\beta_{n}}^{-1}(U_{\beta_{n}})$
-\end{obs}
 
 \begin{obs}
   El producto de abiertos no es neceseariamente abierto.

@@ -49,7 +49,11 @@
   las ecuaciones de Cauchy-Riemann se cumplen.
 
 \begin{ejm}
-  Sea $w = \log z$ la rama principal del logaritmo. Entonces, $w$ es continua y es la inversa de $z = e^{w}, -\pi < w < \pi$. Como $e^{w}$ es holomorfa con $(e^{w})'\neq 0$, podemos aplicar el Teorema de la Función Inversa. Por tanto, $\log z$ es holomorfa.
+  Sea $w = \log z$ la rama principal del logaritmo. Entonces, $w$ es continua y es la inversa de
+  \[
+    z = e^{w}, \quad -\pi < w < \pi
+  \]
+  Como $e^{w}$ es holomorfa con $(e^{w})'\neq 0$, podemos aplicar el Teorema de la Función Inversa. Por tanto, $\log z$ es holomorfa.
   \[ 
     z = e^{\log z} \Rightarrow 
   \] 
@@ -60,6 +64,10 @@
     \frac{d{}}{d{z}}(\log z) = \frac{1}{z}.
   \] 
 \end{ejm}
+
+\begin{obs}
+  Toda rama del logaritmo difiere de la principal por una constante. Por tanto, tiene la misma derivada.
+\end{obs}
 
 \section{Funciones Harmónicas}
 
@@ -114,9 +122,32 @@
   Sea $D$ un disco abierto o $D = \mathbb{R}^{2}$, $u: D \to \mathbb{R}$ armónica. Entonces, existe $v$ armónica conjugada.
 \end{theo}
 
- \begin{dem}
-   content
- \end{dem}
+\begin{ejm}
+  Sea $u(x, y) = xy$ tenemos que 
+  \[ 
+    \frac{\partial^2{xy}}{\partial{x}}^2 = - \frac{\partial^2{xy}}{\partial{y}}^2 = 0.
+  \] 
+  Resolviendo las ecuaciones de Cauchy-Riemann se tiene
+  \[ 
+    \frac{\partial{u}}{\partial{x}} = y = \frac{\partial{v}}{\partial{y}} 
+  \] 
+  Por tanto,
+  \[ 
+    v(x,y) = \frac{y^{2}}{2} + h(x) 
+  \] 
+  Ahora,
+  \[ 
+    \frac{\partial{u}}{\partial{y}} = x = \frac{\partial{v}}{\partial{x}} 
+  \] 
+  Entonces,
+  \[ 
+    h(x) = -\frac{x^{2}}{2} + C 
+  \] 
+  Por tanto,
+  \[ 
+    f(x, y) = xy -i \Big ( \frac{x^{2} + y^{2}}{2} + k \Big )
+  \] 
+\end{ejm}
 
  \begin{cor}
    Toda función armónica es localmente la parte real de una función holomorfa.

@@ -3,13 +3,13 @@
 \end{theo}
 
 \begin{dem}
-  Como $ A_{n}$ es denso en $( X, \mathcal{T} )$, entonces $\forall U \in \mathcal{T} \setminus \{  \emptyset \}, U \cap A_{1} \neq \emptyset $ donde $U \cap A_{1} \in \mathcal{T} \times \mathcal{T}$. Por ser $( X, \mathcal{T} )$ localmente compacto y $T_{2}$, $\exists B_{1} \in \mathcal{T} : x_{1} \in B_{1}, \overline{B_{1}} \subset U \cap A_{1}$ con $\overline{B_{1}}$ compacto.
+  Como $ A_{n}$ es denso en $( X, \mathcal{T} )$, entonces $\forall U \in \mathcal{T} \setminus \{  \emptyset \}, U \cap A_{1} \neq \emptyset $ donde $U \cap A_{1} \in \mathcal{T}$, entonces $\exists x_{1} \in X : x_{1} \in U \cap A_{1}$. Por ser $( X, \mathcal{T} )$ localmente compacto y $T_{2}$, $ \exists B_{1} \in \mathcal{T} : x_{1} \in B_{1} \subset \overline{B_{1}} \subset U \cap A_{1}$ con $\overline{B_{1}}$ compacto.
 
   \begin{enumerate}[label=(\roman*)]
     \item [] Veamos esta última implicación. $x \in G \in \mathcal{T}, ( X, \mathcal{T} )$ l.c. $T_{2} \Rightarrow \exists C^{x}$ entorno compacto de $x$ tal que $x \in C^{x} \subset G$. Entonces, $x \in \mathring{C}^{x}$ y por ser $( X, \mathcal{T} )$ regular, tenemos que $\exists V^{x} \in \mathcal{T} : x \in V^{x} \subset \overline{V}^{x} \subset \mathring{C}^{x} \subset G$ donde $\overline{V}^{x}$ es compacto.
   \end{enumerate}
 
-  Ahora, $B_{1} \in \mathcal{T} \setminus \{ \emptyset \}$ y $A_{2}$ denso $\Rightarrow A_{2} \cap B_{1} \neq \emptyset \Rightarrow x_{2} \in A_{2} \cap B_{1}$. Entonces, $\exists B_{2} \in \mathcal{T}: \overline{B}_{2} \subset A_{2} \cap B_{1}$ con $\overline{B}_{2}$ compacto. Repitiendo el proceso, $\exists \{ B_{n} \}_{n \in \mathbb{N}} \subset \mathcal{T} : \overline{B_{n}}$ es compacto, $\overline{B_{n+1}} \subset B_{n}, \forall n \in \mathbb{N}$ y $ \overline{B}_{1} \subset U, B_{n} \subset A_{n}, \forall n \in \mathbb{N}$. Entonces, la colección de adherencias es familia de cerrados con la propiedad de intersección finita y $\{ B_{n} \}_{n \in \mathbb{N}} \subset \overline{B_{1}}$ entonces
+  Ahora, $B_{1} \in \mathcal{T} \setminus \{ \emptyset \}$ y $A_{2}$ denso $\Rightarrow A_{2} \cap B_{1} \neq \emptyset \Rightarrow x_{2} \in A_{2} \cap B_{1}$. Entonces, $\exists B_{2} \in \mathcal{T}: \overline{B}_{2} \subset A_{2} \cap B_{1}$ con $\overline{B}_{2}$ compacto. Repitiendo el proceso, $\exists \{ B_{n} \}_{n \in \mathbb{N}} \subset \mathcal{T} : \overline{B_{n}}$ es compacto, $\overline{B_{n+1}} \subset B_{n}, \forall n \in \mathbb{N}$ y $B_{1} \subset \overline{B_{1}} \subset U \cap A_{1}$. Entonces, la colección de adherencias es familia de cerrados con la propiedad de intersección finita y $\{ B_{n} \}_{n \in \mathbb{N}} \subset \overline{B_{1}}$ entonces
   \[
     \emptyset \neq \bigcap_{n \in \mathbb{N}} \overline{B}_{n} \subset \Big ( \bigcap_{n \in \mathbb{N}} A_{n} \Big ) \cap U
   \]
@@ -31,11 +31,11 @@
 \section{Compactación}
 
 \begin{defn}[Inversión topológica]
-  Sea $( X, \mathcal{T} ), ( Y, \mathcal{S} )$ e.t.. Decimos que $( X, \mathcal{T} )$ está sumergido en $( Y, \mathcal{S} )$ si $\exists f :  ( X, \mathcal{T} ) \to ( f(X), \mathcal{S}|_{f(X)})$ homeomorfismo. En este caso, $f$ es inversión topológica de $( X, \mathcal{T} )$ en $( Y, \mathcal{S} )$.
+  Sea $( X, \mathcal{T} ), ( Y, \mathcal{S} )$ e.t.. Decimos que $( X, \mathcal{T} )$ está sumergido en $( Y, \mathcal{S} )$ si $\exists f : ( X, \mathcal{T} ) \to ( Y, \mathcal{S} )$ tal que $f|_{f(X)} :  ( X, \mathcal{T} ) \to ( f(X), \mathcal{S}|_{f(X)})$ es homeomorfismo. En este caso, $f|_{f(X)}$ es inversión topológica de $( X, \mathcal{T} )$ en $( Y, \mathcal{S} )$.
 \end{defn}
 
 \begin{defn}[Compactación]
-  Sea $( X, \mathcal{T} )$ e.t.. Se llama compactación de $X$ a todo par $(K, f)$ tal que $ K$ es compacto y $f$ inversión topológica de $X$ en $K$ tal que $f(X)$ es denso en $K$.
+  Sea $( X, \mathcal{T} )$ e.t., $( K, \mathcal{S} )$ e.t. compacto. Se llama compactación de $X$ a todo par $(K, f)$ tal que $ K$ es compacto y $f$ inversión topológica de $( X, \mathcal{T} )$ en $( K, \mathcal{S} )$ tal que $f(X)$ es denso en $( K, \mathcal{S} )$.
 \end{defn}
 
 \begin{ejm}
@@ -43,8 +43,10 @@
 \end{ejm}
 
 \begin{defn}[Compactación $T_2$]
-  Si $( X, \mathcal{T} )$ e.t., $( K, f )$ compactación de $X$. Se dice que $( K, f )$ es compactación $T_{2}$ si $K$ es $T_{2}$.
+  Si $( X, \mathcal{T} )$ e.t. $( K, \mathcal{S} )$ e.t. compacto, $( K, f )$ compactación de $X$. Se dice que $( K, f )$ es compactación $T_{2}$ si $K$ es $T_{2}$.
+\end{defn}
 
+\begin{defn}[Compactación por un solo punto]
   Se dice que $( K, f )$ es compactación por un solo punto si $K \setminus f(X)$ es un punto.
 \end{defn}
 

@@ -23,13 +23,13 @@
     I_{p}(\alpha'(0)) = \langle \alpha'(0){ , }\alpha'(0) \rangle_{p}
   \] 
   \[ 
-    \langle X_{u}u' + X_{v}v'{ , } X_{u}u' + X_{v}v' \rangle_{p}
+    = \langle X_{u}u' + X_{v}v'{ , } X_{u}u' + X_{v}v' \rangle_{p}
   \] 
   \[ 
-    \langle X_{u}{ , }X_{u} \rangle_{p}(u')^{2} + 2 \langle X_{u}{ , }X_{v} \rangle_{p} u' v' + \langle X_{v}{ , }X_{v} \rangle_{p}(v')^{2} 
+    = \langle X_{u}{ , }X_{u} \rangle_{p}(u')^{2} + 2 \langle X_{u}{ , }X_{v} \rangle_{p} u' v' + \langle X_{v}{ , }X_{v} \rangle_{p}(v')^{2} 
   \]
   \[ 
-    E(u')^{2} + 2 F u' v' + G(v')^{2} 
+    = E(u')^{2} + 2 F u' v' + G(v')^{2} 
   \] 
   donde $t = 0$ y 
   \[ 
@@ -73,6 +73,10 @@
 \end{ejm}
 
 \section{Isometrías}
+
+\begin{note}
+  Queremos ver que significa que dos superfices tengan la misma primera forma fundamental. Localmente el plano y el cilindro se comportan de la misma forma aunque son dos superficies distintas pero los coeficientes de sus primeras formas fundamentales son los mismos. Las superficies isométricas cumplen esta propiedad.
+\end{note}
 
 \begin{defn}[Superficies Isométricas]
   Un difeomorfismo $\varphi : S \to S'$ es un isometría si $\forall p \in S, \forall w_{1}, w_{2} \in T_{p}(S)$ se tiene que
@@ -162,7 +166,7 @@
   content
 \end{dem}
 
-\section{Ángulo de Aplicaciones Conformes}
+\section{Aplicaciones Conformes}
 
 \begin{defn}
   Sean $\alpha : I \to S, \beta : J \to S$ curvas diferenciables en $S$ que se cortan en $p = \alpha(0) = \beta(0)$. Decimos que se cortan con ángulo $\theta$ donde
@@ -205,5 +209,41 @@
   \[ 
     (d \varphi)_{p}(v_{1}) \cdot (d \varphi)_{p}(v_{2}) = \lambda^{2}(p) \langle v_{1}{ , }v_{2} \rangle_{p},
   \] 
-  donde $\lambda^{2}> 0$ es una aplicación diferenciable en $S$.
+  donde $\lambda^{2}> 0$ es una aplicación diferenciable en $S$. Se dice que las superficies $S$ y $\overline{S}$ son conformes
 \end{defn}
+
+\begin{prop}
+  Sea $X : U \subset \mathbb{R}^{2} \to S$ y $\overline{X} : U \subset \mathbb{R}^{2} \to \overline{S}$ parametrizaciones tal que
+  \[ 
+    E = \lambda^{2} \overline{E}, \quad F = \lambda^{2} \overline{F}, \quad G = \lambda^{2} \overline{G}
+  \] 
+  donde $\lambda^{2}$ es función diferenciable en $U$. Entonces, $\phi = \overline{X} \circ X^{-1} : X(U) \to \overline{S}$ es localmente conforme.
+\end{prop}
+
+\begin{theo}
+  Dos superficies regulares son localmente conformes.
+\end{theo}
+
+\begin{note}
+  El campo vectorial unitario
+  \[
+    N : S \to \mathbb{S}^{2} \subset \mathbb{R}^{3}
+  \]
+  es aplicación diferenciable y
+  \[
+    (dN)_{p} : T_{p}(S) \to T_{p}(S)
+  \]
+  dado que $T_{p}(S)$ es paralelo a $T_{N(p)}(\mathbb{S}^{2})$. Ahora, la segunda forma fundamental
+  \[ 
+    II(p)(v, w) = - \langle (d N)_{p}(v){ , }w \rangle 
+  \] 
+  donde $v, w \in T_{p}(S)$, es simétrica. Por tanto, $(dN)_{p}$ es una aplicación auto-adjunta, es decir, 
+  \[ 
+    \langle (d N)_{p}(w){ , }v \rangle = \langle v{ , }(d N)_{p}(w) \rangle, \quad \forall v, w \in T_{p}(S).
+  \] 
+  Un resultado básico de aplicaciones auto-adjuntas es el teorema espectral. Este nos permite establecer que dada una base $\{ v_{1}, v_{2} \}$ ortonormal de $T_{p}(S)$ se tiene que
+  \[ 
+    (d N)_{p}(v_{i}) = \lambda_{i} v_{i} 
+  \] 
+  A partir de este resultado se demuestra el teorema de Euler.
+\end{note}

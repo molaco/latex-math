@@ -3,7 +3,7 @@
 \section{Filtros}
 
 \begin{defn}[Sucesión]
-  Sea $X$ conjunto no vacío. Se llama sucesión a cualquier aplicación $s : \mathbb{N} \to X : n \mapsto s(n) \equiv s_{n}$ y $s 3 = (s_{n})_{n \in \mathbb{N}}$.
+  Sea $X$ conjunto no vacío. Se llama sucesión a cualquier aplicación $s : \mathbb{N} \to X : n \mapsto s(n) \equiv s_{n}$ y $s = (s_{n})_{n \in \mathbb{N}}$.
 \end{defn}
 
 \begin{defn}[Punto límite]
@@ -30,7 +30,7 @@
   Los filtros son más genereales que los sitemas de entornos.
 \end{obs}
 
-\begin{defn}
+\begin{defn}[Filtro]
   Sea $X \neq \emptyset$ conjunto. Se llama filtro en $X$ a cualquier familia $\mathcal{F} \neq \emptyset$ de conjuntos no vacios tal que
   \begin{enumerate}[label=(\roman*)]
     \item $\forall F_{1}, F_{2} \in \mathcal{F} \Rightarrow F_{1} \cap F_{2} \in \mathcal{F}$,
@@ -50,7 +50,7 @@
   Los filtros son demasiado grandes. En la práctica usamos bases de filtros.
 \end{obs}
 
-\begin{defn}
+\begin{defn}[Base de Filtro]
   Sea $X$ conjunto no vacío, $\mathcal{F}$ filtro en $X$. Se llama base del filtro $\mathcal{F}$ a cualquier subfamilia $\mathcal{B} \subset \mathcal{F}$ tal que $\forall F \in \mathcal{F}, \exists B \in \mathcal{B} : B \subset F$. Decimos que $\mathcal{B}$ genera $\mathcal{F}$.
 \end{defn}
 

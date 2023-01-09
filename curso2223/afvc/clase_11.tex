@@ -20,7 +20,11 @@
 \end{theo}
 
 \begin{defn}[Función Conforme]
-  Sea $f: A \subset \mathbb{R}^{2} \to \mathbb{R}^{2}$ diferenciable y sean para dos curvas $\gamma_{1}, \gamma_{2}$ con $\gamma_{1}(0) = \gamma_{2}(0) = z_{0}$. Entonces, decimos que $f$ es conforme en $z_{0}$ si las curvas $(f \circ \gamma_{1})$, $(f \circ \gamma_{2})$ tienen $\gamma_{1}'(f(z_{0})) \neq 0$, $\gamma_{2}'(f(z_{0})) \neq 0$ y el ángulo entre $(f \circ \gamma_{1}' )(z_{0})$ y $(f \circ \gamma_{2}')(z_{0})$ es el mismo que el ángulo entre $\gamma_{1}'(z_{0})$ y $\gamma_{2}'(z_{0})$.
+  Sea $f: A \subset \mathbb{R}^{2} \to \mathbb{R}^{2}$ diferenciable y sean para dos curvas $\gamma_{1}, \gamma_{2}$ con $\gamma_{1}(0) = \gamma_{2}(0) = z_{0}$. Si $(f \circ \gamma_{1})'(z_{0}) \neq 0$ y $(f \circ \gamma_{2})(z_{0}) \neq 0$, y 
+  \[ 
+    \langle \gamma_{1}(z_{0}){ , }\gamma_{2}(z_{0}) \rangle  = \langle (f \circ \gamma_{1})'(z_{0}){ , }(f \circ \gamma_{2})'(z_{0}) \rangle
+  \] 
+  entonces, decimos que $f$ es conforme en $z_{0}$.
 \end{defn}
 
 \begin{obs}
@@ -30,3 +34,7 @@
 \begin{theo}
   Si $f(z)$ es diferenciable en $z_{0}$ y $f'(z_{0}) \neq 0,$ entonces $f(z)$ es conforme en $z_{0}$.
 \end{theo}
+
+\begin{ejm}
+  La función $f(z) = z^{2}$ es un aplicación conforme de $\{ \Re z > 0 \}$ a $\mathbb{C} \setminus (-\infty, 0]$. Si $z_{0} = r_{0} \cdot e^{i \theta_{0}}$, entonces $f(z_{0}) = r_{0}^{2} \cdot e^{i 2 \theta_{0}}$.
+\end{ejm}

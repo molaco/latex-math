@@ -1,3 +1,5 @@
+\section{Consecuencias Teorema Cauchy}
+
 \begin{theo}[Desigualdades de Cauchy]
   Sea $\Omega \subset \mathbb{C}$,  $D = \overline{D}(z_{0},R) \subset \Omega$, $f$ holomorfa en $D$. Si $| f(z) | \leq M, \forall z \in \partial{D}$, entonces
   \[ 
@@ -11,7 +13,7 @@
     f_{(k)}(z_{0}) = \frac{k!}{2 \pi i} \int_{\gamma}^{} \frac{f(w)}{(w - z_{0})^{k+1}} dw 
   \] 
   \[ 
-    \Rightarrow | f_{(k)}(z_{0}) | = \frac{k!}{2 \pi} \Big | \int_{\gamma}^{} \frac{f(w)}{(w - z_{0})^{k+1}} dw \Big |
+    \Rightarrow | f^{(k)}(z_{0}) | = \frac{k!}{2 \pi} \Big | \int_{\gamma}^{} \frac{f(w)}{(w - z_{0})^{k+1}} dw \Big |
   \] 
   Ahora,
   \[ 
@@ -19,7 +21,7 @@
   \] 
   dado que $| w - z_{0} | = R, \forall w \in \partial D$. Entonces,
   \[ 
-     | f_{(k)}(z_{0}) | \leq \frac{k!}{2 \pi} \cdot \frac{M}{R^{k+1}} \cdot L
+     | f^{(k)}(z_{0}) | \leq \frac{k!}{2 \pi} \cdot \frac{M}{R^{k+1}} \cdot L
   \] 
   donde $L$ es la longitud de $\gamma$.
 \end{dem}
@@ -29,7 +31,15 @@
 \end{theo}
 
 \begin{dem}
-  Por las desigualdades de Cauchy con $k = 1$, $\forall z_{0} \in \mathbb{C} \Rightarrow | f'(z_{0}) | \leq \frac{M}{R}$ y para $z_{0}$, $\frac{M}{R} \xrightarrow[]{ R \rightarrow \infty } 0 \Rightarrow | f'(z_{0}) | = 0 \Rightarrow f'(z_{0}) = 0 \Rightarrow f$ es constante.
+  Por las desigualdades de Cauchy con $k = 1$, $\forall z_{0} \in \mathbb{C}$ se tiene que
+  \[
+    | f'(z_{0}) | \leq \frac{M}{R},
+  \]
+  Entonces, si $R \rightarrow \infty$ tenemos que
+  \[
+    \frac{M}{R} \xrightarrow[]{ R \rightarrow \infty } 0
+  \]
+  Por tanto, $| f'(z_{0}) | = 0 \Rightarrow f'(z_{0}) = 0 \Rightarrow f$ es constante.
 \end{dem}
 
 \begin{theo}[Teorema Fundamental del Álgebra]

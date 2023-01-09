@@ -1,3 +1,5 @@
+\chapter{Integración Compleja}
+
 \section{Integral de Funciones Complejas sobre Curvas}
 
 \begin{defn}[Integral]
@@ -7,6 +9,13 @@
   \] 
   donde las integrales de $u$ y $v$ tienen el sentido usual de cálculo unidimensional.
 \end{defn}
+
+\begin{prop}
+  Sea $f : \omega \subset \mathbb{C} \to \mathbb{C}$. Entonces,
+  \[ 
+    \Bigg | \int_{\alpha}^{\beta} f(t) dt \Bigg | \leq  \int_{\alpha}^{\beta} \big | f(t) \big | dt.
+  \] 
+\end{prop}
 
 \begin{defn}
   Sea $f$ continua y definida en un conjunto abierto $A \subset \mathbb{C}$, $\gamma: [a, b] \to \mathbb{C}$una curva diferenciable a trozos tal que $\gamma([a, b]) \subset A$. Entonces,
@@ -25,7 +34,7 @@
 
 \begin{dem}
   \[ 
-    f(\gamma(t))\gamma'(t) = [u(x(t), y(tb)) + i v(x(t), y(t))] \cdot [x'(t) + iy'(t)]
+    f(\gamma(t))\gamma'(t) = [u(x(t), y(t)) + i v(x(t), y(t))] \cdot [x'(t) + iy'(t)]
   \] 
   \[ 
     = [u(x(t), y(t))x'(t) - v(x(t), y(t))y'(t)] + i[v(x(t), y(t))x'(t) + u(x(t), y(t))y'(t)]
@@ -115,9 +124,9 @@
 \end{cor}
 
 \begin{theo}
-  Si $\Omega \subset \mathbb{C}$ es abierto convexo, y $f: \Omega \to \mathbb{C}$es continua, entonces $f$ tiene primitica en $ \Omega$ si y solo si 
+  Si $\Omega \subset \mathbb{C}$ es abierto convexo, y $f: \Omega \to \mathbb{C}$ es continua, entonces $f$ tiene primitica en $ \Omega$ si y solo si 
   \[ 
-    \int_{\partial T}^{} f(z) dz 
+    \int_{\partial T}^{} f(z) dz = 0
   \] 
   para $T \subset \Omega$ triángulo.
 \end{theo}
@@ -131,16 +140,20 @@
 \begin{defn}[Teorema de Green]
   Sea $D \subset \mathbb{C}$ abierto conexo acotado tal que $\partial D$ es una una curva cerrada y simple, $\Omega$ abierto tal que $\overline{D} \subset \Omega$ y $P,Q: \Omega \to \mathbb{R}$ de clase $C^1$. Entonces,
   \[ 
-    \int_{\patial D^+}^{} Pdx Qdy = \iint_{D}^{} (\frac{\partial{Q}}{\partial{x}} - \frac{\partial{P}}{\partial{y}})dxdy
+    \int_{\partial D^+}^{} Pdx + Qdy = \iint_{D}^{} (\frac{\partial{Q}}{\partial{x}} - \frac{\partial{P}}{\partial{y}})dxdy
   \] 
 \end{defn}
 
 \begin{theo}[Cauchy]
-  Sea $D \subset \mathbb{C}$ abierto conexo acotado tal que su frontera es una curva simple cerrada, $\Omega$ abierto tal que $\overline{D} \subset \Omega$, $f: \Omega \to \mathbb{C}$ función holomorfa tal que $f'$ es continua. Entonces,
+  Sea $D \subset \mathbb{C}$ abierto conexo acotado tal que su frontera es una curva simple cerrada, $\Omega$ abierto tal que $\overline{D} \subset \Omega$, $f: \Omega \to \mathbb{C}$ función holomorfa en $D$ tal que $f'$ es continua. Entonces,
   \[ 
-    \int_{\patial D }^{} f(z) dz = 0
+    \int_{\partial D }^{} f(z) dz = 0
   \] 
 \end{theo}
+
+\begin{obs}
+  La conclusión del teorema de Cauchy también se cumple si asumimos solo que $f$ es continua en un disco $D$ y holomorfa en $D \setminus \{ z_{1} \}$ donde $z_{1} \in D$.
+\end{obs}
 
 \begin{dem}
   Sea $ f = u + i v $,
@@ -163,40 +176,41 @@
 \begin{theo}[Fórmula Integral de Cauchy]
   Sea $D \subset \mathbb{C}$ abierto, conexo y acotado tal que $\partial D$ es una curva simple cerrada, $\Omega$ abierto tal que $\overline{D} \subset \Omega$. Sea $f: \Omega \to \mathbb{C}$ un función holomorfa tal que $f'$ es continua. Entonces,
   \[ 
-    f(z) = \frac{1}{2 \pi i} \int_{\partial D^+}^{} \frac{f(w)}{w - z} dw, \forall z \in D 
+    f(z) = \frac{1}{2 \pi i} \int_{\partial D^+}^{} \frac{f(w)}{w - z} dw, \quad \forall z \in D 
   \] 
 \end{theo}
 
 \begin{dem}
   Sea $z \in D, \epsilon >0, D_{\epsilon} = D \setminus \{ | w - z | \leq \epsilon \}$. La frontera $\partial D^+$ es la unión de $\partial D$ y $\{ | w - z | = \epsilon \}$ con orientación positiva. \\
 
-  Dado que $ \frac{f(z)}{w-z}$ es holomorfa para $w \in D_{\epsilon}$, por el teorema de Cauchy tenemos
+  Dado que $ \frac{f(w)}{w-z}$ es holomorfa para $w \in D_{\epsilon}$, por el teorema de Cauchy tenemos
   \[ 
     \int_{\partial D^+}^{} \frac{f(w)}{w - z} dw = 0 
   \] 
   separando la frontera e invirtiendo la orientación se tiene
   \[ 
-    \Rightarrow \int_{|  w - z | = \epsilon}^{}  \frac{f(z)}{w-z} dw = \int_{\partial D}^{} \frac{f(w)}{w - z} dw 
+    \Rightarrow \int_{|  w - z | = \epsilon}^{}  \frac{f(w)}{w-z} dw = \int_{\partial D}^{} \frac{f(w)}{w - z} dw 
   \] 
   si escribimos $w = z + \epsilon e^{i \theta}, dw = i \epsilon e^{i \theta} dw$, obtenemos
   \[ 
-    \int_{0}^{2 \pi} f(z + \epsilon e^{i \theta}) \frac{d \theta}{2 \pi} =  \frac{1}{2 \pi i} \int_{\patial D}^{} \frac{f(w)}{w - z} dw
+    \int_{0}^{2 \pi} f(z + \epsilon e^{i \theta}) \frac{d \theta}{2 \pi} =  \frac{1}{2 \pi i} \int_{\partial D}^{} \frac{f(w)}{w - z} dw
   \] 
   por el teorema del valor medio para la funciones armónicas, la integral de la izquierda coincide con $f(z)$.
 \end{dem}
 
 \begin{theo}[Fórmula Integral de Cauchy para las Derivadas]
-  Sea $D \subset \mathbb{C}$ abierto, conexo y acotado talque $\partial D$ es unacurva simple cerrada, $\Omega \subset \mathbb{C}$ abierto tal que $\overline{D} \subset \Omega$, $f: \Omega \to \mathbb{C}$ función holomorfa tal que $ f'$ es continua. Entonces,
+  Sea $D \subset \mathbb{C}$ abierto, conexo y acotado talque $\partial D$ es una curva simple cerrada, $\Omega \subset \mathbb{C}$ abierto tal que $\overline{D} \subset \Omega$, $f: \Omega \to \mathbb{C}$ función holomorfa tal que $ f'$ es continua. Entonces,
   \[ 
-    f^{(n)}(z) = \frac{n!}{2 \pi i} \int_{\partial D^+}^{} \frac{f(w)}{(w - z)^{n+1}} dw, \forall z \in D, \forall n \in \mathbb{N}.
+    f^{(n)}(z) = \frac{n!}{2 \pi i} \int_{\partial D^+}^{} \frac{f(w)}{(w - z)^{n+1}} dw, \quad \forall z \in D, \forall n \in \mathbb{N}.
   \] 
+  es decir, $f$ tiene derivada de orden $n$, $\forall n \in \mathbb{N}$.
 \end{theo}
 
 %\begin{dem}
 \begin{dem}
   Sea $z \in D$ entonces $dist (z, \partial D) = r > 0$, $f$ continua en $\partial D \Rightarrow \exists M>0 : | f(w) | < M, \forall w \in \partial D$ y $| \frac{1}{w - z} | \leq \frac{1}{r} $
   \[ 
-    | \frac{f(w)}{w-z} |  \leq \frac{M}{r}, \forall w \in \partial D
+    \Big | \frac{f(w)}{w-z}  \Big |  \leq \frac{M}{r}, \quad \forall w \in \partial D
   \] 
   y dado que $\frac{d{}}{d{z}}(\frac{f(w)}{w -z}) = \frac{f(w)}{w-z}^2$ entonces, por el teorema de derivación bajo el signo integral tenemos que
   \[ 
@@ -206,13 +220,29 @@
 %\end{dem}
 \end{dem}
 
+%\begin{cor}
+%  Sea $f: \Omega \to \mathbb{C}$ función holomorfa, $f': \Omega \to \mathbb{C}$ continua. Entonces $f$ es infinitamente derivable.
+%\end{cor}
+
 \begin{cor}
-  Sea $f: \Omega \to \mathbb{C}$ función holomorfa, $f': \Omega \to \mathbb{C}$ continua. Entonces $f$ es infinitamente derivable.
+  Sea $f : \Omega \to \mathbb{C}$ es holomorfa. Entonces, $f$ es infinitamente derivable y sus derivadas son holomorfas en $\Omega$.
 \end{cor}
+
+\begin{dem}
+  Fórmula integral de Cauchy para las derivadas $\Rightarrow$ $f^{(n)}(z)$ es derivable $\forall n \in \mathbb{N}$, entonces $f^{(n)}(z)$ es continua. Por tanto, $f^{(n)}(z)$ es holomorfa $\forall n \in \mathbb{N}$.
+\end{dem}
 
 \begin{theo}[Morera]
   Sea $f: \Omega \to \mathbb{C}$ función continua y $\int_{\partial T}^{} f(z) dz = 0, \forall T \subset \Omega$ triángulo. Entonces, $f$ es infinitamente derivable.
 \end{theo}
+
+\begin{obs}
+  Sea $f : \Omega \to \mathbb{C} $ continua tal que
+  \[ 
+    \int_{\gamma}^{} f(z) dz = 0
+  \] 
+  para toda curva cerrada $\gamma$ en $\Omega$. Entonces, $f = F'$ es holomorfa en $\Omega$ y existe $F$ holomorfa en $\Omega$.
+\end{obs}
 
 \begin{dem}
   (Teorema fundamental del cálculo) $\Rightarrow f$ tiene primitiva, es decir, $\exists F: f = F', F$ holomorfa en $D$ y $F' = f$  continua. Entonces, por el corolario anterior $F$ infinitamente derivable $\Rightarrow F'$ infinitamente derivable.

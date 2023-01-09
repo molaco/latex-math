@@ -7,14 +7,14 @@
   \[ 
     f(z) = \sum_{n = 0}^{\infty} a_{n}(z - z_{0})^{n} + \sum_{n = 1}^{\infty} \frac{b_{n}}{(z - z_{0})^{n}} 
   \] 
-  donde ambas series convergen absolutamente en $A$ y uniformemente en $B_{\rho_{1}, \rho_{2}} = \big\{ z : \rho_{1} \leq | z - z_{0} | \leq \rho_{2} \big\}$ donde $r_{1} < \rho_{1} < \rho_{2} < r_{2}$. Esta serie se llama serie de Laurent alrededor de $z_{0}$ en la corona circular $A$.
+  donde ambas series convergen absolutamente en $A$ y uniformemente en $B_{\rho_{1}, \rho_{2}} = \big\{ z : \rho_{1} \leq | z - z_{0} | \leq \rho_{2} \big\}$ donde $r_{1} < \rho_{1} < \rho_{2} < r_{2}$. Esta serie se llama serie de Laurent alrededor de $z_{0}$ en la corona circular $A$. \\
 
   Si $\gamma$ es un círculo alrededor de $z_{0}$ con radio $r$, donde $r_{1} < r < r_{2}$, entonces los coeficientes vienen dados por
   \[ 
-    a_{n} = \frac{1}{2 \pi i} \int_{\gamma}^{} \frac{f(w)}{(w - z_{0})^{n + 1}} dw, \quad n = \{ 0, 1, \cdots \}
+    a_{n} = \frac{1}{2 \pi i} \int_{\gamma}^{} \frac{f(w)}{(w - z_{0})^{n + 1}} dw, \quad n \in \{ 0, 1, \cdots \}
   \] 
   \[ 
-    b_{n} = \frac{1}{2 \pi i} \int_{\gamma}^{} f(w){(w - z_{0})^{n - 1}} dw, \quad n = \{ 1, 2, \cdots \}
+    b_{n} = \frac{1}{2 \pi i} \int_{\gamma}^{} f(w){(w - z_{0})^{n - 1}} dw, \quad n \in \{ 1, 2, \cdots \}
   \] 
 \end{theo}
 
@@ -75,7 +75,7 @@
         \item $\exists \lim_{z \to z_{0}} (z - z_{0}) \cdot f(z) = 0$
       \end{enumerate}
     \item $z_{0}$ es un polo simple $\Leftrightarrow \exists \lim_{z \to z_{0}} (z - z_{0}) \cdot f(z) \neq 0$
-    \item $z_{0}$ es un polo de orden $\leq k \Leftrightarrow$ se cumple una de las siguientes
+    \item $z_{0}$ es un polo de orden $\leq k$ o una singularidad evitable $\Leftrightarrow$ se cumple una de las siguientes
       \begin{enumerate}
         \item $\exists M > 0, k \geq 1 : | f(z) | \leq \frac{M}{| z -z_{0} |^{k}}$ en $D(z_{0}, R) \setminus \{ z_{0} \}$.
         \item $\lim_{z \to z_{0}} (z - z_{0})^{k+1} \cdot f(z) = 0$.

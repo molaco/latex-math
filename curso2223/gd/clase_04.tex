@@ -10,7 +10,6 @@
     \item $X: U \to V$ es homeomorfismo,
     \item $(dX)_{q} : \mathbb{R}^{2} \to \mathbb{R}^{3}$ es inyectiva $ \forall q \in U$.
   \end{enumerate}
-  donde $U \subset \mathbb{R}^{2}$ abierto y $V$ entorno de $p$ en $S$.
 \end{defn}
 
 \begin{obs}
@@ -63,7 +62,7 @@
 \end{dem}
 
 \begin{prop}[Imagen Inversa de Valor Regular]
-  Sea $f: U \subset \mathbb{R}^{3} \to \mathbb{R}$ función diferenciable, $a \in f(U) \subset \mathbb{R}$ un valor regular de $f$. Entonces, $S = f^{-1}(\{ a \}) \neq \emptyset \Rightarrow S$ es superficie.
+  Sea $f: V \subset \mathbb{R}^{3} \to \mathbb{R}$ función diferenciable, $a \in f(U) \subset \mathbb{R}$ un valor regular de $f$. Entonces, $S = f^{-1}(\{ a \}) \neq \emptyset \Rightarrow S$ es superficie.
 \end{prop}
 
 \begin{dem}
@@ -85,8 +84,24 @@
     F(f^{-1}(a) \cap V) = W \cap \{ (u, v, t) : t = a \}  
   \] 
   tenemos que $f^{-1}(a) \cap V$ es la gráfica de $h \Rightarrow$ es un entorno coordenado de $p \Rightarrow \forall p \in f^{-1}(a)$ se puede cubrir con un entorno coordenado $\Rightarrow f^{-1}(a)$ es una superficie regular. 
-  REVISAR
 \end{dem}
+
+\begin{ejm}
+  El elipsoide 
+  \[ 
+    S = \Big \{ (x,y,z) : \frac{x^{2}}{a^{2}} + \frac{y^{2}}{b ^{2}} + \frac{z^{2}}{c^{2}} = 1
+ \Big\}
+  \] 
+  es una superficie regular ya que 
+  \[ 
+    S = f^{-1}(0) 
+  \] 
+  donde
+  \[ 
+    f(x,y,z) = \frac{x^{2}}{a^{2}} + \frac{y^{2}}{b ^{2}} + \frac{z^{2}}{c^{2}} 
+  \] 
+  es una función diferenciable y $0$ es valor regular de $f$.
+\end{ejm}
 
 \begin{prop}
   Sea $S \subset \mathbb{R}^{3}$ superficie, $p \in S$, $X: U \subset \mathbb{R}^{2} \to \mathbb{R}^{3}$ aplicación con $p \in X(U) \subset S$ tal que $X$ es diferenciable y $(dX)_{q}$ es inyectiva $\forall q \in U$. Entonces, si $X$ es inyectiva, $X^{-1}$ es continua.
@@ -321,7 +336,7 @@
 \section{Diferencial de una Aplicación Diferenciable}
 
 \begin{defn}[Diferencial]
-  Sea $F : U \subset \mathbb{R}^{n} \to \mathbb{R}^{m}$ una aplicación diferenciable. Sea $w \in \mathbb{R}^{n}$ y $\alpha : (-\epsilon, \epsilon) \to U$ curva diferenciable tal que $\alpha(0) = p$ y $\alpha'(0) = w$. Entonces, la curva $\beta = F \circ \alpha : (-\epsilon, \epsilon) \to \mathbb{R}^{m}$ es diferenciable y $(dF)_{p}(w) = \beta'(0)$ es la diferencial de $F$ en $p$, donde $(d F)_{p} : \mathbb{R}^{n} \to \mathbb{R}^{m} $ es aplicación lineal.
+  Sea $F : U \subset \mathbb{R}^{n} \to \mathbb{R}^{m}$ una aplicación diferenciable. Sea $w \in \mathbb{R}^{n}$ y $\alpha : (-\epsilon, \epsilon) \to U$ curva diferenciable tal que $\alpha(0) = p$ y $\alpha'(0) = w$. Entonces, la curva $\beta = F \circ \alpha : (-\epsilon, \epsilon) \to \mathbb{R}^{m}$ es diferenciable y $(dF)_{p}(w) = (F \circ \alpha)'(0) = \beta'(0)$ es la diferencial de $F$ en $p$, donde $(d F)_{p} : \mathbb{R}^{n} \to \mathbb{R}^{m} $ es aplicación lineal.
 \end{defn}
 
 \begin{obs}
@@ -369,7 +384,6 @@
   \[ 
     d(g \circ f)_{p} = (d g)_{f(p)} \circ (d f)_{p}
   \] 
-  (También para F:rnm -> rnn, G:rnn -> rnk)
 \end{theo}
 
 \begin{dem}
@@ -402,7 +416,7 @@
 %\end{dem}
 
 \begin{theo}[de la Función Inversa]
-  Sea $F : U \subset \mathbb{R}^{n} \to \mathbb{R}^{n}$ difereciable, $p \in U : (d F)_{p} : \mathbb{R}^{n} \to \mathbb{R}^{n}$ es isomorfismo. Entonces, $\exists V \subset U :  p \in V$ entorno y $\exists W \subset \mathbb{R}^{n} : F(p) \in W$ entorno tal que $F : V \to W$ tiene inversa difereciable $F^{-1} : W \to V$. $F|_{V}$ es difeomorfismo.
+  Sea $F : U \subset \mathbb{R}^{n} \to \mathbb{R}^{n}$ difereciable, $p \in U$ tal que $(d F)_{p} : \mathbb{R}^{n} \to \mathbb{R}^{n}$ es isomorfismo. Entonces, $\exists V \subset U :  p \in V$ entorno y $\exists W \subset \mathbb{R}^{n} : F(p) \in W$ entorno tal que $F : V \to W$ tiene inversa difereciable $F^{-1} : W \to V$. $F|_{V}$ es difeomorfismo.
 \end{theo}
 
 \begin{obs}

@@ -1,4 +1,4 @@
-\babel@toc {spanish}{}
+\babel@toc {spanish}{}\relax 
 \contentsline {part}{I\hspace {1em}Topología General}{3}{part.1}%
 \contentsline {chapter}{\numberline {1}Espacios Topológicos Arbitrarios}{4}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Espacios Topológicos}{4}{section.1.1}%
@@ -22,14 +22,14 @@
 \contentsline {section}{\numberline {4.1}Compacidad}{55}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Compacidad Local}{61}{section.4.2}%
 \contentsline {section}{\numberline {4.3}Compactación}{66}{section.4.3}%
-\contentsline {chapter}{\numberline {5}Conexión}{71}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Espacio conexo}{71}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Componentes Conexas}{74}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Espacio Localmente Conexo}{75}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Conexión por caminos}{76}{section.5.4}%
-\contentsline {chapter}{\numberline {6}Convergencia}{78}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Filtros}{78}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Redes}{85}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Resultados}{90}{section.6.3}%
-\contentsline {part}{II\hspace {1em}Topología Algebráica}{96}{part.2}%
-\contentsline {chapter}{\numberline {7}Homotopía}{97}{chapter.7}%
+\contentsline {chapter}{\numberline {5}Conexión}{72}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Espacio conexo}{72}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Componentes Conexas}{75}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Espacio Localmente Conexo}{76}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Conexión por caminos}{77}{section.5.4}%
+\contentsline {chapter}{\numberline {6}Convergencia}{79}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Filtros}{79}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Redes}{86}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Resultados}{91}{section.6.3}%
+\contentsline {part}{II\hspace {1em}Topología Algebráica}{97}{part.2}%
+\contentsline {chapter}{\numberline {7}Homotopía}{98}{chapter.7}%

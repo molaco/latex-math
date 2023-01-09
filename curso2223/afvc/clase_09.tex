@@ -28,6 +28,7 @@
 
 \begin{dem}
   \begin{enumerate}[label=(\roman*)]
+    \item []
     \item [($\Rightarrow$)] En el límite
       \[ 
         f'(z_{0}) = \lim_{z \to z_{0}} \frac{f(z) - f(z_{0})}{z - z_{0}}
@@ -53,13 +54,13 @@
       \[ = \frac{1}{i}\frac{\partial{u}}{\partial{y}}(x_{0}, y_{0}) + \frac{\partial{v}}{\partial{y}}(x_{0}, y_{0})
       \]
       \[ 
-         = \frac{\partial{u}}{\partial{y}}(x_{0}, y_{0}) - i\frac{\partial{v}}{\partial{y}}(x_{0}, y_{0}).
+         = - i\frac{\partial{u}}{\partial{y}}(x_{0}, y_{0}) + \frac{\partial{v}}{\partial{y}}(x_{0}, y_{0}).
       \] 
       Por tanto, $\exists f'(z_{0})$ y tiene el mismo valor independientemente de como $z$ se acerque a $z_{0}$
       \[ 
-        f'(z_{0}) = \frac{\partial{u}}{\partial{x}} + i\frac{\partial{v}}{\partial{x}} =  \frac{\partial{u}}{\partial{y}} - i\frac{\partial{v}}{\partial{y}}
+        f'(z_{0}) = \frac{\partial{u}}{\partial{x}} + i\frac{\partial{v}}{\partial{x}} =  - i\frac{\partial{u}}{\partial{y}} + \frac{\partial{v}}{\partial{y}}
       \] 
-    \item [($\Rightarrow$)] A partir del teoremade Taylor
+    \item [($\Leftarrow$)] A partir del teoremade Taylor
       \[ 
         u(x + s, y + t) = u(x, y) + \frac{\partial{u}}{\partial{x}}(x, y)s + \frac{\partial{u}}{\partial{y}}(x, y)t + R(s, t) 
       \] 
@@ -83,7 +84,7 @@
       \] 
       Por tanto,
       \[ 
-        f'(z_{0}) = \frac{\partial{u}}{\partial{x}}(x, y) + i \frac{\partial{v}}{\partial{x}}(x, y) 
+        f'(z_{0}) = \frac{\partial{u}}{\partial{x}}(x_{0}, y_{0}) + i \frac{\partial{v}}{\partial{x}}(x_{0}, y_{0}) 
       \] 
       $\exists f'(z_{0})$ y es continua $\Rightarrow f(z)$ es anlítica.
   \end{enumerate}
@@ -99,3 +100,28 @@
     \det J_{f}(z) = | f'(z) |^{2} .
   \] 
 \end{theo}
+
+\begin{dem}
+  \[ 
+    J_{f}(x,y) =
+    \begin{pmatrix}
+       u_{x} & u_{y} \\
+       v_{x} & v_{y}
+    \end{pmatrix} 
+  \] 
+  Por tanto, el determinante es
+  \[ 
+    \det J_{f}(x,y) = u_{x} v_{y} - u_{y} v_{x} 
+  \] 
+  Si sustituimos las derivadas parciales de las ecuaciones de Cauchy nos queda
+  \[ 
+    \det J_{f}(x,y) = u_{x} u_{x} + v_{x} v_{x} 
+  \] 
+  \[ 
+    = | u_{x} + i v_{x} |^{2} 
+  \] 
+  \[ 
+    = | f'(z) |^{2} 
+  \] 
+
+\end{dem}

@@ -1,0 +1,379 @@
+\section{Geodésicas}
+
+\begin{obs}[Idea Geodésicas]
+  Una geodésica generaliza rectas en $\mathbb{R}^{2}$ y $\mathbb{R}^{3}$.
+\end{obs}
+
+\begin{obs}[Rectas]
+  Una recta $r$ en $\mathbb{R}^{2}$ o $\mathbb{R}^{3}$ tiene las siguientes propiedades
+  \begin{enumerate}[label=(\roman*)]
+    \item $\forall p, q \in r$, $r$ es la curvar de menor longitud entre $p$ y $q$.
+    \item Si $\alpha(t) = p + t \vec{v}$ p.p.a entonces $\alpha''(t) = 0, \forall t$.
+    \item Los vectores tangentes a $\alpha'(t)$ son todos paralelos.
+  \end{enumerate}
+\end{obs}
+
+\begin{obs}[Propiedades Geodésicas]
+  Sea $\gamma$ geodésica en $S$ entonces
+  \begin{enumerate}[label=(\roman*)]
+    \item $\gamma$ minimiza la longitud localmente. Es decir, $\forall p \in \gamma, \exists U $ entorno de $p$ tal que $\forall q \in \gamma \cap U$ se tiene que $\gamma$ es la curva de longitud mínima que une $p$ y $q$.
+    \item $\gamma$ p.p.a será geodésica si la proyección  de $\gamma''(t)$ sobre $T_{\gamma(t)}(S)$ es $\vec{0}$.
+    \item $\gamma'(t)$ se percibe desde $S$ como transporte paralelo de vectores.
+  \end{enumerate}
+\end{obs}
+
+\begin{defn}[Geodésica]
+  Una curva regular $\alpha : I \to S$ es una geodésica si 
+  \[ 
+    \alpha''(t) \perp T_{\alpha(t)}(S), \quad \forall t \in I
+  \] 
+\end{defn}
+
+\begin{lem}
+  Sea $\alpha$ geodésica, entonces $||\alpha'(t)||$ es constante.
+\end{lem}
+
+\begin{dem}
+  Sea $\alpha$ geodésica, entonces
+  \[ 
+    \frac{d{}}{d{t}}|| \alpha'(t) ||^{2} = \frac{d{}}{d{t}} \langle \alpha'(t){ , }\alpha'(t) \rangle
+  \] 
+  \[ 
+    = \langle \alpha''(t){ , }\alpha'(t) \rangle  = 0
+  \] 
+\end{dem}
+
+\begin{obs}
+  Es decir, el parámetro $t$ de una geodésica $\alpha(t)$ es proporcional al parámetro $s$ longitud de arco $\Rightarrow \exists c \neq 0 : t = c - s$.
+\end{obs}
+
+\begin{dem}
+  Sea $\alpha$ geodésica, entonces
+  \[ 
+    s = \int_{0}^{t} ||\alpha'(t)|| dt = \int_{0}^{t} c \ dt = c \cdot t, \quad \forall t \in I.
+  \] 
+\end{dem}
+
+\begin{obs}
+  Si $\alpha$ es geodésica, entonces $||\alpha'(t)|| = c, \forall t \in I$. Sea $\beta(s)$ la p.p.a de $\alpha$, entonces $\alpha(t) = \beta(c \cdot s)$.
+\end{obs}
+
+\begin{defn}[Curvatura Geodésica]
+  Sea $\alpham : I \to S$ p.p.a., $N : S \to \mathbb{R}^{3}$ campo vectorial unitario a $S$. Entonces,
+  \[
+    \alpha''(s) = k_{n}(s) N_{\alpha(s)} + k_{g}(s) N(\alpha(s)) \times \alpha'(s)
+  \]
+  donde $k_{n}$ es la cuvatura normal y $k_{g}(s)$ es la curvatura geodésica de $\alpha$ en $s$.
+\end{defn}
+
+\begin{obs}
+  Si $||\alpha'(s)|| = 1$, entonces $\alpha''(s) \perp \alpha'(s)$.
+\end{obs}
+
+\begin{defn}[Curvatura Geodésica de curva regular]
+  Si $\alpha$ es una curva regular, entonces su curvatura geodésica es la de su reparametrización por arco.
+\end{defn}
+
+\begin{obs}
+  Si $\alpha$ es p.p.a., entonces $\alpha$ es geodésica $\Leftrightarrow k_{g}(s) = 0 \forall s$.
+\end{obs}
+
+\begin{ejm}[Plano]
+  Sea $P = \{ x : \langle x-p{ , }a \rangle = 0 \}$, $\alpha : I \to P$ geodésica p.p.a.. Entonces,
+  \[ 
+    \langle \alpha(t) - p{ , }a \rangle = 0
+  \] 
+  donde derivando tenemos que
+  \[ 
+    \langle \alpha''(t){ , }a \rangle = 0 
+  \] 
+  como $a \neq 0$, entonces $\alpha''(t) = 0, \forall t \in I$. Por tanto,
+  \[ 
+    \alpha(t) = p + t \cdot \vec{v},
+  \] 
+  es decir, la geodésica es parametrización afín de una recta.
+\end{ejm}
+
+\begin{ejm}[Esfera]
+  Los círculos máximos p.p.a son geodésicas. Sea $\alpha : I \to \mathbb{S}^{2}$ geodésica p.p.a.. Entonces, $||\alpha'(t)|| = 1$ y derivando $||\alpha'(t)||^{2} = 1$
+  \[ 
+    \langle \alpha'(t){ , }\alpha(t) \rangle = 0
+  \] 
+  \[ 
+    \langle \alpha''(t){ , }\alpha(t) \rangle + \langle \alpha'(t){ , }\alpha(t) \rangle = 0
+  \] 
+  \[ 
+    \langle \alpha''(t){ , }\alpha(t) \rangle + ||\alpha'(t)||^{2} = 0
+  \] 
+  \[ 
+    \Rightarrow \langle \alpha''(t){ , }\alpha(t) \rangle = -1
+  \] 
+  Por tanto, si $\alpha$ es geodésica, entonces $\alpha''(t) = - \alpha(t)$. Luego,
+  \[ 
+    \alpha(t) = (a_{1}\sen(t) + a_{2}\cos(t), b_{1}\sen(t) + b_{2}\cos(t), c_{1}\sen(t) + c_{2} \cos(t)), \quad t \in ( 0, 2 \pi ).
+  \] 
+  Si $\alpha(0) = p$, $\alpha'(0) = v$, $||\alpha(t)|| = 1$, $||\alpha'(t)|| = 1$ entonces
+  \[ 
+    \alpha(t) = p \cos(t) + v \sen(t) 
+  \] 
+  que es parametrización de círculo máximo.
+\end{ejm}
+
+\begin{ejm}[Cilindro]
+  Sea $C = \{ (x,y,z) : x^{2} + y^{2} = 1 \}$, $\alpha : I \to C$ geodésica p.p.a. con 
+  \[ 
+    \alpha(t) = (x(t), y(t), z(t)), \quad t \in [0, 1].
+  \] 
+  Como $\alpha(t) \in C$, entonces $x^{2}(t) + y^{2}(t) = 1$ y derivando dos veces tenemos
+  \[ 
+    2x(t)x'(t) + 2y(t)y'(t) = 0 
+  \] 
+  \[ 
+    2x'(t)x'(t) + 2x(t)x''(t) + 2y'(t)y'(t) + 2y(t)y''(t) = 0
+  \] 
+  Ahora, $||\alpha'(t)|| = 1$ entonces,
+  \[ 
+    ||(x'(t), y'(t), z'(t))|| = \sqrt{x'(t)^{2} + y'(t)^{2} + z'(t)^{2}} = 1
+  \] 
+  \[ 
+    \Rightarrow x'(t)^{2} + y'(t)^{2} + z'(t)^{2} = 1
+  \] 
+  Por tanto, si sustituimos en la ecuación anterior tenemos
+  \[ 
+    x'(t)^{2} + y'(t)^{2} + x(t)x''(t) + y(t)y''(t) = 0 
+  \] 
+  \[ 
+    1 - z'(t)^{2} + x(t)x''(t) + y(t)y''(t) = 0 
+  \] 
+  Dado que $\alpha''(t) \perp \alpha'(t)$, tenemos que $\alpha''(t) || \alpha(t)$, entonces
+  \[ 
+    (x'', y'') = \lambda(t) (x, y).
+  \] 
+  Luego,
+  \[ 
+    \lambda(t) = -1 + z'(t)^{2} 
+  \] 
+  Resolviendo el sistema asociado
+  \[ 
+    \begin{aligned}
+      \begin{cases}
+        z''(t) = 0 \\
+        x''(t) = (-1 + z'(t)^{2}) x(t) \\
+        y''(t) = (-1 + z'(t)^{2}) y(t)
+      \end{cases}
+    \end{aligned} 
+  \] 
+  con $z(t) = t b, \alpha(0) = (1,0,0), \alpha'(0) = (0, a, b), a^{2} + b^{2} = 1$ obtenemos
+  \[ 
+    \alpha(t) = (\cos(at), \sen(at), bt)
+  \] 
+  que es una hélice o una recta si $a = 0$.
+\end{ejm}
+
+\begin{ejm}[Geodésicas en coordenadas locales]
+  Sea $X : U \to X(U) \subset S$ parametrización se $S$ y $\alpha : I \to S$ curva p.p.a con $\alpha(0) \in X(U)$. Sea
+  \[ 
+    \beta(t) = X^{-1}(\alpha(t)) = (u(t), v(t))
+  \] 
+  entonces,
+  \[ 
+    \alpha'(t) = u'(t) X_{u} + v'(t) X_{v} 
+  \] 
+  donde derivando de nuevo tenemos
+  \[ 
+    \alpha''(t) = u'(t) X_{u} + u'(t)[X_{uu} u'(t) + X_{uv}v'(t)]
+  \] 
+  \[ 
+    + v''(t) X_{v} + v'(t)[X_{vu} u'(t) + X_{vv}v'(t)] 
+  \] 
+  donde
+  \[ 
+    X_{uu} = \Gamma_{11}^{1} X_{u} + \Gamma_{11}^{2} X_{v} + e N^{X}
+  \] 
+  \[ 
+    X_{uv} = \Gamma_{12}^{1} X_{u} + \Gamma_{12}^{2} X_{v} + f N^{X}
+  \] 
+  \[ 
+    X_{uu} = \Gamma_{22}^{1} X_{u} + \Gamma_{22}^{2} X_{v} + g N^{X}
+  \] 
+  y como $\alpha''(t) \perp T_{\alpha(t)}(S)$ tenemos
+  \[ 
+    \langle \alpha''(t){ , }\alpha'(t) \rangle = 0
+  \] 
+  Por tanto, el sistema de ecuaciones
+  \[ 
+    \begin{aligned}
+      \begin{cases}
+        u'' + \Gamma_{11}^{1}(u')^{2} + 2\Gamma_{12}^{1}u' v' + \Gamma_{22}^{1}(v')^{2} = 0 \\
+        v'' + \Gamma_{11}^{2}(u')^{2} + 2\Gamma_{12}^{2}u' v' + \Gamma_{22}^{2}(v')^{2} = 0 \\
+      \end{cases}
+    \end{aligned} 
+  \] 
+  nos permite encontrar geodésicas en coordenadas locales.
+\end{ejm}
+
+\begin{nota}[Símbolos de Christoffel]
+  \[ 
+    \begin{aligned}
+      \begin{cases}
+        \Gamma_{11}^{1} E + \Gamma_{11}^{2} F = \langle X_{uu}{ , }X_{u} \rangle = \frac{1}{2} E_{u} \\
+        \Gamma_{11}^{1} F + \Gamma_{11}^{2} G = \langle X_{uu}{ , }X_{v} \rangle = F_{u} - \frac{1}{2} E_{v} \\
+      \end{cases}
+    \end{aligned} 
+  \] 
+  \[ 
+    \begin{aligned}
+      \begin{cases}
+        \Gamma_{12}^{1} E + \Gamma_{12}^{2} F = \langle X_{uv}{ , }X_{u} \rangle = \frac{1}{2} E_{v} \\
+        \Gamma_{11}^{1} F + \Gamma_{11}^{2} G = \langle X_{uv}{ , }X_{v} \rangle = \frac{1}{2}G_{u} \\
+      \end{cases}
+    \end{aligned} 
+  \] 
+  \[ 
+    \begin{aligned}
+      \begin{cases}
+        \Gamma_{11}^{1} E + \Gamma_{11}^{2} F = \langle X_{vv}{ , }X_{u} \rangle = F_{v} - \frac{1}{2} G_{u} \\
+        \Gamma_{11}^{1} F + \Gamma_{11}^{2} G = \langle X_{vv}{ , }X_{v} \rangle = \frac{1}{2} G_{v} \\
+      \end{cases}
+    \end{aligned} 
+  \] 
+\end{nota}
+
+\begin{ejm}[Geodésicas de Superficie de Revolución]
+  Sea la parametrización 
+  \[ 
+    X(u,v) = (f(v) \cos(u), f(v) \sen(u), g(v)), \quad f(v) \neq 0
+  \] 
+  se tiene que
+  \[ 
+    E = f(v)^{2}, \quad F = 0, \quad G = f'(v)^{2} + g'(v)^{2}
+  \] 
+  Primero obtenemos los símbolos de Christoffel derivando los coeficientes de la primera forma fundamental
+  \[ 
+    E_{u} = 0, \quad E_{v} = 2 f f' 
+  \] 
+  \[ 
+    F_{u} 0, \quad F_{v} = 0, 
+  \] 
+  \[ 
+    G_{u} = 0, \quad G_{v} = 2(f' f'' + g' g'') 
+  \] 
+  Las dos primeras ecuaciones dan
+  \[ 
+    \Gamma_{11}^{1} = 0, \quad \Gamma_{11}^{2} = - \frac{f f'}{(f')^{2} + (g')^{2}} 
+  \] 
+  Las dos segundas dan
+  \[ 
+    \Gamma_{12}^{1} = \frac{f f'}{f^{2}}, \quad \Gamma_{12}^{2} = 0
+  \] 
+  Y Las dos últimas dan
+  \[ 
+    \Gamma_{22}^{1} = 0, \quad \Gamma_{22}^{2} = \frac{f' f'' + g' g''}{f'^{2} + g'^{2}}.
+  \] 
+  Con estos valores, el sistema de ecuaciones diferenciales resultante es
+  \[ 
+    \begin{aligned}
+      \begin{cases}
+        u'' + \frac{2 f f'}{f^{2}}u' v' = 0 \\
+        v'' - \frac{f f'}{(f')^{2} + (g')^{2}}(u')^{2} + \frac{f' f'' + g' g''}{f'^{2} + g'^{2}}(v')^{2} = 0
+      \end{cases}
+    \end{aligned} 
+  \]   
+  \begin{enumerate}[label=(\roman*)]
+    \item   Vemos que $u = \cte$ y $v = v(s)$ son geodésicas. La primera ecuación se satisface si $u = \cte$. En este caso, $u' = 0$ y $u'' = 0$
+  \[ 
+    0 + \frac{2 f f'}{f^{2}} \cdot 0 \cdot v' = 0 
+  \] 
+  y la segunda ecuación resulta
+  \[ 
+    v'' + \frac{f' f'' + g' g''}{(f')^{2} + (g')^{2}} (v')^{2} = 0 
+  \] 
+  Por tanto,
+  \[ 
+    v'' = - \frac{f' f'' + g' g''}{(f')^{2} + (g')^{2}} (v')^{2}
+  \] 
+    \item Vemos que paralelos $v = \cte$, $u = u(s)$ son geodésicas. La primera de las ecuaciones es
+      \[ 
+        u'' + \frac{2 f f'}{f^{2}}u' \cdot 0 = 0
+      \] 
+      \[ 
+        u'' = 0 
+      \] 
+      y la segunda es
+      \[ 
+        \frac{f f'}{(f')^{2} + (g')^{2}}(u')^{2} = 0
+      \] 
+      Por tanto, para que el paralelo $v = \cte$, $u = u(s)$ sea geodésica se debe tener que $u' \neq 0$. Como $f'^{2} + g'^{2} \neq 0$ y $ f \neq 0$, entonces $f' = 0$.
+    \item La primera ecuación se puede escribir como 
+      \[ 
+        (f^{2} u')' = f^{2} u'' + 2 f f' u' v' = 0.
+      \] 
+      Por tanto, 
+      \[ 
+        f^{2} u' = \cte = c 
+      \] 
+      Por otro lado, el ángulo $\theta$ de una geodésica con un paralelo que la interseca es 
+      \[ 
+        \cos(\theta) = \frac{| \langle X_{u}{ , }X_{u} u' + X_{v} v' \rangle |}{| X-u |} = | f u' | 
+      \] 
+      donde $f = r$, entonces
+      \[  
+        r \cos(\theta) = \cte = | c |
+      \] 
+
+  \end{enumerate}
+\end{ejm}
+
+\begin{prop}[Invariancia Geodésica Por Isometrías]
+  El sistema de ecuciones diferenciales de las geodésicas solo depende de los Símbolos de Christoffel, es decir, solo depende de los coeficientes $E, F, G$ de la primera forma fundamental. Por tanto, si $f : S \to S'$ es una isometría local y $\alpha : I \to S$ es geodésica entonces $(f \circ \alpha) : I \to S'$ es geodésica.
+\end{prop}
+
+\begin{ejm}
+  Sea $P$ un plano y $C$ un cilindro. Como $P$ y $C$ son isométricos, $\exists f$ isometría local y por tanto cualquier geodésica en $P$es geodésica en $C$ por la invariancia de las geodésica por isometrías.
+\end{ejm}
+
+\begin{prop}
+  $\forall p \in S$, $\forall v \in T_{p}(S)$, $\exists! \alpha_{p, v} : (-\epsilon, \epsilon) \to S$  geodésica con $\alpha(0) = p$ y $\alpha'(0) = v$.
+\end{prop}
+
+\section{Aplicación Exponencial}
+
+\begin{defn}
+  La aplicación exponencial en un entorno de $p \in S$ es
+  \[ 
+    \exp_{\phi} : B_{\epsilon_{0}} \to  S
+  \] 
+  \[ 
+    v \mapsto \alpha_{p, v} 
+  \] 
+\end{defn}
+
+\begin{prop}
+  \begin{enumerate}[label=(\roman*)]
+    \item La exponencial es continua y diferenciable.
+    \item Es un difeomorfismo en $0$.
+    \item La imagen del rango $\{ \lambda v \}_{\lambda \in [0,1]}$ es una geodésica.
+    \item La imagen de las circinferencias concentricas son ortogonales a las geodésicas radiales.
+    \item Tomando coordenadas polares se tiene 
+      \[ 
+        X(r,\theta) = \exp_{p} (r \cos(\theta), r \sen(\theta)), \quad r \in (0, \epsilon_{0}), \theta \in (0, 2 \pi)
+      \] 
+      satisfa
+      \[ 
+        E = 1, \quad F = 0, \quad \lim_{r \to 0} G = 0, \quad \lim_{r \to 0} \sqrt{G} = 1,
+      \] 
+    \item La curvatura geodésica en las coordenas polares de $\exp_{p}(r,\theta)$ es 
+      \[ 
+        K \circ X = -\frac{\sqrt{G}_{r r}}{\sqrt{G}} 
+      \] 
+    \item Las ecuaciones en estas coordenadas locales son
+      \[ 
+        \begin{aligned}
+          \begin{cases}
+            r'' = \frac{1}{2}G_{r}(\theta')^{2} \\
+            \theta'' = - \frac{G_{r}}{G} \theta' r' - \frac{1}{2} \frac{G_{\theta}}{G}(\theta')^{2}
+          \end{cases}
+        \end{aligned} 
+      \] 
+  \end{enumerate}
+\end{prop}

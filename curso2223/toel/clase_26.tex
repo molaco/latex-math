@@ -59,7 +59,7 @@
 \section{Componentes Conexas}
 
 \begin{defn}
-  Sea $( X, \mathcal{T} )$ e.t., $x \in X$. Se llama componente conexa de $x$, a la unión de todos los subespacios conexos de $( X, \mathcal{T} )$ que contienen a $x$.
+  Sea $( X, \mathcal{T} )$ e.t., $x \in X$. Se llama componente conexa de $x$ a la unión de todos los subespacios conexos de $( X, \mathcal{T} )$ que contienen a $x$.
 \end{defn}
 
 \begin{nota}
@@ -67,23 +67,27 @@
 \end{nota}
 
 \begin{obs}
-  Si $( X, \mathcal{T} )$ e.t., $x \in X, C_{x}$ es el mayor subespacio conexo de $( X, \mathcal{T} )$ que contien a $x$.
+  $C_{x} = \bigcup \{ U \subset X : x \in U \text{ y } U \text{ conexo } \}$
 \end{obs}
 
 \begin{obs}
-  $\forall x, y \in X$, es $C_{x} = C_{y}$ o $C_{x} \cap C_{y} = \neq$.
+  Si $( X, \mathcal{T} )$ e.t., $x \in X$, entonces $C_{x}$ es el mayor subespacio conexo de $( X, \mathcal{T} )$ que contien a $x$.
+\end{obs}
+
+\begin{obs}
+  $\forall x, y \in X$, es $C_{x} = C_{y}$ o $C_{x} \cap C_{y} = \emptyset$.
 \end{obs}
 
 \begin{dem}
-  Si $C_{x} \cap C_{y} \neq \emptyset \Rightarrow C_{x} \cup C_{y} \ni y \subset C_{x}, \subset C_{y} \Rightarrow C_{x} = C_{y}$.
+  Si $C_{x} \cap C_{y} \neq \emptyset \Rightarrow C_{x} \cap C_{y} \ni y$, entonces $y \in C_{x}$ y $y \in C_{y} \Rightarrow C_{x} = C_{y}$.
 \end{dem}
 
 \begin{prop}
-  Si $( X, \mathcal{T} )$ e.t., todas sus componentes son cerras.
+  Si $( X, \mathcal{T} )$ e.t., todas sus componentes son cerradas.
 \end{prop}
 
 \begin{dem}
-  $\forall x \in X, C_{x}$ componente $\Rightarrow \overline{C_{x}}$ conexa y $x \in \overline{C_{x}} \Rightarrow \overline{C_{x} \subset C_{x}} \Rightarrow \overline{C_{x}} = C_{x}$ cerrado.
+$\forall x \in X, C_{x}$ componente $\Rightarrow \overline{C_{x}}$ conexa y $x \in \overline{C_{x}} \Rightarrow C_{x} \subset \overline{C_{x}} \Rightarrow \overline{C_{x}} = C_{x}$ cerrado.
 \end{dem}
 
 \begin{obs}
@@ -99,6 +103,10 @@
 \begin{defn}[Conexión Local]
   Sea $( X, \mathcal{T} )$ e.t.. Se dice que $( X, \mathcal{T} )$ es localmente conexo si $\forall x \in X$ existe alguna base de entornos conexos.
 \end{defn}
+
+\begin{obs}
+  content
+\end{obs}
 
 \begin{obs}
   localmente conexo $\not \Rightarrow$ conexo.

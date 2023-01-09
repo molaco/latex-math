@@ -9,7 +9,7 @@
 \begin{defn}[Sucesión Convergente]
   Sea $\{ z_{n} \}_{n \in \mathbb{N}}$ una sucesión de numeros complejos. Entonces, si
   \[
-    \forall \epsilon > 0, \exists N \in \mathbb{N}: | z_{n} - z_{0} | < \epsilon, \forall n \geq N,
+    \forall \epsilon > 0, \exists N \in \mathbb{N}: | z_{n} - z_{0} | < \epsilon, \quad \forall n \geq N,
   \]
   decimos que $\{ z_{n} \}_{n \in \mathbb{N}}$ converge a $z_{0}$ y lo denotamos $z_{n} \xrightarrow[]{ n \rightarrow \infty } z_{0}$.
 \end{defn}
@@ -46,7 +46,7 @@
 \begin{prop}[Producto de Series]
   Sean $\sum_{n = 0}^{\infty} a_{n}, \sum_{n = 0}^{\infty} b_{n}$ series con $a_{n}, b_{n} \in \mathbb{R}, \forall n \in \mathbb{N}$. Si
   \[ 
-    c_{n} = \sum_{n = 0}^{\infty} b_{n -k} a_{k}
+    c_{n} = \sum_{k = 0}^{n} b_{n -k} a_{k}
   \] 
   entonces,
   \[ 
@@ -59,7 +59,7 @@
 \end{prop}
 
 \begin{defn}[Convergencia Puntual]
-  Sea $f, f_{n}: \Omega \to \mathbb{C}$ funciones, $\{ f_{n} \}_{n \in \mathbb{N}}$ sucesión de funciones tal que $f_{n}(z) \xrightarrow[]{ n \rightarrow \infty } f(z), \forall z \in \Omega$. Entonces, $\{ f_{n} \}_{n \in \mathbb{N}} \xrightarrow[]{ n \rightarrow \infty } f$.
+  Sea $f, f_{n}: \Omega \to \mathbb{C}$ funciones, $\{ f_{n} \}_{n \in \mathbb{N}}$ sucesión de funciones tal que $f_{n}(z) \xrightarrow[]{ n \rightarrow \infty } f(z), \forall z \in \Omega$. Entonces, $\{ f_{n} \}_{n \in \mathbb{N}} \xrightarrow[]{ n \rightarrow \infty } f$ puntualmente.
 \end{defn}
 
 \begin{obs}
@@ -69,9 +69,9 @@
 \begin{defn}[Convergencia Uniforme]
   Sea $f,f_{n}: \Omega \subset \mathbb{C} \to \mathbb{C}$ funciones, $\{ f_{n} \}_{n \in \mathbb{N}}$ sucesión de funciones. Entonces, si
   \[ 
-    \forall \epsilon >0, \exists N \in \mathbb{N}: | f_{n}(z) - f(z) | < \epsilon, \forall n \geq N, \forall z \in \Omega 
+    \forall \epsilon >0, \exists N \in \mathbb{N}: | f_{n}(z) - f(z) | < \epsilon, \quad \forall n \geq N, \forall z \in \Omega,
   \] 
-  entonces decimos que $\{ f_{n} \}_{n \in \mathbb{N}}$ converge converge uniformemente y lo denotamos $\{ f_{n} \}_{n \in \mathbb{N}} \xrightarrow[]{ n \rightarrow \infty } f$ uniformemente.
+  decimos que $\{ f_{n} \}_{n \in \mathbb{N}}$ converge converge uniformemente y lo denotamos $\{ f_{n} \}_{n \in \mathbb{N}} \xrightarrow[]{ n \rightarrow \infty } f$ uniformemente.
 \end{defn}
 
 \begin{obs}
@@ -90,7 +90,11 @@
 \end{obs}
 
 \begin{theo}[Weierstrass]
-  Sea $f_{n}: \Omega \subset \mathbb{C} \to \mathbb{C}$ tal que $\exists M_{n} : | f_{n}(z) | \leq M_{n}, \forall n \in \mathbb{N}, \forall z \in \Omega$. Si $\sum_{n = 1}^{\infty} M_{n}$ converge, entonces $\sum_{n = 1}^{\infty} f_{n}$ converge uniformemente en $ \Omega$
+  Sea $f_{n}: \Omega \subset \mathbb{C} \to \mathbb{C}$ tal que
+  \[
+    \exists M_{n} : | f_{n}(z) | \leq M_{n}, \quad \forall n \in \mathbb{N}, \forall z \in \Omega.
+  \]
+  Si $\sum_{n = 1}^{\infty} M_{n}$ converge, entonces $\sum_{n = 1}^{\infty} f_{n}$ converge uniformemente en $ \Omega$.
 \end{theo}
 
 \begin{obs}

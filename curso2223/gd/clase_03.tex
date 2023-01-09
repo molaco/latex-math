@@ -118,6 +118,39 @@
   \end{enumerate}
 \end{prop}
 
+\section{Movimineto Rígido}
+
+\begin{defn}[Traslación]
+  Sea $v \in \mathbb{R}^{3}$, $A : \mathbb{R}^{3} \to \mathbb{R}^{3}$ aplicación definida por
+  \[ 
+    A(p) = p + v, \quad p \in \mathbb{R}^{3} 
+  \] 
+  se llama traslación.
+\end{defn}
+
+\begin{defn}[Transformación Ortogonal]
+  Sea $\rho : \mathbb{R}^{3} \to \mathbb{R}^{3}$ una aplicación lineal tal que
+  \[ 
+    \rho u \cdot \rho v = u \cdot v, \quad \forall u, v \in \mathbb{R}^{3}
+  \] 
+  Entonces, la aplicación se llama transformación ortogonal.
+\end{defn}
+
+\begin{defn}[Movimineto Rígido]
+  Un movimiento rígido es la composición de una traslación con una transformación ortogonal con determinante positivo.
+\end{defn}
+
+
+
+\begin{prop}
+  Sea $\phi : \mathbb{R}^{3} \to \mathbb{R}^{3}$ un movimiento rígido entonces
+  \begin{enumerate}[label=(\roman*)]
+    \item El ángulo de un vector y el ángulo entre dos vectores es invariante por isometrías.
+    \item El producto vectorial de dos vectores es invatiante por ismetrías.
+    \item La longitud de arco, la curvatura y la torsión de una curva parametrizada son invariantes por movimientos rígidos.
+  \end{enumerate}
+\end{prop}
+
 \section{Fórmulas de Frenet}
 
 \begin{defn}[Curvatura]

@@ -54,11 +54,11 @@
 \begin{dem}
   Sea $f$ con un polo en $a$, entonces
   \[ 
-    f(z) = \frac{g(z)}{(z - a)} 
+    f(z) = \frac{g(z)}{(z - a)^m} 
   \] 
   en un entorno de $a$ en $\Omega$, donde $g$ es holomorfa en un entorno de $a$ y $g(a) \neq 0$. Ahora, 
   \[ 
-    f'(z) = \frac{-m(z - a)^{-m-1} g(z) + (z - a)^{-m} g(z)}{(z - a)^{-m}g(z)} 
+    \frac{f'(z)}{f(z)} = \frac{-m(z - a)^{-m-1} g(z) + (z - a)^{-m} g'(z)}{(z - a)^{-m}g(z)} 
   \] 
   \[ 
     = - \frac{m}{z - a} + \frac{g'(z)}{g(z)}
@@ -66,7 +66,7 @@
   Por tanto, $a$ es polo simple de $\frac{f'(z)}{f(z)}$ y $\Res(\frac{f'}{f}, a)$.
 \end{dem}
 
-\begin{theo}
+\begin{theo}[Principio del Argumento]
   Sea $\Omega$ simplemente conexo, $f : \Omega \to \mathbb{C}$ melomorfa, $\gamma \subset \Omega$ curva cerrada simple que no pasa por ningún cero y ningún polo de $f$. Entonces,
   \[ 
     \int_{\gamma}^{} \frac{f'(z)}{f(z)} dz = 2 \pi i  (Z_{f} - P_{f})
