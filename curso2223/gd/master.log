@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/nixos.org) (preloaded format=pdflatex 1980.1.1)  8 JAN 2023 16:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/nixos.org) (preloaded format=pdflatex 1980.1.1)  12 JAN 2023 19:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1441,110 +1441,110 @@ Package mdframed Info: mdframed detected package amsthm
  [41]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 196.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
-(Font)              using `OT1/cmss/m/sc' instead on input line 199.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
-(Font)              using `OT1/cmss/m/sc' instead on input line 200.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
-(Font)              using `OT1/cmss/m/sc' instead on input line 201.
+(mdframed)              on input line 199.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
 (Font)              using `OT1/cmss/m/sc' instead on input line 202.
 
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
+(Font)              using `OT1/cmss/m/sc' instead on input line 203.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
+(Font)              using `OT1/cmss/m/sc' instead on input line 204.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/scit' undefined
+(Font)              using `OT1/cmss/m/sc' instead on input line 205.
+
 [42]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 238.
+(mdframed)              on input line 241.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 246.
+(mdframed)              on input line 249.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 250.
+(mdframed)              on input line 253.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 256.
+(mdframed)              on input line 259.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 260.
+(mdframed)              on input line 263.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 268.
-Package mdframed Info: Not enough space on this page on input line 270.
+(mdframed)              on input line 271.
+Package mdframed Info: Not enough space on this page on input line 273.
  [43]
-Package mdframed Info: Not enough space on this page on input line 270.
+Package mdframed Info: Not enough space on this page on input line 273.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 272.
+(mdframed)              on input line 275.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 288.
+(mdframed)              on input line 291.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 296.
+(mdframed)              on input line 299.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 305.
+(mdframed)              on input line 308.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 313.
+(mdframed)              on input line 316.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 321.
-Package mdframed Info: Not enough space on this page on input line 323.
+(mdframed)              on input line 324.
+Package mdframed Info: Not enough space on this page on input line 326.
  [44]
-Package mdframed Info: Not enough space on this page on input line 323.
+Package mdframed Info: Not enough space on this page on input line 326.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 329.
+(mdframed)              on input line 332.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 359.
+(mdframed)              on input line 362.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 363.
+(mdframed)              on input line 366.
  [45]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 398.
+(mdframed)              on input line 401.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 411.
+(mdframed)              on input line 414.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 415.
+(mdframed)              on input line 418.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 419.
+(mdframed)              on input line 422.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 423.
+(mdframed)              on input line 426.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 427.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 431.
-Package mdframed Info: Not enough space on this page on input line 432.
- [46]
-Package mdframed Info: Not enough space on this page on input line 432.
+(mdframed)              on input line 430.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 434.
+Package mdframed Info: Not enough space on this page on input line 435.
+ [46]
+Package mdframed Info: Not enough space on this page on input line 435.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 438.
+(mdframed)              on input line 437.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 444.
+(mdframed)              on input line 441.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 447.
  [47]
 Cap\'{\i }tulo 7.
 ) (./clase_08.tex
@@ -1613,6 +1613,9 @@ Overfull \hbox (15.83658pt too wide) detected at line 114
  []
 
 [50]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 173.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 215.
@@ -1684,29 +1687,23 @@ Package mdframed Info: Box was splittet wrong
 LaTeX Info: Redefining \. on input line 27.
 LaTeX Info: Redefining \% on input line 27.
 )
-
-Package rerunfilecheck Warning: File `master.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `master.out':
-(rerunfilecheck)             Before: 28DF8E18D14EA40327DAE102BA007783;5976
-(rerunfilecheck)             After:  909D9F2737ED781B32BEBD16A6A01BE3;5917.
+Package rerunfilecheck Info: File `master.out' has not changed.
+(rerunfilecheck)             Checksum: 909D9F2737ED781B32BEBD16A6A01BE3;5917.
  ) 
 Here is how much of TeX's memory you used:
  24799 strings out of 478278
  476735 string characters out of 5819600
  756991 words of memory out of 5000000
- 42287 multiletter control sequences out of 15000+600000
+ 42286 multiletter control sequences out of 15000+600000
  481944 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  105i,15n,107p,622b,670s stack positions out of 5000i,500n,10000p,200000b,80000s
 </nix/store/08rxkiywagh695h777fgmyqjvj56s3z1-texlive-combined-full-2021-final/share/texmf/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></nix/store/08rxkiywagh695h777fgmyqjvj56s3z1-texlive-combined-full-2021-final/share/texmf/fonts/type1/public/amsfonts/cm/cmex10.pfb></nix/store/08rxkiywagh695h777fgmyqjvj56s3z1-texlive-combined-full-2021-final/share/texmf/fonts/type1/public/amsfonts/cm/cmmi12.pfb></nix/store/08rxkiywagh695h777fgmyqjvj56s3z1-texlive-combined-full-2021-final/share/texmf/fonts/type1/public/amsfonts/cm/cmmi6.pfb></nix/store/08rxkiywagh695h777fgmyqjvj56s3z1-texlive-combined-full-2021-final/share/texmf/fonts/type1/public/amsfonts/cm/cmmi8.pfb></nix/store/08rxkiywagh695h777fgmyqjvj56s3z1-texlive-combined-full-2021-final/share/texmf/fonts/type1/public/amsfonts/cm/cmr12.pfb></nix/store/08rxkiywagh695h777fgmyqjvj56s3z1-texlive-combined-full-2021-final/share/texmf/fonts/type1/public/amsfonts/cm/cmr6.pfb></nix/store/08rxkiywagh695h777fgmyqjvj56s3z1-texlive-combined-full-2021-final/share/texmf/fonts/type1/public/amsfonts/cm/cmr8.pfb></nix/store/08rxkiywagh695h777fgmyqjvj56s3z1-texlive-combined-full-2021-final/share/texmf/fonts/type1/public/amsfonts/cm/cmss12.pfb></nix/store/08rxkiywagh695h777fgmyqjvj56s3z1-texlive-combined-full-2021-final/share/texmf/fonts/type1/public/amsfonts/cm/cmss17.pfb></nix/store/08rxkiywagh695h777fgmyqjvj56s3z1-texlive-combined-full-2021-final/share/texmf/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></nix/store/08rxkiywagh695h777fgmyqjvj56s3z1-texlive-combined-full-2021-final/share/texmf/fonts/type1/public/amsfonts/cm/cmssi12.pfb></nix/store/08rxkiywagh695h777fgmyqjvj56s3z1-texlive-combined-full-2021-final/share/texmf/fonts/type1/public/amsfonts/cm/cmsy10.pfb></nix/store/08rxkiywagh695h777fgmyqjvj56s3z1-texlive-combined-full-2021-final/share/texmf/fonts/type1/public/amsfonts/cm/cmsy6.pfb></nix/store/08rxkiywagh695h777fgmyqjvj56s3z1-texlive-combined-full-2021-final/share/texmf/fonts/type1/public/amsfonts/cm/cmsy8.pfb></nix/store/08rxkiywagh
 695h777fgmyqjvj56s3z1-texlive-combined-full-2021-final/share/texmf/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on master.pdf (56 pages, 332903 bytes).
+Output written on master.pdf (56 pages, 333174 bytes).
 PDF statistics:
- 787 PDF objects out of 1000 (max. 8388607)
- 690 compressed objects within 7 object streams
- 260 named destinations out of 1000 (max. 500000)
+ 788 PDF objects out of 1000 (max. 8388607)
+ 691 compressed objects within 7 object streams
+ 261 named destinations out of 1000 (max. 500000)
  325 words of extra memory for PDF output out of 10000 (max. 10000000)
 

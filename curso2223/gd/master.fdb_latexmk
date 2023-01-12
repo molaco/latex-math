@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1673190260 "master.tex" "master.pdf" "master" 1673190260
+["pdflatex"] 1673546775 "master.tex" "master.pdf" "master" 1673546775
   "../preamble.tex" 1672503513 2542 a8ee994bc1e1bc112d06739bd482fe56 ""
   "/nix/store/08rxkiywagh695h777fgmyqjvj56s3z1-texlive-combined-full-2021-final/share/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1 4410454 e7f7eb07bb7d138e34db4f90d9307300 ""
   "/nix/store/08rxkiywagh695h777fgmyqjvj56s3z1-texlive-combined-full-2021-final/share/texmf-var/web2c/pdftex/pdflatex.fmt" 1 2828760 f828cb784c5d7b4f8c9f73eb38e81246 ""
@@ -196,12 +196,12 @@
   "clase_04.tex" 1672760360 27272 f0e9bcb4091344b0ae0c38e52a7989ad ""
   "clase_05.tex" 1672843778 7119 c613283f484a01119f0bb51a5f692091 ""
   "clase_06.tex" 1673190260 10049 447faf815aab906ca096792b6ab2ff76 ""
-  "clase_07.tex" 1673188829 25561 2b14e91d71533eb60730572a7c4f86bb ""
-  "clase_08.tex" 1672566350 12692 d327fc2d002a54d8b274381f4bbdab1c ""
-  "master.aux" 1673190220 6134 2388e21637d3ebf026fdf6a48bc5d59b "pdflatex"
-  "master.out" 1673190220 5976 28df8e18d14ea40327dae102ba007783 "pdflatex"
+  "clase_07.tex" 1673546774 25626 aa298769ecf05501e936046b3b5bd480 ""
+  "clase_08.tex" 1673446985 12696 96c2dace1c185203a10c5e88e653abfe ""
+  "master.aux" 1673546764 6123 53b5b35b80e22e7cf06c77d4fc67c39f "pdflatex"
+  "master.out" 1673546764 5917 909d9f2737ed781b32bebd16a6a01be3 "pdflatex"
   "master.tex" 1672571158 430 d1eb197c5bfa7409991c750ee485c017 ""
-  "master.toc" 1673190220 3108 0b3f949e32ab0b745890a3ac20e20a53 "pdflatex"
+  "master.toc" 1673546764 3097 a3db977169d234da8b94e35a3f03df06 "pdflatex"
   (generated)
   "master.aux"
   "master.log"
