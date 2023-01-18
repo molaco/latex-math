@@ -8,7 +8,7 @@
   \[ 
      = [(h' * (f_{1} * f_{2})) * h ] 
   \] 
-  donde $ h' * (f_{1}, f_{2}) * h \simeq_{\{ 0,1 \}} (h' * f_{1}) * (f_{2} * h)$. Por tanto,
+  donde $ (h' * (f_{1} * f_{2})) * h \simeq_{\{ 0,1 \}} (h' * f_{1}) * (f_{2} * h)$. Por tanto,
   \[ 
     [(h' * (f_{1} * f_{2})) * h ] = [(h' * f_{1}) * (f_{2} * h)]
   \] 
@@ -47,7 +47,7 @@
 \end{dem}
 
 \begin{defn}[Grupo Fundamental]
-  Sea $X$ e.t. conexo por caminos. Se llama grupo fundamenta de $X$ al grupo $\pi_{1}(X,x), \forall x \in X$.
+  Sea $X$ e.t. conexo por caminos. Se llama grupo fundamental de $X$ al grupo $\pi_{1}(X,x), \forall x \in X$.
 \end{defn}
 
 \begin{nota}
@@ -55,13 +55,13 @@
 \end{nota}
 
 \begin{obs}
-  Sea $X, Y$ e.t. , $x_{0} \in X, \varphi : X \to Y$ aplicación continua. Si $f$ es lazo en $X$ con base $x_{0}$, $\varphi$ es lazo en $Y$ con base $\varphi(x_{0})$. \\
+  Sea $X, Y$ e.t. , $x_{0} \in X, \varphi : X \to Y$ aplicación continua. Si $f$ es lazo en $X$ con base $x_{0}$, $\varphi \circ f$ es lazo en $Y$ con base $\varphi(x_{0})$. \\
 
   Si $g$ es lazo en $X$ tal que $f \simeq_{\{ 0, 1 \}} g$ y $H$ es homotopía de $f$ en $g$ relativa a $\{ 0, 1 \}$, entonces $\varphi \circ f \simeq_{\{ 0, 1 \}} \varphi \circ g$ y $\varphi \circ H$ es homtopía de $\varphi  \circ f$ en $\varphi \circ g$ en $\{ 0, 1 \}$. Por tanto, $\exists \varphi_{*} : \pi_{1}(X, x) \to \pi_{1}(Y, \varphi(x_{0}))$ aplicación.
 \end{obs} 
 
 \begin{prop}
-  Sean $X, Y$ e.t., $x_{0} \in X$, $\varphi : X \to Y$ aplicación continua. Entonces, $\varphi$ induce un homeomorfismo $\varphi_*  : \pi_{1}(X,x) \to \pi_{1}(Y, \varphi(x_{0}))$.
+  Sean $X, Y$ e.t., $x_{0} \in X$, $\varphi : X \to Y$ aplicación continua. Entonces, $\varphi$ induce un homeomorfismo $\varphi_*  : \pi_{1}(X,x) \to \pi_{1}(Y, \varphi(x_{0})): \varphi_*([f]) = [\varphi \circ f] $.
 \end{prop}
 
 \begin{dem}
@@ -100,7 +100,7 @@
     \item Si $X$ e.t., $\forall x_{0} \in X$ si $\varphi = 1_{X}$ entonces, $\varphi_* = 1_{\pi_{1}(X,x_{0})}$.
     \item Si $X, Y, Z$ e.t., $\varphi : X \to Y$ aplicación continua, $\alpha :  Y \to Z$ aplicación continua. Entonces, $(\alpha \circ \varphi)_* = \alpha_* \circ \varphi_*$.
     \item Si $X, Y$ e.t., $x_{0} \in X$, $\varphi : X \to Y$ aplicación continua tal que $\varphi \simeq_{\{ x_{0} \}} \alpha$. Entonces, $\alpha_* = \varphi_*  : \pi_{1}(X, x_{0}) \to \pi_{1}(Y, \varphi(x_{0}))$.
-    \item Si $X$ e.t., $A$ retraxto suyo ($r : X \to A$ retracción y $j : A \to X$ inclusión). Entonces, $r_*$ es epimorfismo y $j_*$ es homeomorfismo.
+    \item Si $X$ e.t., $A$ retracto suyo ($r : X \to A$ retracción y $j : A \to X$ inclusión). Entonces, $r_*$ es epimorfismo y $j_*$ es homeomorfismo.
   \end{enumerate}
 \end{prop}
 
@@ -170,7 +170,10 @@
 \begin{dem}
   $\varphi^{-1} \circ \varphi = 1_{X}$, $\varphi \circ \varphi^{-1} = 1_{Y}$
   \[ 
-    \Rightarrow (\varphi^{-1} \circ \varphi)_* = (\varphi^{-1})_* \circ \varphi_* = 1_{\pi_{1}(X, x_{0})}  y (\varphi \circ \varphi^{-1})_* = \varphi_* \circ \varphi^{-1}_* = 1_{\pi_{1}(Y, \varphi(x_{0}))}
+    \Rightarrow (\varphi^{-1} \circ \varphi)_* = (\varphi^{-1})_* \circ \varphi_* = 1_{\pi_{1}(X, x_{0})}  
+  \] 
+  \[ 
+    (\varphi \circ \varphi^{-1})_* = \varphi_* \circ \varphi^{-1}_* = 1_{\pi_{1}(Y, \varphi(x_{0}))}
   \] 
   $\Rightarrow \varphi_*$ es isomorfismo y $(\varphi_*)^{-1} = (\varphi^{-1})_*$.
 \end{dem}

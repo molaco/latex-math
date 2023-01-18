@@ -1,5 +1,9 @@
 \begin{lem}
-  Sean $X, X'$ e.t., $\psi_{1}, \psi_{2} : X \to X' $, aplicaciones continuas $\psi_{1}, \simeq \psi_{2}$, $x \in X$. Entonces, $\psi_{1}_* = \varphi_{h} \circ \psi $ tal que $\varphi_{h}$ es isomorfismo inducido por un camino $h$ en $X'$ que conecta $\psi_{1}(x)$ con $\psi_{2}(x)$
+  Sean $X, X'$ e.t., $\psi_{1}, \psi_{2} : X \to X' $, aplicaciones continuas $\psi_{1} \simeq \psi_{2}$, $x \in X$. Entonces,
+  \[
+    \psi_{1}_* = \varphi_{h} \circ \psi_{2}_*
+  \]
+  tal que $\varphi_{h}$ es isomorfismo inducido por un camino $h$ en $X'$ que conecta $\psi_{1}(x)$ con $\psi_{2}(x)$
   \[ 
     \varphi_{h}([g]) ] [h * (g * h')] 
   \] 
@@ -15,7 +19,9 @@
   \] 
   entonces $h : I \to X': h(t) \equiv H(x, t)$ es continua tal que
   \[ 
-    h(0) = H(x, 0) = \psi_{1}(x)
+    h(0) = H(x, 0) = \psi_{1}(x),
+  \] 
+  \[ 
     h(1) = H(x, 1) = \psi_{2}(x)
   \] 
   Por tanto,
@@ -37,12 +43,12 @@
   \[ 
     [g] \mapsto \varphi_{n}([g]) = [h * (g * h')],
   \] 
-  Veamos que
+  Entonces,
   \[
-    \psi_{1}([f]) = [\psi_{1} \circ f]
+    \psi_{1}_*([f]) = [\psi_{1} \circ f],
   \]
   \[ 
-    \Rightarrow (\varphi_{h} \circ \psi_{2}_*([f]) = \varphi_{h}([\psi_{2} \circ f]) = [h * (\varphi_{2} \circ f) * h']
+   (\varphi_{h} \circ \psi_{2}_*)([f]) = \varphi_{h}([\psi_{2} \circ f]) = [h * (\psi_{2} \circ f) * h']
   \] 
   Construimos una homotopía tal que $\psi_{1} \circ f \simeq_{\{ 0, 1 \}} h * ((\psi_{2} \circ f) * h')$. Sea $F : I \times I \to X'$
   \[ 
@@ -104,14 +110,14 @@
   \begin{itemize}
     \item F es inyectiva: $[f], [g] \in \pi_{1}(X \times Y, (a, b))$
       \[ 
-        F([f])] = F([g]) \Leftrightarrow p_{i}_*([f]) = p_{i}_*([g]), i \in \{ 1, 2 \}
+        F([f]) = F([g]) \Leftrightarrow p_{i}_*([f]) = p_{i}_*([g]), i \in \{ 1, 2 \}
       \] 
       donde $p_{i}_*([f]) = [p_{i} \circ f],  p_{i}_*([g]) = [p_{i} \circ g]$ y $p_{i} \circ f \simeq_{\{ 0, 1 \}} p_{i} \circ g$
       \[ 
         \Leftrightarrow
         \begin{aligned}
           \begin{cases}
-            \exists H_{1} : I \times I \to X \text{ cont. }
+            \exists H_{1} : I \times I \to X \text{ cont. } \\
             \exists H_{2} : I \times I \to Y \text{ cont. }
           \end{cases}
         \end{aligned} 
@@ -172,7 +178,7 @@
       \[ 
         = (f_{1} * c_{a})(t)
       \] 
-      entonces, $p_{1} \circ f = f_{1}_* c_{a} \simeq_{\{ 0, 1 \}} f_{1}$. También,
+      entonces, $p_{1} \circ f = f_{1}_{y} * c_{a} \simeq_{\{ 0, 1 \}} f_{1}$. También,
       \[ 
         (p_{2} \circ f)(t)  =
         \begin{aligned}
@@ -187,7 +193,7 @@
       \] 
       entonces, $p_{2} \circ f = c_{b} * f_{2} \simeq_{\{ 0, 1 \}} f_{2}$. Por tanto,
       \[ 
-        F([f]) = (p_{1} * [f], p_{2} * [f]) 
+        F([f]) = (p_{1}_*([f]), p_{2}_*([f])) 
       \] 
       \[ 
         = ([p_{1} \circ f], [p_{2} \circ f]) 

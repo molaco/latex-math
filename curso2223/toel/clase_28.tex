@@ -7,7 +7,7 @@
 \end{defn}
 
 \begin{defn}[Punto límite]
-  Sea $( X, \mathcal{T} )$ e.t. $s = ( s_{n} )_{n \in \mathbb{N}}$ sucesión en $X$, $x \in X$. Se dice que $s$ converge a $x$ en $( X, \mathcal{T} )$ (o que $x$ es punto límite de $s$) si $\forall U_{x}$ entorno de $x$, $\exists n_{0} \in \mathbb{N} : s_{n} \in U^{x}, \forall n \geq n_{0}$. 
+  Sea $( X, \mathcal{T} )$ e.t. $s = ( s_{n} )_{n \in \mathbb{N}}$ sucesión en $X$, $x \in X$. Se dice que $s$ converge a $x$ en $( X, \mathcal{T} )$ (o que $x$ es punto límite de $s$) si $\forall U^{x}$ entorno de $x$, $\exists n_{0} \in \mathbb{N} : s_{n} \in U^{x}, \forall n \geq n_{0}$. 
 \end{defn}
 
 \begin{obs}
@@ -62,7 +62,7 @@
   Si $( X, \mathcal{T} )$ e.t., $\forall x \in X, \forall \mathcal{B}(x)$ base de entornos de $x$ es una base de filtro de $\mathcal{V}(X)$.
 \end{ejm}
 
-\begin{prop}
+\begin{prop}[Caracterización Base de Filtro]
   Sea $X$ conjunto no vacío. Una familia $\mathcal{B} \neq \emptyset$ de conjuntos no vacíos es base de filtros para algún filtro de $X$ $\Leftrightarrow \forall B_{1}, B_{2} \in \mathcal{B}, \exists B_{3} \in \mathcal{B} : B_{3} \subset B_{1} \cap B_{2}$.
 \end{prop}
 
@@ -78,11 +78,11 @@
   \end{enumerate}
 \end{dem}
 
-\begin{defn}
+\begin{defn}[Comparación Filtros]
   Sea $X \neq \emptyset$, $\mathcal{F}_{1}, \mathcal{F}_{2}$ dos filtros en $X$. Si $\mathcal{F}_{1} \subset \mathcal{F}_{2}$ se dice que $\mathcal{F}_{2}$ es más fino que $\mathcal{F}_{1}$
 \end{defn}
 
-\begin{defn}
+\begin{defn}[Punto Límite en Filtro]
   Sea $( X, \mathcal{T} )$ e.t., $\mathcal{F}$ filtro en $X$, $x \in X$. Se dice que $\mathcal{F}$ converge a $x$ en $( X, \mathcal{T} )$ (o que $x$ es un punto límite de $\mathcal{F}$) si $\mathcal{V}(x) \subset \mathcal{F}$, es decir, el sistema de entornos de $x$ es más fino que el filtro $\mathcal{F}$.
 \end{defn}
 
@@ -91,7 +91,7 @@
 \end{nota}
 
 \begin{defn}[Aglomeración]  
-  Sea $( X, \mathcal{T} )$ e.t., $\mathcal{F}$ filtro en $X$, $x \in X$. Se dice que $x$ es un punto de aglomeración de $\mathcal{F}$ en $( X, \mathcal{T} )$ si $\forall U^{x}$ entorno de $x$ en $( X, \mathcal{T} )$, $\forall F \in \mathcal{F}$ tal que $U^{x} \cap F \neq \emptyset$.
+  Sea $( X, \mathcal{T} )$ e.t., $\mathcal{F}$ filtro en $X$, $x \in X$. Se dice que $x$ es un punto de aglomeración de $\mathcal{F}$ en $( X, \mathcal{T} )$ si y solo si $\forall U^{x}$ entorno de $x$ en $( X, \mathcal{T} )$, $\forall F \in \mathcal{F}$ tal que $U^{x} \cap F \neq \emptyset$.
 \end{defn}
 
 \begin{obs}
@@ -114,7 +114,7 @@
   $x$ punto de aglomeración de $\mathcal{F} \Leftrightarrow \forall U^{x}, \forall F \in \mathcal{F}, U^{x} \cap F \neq \emptyset \Leftrightarrow \forall F \in \mathcal{F}, x \in \mathcal{F} \Leftrightarrow x \in \bigcap_{F \in \mathcal{F}} \overline{F}$.
 \end{dem}
 
-\begin{prop}
+\begin{prop}[Convergencia Sucesiones]
   Sea $( X, \mathcal{T} )$ e.t. $( x_{n} )_{n \in \mathbb{N}}$ sucesión en $X$, $x \in X$. Entonces, $( x_{n} )_{n \in \mathbb{N}} \xrightarrow[]{ ( X, \mathcal{T} ) } x \Leftrightarrow$ el filtro generado por $\{ \{ x_{n} : n \geq m \} : m \in \mathbb{N} \}$ (familia no vacía de conjuntos no vacíos es base de filtro) converge a $x$ en $( X, \mathcal{T} )$.
 \end{prop}
 
@@ -125,7 +125,7 @@
   \end{enumerate}
 \end{dem}
 
-\begin{prop}
+\begin{prop}[Caracterización Punto Aglomeración]
   Sea $( X, \mathcal{T} )$ e.t., $x \in X, \mathcal{F}$ filtro en $X$. Entonces, $x$ es punto de aglomeración de $\mathcal{F} \Leftrightarrow \exists \mathcal{F}'$ filtro en $X$ tal que $\mathcal{F} \subset \mathcal{F}'$ y $\mathcal{F}' \rightarrow x$.
 \end{prop}
 
@@ -135,7 +135,7 @@
     \item [$(\Rightarrow)$] $x$ punto de aglomeración $\Rightarrow \forall U^{x}$ entorno de $x$, $\forall F \in \mathcal{F}, U^{x} \cap F \neq \emptyset$. Sea $\mathcal{B} = \{ U \cap F : U \in \mathcal{V}(x), F \in \mathcal{F} \}$. Entonces, $\mathcal{B}$ es base de filtro en $X$. Sea $\mathcal{F}'$ el filtro engendrado por $\mathcal{B}$. Veamos que cumple las condiciones.
       \begin{enumerate}[label=(\roman*)]
         \item $\forall F \in \mathcal{F} \Rightarrow F \supset U \cap F, \forall U \in \mathcal{V}(x)$ donde $U \cap F \in \mathcal{B} \subset \mathcal{F}' \Rightarrow F \in \mathcal{F}' \Rightarrow \mathcal{F} \subset \mathcal{F}'$.
-        \item $\forall U \in \mathcal{V}(x), U \supset U \cap F, \forall F \in \mathcal{F}$ donde $U \cap B \in \mathcal{B} \subset \mathcal{F}' \Rightarrow U \in \mathcal{F}' \Rightarrow \mathcal{V}(x) \subset \mathcal{F}' \Leftrightarrow \mathcal{F}' \rightarrow x$.
+        \item $\forall U \in \mathcal{V}(x), U \supset U \cap F, \forall F \in \mathcal{F}$ donde $U \cap F \in \mathcal{B} \subset \mathcal{F}' \Rightarrow U \in \mathcal{F}' \Rightarrow \mathcal{V}(x) \subset \mathcal{F}' \Leftrightarrow \mathcal{F}' \rightarrow x$.
       \end{enumerate}
     \item [$(\Leftarrow)$] Suponemos que $\mathcal{F}'$ filtro tal que $\mathcal{F} \subset \mathcal{F}'$ y $\mathcal{F} \rightarrow x$. Entonces, $\forall U \in \mathcal{V}(x) \subset \mathcal{F}', \forall F \in \mathcal{F}\subset \mathcal{F}' \Rightarrow U, F \in \mathcal{F}' \Rightarrow U \cap F \in \mathcal{F}' \Rightarrow U \cap F \neq \emptyset \Rightarrow x$ punto de aglomeración de $\mathcal{F}$.
   \end{enumerate}

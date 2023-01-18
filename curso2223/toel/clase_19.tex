@@ -1,7 +1,10 @@
 \begin{obs}
   Si $( X, \mathcal{T} )$ e.t. 1º axioma entonces, $\forall x \in X, \exists \mathcal{B}(x) = \{  B_{n}^{x} : n \in \mathbb{N} \} :  B_{n+1}^{x} \subset B_{n}^{x}, \forall n \in \mathbb{N}$. \\
+\end{obs}
 
-  \underline{Dem:} $\forall x \in X, \exists \{  V_{n}^{x} : n \in \mathbb{N} \}$ base de entornos numerable. 
+\begin{dem}
+  
+  $\forall x \in X, \exists \{  V_{n}^{x} : n \in \mathbb{N} \}$ base de entornos numerable. 
   \[ 
     B_{1}^{x} = V_{1}^{x}
   \] 
@@ -15,7 +18,8 @@
     B_{n}^{x} = \cap_{k=1}^{n} V_{k}^{x} 
   \] 
   entonces $B_{n}^{x} \subset V_{n}^{x}$ y $B_{n+1}^{x} \subset B_{n}^{x}$
-\end{obs}
+
+\end{dem}
 
 \begin{defn}[Sucesión Convergente]
   Sea $( X, \mathcal{T} )$ e.t., $( x_{n} )_{n \in \mathbb{N}} \subset X$. Entonces, $( x_{n} )_{n \in \mathbb{N}} \rightarrow x \in X \Leftrightarrow \forall \mathcal{U}^{x}$ entorno de $x$ in $( X, \mathcal{T} )$, $\exists n_{0} \in \mathbb{N} : x_{n} \in \mathcal{U}^{x}, \forall n \geq n_{0}$.
@@ -33,7 +37,7 @@
 
 \begin{dem}
   \begin{enumerate}[label=(\roman*)]
-    \item
+    \item []
     \item
       \begin{enumerate}[label=(\roman*)]
         \item []

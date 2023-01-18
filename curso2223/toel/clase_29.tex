@@ -6,7 +6,7 @@
   $f(\mathcal{F})$ denota el filtro engendrado por la base $\{ f(F) : F \in \mathcal{F} \}$.
 \end{nota}
 
-\begin{prop}
+\begin{prop}[Continuidad Aplicaciones]
   Sea $( X, \mathcal{T} ), ( X', \mathcal{T}' )$ e.t., $f : X \to X'$ aplicación, $x \in X$. Entonces, $f$ es continua en $x$ $\Leftrightarrow \forall \mathcal{F}$ en $X$ tal que $\mathcal{F} \xrightarrow[]{  ( X, \mathcal{T} )  } x$ se tiene que $f(\mathcal{F}) \xrightarrow[]{ ( X, \mathcal{T} ) } f(x)$.
 \end{prop}
 
@@ -31,18 +31,18 @@
 \end{dem}
 
 \begin{prop}[Axioma de Zernado]
-  Todo conjunto no vacío admite alguna "buena" ordenación (cada subconjunto tiene primer elemento).
+  Todo conjunto no vacío admite alguna buena ordenación (cada subconjunto tiene primer elemento).
 \end{prop}
 
 \begin{prop}[Axioma de Zorn]
-  Dado un conjunto ordena tal que toda cadena suya ( subconjunto totalmente ordenado ) tiene cota superior, entonces el conjunto tiene algún elemento maximal.
+  Dado un conjunto ordenado tal que toda cadena suya ( subconjunto totalmente ordenado ) tiene cota superior, entonces el conjunto tiene algún elemento maximal.
 \end{prop}
 
 \begin{defn}[Ultrafiltro]
-  Sea $X$ conjutno, $\mathcal{F }$ filtro en $X$. Se dice que $\mathcal{F}$ es ultrafiltro si es maximal. (e.d. si no hay filtro estrictamente más fino que $\mathcal{F}$).
+  Sea $X$ conjunto, $\mathcal{F }$ filtro en $X$. Se dice que $\mathcal{F}$ es ultrafiltro si es maximal. (e.d. si no hay filtro estrictamente más fino que $\mathcal{F}$).
 \end{defn}
 
-\begin{prop}
+\begin{prop}[Existencia Ultrafiltro]
   Sea $X$ conjunto, $\mathcal{F}$ filtro en $X$. Entonces, existe algún ultrafiltro más fino que $\mathcal{F}$.
 \end{prop}
 
@@ -55,7 +55,7 @@
   donde $\mathcal{F} \subset \mathcal{F}_{j_{0}} \subset \bigcup_{j \in J} \mathcal{F}_{j}, \forall j_{0} \in J$. Estamos en condicones de aplicar el Axioma de Zorn, entonces $\exists$ elemento maximal de $\mathcal{Y} \Rightarrow \mathcal{G}$ ultrafiltro, $\mathcal{F} \subset \mathcal{G}$.
 \end{dem}
 
-\begin{prop}
+\begin{prop}[Caracterización Ultrafiltro]
   Sea $X$ conjunto $\mathcal{F}$ filtro en $X$. Entonces, $\mathcal{F}$ es ultrafiltro $\Leftrightarrow \forall E \subset X, E \in \mathcal{F} \text{ o } X \setminus E \in \mathcal{F}$.
 \end{prop}
 
@@ -68,11 +68,11 @@
 \end{dem}
 
 \begin{prop}
-  Sea $X$ conjunto, $f : X \to Y$ aplicación. Si $\mathcal{F}$ es ultrafiltro en $X$, entonces $f(\mathcal{F})$ es ultrafiltro en $\mathcal{Y}$.
+  Sea $X, Y \neq \emptyset$ conjuntos, $f : X \to Y$ aplicación continua. Si $\mathcal{F}$ es ultrafiltro en $X$, entonces $f(\mathcal{F})$ es ultrafiltro en $\mathcal{Y}$.
 \end{prop}
 
 \begin{dem}
-  $\forall E \subset Y \Rightarrow f^{-1}(E) \subset X$. Entonces, como $\mathcal{F}$ es ultrafiltro, tenemos que $f^{-1}(E) \in \mathcal{F}$ o $(X \setminus f^{-1}) \in \mathcal{F}$.
+  $\forall E \subset Y \Rightarrow f^{-1}(E) \subset X$. Entonces, como $\mathcal{F}$ es ultrafiltro, tenemos que $f^{-1}(E) \in \mathcal{F}$ o $X \setminus f^{-1}(E) \in \mathcal{F}$.
   \begin{itemize}
     \item Si $f^{-1}(E) \in \mathcal{F} \xRightarrow[]{ f(f^{-1}(E)) \subset E } E \in f(\mathcal{F})$.
     \item Si $X \setminus f^{-1}(E) \in \mathcal{F} \xRightarrow[]{ f(X \setminus f^{-1}(E)) \subset Y \setminus E } Y \setminus E \in f(\mathcal{F})$.

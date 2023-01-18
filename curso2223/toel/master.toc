@@ -8,7 +8,7 @@
 \contentsline {section}{\numberline {1.5}Funciones continuas}{17}{section.1.5}%
 \contentsline {section}{\numberline {1.6}Espacio Producto}{20}{section.1.6}%
 \contentsline {section}{\numberline {1.7}Espacio Cociente}{23}{section.1.7}%
-\contentsline {section}{\numberline {1.8}Espacio Suma}{26}{section.1.8}%
+\contentsline {section}{\numberline {1.8}Espacio Suma}{25}{section.1.8}%
 \contentsline {chapter}{\numberline {2}Propiedades de Separación}{28}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Espacio Hausdorff}{28}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Espacio Regular}{32}{section.2.2}%
@@ -33,3 +33,6 @@
 \contentsline {section}{\numberline {6.3}Resultados}{91}{section.6.3}%
 \contentsline {part}{II\hspace {1em}Topología Algebráica}{97}{part.2}%
 \contentsline {chapter}{\numberline {7}Homotopía}{98}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Homotopía}{98}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Retracciones, Producto y Lazos}{103}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Grupo Fundamental}{105}{section.7.3}%

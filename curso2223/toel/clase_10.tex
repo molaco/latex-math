@@ -62,12 +62,6 @@ VER DIBUJO(Revisar abierta o continua)
 
 \section{Espacio Cociente}
 
-\begin{note}
-  La topología cociente es una construcción que formaliza la idea de "pegar". Decimos que $\mathcal{R}$ es una relación de equivalencia en un conjunto $X$ si es reflexiva, simétrica y transitiva. Una relación $\mathcal{R}$ en $X$ parte $X$ en clases de eqivalencia, denotadas $[ x ], \forall x \in X$. \\
-
-  La idea principal es, dado un espacio topológico $( X, \mathcal{T} )$ queremos describir como se pegan las cosas juntas en $( X, \mathcal{T} )$ mediante la definición de una relación de equivalencia. Dos puntos $x_{1}, x_{2}$ están relacionados si $x_{1} \mathcal{R} x_{2}$, se podría decir que $x_{1}, x_{2}$ se pegan entre si. Entonces, definimos una topología en el conjunto de clases de equivalencia $X / \mathcal{R}$ que conserve la topología en $X$ para aquellos puntos que no están relacionados y que "pegue" correctamente.
-\end{note}
-
 \begin{defn}[Topología Cociente]
   Sea $( X, \mathcal{T} )$ e.t., $Y \neq \emptyset, f: X \to Y$. Se llama topología cociente inducida por $f $ a $\mathcal{T}_{f} = \{ G \subset Y : f^{-1}(G) \in \mathcal{T} \}$. El par $( X , \mathcal{T}_{f})$ se llama espacio topológico cociente inducido por $f$.
 \end{defn}

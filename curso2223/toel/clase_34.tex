@@ -37,7 +37,7 @@
 \end{defn}
 
 \begin{obs}
-  Para que exista el producto de dos caminos $f$ y $g$, es imprescindible que $f(1) = 0$
+  Para que exista el producto de dos caminos $f$ y $g$, es imprescindible que $f(1) = g(0)$.
 \end{obs}
 
 \begin{defn}[Lazo]
@@ -49,7 +49,7 @@
 \end{obs}
 
 \begin{defn}[Lazos Homótopos]
-  Sea $X$ e.t., $x_{0} \in X$. Dos lazos $f$ y $g$ de $X$ con base $x_{0}$, se llaman homótopos si $f \simeq_{\{ 0, 1 \}}$.
+  Sea $X$ e.t., $x_{0} \in X$. Dos lazos $f$ y $g$ de $X$ con base $x_{0}$, se llaman homótopos si $f \simeq_{\{ 0, 1 \}} g$.
 \end{defn}
 
 \begin{nota}
@@ -57,7 +57,7 @@
 \end{nota}
 
 \begin{prop}
-  Sea $X$ e.t., $f_{1}, g_{1}$ caminos en $X$ tal que $f_{1} \simeq_{\{ 0, 1 \}} g_{1}$ y $f_{2}, g_{2}$ tal que $f_{2} \simeq_{\{ 0, 1 \}}$, y $f_{1}(1) = f_{2}(0)$. Entonces, $f_{1} * f_{2} \simeq g_{1} * g_{2}$.
+  Sea $X$ e.t., $f_{1}, g_{1}$ caminos en $X$ tal que $f_{1} \simeq_{[0, 1 ]} g_{1}$ y $f_{2}, g_{2}$ caminos en $X$ tal que $f_{2} \simeq_{[0, 1 ]} g_{2}$, y $f_{1}(1) = f_{2}(0)$. Entonces, $f_{1} * f_{2} \simeq_{ [0, 1 ]} g_{1} * g_{2}$.
 \end{prop}
 
 \begin{obs}
@@ -153,15 +153,17 @@
 \end{dem}
 
 \begin{cor}
-  Sea $X$ e.t., $x_{0} \in X$, $f_{1}, g_{2}$ lazos en $X$ con base $x_{0}$ tal que son homótopos $([f_{1}] = [g_{1}])$, $f_{2}, g_{2}$ lazos en $X$ con base $x_{0}$ tal que ($[f_{2}] = [g_{2}]$). Entonces, $[f_{q} * f_{2}] = [g_{1} * g_{2}]$
+  Sea $X$ e.t., $x_{0} \in X$, $f_{1}, g_{1}$ lazos en $X$ con base $x_{0}$ tal que son homótopos $([f_{1}] = [g_{1}])$, $f_{2}, g_{2}$ lazos en $X$ con base $x_{0}$ tal que ($[f_{2}] = [g_{2}]$). Entonces, $[f_{1} * f_{2}] = [g_{1} * g_{2}]$
 \end{cor}
 
-\begin{defn}
+\section{Grupo Fundamental}
+
+\begin{defn}[Operación, Producto de Lazos]
   Sea $X$ e.t., $x_{0} \in X$, $\forall [f], [g] \in \pi(X, x_{0})$. Se define $[f] * [g] = [f * g]$.
 \end{defn}
 
 \begin{theo}
-  Sea $X$ e.t., $x_{0} \in X$, $x_{0} \in X$, $(\pi_{1}(X, x_{0}))$ es un grupo.
+  Sea $X$ e.t., $x_{0} \in X$, $(\pi_{1}(X, x_{0}))$ es un grupo.
 \end{theo}
 
 \begin{dem}
@@ -187,7 +189,7 @@
         \begin{aligned}
           \begin{cases}
             f(2t), \quad 0 \leq t \leq \frac{1}{2} \\
-            g(4t - 2), \quad \frac{1}{2} \leq t \leq \frac{1}{4} \\
+            g(4t - 2), \quad \frac{1}{2} \leq t \leq \frac{3}{4} \\
             h(4t - 3), \quad \frac{3}{4} \leq t \leq 1
           \end{cases}
         \end{aligned} 
@@ -242,13 +244,13 @@
     \[
       \Leftrightarrow \forall f \text{ lazo con base } x_{0}, f * c \simeq_{0, 1} f \simeq_{0, 1} c * f
     \]
-    $\forall t \in I, [0, 1] = [0, \frac{1 - t}{2}] \cup [\frac{1 - t}{2}, 1]$, $\lambda  \frac{2s - 1 + t}{1 + t}$. Sea $H : I^{2} \to X$ definida por 
+    $\forall t \in I, [0, 1] = [0, \frac{1 - t}{2}] \cup [\frac{1 - t}{2}, 1]$, $\lambda = \frac{2s - 1 + t}{1 + t}$. Sea $H : I^{2} \to X$ definida por 
     \[ 
       H(s,t) =
       \begin{aligned}
         \begin{cases}
           x_{0}, \quad 0 \leq s \leq \frac{1 - t}{2} \\
-          f(\frac{2s - 1 + t}{1 - t}), \quad \frac{1 - t}{2} \leq s \leq 1
+          f(\frac{2s - 1 + t}{1 + t}), \quad \frac{1 - t}{2} \leq s \leq 1
         \end{cases}
       \end{aligned} 
     \] 
@@ -274,7 +276,7 @@
     \[ 
       H(1, t) = f(1) = (c * f)(1);
     \] 
-    Por tanto, $f * c \simeq_{\{ 0,1 \}}f$. Análogamente $f * c \simeq_{\{ 0,1 \}} c * f$.
+    Por tanto, $f * c \simeq_{\{ 0,1 \}}f$. Análogamente $c * f \simeq_{\{ 0,1 \}} f$.
     
   \item Elemento simétrico: $\forall f$ camino en $X$, $f' : I \to X$ definifa por $f'(t) = f(1 - t)$ camino opuesto. $\forall [f] \in \pi_{1}(X, x_{0})$ veamos que 
     \[ 
