@@ -1,6 +1,7 @@
-\documentclass[25pt,oneside]{book}
+\documentclass[oneside]{book}
 \usepackage[spanish]{babel}
 %\usepackage[a4paper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+\usepackage{tikz}
 \usepackage{amsfonts} 
 \usepackage{mathrsfs}
 \usepackage{amssymb}
@@ -9,6 +10,20 @@
 \usepackage{setspace}
 \usepackage{mdframed}
 \usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{bbm}
+\usepackage{import}
+\usepackage{pdfpages}
+\usepackage{transparent}
+\usepackage{xcolor}
+\usepackage{color}   %May be necessary if you want to color links
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true, %set true if you want colored links
+    linktoc=all,     %set to all if you want both sections and subsections linked
+    linkcolor=blue,  %choose some color if you want links to stand out
+}
+
 %\usepackage[T1]{fontenc}
 %\setmainfont{Times New Roman}
 \renewcommand\familydefault{\sfdefault}
@@ -31,6 +46,7 @@
 \newmdtheoremenv{lem}{Lema}[theo]
 \newmdtheoremenv{defn}{Definición}[chapter]
 \newmdtheoremenv{prop}{Proposición}[chapter]
+\newmdtheoremenv{ejr}{Ejercicio}
 \surroundwithmdframed[
   topline=false,
   rightline=false,
@@ -49,6 +65,30 @@
 \newtheorem*{dem}{Demostración}
 \newtheorem*{ejm}{Ejemplo}
 \newtheorem*{nota}{Notación}
+\newtheorem*{note}{Nota}
 \newtheorem*{cons}{Consecuencia}
+\newtheorem*{sol}{Solución}
+
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\Arg}{Arg}
+\DeclareMathOperator{\card}{card}
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\Fr}{Fr}
+\DeclareMathOperator{\Res}{Res}
+\DeclareMathOperator{\Agl}{Agl}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\Ree}{Re}
+\DeclareMathOperator{\dv}{div}
+\DeclareMathOperator{\Log}{Log}
+\DeclareMathOperator{\cte}{cte.}
+\DeclareMathOperator{\exp}{exp}
+
+\newcommand{\incfig}[2][1]{%
+    \def\svgwidth{#1\columnwidth}
+    \import{./figures/}{#2.pdf_tex}
+}
+
+\pdfsuppresswarningpagegroup=1
 
 \author{Hugo Del Castillo Mola}

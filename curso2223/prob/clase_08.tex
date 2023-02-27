@@ -1,0 +1,514 @@
+\chapter{Vectores Aleatorios}
+
+\section{Función Distribución en $\mathbb{R}^{2}$}
+
+\begin{defn}[Distribución Propia]
+  Sea $ (\mathbb{R}^{2}, \mathbb{B}_{2}) $, $F : \mathbb{R}^{2} \to \mathbb{R}$ función de distribución. Si se verifica que
+  \begin{enumerate}[label=(\roman*)]
+    \item $\forall a, b \in \mathbb{R}^{2} : a \leq b$ se tiene que $F(a, b] \geq 0$.
+    \item $F$ es continua por la derecha, es decir, $\lim_{n \to \infty} F(x_{n}) = F(x)$, donde $( x_{n} )_{n \in \mathbb{N}} \subset \mathbb{R}^{2}$.
+    \item $\lim_{x_{1}, x_{2} \rightarrow \infty} F(x_{1}, x_{2}) = 1$.
+    \item $\lim_{x_{1} \rightarrow - \infty} F(x_{1}, x_{2}) = 0, \forall x_{2}$ y $\lim_{x_{2} \rightarrow - \infty} F(x_{1}, x_{2}) = 0, \forall x_{1}$
+  \end{enumerate}
+\end{defn}
+
+\begin{theo}
+  Sea $P$ probabilidad en $ (\mathbb{R}^{2}, \mathbb{B}_{2}) $, $F : \mathbb{R}^{2} \to \mathbb{R}$ definida por
+  \[ 
+    F(x_{1}, x_{2}) = P(-\infty, x].
+  \] 
+  Entonces, $F$ es una función de distribución propia.
+\end{theo}
+
+\begin{obs}
+  A la función de distribución propia $F$ se le llama función de distribución asociada a la probabilidad $P$.
+\end{obs}
+
+\begin{defn}[Vector Aleatorio]
+  Sea $(\Omega, \mathcal{A}, P )$ espacio de probabilidad. Entonces, la aplicación
+  \[ 
+    X = (X_{1}, \cdots, X_{n}) : (\Omega, \mathcal{A}, P ) \to \mathbb{R}^{n}
+  \] 
+  definida por
+  \[ 
+    X(\omega) = (X_{1}(\omega), \cdots, X_{n}(\omega)), \quad w \in \Omega
+  \] 
+  es una variable aleatoria $n$-dimensional si y solo si
+  \[ 
+    X^{-1}(B) = (X_{1}, X_{2}, \cdots, X_{n})\in(B) \in \mathcal{A}, \quad \forall B \in B_{n} 
+  \] 
+\end{defn}
+
+\begin{theo}
+  $X = (X_{1}, \cdots, X_{n}) $ es una variable aleatoria multidimensional si y solo si $X_{i}$ es variable aleatoria unidimensional $\forall i \in \{ 1, \cdots n \}$.
+\end{theo}
+
+\section{Ley de Probabilidad de un Vector Aleatorio}
+
+\begin{prop}[Probabilidad Inducida por $X$ en $\mathbb{R}^n$]
+  Sea $(\Omega, \mathcal{A}, P )$ espacio de probabilidad, $X = (X_{1}, \cdots, X_{n})$ vector aleatorio. Entonces, $X$ induce una probabilidad 
+  \[ 
+    \mathbb{P}_{X} \{ B \} = \mathbb{P} \{ X^{-1}(B) \} = \mathbb{P} \{ A \}
+  \] 
+  donde $X(A) = B, \forall B$. A la aplicación $\mathbb{P}_{X}$ la llamamos probabilidad inducida por $X$ en $\mathbb{R}^n$.
+\end{prop}
+
+\section{Función de Distribución Inducida por Variable Aleatoria Unidimensional}
+
+\begin{theo}
+  Sea $F : \mathbb{R}^{2} \to [0,1] $ una función. Entonces, $F$ es una función de distribución si y solo si se verifica
+  \begin{enumerate}[label=(\roman*)]
+    \item $F(-\infty, y) = 0 = F(x, -\infty) $.
+    \item $F( + \infty, + \infty) = 1$.
+    \item $F(x,y)$ es continua por la derecha.
+    \item $F(x,y) \geq 0, \forall (x,y) \in \mathbb{R}^{2}$.
+  \end{enumerate}
+\end{theo}
+
+\begin{obs}
+  Este teorema se puede generalizar al caso $n$-dimensional.
+\end{obs}
+
+\section{Función de Masa en $\mathbb{R}^{2}$}
+
+\begin{defn}[Función de Masa en $\mathbb{R}^{2}$]
+  Sea $(X,Y)$ v.a. en $(\Omega, \mathcal{A}, P )$ espacio de probabilidad. Entonces, la función $p_{XY} : \mathbb{R}^{2} \to \mathbb{R}$ definida por
+  \[ 
+    p_{XY}(x,y) = \mathbb{P} \{ X = x, Y = y \}
+  \] 
+  \[ 
+    = F(x,y) - F(x^{-}, y) - F(x, y^{-}) + F(x^{-}, y^{-}) \geq 0, \quad \forall (x,y) \in \mathbb{R}^{2}
+  \] 
+  se llama función de masa de $(X,Y)$.
+\end{defn}
+
+\begin{theo}
+  Sea $(X,Y)$ v.a. con función de masa $p_{XY}$ y sea
+  \[ 
+    D_{XY} = \{ (x, y) \in \mathbb{R}^{2} : p_{XY}(x,y) > 0 \}.
+  \] 
+  Entonces, $D_{XY}$ es un conjunto numerable.
+\end{theo}
+
+\section{Variable Aleatoria Bidimensional Discreta}
+
+\begin{defn}[Variable Aleatoria Bidimensional Discreta]
+  Sea $(X,Y)$ v.a. con función de masa $p_{XY}$ y sea 
+  \[ 
+    D_{XY} = \{ (x,y) \in \mathbb{R}^{2} : p_{XY}(x,y) > 0 \}
+  \] 
+  donde $D_{XY} \neq \emptyset$ y $\sum_{(x,y) \in D_{XY}} p_{XY}(x,y) = 1$. Entonces, $(X, Y)$ se llama v.a. discreta y $D_{XY}$ es su soporte.
+\end{defn}
+
+\begin{defn}[Punto de Salto]
+  Sea $(X, Y)$ v.a. discreta, entonces $\forall (x,y) \in \mathbb{R}^{2}$ tal que
+  \[
+    p_{XY}(x,y) > 0
+  \]
+  se llama punto de salto o discontinidad de salto. Y $D_{XY}$ es el conjunto de puntos de salto.
+\end{defn}
+
+\begin{defn}[Función de Distribución de Variable Aleatoria Bidimensional Discreta]
+  Sea $(X, Y)$ v.a. discreta. Entonces,
+  \[ 
+    F(x,y) = \sum_{x_{i} \leq x, \ y_{i} \leq y} p_{XY}(x_{i}, y_{i})
+  \]
+  es su función de distribución.
+\end{defn}
+
+\begin{theo}
+  Una colección de números no negativos $\{ p(x,y): x = 1, 2,\cdots ; y = 1, 2, \cdots \}$ que satisface
+  \[ 
+    \sum_{x = 1, y = 1}^{\infty} p(x, y) = 1
+  \] 
+\end{theo}
+
+\section{Función De Densidad en $\mathbb{R}^{2}$}
+
+\begin{defn}[Función de Densidad en $\mathbb{R}^{2}$]
+  Una función $f : \mathbb{R}^{2} \to \mathbb{R}$ se llama función de densidad si 
+  \begin{enumerate}[label=(\roman*)]
+    \item $\forall (x,y) \in \mathbb{R}^{2}, f(x,y) \geq 0$.
+    \item $f$ es integrable Riemann en $\mathbb{R}^{2}$.
+    \item $\int_{- \infty}^{+ \infty} \int_{-\infty}^{+\infty} f(x,y) dx dy = 1$.
+  \end{enumerate}
+\end{defn}
+
+\begin{theo}
+  Sea $f$ un función de densidad en $\mathbb{R}^{2}$. Definimos la función
+  \[ 
+    F : \mathbb{R}^{2} \to \mathbb{R} 
+  \] 
+  \[ 
+    (x,y) \mapsto F(x, y) = \int_{-\infty}^{x} \int_{-\infty}^{y} f(u,v) du dv
+  \] 
+  Entonces, $F$ es función de distribución en $\mathbb{R}^{2}$.
+\end{theo}
+
+\begin{theo}
+  Sea $f$ función de densidad en $\mathbb{R}^{2}$ y $F$ función de distribución en $\mathbb{R}^{2}$ definida por
+  \[ 
+    F(x,y) = \int_{-\infty}^{x} \int_{-\infty}^{y} f(u,v) du dv, \quad \forall (x,y) \in \mathbb{R}^{2}
+  \] 
+  Si $f$ es continua y $F \in \mathcal{C}^{2}$, entonces
+  \[ 
+    \frac{\partial^2{F(x_{1},y_{1})}}{\partial{x} \partial{y}} = \frac{\partial^2{F(x_{1},y_{1})}}{\partial{y} \partial{x}} = f(x_{1}, y_{1})
+  \] 
+\end{theo}
+
+\section{Variable Aleatoria Bidimiensional Continua}
+
+\begin{defn}[Variable Aleatoria Bidimensional Continua]
+  Sea $(X,Y)$ v.a. Si su función de distribución $F$ se puede expresar como
+  \[ 
+    F(x,y) = \int_{-\infty}^{x} \int_{-\infty}^{y} f(u,v) du dv, \quad \forall (x,y) \in \mathbb{R}^{2}.
+  \] 
+  Entonces, se dice que $(X,Y)$ es v.a. continua y
+  \[ 
+    C_{XY} = \{ (x,y) \in \mathbb{R}^{2} : f(x,y) > 0 \} 
+  \] 
+  se llama soporte continuo de $(X,Y)$.
+\end{defn}
+
+\begin{obs}
+  Como $f$ es función de densidad se tiene que
+  \[ 
+    \iint_{C_{XY}}^{} f(u,v) dudv = 1 
+  \] 
+\end{obs}
+
+\begin{theo}
+  Si $f : \mathbb{R}^{2} \to \mathbb{R}$ es una función no negativa, integrable Riemann en $\mathbb{R}^{2}$ y
+  \[ 
+    \int_{-\infty}^{+ \infty} \int_{-\infty}^{+\infty} f(x,y) dx dy = 1 
+  \] 
+  entonces $f$ es la función de densidad de alguna variable aleatoria bidimensional continua.
+\end{theo}
+
+\section{Distribuciones Marginales}
+
+\begin{theo}
+  Sea $(X,Y)$ v.a. discreta con función de masa $p_{XY}$ y soporte $D_{XY}$. Entonces, $X$ es una v.a. unidimensional discreta con soporte $D_{X}$, e $Y$ es una v.a. unidimensional discreta cons soporte $D_{Y}$.
+\end{theo}
+
+\begin{defn}[Funciones de Densidad Marginales]
+  Sea $f$ una función de densidad en $\mathbb{R}^{2}$. Entonces, las funciones
+  \[ 
+    f_{1} : \mathbb{R} \to \mathbb{R} 
+  \] 
+  \[ 
+    u \mapsto \int_{-\infty}^{+\infty} f(u,v) dv 
+  \] 
+  \[ 
+    f_{2} : \mathbb{R} \to \mathbb{R} 
+  \] 
+  \[ 
+    v \mapsto \int_{-\infty}^{+\infty} f(u,v) du 
+  \] 
+  se llaman funciones de densidad marginales.
+\end{defn}
+
+\begin{obs}
+  $f_{1}$ y $f_{2}$ son funciones de densidad.
+\end{obs}
+
+\begin{defn}[Función de Distribución Marginal]
+  Sea $(X_{1},X_{2})$ v.a. y $F(x_{1},x_{2})$ su función de distribución. Entonces, llamamos función des distribución marginal respecto de $X_{i}$ a
+  \[ 
+    F_{i} = F(x_{i}, + \infty) = \mathbb{P} \{ X_{i} \leq x_{i}, X_{j} \in \mathbb{R} \}
+  \] 
+  \[ 
+    = \mathbb{P} \{ (- \infty, x_{i}] \times \mathbb{R} \} 
+  \] 
+  \[ 
+    = \lim_{x_{j} \to \infty} F(x_{i}, x_{j}) 
+  \] 
+  donde $i, j \in \{ 1, 2 \}, i \neq j$.
+\end{defn}
+
+\begin{theo}
+  Sea $(X_{1}, X_{2})$ v.a. continua con función de densidad $f$ y soporte continuo $C_{X_{1} X_{2}}$. Entonces,
+  \[ 
+    C_{X_{i}} = \pi_{i}(C_{X_{1}, X_{2}})
+  \] 
+  es el soporte de $X_{i}$ con función de densidad marginal $f_{1}$.
+\end{theo}
+
+\section{Distribuciones Condicionadas}
+
+\begin{defn}[Función de Masa Condicionada]
+  Sea $(X,Y)$ v.a. discreta con función de masa $p_{XY}$ y soporte $D_{XY}$. Entonces, la función $p(x|b) : \mathbb{R} \to \mathbb{R}$ definida por
+  \[ 
+    p(x|b) =
+    \begin{aligned}
+      \begin{cases}
+        \frac{p_{XY}(x, b)}{p_{Y}(b)}, \quad (x, b) \in D_{XY} \\
+        0, \quad (x, b) \not \in D_{XY}
+      \end{cases}
+    \end{aligned} 
+  \] 
+  donde $b \in D_{y}$, es la función de masa de $X$ condicionada por $Y = b$.
+\end{defn}
+
+\begin{theo}
+  La v.a. $X$ condicionada por $Y=b \in D_{Y}$ es una v.a. discreta con función de masa $p(x|b)$.
+\end{theo}
+
+\begin{defn}[Función de Densidad Condicionada]
+  Se llama función de densidad de $X$ condicionada por $Y = y$ a la función $f_{X|Y}(x|y)$ no negativa que satisface
+  \[ 
+    F_{X|Y}(x,y) = \int_{- \infty}^{x} f_{X|Y}(t|y) dt, \quad \forall x \in \mathbb{R}
+  \] 
+\end{defn}
+
+\begin{obs}
+  $f_{X|Y}$ es función de densidad sobre $\mathbb{R}$.
+\end{obs}
+
+\begin{theo}
+  Sea $(X,Y)$ v.a. continua con función de densidad $f$. Entonces,
+  \begin{enumerate}[label=(\roman*)]
+    \item $\forall (x,y) \in \mathbb{R}^{2} : f$ es continua y $f_{2}(y) \geq 0$ y $f_{2} es continua$ existe la función de densidad condicional de $X$ condicionada por $Y$ 
+      \[ 
+        f_{X|Y}(x | y) = \frac{f(x,y)}{f_{2}(y)}
+      \] 
+  \end{enumerate}
+\end{theo}
+
+\section{Independencia}
+
+\begin{defn}[Sucesos Independientes Dos a Dos]
+  Sea $(\Omega, \mathcal{A}, P )$, $\{ A_{j} \}_{j \in J}$ fml. de sucesos. Decimos que son independientes dos a dos si $\forall i, j \in J$ se tiene que 
+  \[ 
+    \mathbb{P} \{ A_{i} \cap A_{j} \} = \mathbb{P} \{ A_{i} \} \mathbb{P} \{ A_{j} \}
+  \] 
+\end{defn}
+
+\begin{defn}[Sucesos Mutualmente Independientes]
+  Sea $(\Omega, \mathcal{A}, P )$, $\{ A_{j} \}_{j \in J}$ fml. de sucesos. Decimos que son mutamente independientes si $\forall I \subset J : \card(I) \geq 2$ se tiene que 
+  \[ 
+    \mathbb{P} \{ \bigcap_{i \in I} A_{j} \} = \prod_{i \in I} \mathbb{P} \{ A_{i} \}
+  \] 
+\end{defn}
+
+\begin{prop}
+  Sea $(X,Y)$ v.a. Si $X$ e $Y$ son v.a. independientes, entonces $(X,Y)$ es v.a. independiente. En particular si $X, Y$ con v.a. discretas se tiene que 
+  \[ 
+    p_{XY}(x,y) = p_{X}(x) p_{Y}(y) ,  \quad \forall (x,y) \in \mathbb{R}^{2}.
+  \] 
+  Y si $X, Y$ son v.a. continuas se tiene que
+  \[ 
+    f_{XY}(x,y) = f_{X}(x) f_{Y}(y), \quad \forall (x,y) \in \mathbb{R}^{2}
+  \] 
+\end{prop}
+
+\begin{obs}
+  Si $X,Y$ son v.a. independientes con funciones de distribución $F_{X}, F_{Y}$, entonces
+  \[
+    F_{XY}(x,y) = F_{X}(x) F_{Y}(y)
+  \]
+  es la función de distribución de $(X,Y)$.
+\end{obs}
+
+\begin{obs}
+  Si $X, Y$ son v.a. independientes entonces, 
+  \[ 
+    f_{X|Y}(x|y) = f_{X}(x) \quad \text{ y } \quad f_{Y|X}(y|x) = f_{Y}(y)
+  \] 
+  son las funciones de densidad condicionadas.
+\end{obs}
+
+\section{Transformaciones}
+
+\begin{theo}
+  Sea $(X,Y)$ v.a. continua con función de densidad $f$.
+  \begin{enumerate}[label=(\roman*)]
+    \item Sea la transformación
+      \[ 
+        z = g_{1}(x,y) ,
+      \] 
+      \[ 
+        t = g_{2}(x,y) 
+      \] 
+      tal que existe la transformación inversa
+      \[ 
+        x = h_{1}(z,t) ,
+      \] 
+      \[ 
+        y = h_{2}(z,t) 
+      \] 
+    \item Ambas Transformaciones son continuas.
+    \item Existen todas as derivadas parciales.
+    \item El jacobino de a transformación inversa
+      \[ 
+        J = \frac{\partial(x,y)}{\partial(z,t)} 
+        = 
+        \begin{vmatrix}
+           x_{z} & x_{t} \\
+           y_{z} & y_{t}
+        \end{vmatrix} 
+      \] 
+      es distinto de cero.
+  \end{enumerate}
+  Entonces, la v.a. $(Z, T)$ es continua y tiene función de densidad
+  \[ 
+    l(z,t) = f(h_{1}(z,t), h_{2}(z,t)) \cdot | J | 
+  \] 
+\end{theo}
+
+\subsection{Suma Variables Aleatorias}
+
+\begin{prop}
+  Sea $(X,Y)$ v.a. con función de densidad $f$. La variable aleatoria $Z = X + Y$ tiene función de densidad
+  \[ 
+    f_{Z}(z) = \int_{-\infty}^{+\infty} f(t, z - t) dt
+  \] 
+  y función de distribución
+  \[ 
+    F_{Z}(z) = \int_{-\infty}^{z} \int_{-\infty}^{+\infty} f(t, z - t) dt ds
+  \] 
+  Si $X$ e $Y$ son independientes
+  \[ 
+    f_{Z}(z) = \int_{-\infty}^{+\infty} f_{1}(t)f_{2}(z - t) dt
+  \] 
+  \[ 
+    F_{Z}(z) = \int_{-\infty}^{z} \int_{-\infty}^{+\infty} f_{1}(t)f_{2}(z - t) dt
+  \] 
+  donde $f_{1}$ y $f_{2}$ son las funciones de densidad marginales.
+\end{prop}
+
+\subsection{Producto Variables Aleatorias}
+
+\begin{prop}
+  Sea $(X,Y)$ v.a. con función de densidad $f$. La variable aleatoria $Z = X \cdot Y$ tiene función de densidad
+  \[ 
+    f_{Z}(z) = \int_{-\infty}^{+\infty} f(t, \frac{z}{t}) \cdot \frac{1}{| t |} dt
+  \] 
+  y función de distribución
+  \[ 
+    F_{Z}(z) = \int_{-\infty}^{z} \int_{-\infty}^{+\infty} f(t, \frac{z}{t}) \cdot \frac{1}{| t |} dt ds
+  \] 
+  Si $X$ e $Y$ son independientes
+  \[ 
+    f_{Z}(z) = \int_{-\infty}^{+\infty} f_{1}(t)f_{2}(\frac{z}{t}) \cdot \frac{1}{| t |} dt
+  \] 
+  \[ 
+    F_{Z}(z) = \int_{-\infty}^{z} \int_{-\infty}^{+\infty} f_{1}(t)f_{2}(\frac{z}{t}) \cdot \frac{1}{| t |} dt ds
+  \] 
+  donde $f_{1}$ y $f_{2}$ son las funciones de densidad marginales.
+\end{prop}
+
+\subsection{Cociente Variables Aleatorias}
+
+\begin{prop}
+  Sea $(X,Y)$ v.a. con función de densidad $f$. La variable aleatoria $Z = X / Y$ tiene función de densidad
+  \[ 
+    f_{Z}(z) = \int_{-\infty}^{+\infty} f(tz, t) | t | dt
+  \] 
+  y función de distribución
+  \[ 
+    F_{Z}(z) = \int_{-\infty}^{z} \int_{-\infty}^{+\infty} f(tz, t) | t | dt ds
+  \] 
+  Si $X$ e $Y$ son independientes
+  \[ 
+    f_{Z}(z) = \int_{-\infty}^{+\infty} f_{1}(tz)f_{2}(t) | t | dt
+  \] 
+  \[ 
+    F_{Z}(z) = \int_{-\infty}^{z} \int_{-\infty}^{+\infty} f_{1}(tz)f_{2}(t) | t | dt ds
+  \] 
+  donde $f_{1}$ y $f_{2}$ son las funciones de densidad marginales.
+\end{prop}
+
+\section{Esperanza}
+
+\begin{defn}[Esperaza Variable Aleatoria Bidimensional Discreta]
+  Sea $(X,Y)$ v.a. con función de masa $p_{XY}$ y soporte $D_{XY}$. Si la serie
+  \[ 
+    \sum_{(x,y) \in D_{XY}} | g(x,y) | p_{XY}(x,y)
+  \] 
+  converge, entonces
+  \[ 
+    \mathbb{E} [ g(X,Y) ] = \sum_{(x,y) \in D_{XY}} | g(x,y) | p_{XY}(x,y)
+  \] 
+  es la esperanza de $g(X,Y)$.
+\end{defn}
+
+\begin{defn}[Esperaza Variable Aleatoria Bidimensional Discreta]
+  Sea $(X,Y)$ v.a. continua con función de densidad $f$. Si la integral
+  \[ 
+    \int_{-\infty}^{+\infty} | g(x,y) | f(x,y) dx dy 
+  \] 
+  es finita, entonces
+  \[ 
+    \mathbb{E} [ g(X,Y) ] = \int_{-\infty}^{+\infty}  g(x,y)  f(x,y) dx dy 
+  \] 
+  es la esperanza de la v.a. $g(X,Y)$.
+\end{defn}
+
+\section{Momentos}
+
+\begin{defn}[Momentos Respecto al Origen]
+  Sea $(X,Y)$ v.a. El momento respecto al origen de orden $(k,l)$ es
+  \[ 
+    \alpha_{kl} = \mathbb{E} [ X^{k} Y^{t} ] 
+  \] 
+\end{defn}
+
+\begin{defn}[Momento Respecto a la Media]
+  Sea $(X,Y)$ v.a. El momento respecto a la media es de ordén $(k,l)$
+  \[ 
+    \mu_{kl} = \mathbb{E} [ (X - \alpha_{10})^{k} (Y - \alpha_{01})^{l} ]
+  \] 
+\end{defn}
+
+\begin{defn}[Coeficiente de Correlación]
+  El coeficiente de correlación se define como 
+  \[ 
+    \rho = \frac{\mu_{11}}{\sigma_{X} \sigma_{Y}} 
+  \] 
+  siendo $\sigma_{X} = \sqrt{\mu_{20}}$ y $\sigma_{Y} = \sqrt{\mu_{02}}$
+\end{defn}
+
+\section{Propiedades Esperanza}
+
+\begin{prop}
+  La esperanza verifica
+  \begin{enumerate}[label=(\roman*)]
+    \item $\mathbb{E} [ c ] = c, \forall c \in \mathbb{R}$
+    \item Si $\mathbb{E} [ | X_{i} | ] < + \infty$ entonces
+      \[
+        \mathbb{E} [ \sum_{i = 1}^{n} a_{i} X_{i} ] = \sum_{i = 1}^{n} a_{i} \mathbb{E} [ X_{i} ]
+      \]
+    \item Si $\mathbb{E} [ | X_{i} | ] < + \infty$ y $\mathbb{E} [ | X_{i} |^{2} ] < + \infty$ entonces 
+      \[ 
+        \mathbb{E} [ X_{1} \cdot X_{2} ] = \mu_{11} + \alpha_{01} \cdot \alpha_{10}
+      \] 
+    \item Si $\mathbb{E} [ | X_{i} | ] < + \infty$ entonces
+      \[ 
+        \mathbb{E} [ \prod X_{i} ] = \prod \mathbb{E} [ X_{i} ]
+      \] 
+    \item $\mathbb{E} [ g_{1}(X) ] \leq \mathbb{E} [ g_{2}(X) ]$
+    \item $| \mathbb{E} [ g(X) ] | \leq \mathbb{E} [ | g(X) | ]$
+    \item $\mathbb{E} [ g_{1}(X) = g_{2}(X) ] = \mathbb{E} [ g_{1}(X) ] + \mathbb{E} [ g_{2}(X) ]$
+  \end{enumerate}
+\end{prop}
+
+\section{Propiedades Varianza}
+
+\begin{prop}
+  La varianza verifica
+  \begin{enumerate}[label=(\roman*)]
+    \item 
+    \item 
+    \item 
+    \item 
+    \item 
+    \item 
+  \end{enumerate}
+\end{prop}
+
+\section{Función Característica}
+
+\section{Coefieciente Correlación}
+
+\section{Regresión}

@@ -23,8 +23,8 @@
 \contentsline {chapter}{\numberline {5}Singularidades Aisladas}{42}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Series de Laurent}{42}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Singularidades Aisladas}{43}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Cálculo de Residuos}{44}{section.5.3}%
-\contentsline {chapter}{\numberline {6}Miscelanea}{46}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Principio Del Argumento}{46}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Teorema de Rouché}{48}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Propiedades Funciones Armónicas}{48}{section.6.3}%
+\contentsline {section}{\numberline {5.3}Cálculo de Residuos}{45}{section.5.3}%
+\contentsline {chapter}{\numberline {6}Miscelanea}{47}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Principio Del Argumento}{47}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Teorema de Rouché}{49}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Propiedades Funciones Armónicas}{49}{section.6.3}%

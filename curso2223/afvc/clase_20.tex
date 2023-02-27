@@ -97,5 +97,21 @@
 \end{theo}
 
 \begin{theo}[Casorati-Weierstrass]
-  Sea $f$ con singularidad esencial en $z_{0}$ y $w \in \mathbb{C}$. Entonces, $\exists \{ z_{n} \}_{n \in \mathbb{N}} \subset \mathbb{C}$ tal que $z_{n} \xrightarrow[]{ n \rightarrow \infty } z_{0}$ y $f(z_{n}) \xrightarrow[]{ n \rightarrow \infty } w$.
+  Si $f$ tiene una singularidad esencial en $z_{0}$ entonces $\forall \delta > 0$ se tiene que $f(D(z_{0},\delta) \setminus \{ z_{0} \})$ es denso en $\mathbb{C}$.
 \end{theo}
+
+\begin{dem}
+  Suponemos que el resultado no es cierto. Entonces, $\exists \delta > 0$, $\exists \epsilon > 0$ y $\exists w_{0} \in \mathbb{C}$ tal que
+  \[ 
+    | f(z) - w_{0} |>\epsilon, \quad \forall z \in D(z_{0}, \delta) \setminus \{ z_{0} \} 
+  \] 
+  Sea $g : D(z_{0}, \delta) \setminus \{ z_{0} \} \to \mathbb{C}$ definida por 
+  \[ 
+    g(z) = \frac{1}{f(z) - w_{0}}.
+  \] 
+  Como $g$ es holomorfa y 
+  \[
+    | g(z) \leq \frac{1}{\epsilon} |
+  \]
+  entonces, $g$ tiene singularidad evitable en $z_{0}$. Si $\lim_{z \to z_{0}} g(z) \neq 0$, entonces $z_{0}$ es singularidad evitable de $f$ ya que $\exists \lim_{z \to z_{0}} f(z) \in \mathbb{C}$. Si $\lim_{z \to z_{0}} f(z) = 0$, entonces $z_{0}$ es un polo de $f$ ya que $\exists \lim_{z \to z_{0}} f(z) = \infty$. Ambas casos son una contradicción.
+\end{dem}

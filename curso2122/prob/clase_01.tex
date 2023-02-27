@@ -1,0 +1,1321 @@
+\part{Probabilidad}
+
+\chapter{Eventos y sus Probabilidades}
+\section{Eventos como conjuntos}
+
+
+\begin{defn}[Espacio Muestral]
+El conjunto de todos los resultados posibles de un experimente se llama Espacio Muestral y se denota $\Omega$.
+\end{defn}
+
+\begin{obs}
+Un espacio muestral es discreto si sus elementos pueden ponerse en correspondencia con $\mathbb{N}$.
+\end{obs}
+
+\begin{obs}
+Un espacio muestral es continuo si su cardinal es el cardinal de $[0,1]$.
+\end{obs}
+
+\begin{defn}[Suceso]
+Se denomina suceso a cualquier subconjunto del espacio muestral $\Omega$.
+\end{defn}
+
+\begin{defn}[Operaciones]
+Algunas de las operaciones más usadas en el cálculo de probabilidades son:
+\begin{enumerate}[label=(\roman*)]
+    \item (Complementario) $A^c = \{\omega:\omega\in \Omega, \omega\not\in A\}$
+    \item (Unión) $A\cup B = \{\omega:\omega\in A \lor \omega \in B\}$
+    \item (Intersección)  $A\cap B = \{\omega:\omega\in A \land \omega \in B\}$
+    \item (Diferencia) $A\setminus B = \{\omega:\omega\in A \land \omega \not\in B\}$
+    \item (Conjuntos disjuntos) $A\cap B = \emptyset$
+\end{enumerate}
+\end{defn}
+\begin{obs}
+De lo anterior se puden deducir varias identidades, 
+\[ \Omega^c = \emptyset \]
+\[ \Omega \cup A = \Omega \]
+\[ A \cup A^c = \Omega \]
+\[ A\setminus B = A\cap B^c \]
+son algunas de las más comunes.
+\end{obs}
+
+\begin{defn}[Partición]
+Sea  $\{A_n: n\in\mathbb{N}\}$ tal que $A_i \cap A_j = \emptyset, \forall i\neq j$ y $\bigcup_{i=1}^k = \Omega$. Entonces, $\{A_i: 1\leq i \leq k\}$ es una partición de $\Omega$.
+\end{defn}
+\begin{obs}
+El conjunto de todas las particiones de $\Omega$ se denota $\mathcal{P}(\Omega)$.
+\end{obs}
+
+\begin{prop}[Leyes de De Morgan]
+Dados dos conjuntos $A$, $B$ se tiene que: \[ (A\cup B)^c = A^c \cap B^c \] \[ (A\cap B)^c = A^c \cup B^c \] Para subconjuntos $\{A_n: n\in\mathbb{N}\}$, \[ \bigg(\bigcup_{i=1}^n A_i\bigg)^c = \bigcap_{i=1}^n (A_i)^c\] \[ \bigg(\bigcap_{i=1}^n A_i\bigg)^c = \bigcup_{i=1}^n (A_i)^c\]
+\end{prop}
+
+\begin{defn}[Límite Inferior]
+Sea $\{A_n: n\in\mathbb{N}\}$, \[ \liminf A_n = \bigcup_{k=1}^\infty \bigcap_{n=k}^\infty A_n \] es el límite inferior de $\{A_n: n\in\mathbb{N}\}$.
+\end{defn}
+
+\begin{obs}
+El límite inferior es el conjunto de puntos $\omega\in\Omega$ que pertenecen a todo $A_n$ excepto, a lo sumo, una cantidad finita de estos.
+\end{obs}
+
+\begin{defn}[Límite Superior]
+Sea $\{A_n: n\in\mathbb{N}\}$, \[ \limsup A_n = \bigcap_{k=1}^\infty \bigcup_{n=k}^\infty A_n \] es el límite superior de $\{A_n: n\in\mathbb{N}\}$.
+\end{defn}
+
+\begin{obs}
+El límite superior es el conjunto de puntos $\omega\in\Omega$ que pertenecen a una cantidad infinita de conjuntos $A_n$.
+\end{obs}
+
+\begin{prop}
+Sea  $\{A_n: n\in\mathbb{N}\}$, entonces $\liminf A_n \subset \limsup A_n$.
+\end{prop}
+
+\begin{dem}
+Sea $\omega\in\liminf A_n \Rightarrow \omega \in \bigcup_{k=1}^\infty \bigcap_{n=k}^\infty A_n \Rightarrow \exists k\in\mathbb{N}: \omega\in\bigcap_{n=k}^\infty A_n \Rightarrow \exists k\in\mathbb{N}: \omega\in A_n, \forall n\geq k \Rightarrow \omega\in\bigcup_{n=k}^\infty A_n, \forall n\geq k \Rightarrow \omega\in\bigcap_{k=1}^\infty \bigcup_{n=k}^\infty A_n \Rightarrow \omega\in\limsup A_n.$
+\end{dem}
+
+\begin{defn}[Sucesión Convergente]
+La sucesión $\{A_n: n\in\mathbb{N}\}$ es convergente si y solo si \[\liminf A_n = \limsup A_n\] y se denota $\lim_{n\rightarrow\infty} A_n$.
+\end{defn}
+
+\begin{defn}[Sucesión monótona]
+La sucesión $\{A_n: n\in\mathbb{N}\}$ es monótona creciente (resp. decreciente) si $\forall n\in\mathbb{N}$ se tiene $A_n \subset A_{n+1}$ (resp. $A_{n+1} \subset A_{n}$.
+\end{defn}
+
+\begin{prop}(Propiedades sucesiones monótonas)\\
+Una sucesión monótona $\{A_n: n\in\mathbb{N}\}$ verifica:
+
+\begin{enumerate}[label=(\roman*)]
+    \item Si $\{A_n\}\uparrow$, entonces $\lim_{n\rightarrow\infty} A_n =  \bigcup_{n=1}^\infty A_n$.
+    \item Si $\{A_n\}\downarrow$, entonces $\lim_{n\rightarrow\infty} A_n =  \bigcap_{n=1}^\infty A_n$.
+\end{enumerate}
+Donde $\{A_n\}\uparrow$ y $\{A_n\}\downarrow$ denotan sucesión monótona creciente y decreciente respectivamente.
+\end{prop}
+
+\begin{dem}(i) Sea $\{A_n: n\in\mathbb{N}\}$ una sucesión monótona creciente,
+    $\{A_n\}\uparrow \Rightarrow A_n \subset A_{n+1}, \forall n\in\mathbb{N} \Rightarrow$
+    \begin{enumerate}[label=(\roman*)]
+        \item  $\Rightarrow \bigcup_{n=1}^k A_n \subset \bigcup_{n=k}^\infty A_n \Rightarrow \bigcup_{n=k}^\infty A_n = \bigcup_{n=1}^\infty A_n$
+        \item $\Rightarrow \bigcap_{n=k}^\infty A_n = A_k$
+    \end{enumerate}
+    Entonces, si $\omega\in\limsup A_n \Rightarrow \omega \in \bigcap_{k=1}^\infty \bigcup_{n=k}^\infty A_n = \bigcap_{k=1}^\infty \bigcup_{n=1}^\infty A_n = \bigcup_{n=1}^\infty A_n.$ Si $\omega\in\liminf A_n \Rightarrow \omega \in \bigcup_{k=1}^\infty \bigcap_{n=k}^\infty A_n = \bigcup_{k=1}^\infty A_k.$
+\end{dem}
+
+\begin{dem}(ii) Sea $\{A_n: n\in\mathbb{N}\}$ una sucesión monótona decreciente,
+    $\{A_n\}\downarrow \Rightarrow A_{n+1} \subset A_{n}, \forall n\in\mathbb{N} \Rightarrow$
+    \begin{enumerate}[label=(\roman*)]
+        \item  $\Rightarrow \bigcap_{n=k}^\infty A_n = \bigcap_{n=1}^\infty A_n$
+        \item $\Rightarrow \bigcup_{n=k}^\infty A_n = A_k$
+    \end{enumerate}
+    Entonces, si $\omega\in\limsup A_n \Rightarrow \omega \in \bigcap_{k=1}^\infty \bigcup_{n=k}^\infty A_n = \bigcap_{k=1}^\infty A_k.$ Si $\omega\in\liminf A_n \Rightarrow \omega \in \bigcup_{k=1}^\infty \bigcap_{n=k}^\infty A_n = \bigcup_{k=1}^\infty \bigcap_{n=1}^\infty A_n = \bigcap_{k=1}^\infty A_k.$
+\end{dem}
+
+\begin{ejr}[1.- 1.5 Manual de ejrcicios]
+
+\end{ejr}
+
+\begin{defn}[Álgebra]
+Una famila $\mathcal{F}$ de subconjuntos de $\Omega$, es decir, $\mathcal{F}\subset \mathcal{P}(\Omega)$ se dice que tiene estructura de álgebra si verifica:
+
+\begin{enumerate}[label=(\roman*)]
+    \item $\emptyset \in \mathcal{F}$
+    \item $\Omega \in \mathcal{F}$
+    \item $\forall A\in\mathcal{F}, A^c\in\mathcal{F}$
+    \item $\forall A,B\in\mathcal{F}, A\cup B \in\mathcal{F}$
+\end{enumerate}
+\end{defn}
+
+\begin{obs}
+La unión numerable de conjuntos del álgebra no está necesariamente contenida en esta.
+\end{obs}
+
+\begin{defn}[$\sigma$-Álgebra]
+Una famila $\mathcal{F}$ de subconjuntos de $\Omega$, es decir, $\mathcal{F}\subset \mathcal{P}(\Omega)$ se dice que tiene estructura de $\sigma$-álgebra si verifica:
+
+\begin{enumerate}[label=(\roman*)]
+    \item $\emptyset \in \mathcal{F}$
+    \item $\Omega \in \mathcal{F}$
+    \item $\forall A\in\mathcal{F}, A^c\in\mathcal{F}$
+    \item $\forall \{A_n: n\in\mathbb{N}\}\subset\mathcal{F}, \bigcup_{i=1}^\infty A_i \subset\mathcal{F}$
+\end{enumerate}
+\end{defn}
+
+\begin{obs}
+Todo $\sigma$-álgebra es un álgebra.
+\end{obs}
+
+\begin{ejr}[2.1 Manual de ejercicios]
+Sean $\Omega$ un espacio muestral y $\mathcal{F}\subset\mathcal{P}(\Omega)$ un $\sigma-$álgebra. Para $A\in\mathcal{F}$ fijado se define \[ \mathcal{F}_A=\{ B\subset\Omega : B = A\cap C \text{ con } C\in\mathcal{F} \} \] Demostrar que $ \mathcal{F}_A $ es $\sigma-$álgebra.
+
+\begin{sol}
+
+\end{sol}
+\end{ejr}
+
+\begin{ejr}[2.9 Manual de ejercicios]
+
+\end{ejr}
+
+\begin{ejr}[2.10 Manual de ejercicios]
+
+\end{ejr}
+
+\begin{ejr}[2.11 Manual de ejercicios]
+
+\end{ejr}
+
+\section{Probabilidades}
+
+\begin{defn}[Medida de probabilidad]
+Una medida de probabilidad $\mathbb{P}$ en $(\Omega,\mathcal{F})$ es una función $\mathbb{P}: \mathcal{F}\rightarrow [0,1]$ que satisface:
+
+\begin{enumerate}[label=(\roman*)]
+    \item $\mathbb{P}(\Omega) = 1$, $\mathbb{P}(\emptyset) = 0$
+    \item $\mathbb{P}(A) \geq 0$
+    \item $\forall \{A_n: n\in\mathbb{N}\}\subset\mathcal{F}$ tal que $A_i \cap A_j = \emptyset, \forall i\neq j,$ \[ \mathbb{P}\bigg(\bigcup_{i=1}^\infty A_i \bigg) = \sum_{i=1}^\infty \mathbb{P}(A_i) \]
+\end{enumerate}
+Llamamos probabilidad del suceso $A$ al valor $\mathbb{P}(A)$.
+\end{defn}
+
+\begin{ejr}[2.6 Manual de ejercicios]
+
+\end{ejr}
+
+\begin{ejr}[2.7 Manual de ejercicios]
+
+\end{ejr}
+
+\begin{defn}[Espacio de probabilidad]
+La terna $(\Omega,\mathcal{F},\mathbb{P})$ se denomina espacio de probabilidad.
+\end{defn}
+
+\begin{prop}(Propiedades de la función de probabilidad)\\
+\begin{enumerate}[label=(\roman*)]
+    \item $\mathbb{P}(\emptyset) = 0$
+    \item $\forall A \in \mathcal{F}, \mathbb{P}(A) \leq 1$
+    \item $\forall A \in \mathcal{F}, \mathbb{P}(A^c) = 1 - \mathbb{P}(A)$
+    \item $\forall A,B \in \mathcal{F}: A\subset B, \mathbb{P}(A)\leq \mathbb{P}(B) = \mathbb{P}(A) + \mathbb{P}(B\setminus A)$
+    \item $\forall A,B \in \mathcal{F}: A\subset B, \mathbb{P}(A\cup B) = \mathbb{P}(A) + \mathbb{P}(B) - \mathbb{P}(B\cap A) \leq \mathbb{P}(A) + \mathbb{P}(B)$
+    \item $\forall \{A_i: 1\leq i \leq n \}\subset\mathcal{F}$ tal que $A_i \cap A_j = \emptyset, \forall i\neq j,$ \[ \mathbb{P}\bigg(\bigcup_{i=1}^n A_i \bigg) = \sum_{i=1}^n \mathbb{P}(A_i) \]
+    \item $\forall \{A_1,...,A_n\} \subset \mathcal{F},$ \[\mathbb{P}(\bigcup^{n}_{i=1} A_i) = \sum^{n}_{i=1} \mathbb{P}(A_i)  - \sum^{n}_{i_1=1}\sum^{n}_{i_1<i_2} \mathbb{P}(A_{i_1} \cap A_{i_2})+\] \[ + \sum^{n}_{i_1=1}\sum^{n}_{i_1<i_2}\sum^{n}_{i_2<i_3} \mathbb{P}(A_{i_1} \cap A_{i_2} \cap A_{i_3}) - ... + (-1)^{n+1} \mathbb{P}(A_1 \cap ... \cap A_n)\]
+    \item $\forall \{A_1,...,A_n\} \subset \mathcal{F},$ \[ \mathbb{P}\bigg(\bigcup_{i=1}^n A_i \bigg) \leq \sum_{i=1}^n \mathbb{P}(A_i) \]
+    \item $\forall \{A_i: i\in\mathbb{N} \}\subset\mathcal{F},$ \[ \mathbb{P}\bigg(\bigcup_{i=1}^\infty A_i \bigg) \leq \sum_{i=1}^\infty \mathbb{P}(A_i) \]
+    \item $\forall \{A_i: i\in\mathbb{N}\}\subset\mathcal{F},$ \[ \mathbb{P}\bigg(\bigcap_{i=1}^\infty A_i \bigg) \geq 1 - \sum_{i=1}^\infty \mathbb{P}(A_i)^c \]
+\end{enumerate}
+\end{prop}
+
+\begin{dem}(i)\\
+Sea $A\in\mathcal{F}$, y sea la sucesión $\{ A_n:n\in\mathbb{N}\}$ tal que $A_1 = A$ y $A_i = \emptyset, \forall i\neq 1$. Como, $\bigcup_{i=1}^\infty = A$ y $\mathbb{P}(A) = \mathbb{P} \big(\bigcup_{i=1}^\infty A_i \big) = \sum_{i=1}^\infty \mathbb{P}(A_i)$. Entonces, $\mathbb{P}(A) = \mathbb{P}(A) + \sum_{i=2}^\infty \mathbb{P}(A_i) = \mathbb{P}(A) + \sum_{i=2}^\infty \mathbb{P}(\emptyset) \Rightarrow \mathbb{P}(\emptyset) = 0.$
+\end{dem}
+
+\begin{dem}(ii)\\
+Sustituyendo $B = \Omega$ en el apartado (iv), se tiene que $\mathbb{P}(A) \leq 1$
+\end{dem}
+
+\begin{dem}(iii)\\
+$1 = \mathbb{P}(\Omega) = \mathbb{P}(A^c \cup A) = \mathbb{P}(A) + \mathbb{P}(A^c) \Rightarrow \mathbb{P}(A^c) = 1- \mathbb{P}(A).$
+\end{dem}
+
+\begin{dem}(iv)
+Sea $A\subset B$, $B = A\cup (B\setminus A) \Rightarrow \mathbb{P}(B) = \mathbb{P}(A) + \mathbb{P}(B\setminus A)$, donde $\mathbb{P}(B\setminus A) \geq 0 \Rightarrow \mathbb{P}(A) \leq \mathbb{P}(B)$.
+\end{dem}
+
+\begin{dem}(vi)\\
+Sea $\{ A_n:n\in\mathbb{N}\}\subset\mathcal{F}$ y sea $B_i = A_i, \forall i\leq n$, $B_i = \emptyset, \forall i > n$. Entonces, \[ \mathbb{P}\bigg(\bigcup_{i=1}^n A_i \bigg) = \mathbb{P}\bigg(\bigcup_{i=1}^\infty B_i \bigg) = \sum_{i=1}^\infty \mathbb{P}(B_i) = \sum_{i=1}^n \mathbb{P}(A_i) \]
+\end{dem}
+
+\begin{dem}(ix)\\
+Sea $\{ A_n:n\in\mathbb{N}\}\subset\mathcal{F}$ y sea $B_1 = A_i, B_n = A_n \cap \big(\bigcap_{i=1}^{n-1} A_i^c \big), \forall n \geq 2$. LA sucesión $\{ B_n:n\in\mathbb{N}\}\subset\mathcal{F}$ es una sucesión de conjuntos disjuntos tal que $\bigcup_{n=1}^\infty A_n = \bigcup_{n=1}^\infty B_n$. Entonces, \[ \mathbb{P}\bigg(\bigcup_{i=1}^\infty B_i \bigg) = \sum_{i=1}^\infty \mathbb{P}(B_i) \] Como $B_n \subset A_n \Rightarrow \mathbb{P}(B) \leq \mathbb{P}(A)$ se tiene que \[ \mathbb{P}\bigg(\bigcup_{i=1}^\infty A_i \bigg) = \mathbb{P}\bigg(\bigcup_{i=1}^\infty B_i \bigg) = \sum_{i=1}^\infty \mathbb{P}(B_i) \leq \sum_{i=1}^\infty \mathbb{P}(A_i) \]
+\end{dem}
+
+\begin{ejr}[Cuestión 1, Examen Febrero 2021]
+
+\end{ejr}
+
+\begin{ejr}[Cuestión 1, Examen Enero 2019]
+
+\end{ejr}
+
+\begin{theo}[Límite de probabilidad, sucesión monótona]
+Sea $\{A_n: n\in\mathbb{N}\}\subset\mathcal{F}$ una sucesión monótona. Entonces $\exists \lim_{n\rightarrow\infty} \mathbb{P}(A_n)$ y \[ \lim_{n\rightarrow\infty} \mathbb{P}(A_n) = \mathbb{P}\big(\lim_{n\rightarrow\infty} A_n \big)\]
+\end{theo}
+
+\begin{dem}
+Supongamos que $\{A_n\} \uparrow, A = \bigcup_{n=1}^\infty A_n$. La expresión de $A$ como unión de conjuntos disjuntos es $A = A_1 \cup \bigcup_{n=1}^\infty (A_{n+1} - A_n)$ entonces, \[ \mathbb{P}(A) = \mathbb{P}(A_1) + \lim_{n\rightarrow\infty}\sum_{k=1}^n \mathbb{P}(A_{k+1} - A_k) \] \[ = \mathbb{P}(A_1) + \lim_{n\rightarrow\infty}\sum_{k=1}^n \mathbb{P}(A_{k+1}) - \mathbb{P}(A_k) \] \[ = \mathbb{P}(A_1) + \lim_{n\rightarrow\infty} \big( \mathbb{P}(A_{n+1}) - \mathbb{P}(A_1)  \big)\] \[ = \lim_{n\rightarrow\infty} \mathbb{P}(A_n)\]
+\end{dem}
+
+\begin{ejr}[2.2 Manual de ejercicios]
+
+\end{ejr}
+
+\begin{ejr}[2.4 Manual de ejercicios]
+
+\end{ejr}
+
+\begin{theo}[Límite de probabilidad, sucesión convergente]
+Sea $\{A_n: n\in\mathbb{N}\}\subset\mathcal{F}$ una sucesión convergente. Entonces $\exists \lim_{n\rightarrow\infty} \mathbb{P}(A_n)$ y \[ \lim_{n\rightarrow\infty} \mathbb{P}(A_n) = \mathbb{P}\big(\lim_{n\rightarrow\infty} A_n \big)\]
+\end{theo}
+
+\section{Probabilidad Condicionada. Independencia de Sucesos}
+
+\begin{defn}[Probabilidad condicionada]
+Si $\mathbb{P}(B) > 0$ entonces la probabilidad condicionada de que suceda $A$ dado que $B$ sucede, es \[ \mathbb{P}(A|B) = \frac{\mathbb{P}(A\cap B)}{\mathbb{P}(B)} \]
+\end{defn}
+
+\begin{theo}[de Probabilidad Total]
+Sea $\{B_n: n\in\mathbb{N}\}\subset\mathcal{F}$ disjuntos dos a dos, tal que $\bigcup_{i=1}^n B_i = \Omega, \ \mathbb{P}(B_i)>0, \forall i$. Entonces, \[ \mathbb{P}(A) = \sum_{i=1}^\infty \mathbb{P}(B_i)\mathbb{P}(A|B_i) \]
+\end{theo}
+
+\begin{ejr}[Teoría 1, Examen 2017-2018 Segunda Convocatoria]
+
+\end{ejr}
+
+\begin{ejr}[2.11 Manual de ejercicios]
+
+\end{ejr}
+
+\begin{ejr}[2.22 Manual de ejercicios]
+
+\end{ejr}
+
+\begin{dem}
+Es posible representar $A\in\mathcal{F}$ como $A = A \cap \Omega = \bigcup_{i=1}^\infty (A\cap B_i)$ con $ (A\cap B_i) \cap (A \cap B_j) = \emptyset, \forall i \neq j$. Entonces \[ \mathbb{P}(A) = \sum_{i=1}^\infty \mathbb{P}(A\cap B_i) = \sum_{i=1}^\infty \mathbb{P}(B_i)\mathbb{P}(A|B_i)\]
+\end{dem}
+
+\begin{theo}[de Bayes]
+Sea $\{B_n: n\in\mathbb{N}\}\subset\mathcal{F}$ disjuntos dos a dos, tal que $\bigcup_{i=1}^n B_i = \Omega, \ \mathbb{P}(B_i)>0,\forall i$ y $\mathbb{P}(A) > 0$. Entonces, \[ P(B_n|A) = \frac{\mathbb{P}(B_n)\mathbb{P}(A|B_n)}{\sum_{i=1}^\infty \mathbb{P}(B_i)\mathbb{P}(A|B_i)} \]
+\end{theo}
+
+\begin{dem}
+Dado que $\mathbb{P}(A) > 0$ se tiene \[ P(B_n|A) = \frac{\mathbb{P}(A\cap B_n)}{\mathbb{P}(A)} \] donde $\mathbb{P}(A\cap B_n) = \mathbb{P}(B_n)\mathbb{P}(A|B_n)$ y como $\mathbb{P}(B_i)>0,\forall i$, aplicando el teorema de probabilidad total se tiene que \[ \mathbb{P}(A) = \sum_{i=1}^\infty \mathbb{P}(B_i)\mathbb{P}(A|B_i) \] y por tanto, \[ P(B_n|A) = \frac{\mathbb{P}(B_n)\mathbb{P}(A|B_n)}{\sum_{i=1}^\infty \mathbb{P}(B_i)\mathbb{P}(A|B_i)} \]
+\end{dem}
+
+\begin{ejr}[Problema 1, Examen Febrero 2021]
+
+\end{ejr}
+
+\begin{ejr}[Problema 1, Examen Septiembre 2020]
+
+\end{ejr}
+
+\begin{ejr}[Cuestión 4, Examen Enero 2020]
+
+\end{ejr}
+
+\begin{ejr}[Problema 1, Examen Enero 2019]
+
+\end{ejr}
+
+\begin{ejr}[Problema 1, Examen 2017-2018 Primera Convocatoria]
+
+\end{ejr}
+
+\begin{ejr}[Problema 1, Examen 2016-2017 Convocatoria de Septiembre]
+
+\end{ejr}
+
+\begin{ejr}[2.15 Manual de ejercicios]
+
+\end{ejr}
+
+\begin{ejr}[2.16 Manual de ejercicios]
+
+\end{ejr}
+
+\begin{defn}[Independencia]
+Dos sucesos $A$ y $B$ son independientes si y solo si $\mathbb{P}(A\cap B) = \mathbb{P}(A)\mathbb{P}(B)$.
+\end{defn}
+
+\section{Combinatoria}
+
+\begin{defn}[Permutaciones]
+Las permutaciones de $n$ elementos son las posibles formas de ordenar un conjunto de n elementos distintos. \[ P^n = n! \]
+\begin{enumerate}[label=(\roman*)]
+    \item Entran todos los elementos
+    \item No improta el orden
+    \item No se repiten elementos
+\end{enumerate}
+\end{defn}
+
+\begin{ejm}
+¿Cuátos números de cuatro cifras pueden escribirse con los dígitos 2,3,5,8 sin usar la misma cifra más de una vez? $P^{4} = 4! = 24$.
+\end{ejm}
+
+\begin{defn}[Permutaciones con repetición]
+Las permutaciones con repeticiónson las posibles formas en las que $n$ elementos se pueden clasificar en $k$ grupos idénticos \[ {}^nP_k = \frac{n!}{n_1!n_2!\cdots n_k!} \]
+\begin{enumerate}[label=(\roman*)]
+    \item Entran todos los elementos
+    \item No improta el orden
+    \item Se repiten elementos
+\end{enumerate}
+\end{defn}
+
+\begin{ejm}
+Contabilizar de cuántas maneras se pueden repartir cinco bebidas. 3 cafés (sólo, cortado y con leche) y 2 cervezas de marcas distintas $(5! = 120)$. Si los cafes son idénticos, $5!/3! = 20$.
+\end{ejm}
+
+\begin{defn}[Variaciones]
+Las variaciones de $n$ elementos tomados de $r$ en $r$ son las diferentes formas ordenadas en las que $r$ elementos distintos se pueden extraer de un conjunto de $n$ elementos, siendo $n\geq r$, \[ V^r_n = \frac{n!}{(n-r)!} \]
+\begin{enumerate}[label=(\roman*)]
+    \item No entran todos los elementos
+    \item Improta el orden
+    \item No se repiten elementos
+\end{enumerate}
+\end{defn}
+
+\begin{ejm}
+En una carrera con 6 atletas, ¿de cuántas formas distintas podrían repartirse las medallas de oro y plata? $V^{2}_6 = 6!/4! = 30$.
+\end{ejm}
+
+\begin{defn}[Variaciones con repetición]
+Las variaciones con repetición de $n$ elementos tomados de $r$ en $r$ son las diferentes formas ordenadas en las que $r$ elementos no necesariamente distintos se pueden extraer de un conjunto de $n$ elementos, siendo $n\geq r$, \[ V^r_n = n^r \]
+\begin{enumerate}[label=(\roman*)]
+    \item No entran todos los elementos
+    \item Improta el orden
+    \item Se repiten elementos
+\end{enumerate}
+\end{defn}
+
+\begin{ejm}
+¿Cuántos números distintos de 3 cifras se pueden escribir usando solamente las cifras 1,2,5 y 8? $VR^{3}_4 = 4^3 = 64$.
+\end{ejm}
+
+\begin{defn}[Combinaciones]
+Las combinaciones de $n$ elementos tomados de r en r son las posibles formas no ordenadas en las que $r$ elemntos distintos se pueden extraer de un conjunto de $n$ elementos con $n \geq r$, \[C^{r}_n = \frac{n!}{r!(n-r)!}\]
+\begin{enumerate}[label=(\roman*)]
+    \item No entran todos los elementos
+    \item No improta el orden
+    \item No se repiten elementos
+\end{enumerate}
+\end{defn}
+
+\begin{ejr}[2.17 Manual de ejercicios]
+
+\end{ejr}
+
+\begin{ejr}[2.19 Manual de ejercicios]
+
+\end{ejr}
+
+\begin{ejm}
+En una reunión de 8 personas se debe formar un grupo con dos participantes. Se pueden formar $C^{2}_8 = 8!/2!6! = 28$ grupos distintos.
+\end{ejm}
+
+\begin{defn}[Combinaciones con repetición]
+Las combinaciones con repetición de n elementos tomados de r en r son las posibles formas no ordenadas en las que $r$ elementos no necesariamente distintos se pueden extraer de un conjunto de $n$ elementos con $n \geq r$, \[ CR^{r}_n = \frac{(n + r - 1)!}{r!(n-1)!} \]
+\begin{enumerate}[label=(\roman*)]
+    \item No entran todos los elementos
+    \item No improta el orden
+    \item Se repiten elementos
+\end{enumerate}
+\end{defn}
+
+\begin{ejm}
+Un banco ofrece un regalo a elegir entre 5 posibles regalos por cada cartilla. Un señor tiene tres cartillas en dicho banco ¿de cuántas formas puede elegir el lote de tres obsequios si no le importa repetir regalos? El resultado es $CR^{3}_5 = C^{3}_7 = 7!/3!5! = 35$.
+\end{ejm}
+
+\chapter{Variables Aleatorias Unidimensionales}
+\section{Variables aleatorias unidimensionales y su función de distribución}
+
+\begin{defn}[Variable aleatoria]
+Una variable aleatoria es una función $X:\Omega\rightarrow\mathbb{R}$ con la propiedad de que \[ \{ \omega\in\Omega: X(\omega)\leq x \}\in\mathcal{F}, \forall x\in R\] Esta función se dice que es $\mathcal{F}-$medible.
+\end{defn}
+
+\begin{obs}
+Toda variable aleatoria tiene una función de distribución.
+\end{obs}
+
+\begin{obs}
+Las variables aleatorias pueden definir distintos tipos de eventos, \[ \{ \omega\in\Omega: X(\omega) = x \} ,\] \[ \{ \omega\in\Omega: X(\omega) \leq x \} ,\] \[ \{ \omega\in\Omega: X(\omega) > x \} ,\] \[ \{ \omega\in\Omega: x_1 < X(\omega) \leq x_2 \} .\]
+\end{obs}
+
+\begin{defn}[Función de distribución]
+La función de distribución de una variable aleatoria es una función $F:\mathbb{R}\rightarrow[0,1]$ dada por $F(x) = \mathbb{P}(X \leq x)$
+\end{defn}
+
+\begin{prop}[Propiedades función de distribución]
+Se pueden deducir varias propiedades de $F(x)$ apartir su definición:
+
+\begin{enumerate}[label=(\roman*)]
+    \item $0\leq F(x)\leq 1$
+    \item $x<y \Rightarrow F(x)\leq F(y)$
+    \item $\lim_{x\rightarrow -\infty} F(x) = 0$
+    \item $\lim_{x\rightarrow +\infty} F(x) = 1$
+    \item $\lim_{x\rightarrow a^+} F(x) = F(a)$
+\end{enumerate}
+\end{prop}
+
+\begin{obs}
+A partir de la definición de función de probabilidad podemos calcular otras probabilidades:
+\[ \mathbb{P}(a < X \leq b) = F(b) - F(a) ,\] \[ \mathbb{P}(X > a) = 1 - F(a) ,\] \[ \mathbb{P}(X < b) = F(b^-),\] \[ \mathbb{P}(a \leq X \leq b) = \mathbb{P}(X=a) + F(b) - F(a) ,\] \[ \mathbb{P}(a < X < b) = F(b) - F(a) - \mathbb{P}(X=a) ,\] \[ \mathbb{P}(a \leq X < b) = \mathbb{P}(X=a) + F(b) - F(a) - \mathbb{P}(X=a) \]
+\end{obs}
+
+\section{Variables aleatorias unidimensionales discretas y continuas}
+
+\begin{defn}[Variable aleatoria discreta]
+La variable aleatoria $X$ es discreta si toma valores en un subconjunto numerable o finito $\{x_1,x_2,...\}\subset\mathbb{R}$. La variable aleatoria discreta tiene función de masa $f:\mathbb{R}\rightarrow[0,1]$ dada por $f(x) = \mathbb{P}(X=x)$.
+\end{defn}
+
+\begin{prop}[Propiedades de la función de masa]
+A partir de la función de masa se deducen las siguientes propiedades:
+\begin{enumerate}[label=(\roman*)]
+    \item $0\leq f(x_k)\leq 1$
+    \item $f(x) = 0, \forall x \not\in\{x_1,x_2,...\}$
+    \item $\sum_k f(x_k) = 1$
+\end{enumerate}
+La función de distribución $F(x)$ de una variable aleatoria discreta $X$ se obtiene de \[ F(x) = \mathbb{P}(X\leq x) = \sum_{x_k<x} f(x_k) \]
+\end{prop}
+
+\begin{obs}
+$f(x) = \mathbb{P}(X=x)=F(x) - \lim_{y\rightarrow x^-} F(y)$
+\end{obs}
+
+\begin{defn}[Variable aleatoria continua]
+La variable aleatoria $X$ es continua si su función de distribución puede ser expresada como \[ F(x) = \int_{-\infty}^x f(u)du, x\in\mathbb{R} \] para alguna función integrable $f:\mathbb{R}\rightarrow[0,\infty)$ llamada función de densidad de $X$.
+\end{defn}
+
+\begin{prop}[Propiedades de la función de densidad]
+Sea \[ f(x) = \frac{d F(x)}{dx}\] la función de densidad de una variable continua $X$, se deducen las siguientes propiedades:
+
+\begin{enumerate}[label=(\roman*)]
+    \item $f(x)\geq 0$
+    \item $\int_{-\infty}^\infty f(x)dx = 1$
+    \item $f(x)$ es continua a trozos
+    \item $\mathbb{P}(a<X\leq b) = \int_{a}^b f(x)dx = F(b) - F(a)$
+\end{enumerate}
+La función de distribución $F(x)$ de una variable aleatoria continua se obtiene de \[ F(x) = \mathbb{P}(X\leq x) = \int_{-\infty}^x f(\xi)d\xi\]
+\end{prop}
+
+\begin{defn}[Variable aleatoria mixta]
+La variable aleatoria $X$ es mixta si su función de distribución puede ser expresada como \[ F(x) = \lambda F_1(x) + (1-\lambda)F_2(x), \forall x\in\mathbb{R} \] donde $F_1$ es una función de distribución discreta y $F_2$ es una función de distribución continua y $\lambda\in[0,1]$.
+\end{defn}
+
+\begin{obs}
+Sea $X$ una v.a. con función de distribución $F$. Si $X$ toma valores en un rango continuo pero $\mathbb{P}(X=x)\neq 0$ entonces, $X$ es una v.a. mixta y $F$ se pude expresar como la suma de una función de distribución discreta y una función de distribución continua.
+\end{obs}
+
+\begin{ejr}[Problemas 2.a , Examen Septiembre 2020]
+
+\end{ejr}
+
+\begin{ejr}[3.7 , Manual de ejercicios]
+
+\end{ejr}
+
+\begin{ejr}[3.8 , Manual de ejercicios]
+
+\end{ejr}
+
+\begin{ejr}[3.11 , Manual de ejercicios]
+
+\end{ejr}
+
+\begin{ejr}[3.15.a , Manual de ejercicios]
+
+\end{ejr}
+
+\section{Transformaciones}
+
+\begin{defn}[Transformaciones discretas]
+Si $X$ es una variable aleatoria discreta con función de masa $f_X(x) = \mathbb{P}(X = x)$, entoces $Y = g(X)$ es una variable transformada donde \[ f_y(y) = \mathbb{P}(Y = y) = \mathbb{P}(g(X) = y) = \sum_{y\in R_y} \mathbb{P}(X = g^{-1}(y)) \] 
+\end{defn}
+
+\begin{defn}[Transformaciones continuas]
+Sea $X$ una variable aleatoria continua con función de densidad $f_X(x)$. Entonces, $Y=g(X)$ es una variable transformada donde \[ F_Y(y) = \mathbb{P}(Y\geq y) = \mathbb{P}(g(X)\geq y) = \mathbb{P}(g(X) \in (-\infty,y])= \] \[  = \mathbb{P}(X \in g^{-1}((-\infty,y])) = \int_{g^{-1}((-\infty,y]))} f_X(x)dx\]
+\end{defn}
+
+\begin{obs}[Determinación de función de densidad de una variable transformada]
+Se diferencian dos casos:
+\begin{enumerate}[label=(\roman*)]
+    \item Si $y = g(x)$ es una función inyectiva y existe $g^{-1}$, entonces la función de densidad viene dada por \[ f_Y(y) = f_X(x)\left|\frac{dx}{dy}\right| = f_X(g^{-1}(y))\left|\frac{d(g^{-1}(y))}{dy}\right| \]
+    \item Si $y = g(x)$ no es inyectiva, entonces la función de densidad viene dada por \[ f_Y(y) = \sum_k \frac{f_X(x_k)}{|g'(x_k)|}\] donde $x_k$ son las raices de $y = g(x)$.
+\end{enumerate}
+\end{obs}
+
+\begin{ejr}[Problema 2, Examen Febrero 2021]
+
+\end{ejr}
+
+\begin{ejr}[Cuestión 3, Examen Septiembre 2020]
+
+\end{ejr}
+
+\begin{ejr}[Problema 1.b, Examen Enero 2020]
+
+\end{ejr}
+
+\begin{ejr}[3.10 , Manual de ejercicios]
+
+\end{ejr}
+
+\begin{ejr}[3.12 , Manual de ejercicios]
+
+\end{ejr}
+
+\begin{ejr}[3.14 , Manual de ejercicios]
+
+\end{ejr}
+
+\begin{ejr}[3.17 , Manual de ejercicios]
+
+\end{ejr}
+
+\begin{ejr}[1, Sección 3.8, Gimmet]
+
+\end{ejr}
+
+\begin{ejr}[3, Sección 3.8, Gimmet]
+
+\end{ejr}
+
+\section{Esperanza y Varianza de una variable aleatoria}
+
+\begin{defn}[Esperanza]
+La esperanza de una variable aleatoria $X$, denotada $\mathbb{E}(X)$, se define como \[ \mathbb{E}(X) = \sum_k x_kf(x_k) ,\text{ para $X$ discreta} ,\] \[ \mathbb{E}(X) = \int_{-\infty}^\infty xf(x)dx ,\text{ para $X$ continua}\]
+\end{defn}
+
+\begin{obs}
+Sea $X$ una v.a. mixta con función de distribución $F(x) = \lambda F_1(x) + (1-\lambda)F_2(x)$ entonces, $\mathbb{E}(X) = \lambda \sum_k x_kf(x_k) + (1-\lambda)\int_{-\infty}^\infty xf(x)dx$.
+\end{obs}
+
+\begin{theo}[Propiedades esperanza]
+La esperanza tiene las siguientes propiedades:
+
+\begin{enumerate}[label=(\roman*)]
+    \item $X\geq0 \Rightarrow \mathbb{E}(X) \leq 0$
+    \item $\mathbb{E}(aX + b) = a\mathbb{E}(X) + b$ donde $a,b\in\mathbb{R}$
+    \item Si $g(x)$ es convexa, entonces $\mathbb{E}(g(X)) \geq g(\mathbb{E}(X))$ (Desigualdad de Jensen)
+\end{enumerate}
+\end{theo}
+
+\begin{defn}[Momento de orden $n$]
+El momento de orden $n$ de una variable aleatoria $X$ se define como \[ \mathbb{E}(X^n) = \sum_k (x_k)^nf(x_k) ,\text{ para $X$ discreta} ,\] \[ \mathbb{E}(X^n) = \int_{-\infty}^\infty x^nf(x)dx ,\text{ para $X$ continua}\]
+\end{defn}
+
+\begin{defn}[Varianza]
+La varianza de una variable aleatoria $X$, denotada $Var(X)$, se define como  \[ Var(X) = \mathbb{E}[(X - \mathbb{E}(X))^2] \] \[ = \mathbb{E}(X^2) - \mathbb{E}(X)^2\]
+\end{defn}
+
+\begin{defn}[Mediana]
+La mediana de una variable aleatoria $X$, denotada $M_d$, se define como \[ F(M_d) = \frac{1}{2} ,\] donde $F(M_d)$ es el valor de la función de distribución de $X$ en el punto $M_d$.
+\end{defn}
+
+\begin{ejr}[Problema 2.b, Examen Septiembre 2020]
+
+\end{ejr}
+
+\begin{ejr}[Cuestión 2, Examen Enero 2020]
+
+\end{ejr}
+
+\begin{ejr}[Problema 1.a, Examen Enero 2020]
+
+\end{ejr}
+
+\begin{ejr}[Teoría 2, Examen 2017-2018, Segunda Convovatoria]
+
+\end{ejr}
+
+\begin{ejr}[3.15.b-c , Manual de ejercicios]
+
+\end{ejr}
+
+\begin{ejr}[3.16 , Manual de ejercicios]
+
+\end{ejr}
+
+\section{Desigualdad de Chebyshev}
+
+\begin{nota2}
+El estudio de la probabilidad de una variable aleatoria en el intervalo $(\mathbb{E}(X) - \epsilon, \mathbb{E}(X) + \epsilon)$ puede resultar ser complicado. En este caso, se calcula una cota de esta probabilidad y viene dada por la desigualda de Chevyshev.
+\end{nota2}
+
+\begin{theo}[Desigualdad de Markov]
+Sea $X$ una variable aleatoria y $g:\mathbb{R}\rightarrow\mathbb{R}$ no negativa. Entonces, \[ \mathbb{P}(g(X))>k) \leq \frac{\mathbb{E}(g(X)}{k}, k>0 \]
+\end{theo}
+
+\begin{dem}
+La variable aleatoria $X$ tiene función de distribución continua. Por tanto, \[ \mathbb{E}(g(X)) = \int_{R_x} g(x)f(x)dx \] \[ \geq \int_{g(X) > k} g(x)f(x)dx \] \[ \geq k \int_{g(X) > k} f(x)dx \] \[ = k(\mathbb{P}(g(X)>k)) \] donde $R_x$ es el soporte de la variable aleatoria $X$.
+\end{dem}
+
+\begin{theo}[Desigualdad de Chevyshev]
+Se $X$ una variable aleatoria con $\mathbb{E}(X) < \infty,$ $Var(X)<\infty$. Entonces, si $ k>0,$ se tiene que \[ \mathbb{P}(|X-\mathbb{E}(X)| > \sigma k) \leq \frac{1}{k^2} \]
+\end{theo}
+
+\begin{dem}
+Se deduce tomando $g(X) = (X-\mathbb{E}(X))^2$ en la desigualda de Markov. Donde, \[ \mathbb{P}(|X-\mathbb{E}(X)|)> \sigma k) = \mathbb{P}((X-\mathbb{E}(X))^2)> \sigma^2 k^2) \leq \frac{\sigma^2}{\sigma^2 k^2} = \frac{1}{k^2} \] 
+\end{dem}
+
+\begin{ejr}[Cuestión 1, Examen Enero 2020]
+
+\end{ejr}
+
+\begin{ejr}[Teoría 2, Examen 2017-2018, Segunda Convovatoria]
+
+\end{ejr}
+
+
+\begin{ejr}[2.38 , Schaum]
+
+\end{ejr}
+
+\begin{ejr}[2.39 , Schaum]
+
+\end{ejr}
+
+\section{Función generatriz}
+
+\begin{defn}[Función generatriz]
+Sea $X$ una variable aleatoria discreta con función de masa $f(x)$. La función generatriz de $X$ se define como \[ G(z) = \mathbb{E}(z^X) = \sum_{x=0}^\infty f(x)z^x \] donde $z$ es una variable.
+\end{defn}
+
+\begin{obs}
+$|G(z)| \leq \sum_{x=0}^\infty |f(x)||z^x| \leq \sum_{x=0}^\infty f(x) = 1 $ para $|z|<1$. 
+\end{obs}
+
+\begin{prop}[Propiedades de la función genratriz]
+Derivando la función genratriz se obtiene, \[ G^{(n)}(z) = \sum_{x=n}^\infty \binom{x}{n} n! f(x)z^{x-n} \]
+lo que da lugar a las siguientes propiedades:
+
+\begin{enumerate}[label=(\roman*)]
+    \item $f(0) = \mathbb{P}(X = 0) = G(0)$
+    \item $f(n) = \mathbb{P}(X = n) = \frac{1}{n!} G^{(n)}(0)$
+    \item $\mathbb{E}(X) = G'(1)$
+    \item $\mathbb{E}(X(X-1)(X-2)\cdots(X-n+1)) = G^{(n)}(1)$
+    \item Si $Y = X_1 + \cdots + X_n$, $G_Y(z) = \prod_{i=1}^n G_{X_i}(z)$ (Variables multidimensionales)
+\end{enumerate}
+
+\end{prop}
+
+\section{Función generatriz de momentos}
+
+\begin{defn}[Función generatriz de momentos]
+Sea $X$ una variable aleatoria, la función generatriz de momentos se define como $M(t) = \mathbb{E}(e^{tX})$ donde \[ \sum e^{tx}f(x) \text{ si $X$ es discreta} \] \[ M(t) = \int e^{tx}f(x)dx \text{ si $X$ es continua} \]
+\end{defn}
+
+\begin{prop}[Propiedades función generatriz de momentos]
+Llevando acobo el desarrollo de Taylor de la funcion generatriz de momentos $M(t)$ se tiene que, \[ M(t) = \sum_{k=0}^\infty \frac{\mathbb{E}(X^k)}{k!}t^k \] donde $M^{(k)}(0) = \mathbb{E}(X^k)$.
+\end{prop}
+
+\begin{ejr}[3.18 , Manual de ejercicios]
+
+\end{ejr}
+
+\section{Función Característica}
+
+\begin{defn}[Función característica]
+Sea $X$ una variable aleatoria, la función característica de $X$ se define como $\varphi(t) = \mathbb{E}(e^{itX})$ donde \[ \varphi(t) = \sum e^{itx}f(x) \text{ si $X$ es discreta} \] \[ \varphi(t) = \int e^{itx}f(x)dx \text{ si $X$ es continua} \] Además, la función característica satisface:
+
+\begin{enumerate}[label=(\roman*)]
+    \item $\varphi(0) = 1, \varphi(t) \leq 1, \forall t $
+    \item $\varphi^{(k)}(0) = i^k\mathbb{E}(X^k)$
+    \item Si $Y = aX+b$ entonces $\varphi_Y(t)=e^{itb}\varphi(at)$
+\end{enumerate}
+
+\end{defn}
+
+\begin{theo}[de inversión]
+Sea $X$ una variable aleatoria y $\varphi(t)$ su función característica, entonces \[ f(x) = \frac{1}{2\pi} \int e^{-itx}\varphi(t)dt \]
+\end{theo}
+
+\begin{ejr}[3.19 , Manual de ejercicios]
+
+\end{ejr}
+
+\begin{ejr}[3.21 , Manual de ejercicios]
+
+\end{ejr}
+
+\begin{ejr}[Teoría 3, Examen 2017-2018, Segunda Convovatoria]
+
+\end{ejr}
+
+\section{Distribuciones discretas}
+
+\begin{defn}[Bernoulli]
+La distribución de Bernoulli es la distribución Binomial con $n=1$. Se denota $B(1,p)$ y sus medidas son:
+\begin{enumerate}[label=(\roman*)]
+    \item Función de masa 
+    \[ f(x) =
+    \begin{cases} 
+      p & x=1 \\
+      1-p=q & x = 0 
+    \end{cases}
+    \]
+    \item Esperanza \[ \mathbb{E}(X) = p \]
+    \item Varianza \[ Var(X) = pq \]
+    \item Función característica \[ \varphi(t) = pe^{it} + q \]
+    \item Función de distribución \[ F(x)  = 
+    \begin{cases} 
+        0 & x<0\\
+        1- p & 0\leq x < 1 \\
+        1 & x \geq 1 
+    \end{cases}\]
+\end{enumerate}
+
+\end{defn}
+
+\begin{defn}[Binomial]
+La distribución binomial contabiliza el número de exitos acumulado en $n$ repeticiones. Se denota $B(n,p)$ y sus medidas son:
+\begin{enumerate}[label=(\roman*)]
+    \item Función de masa \[ f(x) = \binom{n}{x} p^x(1-p)^{n-x}, x\in\{0,1,...,n\}\]
+    \item Esperanza \[ \mathbb{E}(X) = np \]
+    \item Varianza \[ Var(X) = npq\]
+    \item Función característica \[ \varphi(t) = (pe^{it} + q)^n \]
+    \item Función de distribución \[ F(x) = \sum_{k=0}^n \binom{n}{k} p^k(1-p)^{n-k}\]
+\end{enumerate}
+
+\end{defn}
+
+\begin{ejr}[2.15 , Schaum]
+
+\end{ejr}
+
+\begin{ejr}[2.30 , Schaum]
+
+\end{ejr}
+
+\begin{defn}[Geométrica]
+La distribución geométrica contabiliza el número de fracasos hasta el primer exito. Se denota $G(p)$ y sus medidas son:
+
+\begin{enumerate}[label=(\roman*)]
+    \item Función de masa \[ f(x) = (1-p)^{x-1}p, x\in\{1,2,...\} \]
+    \item Esperanza \[ \mathbb{E}(X) = \frac{1}{p}\]
+    \item Varianza \[ Var(X) = \frac{1-p}{p^2} \]
+    \item Función característica \[ \varphi(t) = \frac{pe^{it}}{1 - (1-p)e^{it}} \]
+    \item Función de distribución \[ F(x) = 1-(1-p)^x \]
+\end{enumerate}
+\end{defn}
+
+\begin{ejr}[2.16 , Schaum]
+
+\end{ejr}
+
+\begin{ejr}[2.29 , Schaum]
+
+\end{ejr}
+
+\begin{defn}[Binomial Negativa]
+La distribución bimnomial negativa contabiliza el número de fracasos en los primeros $n$ exitos. Se denota $BN(n,p)$ y sus medidas son:
+\begin{enumerate}[label=(\roman*)]
+    \item Función de masa \[ f(x) = \binom{n + x - 1}{x} p^n(1-p)^x, x\in\{0,1,2,...\} \]
+    \item Esperanza \[ \mathbb{E}(X) = \frac{n(1-p)}{p} \]
+    \item Varianza \[ Var(X) = \frac{n(1-p)}{p^2} \]
+    \item Función característica \[ \varphi(t) = \big(\frac{p}{1 - (1-p)e^{it}}\big)^n \]
+\end{enumerate}
+\end{defn}
+
+\begin{ejr}[2.18 , Schaum]
+
+\end{ejr}
+
+\begin{defn}[Hipergeométrica]
+La distribución hipergeométrica contabiliza el número de bolas blancas $n$ extraidas de una urna con $N$ bolas de las cuales $D$ son blancas. Se denota $H(N,D,n)$ y sus medidas son:
+\begin{enumerate}[label=(\roman*)]
+    \item Función de masa \[ f(x) = \frac{\binom{D}{x}\binom{N-D}{n-x}}{\binom{N}{n}} \]
+    \item Esperanza \[ \mathbb{E}(X) = \frac{nD}{N} \]
+    \item Varianza \[ Var(X) = ? \]
+    \item Función característica \[ \varphi(t) = ? \]
+\end{enumerate}
+
+\end{defn}
+
+\begin{defn}[Poisson]
+Se dice que la variable aleatoria $X$ sigue una distribución de poisson, denotada $P(\lambda)$ si:
+\begin{enumerate}[label=(\roman*)]
+    \item Función de masa \[ f(x) = e^{-\lambda}\frac{\lambda^x}{x!}, x\in\{0,1,2,...\} \]
+    \item Esperanza \[ \mathbb{E}(X) = \lambda \]
+    \item Varianza \[ Var(X) = \lambda \]
+    \item Función característica \[ \varphi(t) = e^{-\lambda(1-e^{it})} \]
+    \item Función de distribución \[ F(x) = e^{-\lambda}\sum_{k=0}^n \frac{\lambda^k}{k!}\]
+\end{enumerate}
+\end{defn}
+
+\begin{ejr}[2.19 , Schaum]
+
+\end{ejr}
+
+\begin{ejr}[2.31 , Schaum]
+
+\end{ejr}
+
+\begin{theo}[Convergencia hipergeométrica a binomial]
+Sea $X$ una variable aleatoria que sige una distribución hipergeométrica $H(N,Np,n)$, entonces \[ \lim_{n\rightarrow\infty}  \frac{\binom{Np}{x}\binom{N(1-p)}{n-x}}{\binom{N}{n}} = \binom{n}{x}p^x(1-p)^{n-x}, x\in\{0,1,...,n\} \]
+\end{theo}
+
+\begin{theo}[Convergencia binomial poisson]
+Sea $X$ una variable aleatoria que sige una distribución binomial $B(n,p)$, entonces \[ \lim_{n\rightarrow\infty} \binom{n}{x}p^x(1-p)^{n-x} = e^{-\lambda}\frac{\lambda^x}{x!}, x\in\{0,1,...,n\}\]
+\end{theo}
+
+\begin{ejr}[Teoría 4, Examen 2017-2018, Segunda Convovatoria]
+
+\end{ejr}
+
+\begin{ejr}[2.43 , Schaum]
+
+\end{ejr}
+
+\section{Distribuciones continuas}
+
+\begin{defn}[Uniforme]
+Se dice que la variable aleatoria $X$ sigue una distribución de uniforme, denotada $U(a,b)$ si:
+\begin{enumerate}[label=(\roman*)]
+    \item Función de masa \[ f(x) = \frac{1}{b-a} \]
+    \item Esperanza \[ \mathbb{E}(X) = \frac{a+b}{2} \]
+    \item Varianza \[ Var(X) = \frac{(b-a)^2}{12} \]
+    \item Función característica \[ \varphi(t) = \frac{e^{itb} - e^{ita}}{it(b-a)} \]
+    \item Función de distribución \[ F(x)  = 
+    \begin{cases} 
+        0 & x\leq a\\
+        \frac{x-a}{b-a} & a< x < b \\
+        1 & x \geq b
+    \end{cases}\]
+\end{enumerate}
+\end{defn}
+
+\begin{ejr}[2.34 , Schaum]
+
+\end{ejr}
+
+\begin{defn}[Normal]
+Se dice que la variable aleatoria $X$ sigue una distribución de Normal, denotada $N(\mu,\sigma^2)$ si:
+\begin{enumerate}[label=(\roman*)]
+    \item Función de densidad \[ f(x) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{2\sigma^2}} \]
+    \item Esperanza \[ \mathbb{E}(X) = \mu \]
+    \item Varianza \[ Var(X) = \sigma^2 \]
+    \item Función característica \[ \varphi(t) = e^{it\mu-\frac{1}{2}\sigma^2t^2} \]
+    \item Función de distribución \[ F(x)  = \varphi\bigg( \frac{x - \mu}{\sigma}\bigg)\]
+\end{enumerate}
+\end{defn}
+
+\begin{prop}[Propiedades distribución normal]
+Sea $X\sim N(\mu,\sigma^2)$ una variable aleatoria que sigue una distribución normal, se verifica:
+\begin{enumerate}[label=(\roman*)]
+    \item Si $ Z = \frac{X-\mu}{\sigma}$ entonces $Z\sim N(0,1)$
+    \item Si $ Y = aX + b$ entonces $Y\sim N(a\mu + b,a^2\sigma^2)$
+\end{enumerate}
+\end{prop}
+
+\begin{ejr}[2.23 , Schaum]
+
+\end{ejr}
+
+\begin{ejr}[2.24 , Schaum]
+
+\end{ejr}
+
+\begin{ejr}[2.51 , Schaum]
+
+\end{ejr}
+
+\begin{defn}[Exponencial]
+Se dice que la variable aleatoria $X$ sigue una distribución de exponencial, denotada $Exp(\lambda)$ si:
+\begin{enumerate}[label=(\roman*)]
+    \item Función de densidad \[ f(x) = \lambda^{-\lambda x} \]
+    \item Esperanza \[ \mathbb{E}(X) = \frac{1}{\lambda} \]
+    \item Varianza \[ Var(X) = \frac{1}{\lambda^2} \]
+    \item Función característica \[ \varphi(t) = \bigg( 1 - \frac{it}{\lambda} \bigg)^{-1} \]
+    \item Función de distribución \[ F(x)  = 
+    \begin{cases} 
+        1-e^{-\lambda x} & x\leq 0\\
+        0 & x < 0
+    \end{cases}\]
+\end{enumerate}
+\end{defn}
+
+\begin{ejr}[2.35 , Schaum]
+
+\end{ejr}
+
+\begin{defn}[Gamma]
+Se dice que la variable aleatoria $X$ sigue una distribución de gamma, denotada $Gamma(a,p)$ si:
+\begin{enumerate}[label=(\roman*)]
+    \item Función de densidad \[ f(x) = \frac{a^p}{\Gamma(p)}e^{-ax}x^{p-1}\] donde \[ \Gamma(p) = \int_0^\infty e^{-x}x^{p-1}dx \]
+    \item Esperanza \[ \mathbb{E}(X) = \frac{p}{a} \]
+    \item Varianza \[ Var(X) = \frac{p}{a^2} \]
+    \item Función característica \[ \varphi(t) = \bigg( 1 - \frac{it}{a} \bigg)^{-p} \]
+\end{enumerate}
+
+\end{defn}
+
+\begin{obs}
+Si $X\sim Exp(\lambda)$ entonces $X\sim Gamma(a=\lambda,p=1)$
+\end{obs}
+
+\begin{obs}
+La distribución $X_n^2$ se define como una distribución Gamma$(a=\frac{1}{2},p=\frac{n}{2})$
+\end{obs}
+
+\begin{ejr}[2.26 , Schaum]
+
+\end{ejr}
+
+\begin{ejr}[Cuestión 3, Examen Febrero 2021]
+
+\end{ejr}
+
+
+
+\chapter{Variables Aleatoria Multidimensionales}
+\section{Variables aleatorias multidimensionales y su función de distribución}
+
+\begin{defn}[Variable aleatoria bidimensional]
+Sean $X,Y$ dos v.a. Entonces al par $(X,Y)$ se le llama v.a bidimensional.
+\end{defn}
+
+\begin{defn}[Función de distribución conjunta]
+A la función de distribución de una v.a bidimensinal $(X,Y)$ se le llama función de distribución conjunta y es la función definida por \[ F_{XY} (x,y) = \mathbb{P}(X\leq x, Y\leq y) \]
+\end{defn}
+
+\begin{prop}[Propiedades función de distribución conjunta]
+La función de distribución $F_{XY}$ de un vector aleatorio $(X,Y)$ tiene las siguentes propiedades:
+
+\begin{enumerate}[label=(\roman*)]
+    \item $\lim_{x,y\rightarrow -\infty} F_{XY}(x,y) = 0,  \lim_{x,y\rightarrow \infty} F_{XY}(x,y) = 1$
+    \item Si $(x_1,y_1)\leq(x_2,y_2)$ entonces $F_{XY}(x_1,y_1)\leq F_{XY}(x_2,y_2)$
+    \item $F_{XY}$ es continua por la derecha para cada una de sus variables.
+\end{enumerate}
+\end{prop}
+
+\begin{defn}[Vector aleatorio]
+Sean $X_1,X_2,...,X_n$ v.a. Entonces al vector $ (X_1,X_2,...,X_n)$ se le llama vector aleatorio. 
+\end{defn}
+
+\begin{defn}[Función distribución vector aleatorio]
+La función de distribución de un vector aleatorio $ (X_1,X_2,...,X_n)$ se define como  \[ F_{X_1...X_n} (x_1,...,x_n) = \mathbb{P}(X_1\leq x_1,..., X_n\leq x_n) \]
+\end{defn}
+
+\section{Variables aleatorias Multidimensionales discretas y continuas}
+
+\begin{defn}[Variable aleatoria bidimensional discreta]
+La v.a bidimensional $(X,Y)$ es discreta si toma valores en un subconjunto finito o numerable de $\mathbb{R}^2$. La v.a discretas conjuntas $(X,Y)$ tienen función de masa $f:\mathbb{R}^2\rightarrow[0,1]$ dada por \[ f(x,y) = \mathbb{P}(X=x, Y=y) \]
+\end{defn}
+
+\begin{prop}[Propiedades función de masa conjunta]
+La función de masa conjunta $f_{xy}$ de la v.a bidimensional discreta $(X,Y)$ verifica:
+
+\begin{enumerate}[label=(\roman*)]
+    \item $0\leq f_{XY}(x_i,y_j) \leq 1$
+    \item $\sum_{x_i}\sum_{y_j} f_{XY}(x_i,y_j) = 1$
+    \item $F_{XY}(x,y) = \sum_{x_i \leq x}\sum_{y_j \leq y} f_{XY}(x_i,y_j)$
+\end{enumerate}
+\end{prop}
+
+\begin{defn}[Funciones de masa marginales]
+Las funciones de masa marginales de la v.a bidimensional discreta $(X,Y)$ se definen como \[ f_X(x) = \sum_{y_j} f_{XY}(x_i,y_j) \] \[  f_Y(y) = \sum_{x_i} f_{XY}(x_i,y_j) \]
+\end{defn}
+
+\begin{prop}[Independencia de variables aleatorias bidimensionales discretas]
+Si las v.a discretas $X,Y$ son independientes, entonces la función de masa conjunta viene dada por \[ f_{XY}(x,y)=f_{X}(x)f_{Y}(y) \] donde $f_{X}, f_{Y}$ son las funciones de masa marginales.
+\end{prop}
+
+\begin{defn}[Función de masa condicionada]
+Si $(X,Y)$ es una v.a bidimensional discreta con función de masa conjunta $f_{XY}$, entonces la función de masa condicionada de $Y$ dado $X=x$ se define como \[ f_{Y|X}(y|x) = \frac{f_{XY}(x,y)}{f_{X}(x)} \] similarmente \[ f_{X|Y}(x|y) = \frac{f_{XY}(x,y)}{f_{Y}(y)} \]
+\end{defn}
+
+\begin{defn}[Variable aleatoria bidimensional continua]
+Las v.a $X,Y$ son continuas si su función de distribución conjunta viene dad por \[ F_{XY}(x,y) = \int_{u=-\infty}^x \int_{v=-\infty}^y f(u,v)du dv \] donde $x,y\in\mathbb{R}$, para alguna función integrable $f:\mathbb{R}^2\rightarrow [0,\infty)$ llamada función de densidad conjunta del par $(X,Y)$.
+\end{defn}
+
+\begin{prop}[Propiedades función de densidad conjunta]
+La función de densidad conjunta $f_{XY}$ de la v.a bidimensional continua $(X,Y)$ verifica:
+
+\begin{enumerate}[label=(\roman*)]
+    \item $f_{XY}(x,y) \geq 0$
+    \item $\int_{-\infty}^\infty \int_{-\infty}^\infty f(x,y)dx dy = 1$
+    \item $f_{XY}$ es continua $\forall x,y$ excepto, quizas un subconjunto finito.
+    \item $\mathbb{P}(a < X \leq b, c < Y \leq d) = \int_{c}^c \int_{a}^b f(x,y)dx dy$
+\end{enumerate}
+\end{prop}
+
+\begin{defn}[Funciones de densidad marginales]
+Las funciones de masa marginales de la v.a bidimensional continua $(X,Y)$ se definen como \[ f_X(x) = \int_{-\infty}^\infty f_{XY}(x,y)dy \] \[ f_Y(y) = \int_{-\infty}^\infty f_{XY}(x,y)dx \]
+\end{defn}
+
+\begin{prop}[Independencia de variables aleatorias bidimensionales continuas]
+Si las v.a continuas $X,Y$ son independientes, entonces la función de densidad conjunta viene dada por \[ f_{XY}(x,y)=f_{X}(x)f_{Y}(y) \] donde $f_{X}, f_{Y}$ son las funciones de densidad marginales.
+\end{prop}
+
+\begin{defn}[Función de densidad condicionada]
+Si $(X,Y)$ es una v.a bidimensional continua con función de densidad conjunta $f_{XY}$, entonces la función de densidad condicionada de $Y$ dado $X=x$ se define como \[ f_{Y|X}(y|x) = \frac{f_{XY}(x,y)}{f_{X}(x)} \] similarmente \[ f_{X|Y}(x|y) = \frac{f_{XY}(x,y)}{f_{Y}(y)} \]
+\end{defn}
+
+\begin{ejr}[Problema 3.a-b, Examen Febrero 2021]
+
+\end{ejr}
+
+\begin{ejr}[Problema 3, Examen Septiembre 2020]
+
+\end{ejr}
+
+\begin{ejr}[Problema 2.a-b, Examen Enero 2020]
+
+\end{ejr}
+
+\begin{ejr}[Problema 2.a, Examen Enero 2019]
+
+\end{ejr}
+
+\begin{ejr}[Problema 2, Segunda Convocatoria 2017-2018]
+
+\end{ejr}
+
+\begin{ejr}[4.5, Manual de ejercicios]
+
+\end{ejr}
+
+\begin{ejr}[4.9, Manual de ejercicios]
+
+\end{ejr}
+
+\section{Transformaciones}
+
+\begin{theo}
+Si $g:\mathbb{R}^2\rightarrow \mathbb{R}$ y $T:A\rightarrow B$ donde $T(x_1,x_2) = (y_1,y_2)$ entonces \[ \int \int_A g(x_1,x_2)dx_1 dx_2 = \int\int_B g(x_1(y_1,y_2),x_2(y_1,y_2))|J(y_1,y_2)|dy_1 dy_2 \] donde \[ J(y_1,y_2)=
+\begin{pmatrix}
+\frac{\partial x_1}{\partial y_1}&\frac{\partial x_2}{\partial y_1}\\
+\frac{\partial x_1}{\partial y_2}&\frac{\partial x_2}{\partial y_2}\\
+\end{pmatrix}
+\]
+\end{theo}
+
+\begin{cor}
+Si $X_1,X_2$ tienen función de densidad conjunta $f$, entonces el par $Y_1,Y_2$ dado por la trnasformación $(Y_1,Y_2) = T(X_1,X_2)$ tiene función de densidad \[ f_{Y_1Y_2}(y_1,y_2) = f(x_1(y_1,y_2),x_2(y_1,y_2))|J(y_1,y_2)| \] si $(y_1,y_2)$ está en el rango de $T$.
+\end{cor}
+
+\begin{ejr}[Cuestión 4, Examen Febrero 2021]
+
+\end{ejr}
+
+\begin{ejr}[Problema 2.c, Examen Enero 2020]
+
+\end{ejr}
+
+\begin{ejr}[Problema 2.b-c, Examen Enero 2019]
+
+\end{ejr}
+
+\begin{ejr}[Problema 1, Segunda Convocatoria 2017-2018]
+
+\end{ejr}
+
+\begin{ejr}[4.13, Manual de ejercicios]
+
+\end{ejr}
+
+\begin{ejr}[4.15, Manual de ejercicios]
+
+\end{ejr}
+
+\begin{ejr}[4.16, Manual de ejercicios]
+
+\end{ejr}
+
+\begin{ejr}[4.17, Manual de ejercicios]
+
+\end{ejr}
+
+\begin{ejr}[4.18, Manual de ejercicios]
+
+\end{ejr}
+
+\begin{ejr}[4.19, Manual de ejercicios]
+
+\end{ejr}
+
+\section{Esperanza y Varianza de variables aleatorias multidimensionales}
+
+\begin{defn}[Momento de orden (k,n)]
+Sea $(X,Y)$ una v.a. bidimensional. El momento de orden (k,n) de $(X,Y)$ se define como 
+\[ m_{kn} = \mathbb{E}(X^kY^n) = 
+\begin{dcases} 
+    \sum_y \sum_x x^ky^nf(x,y) & \text{ caso discreto}\\
+    \int_{-\infty}^\infty \int_{-\infty}^\infty x^ky^nf(x,y)dx dy & \text{ caso continuo}
+\end{dcases}\]
+\end{defn}
+
+\begin{defn}[Esperanza]
+Sea $(X,Y)$ una v.a. bidimensional. La esperanza de $(X,Y)$ se define como el momento de orden $(1,1)$ \[ m_{11} = \mathbb{E}(XY) = 
+\begin{dcases} 
+    \sum_y \sum_x xyf(x,y) & \text{ caso discreto}\\
+    \int_{-\infty}^\infty \int_{-\infty}^\infty xyf(x,y)dx dy & \text{ caso continuo}
+\end{dcases}\]
+\end{defn}
+\begin{obs}
+Si $(k=1,n=0)$, se tiene $m_{10} = \mathbb{E}(X)$ y si $(k=0,n=1)$, se tiene $m_{01} = \mathbb{E}(Y)$
+\end{obs}
+
+\begin{defn}[Esperanza condicionada]
+Sea $(X,Y)$ una v.a. bidimensional. Entonces, la espranza de $Y$ condicionada por $X = x$ se define como \[ \mathbb{E}(Y|x) =
+\begin{dcases} 
+    \sum_y yf_{Y|X}(y|x) & \text{ caso discreto}\\
+    \int_{-\infty}^\infty yf_{Y|X}(y|x) dy & \text{ caso continuo}
+\end{dcases}\]
+Similarmente, la espranza de $X$ condicionada por $Y = y$ se define como \[ \mathbb{E}(X|y) =
+\begin{dcases} 
+    \sum_y xf_{X|Y}(x|y) & \text{ caso discreto}\\
+    \int_{-\infty}^\infty xf_{X|Y}(x|y) dy & \text{ caso continuo}
+\end{dcases}\]
+\end{defn}
+
+\begin{defn}[Varianza]
+Sea $(X,Y)$ una v.a. bidimensional. La varianza de $X$ se define como \[ Var(X) = m_{20} - m_{10}^2 = \mathbb{E}(X^2) - \mathbb{E}(X)^2\] y la varianza de $Y$ como \[ Var(Y) = m_{02} - m_{01}^2 = \mathbb{E}(Y^2) - \mathbb{E}(Y)^2\]
+\end{defn}
+
+\begin{defn}[Varianza condicionada]
+Sea $(X,Y)$ una v.a. bidimensional. Entonces, la varianza de $Y$ condicionada por $X=x$ se define como \[ Var(Y|x) = \mathbb{E}(Y^2|x) - [\mathbb{E}(Y|x)]^2 \] Similarmente, la varianza de $X$ condicionada por $Y=y$ se define como \[ Var(X|y) = \mathbb{E}(X^2|y) - [\mathbb{E}(X|y)]^2 \]
+\end{defn}
+
+\begin{defn}[Covarianza]
+Sea $(X,Y)$ una v.a. bidimensional. La covarianza de $(X,Y)$ se define como \[ Cov(X,Y) = \sigma_{XY} = \mathbb{E}(XY) -\mathbb{E}(X)\mathbb{E}(Y)\]
+\end{defn}
+
+\begin{obs}
+Si $Cov(X,Y) = 0$ decimos que $X$ e $Y$ son incorreladas.
+\end{obs}
+
+\begin{defn}[Coeficiente de correlación]
+Sea $(X,Y)$ una v.a. bidimensional. El coeficiente de correlación de $(X,Y)$ se define como \[ p_{XY} = \frac{\sigma_{XY}}{\sigma_x \sigma_y} \]
+\end{defn}
+
+\begin{obs}
+$|p_{XY}|\leq 1$
+\end{obs}
+
+\begin{obs}
+El coeficiente de correlación es una medida de dependencia lineal.
+\end{obs}
+
+\begin{prop}
+  Sea $(X,Y)$ v.a. bidimensiona. Si $X$ e $Y$ son independientes, entonces, el coeficiente de correlación $\rho = 0$.
+\end{prop}
+
+\begin{defn}[Curva de regresión]
+Sea $(X,Y)$ una v.a. bidimensional. La curva de regresión de Y sobre X se define como \[ y = \mathbb{E}(Y|x) \] Similarmente, la curva de regresión de X sobre Y se define como \[ x = \mathbb{E}(X|y) \]
+\end{defn}
+
+\begin{defn}[Recta de regresión]
+Sea $(X,Y)$ una v.a. bidimensional. La recta de regresión de $Y$ sobre $X$ se define como \[ y = \mathbb{E}(Y) - \frac{\sigma_{12}}{\sigma_{1}^2}(x - \mathbb{E}(X)) \] Similarmente, la recta de regresión de $X$ sobre $Y$ se define como \[ x = \mathbb{E}(X) - \frac{\sigma_{12}}{\sigma_{2}^2}(y-\mathbb{E}(Y)) \]
+\end{defn}
+
+
+\section{Función Característica}
+
+\begin{defn}[Función característica]
+Sea $(X,Y)$ una v.a. bidimensional. La función característica de $(X,Y)$ se define como $\varphi(t,u) = \mathbb{E}[e^{i(tX_1 + uX_2)}]$ donde \[ \varphi(t,u) = \sum e^{i(tx_1 + ux_2)}f(x_1,x_2) \text{ caso discreto} \] \[ \varphi(t,u) = \int e^{i(tx_1 + ux_2)}f(x_1,x_2)dx_1 dx_2 \text{ caso continuo} \]
+\end{defn}
+
+\begin{obs}
+Si $X_1,X_2$ son independientes entonces, $\varphi_{X_1,X_2}(t,u) = \varphi_{X_1}(t)\varphi_{X_2}(u)$.
+Si $X_1,X_2$ son independientes entonces, $\varphi_{X_1 + X_2}(t) = \varphi_{X_1}(t)\varphi_{X_2}(t)$.
+\end{obs}
+
+\begin{ejr}[Cuestión 4, Examen Febrero 2021]
+
+\end{ejr}
+
+\begin{ejr}[4.11, Manual de ejercicios]
+
+\end{ejr}
+
+\section{Distribuciones Notables}
+
+\begin{defn}[Multinomial]
+La distribución multinomial es una extensión de la distribución binomial. Un experimento sigue una distribución multinomial con parámetros $p_1,...,p_k$ si: 
+
+\begin{enumerate}[label=(\roman*)]
+    \item El experimento tiene $k$ sucesos disjuntos dos a dos $A_1,...,A_k$.
+    \item $\mathbb{P}(A_i) = p_i, i=1,...,k$ y $\sum_{i=1}^k p_i = 1$.
+\end{enumerate}
+
+Sea $X_i$ la v.a. que denota el número de repeticiones que resultan en $A_i$. Entonces $(X_1,...,X_k)$ es una distribución multinomial con parámetros $(n,p_1,...,p_k)$ y su \textbf{función de masa} biene dada por \[ f_{X_1,...,X_n}(x_1,...,x_n) = \frac{n!}{x_1!\cdots x_n!}p_1^{x_1}\cdots p_k^{x_k} \] y su \textbf{función característica} viene dada por \[ \varphi(t_1,...,t_k) = (p_1e^{it_1} + \cdots + p_ke^{it_k})^n \] 
+\end{defn}
+
+\begin{obs}
+Cuando $k=2$ la multinomial se reduce a binomial.
+\end{obs}
+
+\begin{obs}
+Las distribuciones marginales son binomiales.
+\end{obs}
+
+\begin{defn}[Normal bidimensional]
+La v.a. bidimesional $(X,Y)$ sigue una distribución normal bidimensional si su función de densidad conjunta viene dada por \[ f_{XY}(x,y) = \frac{1}{2\pi\sigma_x\sigma_y(1-p^2)^{1/2}}e^{-\frac{1}{2}q(x,y)} \] donde \[ q(x,y) = \frac{1}{1-p^2}\bigg[\bigg(\frac{x - \mu_x}{\sigma_x}\bigg)^2 -2p\frac{x - \mu_x}{\sigma_x}\frac{y - \mu_y}{\sigma_y} + \bigg( \frac{y-\mu_y}{\sigma_y} \bigg)^2 \bigg]\]
+\end{defn}
+
+\begin{defn}[Normal multivariante]
+El vector aleatorio $(X_1,...,X_n)$ sigue una distribución normal multivariante si su función de densidad conjunta viene dada por \[ f_X(x) = \frac{1}{(2\pi)^{n/2}|\det(K)|^{1/2}}e^{-\frac{1}{2}(x-\mu)^TK^{-1}(x-\mu)}\] donde $X= (X_1,...,X_n), x = (x_1,...,x_n), \mu = (\mu_1,...,\mu_n)$ y $K$ es la matriz de covarianzas.
+\end{defn}
+
+\chapter{Convergencia}
+\section{Convergencia de variables aleatorias}
+
+\begin{defn}[Covergencia casi seguro]
+Sea $\{ X_n\}_{n\in\mathbb{N}}$ una sucesión de v.a. Se dice que $\{ X_n\}_{n\in\mathbb{N}}$ converge casi seguro a $X$ si \[ \mathbb{P} \bigg( \{ \omega\in\Omega: \lim_{n\rightarrow\infty} X_n(\omega) = X(\omega) \} \bigg)\] es decir, $\{ X_n\}_{n\in\mathbb{N}}$ converge casi seguro a $X$ si y solo si \[ \forall\epsilon>0, \lim_{n\rightarrow\infty} \mathbb{P}\bigg(\bigcup_{m=n}^\infty \{ \omega\in\Omega:|X_n(\omega) -X(\omega)| \geq \epsilon \} \bigg)=0 \] equivalentemente  \[ \forall\epsilon>0, \lim_{n\rightarrow\infty} \mathbb{P}\bigg(\bigcap_{n}^\infty \{ \omega\in\Omega:|X_n(\omega) -X(\omega)| < \epsilon \} \bigg)=1 \]
+\end{defn}
+
+\begin{obs}
+Si $\forall \epsilon>0, \sum_{n=1}^\infty \mathbb{P}(|X_m -X|>\epsilon)$ es convergente, entonces $X_n\rightarrow X$ casi seguro.
+\end{obs}
+
+\begin{defn}[Covergencia en probabilidad]
+Sea $\{ X_n\}_{n\in\mathbb{N}}$ una sucesión de v.a. Se dice que $\{ X_n\}_{n\in\mathbb{N}}$ converge en probabilidad a $X$  si y solo si \[ \lim_{n\rightarrow\infty} \mathbb{P}\{ \omega\in\Omega:|X_n(\omega) -X(\omega)| \geq \epsilon \}=0 \] equivalentemente  \[ \lim_{n\rightarrow\infty} \mathbb{P}\{ \omega\in\Omega:|X_n(\omega) -X(\omega)| < \epsilon \}=1 \]
+\end{defn}
+
+\begin{obs}
+Si $X_n\xrightarrow{c.s.}X$ entonces $X_n\xrightarrow{prob.}X$.
+\end{obs}
+
+\begin{obs}[Condición suficiente]
+Si $\mathbb{E}(X_n)\xrightarrow[n\rightarrow\infty]{} a, Var(X_n) \xrightarrow[n\rightarrow\infty]{}0$ entonces, $X_n\xrightarrow{prob.}X$
+\end{obs}
+
+\begin{defn}[Covergencia en media cuadrática]
+Sea $\{ X_n\}_{n\in\mathbb{N}}$ una sucesión de v.a. Se dice que $\{ X_n\}_{n\in\mathbb{N}}$ converge en media cuadrática a $X$ si verifica que \[ \lim_{n\rightarrow\infty} \mathbb{E}[(X_n-X)^2] = 0 \]
+\end{defn}
+
+\begin{obs}
+Si $X_n\xrightarrow{m.c.}X$ entonces $X_n\xrightarrow{prob.}X$.
+\end{obs}
+
+\begin{defn}[Covergencia en ley]
+Sea $\{ X_n\}_{n\in\mathbb{N}}$ una sucesión de v.a. Se dice que $\{ X_n\}_{n\in\mathbb{N}}$ converge en ley a $X$  si y solo si \[ \lim_{n\rightarrow\infty} F_{X_n}(x) = F_{X}(x) \]
+\end{defn}
+
+\begin{obs}
+Si $X_n\xrightarrow{prob,}X$ entonces $X_n\xrightarrow{L}X$.
+\end{obs}
+
+\begin{obs}
+Si $\lim_{n\rightarrow\infty} \varphi_n(t) = \varphi(t)$ entonces $X_n\xrightarrow{L}X$.
+\end{obs}
+
+\section{Leyes de los grandes números}
+
+\begin{defn}[Ley débil de los grandes números]
+Sea $\{ X_n\}_{n\in\mathbb{N}}$ una sucesión de v.a.  Se dice que $\{ X_n\}_{n\in\mathbb{N}}$ obedece la ley débil de los grande números si existe una sucesión de constantes $\{ B_n\}_{n\in\mathbb{N}}$ tal que $\{ B_n\}>0, \forall n\in\mathbb{N}$ con $\{ B_n\}\rightarrow\infty$ y $\{ A_n\}_{n\in\mathbb{N}}$ que verifican \[ \frac{S_n-A_n}{B_n}\xrightarrow{prob.}0 \] donde $S_n = \sum_{i=1}^n X_i$.
+\end{defn}
+
+\begin{theo}[Ley débil de Chebychev]
+Sea $\{ X_n\}_{n\in\mathbb{N}}$ una sucesión de v.a. independientes con $Var(X_n) < \infty, \forall n\in\mathbb{N}$. Entonces, $X_n$ obedece la ley débil de los grande números con $B_n=n$ y $A_n = \sum_{i=1}^n \mathbb{E}(X_i)$, es decir, \[ \frac{S_n - \mathbb{E}(S_n)}{n}\xrightarrow{prob.}0 \] donde $S_n = \sum_{i=1}^n X_i$.
+\end{theo}
+
+\begin{theo}[Ley débil de Khintchine]
+Sea $\{ X_n\}_{n\in\mathbb{N}}$ una sucesión de v.a. independientes identicamente distribuidas con $\mathbb{E}(X_n)=\mu$. Entonces, \[ \frac{S_n}{n}\xrightarrow{prob.}\mu \] es decir, \[ \frac{1}{n}\sum_{i=1}^\infty X_i \xrightarrow{prob.}\mu \] donde $S_n = \sum_{i=1}^n X_i$.
+\end{theo}
+
+\begin{defn}[Ley fuerte de los grandes números]
+Sea $\{ X_n\}_{n\in\mathbb{N}}$ una sucesión de v.a.  Se dice que $\{ X_n\}_{n\in\mathbb{N}}$ obedece la ley fuerte de los grande números si existe una sucesión de constantes $\{ B_n\}_{n\in\mathbb{N}}$ tal que $\{ B_n\}>0, \forall n\in\mathbb{N}$ con $\{ B_n\}\rightarrow\infty$ y $\{ A_n\}_{n\in\mathbb{N}}$ que verifican \[ \frac{S_n-A_n}{B_n}\xrightarrow{c.s.}0 \] donde $S_n = \sum_{i=1}^n X_i$.
+\end{defn}
+
+\begin{theo}[Ley fuerte de Khintchine]
+Sea $\{ X_n\}_{n\in\mathbb{N}}$ una sucesión de v.a. independientes identicamente distribuidas con $\mathbb{E}(X_n)=\mu$. Entonces, \[ \frac{S_n}{n}\xrightarrow{c.s.}\mu \] es decir, \[ \frac{1}{n}\sum_{i=1}^\infty X_i \xrightarrow{c.s.}\mu \] donde $S_n = \sum_{i=1}^n X_i$.
+\end{theo}
+
+\section{Teorema del Límite Central}
+
+\begin{theo}[del límite central]
+Sea $\{ X_n\}_{n\in\mathbb{N}}$ una sucesión de v.a. independientes identicamente distribuidas con $\mathbb{E}(X_n)=\mu$ y $Var(X_n) = \sigma^2$. Entonces, \[ \frac{S_n-\mathbb{E}(S_n)}{\sigma\sqrt{n}}\xrightarrow{ley}\mathcal{N}(0,1) \] donde $S_n = \sum_{i=1}^n X_i$.
+\end{theo}
+
+\end{document}
