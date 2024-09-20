@@ -15,7 +15,7 @@
   \] 
 \end{defn}
 
-\begin{prop}
+\begin{prop}[Degenerada]
   \begin{itemize}
     \item []
     \item Función Distribución 
@@ -45,14 +45,14 @@
 
 \section{Distribución Uniforme Discreta}
 
-\begin{defn}
+\begin{defn}[Distribución Uniforme Discreta]
   Una v.a. $X$ se dice que tiene una distribución uniforme discreta si su función de masa es
   \[ 
     p_{X}(x) = \frac{1}{n}, \quad \text{ si } x \in D_{X} = \{ x_{1}, \cdots, x_{n} \}
   \] 
 \end{defn}
 
-\begin{prop}
+\begin{prop}[Distribución Uniforme Discreta]
   \begin{itemize}
     \item []
     \item Función Distribución
@@ -90,14 +90,14 @@
 
 \section{Distribución de Bernoulli}
 
-\begin{defn}
+\begin{defn}[Distribución de Bernoulli]
   Una v.a. $X$ se dice que tiene distribución de Bernoulli si tiene función de masa
   \[ 
     P_{X}(x) = \mathbb{P} \{ X = x \} = p ^{x} \cdot q^{1-x}, \quad x \in \{ 0, 1 \}
   \] 
 \end{defn}
 
-\begin{prop}
+\begin{prop}[Distribución de Bernoulli]
   \begin{itemize}
     \item []
     \item Función Distribución
@@ -138,7 +138,7 @@
 
 \section{Distribución Binomial}
 
-\begin{defn}
+\begin{defn}[Distribución Binomial]
   Una v.a. $X$ se dice que sigue una distribución binomial si su función de masa es
   \[ 
     p_{X}(x) = \mathbb{P} \{ X = x \} = \binom{n}{x} p^{x} q^{n -x}, \quad x \in \{ 0, 1, \cdots, n \}
@@ -150,7 +150,7 @@
   $X \equiv Ber(p) \Leftrightarrow X \equiv Bi(1, p)$.
 \end{obs}
 
-\begin{prop}
+\begin{prop}[Distribución Binomial]
   \begin{itemize}
     \item []
     \item Función Distribución (no es muy manejable)
@@ -186,7 +186,7 @@
   \end{itemize}
 \end{prop}
 
-\begin{theo}
+\begin{theo}[Distribución Binomial]
   La suma de variable Binomiales es Binomial. Si $X_{1} \equiv B(n_{1}, p)$ y $X_{2} \equiv B(n_{2}, p)$, entonces $X_{1} + X_{2} \equiv B(n_{1} + n_{2}, p)$
 \end{theo}
 
@@ -207,14 +207,14 @@ La distribución de Poisson de parámetro $\lambda$ se obtiene como límite de l
   = \frac{\lambda^{x}}{x!} \cdot e^{-\lambda} 
 \] 
 
-\begin{defn}
+\begin{defn}[Distribución de Poisson]
   Una v.a. $X$ sigue uma distribución Poisson de parámetro $\lambda$ si su función de masa es
   \[ 
     p_{X}(x) = \frac{e^{-\lambda} \lambda^{x}}{x !}, \quad x \in \{ 0, 1, \cdots \} 
   \] 
 \end{defn}
 
-\begin{prop}
+\begin{prop}[Distribución de Poisson]
   \begin{itemize}
     \item []
     \item Función Distribución
@@ -252,7 +252,7 @@ La distribución de Poisson de parámetro $\lambda$ se obtiene como límite de l
   \end{itemize}
 \end{prop}
 
-\begin{theo}
+\begin{theo}[Distribución de Poisson]
   La suma de variable aleatorias Poisson indpendientes, es una variable aleatoria Poisson cuyo parámetro es la suma de los parámetros.
 \end{theo}
 
@@ -264,14 +264,14 @@ La distribución de Poisson de parámetro $\lambda$ se obtiene como límite de l
 
 Supongamos que una caja contiene $N$ piezas, de las cuales $D$ son defectuosas y $N - D$ aceptables. Consideramos el experimento de extraer $n$ piezas simultaneamente. Este procedimiento es equivalente a un muestreo sin remplazamiento de $n$ piezas.
 
-\begin{defn}
+\begin{defn}[Distribución Hipergeométrica]
   Una v.a $X$ sigue una distribución hipergeométrica si su función de masa es
   \[ 
     \mathbb{P} \{ X = x \} = \frac{\binom{D}{x} \binom{N - D}{n - x}}{\binom{N}{n}} 
   \] 
 \end{defn}
 
-\begin{prop}
+\begin{prop}[Distribución Hipergeométrica]
   \begin{itemize}
     \item []
     \item Momentos respecto al origen
@@ -289,14 +289,14 @@ Supongamos que una caja contiene $N$ piezas, de las cuales $D$ son defectuosas y
 
 Sea un experimento aleatorio y $A$ un suceso del experimento $P(A) = p$. Queremos ver el número de pruebas necesarias para que aparezaca $A$.
 
-\begin{defn}
+\begin{defn}[Distribución Geométrica]
   Una v.a. $X$ sigue una distribución geométrica si su función de masa es
   \[ 
     p_{X}(x) = \mathbb{P} \{ X = x \} = (1 - p)^{x -1} p, \quad x \in \{ 1, 2, \cdots \}
   \] 
 \end{defn}
 
-\begin{prop}
+\begin{prop}[Distribución Geométrica]
   \begin{itemize}
     \item []
     \item Función Distribución
@@ -332,14 +332,14 @@ Sea un experimento aleatorio y $A$ un suceso del experimento $P(A) = p$. Queremo
 
 Consideramos una sucesión de realizaciones de un experimento. Según el número de veces que suceda $A$ queremos ver el número de fallos anteriores.
 
-\begin{defn}
+\begin{defn}[Distribución Binomial Negativa]
   Una v.a. $X$ sigue una distribución binomial negativa si tiene función de masa
   \[ 
     \mathbb{P} \{ X = x \} = \binom{n + x - 1}{n - 1} p ^{n - 1} q ^{x} \cdot p 
   \] 
 \end{defn}
 
-\begin{prop}
+\begin{prop}[Distribución Binomial Negativa]
   \begin{enumerate}[label=(\roman*)]
     \item []
     \item Función distribución 
@@ -366,7 +366,7 @@ Consideramos una sucesión de realizaciones de un experimento. Según el número
 
 \section{Distribución Uniforme}
 
-\begin{defn}
+\begin{defn}[Distribución Uniforme]
   Una v.a. $X$ continua sigue una distribución uniforme en $[ a, b ]$ si su función de densidad viene dada por
   \[ 
     f(x) =
@@ -380,7 +380,7 @@ Consideramos una sucesión de realizaciones de un experimento. Según el número
 \end{defn}
 
 
-\begin{prop}
+\begin{prop}[Distribución Uniforme]
   \begin{itemize}
     \item []
     \item Función distribución
@@ -425,21 +425,21 @@ Consideramos una sucesión de realizaciones de un experimento. Según el número
 
 \section{Distribución Normal}
 
-\begin{defn}
+\begin{defn}[Distribución Normal]
   Una v.a. $X$ sigue una distribución normal $N(0,1)$ si su función de densidad es de la forma
   \[ 
     f(x) = \frac{1}{\sqrt{2 \pi}} e^{- \frac{x^{2}}{2}}, \quad x \in (-\infty, + \infty)
   \] 
 \end{defn}
 
-\begin{defn}
+\begin{defn}[Distribución Normal]
   Una v.a. $X$ sigue una distribución normal $N(\mu, \sigma)$ si su función de densidad es de la forma
   \[ 
     f(x) = \frac{1}{\sigma \sqrt{2 \pi}} e^{- \frac{(x -\mu)^{2}}{2 \sigma^{2}}}, \quad x \in (-\infty, + \infty)
   \] 
 \end{defn}
 
-\begin{prop}
+\begin{prop}[Distribución Normal]
   \begin{itemize}
     \item []
     \item Función distribución
@@ -493,7 +493,7 @@ Consideramos una sucesión de realizaciones de un experimento. Según el número
   \] 
 \end{defn}
 
-\begin{prop}[Propiedades]
+\begin{prop}[Propiedades Función Gamma]
   \begin{enumerate}[label=(\roman*)]
     \item $\Gamma(1) = 1$,
     \item $\Gamma(p) = (p - 1) \Gamma(p - 1)$
@@ -501,7 +501,7 @@ Consideramos una sucesión de realizaciones de un experimento. Según el número
   \end{enumerate}
 \end{prop}
 
-\begin{defn}
+\begin{defn}[Distribución Gamma]
   Una v.a. $X$ sigue una distribución gamma de parámetros $\gamma(p, a)$ si su función de densidad es de la forma 
   \[ 
     f_{X}(x) = \frac{a^{p} e^{-ax} x^{p-1}}{\Gamma(p)}, \quad $x > 0$
@@ -537,7 +537,7 @@ Consideramos una sucesión de realizaciones de un experimento. Según el número
   \end{itemize}
 \end{prop}
 
-\begin{theo}
+\begin{theo}[Distribución Gamma]
   La suma de v.a. gamma independientes es gamma.
 \end{theo}
 
@@ -548,7 +548,7 @@ Consideramos una sucesión de realizaciones de un experimento. Según el número
 
 \section{Distribución Exponencial}
 
-\begin{defn}
+\begin{defn}[Distribución Exponencial]
   Una v.a. $X$ sigue una distribución exponencial de parámetro $\theta$ si su función de densidad es de la forma
   \[ 
     f_{X}(x) =
@@ -561,11 +561,11 @@ Consideramos una sucesión de realizaciones de un experimento. Según el número
   \] 
 \end{defn}
 
-\begin{obs}
+\begin{obs}[Distribución Exponencial]
   $Exp (\theta) = \gamma(1, \theta)$.
 \end{obs}
 
-\begin{prop}
+\begin{prop}[Distribución Exponencial]
   \begin{itemize}
     \item []
     \item Función distribución
@@ -598,6 +598,6 @@ Consideramos una sucesión de realizaciones de un experimento. Según el número
   \end{itemize}
 \end{prop}
 
-\begin{theo}
+\begin{theo}[Distribución Exponencial]
   La suma de $n$ variable aleatorias indpendientes e idénticamente distribuidas $X_{i} \equiv Exp (\theta)$es una $\gamma(n, \theta)$.
 \end{theo}

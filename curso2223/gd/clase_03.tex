@@ -9,15 +9,15 @@
 \begin{defn}[Vector tangente]
   Sea $\alpha: I \to \mathbb{R}^{3}$ una curva en $\mathbb{R}^{3}$ con $\alpha = (\alpha_{1}, \alpha^{2}, \alpha^{3})$. Entonces, $\forall t \in I$
   \[ 
-    \alpha'(t) = \Big ( \frac{d{\alpha_{1}}}{d{t}}(t),\frac{d{\alpha_{2}}}{d{t}}(t),\frac{d{\alpha_{3}}}{d{t}}(t) \Big ).
+    \alpha'(t) = \Big ( \frac{d{\alpha_{1}(t)}}{d{t}},\frac{d{\alpha_{2}(t)}}{d{t}},\frac{d{\alpha_{3}(t)}}{d{t}} \Big ).
   \] 
   \[ 
     = \lim_{h \to 0} \frac{\alpha(t+ h) - \alpha(t)}{h} 
   \] 
 \end{defn}
 
-\begin{obs}
-  El vector tangente también se llama vector velocidad
+\begin{obs}[Velocidad]
+  El vector tangente también se llama vector velocidad. Y su velocidad en $t$ es $||\alpha'(t)||$.
 \end{obs}
 
 \begin{defn}[Reparametrización]
@@ -39,17 +39,29 @@
   \] 
 \end{lem}
 
+\begin{theo}[Valor Medio]
+  Sea $\alpha$ una curva diferenciable p.p.a, entonces $\exists c \in ( 0,1 )$ tal que 
+  \[ 
+    f'(c) = \frac{f(b) - f(a)}{b - a} 
+  \] 
+  es decir, la tangente en $c$ es paralela a la secante que pasa por $(0, \alpha(0))$ y $(1, \alpha(1))$.
+\end{theo}
+
+
 \section{Curvas Regulares}
 
 \begin{defn}[Curva Regular]
   Sea $\alpha: I \to \mathbb{R}^{3}$ una curva parametrizada. Entonces, si $\alpha'(t) \neq 0. \forall t \in I$ decimos que es regular.
 \end{defn}
 
+\begin{defn}[Punto singular]
+  Sea $\alpha$ un curva diferenciable. Si $\exists p$ tal que $\alpha'(p) = 0$, entonces decimos que $p$ es un punto singular.
+\end{defn}
 
 \begin{defn}[Longitud de Arco]
   Sea $\alpha : I \to \mathbb{R}^{3}, t_{0} \in I$. Definimos la función longitud de arco desde $t_{0}$ como $s: I \to \mathbb{R}$ donde
   \[ 
-    s(t) = \int_{t_{0}}^{t}  ||\alpha ' (u)|| du. 
+    L^b_{a}(t) = \int_{t_{0}}^{t}  ||\alpha ' (u)|| du. 
   \] 
 \end{defn}
 
@@ -93,6 +105,14 @@
 %    \beta(s) = \alpha(\frac{s}{c}) = \Big ( a \cos(\frac{s}{c}), a \sen(\frac{s}{c}), \frac{bs}{c} \Big ) .
 %  \] 
 %\end{ejm}
+\section{Producto Vectorial}
+
+\begin{defn}[Producto Escalar]
+  Sea $v, w \in \mathbb{R}^{n}$ entonces, su producto escalar es
+  \[ 
+    \langle v{ , \ }w \rangle = \sum_{i=0}^{n} v_{i} w_{i}
+  \] 
+\end{defn}
 
 \section{Producto Vectorial}
 
@@ -118,6 +138,17 @@
   \end{enumerate}
 \end{prop}
 
+\begin{prop}[Vector en base ortonormal]
+  Sea $\{ e_{1}, \cdots, e_{n} \}$ base ortonormal en $\mathbb{R}^{n}$. Si $v \in \mathbb{R}^{n}$ es combinación lineal de $\{ e_{1}, \cdots, e_{n} \}$ tal que \[ 
+    v = \sum_{i = 0}^{n} x_{i} \cdot e_{i}
+  \]  
+  donde $( x_{1}, \cdots, x_{n} ) \in \mathbb{R}^{n}$, entonces podemos escribir
+  \[ 
+    x_{i} = v \times e_{i}
+  \] 
+  en términos de la base.
+\end{prop}
+
 \section{Movimineto Rígido}
 
 \begin{defn}[Traslación]
@@ -140,16 +171,31 @@
   Un movimiento rígido es la composición de una traslación con una transformación ortogonal con determinante positivo.
 \end{defn}
 
+\begin{obs}
+  Las traslaciones, rotaciones y reflexiones son movimientos rígidos y se pueden expresar en términos de la definición anterior. Sea $\varphi: \mathbb{R}^{3} \to \mathbb{R}^{3}$ un movimiento rígido (traslación/ rotación/ reflexión) entonces
+  \[ 
+    \varphi(x_{1},x_{2},x_{3}) = A \cdot 
+    \begin{pmatrix}
+      x_1 \\ x_{n} \\ x_n
+    \end{pmatrix} 
+    + \vec{p}
+  \] 
+  donde $A \in \mathcal{M}_{3 \times 3}(\mathbb{R})$ es transformación ortogonal y $\vec{p} \in \mathbb{R}^{3}$.
+\end{obs}
 
 
 \begin{prop}
   Sea $\phi : \mathbb{R}^{3} \to \mathbb{R}^{3}$ un movimiento rígido entonces
   \begin{enumerate}[label=(\roman*)]
-    \item El ángulo de un vector y el ángulo entre dos vectores es invariante por isometrías.
+    \item El ángulo entre dos vectores es invariante por isometrías.
     \item El producto vectorial de dos vectores es invatiante por ismetrías.
     \item La longitud de arco, la curvatura y la torsión de una curva parametrizada son invariantes por movimientos rígidos.
   \end{enumerate}
 \end{prop}
+
+\begin{obs}
+  Es útil para demostrar que las reparametrizaciones por arco conservan la longitud de arco
+\end{obs}
 
 \section{Fórmulas de Frenet}
 
